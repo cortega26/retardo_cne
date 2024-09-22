@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirulen&family=Roboto:wght@700&display=swap');
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --counter-background: #f0f0f0;
+    --pi-background: rgba(200, 200, 200, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #ffffff;
+        --counter-background: #2a2a2a;
+        --pi-background: #1a1a1a;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Pirulen', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.counter-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.counter {
+    font-size: 2rem;
+    background-color: var(--counter-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#pi-symbol {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: var(--pi-background);
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pi-symbol:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .counter-container {
+        width: 45%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .counter {
+        font-size: 2.5rem;
+    }
+
+    #pi-symbol {
+        font-size: 1.5rem;
+        width: 36px;
+        height: 36px;
+    }
+}
