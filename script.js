@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 availableUrls.splice(randomIndex, 1);
             }
         }
-        alert('Lo siento, ninguna de las páginas está accesible en este momento.');
+        alert('Lo siento, el portátil de Hidrobo está apagado en este momento.');
         mainContent.classList.remove('hidden');
         hackMessage.classList.add('hidden');
     }
