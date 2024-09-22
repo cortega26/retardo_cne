@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contadores CNE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pirulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirulen&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-content">
         <div class="counter-container">
             <h2>El CNE debió publicar los resultados totalización y escrutinio, desagregados por centro y mesa hace:</h2>
             <div id="counter1" class="counter"></div>
@@ -17,6 +17,10 @@
             <h2>El CNE debió publicar los resultados en Gaceta Oficial hace:</h2>
             <div id="counter2" class="counter"></div>
         </div>
+    </div>
+    <div id="hack-message" class="hidden">
+        <p>Hackeando el computador personal de Elvis Amoroso para ver los verdaderos resultados del 28J...</p>
+        <div id="hack-counter">10</div>
     </div>
     <div id="pi-symbol">π</div>
     <script src="script.js"></script>
