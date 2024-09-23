@@ -182,26 +182,6 @@ main {
     margin-bottom: 1rem;
 }
 
-#info-section ul {
-    list-style-type: none;
-    padding-inline-start: 1rem; /* Logical property */
-    margin-bottom: 1rem;
-}
-
-#info-section li {
-    margin-bottom: 0.5rem;
-    position: relative;
-}
-
-#info-section li::before {
-    content: "•";
-    color: var(--color-primary);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-inline-start: -1em; /* Logical property */
-}
-
 /* Utility classes */
 .hidden {
     display: none !important;
