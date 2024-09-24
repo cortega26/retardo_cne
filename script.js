@@ -114,6 +114,15 @@ const CNEMonitor = (() => {
     }
 
     /**
+     * Toggles between light and dark themes.
+     */
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    }
+
+    /**
      * Initializes the page interactivity.
      */
     function initializePage() {
@@ -130,53 +139,23 @@ const CNEMonitor = (() => {
             });
         }
 
-        // Add hover effect to counters
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            counter.addEventListener('mouseenter', () => {
-                counter.style.transform = 'scale(1.05)';
-            });
-            counter.addEventListener('mouseleave', () => {
-                counter.style.transform = 'scale(1)';
-            });
+        const toggleThemeBtn = document.getElementById('toggleTheme');
+        if (toggleThemeBtn) {
+            toggleThemeBtn.addEventListener('click', toggleTheme);
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
         });
-
-        // Add scroll-triggered animations
-        const infoSection = document.getElementById('info-section');
-        if (infoSection) {
-            const debounce = (func, delay) => {
-                let inDebounce;
-                return function() {
-                    const context = this;
-                    const args = arguments;
-                    clearTimeout(inDebounce);
-                    inDebounce = setTimeout(() => func.apply(context, args), delay);
-                };
-            };
-
-            window.addEventListener('scroll', debounce(() => {
-                const rect = infoSection.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                if (isVisible) {
-                    infoSection.style.opacity = '1';
-                    infoSection.style.transform = 'translateY(0)';
-                }
-            }, 100));
-        }
     }
-
-    // Add a simple Easter egg
-    let konami = '';
-    const konamiCode = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba';
-    document.addEventListener('keydown', (e) => {
-        konami += e.key;
-        if (konamiCode.indexOf(konami) !== 0) {
-            konami = '';
-        } else if (konami === konamiCode) {
-            alert('¡Código secreto activado! Lamentablemente, esto no hace que aparezcan los resultados.');
-            konami = '';
-        }
-    });
 
     // Public API
     return {

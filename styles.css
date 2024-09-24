@@ -39,6 +39,11 @@
     }
 }
 
+#toggleTheme {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+}
+
 /* Base styles */
 body {
     font-family: var(--font-primary);
@@ -102,11 +107,6 @@ main {
     padding: 1.25rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform var(--transition-duration) ease;
-}
-
-.counter:hover {
-    transform: translateY(-0.3125rem);
 }
 
 .counter span {
@@ -141,16 +141,10 @@ main {
     box-shadow: var(--box-shadow);
 }
 
-#pi-symbol:hover,
-#pi-symbol:focus {
-    transform: scale(1.1);
-    outline: none;
-}
-
 /* Hack message styles */
 #hack-message {
     position: fixed;
-    inset: 0; /* Logical property replacing top, right, bottom, left */
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,22 +158,8 @@ main {
 
 #hack-counter {
     font-size: 3rem;
-    margin-block-start: 2rem; /* Logical property */
+    margin-block-start: 2rem;
     color: var(--color-accent);
-}
-
-/* Info section styles */
-#info-section {
-    background-color: var(--color-counter-bg);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    margin-block-start: 2rem; /* Logical property */
-    box-shadow: var(--box-shadow);
-}
-
-#info-section h2 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
 }
 
 /* Utility classes */
@@ -233,4 +213,52 @@ main {
 
 .pulse {
     animation: pulse 0.5s ease-in-out;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--color-primary);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--color-counter-bg);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--color-accent);
+}
+
+.dropdown-menu {
+    background-color: var(--color-counter-bg);
+}
+
+.dropdown-item {
+    color: var(--color-text);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--color-primary);
+    color: var(--color-counter-bg);
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Main content */
+main {
+    flex: 1 0 auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
