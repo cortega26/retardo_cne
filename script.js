@@ -44,100 +44,15 @@ const CNEMonitor = (() => {
     const targetDate1 = new Date('2024-07-30T22:00:00Z');
     const targetDate2 = new Date('2024-08-28T16:00:00Z');
 
-    /**
-     * Checks if a URL is accessible without actually making a network request.
-     * @param {string} url - The URL to check.
-     * @returns {Promise<boolean>} - A promise that resolves to true (assuming the URL is accessible).
-     */
-    async function isUrlAccessible(url) {
-        console.log(`Verificando URL: ${url}`);
-        return true;
-    }
-
-    /**
-     * Starts the verification animation and countdown.
-     */
-    function startVerification() {
-        const mainContent = document.getElementById('main-content');
-        const hackMessage = document.getElementById('hack-message');
-        const hackCounter = document.getElementById('hack-counter');
-
-        if (!mainContent || !hackMessage || !hackCounter) {
-            console.error('Required elements not found');
-            return;
-        }
-
-        mainContent.classList.add('hidden');
-        hackMessage.classList.remove('hidden');
-        let count = 9;
-
-        const countdownInterval = setInterval(() => {
-            hackCounter.textContent = count;
-            count--;
-
-            if (count < 0) {
-                clearInterval(countdownInterval);
-                redirectToRandomUrl();
-            }
-        }, 1000);
-    }
-
-    /**
-     * Redirects to a random accessible URL from the provided list.
-     */
-    async function redirectToRandomUrl() {
-        const urls = [
-            'https://macedoniadelnorte.com/',
-            'https://resultadosconvzla.com/'
-        ];
-
-        try {
-            const accessibleUrls = await Promise.all(urls.map(url => isUrlAccessible(url)));
-            const availableUrls = urls.filter((_, index) => accessibleUrls[index]);
-
-            if (availableUrls.length > 0) {
-                const randomUrl = availableUrls[Math.floor(Math.random() * availableUrls.length)];
-                window.open(randomUrl, '_blank', 'noopener,noreferrer');
-            } else {
-                throw new Error('No se encontraron URLs accesibles');
-            }
-        } catch (error) {
-            console.error('Error al verificar URLs:', error);
-            alert('Lo sentimos, no se pudo acceder a los resultados en este momento. Por favor, intente más tarde.');
-            const mainContent = document.getElementById('main-content');
-            const hackMessage = document.getElementById('hack-message');
-            if (mainContent && hackMessage) {
-                mainContent.classList.remove('hidden');
-                hackMessage.classList.add('hidden');
-            }
-        }
-    }
-
-    /**
-     * Toggles between light and dark themes.
-     */
     function toggleTheme() {
         document.body.classList.toggle('dark-mode');
         const isDarkMode = document.body.classList.contains('dark-mode');
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     }
 
-    /**
-     * Initializes the page interactivity.
-     */
     function initializePage() {
         updateCounter('counter1', targetDate1);
         updateCounter('counter2', targetDate2);
-
-        const piSymbol = document.getElementById('pi-symbol');
-        if (piSymbol) {
-            piSymbol.addEventListener('click', startVerification);
-            piSymbol.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    startVerification();
-                }
-            });
-        }
 
         const toggleThemeBtn = document.getElementById('toggleTheme');
         if (toggleThemeBtn) {
@@ -159,7 +74,8 @@ const CNEMonitor = (() => {
 
     // Public API
     return {
-        init: initializePage
+        init: initializePage,
+        toggleTheme: toggleTheme
     };
 })();
 
