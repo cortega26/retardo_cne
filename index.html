@@ -9,7 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap"></noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,11 +18,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CNE Monitor</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="violacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Mentiras del Chavismo
@@ -50,8 +52,6 @@
                             <li><a class="dropdown-item" href="https://dorothykronick.com/28J.pdf" target="_blank">Análisis Dorothy Kronick (UC Berkeley)</a></li>
                             <li><a class="dropdown-item" href="https://www.caracaschronicles.com/2024/08/18/more-evidence-backs-the-election-results-published-by-the-venezuelan-opposition/" target="_blank">Caracas Chronicles</a></li>
                             <li><a class="dropdown-item" href="https://www.cazadores.info/herramienta-basada-en-ia-permite-ahora-la-busqueda-directa-de-cualquier-palabra-en-mas-de-25-000-actas-del-28j-presentadas-por-la-oposicion/" target="_blank">Cazadores de Fake News</a></li>
-                            <li><a class="dropdown-item" href="" target="_blank"></a></li>
-                            <li><a class="dropdown-item" href="" target="_blank"></a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -70,7 +70,7 @@
                     </li>
                 </ul>
             </div>
-            <button id="toggleTheme" class="btn btn-outline-light ms-auto">🌓</button>
+            <button id="toggleTheme">🌓</button>
         </div>
     </nav>
 
