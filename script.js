@@ -42,7 +42,7 @@ const CNEMonitor = (() => {
 
     // Target dates (Venezuela time, GMT-4)
     const targetDate1 = new Date('2024-07-30T22:00:00Z');
-    const targetDate2 = new Date('2024-08-28T16:00:00Z');
+    const targetDate2 = new Date('2024-08-29T02:00:00Z');
 
     function toggleTheme() {
         document.body.classList.toggle('dark-mode');
