@@ -7,6 +7,7 @@ Este proyecto es una página web que monitorea y visualiza los retrasos en el pr
 ## Propósito
 
 El objetivo principal de este sitio es proporcionar información clara y accesible sobre:
+
 1. El retraso en la totalización y escrutinio de votos.
 2. El retraso en la publicación de resultados en la Gaceta Oficial.
 
@@ -30,6 +31,7 @@ Estos retrasos se contrastan con los plazos legales establecidos en la Ley Orgá
 ## Cómo Contribuir
 
 Las contribuciones son bienvenidas. Si deseas contribuir al proyecto:
+
 1. Haz un fork del repositorio.
 2. Crea una nueva rama para tus cambios.
 3. Realiza tus cambios y haz commit de ellos.
@@ -38,6 +40,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir al proyecto:
 ## Instalación Local
 
 Para ejecutar este proyecto localmente:
+
 1. Clona el repositorio: `git clone https://github.com/tu-usuario/cne-monitor.git`
 2. Abre el archivo `index.html` en tu navegador web.
 
