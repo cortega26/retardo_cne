@@ -78,7 +78,7 @@ footer {
     background-color: var(--color-primary);
     color: var(--color-counter-bg);
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem 0rem 0.5rem;
 }
 
 main {
@@ -259,4 +259,73 @@ footer p {
     }
 }
 
-/* ... rest of your existing styles ... */
+
+/* Mejoras de diseño responsivo */
+@media (max-width: 768px) {
+    .counter {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para el menú de compartir en redes sociales */
+.share-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+.social-icons .btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #ffffff;
+    border: none;
+    padding: 0;
+}
+
+.social-icons .btn:hover {
+    transform: scale(1.1);
+}
+
+/* Colores específicos para cada red social */
+.social-icons .btn-twitter { background-color: #000000; }
+.social-icons .btn-facebook { background-color: #4267B2; }
+.social-icons .btn-whatsapp { background-color: #25D366; }
+.social-icons .btn-telegram { background-color: #0088cc; }
+
+
+/* Asegura que los iconos sean visibles */
+.social-icons .btn i {
+    display: inline-block;
+    line-height: 1; /* Asegura que el icono esté centrado verticalmente */
+}
+
+/* Modo oscuro (si se implementa) */
+body.dark-mode {
+    --color-background: #1a202c;
+    --color-text: #e2e8f0;
+    --color-primary: #4299e1;
+    --color-secondary: #a0aec0;
+    --color-counter-bg: #2d3748;
+}
