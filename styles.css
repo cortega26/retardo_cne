@@ -78,7 +78,7 @@ footer {
     background-color: var(--color-primary);
     color: var(--color-counter-bg);
     text-align: center;
-    padding: 1rem 0rem 0.5rem;
+    padding: 1rem 1rem 0.5rem;
 }
 
 main {
@@ -191,7 +191,7 @@ main {
 footer {
     margin-top: auto;
     font-size: 0.9rem;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
