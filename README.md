@@ -42,7 +42,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir al proyecto:
 
 Para ejecutar este proyecto localmente:
 
-1. Clona el repositorio: `git clone https://github.com/cortega26/cne-retardo.git`
+1. Clona el repositorio: `git clone https://github.com/cortega26/retardo_cne.git`
 2. Abre el archivo `index.html` en tu navegador web.
 
 ## Licencia
