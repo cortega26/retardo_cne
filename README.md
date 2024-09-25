@@ -10,6 +10,7 @@ El objetivo principal de este sitio es proporcionar información clara y accesib
 
 1. El retraso en la totalización y escrutinio de votos.
 2. El retraso en la publicación de resultados en la Gaceta Oficial.
+3. El deterioro progresivo y sistemático de las libertades civiles y personales en Venezuela.
 
 Estos retrasos se contrastan con los plazos legales establecidos en la Ley Orgánica de Procesos Electorales (LOPRE) de Venezuela.
 
