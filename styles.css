@@ -286,7 +286,7 @@ footer p {
     margin-top: 1rem;
 }
 
-
+/*
 .social-icons .btn {
     width: 3rem;
     height: 3rem;
@@ -295,6 +295,21 @@ footer p {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #ffffff;
+    border: none;
+    padding: 0;
+}
+*/
+
+.social-icons a {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
     transition: transform 0.3s ease;
     color: #ffffff;
     border: none;
