@@ -286,22 +286,6 @@ footer p {
     margin-top: 1rem;
 }
 
-/*
-.social-icons .btn {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-    color: #ffffff;
-    border: none;
-    padding: 0;
-}
-*/
-
 .social-icons a {
     width: 3rem;
     height: 3rem;
@@ -325,7 +309,6 @@ footer p {
 .social-icons .btn-facebook { background-color: #4267B2; }
 .social-icons .btn-whatsapp { background-color: #25D366; }
 .social-icons .btn-telegram { background-color: #0088cc; }
-
 
 /* Asegura que los iconos sean visibles */
 .social-icons .btn i {
