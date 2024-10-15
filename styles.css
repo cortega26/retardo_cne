@@ -107,15 +107,7 @@ main {
 
 .counter span {
     display: inline-block;
-    min-width: 80px; /* Adjust this value as needed */
-    text-align: center;
-    /* margin: 0 0.5rem; */
-}
-
-.counter .number {
-    font-family: 'Roboto Mono', monospace; /* Use a monospace font for numbers */
-    font-feature-settings: "tnum";
-    font-variant-numeric: tabular-nums;
+    margin: 0 0.5rem;
 }
 
 .legal-reference {

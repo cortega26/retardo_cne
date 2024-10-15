@@ -9,55 +9,55 @@ const CNEMonitor = (() => {
      * @param {Date} targetDate - The target date to count from.
      */
     function updateCounter(elementId, targetDate) {
-        console.log(`Updating counter: ${elementId}`);
-        const counter = document.getElementById(elementId);
-        if (!counter) {
-            console.error(`Counter element with id ${elementId} not found`);
-            return;
-        }
-        
-        // Create spans for each time unit
-        const spans = ['days', 'hours', 'minutes', 'seconds'].map(unit => {
-            const span = document.createElement('span');
-            span.className = unit;
-            counter.appendChild(span);
-            return span;
-        });
-    
-        function update() {
-            const now = new Date();
-            const differenceInMs = now - targetDate;
-            
-            const days = Math.floor(differenceInMs / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((differenceInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((differenceInMs % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((differenceInMs % (1000 * 60)) / 1000);
-            
-            const units = [
-                { value: days, singular: 'día', plural: 'días' },
-                { value: hours, singular: 'hora', plural: 'horas' },
-                { value: minutes, singular: 'minuto', plural: 'minutos' },
-                { value: seconds, singular: 'segundo', plural: 'segundos' }
-            ];
-    
-            units.forEach(({ value, singular, plural }, index) => {
-                const span = spans[index];
-                const newText = `<span class="number">${value}</span> ${value === 1 ? singular : plural}`;
-                if (span.innerHTML !== newText) {
-                    span.innerHTML = newText;
-                }
-            });
-    
-            // Add pulsing effect to seconds
-            spans[3].classList.add('pulse');
-            setTimeout(() => spans[3].classList.remove('pulse'), 500);
-    
-            requestAnimationFrame(update);
-        }
-        
-        update();
-        console.log(`Counter ${elementId} update started`);
+    console.log(`Updating counter: ${elementId}`);
+    const counter = document.getElementById(elementId);
+    if (!counter) {
+        console.error(`Counter element with id ${elementId} not found`);
+        return;
     }
+    
+    // Create spans for each time unit
+    const spans = ['days', 'hours', 'minutes', 'seconds'].map(unit => {
+        const span = document.createElement('span');
+        span.className = unit;
+        counter.appendChild(span);
+        return span;
+    });
+
+    function update() {
+        const now = new Date();
+        const differenceInMs = now - targetDate;
+        
+        const days = Math.floor(differenceInMs / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((differenceInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((differenceInMs % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((differenceInMs % (1000 * 60)) / 1000);
+        
+        const units = [
+            { value: days, singular: 'día', plural: 'días' },
+            { value: hours, singular: 'hora', plural: 'horas' },
+            { value: minutes, singular: 'minuto', plural: 'minutos' },
+            { value: seconds, singular: 'segundo', plural: 'segundos' }
+        ];
+
+        units.forEach(({ value, singular, plural }, index) => {
+            const span = spans[index];
+            const newText = `<span class="number">${value}</span> ${value === 1 ? singular : plural}`;
+            if (span.innerHTML !== newText) {
+                span.innerHTML = newText;
+            }
+        });
+
+        // Add pulsing effect to seconds
+        spans[3].classList.add('pulse');
+        setTimeout(() => spans[3].classList.remove('pulse'), 500);
+
+        requestAnimationFrame(update);
+    }
+    
+    update();
+    console.log(`Counter ${elementId} update started`);
+}
 
     // Target dates (Venezuela time, GMT-4)
     const targetDate1 = new Date('2024-07-30T22:00:00Z');
