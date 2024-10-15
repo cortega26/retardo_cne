@@ -42,9 +42,9 @@ const CNEMonitor = (() => {
     
             units.forEach(({ value, singular, plural }, index) => {
                 const span = spans[index];
-                const newText = `${value} ${value === 1 ? singular : plural}`;
-                if (span.textContent !== newText) {
-                    span.textContent = newText;
+                const newText = `<span class="number">${value}</span> ${value === 1 ? singular : plural}`;
+                if (span.innerHTML !== newText) {
+                    span.innerHTML = newText;
                 }
             });
     
