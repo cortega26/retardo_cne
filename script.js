@@ -46,8 +46,7 @@ const CNEMonitor = (() => {
                     }
                 });
 
-                spans[3].classList.add('pulse');
-                setTimeout(() => spans[3].classList.remove('pulse'), 500);
+                // Pulse effect removed
             } catch (error) {
                 console.error('Error updating counter:', error);
             }
