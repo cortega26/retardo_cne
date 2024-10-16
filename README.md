@@ -20,30 +20,39 @@ Estos retrasos se contrastan con los plazos legales establecidos en la Ley Orgá
 - Información sobre los artículos relevantes de la LOPRE.
 - Enlaces a recursos adicionales y análisis sobre el proceso electoral.
 - Botones de compartir en redes sociales para difundir la información.
+- Modo oscuro para mejorar la experiencia del usuario en diferentes condiciones de iluminación.
 
 ## Tecnologías Utilizadas
 
 - HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
+- CSS3 (con diseño responsivo)
+- JavaScript (ES6+)
+- Bootstrap 5 (para el diseño y componentes responsivos)
 - Font Awesome (para iconos)
+- AOS (Animate On Scroll library para animaciones)
+- Google Analytics (para seguimiento de usuarios)
 
 ## Cómo Contribuir
 
 Las contribuciones son bienvenidas. Si deseas contribuir al proyecto:
 
 1. Haz un fork del repositorio.
-2. Crea una nueva rama para tus cambios.
-3. Realiza tus cambios y haz commit de ellos.
-4. Envía un pull request con una descripción clara de tus modificaciones.
+2. Crea una nueva rama para tus cambios: `git checkout -b feature/nueva-caracteristica`
+3. Realiza tus cambios y haz commit de ellos: `git commit -am 'Añade nueva característica'`
+4. Sube tus cambios a tu fork: `git push origin feature/nueva-caracteristica`
+5. Envía un pull request con una descripción clara de tus modificaciones.
+
+Por favor, asegúrate de seguir las mejores prácticas de codificación y de mantener el estilo consistente con el resto del proyecto.
 
 ## Instalación Local
 
 Para ejecutar este proyecto localmente:
 
 1. Clona el repositorio: `git clone https://github.com/cortega26/retardo_cne.git`
-2. Abre el archivo `index.html` en tu navegador web.
+2. Navega al directorio del proyecto: `cd retardo_cne`
+3. Abre el archivo `index.html` en tu navegador web.
+
+Nota: Debido a las restricciones de seguridad de CORS, es posible que necesites un servidor local para probar completamente todas las funcionalidades. Puedes usar herramientas como `http-server` para Node.js o la extensión "Live Server" para Visual Studio Code.
 
 ## Licencia
 
@@ -51,7 +60,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## Contacto
 
-Para preguntas o comentarios, por favor abre un issue en este repositorio de GitHub.
+Para preguntas, comentarios o reportar problemas, por favor abre un issue en este repositorio de GitHub.
 
 ---
 
