@@ -32,6 +32,23 @@ Estos retrasos se contrastan con los plazos legales establecidos en la Ley Orgá
 - AOS (Animate On Scroll library para animaciones)
 - Google Analytics (para seguimiento de usuarios)
 
+## Estructura del Proyecto
+
+```text
+retardo_cne/
+├── assets/
+│   ├── css/
+│   │   └── main.css
+│   └── js/
+│       └── main.js
+├── favicon.ico
+├── index.html
+├── lighthouserc.json
+├── package-lock.json
+├── package.json
+└── README.md
+```
+
 ## Cómo Contribuir
 
 Las contribuciones son bienvenidas. Si deseas contribuir al proyecto:
