@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "color-hex-length": "long",
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "selector-id-pattern": null,
+    "media-feature-range-notation": null,
+    "rule-empty-line-before": null,
+    "property-no-deprecated": null
+  }
+}
