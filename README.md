@@ -52,6 +52,13 @@ Para ejecutar este proyecto localmente:
 2. Navega al directorio del proyecto: `cd retardo_cne`
 3. Abre el archivo `index.html` en tu navegador web.
 
+### Desarrollo
+
+1. Instala las dependencias: `npm install`.
+2. Ejecuta los linters: `npm run lint`.
+3. Formatea el código: `npm run format`.
+4. Ejecuta Lighthouse CI: `npm run lighthouse` (requiere Google Chrome).
+
 Nota: Debido a las restricciones de seguridad de CORS, es posible que necesites un servidor local para probar completamente todas las funcionalidades. Puedes usar herramientas como `http-server` para Node.js o la extensión "Live Server" para Visual Studio Code.
 
 ## Licencia

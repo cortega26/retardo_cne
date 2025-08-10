@@ -1,0 +1,28 @@
+{
+  "name": "retardo_cne",
+  "version": "1.0.0",
+  "description": "Este proyecto es una página web que monitorea y visualiza los retrasos en el proceso electoral de las Elecciones Presidenciales de Venezuela 2024, específicamente enfocándose en las infracciones legales cometidas por el Consejo Nacional Electoral (CNE).",
+  "main": "script.js",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:css": "stylelint '**/*.css'",
+    "lint": "npm run lint:js && npm run lint:css",
+    "format": "prettier --write '**/*.{js,css,html,md,json}'",
+    "lighthouse": "lhci autorun"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "@lhci/cli": "^0.13.0",
+    "lighthouse": "^12.8.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-order": "^7.0.0"
+  }
+}
