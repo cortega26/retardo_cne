@@ -67,6 +67,8 @@ h3 {
 
 h1 {
   font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 h2 {
@@ -91,14 +93,11 @@ html {
 }
 
 header {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
-  color: var(--color-counter-bg);
+  background-color: var(--color-background);
+  color: var(--color-text);
   text-align: center;
   padding: var(--spacing-lg) var(--spacing-md);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 main {
@@ -343,21 +342,6 @@ footer p {
 :focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
-}
-
-.skip-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
-  background: var(--color-primary);
-  color: var(--color-counter-bg);
-  padding: var(--spacing-sm);
-  z-index: 100;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
