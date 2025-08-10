@@ -2,7 +2,7 @@
   "name": "retardo_cne",
   "version": "1.0.0",
   "description": "Este proyecto es una página web que monitorea y visualiza los retrasos en el proceso electoral de las Elecciones Presidenciales de Venezuela 2024, específicamente enfocándose en las infracciones legales cometidas por el Consejo Nacional Electoral (CNE).",
-  "main": "script.js",
+  "main": "assets/js/main.js",
   "scripts": {
     "lint:js": "eslint .",
     "lint:css": "stylelint '**/*.css'",
