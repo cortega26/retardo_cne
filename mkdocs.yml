@@ -1,0 +1,41 @@
+
+site_name: Retardo CNE — Irregularidades Elecciones 2024
+site_description: Dossier técnico y legal de irregularidades del CNE (Venezuela) en la elección presidencial 2024.
+site_url: https://cortega26.github.io/retardo_cne/
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+plugins:
+  - search
+  - awesome-pages
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+nav:
+  - Inicio: index.md
+  - Irregularidades: irregularidades.md
+  - Evidencia y fuentes: evidencia.md
+  - Preguntas frecuentes: faq.md
+  - Metodología y notas legales: metodologia.md
