@@ -192,4 +192,29 @@ window.addEventListener('load', () => {
   } else {
     console.log('Google Analytics (gtag) is available');
   }
+
+  // 2. Legal Highlighter Observer
+  const highlighterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Disconnect after activating once intended? 
+        // Keep looking if user scrolls back up? 
+        // Usually standard is fire once.
+        highlighterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1.0 });
+
+  const highlights = document.querySelectorAll('.highlight-text');
+  highlights.forEach(el => highlighterObserver.observe(el));
+});
+
+// 3. The "Tab Signal" (Visibility API)
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    document.title = "⚠️ Tiempo Agotado - CNE Venezuela";
+  } else {
+    document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
+  }
 });
