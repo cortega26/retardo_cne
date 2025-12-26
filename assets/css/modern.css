@@ -97,10 +97,11 @@ a {
 }
 
 /* Navigation - Glassmorphism */
+/* Navigation - Premium Glassmorphism */
 .navbar {
   background: var(--navbar-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--navbar-border);
   height: var(--nav-height);
   display: flex;
@@ -108,40 +109,73 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .navbar-brand {
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
   color: var(--text-primary) !important;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
 }
 
 .nav-link {
   color: var(--text-secondary) !important;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: var(--text-accent) !important;
 }
 
+/* Premium Dropdowns */
 .dropdown-menu {
   background-color: var(--bg-card);
   border: 1px solid var(--navbar-border);
   box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  margin-top: 0.5rem !important;
+  /* Spacing from nav */
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-item {
   color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  /* Inner radius */
+  transition: all 0.2s ease;
 }
 
 .dropdown-item:hover {
   background-color: var(--bg-card-hover);
   color: var(--text-primary);
+  transform: translateX(4px);
+  /* Subtle movement */
 }
 
 /* Hero Section */
@@ -169,6 +203,7 @@ header h1 {
 
 body.dark-mode header h1 {
   background: linear-gradient(to right, #ffffff, #94a3b8);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -460,9 +495,7 @@ body.dark-mode .social-icons .btn {
     font-size: 2rem;
   }
 
-  .counter {
-    /* Don't force font size here, let media query above handle it */
-  }
+
 }
 
 /* Footer style to match */
@@ -493,4 +526,368 @@ body.dark-mode footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* --- Strategic Audit Styles --- */
+
+/* Mission Statement - Manifesto Style */
+.mission-statement .lead {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  opacity: 0.9;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* Violation Status Badge */
+.violation-status {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.violation-status .badge {
+  background-color: var(--color-danger) !important;
+  color: #fff;
+  padding: 0.6em 1em;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  border-radius: 2px;
+  /* More rectangular/stamp-like */
+  box-shadow: 0 4px 6px rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* International Validation Section */
+.international-validation {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.international-validation .card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--navbar-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius-md);
+}
+
+.international-validation .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--text-secondary);
+}
+
+.international-validation .card-title {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.international-validation .card-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  /* Ensure text takes up space for alignment */
+}
+
+/* Icon Styling */
+.international-validation .text-primary {
+  color: var(--text-accent) !important;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.international-validation .card:hover .text-primary {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+.international-validation .btn-outline-dark {
+  border-color: var(--navbar-border);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+}
+
+.international-validation .btn-outline-dark:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-card);
+  border-color: var(--text-primary);
+}
+
+body.dark-mode .international-validation .btn-outline-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .international-validation .btn-outline-dark:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Compliance Visualizer (Overflow Bar) */
+.compliance-visualizer {
+  width: 100%;
+  max-width: 80%;
+}
+
+.compliance-visualizer .progress {
+  background-color: var(--bg-body);
+  border-radius: 4px;
+  overflow: visible;
+  /* Allow tooltips or popouts if needed */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar.bg-success {
+  background-color: var(--color-success) !important;
+  position: relative;
+}
+
+/* Add a little tick mark to separate the two zones visually */
+.progress-bar.bg-success::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  bottom: -2px;
+  width: 2px;
+  background-color: white;
+  z-index: 2;
+}
+
+.progress-bar.bg-danger {
+  background-color: var(--color-danger) !important;
+  box-shadow: 0 0 10px var(--color-danger-glow);
+}
+
+/* Organic Pulse Animation */
+@keyframes organicPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.status-dot {
+  /* Override existing if needed */
+  animation: organicPulse 2s ease-in-out infinite alternate !important;
+}
+
+/* Ensure the striped animation is smooth */
+.progress-bar-animated {
+  animation-duration: 3s;
+}
+
+/* "Acta" Watermark (Ruled Paper Texture) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  /* Subtle ruled paper lines */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 100% 2rem;
+  /* Line height */
+  opacity: 1;
+}
+
+body.dark-mode::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Fix Visibility of Compliance Labels in Dark Mode */
+.compliance-visualizer .text-muted {
+  color: var(--text-secondary) !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Timeline Styling */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+body.dark-mode .timeline::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Container around content */
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* The circles on the timeline */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: var(--bg-card);
+  border: 4px solid var(--text-accent);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 18px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--bg-card);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--bg-card);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 18px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--bg-card);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--bg-card) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -10px;
+}
+
+/* The actual content */
+.timeline-item .content {
+  padding: 20px 30px;
+  background-color: var(--bg-card);
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--navbar-border);
+}
+
+.timeline-item .date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Media queries - Responsive timeline on smaller screens */
+@media screen and (max-width: 600px) {
+
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .timeline-item::after {
+    left: 21px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+
+  /* Arrows pointing left (from content to line) */
+  .left::before,
+  .right::before {
+    right: auto;
+    left: 60px;
+    border: medium solid var(--bg-card);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--bg-card) transparent transparent;
+  }
 }
