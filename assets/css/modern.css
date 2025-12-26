@@ -1,0 +1,496 @@
+/* modern.css - Premium Dashboard Design for CNE Monitor */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap');
+
+/* CSS Reset & Variables */
+:root {
+  /* LIGHT MODE (Default) - Clean Professional Slate */
+  --bg-body: #f1f5f9;
+  /* Light Slate Gray */
+  --bg-card: #ffffff;
+  /* Pure White */
+  --bg-card-hover: #f8fafc;
+  /* Very light gray */
+
+  --text-primary: #0f172a;
+  /* Dark Slate for text */
+  --text-secondary: #64748b;
+  /* Muted Slate */
+  --text-accent: #0284c7;
+  /* Sky Blue */
+
+  --color-danger: #dc2626;
+  /* Deep Red */
+  --color-danger-glow: rgba(220, 38, 38, 0.2);
+  --color-warning: #d97706;
+  /* Amber */
+  --color-success: #059669;
+  /* Emerald */
+
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --navbar-border: rgba(0, 0, 0, 0.05);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+
+  /* Spacing & Layout */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 15px var(--color-danger-glow);
+
+  --nav-height: 70px;
+}
+
+/* DARK MODE OVERRIDES */
+body.dark-mode {
+  --bg-body: #0f172a;
+  /* Very dark slate */
+  --bg-card: #1e293b;
+  /* Lighter slate for cards */
+  --bg-card-hover: #334155;
+  /* Interactive state */
+
+  --text-primary: #f8fafc;
+  /* White/Off-white */
+  --text-secondary: #94a3b8;
+  /* Muted slate text */
+  --text-accent: #38bdf8;
+  /* Bright Sky Blue */
+
+  --color-danger: #ef4444;
+  /* Vivid Red */
+  --color-danger-glow: rgba(239, 68, 68, 0.4);
+
+  --navbar-bg: rgba(15, 23, 42, 0.85);
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/* Navigation - Glassmorphism */
+.navbar {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--navbar-border);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary) !important;
+  font-size: 1.25rem;
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--text-accent) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--bg-card);
+  border: 1px solid var(--navbar-border);
+  box-shadow: var(--shadow-card);
+}
+
+.dropdown-item {
+  color: var(--text-secondary);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* Hero Section */
+header {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  /* Dynamic gradient based on theme */
+  background: radial-gradient(circle at 50% 0%, var(--bg-card) 0%, var(--bg-body) 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode header {
+  background: radial-gradient(circle at 50% 0%, #1e3a8a 0%, var(--bg-body) 70%);
+}
+
+header h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  /* Default dark Text for light mode */
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+body.dark-mode header h1 {
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header h2 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 50px;
+  color: var(--color-danger);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-danger);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Main Cards Container */
+#main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Exact 50/50 split on desktop */
+  gap: 2rem;
+  width: 100%;
+  max-width: 70%;
+  /* Strict 8/12 column equivalent */
+  margin: 0 auto;
+  /* Center the container */
+  padding: 0 2rem 4rem;
+  /* Horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Delay Cards */
+.counter-container {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Lighter border for light mode */
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  /* Increased padding slightly for balance */
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centered content */
+  text-align: center;
+  /* Centered text */
+}
+
+body.dark-mode .counter-container {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.counter-container:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-card-hover);
+}
+
+body.dark-mode .counter-container:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Red line removed per user request */
+
+.counter-container h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  /* vertically center the title text in its fixed height */
+}
+
+/* Digital Counter Styling */
+.counter {
+  display: flex;
+  gap: 1.5rem;
+  /* Spacing between units */
+  flex-wrap: nowrap;
+  /* Force single line */
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center;
+  /* Center the counters in the card */
+}
+
+/* Target the span wrappers created by JS (days, hours, etc) */
+.counter>span {
+  display: flex;
+  flex-direction: column-reverse;
+  /* Put label (text) BELOW number */
+  align-items: center;
+  /* Center label and number */
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  /* Smaller label */
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+/* Target the number inside the span */
+.counter .number {
+  font-size: 2.5rem;
+  /* Adjusted for better fit */
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .counter {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .counter>span {
+    flex-basis: 40%;
+  }
+
+  .counter .number {
+    font-size: 2.5rem;
+  }
+}
+
+.legal-reference {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+body.dark-mode .legal-reference {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0.5;
+}
+
+/* Share Section */
+.share-container {
+  grid-column: 1 / -1;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-card);
+}
+
+body.dark-mode .share-container {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.share-container h4 {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons .btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.05);
+  /* Light mode bg */
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .social-icons .btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons .btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: var(--color-primary-brand, #fff);
+  /* Fallback */
+  color: white;
+  /* Inverse on hover for pop */
+}
+
+/* specific hover colors */
+.btn-twitter:hover {
+  background: #000000 !important;
+  color: white !important;
+}
+
+.btn-facebook:hover {
+  background: #1877f2 !important;
+  color: white !important;
+}
+
+.btn-whatsapp:hover {
+  background: #25d366 !important;
+  color: white !important;
+}
+
+.btn-telegram:hover {
+  background: #0088cc !important;
+  color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #main-content {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .counter {
+    /* Don't force font size here, let media query above handle it */
+  }
+}
+
+/* Footer style to match */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #94a3b8;
+  /* Always muted slate */
+  font-size: 0.85rem;
+  background: #0f172a;
+  /* Always dark for contrast */
+  margin-top: auto;
+}
+
+body.dark-mode footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #020617;
+  /* Even darker in dark mode */
+}
+
+/* Preserve accessible hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
