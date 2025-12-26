@@ -210,11 +210,269 @@ window.addEventListener('load', () => {
   highlights.forEach(el => highlighterObserver.observe(el));
 });
 
-// 3. The "Tab Signal" (Visibility API)
+// --- Internationalization (i18n) ---
+const translations = {
+  es: {
+    // Nav
+    nav_home: "INICIO",
+    nav_analysis: "ANÁLISIS",
+    nav_analysis_math: "Análisis Matemático",
+    nav_analysis_irregularities: "Irregularidades del proceso",
+    nav_background: "ANTECEDENTES",
+    nav_background_2015: "2015: La última victoria",
+    nav_background_2017: "2017: La Constituyente",
+    nav_background_power: "2018: La doctrina de no entregar el poder",
+    nav_cne_archive: "CNE (ARCHIVE.ORG)",
+    nav_cne_mirror: "Sitio Oficial (Espejo)",
+    nav_cne_schedule: "Cronograma Electoral",
+    nav_international: "INTERNACIONAL",
+    org_carter: "Centro Carter",
+    org_oas_sec: "Sec. Gral. OEA",
+    org_eu: "Unión Europea",
+    org_un: "Prensa ONU",
+    nav_verification: "VERIFICACIÓN",
+    nav_verify_lewis: "Desmintiendo a Lewis & Thompson",
+    nav_verify_hack: "Análisis del supuesto \"Hackeo\"",
+    nav_legal_resources: "RECURSOS LEGALES",
+    nav_resource_auth: "Autenticidad de las Actas",
+    nav_resource_lopre: "Ley Orgánica de Procesos Electorales",
+    nav_resource_barbados: "Acuerdo de Barbados",
+    nav_results: "RESULTADOS",
+    nav_results_actas: "Resultados con Venezuela",
+    nav_results_macedonia: "MacedoniaDelNorte",
+
+
+    // Header
+    status_live: "EN VIVO",
+    hero_title: "Observatorio de Cumplimiento Legal",
+    hero_subtitle: "Vigilando el respeto a la voluntad popular en tiempo real",
+
+    // Mission
+    mission_text: "La legalidad no es opcional. El Consejo Nacional Electoral (CNE) tiene plazos constitucionales y legales taxativos que no han sido cumplidos. Este observatorio documenta, en tiempo real, la violación sistemática de la <strong class='highlight-text'>Ley Orgánica de Procesos Electorales (LOPRE)</strong>, socavando la transparencia y la soberanía popular.",
+
+    // Counters
+    counter1_title: "Retraso en la totalización y escrutinio:",
+    status_label: "ESTADO:",
+    violation_1: "VIOLADO DESDE EL 30/07/2024",
+    limit_48h: "Límite Legal (48h)",
+    current_delay: "Retraso Actual",
+    legal_ref_1: "Art. 146 LOPRE: Plazo máximo legal de 48 horas",
+
+    counter2_title: "Retraso en la publicación en Gaceta Electoral:",
+    violation_2: "VIOLADO DESDE EL 29/08/2024",
+    limit_30d: "Límite Legal (30 días)",
+    legal_ref_2: "Art. 155 LOPRE: Plazo máximo legal de 30 días",
+
+    // Timeline
+    timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
+    timeline_1_date: "28 de Julio - 10:00 PM",
+    timeline_1_title: "Paralización de Transmisión",
+    timeline_1_text: "El CNE detiene inexplicablemente la transmisión de datos cuando la oposición reportaba una ventaja irreversible.",
+    timeline_2_date: "29 de Julio - 12:00 AM",
+    timeline_2_title: "Apagón Digital",
+    timeline_2_text: "La página web oficial del CNE sale de línea. Hasta la fecha, no ha sido restablecida con los resultados mesa por mesa.",
+    timeline_3_date: "30 de Julio",
+    timeline_3_title: "Primer Plazo Violado",
+    timeline_3_text: "Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se publican actas.",
+    timeline_4_date: "2 de Agosto",
+    timeline_4_title: "Boletín sin Sustento",
+    timeline_4_text: "El CNE emite un segundo boletín adjudicando la victoria sin presentar una sola acta de escrutinio que lo valide.",
+    timeline_5_date: "29 de Agosto",
+    timeline_5_title: "Segundo Plazo Violado",
+    timeline_5_text: "Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta Electoral. El incumplimiento se consuma definitivamente.",
+
+    // International
+    international_title: "La Comunidad Internacional Confirma el Fraude",
+    card_carter_title: "Centro Carter",
+    card_carter_text: "\"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática.\"",
+    btn_read_report: "Leer Informe",
+    card_un_title: "Panel Expertos ONU",
+    card_un_text: "\"El proceso de gestión de resultados por parte del CNE no cumplió con las medidas básicas de transparencia e integridad.\"",
+    btn_read_statement: "Leer Comunicado",
+    card_eu_title: "Unión Europea",
+    card_eu_text: "\"Sin pruebas que las respalden, los resultados publicados el 2 de agosto no pueden ser reconocidos.\"",
+    btn_view_declaration: "Ver Declaración",
+    card_oas_title: "OEA",
+    card_oas_text: "\"El régimen aplicó un esquema represivo complementado por acciones tendientes a distorsionar completamente el resultado electoral, dejándolo a la manipulación más aberrante.\"",
+    btn_view_communique: "Ver Comunicado",
+
+    // Share & Footer
+    share_title: "Rompe la Censura: Difunde la Verdad",
+    footer_rights: "Observatorio Electoral Ciudadano. Este sitio no está afiliado al CNE.",
+    footer_opensource: "Código Abierto / Open Source"
+  },
+  en: {
+    // Nav
+    nav_home: "HOME",
+    nav_analysis: "ANALYSIS",
+    nav_analysis_math: "Mathematical Analysis",
+    nav_analysis_irregularities: "Process Irregularities",
+    nav_background: "BACKGROUND",
+    nav_background_2015: "2015: The Last Victory",
+    nav_background_2017: "2017: The Constituent Assembly",
+    nav_background_power: "2018: The Doctrine of Power Retention",
+    nav_cne_archive: "CNE (ARCHIVE.ORG)",
+    nav_cne_mirror: "Official Site (Mirror)",
+    nav_cne_schedule: "Electoral Schedule",
+    nav_international: "INTERNATIONAL",
+    org_carter: "The Carter Center",
+    org_oas_sec: "OAS Gen. Sec.",
+    org_eu: "European Union",
+    org_un: "UN Press",
+    nav_verification: "VERIFICATION",
+    nav_verify_lewis: "Debunking Lewis & Thompson",
+    nav_verify_hack: "Analysis of the alleged \"Hack\"",
+    nav_legal_resources: "LEGAL RESOURCES",
+    nav_resource_auth: "Authenticity of the Minutes (Actas)",
+    nav_resource_lopre: "Organic Law of Electoral Processes",
+    nav_resource_barbados: "Barbados Agreement",
+    nav_results: "RESULTS",
+    nav_results_actas: "Resultados con Venezuela",
+    nav_results_macedonia: "MacedoniaDelNorte",
+
+    // Header
+    status_live: "LIVE",
+    hero_title: "Legal Compliance Observatory",
+    hero_subtitle: "Monitoring respect for the popular will in real time",
+
+    // Mission
+    mission_text: "Legality is not optional. The National Electoral Council (CNE) has strict constitutional and legal deadlines that have not been met. This observatory documents, in real time, the systematic violation of the <strong class='highlight-text'>Organic Law of Electoral Processes (LOPRE)</strong>, undermining transparency and popular sovereignty.",
+
+    // Counters
+    counter1_title: "Delay in Totalization and Scrutiny:",
+    status_label: "STATUS:",
+    violation_1: "VIOLATED SINCE 07/30/2024",
+    limit_48h: "Legal Limit (48h)",
+    current_delay: "Current Delay",
+    legal_ref_1: "Art. 146 LOPRE: Maximum legal deadline of 48 hours",
+
+    counter2_title: "Delay in Publication in Electoral Gazette:",
+    violation_2: "VIOLATED SINCE 08/29/2024",
+    limit_30d: "Legal Limit (30 days)",
+    legal_ref_2: "Art. 155 LOPRE: Maximum legal deadline of 30 days",
+
+    // Timeline
+    timeline_title: "Chronology of the Constitutional Breakdown",
+    timeline_1_date: "July 28 - 10:00 PM",
+    timeline_1_title: "Transmission Halted",
+    timeline_1_text: "The CNE inexplicably halts data transmission just as the opposition was reporting an irreversible lead.",
+    timeline_2_date: "July 29 - 12:00 AM",
+    timeline_2_title: "Digital Blackout",
+    timeline_2_text: "The official CNE website goes offline. To date, it has not been restored with precinct-level results.",
+    timeline_3_date: "July 30",
+    timeline_3_title: "First Deadline Violated",
+    timeline_3_text: "The 48-hour legal deadline (Art. 146 LOPRE) for totalization expires. No official minutes are published.",
+    timeline_4_date: "August 2",
+    timeline_4_title: "Baseless Bulletin",
+    timeline_4_text: "The CNE issues a second bulletin awarding the victory without presenting a single scrutiny minute to validate it.",
+    timeline_5_date: "August 29",
+    timeline_5_title: "Second Deadline Violated",
+    timeline_5_text: "The 30-day deadline (Art. 155 LOPRE) for publication in the Electoral Gazette expires. The breach is definitively consummated.",
+
+    // International
+    international_title: "The International Community Confirms the Fraud",
+    card_carter_title: "The Carter Center",
+    card_carter_text: "\"Venezuela's election did not meet international standards and cannot be considered democratic.\"",
+    btn_read_report: "Read Report",
+    card_un_title: "UN Panel of Experts",
+    card_un_text: "\"The CNE's results management process fell short of the basic measures of transparency and integrity.\"",
+    btn_read_statement: "Read Statement",
+    card_eu_title: "European Union",
+    card_eu_text: "\"Without evidence to support them, the results published on August 2nd cannot be recognized.\"",
+    btn_view_declaration: "View Declaration",
+    card_oas_title: "OAS",
+    card_oas_text: "\"The regime applied a repressive scheme complemented by actions tending to completely distort the electoral result, leaving it to the most aberrant manipulation.\"",
+    btn_view_communique: "View Communiqué",
+
+    // Share & Footer
+    share_title: "Break the Censorship: Spread the Truth",
+    footer_rights: "Citizen Electoral Observatory. This site is not affiliated with the CNE.",
+    footer_opensource: "Open Source"
+  }
+};
+
+let currentLang = localStorage.getItem('site_lang') || 'es';
+
+function updateLanguage(lang) {
+  // Update all marked elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      if (key === 'mission_text') {
+        el.innerHTML = translations[lang][key];
+        // Re-observe highlight if needed, or just let it exist
+        setTimeout(() => {
+          const newHighlight = el.querySelector('.highlight-text');
+          if (newHighlight) {
+            // Trigger observer manually or re-observe?
+            // Simple hack: add 'active' class after a tiny delay to ensure animation plays if visible
+            // But better to rely on existing observer if it catches dynamic nodes? 
+            // The existing observer in window 'load' only targeted initial nodes.
+            // We need to re-add it.
+            reObserveHighlighter(newHighlight);
+          }
+        }, 50);
+      } else if (key.startsWith('org_')) {
+        // For inline spans we just set textContent
+        el.textContent = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    }
+  });
+
+  // Update Toggle Button
+  const toggleBtn = document.getElementById('toggleLang');
+  if (toggleBtn) {
+    toggleBtn.textContent = lang === 'es' ? 'ES' : 'EN';
+  }
+
+  // Update Title
+  if (lang === 'en') {
+    document.title = "Legal Compliance Observatory - CNE Venezuela";
+  } else {
+    document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
+  }
+
+  localStorage.setItem('site_lang', lang);
+  currentLang = lang;
+}
+
+function reObserveHighlighter(element) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1.0 });
+  observer.observe(element);
+}
+
+// 3. Updated "Tab Signal" & Init
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
     document.title = "⚠️ Tiempo Agotado - CNE Venezuela";
   } else {
-    document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
+    // Restore correct title based on language
+    if (localStorage.getItem('site_lang') === 'en') {
+      document.title = "Legal Compliance Observatory - CNE Venezuela";
+    } else {
+      document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
+    }
+  }
+});
+
+// Init Language Logic
+document.addEventListener('DOMContentLoaded', () => {
+  updateLanguage(currentLang);
+
+  const langBtn = document.getElementById('toggleLang');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      updateLanguage(newLang);
+    });
   }
 });
