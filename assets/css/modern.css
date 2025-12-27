@@ -1089,3 +1089,25 @@ body.dark-mode .timeline::after {
     max-width: 95%;
   }
 }
+
+/* Toggle Button Visibility Fix */
+.navbar .btn-outline-light {
+  color: var(--text-secondary);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar .btn-outline-light:hover {
+  color: var(--text-primary);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .navbar .btn-outline-light {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .navbar .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
