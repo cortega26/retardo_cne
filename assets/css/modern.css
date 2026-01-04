@@ -548,12 +548,18 @@ body.dark-mode .social-icons .btn {
   }
 
   .counter {
-    gap: 1rem;
-    justify-content: space-evenly;
+    gap: 0.5rem;
+    /* Tighter gap for better fit */
+    justify-content: center;
+    flex-wrap: wrap !important;
   }
 
   .counter>span {
-    flex-basis: 45%;
+    flex: 0 0 45% !important;
+    /* Force 2 items per row */
+    width: 45%;
+    margin-bottom: 0.5rem;
+    /* Space between rows */
   }
 
   .counter .number {
@@ -593,6 +599,20 @@ body.dark-mode .social-icons .btn {
 
   .compliance-visualizer {
     max-width: 100%;
+  }
+
+  /* Fix for widely protruding badge on mobile */
+  .violation-status .badge {
+    white-space: normal;
+    /* Allow text wrapping */
+    font-size: 0.7rem;
+    /* Even smaller for safety */
+    display: inline-block;
+    max-width: 100%;
+    line-height: 1.2;
+    padding: 0.5em 0.8em;
+    transform: rotate(-1deg);
+    /* Reduce rotation to save horizontal space */
   }
 }
 
