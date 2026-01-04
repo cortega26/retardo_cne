@@ -28,6 +28,11 @@ Este repo está listo para publicarse con **MkDocs Material** en GitHub Pages.
     └── mkdocs.yml            # CI para desplegar con gh-pages
 ```
 
+## Configuración
+| name | type | default | required | description |
+| --- | --- | --- | --- | --- |
+| N/A | N/A | N/A | No | No se requieren ajustes de configuración para el layout móvil. |
+
 ## Contribuir
 - Toda afirmación debe estar respaldada por **fuente primaria o secundaria confiable** y **fecha exacta**.
 - Cita artículos de ley (LOPRE y reglamentos) cuando se alegue violación normativa.
