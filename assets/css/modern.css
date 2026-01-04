@@ -137,7 +137,48 @@ a {
   color: var(--text-accent) !important;
 }
 
-/* Premium Dropdowns */
+/* Custom Toggler Styling */
+.custom-toggler {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  /* Slightly rounded */
+  transition: background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  /* Spacing between bars */
+}
+
+.custom-toggler:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+.toggler-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  /* Use primary text color for contrast */
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Adjust for dark mode if needed, though text-primary handles most */
+body.dark-mode .toggler-icon {
+  background-color: #fff;
+}
+
 .dropdown-menu {
   background-color: var(--bg-card);
   border: 1px solid var(--navbar-border);
