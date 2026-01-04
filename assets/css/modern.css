@@ -511,6 +511,91 @@ body.dark-mode .social-icons .btn {
 
 }
 
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem !important;
+  }
+
+  header {
+    padding: 3rem 1rem 2rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header h2 {
+    font-size: 1rem;
+  }
+
+  #main-content {
+    max-width: 100%;
+    padding: 0 1rem 2rem;
+  }
+
+  .counter-container {
+    padding: 1.5rem;
+  }
+
+  .counter {
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+
+  .counter>span {
+    flex-basis: 45%;
+  }
+
+  .counter .number {
+    font-size: 2rem;
+  }
+
+  .share-container {
+    padding: 1.5rem;
+  }
+
+  .social-icons {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-icons .btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .mission-statement .lead {
+    font-size: 1rem;
+  }
+
+  .timeline {
+    padding: 2rem 1rem;
+  }
+
+  .timeline-item .content {
+    padding: 1rem;
+  }
+
+  .international-validation .card {
+    margin-bottom: 1rem;
+  }
+
+  .compliance-visualizer {
+    max-width: 100%;
+  }
+}
+
 /* Footer style to match */
 footer {
   text-align: center;
