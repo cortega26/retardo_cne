@@ -341,12 +341,25 @@ body.dark-mode .counter-container:hover {
   align-items: center;
   /* Center label and number */
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  /* Slightly smaller label to prevent overlap */
   /* Smaller label */
   text-transform: uppercase;
   color: var(--text-secondary);
   letter-spacing: 0.05em;
   flex: 1;
+  min-width: 0;
+  /* Allow flex shrinking */
+}
+
+/* Visual Compliance Bar Mobile Tweaks */
+@media (max-width: 450px) {
+  .compliance-visualizer .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Target the number inside the span */
@@ -592,11 +605,13 @@ body.dark-mode footer {
 }
 
 .international-validation .card-text {
-  font-style: italic;
+  font-style: normal;
+  /* Removed strict italic for readability */
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  /* Increased size */
   /* Slightly larger for readability */
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
   flex-grow: 1;
   /* Ensure text pushes button down */
@@ -772,35 +787,41 @@ body.dark-mode .stamp-animation {
   /* Multiply doesn't work well on dark */
 }
 
-/* 2. Legal Highlighter Animation */
+/* 2. Legal Highlighter Animation - Refactored for Wrapping */
 .highlight-text {
   position: relative;
   z-index: 1;
-  white-space: nowrap;
+  /* Allow natural wrapping */
+  display: inline;
+
+  /* Create the highlight using background gradient */
+  background-image: linear-gradient(rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  /* Animate the background width */
+  transition: background-size 1s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Slight rotation for the marker effect */
+  /* Note: Rotation breaks inline wrapping flow slightly, so we apply it carefully or skip on mobile if needed. 
+     For robust wrapping, we stick to background-size. */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 2px;
 }
 
+/* Remove old pseudo-element approach */
 .highlight-text::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: -2px;
-  right: 102%;
-  /* Start with 0 width */
-  bottom: 0px;
-  background-color: rgba(255, 255, 0, 0.5);
-  z-index: -1;
-  transform: rotate(-1deg);
-  transition: right 1s cubic-bezier(0.25, 1, 0.5, 1);
+  content: none;
 }
 
-.highlight-text.active::before {
-  right: -2px;
-  /* Animate to full width */
+.highlight-text.active {
+  background-size: 100% 100%;
 }
 
-body.dark-mode .highlight-text::before {
-  background-color: rgba(255, 255, 0, 0.2);
-  /* Subtler on dark */
+body.dark-mode .highlight-text {
+  background-image: linear-gradient(rgba(255, 255, 0, 0.2), rgba(255, 255, 0, 0.2));
 }
 
 /* Fix Visibility of Compliance Labels in Dark Mode */
@@ -839,13 +860,16 @@ body.dark-mode .timeline::after {
 
 /* Timeline Item Container */
 .timeline-item {
-  padding: 10px 40px;
+  padding: 10px 15px;
+  /* Reduced mobile padding */
   position: relative;
   background-color: inherit;
   width: 100%;
-  /* Mobile default */
-  padding-left: 70px;
-  padding-right: 25px;
+  /* Mobile default - Adjusted */
+  padding-left: 50px;
+  /* Reduced from 70px */
+  padding-right: 15px;
+  /* Reduced right padding */
   box-sizing: border-box;
 }
 
@@ -853,13 +877,15 @@ body.dark-mode .timeline::after {
 .timeline-item::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 21px;
+  width: 16px;
+  /* Slightly smaller dot */
+  height: 16px;
+  left: 25px;
+  /* Adjusted for new left padding (31px line - half dot approx) */
   /* Mobile default */
   background-color: var(--bg-card);
-  border: 4px solid var(--text-accent);
-  top: 15px;
+  border: 3px solid var(--text-accent);
+  top: 18px;
   border-radius: 50%;
   z-index: 10;
 }
@@ -881,10 +907,12 @@ body.dark-mode .timeline::after {
   top: 18px;
   width: 0;
   z-index: 1;
-  left: 60px;
+  left: 42px;
+  /* Adjusted for new padding */
   /* Mobile default */
   border: medium solid var(--bg-card);
-  border-width: 10px 10px 10px 0;
+  border-width: 8px 8px 8px 0;
+  /* Smaller arrow */
   border-color: transparent var(--bg-card) transparent transparent;
 }
 
