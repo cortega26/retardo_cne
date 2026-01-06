@@ -256,6 +256,7 @@ const translations = {
 
     // Header
     status_live: "EN VIVO",
+    hero_country: "Venezuela | Elecciones Presidenciales 2024",
     hero_title: "Observatorio de Cumplimiento Legal",
     hero_subtitle: "Vigilando el respeto a la voluntad popular en tiempo real",
 
@@ -356,6 +357,7 @@ const translations = {
 
     // Header
     status_live: "LIVE",
+    hero_country: "Venezuela | Presidential Election 2024",
     hero_title: "Legal Compliance Observatory",
     hero_subtitle: "Monitoring respect for the popular will in real time",
 

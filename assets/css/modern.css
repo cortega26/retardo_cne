@@ -258,6 +258,57 @@ header h2 {
   margin-bottom: 2rem;
 }
 
+/* Country Tag */
+.country-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  background: rgba(2, 132, 199, 0.08);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.flag {
+  width: 22px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.flag-venezuela {
+  background: linear-gradient(
+    to bottom,
+    #f8e71c 0%,
+    #f8e71c 33.33%,
+    #1f4fb2 33.33%,
+    #1f4fb2 66.66%,
+    #d11a2a 66.66%,
+    #d11a2a 100%
+  );
+}
+
+body.dark-mode .country-tag {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+body.dark-mode .flag {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 /* Status Badge */
 .status-badge {
   display: inline-flex;
