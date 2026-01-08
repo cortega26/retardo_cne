@@ -26,12 +26,16 @@ const CNEMonitor = (() => {
       counterIntervals.delete(elementId);
     }
 
-    counter.innerHTML = '';
+    counter.textContent = '';
     const spans = ['days', 'hours', 'minutes', 'seconds'].map((unit) => {
       const span = document.createElement('span');
       span.className = unit;
+      const numberSpan = document.createElement('span');
+      numberSpan.className = 'number';
+      const labelNode = document.createTextNode('');
+      span.append(numberSpan, labelNode);
       counter.appendChild(span);
-      return span;
+      return { span, numberSpan, labelNode };
     });
 
     function update() {
@@ -55,10 +59,14 @@ const CNEMonitor = (() => {
         ];
 
         units.forEach(({ value, singular, plural }, index) => {
-          const span = spans[index];
-          const newText = `<span class="number">${value}</span> ${value === 1 ? singular : plural}`;
-          if (span.innerHTML !== newText) {
-            span.innerHTML = newText;
+          const { numberSpan, labelNode } = spans[index];
+          const valueText = String(value);
+          const labelText = ` ${value === 1 ? singular : plural}`;
+          if (numberSpan.textContent !== valueText) {
+            numberSpan.textContent = valueText;
+          }
+          if (labelNode.textContent !== labelText) {
+            labelNode.textContent = labelText;
           }
         });
 
@@ -225,7 +233,12 @@ const translations = {
     hero_subtitle: "Vigilando el respeto a la voluntad popular en tiempo real",
 
     // Mission
-    mission_text: "La legalidad no es opcional. El Consejo Nacional Electoral (CNE) tiene plazos constitucionales y legales taxativos que no han sido cumplidos. Este observatorio documenta, en tiempo real, la violación sistemática de la <strong class='highlight-text'>Ley Orgánica de Procesos Electorales (LOPRE)</strong>, socavando la transparencia y la soberanía popular.",
+    mission_text: {
+      prefix:
+        "La legalidad no es opcional. El Consejo Nacional Electoral (CNE) tiene plazos constitucionales y legales taxativos que no han sido cumplidos. Este observatorio documenta, en tiempo real, la violación sistemática de la ",
+      highlight: "Ley Orgánica de Procesos Electorales (LOPRE)",
+      suffix: ", socavando la transparencia y la soberanía popular.",
+    },
 
     // Counters
     counter1_title: "Retraso en la totalización y escrutinio:",
@@ -340,7 +353,12 @@ const translations = {
     hero_subtitle: "Monitoring respect for the popular will in real time",
 
     // Mission
-    mission_text: "Legality is not optional. The National Electoral Council (CNE) has strict constitutional and legal deadlines that have not been met. This observatory documents, in real time, the systematic violation of the <strong class='highlight-text'>Organic Law of Electoral Processes (LOPRE)</strong>, undermining transparency and popular sovereignty.",
+    mission_text: {
+      prefix:
+        "Legality is not optional. The National Electoral Council (CNE) has strict constitutional and legal deadlines that have not been met. This observatory documents, in real time, the systematic violation of the ",
+      highlight: "Organic Law of Electoral Processes (LOPRE)",
+      suffix: ", undermining transparency and popular sovereignty.",
+    },
 
     // Counters
     counter1_title: "Delay in Totalization and Scrutiny:",
@@ -458,6 +476,25 @@ function observeHighlights(root = document) {
 const storedLang = localStorage.getItem('site_lang');
 let currentLang = getSafeLang(storedLang);
 
+function setMissionText(element, entry) {
+  if (!element) {
+    return;
+  }
+
+  if (!entry || typeof entry !== 'object') {
+    element.textContent = entry || '';
+    return;
+  }
+
+  element.textContent = '';
+  element.append(document.createTextNode(entry.prefix || ''));
+  const strong = document.createElement('strong');
+  strong.className = 'highlight-text';
+  strong.textContent = entry.highlight || '';
+  element.append(strong);
+  element.append(document.createTextNode(entry.suffix || ''));
+}
+
 function updateLanguage(lang) {
   const resolvedLang = getSafeLang(lang);
   const langTranslations = translations[resolvedLang];
@@ -472,7 +509,7 @@ function updateLanguage(lang) {
     }
 
     if (key === 'mission_text') {
-      el.innerHTML = langTranslations[key];
+      setMissionText(el, langTranslations[key]);
     } else if (key.startsWith('org_')) {
       // For inline spans we just set textContent
       el.textContent = langTranslations[key];
