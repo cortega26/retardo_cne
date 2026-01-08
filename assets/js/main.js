@@ -62,32 +62,8 @@ const CNEMonitor = (() => {
     console.log(`Counter ${elementId} update started`);
   }
 
-  // Simple ease-out quadratic for smooth animation
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      // Ease out quadratic: 1 - (1-t) * (1-t)
-      const easeProgress = 1 - (1 - progress) * (1 - progress);
-
-      obj.innerHTML = Math.floor(progress * (end - start) + start);
-
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        obj.innerHTML = end;
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
-
-  // We'll modify the update function to handle the initial animation later if needed,
-  // but for now, the existing logic runs continuously.
-  // To strictly animate "on load" from 0 to Current, we'd need to intercept the first render.
-  // Given the complexity of the current continuous update loop, adding a css-based fade-in or
-  // simple specific animation might be safer.
-  // Let's stick to the current robust logic but add a visual "entry" animation via CSS instead for safety.
+  // Animation function removed as it was unused and causing lint errors.
+  // If animation is needed in the future, it can be re-implemented.
 
   function toggleTheme() {
     console.log('Toggling theme');
