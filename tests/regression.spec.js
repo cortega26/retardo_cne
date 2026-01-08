@@ -77,4 +77,19 @@ test.describe('regression coverage', () => {
     expect(ogType).toBe('image/jpeg');
     expect(twitterImage).toContain('/assets/img/social-preview.jpg');
   });
+
+  test('organization logos load', async ({ page }) => {
+    await page.goto('/');
+
+    const logos = page.locator('.international-validation .org-logo');
+    await expect(logos).toHaveCount(4);
+
+    const sizes = await logos.evaluateAll((elements) =>
+      elements.map((el) => ({ src: el.getAttribute('src'), width: el.naturalWidth })),
+    );
+    sizes.forEach(({ src, width }) => {
+      expect(src).toBeTruthy();
+      expect(width).toBeGreaterThan(0);
+    });
+  });
 });

@@ -861,14 +861,25 @@ body.dark-mode footer {
   /* Ensure text pushes button down */
 }
 
-/* Ensure icons are consistent */
-.international-validation .text-primary {
-  color: var(--text-accent) !important;
+/* Ensure logos are consistent */
+.international-validation .org-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.international-validation .card:hover .text-primary {
-  transform: scale(1.1);
+.international-validation .org-logo {
+  height: 52px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.international-validation .card:hover .org-logo-wrap {
+  transform: scale(1.05);
   opacity: 1;
 }
 
