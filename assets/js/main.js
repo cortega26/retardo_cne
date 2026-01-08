@@ -267,6 +267,7 @@ const translations = {
     // Key claims
     key_claims_title: "Hechos clave verificables",
     key_claims_subtitle: "Cada afirmación cita norma y fuente.",
+    key_claims_impact: "Impacto: sin actas publicadas y auditorías completadas, los resultados no pueden verificarse de forma independiente.",
     key_claim_1_title: "Totalización fuera de plazo",
     key_claim_1_text: "El Art. 146 LOPRE fija un máximo de 48 horas para la totalización y el escrutinio.",
     key_claim_1_law: "Art. 146 LOPRE",
@@ -405,6 +406,7 @@ const translations = {
     // Key claims
     key_claims_title: "Key verifiable claims",
     key_claims_subtitle: "Each claim links a legal basis and a source.",
+    key_claims_impact: "Impact: without published actas and completed audits, results cannot be independently verified.",
     key_claim_1_title: "Totalization beyond deadline",
     key_claim_1_text: "Article 146 of LOPRE sets a maximum of 48 hours for totalization and scrutiny.",
     key_claim_1_law: "Article 146 LOPRE",

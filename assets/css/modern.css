@@ -828,6 +828,14 @@ body.dark-mode footer {
   font-size: 0.95rem;
 }
 
+.key-claims-impact {
+  color: var(--text-primary);
+  max-width: 60ch;
+  margin: 0.75rem auto 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .key-claim-card {
   background-color: var(--bg-card);
   border: 1px solid var(--navbar-border);
