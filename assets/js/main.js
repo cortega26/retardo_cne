@@ -251,16 +251,34 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Venezuela | Elecciones Presidenciales 2024",
-    hero_title: "Observatorio de Cumplimiento Legal",
-    hero_subtitle: "Vigilando el respeto a la voluntad popular en tiempo real",
+    hero_title: "Plazos legales incumplidos",
+    hero_subtitle: "Evidencia verificable sobre totalización, actas y auditorías del CNE",
 
     // Mission
     mission_text: {
       prefix:
-        "La legalidad no es opcional. El Consejo Nacional Electoral (CNE) tiene plazos constitucionales y legales taxativos que no han sido cumplidos. Este observatorio documenta, en tiempo real, la violación sistemática de la ",
+        "Este observatorio reúne hechos verificables sobre incumplimientos de plazos y obligaciones del CNE según la ",
       highlight: "Ley Orgánica de Procesos Electorales (LOPRE)",
-      suffix: ", socavando la transparencia y la soberanía popular.",
+      suffix: ". Cada punto enlaza norma y fuente primaria.",
     },
+    mission_proof_label: "Fuente primaria:",
+    mission_proof_link: "Sitio oficial del CNE (archivo)",
+
+    // Key claims
+    key_claims_title: "Hechos clave verificables",
+    key_claims_subtitle: "Cada afirmación cita norma y fuente.",
+    key_claim_1_title: "Totalización fuera de plazo",
+    key_claim_1_text: "El Art. 146 LOPRE fija un máximo de 48 horas para la totalización y el escrutinio.",
+    key_claim_1_law: "Art. 146 LOPRE",
+    key_claim_1_source: "CNE: totalización",
+    key_claim_2_title: "Gaceta Electoral fuera de plazo",
+    key_claim_2_text: "El Art. 155 LOPRE exige la publicación oficial en un máximo de 30 días.",
+    key_claim_2_law: "Art. 155 LOPRE",
+    key_claim_2_source: "CNE: cronograma electoral",
+    key_claim_3_title: "Auditorías post-electorales no realizadas",
+    key_claim_3_text: "La verificación post-electoral incluye auditorías técnicas previstas por el CNE.",
+    key_claim_3_law: "CNE: auditorías del sistema",
+    key_claim_3_source: "Reporte: Prensa Comunitaria",
 
     // Counters
     counter1_title: "Retraso en la totalización y escrutinio:",
@@ -371,16 +389,34 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Venezuela | Presidential Election 2024",
-    hero_title: "Legal Compliance Observatory",
-    hero_subtitle: "Monitoring respect for the popular will in real time",
+    hero_title: "Legal Deadlines Breached",
+    hero_subtitle: "Verifiable evidence on CNE totals, actas, and audits",
 
     // Mission
     mission_text: {
       prefix:
-        "Legality is not optional. The National Electoral Council (CNE) has strict constitutional and legal deadlines that have not been met. This observatory documents, in real time, the systematic violation of the ",
+        "This observatory compiles verifiable facts on missed deadlines and obligations under the ",
       highlight: "Organic Law of Electoral Processes (LOPRE)",
-      suffix: ", undermining transparency and popular sovereignty.",
+      suffix: ". Each point links the legal basis and a primary source.",
     },
+    mission_proof_label: "Primary source:",
+    mission_proof_link: "CNE official site (archive)",
+
+    // Key claims
+    key_claims_title: "Key verifiable claims",
+    key_claims_subtitle: "Each claim links a legal basis and a source.",
+    key_claim_1_title: "Totalization beyond deadline",
+    key_claim_1_text: "Article 146 of LOPRE sets a maximum of 48 hours for totalization and scrutiny.",
+    key_claim_1_law: "Article 146 LOPRE",
+    key_claim_1_source: "CNE: totalization",
+    key_claim_2_title: "Electoral Gazette beyond deadline",
+    key_claim_2_text: "Article 155 of LOPRE requires official publication within 30 days.",
+    key_claim_2_law: "Article 155 LOPRE",
+    key_claim_2_source: "CNE: electoral schedule",
+    key_claim_3_title: "Post-election audits not performed",
+    key_claim_3_text: "Post-election verification includes technical audits defined by the CNE.",
+    key_claim_3_law: "CNE: system audits",
+    key_claim_3_source: "Report: Prensa Comunitaria",
 
     // Counters
     counter1_title: "Delay in Totalization and Scrutiny:",
