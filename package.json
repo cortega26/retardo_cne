@@ -5,9 +5,9 @@
   "main": "assets/js/main.js",
   "scripts": {
     "lint:js": "eslint .",
-    "lint:css": "stylelint '**/*.css'",
+    "lint:css": "stylelint \"**/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
-    "format": "prettier --write '**/*.{js,css,html,md,json}'",
+    "format": "prettier --write \"**/*.{js,css,html,md,json}\"",
     "lighthouse": "lhci autorun"
   },
   "keywords": [],

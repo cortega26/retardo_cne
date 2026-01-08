@@ -62,9 +62,6 @@ const CNEMonitor = (() => {
     console.log(`Counter ${elementId} update started`);
   }
 
-  // Animation function removed as it was unused and causing lint errors.
-  // If animation is needed in the future, it can be re-implemented.
-
   function toggleTheme() {
     console.log('Toggling theme');
     try {
