@@ -710,6 +710,11 @@ body.dark-mode .social-icons .btn {
     font-size: 1rem;
   }
 
+  .evidence-band {
+    margin: 2rem 0;
+    padding: 2rem 0;
+  }
+
   .timeline {
     padding: 2rem 1rem;
   }
@@ -811,6 +816,15 @@ body.dark-mode footer {
 .mission-proof-link:hover,
 .mission-proof-link:focus {
   text-decoration: underline;
+}
+
+.evidence-band {
+  margin: 3rem 0;
+  padding: 2.5rem 0;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.08), transparent 55%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0));
+  border-top: 1px solid var(--navbar-border);
+  border-bottom: 1px solid var(--navbar-border);
 }
 
 .key-claims {
