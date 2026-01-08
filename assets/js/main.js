@@ -166,15 +166,18 @@ const CNEMonitor = (() => {
     console.log('Google Analytics pageview event sent successfully');
   }
 
+  function runInitialization() {
+    initCounters();
+    const toggleThemeBtn = initThemeToggle();
+    applySavedTheme(toggleThemeBtn);
+    initAOS();
+    sendPageView();
+  }
+
   function initializePage() {
     console.log('Initializing page');
     try {
-      initCounters();
-      const toggleThemeBtn = initThemeToggle();
-      applySavedTheme(toggleThemeBtn);
-      initAOS();
-      sendPageView();
-
+      runInitialization();
       console.log('Page initialization complete');
     } catch (error) {
       console.error('Error during page initialization:', error);
