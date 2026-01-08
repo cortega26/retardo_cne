@@ -157,6 +157,30 @@
             </ul>
           </li>
 
+          <!-- Auditorias -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auditoriasDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_audits">
+              AUDITORÍAS
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="auditoriasDropdown">
+              <li><a class="dropdown-item" href="#auditorias" data-i18n="nav_audits_triad">Triada post-electoral
+                  (sección)</a></li>
+              <li><a class="dropdown-item"
+                  href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_cne">CNE: Auditorías del sistema</a>
+              </li>
+              <li><a class="dropdown-item"
+                  href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_pc">Prensa Comunitaria: auditorías no
+                  realizadas</a></li>
+              <li><a class="dropdown-item"
+                  href="https://ktvz.com/cnn-spanish/2024/08/22/cuales-son-las-auditorias-que-el-cne-no-hizo-tras-las-elecciones-presidenciales-en-venezuela/"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_cnn">CNN: auditorías no
+                  realizadas</a></li>
+            </ul>
+          </li>
+
           <!-- Internacional -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="internacionalDropdown" role="button"
@@ -304,11 +328,13 @@
   </nav>
 
   <header>
-    <p class="country-tag">
-      <span class="flag flag-venezuela" aria-hidden="true"></span>
-      <span data-i18n="hero_country">Venezuela | Elecciones Presidenciales 2024</span>
-    </p>
-    <div class="status-badge"><span class="status-dot"></span> <span data-i18n="status_live">EN VIVO</span></div>
+    <div class="hero-badges">
+      <p class="country-tag">
+        <span class="flag flag-venezuela" aria-hidden="true"></span>
+        <span data-i18n="hero_country">Venezuela | Elecciones Presidenciales 2024</span>
+      </p>
+      <div class="status-badge"><span class="status-dot"></span> <span data-i18n="status_live">EN VIVO</span></div>
+    </div>
     <h1 data-i18n="hero_title">Observatorio de Cumplimiento Legal</h1>
     <h2 data-i18n="hero_subtitle">Vigilando el respeto a la voluntad popular en tiempo real</h2>
   </header>
@@ -376,7 +402,7 @@
     </section>
 
     <!-- Timeline Section -->
-    <section class="timeline-section container-fluid my-5" data-aos="fade-up">
+    <section class="timeline-section container-fluid my-5" data-aos="fade-up" id="auditorias">
       <h3 class="text-center mb-5 text-uppercase fw-bold" data-i18n="timeline_title">Cronología de la Ruptura del Hilo
         Constitucional</h3>
       <div class="timeline">
@@ -400,26 +426,51 @@
         </div>
         <div class="timeline-item left">
           <div class="content shadow-sm">
-            <span class="date" data-i18n="timeline_3_date">30 de Julio</span>
-            <h4 data-i18n="timeline_3_title">Primer Plazo Violado</h4>
-            <p data-i18n="timeline_3_text">Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se
-              publican actas.</p>
+            <span class="date" data-i18n="timeline_3_date">29-31 de Julio</span>
+            <h4 data-i18n="timeline_3_title">Auditoría de Telecomunicaciones Fase II</h4>
+            <p data-i18n="timeline_3_text">Debía comparar la configuración de transmisión con la auditada antes de la
+              elección y revisar los registros. No se realizó; fue suspendida tras alegar un &quot;ataque
+              informático&quot;.</p>
           </div>
         </div>
         <div class="timeline-item right">
           <div class="content shadow-sm">
-            <span class="date" data-i18n="timeline_4_date">2 de Agosto</span>
-            <h4 data-i18n="timeline_4_title">Boletín sin Sustento</h4>
-            <p data-i18n="timeline_4_text">El CNE emite un segundo boletín adjudicando la victoria sin presentar una
+            <span class="date" data-i18n="timeline_4_date">30 de Julio</span>
+            <h4 data-i18n="timeline_4_title">Primer Plazo Violado</h4>
+            <p data-i18n="timeline_4_text">Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se
+              publican actas.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="content shadow-sm">
+            <span class="date" data-i18n="timeline_5_date">2 de Agosto</span>
+            <h4 data-i18n="timeline_5_title">Verificación Ciudadana Fase II</h4>
+            <p data-i18n="timeline_5_text">Debía auditar una muestra aleatoria (1%) de máquinas para verificar que el
+              software no fue alterado y que la transmisión fue correcta. No se realizó.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="content shadow-sm">
+            <span class="date" data-i18n="timeline_6_date">2 de Agosto</span>
+            <h4 data-i18n="timeline_6_title">Boletín sin Sustento</h4>
+            <p data-i18n="timeline_6_text">El CNE emite un segundo boletín adjudicando la victoria sin presentar una
               sola acta de escrutinio que
               lo valide.</p>
           </div>
         </div>
         <div class="timeline-item left">
           <div class="content shadow-sm">
-            <span class="date" data-i18n="timeline_5_date">29 de Agosto</span>
-            <h4 data-i18n="timeline_5_title">Segundo Plazo Violado</h4>
-            <p data-i18n="timeline_5_text">Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta
+            <span class="date" data-i18n="timeline_7_date">5-8 de Agosto</span>
+            <h4 data-i18n="timeline_7_title">Auditoría de Datos Electorales Fase II</h4>
+            <p data-i18n="timeline_7_text">Debía verificar la base de huellas (calidad y duplicidades) y su consistencia
+              con el registro electoral. No se realizó.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="content shadow-sm">
+            <span class="date" data-i18n="timeline_8_date">29 de Agosto</span>
+            <h4 data-i18n="timeline_8_title">Segundo Plazo Violado</h4>
+            <p data-i18n="timeline_8_text">Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta
               Electoral. El incumplimiento
               se consuma definitivamente.</p>
           </div>
