@@ -12,5 +12,17 @@ module.exports = {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: ['playwright.config.js', 'scripts/**/*.js', 'tests/**/*.js'],
+      env: {
+        node: true,
+        commonjs: true,
+      },
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
+  ],
   rules: {},
 };
