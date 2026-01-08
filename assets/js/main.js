@@ -7,6 +7,15 @@ const CNEMonitor = (() => {
   const targetDate2 = new Date('2024-08-29T02:00:00Z');
   const counterIntervals = new Map();
 
+  function setThemeIcon(isDarkMode) {
+    const icon = document.querySelector('#toggleTheme i');
+    if (!icon) {
+      return;
+    }
+    icon.classList.toggle('fa-sun', isDarkMode);
+    icon.classList.toggle('fa-moon', !isDarkMode);
+  }
+
   function updateCounter(elementId, targetDate) {
     console.log(`Updating counter: ${elementId}`);
     const counter = document.getElementById(elementId);
@@ -92,69 +101,79 @@ const CNEMonitor = (() => {
       if (toggleThemeBtn) {
         toggleThemeBtn.setAttribute('aria-pressed', String(isDarkMode));
       }
-      const icon = document.querySelector('#toggleTheme i');
-      if (icon) {
-        icon.classList.toggle('fa-sun', isDarkMode);
-        icon.classList.toggle('fa-moon', !isDarkMode);
-      }
+      setThemeIcon(isDarkMode);
       console.log(`Theme set to: ${isDarkMode ? 'dark' : 'light'}`);
     } catch (error) {
       console.error('Error toggling theme:', error);
     }
   }
 
+  function initCounters() {
+    updateCounter('counter1', targetDate1);
+    updateCounter('counter2', targetDate2);
+  }
+
+  function initThemeToggle() {
+    const toggleThemeBtn = document.getElementById('toggleTheme');
+    if (toggleThemeBtn) {
+      toggleThemeBtn.addEventListener('click', toggleTheme);
+      toggleThemeBtn.setAttribute('aria-pressed', 'false');
+      console.log('Theme toggle button listener added');
+      return toggleThemeBtn;
+    }
+    console.warn('Theme toggle button not found');
+    return null;
+  }
+
+  function applySavedTheme(toggleThemeBtn) {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme !== 'dark') {
+      return;
+    }
+    document.body.classList.add('dark-mode');
+    if (toggleThemeBtn) {
+      toggleThemeBtn.setAttribute('aria-pressed', 'true');
+    }
+    setThemeIcon(true);
+    console.log('Dark mode applied from saved preference');
+  }
+
+  function initAOS() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+      console.log('AOS initialized');
+      return;
+    }
+    console.warn('AOS library not found');
+  }
+
+  function sendPageView() {
+    if (typeof gtag !== 'function') {
+      console.warn(
+        'Google Analytics gtag function not found. Make sure the Google Analytics script is loaded correctly.',
+      );
+      return;
+    }
+    console.log('Sending Google Analytics pageview event');
+    gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+    });
+    console.log('Google Analytics pageview event sent successfully');
+  }
+
   function initializePage() {
     console.log('Initializing page');
     try {
-      updateCounter('counter1', targetDate1);
-      updateCounter('counter2', targetDate2);
-
-      const toggleThemeBtn = document.getElementById('toggleTheme');
-      if (toggleThemeBtn) {
-        toggleThemeBtn.addEventListener('click', toggleTheme);
-        toggleThemeBtn.setAttribute('aria-pressed', 'false');
-        console.log('Theme toggle button listener added');
-      } else {
-        console.warn('Theme toggle button not found');
-      }
-
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        if (toggleThemeBtn) {
-          toggleThemeBtn.setAttribute('aria-pressed', 'true');
-        }
-        const icon = document.querySelector('#toggleTheme i');
-        if (icon) {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        }
-        console.log('Dark mode applied from saved preference');
-      }
-
-      if (typeof AOS !== 'undefined') {
-        AOS.init({
-          duration: 1000,
-          once: true,
-        });
-        console.log('AOS initialized');
-      } else {
-        console.warn('AOS library not found');
-      }
-
-      if (typeof gtag === 'function') {
-        console.log('Sending Google Analytics pageview event');
-        gtag('event', 'page_view', {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname,
-        });
-        console.log('Google Analytics pageview event sent successfully');
-      } else {
-        console.warn(
-          'Google Analytics gtag function not found. Make sure the Google Analytics script is loaded correctly.',
-        );
-      }
+      initCounters();
+      const toggleThemeBtn = initThemeToggle();
+      applySavedTheme(toggleThemeBtn);
+      initAOS();
+      sendPageView();
 
       console.log('Page initialization complete');
     } catch (error) {

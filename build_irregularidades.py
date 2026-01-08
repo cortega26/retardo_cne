@@ -69,6 +69,10 @@ LABELS = {
 URL_RE = re.compile(r"https?://[^\s)\]]+")
 DATE_RE = re.compile(r"\b(20\d{2})[-/](\d{1,2})(?:[-/](\d{1,2}))?\b")
 ART_RE = re.compile(r"\b(art\.?|artículo|articulo)\s*(\d+[A-Za-z]?)", re.IGNORECASE)
+LEGAL_KW_RE = re.compile(r"\b(lopre|reglamento|constituci[oó]n|art\.|art[ií]culo)\b", re.IGNORECASE)
+EVIDENCE_KW_RE = re.compile(r"\b(evidenc|fuente|informe|reporte|documento|gaceta|pdf|acta|copia)\b", re.IGNORECASE)
+IMPACT_KW_RE = re.compile(r"\b(impact|consecu|implicaci[oó]n|efecto)\b", re.IGNORECASE)
+REPLICA_KW_RE = re.compile(r"\b(r[eé]plica|contraargument|respuesta|sin embargo|autoridad|cne|tsj)\b", re.IGNORECASE)
 
 # ============================= Lectura de DOCX ============================= #
 
@@ -98,6 +102,14 @@ def is_label_line(text: str, kind: str) -> bool:
             return True
     return False
 
+
+def detect_label(text: str) -> Tuple[Optional[str], str]:
+    for kind in LABELS:
+        if is_label_line(text, kind):
+            content = text.split(":", 1)[1].strip() if ":" in text else ""
+            return kind, content
+    return None, ""
+
 def split_by_labels(paragraphs: List[str]) -> Dict[str, List[str]]:
     """Divide por rótulos explícitos tipo 'Afirmación:' en el .docx.
     Devuelve dict con listas de párrafos por clave (afirmacion, norma, evidencia, impacto, replica).
@@ -105,21 +117,41 @@ def split_by_labels(paragraphs: List[str]) -> Dict[str, List[str]]:
     buckets = {k: [] for k in LABELS.keys()}
     current: Optional[str] = None
     for para in paragraphs:
-        low = para.lower()
-        labeled = False
-        for kind in LABELS:
-            if is_label_line(para, kind):
-                current = kind
-                content = para.split(":", 1)[1].strip() if ":" in para else ""
-                if content:
-                    buckets[current].append(content)
-                labeled = True
-                break
-        if labeled:
+        kind, content = detect_label(para)
+        if kind:
+            current = kind
+            if content:
+                buckets[current].append(content)
             continue
         if current:
             buckets[current].append(para)
     return buckets
+
+
+def select_affirmation(paragraphs: List[str]) -> List[str]:
+    return paragraphs[:2]
+
+
+def find_legal(paragraphs: List[str]) -> List[str]:
+    return [p for p in paragraphs if LEGAL_KW_RE.search(p)]
+
+
+def find_evidence(paragraphs: List[str]) -> List[str]:
+    return [p for p in paragraphs if URL_RE.search(p) or EVIDENCE_KW_RE.search(p)]
+
+
+def find_impact(paragraphs: List[str]) -> List[str]:
+    impact = [p for p in paragraphs if IMPACT_KW_RE.search(p)]
+    if impact:
+        return impact
+    if len(paragraphs) > 2:
+        return [paragraphs[-1]]
+    return []
+
+
+def find_replica(paragraphs: List[str]) -> List[str]:
+    return [p for p in paragraphs if REPLICA_KW_RE.search(p)][-2:]
+
 
 def guess_sections(paragraphs: List[str]) -> Dict[str, List[str]]:
     """Si no hay rótulos, estima secciones por palabras clave y posición."""
@@ -127,27 +159,11 @@ def guess_sections(paragraphs: List[str]) -> Dict[str, List[str]]:
     if not paragraphs:
         return buckets
 
-    # 1) Afirmación: primeros 1-2 párrafos
-    buckets["afirmacion"] = paragraphs[:2]
-
-    # 2) Norma: párrafos con menciones legales
-    legal_kw = re.compile(r"\b(lopre|reglamento|constituci[oó]n|art\.|art[ií]culo)\b", re.IGNORECASE)
-    buckets["norma"] = [p for p in paragraphs if legal_kw.search(p)]
-
-    # 3) Evidencia: párrafos con URLs o palabras de evidencia
-    ev_kw = re.compile(r"\b(evidenc|fuente|informe|reporte|documento|gaceta|pdf|acta|copia)\b", re.IGNORECASE)
-    buckets["evidencia"] = [p for p in paragraphs if URL_RE.search(p) or ev_kw.search(p)]
-
-    # 4) Impacto: busca por impacto/efecto/implicación, si no, heurística genérica
-    imp_kw = re.compile(r"\b(impact|consecu|implicaci[oó]n|efecto)\b", re.IGNORECASE)
-    impact = [p for p in paragraphs if imp_kw.search(p)]
-    if not impact and len(paragraphs) > 2:
-        impact = [paragraphs[-1]]  # último párrafo como cierre
-    buckets["impacto"] = impact
-
-    # 5) Réplica: busca contraargumentos, 'sin embargo', 'autoridades', etc.
-    rep_kw = re.compile(r"\b(r[eé]plica|contraargument|respuesta|sin embargo|autoridad|cne|tsj)\b", re.IGNORECASE)
-    buckets["replica"] = [p for p in paragraphs if rep_kw.search(p)][-2:]
+    buckets["afirmacion"] = select_affirmation(paragraphs)
+    buckets["norma"] = find_legal(paragraphs)
+    buckets["evidencia"] = find_evidence(paragraphs)
+    buckets["impacto"] = find_impact(paragraphs)
+    buckets["replica"] = find_replica(paragraphs)
 
     return buckets
 
@@ -315,43 +331,47 @@ def backup_file(path: Path):
     bpath.write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
 
 
-def main():
+def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(description="Desagrega DOCX y actualiza MD + CSV")
     ap.add_argument("--docx", nargs="*", help="Ruta(s) a .docx a procesar. Si se omite, busca en ./content/")
     ap.add_argument("--irr", default="docs/irregularidades.md", help="Ruta a irregularidades.md")
     ap.add_argument("--csv", default="data/sources.csv", help="Ruta a data/sources.csv")
     ap.add_argument("--create-if-missing", action="store_true", help="Crea docs/ y data/ si faltan")
-    args = ap.parse_args()
+    return ap.parse_args()
 
-    repo_root = Path.cwd()
+
+def resolve_paths(args: argparse.Namespace, repo_root: Path) -> Tuple[Path, Path]:
     irr_path = repo_root / args.irr
     csv_path = repo_root / args.csv
-
-    # Crear carpetas si faltan
     if args.create_if_missing:
         irr_path.parent.mkdir(parents=True, exist_ok=True)
         csv_path.parent.mkdir(parents=True, exist_ok=True)
+    return irr_path, csv_path
 
-    # Descubrir DOCX
-    docx_paths: List[Path] = []
+
+def discover_docx_paths(args: argparse.Namespace, repo_root: Path) -> List[Path]:
     if args.docx:
         docx_paths = [Path(p) for p in args.docx]
     else:
+        docx_paths = []
         content_dir = repo_root / "content"
         if content_dir.exists():
             docx_paths = sorted(content_dir.glob("*.docx"))
-        # fallback: cualquier DOCX en raíz
         if not docx_paths:
             docx_paths = sorted(repo_root.glob("*.docx"))
+
     if not docx_paths:
         print("[ERROR] No se encontraron archivos .docx. Usa --docx o coloca en ./content/", file=sys.stderr)
         sys.exit(2)
 
-    # Carga MD y CSV
-    md_text = read_md(irr_path)
-    df = load_sources_df(csv_path)
+    return docx_paths
 
-    # Procesa cada DOCX
+
+def process_docx_paths(
+    docx_paths: List[Path],
+    md_text: str,
+    df: pd.DataFrame,
+) -> Tuple[str, pd.DataFrame, int, int]:
     added_sections = 0
     total_new_sources = 0
 
@@ -363,16 +383,31 @@ def main():
             print(f"[WARN] No se pudo procesar {dpath}: {e}")
             continue
 
-        # Upsert de URLs como nuevas fuentes
         claim_hint = (parts.get("afirmacion") or [title])[0]
         df, new_ids = upsert_urls_into_csv(df, urls, claim_hint=claim_hint)
-        total_new_sources += len([x for x in new_ids if x.startswith("E-")])
+        total_new_sources += sum(1 for x in new_ids if x.startswith("E-"))
 
-        # Sección en MD con referencias a IDs (incluye también IDs preexistentes si tocó)
         md_text = append_section(md_text, title, parts, new_ids)
         added_sections += 1
 
-    # Guardar CSV y MD (con backup previo)
+    return md_text, df, added_sections, total_new_sources
+
+
+def main():
+    args = parse_args()
+    repo_root = Path.cwd()
+    irr_path, csv_path = resolve_paths(args, repo_root)
+    docx_paths = discover_docx_paths(args, repo_root)
+
+    md_text = read_md(irr_path)
+    df = load_sources_df(csv_path)
+
+    md_text, df, added_sections, total_new_sources = process_docx_paths(
+        docx_paths,
+        md_text,
+        df,
+    )
+
     backup_file(irr_path)
     backup_file(csv_path)
 
