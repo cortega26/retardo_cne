@@ -7,6 +7,7 @@
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
+    "test:e2e": "playwright test",
     "format": "prettier --write \"**/*.{js,css,html,md,json}\"",
     "lighthouse": "lhci autorun"
   },
@@ -15,6 +16,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
