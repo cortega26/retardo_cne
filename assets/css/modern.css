@@ -363,20 +363,6 @@ body.dark-mode .flag {
   animation: organic-pulse 2s ease-in-out infinite alternate !important;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-  }
-
-  70% {
-    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
-  }
-}
-
 /* Main Cards Container */
 #main-content {
   display: grid;

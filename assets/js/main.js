@@ -5,6 +5,7 @@ const CNEMonitor = (() => {
 
   const targetDate1 = new Date('2024-07-30T22:00:00Z');
   const targetDate2 = new Date('2024-08-29T02:00:00Z');
+  const counterIntervals = new Map();
 
   function updateCounter(elementId, targetDate) {
     console.log(`Updating counter: ${elementId}`);
@@ -14,6 +15,18 @@ const CNEMonitor = (() => {
       return;
     }
 
+    const targetTime = targetDate.getTime();
+    if (Number.isNaN(targetTime)) {
+      console.error(`Invalid target date for counter: ${elementId}`);
+      return;
+    }
+
+    if (counterIntervals.has(elementId)) {
+      window.clearInterval(counterIntervals.get(elementId));
+      counterIntervals.delete(elementId);
+    }
+
+    counter.innerHTML = '';
     const spans = ['days', 'hours', 'minutes', 'seconds'].map((unit) => {
       const span = document.createElement('span');
       span.className = unit;
@@ -23,8 +36,7 @@ const CNEMonitor = (() => {
 
     function update() {
       try {
-        const now = new Date();
-        const differenceInMs = now - targetDate;
+        const differenceInMs = Math.max(0, Date.now() - targetTime);
 
         const days = Math.floor(differenceInMs / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
@@ -54,11 +66,11 @@ const CNEMonitor = (() => {
       } catch (error) {
         console.error('Error updating counter:', error);
       }
-
-      requestAnimationFrame(update);
     }
 
     update();
+    const intervalId = window.setInterval(update, 1000);
+    counterIntervals.set(elementId, intervalId);
     console.log(`Counter ${elementId} update started`);
   }
 
@@ -155,32 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('error', (event) => {
   console.error('Unhandled error:', event.error);
-});
-
-window.addEventListener('load', () => {
-  if (typeof gtag === 'undefined') {
-    console.warn(
-      'Google Analytics might be blocked by an ad blocker or not loaded correctly',
-    );
-  } else {
-    console.log('Google Analytics (gtag) is available');
-  }
-
-  // 2. Legal Highlighter Observer
-  const highlighterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        // Disconnect after activating once intended? 
-        // Keep looking if user scrolls back up? 
-        // Usually standard is fire once.
-        highlighterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 1.0 });
-
-  const highlights = document.querySelectorAll('.highlight-text');
-  highlights.forEach(el => highlighterObserver.observe(el));
 });
 
 // --- Internationalization (i18n) ---
@@ -418,63 +404,95 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('site_lang') || 'es';
+const DEFAULT_LANG = 'es';
+const PAGE_TITLES = {
+  es: 'Monitoreo de Infracciones Legales Electorales - CNE Venezuela',
+  en: 'Legal Compliance Observatory - CNE Venezuela',
+};
+const HIGHLIGHT_OBSERVER_OPTIONS = { threshold: 1.0 };
+let highlightObserver = null;
+
+function getSafeLang(lang) {
+  return translations[lang] ? lang : DEFAULT_LANG;
+}
+
+function getPageTitle(lang) {
+  return PAGE_TITLES[lang] || PAGE_TITLES[DEFAULT_LANG];
+}
+
+function getHighlightObserver() {
+  if (!('IntersectionObserver' in window)) {
+    return null;
+  }
+
+  if (!highlightObserver) {
+    highlightObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, HIGHLIGHT_OBSERVER_OPTIONS);
+  }
+
+  return highlightObserver;
+}
+
+function observeHighlights(root = document) {
+  const highlights = root.querySelectorAll('.highlight-text');
+  if (!highlights.length) {
+    return;
+  }
+
+  const observer = getHighlightObserver();
+  highlights.forEach((element) => {
+    if (!observer) {
+      element.classList.add('active');
+      return;
+    }
+    observer.observe(element);
+  });
+}
+
+const storedLang = localStorage.getItem('site_lang');
+let currentLang = getSafeLang(storedLang);
 
 function updateLanguage(lang) {
+  const resolvedLang = getSafeLang(lang);
+  const langTranslations = translations[resolvedLang];
+
+  document.documentElement.lang = resolvedLang;
+
   // Update all marked elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
-      if (key === 'mission_text') {
-        el.innerHTML = translations[lang][key];
-        // Re-observe highlight if needed, or just let it exist
-        setTimeout(() => {
-          const newHighlight = el.querySelector('.highlight-text');
-          if (newHighlight) {
-            // Trigger observer manually or re-observe?
-            // Simple hack: add 'active' class after a tiny delay to ensure animation plays if visible
-            // But better to rely on existing observer if it catches dynamic nodes? 
-            // The existing observer in window 'load' only targeted initial nodes.
-            // We need to re-add it.
-            reObserveHighlighter(newHighlight);
-          }
-        }, 50);
-      } else if (key.startsWith('org_')) {
-        // For inline spans we just set textContent
-        el.textContent = translations[lang][key];
-      } else {
-        el.textContent = translations[lang][key];
-      }
+    if (!Object.prototype.hasOwnProperty.call(langTranslations, key)) {
+      return;
+    }
+
+    if (key === 'mission_text') {
+      el.innerHTML = langTranslations[key];
+    } else if (key.startsWith('org_')) {
+      // For inline spans we just set textContent
+      el.textContent = langTranslations[key];
+    } else {
+      el.textContent = langTranslations[key];
     }
   });
+
+  observeHighlights();
 
   // Update Toggle Button
   const toggleBtn = document.getElementById('toggleLang');
   if (toggleBtn) {
-    toggleBtn.textContent = lang === 'es' ? 'ES' : 'EN';
+    toggleBtn.textContent = resolvedLang === 'es' ? 'ES' : 'EN';
   }
 
-  // Update Title
-  if (lang === 'en') {
-    document.title = "Legal Compliance Observatory - CNE Venezuela";
-  } else {
-    document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
-  }
+  document.title = getPageTitle(resolvedLang);
 
-  localStorage.setItem('site_lang', lang);
-  currentLang = lang;
-}
-
-function reObserveHighlighter(element) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 1.0 });
-  observer.observe(element);
+  localStorage.setItem('site_lang', resolvedLang);
+  currentLang = resolvedLang;
 }
 
 // 3. Updated "Tab Signal" & Init
@@ -482,12 +500,7 @@ document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
     document.title = "⚠️ Tiempo Agotado - CNE Venezuela";
   } else {
-    // Restore correct title based on language
-    if (localStorage.getItem('site_lang') === 'en') {
-      document.title = "Legal Compliance Observatory - CNE Venezuela";
-    } else {
-      document.title = "Monitoreo de Infracciones Legales Electorales - CNE Venezuela";
-    }
+    document.title = getPageTitle(currentLang);
   }
 });
 
