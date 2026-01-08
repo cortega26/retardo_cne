@@ -1,5 +1,6 @@
 {
   "extends": ["stylelint-config-standard"],
+  "ignoreFiles": ["assets/css/*.min.css"],
   "rules": {
     "color-no-invalid-hex": true,
     "color-hex-length": "long",

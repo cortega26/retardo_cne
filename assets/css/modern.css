@@ -1,8 +1,5 @@
 /* modern.css - Premium Dashboard Design for CNE Monitor */
 
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap');
-
 /* CSS Reset & Variables */
 :root {
   /* LIGHT MODE (Default) - Clean Professional Slate */
@@ -19,7 +16,7 @@
   --text-primary: #0f172a;
 
   /* Dark Slate for text */
-  --text-secondary: #64748b;
+  --text-secondary: #475569;
 
   /* Muted Slate */
   --text-accent: #0284c7;
@@ -532,7 +529,7 @@ body.dark-mode .counter-container:hover {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-secondary);
-  opacity: 0.7;
+  opacity: 1;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: auto;
@@ -543,7 +540,7 @@ body.dark-mode .counter-container:hover {
 
 body.dark-mode .legal-reference {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 /* Share Section */
