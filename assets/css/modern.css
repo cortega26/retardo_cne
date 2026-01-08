@@ -894,6 +894,92 @@ body.dark-mode footer {
   color: var(--text-secondary);
 }
 
+.counter-claims {
+  width: 100%;
+}
+
+.counter-claims-header {
+  margin-bottom: 1.5rem;
+}
+
+.counter-claims-subtitle {
+  color: var(--text-secondary);
+  max-width: 60ch;
+  margin: 0.5rem auto 0;
+  font-size: 0.95rem;
+}
+
+.counter-claim-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--navbar-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-claim-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--text-secondary);
+}
+
+.counter-claim-label {
+  margin: 0;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.counter-claim-label--verify {
+  color: var(--text-accent);
+}
+
+.counter-claim-claim {
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.counter-claim-verify {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.counter-claim-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.counter-claim-link {
+  color: var(--text-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.counter-claim-link:hover,
+.counter-claim-link:focus {
+  text-decoration: underline;
+}
+
+.counter-claim-divider {
+  color: var(--text-secondary);
+}
+
 /* Violation Status Badge */
 .violation-status {
   margin-top: 1rem;
