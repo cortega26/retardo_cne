@@ -620,6 +620,21 @@ body.dark-mode .social-icons .btn {
   color: white !important;
 }
 
+.btn-linkedin:hover {
+  background: #0a66c2 !important;
+  color: white !important;
+}
+
+.btn-reddit:hover {
+  background: #ff4500 !important;
+  color: white !important;
+}
+
+.btn-email:hover {
+  background: #6b7280 !important;
+  color: white !important;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   #main-content {
