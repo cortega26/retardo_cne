@@ -884,7 +884,7 @@ body.dark-mode footer {
   font-weight: 700;
 }
 
-.counter-claim-label--verify {
+.counter-claim-label-verify {
   color: var(--text-accent);
 }
 
