@@ -317,7 +317,7 @@ const translations = {
     mission_proof_link: "Sitio oficial del CNE (archivo)",
 
     faq_title: "Contrapuntos y verificación",
-    faq_subtitle: "Respuestas rápidas para desmontar los argumentos más trillados del madurismo.",
+    faq_subtitle: "Respuestas rápidas basadas en evidencia verificable.",
     faq_q1: "\"Los resultados son definitivos\"",
     faq_q1_a: "La verificación independiente requiere dos elementos legales que no se cumplieron:",
     faq_q1_item1: "Publicación de resultados desagregados mesa por mesa en 48 horas (Art. 146 LOPRE).",
@@ -497,7 +497,7 @@ const translations = {
     mission_proof_link: "CNE official site (archive)",
 
     faq_title: "Counter-claims and verification",
-    faq_subtitle: "Quick answers to dismantle the regime's most recycled talking points.",
+    faq_subtitle: "Quick answers grounded in verifiable evidence.",
     faq_q1: "\"The results are final\"",
     faq_q1_a: "Independent verification requires two legal elements that were not met:",
     faq_q1_item1: "Publication of precinct-level results within 48 hours (Art. 146 LOPRE).",
