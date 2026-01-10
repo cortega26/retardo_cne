@@ -6,6 +6,7 @@ const CNEMonitor = (() => {
   const targetDate1 = new Date('2024-07-30T22:00:00Z');
   const targetDate2 = new Date('2024-08-29T02:00:00Z');
   const counterIntervals = new Map();
+  const flipTimeouts = new WeakMap();
 
   function setThemeIcon(isDarkMode) {
     const icon = document.querySelector('#toggleTheme i');
@@ -40,12 +41,65 @@ const CNEMonitor = (() => {
       const span = document.createElement('span');
       span.className = unit;
       const numberSpan = document.createElement('span');
-      numberSpan.className = 'number';
+      numberSpan.className = 'number flip';
+      numberSpan.dataset.value = '0';
+      const flipCard = document.createElement('span');
+      flipCard.className = 'flip-card';
+      const top = document.createElement('span');
+      top.className = 'flip-top';
+      top.textContent = '0';
+      const bottom = document.createElement('span');
+      bottom.className = 'flip-bottom';
+      bottom.textContent = '0';
+      const topNext = document.createElement('span');
+      topNext.className = 'flip-top flip-next';
+      const bottomNext = document.createElement('span');
+      bottomNext.className = 'flip-bottom flip-next';
+      flipCard.append(top, bottom, topNext, bottomNext);
+      numberSpan.appendChild(flipCard);
       const labelNode = document.createTextNode('');
       span.append(numberSpan, labelNode);
       counter.appendChild(span);
       return { span, numberSpan, labelNode };
     });
+
+    function setFlipValue(numberSpan, valueText) {
+      const currentValue = numberSpan.dataset.value;
+      if (currentValue === valueText) {
+        return;
+      }
+
+      const top = numberSpan.querySelector('.flip-top');
+      const bottom = numberSpan.querySelector('.flip-bottom');
+      const topNext = numberSpan.querySelector('.flip-top.flip-next');
+      const bottomNext = numberSpan.querySelector('.flip-bottom.flip-next');
+      if (!top || !bottom || !topNext || !bottomNext) {
+        numberSpan.textContent = valueText;
+        numberSpan.dataset.value = valueText;
+        return;
+      }
+
+      topNext.textContent = valueText;
+      bottomNext.textContent = valueText;
+
+      numberSpan.classList.remove('flip-animate');
+      void numberSpan.offsetWidth;
+      numberSpan.classList.add('flip-animate');
+
+      const pendingTimeout = flipTimeouts.get(numberSpan);
+      if (pendingTimeout) {
+        window.clearTimeout(pendingTimeout);
+      }
+
+      const timeoutId = window.setTimeout(() => {
+        top.textContent = valueText;
+        bottom.textContent = valueText;
+        numberSpan.dataset.value = valueText;
+        numberSpan.classList.remove('flip-animate');
+        flipTimeouts.delete(numberSpan);
+      }, 720);
+      flipTimeouts.set(numberSpan, timeoutId);
+    }
 
     function update() {
       try {
@@ -71,9 +125,7 @@ const CNEMonitor = (() => {
           const { numberSpan, labelNode } = spans[index];
           const valueText = String(value);
           const labelText = ` ${value === 1 ? singular : plural}`;
-          if (numberSpan.textContent !== valueText) {
-            numberSpan.textContent = valueText;
-          }
+          setFlipValue(numberSpan, valueText);
           if (labelNode.textContent !== labelText) {
             labelNode.textContent = labelText;
           }
@@ -251,7 +303,7 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Venezuela | Elecciones Presidenciales 2024",
-    hero_title: "Plazos legales incumplidos",
+    hero_title: "Dossier del Fraude Electoral en Venezuela",
     hero_subtitle: "Evidencia verificable sobre totalización, actas y auditorías del CNE",
 
     // Mission
@@ -394,7 +446,7 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Venezuela | Presidential Election 2024",
-    hero_title: "Legal Deadlines Breached",
+    hero_title: "Electoral Fraud Dossier in Venezuela",
     hero_subtitle: "Verifiable evidence on CNE totals, actas, and audits",
 
     // Mission

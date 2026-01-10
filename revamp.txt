@@ -1,0 +1,1493 @@
+# PROMPT PARA AGENTE DE IA: OPTIMIZACIÓN DE SITIO WEB ELECTORAL VENEZUELA 2024
+
+## CONTEXTO
+
+Eres un desarrollador web especializado en comunicación política y diseño de experiencia de usuario. Debes actualizar el sitio https://cortega26.github.io/retardo_cne/ para maximizar su impacto persuasivo manteniendo su rigor técnico-legal actual.
+
+## CORRECCIONES CRÍTICAS AL CONTENIDO
+
+### Aclaraciones técnicas fundamentales:
+
+1. **Publicación del CNE**: El CNE NO publica "actas", publica los **resultados desagregados mesa por mesa y centro por centro** en su página web. Las actas físicas permanecen en las mesas electorales.
+
+2. **Validez de las actas**: Las actas son válidas independientemente de si están firmadas o no. Los criterios de validez son:
+   - Código QR único
+   - Número de serie de la máquina
+   - Resultados impresos
+   - Sello oficial
+   - **NO se requieren firmas para validez** (esto previene que alguien pueda sabotear el proceso negándose a firmar)
+
+3. **Auditorías electorales**: Existen tres tipos de auditorías:
+   - **Pre-electorales**: Antes del día de votación
+   - **Durante**: El día de la votación
+   - **Post-electorales (CRÍTICO)**: Después de la votación
+   
+   Las **TRES auditorías post-electorales obligatorias** (Triada post-electoral) NO se realizaron:
+   - Auditoría de Telecomunicaciones Fase II
+   - Auditoría de Verificación Ciudadana Fase II
+   - Auditoría de Datos Electorales Fase II
+
+---
+
+## ASSETS ACTUALES DEL SITIO
+
+El sitio ya contiene:
+- Análisis estadísticos de expertos (Terence Tao, Dorothy Kronick, Andrew Gelman, Walter Mebane)
+- Antecedentes históricos y contexto político
+- Enlaces a CNE en Archive.org con documentación técnica oficial
+- Sección de auditorías detallada (incluyendo la triada post-electoral)
+- Declaraciones de 12+ organismos internacionales
+- Recursos de verificación
+- Enlaces a sitios con resultados alternativos (resultadosconvzla.com, macedoniadelnorte.com)
+- Cronología visual de eventos con violaciones específicas
+- Contadores de días de incumplimiento legal (Art. 146 y Art. 155 LOPRE)
+- Sección de "Contrapuntos y verificación"
+
+---
+
+## OBJETIVO PRINCIPAL
+
+Reorganizar y expandir el contenido existente para crear un **journey narrativo** que convierta a visitantes sin conocimiento previo de Venezuela en personas completamente convencidas del fraude electoral, usando evidencia verificable ya presente en el sitio.
+
+---
+
+## TAREAS ESPECÍFICAS
+
+### 1. CREAR NUEVA ARQUITECTURA DE INFORMACIÓN
+
+#### 1.1 Hero Section (Above the fold)
+
+Mantener el título actual pero añadir un **supratítulo impactante**:
+
+```
+[SUPRATÍTULO]: "160+ días. Cero resultados publicados. Confirmado por ONU, Centro Carter y UE"
+[TÍTULO ACTUAL]: "Plazos legales incumplidos"
+[SUBTÍTULO NUEVO]: "La violación electoral más documentada de la historia de Venezuela"
+```
+
+Añadir **3 estadísticas clave** en formato visual destacado justo debajo:
+- 📋 **"25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados"**
+- 🌍 **"12+ organismos internacionales confirman irregularidades"**
+- ⚖️ **"2 plazos legales violados + 3 auditorías post-electorales no realizadas"**
+
+#### 1.2 Sección "Empieza Aquí" (nueva, justo después del hero)
+
+Crear una sección plegable/expandible con el título: **"Si solo tienes 3 minutos: ¿Qué pasó en Venezuela?"**
+
+Contenido (en 3 bloques visuales tipo tarjeta):
+
+**Bloque 1 - QUÉ PASÓ:**
+```
+El 28 de julio de 2024, Venezuela celebró elecciones presidenciales. 
+A las 10 PM, el CNE (autoridad electoral) detuvo la transmisión de 
+resultados cuando la oposición reportaba ventaja irreversible. 
+A medianoche, la web del CNE se apagó. Han pasado [CONTADOR] días 
+y nunca publicaron los resultados desagregados mesa por mesa que la 
+ley exige en 48 horas.
+```
+
+**Bloque 2 - POR QUÉ IMPORTA:**
+```
+En una elección transparente, el CNE debe publicar en su web los 
+resultados desagregados mesa por mesa y centro por centro en 48 horas. 
+Esto permite verificación independiente.
+
+Cada mesa electoral imprime un ACTA física con resultados verificables 
+(código QR, número de serie de máquina, sello oficial). La oposición 
+venezolana recolectó 84% de estas actas el día de la elección.
+
+El CNE no ha publicado los resultados desagregados. Ni una sola mesa. 
+[Enlace: Ver actas ciudadanas en resultadosconvzla.com]
+```
+
+**Bloque 3 - LA EVIDENCIA:**
+```
+No es nuestra opinión. El Centro Carter (observador electoral más 
+respetado del mundo), panel de expertos de la ONU, Unión Europea y 
+12+ organismos confirman que el proceso violó estándares democráticos 
+básicos. Además, las TRES auditorías post-electorales obligatorias 
+fueron suspendidas. [Enlace ancla: #auditorias]
+```
+
+Botón CTA: **"Ver toda la evidencia ↓"** (scroll suave a cronología)
+
+---
+
+### 2. REORGANIZAR NAVEGACIÓN PRINCIPAL
+
+**Estructura nueva del navbar:**
+
+```
+[INICIO] 
+  └─ Ancla a hero section
+
+[LA EVIDENCIA] (Dropdown)
+  ├─ Cronología Completa (ancla a timeline actual)
+  ├─ Auditorías Post-Electorales No Realizadas (destacar triada)
+  │   ├─ Auditoría de Telecomunicaciones Fase II
+  │   ├─ Verificación Ciudadana Fase II
+  │   └─ Auditoría de Datos Electorales Fase II
+  ├─ Análisis Estadísticos
+  │   ├─ Dr. Terence Tao (UCLA) - "Patrones matemáticamente imposibles"
+  │   ├─ Dorothy Kronick (UC Berkeley) - "Anomalías en distribución"
+  │   ├─ Andrew Gelman (Columbia) - "Señales de manipulación"
+  │   └─ Walter Mebane (U. Michigan) - "Análisis forense electoral"
+  └─ Actas Ciudadanas Verificables
+      ├─ ResultadosConVzla.com
+      ├─ MacedoniaDelNorte.com
+      └─ Cómo verificar autenticidad
+
+[CONTEXTO] (Dropdown)
+  ├─ Sistema Electoral Venezolano (NUEVO)
+  │   ├─ Cómo funciona la transmisión de resultados
+  │   ├─ Qué son las auditorías electorales
+  │   └─ Marco legal (LOPRE + Acuerdo Barbados)
+  ├─ Antecedentes 2018-2024
+  │   └─ [Mantener enlaces actuales]
+  └─ Tecnología Electoral CNE
+      └─ [Enlaces a Archive.org ya presentes]
+
+[COMUNIDAD INTERNACIONAL]
+  └─ [Mantener sección actual con mejoras]
+
+[VERIFICACIÓN]
+  └─ [Mantener + expandir FAQ]
+
+[QUÉ PUEDES HACER] (NUEVO)
+  ├─ Compartir esta información
+  ├─ Descargar informe completo (PDF)
+  └─ Recursos para periodistas
+```
+
+---
+
+### 3. MEJORAR SECCIÓN DE CRONOLOGÍA
+
+**Mantener la cronología actual pero añadir:**
+
+#### 3.1 Visualización de "Línea de Legalidad"
+
+Añadir una línea continua vertical que corre al lado izquierdo de la timeline.
+
+Código de colores:
+- 🟢 Verde: "Dentro del marco legal"
+- 🟡 Amarillo: "Irregularidad menor"
+- 🔴 Rojo: "Violación legal grave"
+- ⚫ Negro: "Ruptura constitucional"
+
+#### 3.2 Iconografía consistente
+
+Para cada evento en la cronología, añadir iconos:
+- 📊 Auditoría programada
+- ⚠️ Violación de plazo legal
+- 🔌 Fallo técnico / Apagón
+- 📢 Declaración oficial
+- 🌍 Reacción internacional
+- 🚫 Auditoría suspendida/no realizada
+
+#### 3.3 Expandir cada evento con "Por qué importa"
+
+Ejemplo para "Auditoría de Telecomunicaciones Fase II":
+
+```
+[EVENTO ACTUAL]: 
+29-31 de Julio
+Auditoría de Telecomunicaciones Fase II
+Debía comparar la configuración de transmisión con la auditada antes 
+de la elección y revisar los registros. No se realizó; fue suspendida 
+tras alegar un "ataque informático".
+
+[AÑADIR - Acordeón expandible]:
+💡 Por qué importa: Esta auditoría es OBLIGATORIA según los propios 
+protocolos del CNE. Su objetivo es verificar que:
+- La transmisión de resultados no fue manipulada
+- Los registros de comunicación coinciden con la auditoría pre-electoral
+- No hubo intervención externa en el proceso de totalización
+
+Sin esta auditoría, no hay forma de validar técnicamente los resultados 
+del CNE, incluso si los publicaran.
+
+📖 Marco legal: Protocolos de Auditoría CNE [enlazar a documentación 
+Archive.org]. Esta auditoría forma parte de la "Triada Post-Electoral" 
+obligatoria.
+
+🔍 Contexto: El CNE alegó un "ataque informático" para suspenderla, 
+pero expertos en ciberseguridad han cuestionado esta afirmación 
+[enlazar a análisis del supuesto hackeo].
+```
+
+Aplicar formato similar para:
+- **Verificación Ciudadana Fase II** (2 de agosto)
+- **Auditoría de Datos Electorales Fase II** (5-8 de agosto)
+
+---
+
+### 4. CREAR SECCIÓN "SISTEMA ELECTORAL VENEZOLANO 101"
+
+**Ubicación:** Nueva página o sección expandible en [CONTEXTO]
+
+#### 4.1 "Cómo debería funcionar" (diagrama visual simple)
+
+```
+[Paso 1] Votante vota en máquina
+         ↓
+[Paso 2] Máquina imprime comprobante (el votante lo deposita)
+         ↓
+[Paso 3] Al cerrar mesa, máquina imprime ACTA con resultados
+         (Acta física contiene: resultados, código QR, número de 
+         serie de máquina, sello oficial)
+         ↓
+[Paso 4] Acta queda en mesa electoral para auditorías
+         ↓
+[Paso 5] Máquina transmite resultados al CNE automáticamente
+         ↓
+[Paso 6] CNE publica RESULTADOS DESAGREGADOS mesa por mesa 
+         en su web (48h máximo según Art. 146 LOPRE)
+         ↓
+[Paso 7] Auditorías post-electorales obligatorias (triada):
+         - Telecomunicaciones Fase II
+         - Verificación Ciudadana Fase II
+         - Datos Electorales Fase II
+         ↓
+[Paso 8] Publicación en Gaceta Electoral (30 días máximo 
+         según Art. 155 LOPRE)
+```
+
+#### 4.2 "Qué pasó en 2024" (mismo diagrama, en rojo)
+
+```
+[Pasos 1-4] ✅ Ocurrieron normalmente
+         ↓
+[Paso 5] ⚠️ Transmisión detenida a las 10 PM del 28/07
+         ↓
+[Paso 6] ❌ Web del CNE apagada a medianoche
+         CERO resultados desagregados publicados (160+ días después)
+         ↓
+[Paso 7] ❌ LAS TRES auditorías post-electorales suspendidas
+         Justificación: Alegado "ataque informático"
+         ↓
+[Paso 8] ❌ Nunca publicado en Gaceta Electoral
+         (Plazo legal de 30 días violado desde el 29/08/2024)
+```
+
+#### 4.3 Subsección "Las Auditorías Post-Electorales: La Triada de Verificación"
+
+```
+[Introducción]:
+El CNE tiene protocolos propios de auditoría que dividen el proceso 
+en tres fases: pre-electoral, durante la elección, y post-electoral.
+
+Las auditorías POST-ELECTORALES son críticas porque verifican que 
+el proceso completo fue transparente y que los resultados son válidos.
+
+Son TRES auditorías obligatorias (la "Triada Post-Electoral"):
+```
+
+**Auditoría 1: Telecomunicaciones Fase II**
+```
+📅 Cuándo debía realizarse: 29-31 de julio
+❌ Estado: NO REALIZADA
+
+Qué verifica:
+- Que la transmisión de datos no fue alterada
+- Que los registros coinciden con la auditoría pre-electoral
+- Que no hubo intervención externa en la comunicación
+
+Por qué importa:
+Sin esta auditoría, no se puede confirmar que los datos transmitidos 
+desde las máquinas llegaron íntegros al CNE.
+
+Fuente CNE: [Enlazar a documentación en Archive.org]
+```
+
+**Auditoría 2: Verificación Ciudadana Fase II**
+```
+📅 Cuándo debía realizarse: 2 de agosto
+❌ Estado: NO REALIZADA
+
+Qué verifica:
+- Muestra aleatoria (1%) de máquinas
+- Que el software no fue alterado después de la auditoría pre-electoral
+- Que la transmisión coincide con el acta física impresa
+
+Por qué importa:
+Esta es la auditoría que compara físicamente las actas impresas con 
+lo que las máquinas transmitieron. Es la verificación más directa 
+de integridad.
+
+Fuente CNE: [Enlazar a documentación en Archive.org]
+```
+
+**Auditoría 3: Datos Electorales Fase II**
+```
+📅 Cuándo debía realizarse: 5-8 de agosto
+❌ Estado: NO REALIZADA
+
+Qué verifica:
+- Base de datos de huellas dactilares (calidad y duplicidades)
+- Consistencia con el registro electoral
+- Integridad de la base de datos de votantes
+
+Por qué importa:
+Verifica que no hubo votación múltiple o manipulación del registro 
+electoral. Sin esta auditoría, no se puede confirmar que cada voto 
+corresponde a un votante único y registrado.
+
+Fuente CNE: [Enlazar a documentación en Archive.org]
+```
+
+**Conclusión de la subsección:**
+```
+⚠️ Ninguna de las tres auditorías post-electorales se realizó.
+
+El CNE suspendió todas alegando un "ataque informático", pero:
+1. Expertos en ciberseguridad cuestionan esta afirmación [enlazar]
+2. Las auditorías trabajan con documentos físicos y muestras aleatorias, 
+   no solo con sistemas digitales
+3. Incluso si hubo un ataque, las auditorías son precisamente el 
+   mecanismo para verificar la integridad del proceso
+
+[Botón]: Leer análisis técnico del supuesto hackeo
+[Botón]: Ver protocolos completos de auditoría CNE
+```
+
+#### 4.4 Fuentes para esta sección:
+
+Usar contenido de los enlaces CNE Archive.org ya presentes:
+- Tecnología Electoral I y II
+- Cronograma Electoral
+- Auditorías del sistema
+- Añadir citas directas de la documentación oficial del CNE
+
+---
+
+### 5. EXPANDIR "CONTRAPUNTOS Y VERIFICACIÓN"
+
+**Convertir en sección FAQ completa con acordeones:**
+
+#### Preguntas actuales (mantener y mejorar):
+
+**Q: "Los resultados son definitivos"**
+```
+A: La verificación independiente requiere dos elementos fundamentales:
+
+1. Publicación de resultados desagregados mesa por mesa (Art. 146 LOPRE: 48h)
+   ❌ No publicados después de 160+ días
+
+2. Auditorías post-electorales completas (Triada obligatoria)
+   ❌ Las tres auditorías suspendidas
+
+Sin estos elementos, no hay forma de verificar independientemente 
+los resultados que el CNE proclama.
+
+[Enlaces]: 
+- CNE: totalización (Archive.org)
+- CNE: protocolos de auditorías (Archive.org)
+```
+
+**Q: "La publicación en Gaceta no es prioritaria"**
+```
+A: La Ley Orgánica de Procesos Electorales (LOPRE) establece dos 
+plazos obligatorios:
+
+Art. 146: Totalización y publicación en web → 48 horas
+Art. 155: Publicación en Gaceta Electoral → 30 días
+
+Ambos son requisitos LEGALES, no opcionales. El primer plazo se 
+violó el 30/07/2024. El segundo el 29/08/2024.
+
+[Enlaces]:
+- Art. 155 LOPRE (PDF)
+- Cronograma electoral CNE (Archive.org)
+```
+
+**Q: "Se realizaron auditorías post-electorales"**
+```
+A: El propio CNE tiene documentados los protocolos de la "Triada 
+Post-Electoral". Reportes de prensa comunitaria y CNN verifican 
+que ninguna de las tres se realizó:
+
+❌ Auditoría de Telecomunicaciones Fase II (29-31 jul)
+❌ Verificación Ciudadana Fase II (2 ago)
+❌ Auditoría de Datos Electorales Fase II (5-8 ago)
+
+[Enlaces]:
+- CNE: protocolos de auditorías (Archive.org)
+- Prensa Comunitaria: auditorías no realizadas
+- CNN: auditorías no realizadas
+```
+
+#### Añadir nuevas preguntas frecuentes:
+
+**Q: "¿No es esto solo política normal de Venezuela?"**
+```
+A: No. Incluso en elecciones anteriores cuestionadas (2013, 2018), 
+el CNE publicó resultados desagregados en su web. Esta es la primera 
+vez en la historia que:
+
+1. No publican NINGÚN resultado desagregado
+2. La web del CNE permanece sin esta información 160+ días después
+3. Se suspenden TODAS las auditorías post-electorales obligatorias
+
+[Comparación visual si hay datos disponibles]:
+2013: Resultados publicados en web en [X] días
+2018: Resultados publicados en web en [X] días  
+2024: 160+ días - CERO resultados desagregados publicados
+
+Además, la propia ley venezolana (LOPRE) establece plazos claros 
+que están siendo violados.
+```
+
+**Q: "¿Por qué debería creer a la oposición venezolana?"**
+```
+A: No se trata de "creer". Se trata de verificar. Hay tres niveles 
+de evidencia independiente:
+
+1. ACTAS CIUDADANAS (84% recolectadas):
+   Cada acta tiene elementos verificables:
+   ✓ Código QR único
+   ✓ Número de serie de máquina
+   ✓ Sello oficial
+   ✓ Resultados impresos por la máquina
+   
+   IMPORTANTE: Las actas SON VÁLIDAS independientemente de si están 
+   firmadas o no. Las firmas NO son criterio de validez para prevenir 
+   sabotaje.
+   
+   Cualquier persona puede verificar estas actas.
+   [Enlace]: Aprende a verificar un acta tú mismo
+
+2. ANÁLISIS ESTADÍSTICO INDEPENDIENTE:
+   Expertos de UCLA, Columbia, Berkeley y U. Michigan han analizado 
+   los datos y encontrado patrones matemáticamente imposibles en los 
+   números del CNE.
+   [Enlace]: Ver análisis estadísticos
+
+3. ORGANISMOS INTERNACIONALES:
+   Centro Carter, panel de expertos ONU, UE y 10+ organismos más 
+   confirman irregularidades basándose en metodología propia, NO en 
+   declaraciones de la oposición.
+   [Enlace]: Ver declaraciones internacionales
+
+Mientras tanto, el CNE:
+❌ No publica resultados desagregados
+❌ No realizó auditorías post-electorales
+❌ No ofrece verificación independiente
+```
+
+**Q: "¿Qué pasa con el hackeo que mencionó el CNE?"**
+```
+A: Expertos en ciberseguridad han cuestionado esta afirmación por 
+varias razones:
+
+1. El sistema NO está conectado a internet durante la votación
+   [Fuente: CNE - Tecnología Electoral, Archive.org]
+
+2. Incluso si hubiera hackeo de la transmisión digital, las ACTAS 
+   FÍSICAS impresas en cada mesa son la evidencia definitiva que 
+   no puede ser "hackeada". ¿Por qué no las muestran comparándolas 
+   con los resultados transmitidos?
+
+3. Si realmente hubo hackeo que afectó resultados, la solución legal 
+   es hacer las auditorías post-electorales (especialmente Verificación 
+   Ciudadana Fase II que compara actas físicas con transmisión digital). 
+   Ninguna de estas auditorías se realizó.
+
+4. El CNE suspendió las auditorías alegando el hackeo, pero las 
+   auditorías trabajan con documentos físicos y muestras aleatorias, 
+   no solo con sistemas digitales.
+
+[Enlace]: Análisis técnico del supuesto hackeo
+[Enlace]: Protocolos de auditoría post-electoral CNE
+```
+
+**Q: "¿No es el Centro Carter una organización estadounidense parcial?"**
+```
+A: El Centro Carter es una organización sin fines de lucro que ha 
+observado 113 elecciones en 39 países desde 1989, incluyendo:
+- Venezuela (anteriormente, validó elecciones ganadas por Chávez en 2012)
+- Palestina
+- Líbano  
+- Myanmar
+- Timor Oriental
+- Y decenas de otros países
+
+Ha validado elecciones ganadas por candidatos de TODO el espectro 
+político (izquierda, derecha, centro). Su credibilidad se basa en 
+metodología técnica rigurosa, no en ideología política.
+
+El Centro Carter es considerado el "estándar de oro" en observación 
+electoral internacional. Es la primera vez en su historia que declara 
+que una elección "no puede ser considerada democrática".
+
+[Dato relevante]: En 2024, el Centro Carter también observó las 
+elecciones de República Dominicana y las validó como transparentes, 
+demostrando que su evaluación no depende de la ideología del ganador.
+
+[Enlace]: Historial completo del Centro Carter
+```
+
+**Q: "¿Qué son exactamente las auditorías post-electorales y por qué importan?"**
+```
+A: Son verificaciones técnicas OBLIGATORIAS que se realizan después 
+del día de votación para confirmar que el proceso fue transparente.
+
+El CNE tiene tres auditorías post-electorales obligatorias (la "Triada"):
+
+1. TELECOMUNICACIONES FASE II: Verifica que la transmisión de datos 
+   fue íntegra y no manipulada
+
+2. VERIFICACIÓN CIUDADANA FASE II: Compara una muestra aleatoria de 
+   actas físicas con lo transmitido digitalmente (la verificación 
+   más directa de integridad)
+
+3. DATOS ELECTORALES FASE II: Verifica que no hubo votación múltiple 
+   o manipulación del registro electoral
+
+¿Por qué importan?
+Porque sin estas auditorías, no hay forma técnica de validar que los 
+resultados son correctos, incluso si el CNE los publicara.
+
+Es como si un banco dijera "hay $1 millón en tu cuenta" pero se 
+negara a mostrarte los registros de transacciones o permitir una 
+auditoría externa.
+
+Estado actual: Las TRES fueron suspendidas.
+Justificación del CNE: "Ataque informático"
+Problema: Las auditorías trabajan con documentos físicos y muestras 
+aleatorias, no solo digitales.
+
+[Enlace]: Ver protocolos completos de auditoría CNE (Archive.org)
+```
+
+---
+
+### 6. MEJORAR SECCIÓN "COMUNIDAD INTERNACIONAL"
+
+**Mantener los logos y enlaces actuales pero añadir:**
+
+#### 6.1 Intro antes de los logos:
+
+```
+No es una opinión política. Es un consenso técnico.
+
+Doce organismos internacionales independientes, usando metodologías 
+propias, llegaron a la misma conclusión: el proceso electoral de 
+Venezuela 2024 violó estándares democráticos básicos de transparencia 
+y no puede ser validado.
+
+Entre las irregularidades señaladas:
+✓ No publicación de resultados desagregados mesa por mesa
+✓ Suspensión de todas las auditorías post-electorales obligatorias
+✓ Falta de transparencia en el proceso de totalización
+✓ Represión post-electoral
+
+Aquí están sus declaraciones oficiales:
+```
+
+#### 6.2 Para cada organización, añadir badge de contexto:
+
+**Centro Carter:**
+```
+[Logo Centro Carter]
+"La elección de Venezuela no se adecuó a parámetros internacionales 
+y no puede ser considerada democrática."
+
+[Badge]:
+ℹ️ ¿Quiénes son?
+El observador electoral más respetado del mundo. 113 elecciones 
+observadas en 39 países desde 1989. Ha validado elecciones ganadas 
+por candidatos de todo el espectro político. Fundado por ex-presidente 
+Jimmy Carter (Premio Nobel de la Paz 2002).
+
+Es la primera vez en su historia que declaran que una elección 
+"no puede ser considerada democrática".
+
+[Enlace a declaración completa]
+```
+
+**Panel de Expertos ONU:**
+```
+[Logo ONU]
+"El proceso de gestión de resultados por parte del CNE no cumplió 
+con las medidas básicas de transparencia e integridad."
+
+[Badge]:
+ℹ️ ¿Quiénes son?
+Panel independiente de expertos en derechos humanos de Naciones Unidas. 
+Evaluación técnica basada en estándares internacionales de procesos 
+electorales, no en posiciones políticas.
+
+[Enlace a declaración completa]
+```
+
+**Unión Europea:**
+```
+[Logo UE]
+"Sin pruebas que las respalden, los resultados publicados el 2 de 
+agosto no pueden ser reconocidos."
+
+[Badge]:
+ℹ️ ¿Quiénes son?
+La UE ha observado más de 100 procesos electorales en el mundo desde 
+1993. Sus misiones de observación electoral son reconocidas por su 
+rigor técnico y metodología estandarizada.
+
+[Enlace a declaración completa]
+```
+
+**OEA:**
+```
+[Logo OEA]
+"El régimen aplicó un esquema represivo complementado por acciones 
+tendientes a distorsionar completamente el resultado electoral."
+
+[Badge]:
+ℹ️ ¿Quiénes son?
+Organización de los Estados Americanos. Agrupa 35 países del 
+continente americano. Su Secretaría General monitorea procesos 
+democráticos en la región.
+
+Nota: Venezuela se retiró de la OEA en 2019, pero la organización 
+continúa monitoreando la situación de DDHH en el país.
+
+[Enlace a declaración completa]
+```
+
+Aplicar formato similar para:
+- FIDH (Federación Internacional de Derechos Humanos)
+- CIDH (Comisión Interamericana de Derechos Humanos)
+- Human Rights Watch
+- Amnistía Internacional
+- Parlamento Europeo
+- OACDH ONU (Oficina del Alto Comisionado de DDHH)
+
+#### 6.3 Añadir visualización:
+
+```
+[Mapa interactivo simple o infografía]
+
+Países y organismos que NO reconocen los resultados del CNE:
+- Estados Unidos
+- Unión Europea (27 países)
+- Argentina
+- Chile
+- Costa Rica
+- Ecuador
+- Guatemala
+- Panamá
+- Paraguay
+- Perú
+- República Dominicana
+- Uruguay
+
+Organismos internacionales:
+- OEA
+- Centro Carter
+- Panel de Expertos ONU
+- Parlamento Europeo
+- CIDH
+- FIDH
+- Human Rights Watch
+- Amnistía Internacional
+
+[Estadística visual]:
+📊 12+ organismos internacionales
+🌎 15+ países
+👥 Cientos de millones de personas representadas
+```
+
+---
+
+### 7. CREAR SECCIÓN "ACTAS CIUDADANAS: LA EVIDENCIA ALTERNATIVA"
+
+**Ubicación:** Nueva sección entre Cronología y Comunidad Internacional
+
+#### 7.1 Titular:
+```
+84% de las Actas Electorales Están Disponibles Para Verificación Pública
+(El CNE no ha publicado resultados desagregados de ninguna mesa)
+```
+
+#### 7.2 Visualización comparativa (gráfico de barras horizontal):
+```
+Actas recolectadas por testigos ciudadanos: ████████████████████ 84% (25,376 actas)
+Resultados publicados por CNE (desagregados):  [vacío]            0% (0 mesas)
+```
+
+#### 7.3 Explicación:
+
+```
+En Venezuela, cada mesa electoral imprime un ACTA física con 
+resultados verificables. Esta acta contiene:
+
+✓ Resultados de esa mesa específica
+✓ Código QR único
+✓ Número de serie de la máquina
+✓ Sello oficial
+✓ Resultados impresos automáticamente por la máquina
+
+IMPORTANTE: Las actas SON VÁLIDAS independientemente de si están 
+firmadas o no. Los criterios de validez son técnicos (QR, número 
+de serie, sello), NO las firmas. Esto previene que alguien sabotee 
+el proceso negándose a firmar.
+
+Testigos ciudadanos recolectaron 84% de estas actas el día de la 
+elección. Están disponibles públicamente para que CUALQUIERA las 
+verifique.
+
+El CNE, que por ley debe publicar resultados desagregados mesa por 
+mesa en su web (48h según Art. 146 LOPRE), no ha publicado ninguna 
+después de 160+ días.
+```
+
+#### 7.4 Botones de acción:
+```
+[Botón 1]: Ver actas en ResultadosConVzla.com
+[Botón 2]: Ver actas en MacedoniaDelNorte.com
+[Botón 3]: Aprende a verificar un acta tú mismo
+```
+
+#### 7.5 Subsección "Verificabilidad":
+
+```
+¿Cómo sabemos que estas actas son auténticas?
+
+Las actas tienen múltiples elementos de seguridad técnica:
+
+1. CÓDIGO QR ÚNICO
+   Cada acta tiene un código QR generado automáticamente por la máquina 
+   que contiene toda la información del acta cifrada. No puede ser 
+   falsificado sin acceso a las claves criptográficas del CNE.
+
+2. NÚMERO DE SERIE DE MÁQUINA
+   Cada máquina de votación tiene un número único. Este número está 
+   registrado y puede ser verificado contra el registro oficial de 
+   máquinas del CNE.
+
+3. SELLO OFICIAL
+   Las actas tienen sellos de seguridad oficiales del CNE que son 
+   difíciles de falsificar.
+
+4. CONSISTENCIA CRUZADA
+   25,376 actas de diferentes mesas, diferentes estados, diferentes 
+   centros de votación. Falsificar esto a escala masiva sería 
+   técnicamente imposible.
+
+5. VALIDACIÓN INDEPENDIENTE
+   El Centro Carter tuvo acceso a una muestra de estas actas y las 
+   validó como auténticas en su informe oficial.
+
+[Dato clave]: 
+El CNE podría desmentir estas actas FÁCILMENTE publicando sus propios 
+resultados desagregados mesa por mesa, como exige la ley. No lo ha hecho.
+
+[Enlace]: Tutorial completo: Cómo verificar una acta electoral
+[Enlace]: Documentación técnica del CNE sobre códigos QR (Archive.org)
+```
+
+#### 7.6 Comparación visual "Lo que deberías poder ver":
+
+```
+[Tabla comparativa de dos columnas]
+
+EN UNA ELECCIÓN TRANSPARENTE          | EN VENEZUELA 2024
+(Ejemplos reales de otros países)     |
+--------------------------------------|----------------------------------
+Web oficial con resultados             | ❌ Web del CNE apagada desde
+desagregados mesa por mesa             |    29/07/2024
+                                       |
+Publicación en 48 horas o menos        | ❌ 160+ días sin publicar
+                                       |
+Auditorías post-electorales            | ❌ Las 3 auditorías obligatorias
+completadas y públicas                 |    suspendidas
+                                       |
+Actas físicas coinciden con            | ⚠️ CNE no permite verificación
+resultados web                         |    cruzada
+                                       |
+Observadores internacionales           | ❌ Centro Carter: "No puede
+validan el proceso                     |    considerarse democrática"
+                                       |
+Ejemplos: Chile 2021, Colombia 2022,   | Venezuela 2024
+Argentina 2023, Rep. Dominicana 2024   |
+
+[Botón]: Ver cronología completa de violaciones
+```
+
+---
+
+### 8. CREAR SECCIÓN EDUCATIVA "ANÁLISIS ESTADÍSTICOS EXPLICADOS"
+
+**Ubicación:** Nueva página o sección expandible accesible desde navbar
+
+**Objetivo:** Traducir los análisis técnicos de Tao, Gelman, Kronick y Mebane a lenguaje accesible.
+
+#### 8.1 Introducción:
+
+```
+Las Matemáticas No Mienten: Análisis Estadístico del Proceso Electoral
+
+Cuatro expertos reconocidos mundialmente en estadística electoral 
+analizaron independientemente los datos disponibles de Venezuela 2024. 
+
+Todos llegaron a la misma conclusión: Los números presentados por el 
+CNE muestran patrones estadísticamente imposibles o extremadamente 
+improbables en una elección legítima.
+
+No es necesario ser matemático para entender por qué esto importa. 
+Aquí explicamos los hallazgos principales en lenguaje simple.
+```
+
+#### 8.2 Para cada análisis, crear una subsección:
+
+**Dr. Terence Tao (UCLA) - Medalla Fields (equivalente al Nobel en matemáticas)**
+
+```
+🔍 ¿Qué encontró?
+Patrones en los números del CNE que violan leyes matemáticas básicas 
+sobre distribución de datos electorales.
+
+📊 ¿Qué significa en simple?
+Cuando millones de personas votan, los resultados siguen patrones 
+matemáticos predecibles. Es como lanzar una moneda miles de veces: 
+deberías obtener aproximadamente 50% cara y 50% sello, con pequeñas 
+variaciones aleatorias naturales.
+
+Los números del CNE muestran una "perfección" matemática que no ocurre 
+naturalmente. Es como si lanzaras una moneda 10,000 veces y obtuvieras 
+exactamente 5,000 caras y 5,000 sellos. Técnicamente posible, 
+prácticamente imposible sin intervención.
+
+🎯 Analogía:
+Imagina que un casino dice que un jugador sacó 6 en los dados 20 veces 
+consecutivas. ¿Es imposible? No. ¿Es tan improbable que sugiere que 
+los dados están cargados? Absolutamente.
+
+[Enlace]: Leer análisis completo del Dr. Tao
+[Enlace]: ¿Quién es Terence Tao? (Wikipedia/fuente confiable)
+```
+
+**Dorothy Kronick (UC Berkeley) - Experta en elecciones latinoamericanas**
+
+```
+🔍 ¿Qué encontró?
+Anomalías en la distribución de votos que no coinciden con patrones 
+históricos de Venezuela ni con patrones normales de elecciones en 
+América Latina.
+
+📊 ¿Qué significa en simple?
+Las elecciones tienen "huellas digitales" estadísticas. Así como cada 
+persona vota de manera individual, cuando sumas millones de votos, 
+aparecen patrones predecibles basados en demografía, geografía, 
+historia de votación, etc.
+
+Los números del CNE muestran patrones que no coinciden con:
+- Elecciones previas en Venezuela
+- Encuestas previas a la elección
+- Patrones demográficos conocidos
+- Comportamiento electoral típico en la región
+
+🎯 Analogía:
+Es como si tu hijo llegara a casa con un examen perfecto, pero las 
+respuestas no están en su letra, usan vocabulario que nunca ha usado, 
+y además el profesor dice que nunca entregó ese examen.
+
+[Enlace]: Leer análisis completo de Kronick
+```
+
+**Andrew Gelman (Columbia University) - Experto en estadística electoral**
+
+```
+🔍 ¿Qué encontró?
+"Señales de alarma" estadísticas que históricamente se asocian con 
+manipulación electoral.
+
+📊 ¿Qué significa en simple?
+Gelman ha estudiado elecciones fraudulentas y legítimas por décadas. 
+Ha identificado "señales" que aparecen cuando se manipulan resultados:
+- Distribuciones demasiado uniformes (poco naturales)
+- Correlaciones extrañas entre variables
+- Ausencia de variación esperada
+
+Los datos del CNE venezolano muestran varias de estas señales.
+
+🎯 Analogía:
+Un médico puede ver una radiografía y detectar señales de enfermedad 
+que una persona común no reconocería. De la misma forma, un experto 
+en estadística electoral puede ver "síntomas" de manipulación en los 
+datos.
+
+[Enlace]: Leer análisis completo de Gelman
+```
+
+**Walter Mebane (Universidad de Michigan) - Pionero en análisis forense electoral**
+
+```
+🔍 ¿Qué encontró?
+Aplicó técnicas de "análisis forense electoral" (similar a cómo se 
+detectan fraudes financieros) y encontró irregularidades significativas.
+
+📊 ¿Qué significa en simple?
+Mebane desarrolló técnicas matemáticas para detectar manipulación 
+electoral, similares a cómo se detectan fraudes en contabilidad. 
+Estas técnicas han sido usadas por tribunales y organismos 
+internacionales.
+
+Sus métodos detectaron irregularidades en los números del CNE que son 
+consistentes con manipulación digital de resultados.
+
+🎯 Analogía:
+Es como cuando un contador forense examina libros contables y detecta 
+que los números fueron "cocinados" porque no siguen patrones naturales 
+de transacciones reales. Los números cuadran perfectamente, pero 
+*demasiado* perfectamente.
+
+[Enlace]: Leer análisis completo de Mebane
+```
+
+#### 8.3 Conclusión de la sección:
+
+```
+¿Por qué importa que sean CUATRO expertos independientes?
+
+Estos cuatro académicos:
+✓ Trabajan en diferentes universidades
+✓ Usaron diferentes metodologías
+✓ Analizaron los datos independientemente
+✓ No tienen afiliación política con Venezuela
+✓ Todos llegaron a la misma conclusión: Los datos muestran señales 
+  de manipulación
+
+Cuando múltiples expertos usando diferentes métodos llegan a la misma 
+conclusión, la probabilidad de error se reduce dramáticamente.
+
+[Visualización]:
+4 expertos independientes
+4 metodologías diferentes
+1 conclusión: Irregularidades estadísticas consistentes con manipulación
+
+[Nota importante]:
+Estos análisis NO prueban quién ganó la elección. Lo que prueban es 
+que los números del CNE no son confiables y requieren verificación 
+independiente a través de:
+- Publicación de resultados desagregados mesa por mesa
+- Auditorías post-electorales completas
+- Comparación con actas físicas
+
+Ninguno de estos procesos de verificación se ha realizado.
+```
+
+---
+
+### 9. OPTIMIZACIONES TÉCNICAS Y VISUALES
+
+#### 9.1 Contadores mejorados:
+
+Mantener los actuales pero añadir contexto visual:
+
+```
+[Contador 1 - Mejorado]:
+Días desde violación Art. 146 LOPRE (48h para publicar resultados)
+[NÚMERO EN GRANDE]: 160+
+Plazo legal: ████ 48 horas (2 días)
+Retraso real: ████████████████████████████ 160+ días (3,840+ horas)
+
+[Contador 2 - Mejorado]:
+Días desde violación Art. 155 LOPRE (30 días Gaceta Electoral)
+[NÚMERO EN GRANDE]: 130+
+Plazo legal: ████████████████ 30 días
+Retraso real: ████████████████████████████████████ 130+ días
+
+[NUEVO - Contador 3]:
+Auditorías post-electorales obligatorias realizadas
+[NÚMERO EN GRANDE]: 0 de 3
+✓ Telecomunicaciones Fase II: ❌
+✓ Verificación Ciudadana Fase II: ❌
+✓ Datos Electorales Fase II: ❌
+
+[NUEVO - Contador 4]:
+Organismos internacionales que confirman irregularidades
+[NÚMERO EN GRANDE]: 12+
+Con logos pequeños rotativos de: Centro Carter, ONU, UE, OEA, 
+HRW, Amnistía, CIDH, FIDH, Parlamento Europeo, etc.
+```
+
+#### 9.2 Barra de progreso de lectura:
+
+```
+Implementar sticky progress bar en la parte superior que muestre:
+"Has revisado [X]% de la evidencia"
+
+Segmentada por secciones:
+[■■□□□□□] Inicio → Cronología → Auditorías → Actas → Internacional → Verificación
+
+Al completar 100%:
+"✓ Has revisado toda la evidencia. Comparte lo que aprendiste."
+[Botones de compartir]
+```
+
+#### 9.3 Tooltips informativos (scroll triggers):
+
+```
+Al llegar a secciones clave, mostrar tooltips sutiles no invasivos:
+
+- Al llegar a Cronología: 
+  "📌 Cada fecha verificada con fuente primaria oficial"
+
+- Al llegar a Auditorías: 
+  "⚠️ La triada post-electoral es OBLIGATORIA según protocolos del CNE"
+
+- Al llegar a Actas Ciudadanas: 
+  "🔍 Puedes verificar cada acta tú mismo con el código QR"
+
+- Al llegar a Internacional: 
+  "🌍 12+ organismos independientes, metodologías propias, misma conclusión"
+
+- Al llegar a Análisis Estadísticos:
+  "📊 4 expertos de las mejores universidades del mundo"
+```
+
+#### 9.4 Sharing optimizado:
+
+**Botones flotantes (sticky sidebar en desktop, bottom bar en mobile):**
+
+```
+[Twitter/X]:
+Pre-texto: "160+ días desde las elecciones en Venezuela y el CNE no ha 
+publicado resultados desagregados de ninguna mesa. Las 3 auditorías 
+post-electorales obligatorias fueron suspendidas. Centro Carter, ONU 
+y UE confirman irregularidades. La evidencia: [URL]"
+
+[WhatsApp]:
+Pre-texto: "🇻🇪 Elecciones Venezuela 2024: La evidencia del fraude
+✓ 0 resultados desagregados publicados (160+ días)
+✓ 3 auditorías post-electorales suspendidas
+✓ 25,000+ actas ciudadanas vs 0 del CNE
+✓ 12+ organismos internacionales confirman irregularidades
+Toda la evidencia verificable: [URL]"
+
+[LinkedIn]:
+Pre-texto: "Documentación completa de las irregularidades en las 
+elecciones presidenciales de Venezuela 2024. Análisis de Centro Carter, 
+panel de expertos ONU, UE, y académicos de UCLA, Columbia, Berkeley y 
+U. Michigan. Incumplimiento verificable de la Ley Orgánica de Procesos 
+Electorales venezolana. [URL]"
+
+[Email - Para periodistas/académicos]:
+Asunto: "Documentación verificable: Irregularidades electorales Venezuela 2024"
+
+Cuerpo:
+"Estimado/a [nombre],
+
+Le comparto un observatorio electoral que documenta las irregularidades 
+en el proceso electoral venezolano de julio 2024, con énfasis en 
+incumplimientos legales verificables:
+
+- Violación de Art. 146 y 155 de LOPRE (ley electoral venezolana)
+- Suspensión de las 3 auditorías post-electorales obligatorias
+- Análisis de expertos de UCLA, Columbia, Berkeley y U. Michigan
+- Declaraciones de 12+ organismos internacionales
+
+Cada afirmación está respaldada con fuentes primarias verificables.
+
+[URL]
+
+Atentamente,
+[Nombre]"
+```
+
+#### 9.5 Call-to-Action final mejorado:
+
+```
+[Sección destacada visualmente con fondo diferente]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                  ROMPE LA CENSURA: DIFUNDE LA VERDAD
+
+Has revisado la evidencia. Ahora ayuda a que llegue a más personas.
+
+Esta información está siendo censurada en Venezuela. Cada compartida 
+cuenta. Cada persona informada cuenta.
+
+[Botón Grande 1 - Primario]: 📱 Compartir en Redes Sociales
+[Botón Grande 2]: 📄 Descargar Informe Completo (PDF)
+[Botón 3]: 📧 Enviar a un periodista
+[Botón 4]: 🔔 Recibir actualizaciones
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Texto pequeño centrado]:
+Este sitio es de código abierto. Puedes verificar cada línea de código 
+y cada fuente citada.
+[GitHub] • Todas las fuentes son verificables • Sin afiliación partidista
+
+"La verdad siempre encuentra la forma de salir a la luz."
+```
+
+---
+
+### 10. CREAR RECURSOS DESCARGABLES
+
+#### 10.1 Informe PDF completo:
+
+**Especificaciones:**
+```
+Título: "Elecciones Venezuela 2024: Documentación de Irregularidades 
+         Electorales Verificables"
+
+Estructura del PDF:
+
+[PORTADA]
+- Título
+- Fecha de generación
+- Logo del observatorio
+- Disclaimer: "Basado en fuentes primarias verificables"
+
+[ÍNDICE CLICKEABLE]
+1. Resumen Ejecutivo
+2. Marco Legal Venezolano
+3. Cronología de Eventos
+4. Auditorías Post-Electorales No Realizadas
+5. Análisis Estadísticos Independientes
+6. Actas Ciudadanas vs Resultados CNE
+7. Comunidad Internacional
+8. Fuentes y Referencias
+
+[CONTENIDO]
+- Versión en texto de todo el sitio web
+- Gráficos y visualizaciones incluidos
+- Enlaces clickeables (en PDF digital)
+- Código QR en cada página que vuelve al sitio web
+
+[PIE DE PÁGINA EN CADA PÁGINA]
+- Número de página
+- Fecha de generación
+- URL del sitio web
+- "Todas las fuentes son verificables"
+
+[ÚLTIMA PÁGINA]
+- Código QR grande al sitio web
+- Lista completa de URLs de fuentes
+- Información de contacto/GitHub
+- Licencia del contenido
+
+Formato: 
+- A4, profesional
+- Tipografía legible (12pt cuerpo, 16-18pt títulos)
+- Márgenes apropiados para impresión
+- Gráficos en alta resolución
+- Tamaño objetivo: <5MB para fácil compartir
+
+Nombre de archivo:
+"Venezuela_2024_Irregularidades_Electorales_[FECHA].pdf"
+```
+
+#### 10.2 Kit de infografías descargables:
+
+**5 infografías optimizadas para redes sociales:**
+
+```
+INFOGRAFÍA 1: "El Contador"
+Dimensiones: 1080x1080 (Instagram), 1200x630 (Twitter/Facebook)
+Contenido:
+- Número grande: "160+ DÍAS"
+- "Sin publicar resultados desagregados mesa por mesa"
+- Comparación visual: Plazo legal (48h) vs Realidad (160+ días)
+- Logo/branding del observatorio
+- URL del sitio
+
+INFOGRAFÍA 2: "84% vs 0%"
+Dimensiones: 1080x1080 y 1200x630
+Contenido:
+- Gráfico de barras horizontal grande
+- "Actas ciudadanas verificables: 84% (25,376)"
+- "Resultados CNE publicados: 0%"
+- Texto: "¿Qué están ocultando?"
+- URL del sitio
+
+INFOGRAFÍA 3: "Las 3 Auditorías Fantasma"
+Dimensiones: 1080x1350 (Instagram Story) y 1200x630
+Contenido:
+- 3 iconos con X roja
+- Auditoría 1: Telecomunicaciones ❌
+- Auditoría 2: Verificación Ciudadana ❌
+- Auditoría 3: Datos Electorales ❌
+- "Las 3 auditorías post-electorales OBLIGATORIAS fueron suspendidas"
+- URL del sitio
+
+INFOGRAFÍA 4: "El Consenso Internacional"
+Dimensiones: 1080x1080 y 1200x630
+Contenido:
+- Logos de: Centro Carter, ONU, UE, OEA
+- "12+ organismos internacionales"
+- "Metodologías independientes"
+- "Misma conclusión: Irregularidades graves"
+- Quotes destacadas (1-2 frases cortas)
+- URL del sitio
+
+INFOGRAFÍA 5: "Cómo Verificar un Acta"
+Dimensiones: 1080x1350 (Story/vertical)
+Contenido:
+- Tutorial visual paso a paso
+- Paso 1: Encuentra el código QR
+- Paso 2: Verifica el número de serie
+- Paso 3: Revisa el sello oficial
+- Paso 4: Compara con bases de datos ciudadanas
+- "Tú puedes verificar la verdad"
+- URL: resultadosconvzla.com y URL del observatorio
+
+Formato de descarga:
+- Carpeta ZIP: "Infografias_Venezuela2024.zip"
+- Dentro: PNG en alta resolución (300dpi)
+- Archivo README.txt con instrucciones de uso y atribución
+```
+
+---
+
+### 11. VERSIÓN MULTILINGÜE
+
+#### 11.1 Estructura de carpetas:
+```
+/es/ (español - actual - COMPLETO)
+/en/ (inglés - PRIORIDAD ALTA)
+/pt/ (portugués - PRIORIDAD MEDIA, opcional)
+```
+
+#### 11.2 Selector de idioma:
+```
+Ubicación: Top-right del navbar
+Diseño: [🌐 ES ▼]
+Dropdown:
+  • Español (actual)
+  • English
+  • Português (si se implementa)
+
+Al cambiar idioma:
+- Mantener la misma sección (usar anclas)
+- Guardar preferencia en localStorage
+- Cambiar meta tags de idioma
+```
+
+#### 11.3 Prioridad de traducción al inglés:
+
+**FASE 1 - CRÍTICO (traducir primero):**
+```
+✓ Hero section completa
+✓ "Start Here" (3 minutos)
+✓ Cronología de eventos (fechas y descripciones)
+✓ Sección de auditorías post-electorales
+✓ Declaraciones comunidad internacional (ya están en inglés mayormente)
+✓ FAQ principal (todas las preguntas)
+✓ Navbar y navegación
+✓ Meta tags y SEO
+```
+
+**FASE 2 - IMPORTANTE (traducir segundo):**
+```
+✓ Sistema electoral 101
+✓ Introducciones a análisis estadísticos
+  (Los PDFs académicos ya están en inglés)
+✓ Sección de actas ciudadanas
+✓ Contrapuntos y verificación (expansión completa)
+✓ Call-to-action final
+```
+
+**FASE 3 - MANTENER EN ORIGINAL:**
+```
+✓ PDFs de análisis académicos (ya en inglés)
+✓ Documentos legales LOPRE (español oficial, añadir nota 
+  explicativa en inglés)
+✓ Enlaces a medios en español (mantener, pero añadir 
+  descripción en inglés)
+```
+
+#### 11.4 Adaptaciones culturales para versión en inglés:
+
+```
+- Explicar siglas: CNE = "National Electoral Council"
+- Contexto geográfico: Añadir "South America" al mencionar Venezuela
+- Comparaciones: Usar ejemplos de elecciones de EE.UU. o internacionales
+  conocidas para audiencia anglófona
+- Unidades: Mantener días (universales)
+- Enfatizar validación internacional (Centro Carter, ONU, etc.) 
+  ya que tienen más reconocimiento en audiencia internacional
+```
+
+---
+
+### 12. ANALYTICS Y MEDICIÓN DE IMPACTO
+
+#### 12.1 Implementar Google Analytics 4:
+
+**Eventos personalizados a trackear:**
+```javascript
+// Configuración de eventos GA4
+
+// 1. Profundidad de scroll
+gtag('event', 'scroll_depth', {
+  'event_category': 'engagement',
+  'percent_scrolled': 25  // También: 50, 75, 100
+});
+
+// 2. Visualización de secciones
+gtag('event', 'section_view', {
+  'event_category': 'navigation',
+  'section_name': 'cronologia' 
+  // Otros: auditorias, actas_ciudadanas, internacional, faq, etc.
+});
+
+// 3. Clicks en enlaces externos
+gtag('event', 'external_link_click', {
+  'event_category': 'outbound',
+  'link_domain': 'resultadosconvzla.com',
+  'link_text': 'Ver actas ciudadanas'
+});
+
+// 4. Compartir en redes sociales
+gtag('event', 'share_button_click', {
+  'event_category': 'social',
+  'platform': 'twitter',  // También: whatsapp, linkedin, email
+  'content_type': 'main_site'
+});
+
+// 5. Descargas
+gtag('event', 'file_download', {
+  'event_category': 'engagement',
+  'file_name': 'informe_completo.pdf',
+  'file_type': 'pdf'
+});
+
+// 6. Cambio de idioma
+gtag('event', 'language_switch', {
+  'event_category': 'localization',
+  'from_language': 'es',
+  'to_language': 'en'
+});
+
+// 7. Expansión de FAQ
+gtag('event', 'faq_expand', {
+  'event_category': 'engagement',
+  'question_id': 'q_hackeo'  
+  // Trackear qué preguntas generan más interés
+});
+
+// 8. Tiempo en secciones clave
+gtag('event', 'section_time', {
+  'event_category': 'engagement',
+  'section_name': 'analisis_estadisticos',
+  'time_spent_seconds': 120
+});
+
+// 9. Clicks en contadores
+gtag('event', 'counter_interaction', {
+  'event_category': 'engagement',
+  'counter_type': 'art_146_violation'
+});
+
+// 10. Verificación de actas (si usuario click en tutorial)
+gtag('event', 'verification_interest', {
+  'event_category': 'engagement',
+  'action_type': 'acta_verification_tutorial'
+});
+```
+
+#### 12.2 Métricas clave a monitorear:
+
+**Dashboard de KPIs:**
+```
+ENGAGEMENT:
+- Tasa de rebote (objetivo: <40%)
+- Tiempo promedio en sitio (objetivo: >3 min)
+- Páginas por sesión (objetivo: >3)
+- Scroll depth promedio (objetivo: >75%)
+
+ALCANCE:
+- Visitantes únicos (total y tendencia)
+- Países de origen (top 10)
+- Idioma preferido (ES vs EN)
+- Fuentes de tráfico (directo, social, referral, búsqueda)
+
+CONVERSIÓN (Acciones deseadas):
+- Clicks en "Compartir" (% de visitantes)
+- Descargas de PDF (% de visitantes)
+- Clicks a actas ciudadanas (% de visitantes)
+- Clicks a análisis estadísticos (% de visitantes)
+- Expansión de FAQs (cuáles son más populares)
+
+CONTENIDO:
+- Secciones más vistas
+- Secciones con más tiempo
+- Enlaces externos más clickeados
+- Preguntas FAQ más expandidas
+
+TÉCNICO:
+- Tiempo de carga promedio (objetivo: <3s)
+- Errores de JavaScript (objetivo: 0)
+- Tasa de éxito de compartir social (% completan acción)
+```
+
+#### 12.3 Dashboard interno (opcional):
+
+```
+Crear página /stats (no indexada, protegida con contraseña simple)
+
+Contenido del dashboard:
+┌─────────────────────────────────────────────────┐
+│  VENEZUELA 2024 - OBSERVATORIO ELECTORAL        │
+│  Dashboard de Analytics                         │
+└─────────────────────────────────────────────────┘
+
+📊 ÚLTIMAS 24 HORAS:
+Visitantes únicos: [NÚMERO]
+Páginas vistas: [NÚMERO]
+Compartidas en redes: [NÚMERO]
+PDFs descargados: [NÚMERO]
+
+📈 ÚLTIMOS 7 DÍAS (gráfico de línea)
+[Gráfico de visitantes por día]
+
+🌍 TOP 10 PAÍSES:
+1. Venezuela: XX%
+2. Colombia: XX%
+3. Estados Unidos: XX%
+[etc.]
+
+🔗 ENLACES MÁS CLICKEADOS:
+1. ResultadosConVzla: XXX clicks
+2. Centro Carter declaración: XXX clicks
+3. Análisis Terence Tao: XXX clicks
+
+📱 REDES SOCIALES:
+Twitter: XXX compartidas
+WhatsApp: XXX compartidas
+LinkedIn: XXX compartidas
+
+❓ FAQs MÁS CONSULTADAS:
+1. "¿Qué pasa con el hackeo?" - XXX expansiones
+2. "¿Por qué creer a la oposición?" - XXX expansiones
+
+⏱️ ENGAGEMENT:
+Tiempo promedio: X min XX seg
+Scroll promedio: XX%
+Tasa de rebote: XX%
+
+[Botón]: Exportar datos completos (CSV)
+[Botón]: Ver en Google Analytics
+
+Última actualización: [timestamp]
+```
+
+---
+
+### 13. OPTIMIZACIONES SEO Y METADATA
+
+#### 13.1 Meta tags optimizados:
+
+```html
+<!-- Primary Meta Tags -->
+<title>Fraude Electoral Venezuela 2024: 160+ Días Sin Resultados | Evidencia Verificada por ONU, Centro Carter, UE</title>
+
+<meta name="title" content="Fraude Electoral Venezuela 2024: 160+ Días Sin Resultados | Evidencia Verificada">
+
+<meta name="description" content="Documentación completa del incumplimiento de plazos legales del CNE en elecciones presidenciales Venezuela 2024. 25,000+ actas ciudadanas verificables vs 0 resultados oficiales. 
