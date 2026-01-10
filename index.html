@@ -499,77 +499,238 @@
       </div>
     </section>
 
-    <section class="evidence-band" data-aos="fade-up">
-      <div class="container counter-claims">
-        <div class="counter-claims-header text-center">
-          <h3 class="text-uppercase fw-bold" data-i18n="counter_claims_title">Contrapuntos y verificación</h3>
-          <p class="counter-claims-subtitle" data-i18n="counter_claims_subtitle">Afirmaciones frecuentes y lo que exige
-            la verificación pública.</p>
+      <section class="evidence-band" data-aos="fade-up" id="faq">
+        <div class="container faq-section">
+          <div class="faq-header text-center">
+            <h3 class="text-uppercase fw-bold" data-i18n="faq_title">Contrapuntos y verificación</h3>
+            <p class="faq-subtitle" data-i18n="faq_subtitle">Respuestas rápidas para desmontar los argumentos más
+              trillados.</p>
+          </div>
+          <div class="accordion faq-accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne"
+                  aria-expanded="true" aria-controls="faqCollapseOne">
+                  <span data-i18n="faq_q1">"Los resultados son definitivos"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q1_a">La verificación independiente requiere dos elementos legales que no se cumplieron:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q1_item1">Publicación de resultados desagregados mesa por mesa en 48 horas (Art. 146
+                      LOPRE).</li>
+                    <li data-i18n="faq_q1_item2">Auditorías post-electorales completas (triada obligatoria).</li>
+                  </ul>
+                  <p data-i18n="faq_q1_note">Sin esos requisitos, no hay forma de validar los resultados proclamados.</p>
+                  <div class="faq-links">
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240417122253/http://www4.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_totalizacion.php"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q1_link1">CNE: totalización</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q1_link2">CNE: auditorías</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                  <span data-i18n="faq_q2">"La publicación en Gaceta no es prioritaria"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q2_a">La LOPRE fija dos plazos obligatorios, no opcionales:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q2_item1">Art. 146: publicación web en 48 horas.</li>
+                    <li data-i18n="faq_q2_item2">Art. 155: Gaceta Electoral en 30 días.</li>
+                  </ul>
+                  <p data-i18n="faq_q2_note">Ambos plazos están violados.</p>
+                  <div class="faq-links">
+                    <a class="faq-link" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank"
+                      rel="noopener noreferrer" data-i18n="faq_q2_link1">Art. 155 LOPRE</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240803153629/http://www.cne.gob.ve/web/normativa_electoral/elecciones/2024/eleccion_presidencial/documentos/cronograma_eleccion_presidencial.pdf"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q2_link2">CNE: cronograma electoral</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                  <span data-i18n="faq_q3">"Se realizaron auditorías post-electorales"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q3_a">El propio CNE define tres auditorías post-electorales obligatorias y ninguna se
+                    realizó:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q3_item1">Telecomunicaciones Fase II (29-31 julio) ❌</li>
+                    <li data-i18n="faq_q3_item2">Verificación Ciudadana Fase II (2 agosto) ❌</li>
+                    <li data-i18n="faq_q3_item3">Datos Electorales Fase II (5-8 agosto) ❌</li>
+                  </ul>
+                  <p data-i18n="faq_q3_note">Sin estas auditorías, no existe verificación técnica independiente.</p>
+                  <div class="faq-links">
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q3_link1">CNE: auditorías</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q3_link2">Reporte: Prensa Comunitaria</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://ktvz.com/cnn-spanish/2024/08/22/cuales-son-las-auditorias-que-el-cne-no-hizo-tras-las-elecciones-presidenciales-en-venezuela/"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q3_link3">CNN: auditorías no realizadas</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                  <span data-i18n="faq_q4">"¿No es esto solo política normal de Venezuela?"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q4_a">No. Incluso en elecciones cuestionadas (2013, 2018) el CNE publicó resultados
+                    desagregados en su web. En 2024 es la primera vez que:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q4_item1">No publican NINGÚN resultado desagregado mesa por mesa.</li>
+                    <li data-i18n="faq_q4_item2">La web del CNE permanece sin datos 160+ días después.</li>
+                    <li data-i18n="faq_q4_item3">Se suspenden TODAS las auditorías post-electorales obligatorias.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                  <span data-i18n="faq_q5">"¿Por qué debería creer a la oposición venezolana?"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q5_a">No se trata de creer. Se trata de verificar con evidencia independiente:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q5_item1">Actas ciudadanas verificables con QR, número de serie y sello oficial.</li>
+                    <li data-i18n="faq_q5_item2">Las actas son válidas con o sin firmas; la validez es técnica, no política.</li>
+                    <li data-i18n="faq_q5_item3">Análisis estadístico independiente de UCLA, Columbia, Berkeley y U. Michigan.</li>
+                    <li data-i18n="faq_q5_item4">Centro Carter, ONU, UE y 12+ organismos con metodología propia.</li>
+                  </ul>
+                  <p data-i18n="faq_q5_note">Mientras tanto, el CNE no publicó resultados desagregados ni completó la triada
+                    de auditorías.</p>
+                  <div class="faq-links">
+                    <a class="faq-link" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer"
+                      data-i18n="faq_q5_link1">Ver actas ciudadanas</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q5_link2">Cómo verificar un acta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+                  <span data-i18n="faq_q6">"¿Qué pasa con el hackeo que mencionó el CNE?"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqHeadingSix"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q6_a">Expertos cuestionan el supuesto hackeo por varias razones:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q6_item1">El sistema no está conectado a internet durante la votación (según CNE).</li>
+                    <li data-i18n="faq_q6_item2">Las actas físicas impresas no pueden ser hackeadas.</li>
+                    <li data-i18n="faq_q6_item3">Si hubo ataque, la respuesta legal era hacer auditorías, no suspenderlas.</li>
+                    <li data-i18n="faq_q6_item4">Las auditorías usan muestras físicas y registros, no solo sistemas digitales.</li>
+                  </ul>
+                  <div class="faq-links">
+                    <a class="faq-link" href="https://x.com/phenobarbital/status/1818990019761091059" target="_blank"
+                      rel="noopener noreferrer" data-i18n="faq_q6_link1">Análisis del supuesto hackeo</a>
+                    <span class="faq-link-divider" aria-hidden="true">•</span>
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q6_link2">Protocolos de auditoría CNE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
+                  <span data-i18n="faq_q7">"¿No es el Centro Carter una organización parcial?"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseSeven" class="accordion-collapse collapse" aria-labelledby="faqHeadingSeven"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q7_a">El Centro Carter ha observado 113 elecciones en 39 países y validó ganadores de
+                    todo el espectro político.</p>
+                  <p data-i18n="faq_q7_b">Es la primera vez que declara que una elección no puede considerarse democrática.</p>
+                  <div class="faq-links">
+                    <a class="faq-link" href="https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q7_link1">Declaración del Centro Carter (2024)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseEight" aria-expanded="false" aria-controls="faqCollapseEight">
+                  <span data-i18n="faq_q8">"¿Qué son exactamente las auditorías post-electorales y por qué importan?"</span>
+                </button>
+              </h2>
+              <div id="faqCollapseEight" class="accordion-collapse collapse" aria-labelledby="faqHeadingEight"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p data-i18n="faq_q8_a">Son verificaciones técnicas obligatorias después de la elección. La triada
+                    post-electoral incluye:</p>
+                  <ul class="faq-list">
+                    <li data-i18n="faq_q8_item1">Telecomunicaciones Fase II: integridad de transmisión.</li>
+                    <li data-i18n="faq_q8_item2">Verificación Ciudadana Fase II: comparación de actas físicas con
+                      transmisión digital.</li>
+                    <li data-i18n="faq_q8_item3">Datos Electorales Fase II: integridad del registro y huellas.</li>
+                  </ul>
+                  <div class="faq-links">
+                    <a class="faq-link"
+                      href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+                      target="_blank" rel="noopener noreferrer" data-i18n="faq_q8_link1">Protocolos de auditorías del CNE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4">
-            <div class="counter-claim-card h-100">
-              <p class="counter-claim-label" data-i18n="counter_claim_1_label">Afirmación frecuente</p>
-              <p class="counter-claim-claim" data-i18n="counter_claim_1_claim">"Los resultados son definitivos."</p>
-              <p class="counter-claim-label counter-claim-label-verify" data-i18n="counter_claim_1_verify_label">
-                Verificación necesaria</p>
-              <p class="counter-claim-verify" data-i18n="counter_claim_1_verify">La verificación independiente requiere
-                actas mesa por mesa y auditorías post-electorales completas.</p>
-              <div class="counter-claim-links">
-                <a class="counter-claim-link"
-                  href="https://web.archive.org/web/20240417122253/http://www4.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_totalizacion.php"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_1_source_1">CNE: totalización</a>
-                <span class="counter-claim-divider" aria-hidden="true">•</span>
-                <a class="counter-claim-link"
-                  href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_1_source_2">CNE: auditorías</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="counter-claim-card h-100">
-              <p class="counter-claim-label" data-i18n="counter_claim_2_label">Afirmación frecuente</p>
-              <p class="counter-claim-claim" data-i18n="counter_claim_2_claim">"La publicación en Gaceta no es
-                prioritaria."</p>
-              <p class="counter-claim-label counter-claim-label-verify" data-i18n="counter_claim_2_verify_label">
-                Verificación necesaria</p>
-              <p class="counter-claim-verify" data-i18n="counter_claim_2_verify">La LOPRE fija un plazo máximo de 30
-                días para la publicación oficial.</p>
-              <div class="counter-claim-links">
-                <a class="counter-claim-link" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_2_source_1">Art. 155 LOPRE</a>
-                <span class="counter-claim-divider" aria-hidden="true">•</span>
-                <a class="counter-claim-link"
-                  href="https://web.archive.org/web/20240803153629/http://www.cne.gob.ve/web/normativa_electoral/elecciones/2024/eleccion_presidencial/documentos/cronograma_eleccion_presidencial.pdf"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_2_source_2">CNE: cronograma
-                  electoral</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="counter-claim-card h-100">
-              <p class="counter-claim-label" data-i18n="counter_claim_3_label">Afirmación frecuente</p>
-              <p class="counter-claim-claim" data-i18n="counter_claim_3_claim">"Se realizaron auditorías
-                post-electorales."</p>
-              <p class="counter-claim-label counter-claim-label-verify" data-i18n="counter_claim_3_verify_label">
-                Verificación necesaria</p>
-              <p class="counter-claim-verify" data-i18n="counter_claim_3_verify">El propio CNE describe las auditorías;
-                reportes externos señalan que no se realizaron.</p>
-              <div class="counter-claim-links">
-                <a class="counter-claim-link"
-                  href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_3_source_1">CNE: auditorías</a>
-                <span class="counter-claim-divider" aria-hidden="true">•</span>
-                <a class="counter-claim-link"
-                  href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/"
-                  target="_blank" rel="noopener noreferrer" data-i18n="counter_claim_3_source_2">Reporte: Prensa
-                  Comunitaria</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <!-- International Validation Section -->
     <section class="international-validation container my-5">
