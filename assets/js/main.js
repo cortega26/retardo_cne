@@ -16,6 +16,62 @@ const CNEMonitor = (() => {
     icon.classList.toggle('fa-moon', !isDarkMode);
   }
 
+  function buildOdometer(numberSpan, valueText) {
+    numberSpan.textContent = '';
+    numberSpan.classList.add('odometer');
+    numberSpan.dataset.value = valueText;
+    numberSpan.dataset.digits = String(valueText.length);
+    numberSpan.dataset.ready = 'false';
+
+    valueText.split('').forEach((digitChar) => {
+      const digit = document.createElement('span');
+      digit.className = 'odometer-digit';
+      const roller = document.createElement('span');
+      roller.className = 'odometer-roller';
+      for (let i = 0; i < 10; i += 1) {
+        const num = document.createElement('span');
+        num.className = 'odometer-number';
+        num.textContent = String(i);
+        roller.appendChild(num);
+      }
+      roller.style.transform = `translateY(-${Number(digitChar) || 0}em)`;
+      digit.appendChild(roller);
+      numberSpan.appendChild(digit);
+    });
+
+    window.requestAnimationFrame(() => {
+      numberSpan.dataset.ready = 'true';
+    });
+  }
+
+  function updateOdometer(numberSpan, valueText) {
+    const currentValue = numberSpan.dataset.value || '';
+    const needsRebuild =
+      !numberSpan.classList.contains('odometer') ||
+      numberSpan.dataset.digits !== String(valueText.length);
+
+    if (needsRebuild) {
+      buildOdometer(numberSpan, valueText);
+      return;
+    }
+
+    const digits = numberSpan.querySelectorAll('.odometer-digit');
+    valueText.split('').forEach((digitChar, index) => {
+      const digit = digits[index];
+      if (!digit) {
+        return;
+      }
+      const roller = digit.querySelector('.odometer-roller');
+      if (!roller) {
+        return;
+      }
+      const digitValue = Number(digitChar) || 0;
+      roller.style.transform = `translateY(-${digitValue}em)`;
+    });
+
+    numberSpan.dataset.value = valueText;
+  }
+
   function updateCounter(elementId, targetDate) {
     console.log(`Updating counter: ${elementId}`);
     const counter = document.getElementById(elementId);
@@ -71,9 +127,7 @@ const CNEMonitor = (() => {
           const { numberSpan, labelNode } = spans[index];
           const valueText = String(value);
           const labelText = ` ${value === 1 ? singular : plural}`;
-          if (numberSpan.textContent !== valueText) {
-            numberSpan.textContent = valueText;
-          }
+          updateOdometer(numberSpan, valueText);
           if (labelNode.textContent !== labelText) {
             labelNode.textContent = labelText;
           }
