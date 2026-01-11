@@ -125,7 +125,7 @@ const CNEMonitor = (() => {
 
         units.forEach(({ value, singular, plural }, index) => {
           const { numberSpan, labelNode } = spans[index];
-          const valueText = String(value);
+          const valueText = index >= 1 ? String(value).padStart(2, '0') : String(value);
           const labelText = ` ${value === 1 ? singular : plural}`;
           updateOdometer(numberSpan, valueText);
           if (labelNode.textContent !== labelText) {
