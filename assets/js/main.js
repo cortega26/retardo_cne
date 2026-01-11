@@ -444,7 +444,7 @@ const translations = {
     card_eu_text: "\"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden.\"",
     btn_view_declaration: "Ver Declaración",
     card_oas_title: "OEA",
-    card_oas_text: "\"A lo largo de todo este proceso electoral se vio la aplicación por parte del régimen venezolano de su esquema represivo complementado por acciones tendientes a distorsionar completamente el resultado electoral, haciendo que ese resultado quedara a disposición de la manipulación más aberrante.\"",
+    card_oas_text: "\"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria.\"",
     btn_view_communique: "Ver Comunicado",
 
     // Share & Footer
@@ -640,7 +640,7 @@ const translations = {
     card_eu_text: "\"The results made public by the CNE on August 2 cannot be recognized without evidence to support them.\"",
     btn_view_declaration: "View Declaration",
     card_oas_title: "OAS",
-    card_oas_text: "\"Throughout this entire electoral process, we saw the application by the Venezuelan regime of its repressive scheme complemented by actions aimed at completely distorting the electoral result, making that result available to the most aberrant manipulation.\"",
+    card_oas_text: "\"The complete manual for fraudulent handling of the electoral result was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner.\"",
     btn_view_communique: "View Communiqué",
 
     // Share & Footer
