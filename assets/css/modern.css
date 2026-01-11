@@ -932,11 +932,7 @@ body.dark-mode footer {
 }
 
 .faq-accordion .accordion-button::after {
-  filter: brightness(0.3);
-}
-
-body.dark-mode .faq-accordion .accordion-button::after {
-  filter: brightness(1.8);
+  filter: brightness(0) invert(1);
 }
 
 .faq-accordion .accordion-body {
