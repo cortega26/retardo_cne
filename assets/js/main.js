@@ -304,7 +304,7 @@ const translations = {
 
     // Header
     status_live: "EN VIVO",
-    hero_country: "Venezuela | Elecciones Presidenciales 2024",
+    hero_country: "Elecciones Presidenciales 2024",
     hero_title: "Dossier del Fraude Electoral en Venezuela",
     hero_subtitle: "Evidencia verificable sobre totalización, actas y auditorías del CNE",
 
@@ -500,7 +500,7 @@ const translations = {
 
     // Header
     status_live: "LIVE",
-    hero_country: "Venezuela | Presidential Election 2024",
+    hero_country: "Presidential Election 2024",
     hero_title: "Electoral Fraud Dossier in Venezuela",
     hero_subtitle: "Verifiable evidence on CNE totals, actas, and audits",
 
