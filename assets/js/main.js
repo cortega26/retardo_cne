@@ -441,10 +441,10 @@ const translations = {
     card_un_text: "\"En síntesis, el proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\"",
     btn_read_statement: "Leer Comunicado",
     card_eu_title: "Unión Europea",
-    card_eu_text: "\"Sin pruebas que las respalden, los resultados publicados el 2 de agosto no pueden ser reconocidos.\"",
+    card_eu_text: "\"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden.\"",
     btn_view_declaration: "Ver Declaración",
     card_oas_title: "OEA",
-    card_oas_text: "\"El régimen aplicó un esquema represivo complementado por acciones tendientes a distorsionar completamente el resultado electoral, dejándolo a la manipulación más aberrante.\"",
+    card_oas_text: "\"A lo largo de todo este proceso electoral se vio la aplicación por parte del régimen venezolano de su esquema represivo complementado por acciones tendientes a distorsionar completamente el resultado electoral, haciendo que ese resultado quedara a disposición de la manipulación más aberrante.\"",
     btn_view_communique: "Ver Comunicado",
 
     // Share & Footer
@@ -637,10 +637,10 @@ const translations = {
     card_un_text: "\"In sum, the CNE's results management process fell short of the basic transparency and integrity measures essential to holding credible elections.\"",
     btn_read_statement: "Read Statement",
     card_eu_title: "European Union",
-    card_eu_text: "\"Without evidence to support them, the results published on August 2nd cannot be recognized.\"",
+    card_eu_text: "\"The results made public by the CNE on August 2 cannot be recognized without evidence to support them.\"",
     btn_view_declaration: "View Declaration",
     card_oas_title: "OAS",
-    card_oas_text: "\"The regime applied a repressive scheme complemented by actions tending to completely distort the electoral result, leaving it to the most aberrant manipulation.\"",
+    card_oas_text: "\"Throughout this entire electoral process, we saw the application by the Venezuelan regime of its repressive scheme complemented by actions aimed at completely distorting the electoral result, making that result available to the most aberrant manipulation.\"",
     btn_view_communique: "View Communiqué",
 
     // Share & Footer
