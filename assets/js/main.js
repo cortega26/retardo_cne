@@ -760,6 +760,54 @@ function updateLanguage(lang) {
   currentLang = resolvedLang;
 }
 
+function initShareButtons() {
+  const shareButtons = document.querySelectorAll('[data-share-platform]');
+  if (!shareButtons.length) {
+    return;
+  }
+
+  shareButtons.forEach((button) => {
+    button.addEventListener('click', async (event) => {
+      const shareUrl = window.location.href;
+      const shareData = {
+        title: document.title,
+        text: document.title,
+        url: shareUrl,
+      };
+
+      if (!navigator.share && !navigator.clipboard) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (error) {
+          if (error && error.name === 'AbortError') {
+            return;
+          }
+        }
+      }
+
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+        } catch (error) {
+          console.warn('Unable to copy share URL:', error);
+        }
+      }
+
+      const fallbackUrl = button.getAttribute('href');
+      if (fallbackUrl) {
+        window.open(fallbackUrl, '_blank', 'noopener');
+      }
+    });
+  });
+}
+
 // 3. Updated "Tab Signal" & Init
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
@@ -772,6 +820,7 @@ document.addEventListener('visibilitychange', function () {
 // Init Language Logic
 document.addEventListener('DOMContentLoaded', () => {
   updateLanguage(currentLang);
+  initShareButtons();
 
   const langBtn = document.getElementById('toggleLang');
   if (langBtn) {

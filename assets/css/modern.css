@@ -680,6 +680,16 @@ body.dark-mode .social-icons .btn {
   color: white !important;
 }
 
+.btn-instagram:hover {
+  background: #e4405f !important;
+  color: white !important;
+}
+
+.btn-tiktok:hover {
+  background: #111111 !important;
+  color: white !important;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   #main-content {
