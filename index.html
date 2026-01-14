@@ -79,7 +79,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" aria-current="page">Inicio</a>
+      <a class="navbar-brand" href="#inicio" aria-current="page" data-i18n="nav_home">Inicio</a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="toggler-icon"></span>
@@ -88,17 +88,50 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- Análisis -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="analisisDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Análisis
+            <a class="nav-link dropdown-toggle" href="#" id="evidenceDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-i18n="nav_evidence">
+              LA EVIDENCIA
             </a>
-            <ul class="dropdown-menu" aria-labelledby="analisisDropdown">
+            <ul class="dropdown-menu" aria-labelledby="evidenceDropdown">
+              <li><a class="dropdown-item" href="#cronologia" data-i18n="nav_evidence_timeline">Cronología completa</a>
+              </li>
+              <li><a class="dropdown-item" href="#auditorias" data-i18n="nav_evidence_audits">Auditorías
+                  post-electorales</a></li>
+              <li><a class="dropdown-item" href="#analisis" data-i18n="nav_evidence_analysis">Análisis estadísticos</a>
+              </li>
+              <li><a class="dropdown-item" href="#actas" data-i18n="nav_evidence_actas">Actas ciudadanas verificables</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header" data-i18n="nav_evidence_results_header">Resultados y actas</h6>
+              </li>
+              <li><a class="dropdown-item" href="https://resultadosconvzla.com/" target="_blank"
+                  rel="noopener noreferrer" data-i18n="nav_results_actas">Resultados con Venezuela</a>
+              </li>
+              <li><a class="dropdown-item" href="https://macedoniadelnorte.com/" target="_blank"
+                  rel="noopener noreferrer" data-i18n="nav_results_macedonia">MacedoniaDelNorte</a></li>
+              <li>
+                <a class="dropdown-item"
+                  href="https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_auth">Autenticidad de las Actas</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.instagram.com/espolitiks/reel/C-KtOWvJlOb/?hl=es"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_qr">Cómo leer un Código QR</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header" data-i18n="nav_evidence_analysis_header">Análisis estadísticos</h6>
+              </li>
               <li>
                 <a class="dropdown-item"
                   href="https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/"
-                  target="_blank" rel="noopener noreferrer">Dr. Terence Tao</a>
+                  target="_blank" rel="noopener noreferrer">Dr. Terence Tao (UCLA)</a>
               </li>
               <li>
                 <a class="dropdown-item" href="https://dorothykronick.com/28J.pdf" target="_blank"
@@ -116,14 +149,22 @@
             </ul>
           </li>
 
-          <!-- Antecedentes -->
-          <!-- Antecedentes -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="antecedentesDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_background">
-              ANTECEDENTES
+            <a class="nav-link dropdown-toggle" href="#" id="contextDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-i18n="nav_context">
+              CONTEXTO
             </a>
-            <ul class="dropdown-menu" aria-labelledby="antecedentesDropdown">
+            <ul class="dropdown-menu" aria-labelledby="contextDropdown">
+              <li><a class="dropdown-item" href="#sistema" data-i18n="nav_context_system">Sistema Electoral Venezolano
+                  101</a></li>
+              <li><a class="dropdown-item" href="#plazos" data-i18n="nav_context_deadlines">Plazos legales
+                  incumplidos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header" data-i18n="nav_context_background_header">Antecedentes 2018-2024</h6>
+              </li>
               <li><a class="dropdown-item"
                   href="https://www.elnacional.com/opinion/columnista/chavismo-jamas-entregara-poder_227698/"
                   target="_blank" rel="noopener noreferrer" data-i18n="nav_bg_2018_power">21/03/2018 - "Nunca vamos a
@@ -147,16 +188,12 @@
                   target="_blank" rel="noopener noreferrer" data-i18n="nav_bg_2024_joder">30/07/2024 - "Los vamos a
                   joder"</a>
               </li>
-            </ul>
-          </li>
-
-          <!-- CNE Archive -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="cneDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false" data-i18n="nav_cne_archive">
-              CNE (ARCHIVE.ORG)
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="cneDropdown">
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <h6 class="dropdown-header" data-i18n="nav_context_cne_header">Documentación CNE (Archive.org)</h6>
+              </li>
               <li><a class="dropdown-item" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/"
                   target="_blank" rel="noopener noreferrer" data-i18n="nav_cne_mirror">Sitio Oficial (Espejo)</a></li>
               <li><a class="dropdown-item"
@@ -172,40 +209,36 @@
                   href="https://web.archive.org/web/20240417122253/http://www4.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_totalizacion.php"
                   target="_blank" rel="noopener noreferrer" data-i18n="nav_cne_tech2">Tecnología Electoral II</a>
               </li>
-            </ul>
-          </li>
-
-          <!-- Auditorias -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="auditoriasDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_audits">
-              AUDITORÍAS
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="auditoriasDropdown">
-              <li><a class="dropdown-item" href="#auditorias" data-i18n="nav_audits_triad">Triada post-electoral
-                  (sección)</a></li>
-              <li><a class="dropdown-item"
-                  href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_cne">CNE: Auditorías del sistema</a>
+              <li>
+                <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item"
-                  href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_pc">Prensa Comunitaria: auditorías no
-                  realizadas</a></li>
-              <li><a class="dropdown-item"
-                  href="https://ktvz.com/cnn-spanish/2024/08/22/cuales-son-las-auditorias-que-el-cne-no-hizo-tras-las-elecciones-presidenciales-en-venezuela/"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_audits_cnn">CNN: auditorías no
-                  realizadas</a></li>
+              <li>
+                <h6 class="dropdown-header" data-i18n="nav_context_legal_header">Recursos legales</h6>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_lopre">Ley Orgánica de Procesos
+                  Electorales</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  href="https://www.regjeringen.no/contentassets/ac03d5655a8448e0a9653cd95d5c7978/garantias-electorales.pdf"
+                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_barbados">Acuerdo de Barbados</a>
+              </li>
             </ul>
           </li>
 
-          <!-- Internacional -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="internacionalDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_international">
               INTERNACIONAL
             </a>
             <ul class="dropdown-menu" aria-labelledby="internacionalDropdown">
+              <li><a class="dropdown-item" href="#internacional" data-i18n="nav_international_section">Comunidad
+                  internacional (sección)</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li>
                 <a class="dropdown-item" href="https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf"
                   target="_blank" rel="noopener noreferrer">30/07/2024 - <span data-i18n="org_carter">Centro
@@ -267,13 +300,17 @@
             </ul>
           </li>
 
-          <!-- Verificación -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="verificacionDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_verification">
               VERIFICACIÓN
             </a>
             <ul class="dropdown-menu" aria-labelledby="verificacionDropdown">
+              <li><a class="dropdown-item" href="#verificacion" data-i18n="nav_verification_section">Contrapuntos y
+                  verificación</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li>
                 <a class="dropdown-item"
                   href="https://verifica.efe.com/nada-prueba-que-sea-legitima-la-firma-lewis-and-thompson-que-presenta-un-sondeo-a-pie-de-urna-en-venezuela/"
@@ -287,48 +324,8 @@
             </ul>
           </li>
 
-          <!-- Recursos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="recursosDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false" data-i18n="nav_legal_resources">
-              RECURSOS LEGALES
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="recursosDropdown">
-              <li>
-                <a class="dropdown-item"
-                  href="https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_auth">Autenticidad de las Actas</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="https://www.instagram.com/espolitiks/reel/C-KtOWvJlOb/?hl=es"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_qr">Cómo leer un Código QR</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_lopre">Ley Orgánica de Procesos
-                  Electorales</a>
-              </li>
-              <li>
-                <a class="dropdown-item"
-                  href="https://www.regjeringen.no/contentassets/ac03d5655a8448e0a9653cd95d5c7978/garantias-electorales.pdf"
-                  target="_blank" rel="noopener noreferrer" data-i18n="nav_resource_barbados">Acuerdo de Barbados</a>
-              </li>
-            </ul>
-          </li>
-
-          <!-- Resultados -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resultDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false" data-i18n="nav_results">
-              RESULTADOS
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="resultDropdown">
-              <li><a class="dropdown-item" href="https://resultadosconvzla.com/" target="_blank"
-                  rel="noopener noreferrer" data-i18n="nav_results_actas">Resultados con Venezuela</a>
-              </li>
-              <li><a class="dropdown-item" href="https://macedoniadelnorte.com/" target="_blank"
-                  rel="noopener noreferrer" data-i18n="nav_results_macedonia">MacedoniaDelNorte</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#accion" data-i18n="nav_action">QUÉ PUEDES HACER</a>
           </li>
         </ul>
       </div>
@@ -345,15 +342,38 @@
     </div>
   </nav>
 
-  <header>
+  <header id="inicio">
     <div class="hero-badges">
       <p class="country-tag">
         <span data-i18n="hero_country">Elecciones Presidenciales 2024</span>
       </p>
       <div class="status-badge"><span class="status-dot"></span> <span data-i18n="status_live">EN VIVO</span></div>
     </div>
+    <p class="hero-suptitle" data-i18n="hero_suptitle">160+ días. Cero resultados publicados. Confirmado por ONU,
+      Centro Carter y UE</p>
     <h1 data-i18n="hero_title">Dossier del Fraude Electoral en Venezuela</h1>
-    <h2 data-i18n="hero_subtitle">Evidencia verificable sobre totalización, actas y auditorías del CNE</h2>
+    <h2 data-i18n="hero_subtitle">La violación electoral más documentada de la historia de Venezuela</h2>
+    <div class="hero-stats container">
+      <div class="row g-3 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="story-card h-100 text-center">
+            <p class="stat-text" data-i18n="hero_stat_1">25,000+ actas ciudadanas verificables vs 0 resultados
+              oficiales publicados</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="story-card h-100 text-center">
+            <p class="stat-text" data-i18n="hero_stat_2">12+ organismos internacionales confirman irregularidades</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="story-card h-100 text-center">
+            <p class="stat-text" data-i18n="hero_stat_3">2 plazos legales violados + 3 auditorías post-electorales no
+              realizadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
     <section class="mission-statement container text-center my-5" data-aos="fade-up">
@@ -366,6 +386,64 @@
         <span class="mission-proof-label" data-i18n="mission_proof_label">Fuente primaria:</span>
         <a class="mission-proof-link" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/"
           target="_blank" rel="noopener noreferrer" data-i18n="mission_proof_link">Sitio oficial del CNE (archivo)</a>
+      </div>
+    </section>
+    <section class="story-section container my-5" data-aos="fade-up" id="empieza-aqui">
+      <div class="accordion faq-accordion" id="startHereAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="startHereHeading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#startHereCollapse" aria-expanded="true" aria-controls="startHereCollapse">
+              <span data-i18n="start_here_title">Si solo tienes 3 minutos: ¿Qué pasó en Venezuela?</span>
+            </button>
+          </h2>
+          <div id="startHereCollapse" class="accordion-collapse collapse show" aria-labelledby="startHereHeading"
+            data-bs-parent="#startHereAccordion">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <div class="col-lg-4">
+                  <div class="story-card h-100">
+                    <p class="story-kicker" data-i18n="start_here_block1_label">Qué pasó</p>
+                    <p data-i18n="start_here_block1_text">El 28 de julio de 2024, Venezuela celebró elecciones
+                      presidenciales. A las 10 PM, el CNE detuvo la transmisión de resultados cuando la oposición
+                      reportaba una ventaja irreversible. A medianoche, la web del CNE se apagó. Meses después, nunca
+                      publicaron los resultados desagregados mesa por mesa que la ley exige en 48 horas.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="story-card h-100">
+                    <p class="story-kicker" data-i18n="start_here_block2_label">Por qué importa</p>
+                    <p data-i18n="start_here_block2_text">En una elección transparente, el CNE debe publicar en su web
+                      los resultados desagregados mesa por mesa y centro por centro en 48 horas. Cada mesa imprime un
+                      acta física con QR, número de serie y sello oficial, verificable de forma independiente.</p>
+                    <a class="story-link" href="https://resultadosconvzla.com/" target="_blank"
+                      rel="noopener noreferrer" data-i18n="start_here_block2_link">Ver actas ciudadanas</a>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="story-card h-100">
+                    <p class="story-kicker" data-i18n="start_here_block3_label">La evidencia</p>
+                    <p data-i18n="start_here_block3_text">Centro Carter, panel de expertos de la ONU, Unión Europea y
+                      más de una docena de organismos confirmaron irregularidades. Además, las tres auditorías
+                      post-electorales obligatorias fueron suspendidas.</p>
+                    <a class="story-link" href="#auditorias" data-i18n="start_here_block3_link">Ir a las auditorías
+                      post-electorales</a>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <a class="btn btn-primary" href="#cronologia" data-i18n="start_here_cta">Ver toda la evidencia ↓</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="story-section container my-5" data-aos="fade-up" id="plazos">
+      <div class="text-center">
+        <h3 class="text-uppercase fw-bold" data-i18n="deadlines_title">Plazos legales incumplidos</h3>
+        <p class="story-subtitle" data-i18n="deadlines_subtitle">La LOPRE exige publicar resultados desagregados en 48
+          horas y la Gaceta Electoral en 30 días. Ambos plazos están vencidos.</p>
       </div>
     </section>
     <section id="main-content">
@@ -422,9 +500,11 @@
     </section>
 
     <!-- Timeline Section -->
-    <section class="timeline-section container-fluid my-5" data-aos="fade-up" id="auditorias">
+    <section class="timeline-section container-fluid my-5" data-aos="fade-up" id="cronologia">
       <h3 class="text-center mb-5 text-uppercase fw-bold" data-i18n="timeline_title">Cronología de la Ruptura del Hilo
         Constitucional</h3>
+      <p class="story-subtitle text-center" data-i18n="timeline_intro">Cada hito está conectado con una obligación
+        legal o técnica incumplida y con la evidencia pública disponible.</p>
       <div class="timeline">
         <div class="timeline-item left">
           <div class="content shadow-sm">
@@ -458,7 +538,7 @@
             <span class="date" data-i18n="timeline_4_date">30 de Julio</span>
             <h4 data-i18n="timeline_4_title">Primer Plazo Violado</h4>
             <p data-i18n="timeline_4_text">Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se
-              publican actas.</p>
+              publican resultados desagregados mesa por mesa.</p>
           </div>
         </div>
         <div class="timeline-item left">
@@ -498,12 +578,204 @@
       </div>
     </section>
 
-      <section class="evidence-band" data-aos="fade-up" id="faq">
+    <section class="story-section container my-5" data-aos="fade-up" id="sistema">
+      <div class="text-center mb-4">
+        <h3 class="text-uppercase fw-bold" data-i18n="system_title">Sistema Electoral Venezolano 101</h3>
+        <p class="story-subtitle" data-i18n="system_subtitle">Cómo debería funcionar según el propio CNE y qué se
+          rompió en 2024.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="system_expected_label">Cómo debería funcionar</p>
+            <ol class="story-list">
+              <li data-i18n="system_expected_step1">El votante sufraga en la máquina.</li>
+              <li data-i18n="system_expected_step2">La máquina imprime el comprobante y se deposita en la caja.</li>
+              <li data-i18n="system_expected_step3">Al cierre, la máquina imprime el acta con resultados (QR, número de
+                serie, sello oficial).</li>
+              <li data-i18n="system_expected_step4">El acta física queda en la mesa para auditorías.</li>
+              <li data-i18n="system_expected_step5">La máquina transmite los resultados al CNE.</li>
+              <li data-i18n="system_expected_step6">El CNE publica resultados desagregados en 48 horas (Art. 146
+                LOPRE).</li>
+              <li data-i18n="system_expected_step7">Se ejecutan las tres auditorías post-electorales obligatorias.</li>
+              <li data-i18n="system_expected_step8">Se publica la Gaceta Electoral en 30 días (Art. 155 LOPRE).</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="system_actual_label">Qué pasó en 2024</p>
+            <ol class="story-list">
+              <li data-i18n="system_actual_step1">La votación y las actas físicas se emitieron normalmente.</li>
+              <li data-i18n="system_actual_step2">La transmisión se detuvo el 28/07 a las 10 PM.</li>
+              <li data-i18n="system_actual_step3">La web del CNE se apagó y nunca publicó resultados desagregados.</li>
+              <li data-i18n="system_actual_step4">Las tres auditorías post-electorales fueron suspendidas.</li>
+              <li data-i18n="system_actual_step5">No hubo publicación en Gaceta Electoral dentro del plazo legal.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section container my-5" data-aos="fade-up" id="auditorias">
+      <div class="text-center mb-4">
+        <h3 class="text-uppercase fw-bold" data-i18n="audits_title">Las Auditorías Post-Electorales: La Triada de
+          Verificación</h3>
+        <p class="story-subtitle" data-i18n="audits_subtitle">Tres auditorías obligatorias definidas por el propio CNE.
+          Ninguna se realizó.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="audit1_date">29-31 de julio</p>
+            <h4 class="story-title" data-i18n="audit1_title">Telecomunicaciones Fase II</h4>
+            <p class="story-status" data-i18n="audit1_status">Estado: NO realizada</p>
+            <ul class="story-list">
+              <li data-i18n="audit1_point1">Verifica que la transmisión no fue alterada.</li>
+              <li data-i18n="audit1_point2">Compara registros con la auditoría pre-electoral.</li>
+              <li data-i18n="audit1_point3">Confirma que no hubo intervención externa.</li>
+            </ul>
+            <a class="story-link"
+              href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+              target="_blank" rel="noopener noreferrer" data-i18n="audits_cne_link">Protocolos CNE</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="audit2_date">2 de agosto</p>
+            <h4 class="story-title" data-i18n="audit2_title">Verificación Ciudadana Fase II</h4>
+            <p class="story-status" data-i18n="audit2_status">Estado: NO realizada</p>
+            <ul class="story-list">
+              <li data-i18n="audit2_point1">Compara actas físicas con transmisión digital.</li>
+              <li data-i18n="audit2_point2">Revisa una muestra aleatoria de máquinas (1%).</li>
+              <li data-i18n="audit2_point3">Es la verificación más directa de integridad.</li>
+            </ul>
+            <a class="story-link"
+              href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+              target="_blank" rel="noopener noreferrer" data-i18n="audits_cne_link">Protocolos CNE</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="audit3_date">5-8 de agosto</p>
+            <h4 class="story-title" data-i18n="audit3_title">Datos Electorales Fase II</h4>
+            <p class="story-status" data-i18n="audit3_status">Estado: NO realizada</p>
+            <ul class="story-list">
+              <li data-i18n="audit3_point1">Verifica la base de huellas y duplicidades.</li>
+              <li data-i18n="audit3_point2">Comprueba integridad del registro electoral.</li>
+              <li data-i18n="audit3_point3">Detecta votación múltiple o inconsistencias.</li>
+            </ul>
+            <a class="story-link"
+              href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php"
+              target="_blank" rel="noopener noreferrer" data-i18n="audits_cne_link">Protocolos CNE</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p class="story-subtitle" data-i18n="audits_note">El CNE alegó un "ataque informático", pero las auditorías
+          trabajan con evidencia física y son el mecanismo legal para verificar resultados.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a class="btn btn-outline-primary btn-sm" href="https://x.com/phenobarbital/status/1818990019761091059"
+            target="_blank" rel="noopener noreferrer" data-i18n="audits_hack_link">Análisis del supuesto hackeo</a>
+          <a class="btn btn-outline-primary btn-sm"
+            href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/"
+            target="_blank" rel="noopener noreferrer" data-i18n="audits_report_pc">Prensa Comunitaria</a>
+          <a class="btn btn-outline-primary btn-sm"
+            href="https://ktvz.com/cnn-spanish/2024/08/22/cuales-son-las-auditorias-que-el-cne-no-hizo-tras-las-elecciones-presidenciales-en-venezuela/"
+            target="_blank" rel="noopener noreferrer" data-i18n="audits_report_cnn">CNN: auditorías no realizadas</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section container my-5" data-aos="fade-up" id="actas">
+      <div class="text-center mb-4">
+        <h3 class="text-uppercase fw-bold" data-i18n="actas_title">Actas ciudadanas verificables</h3>
+        <p class="story-subtitle" data-i18n="actas_subtitle">La evidencia física existe y es comprobable. El CNE no ha
+          publicado resultados desagregados para contrastarla.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="story-card h-100">
+            <p data-i18n="actas_body_1">Cada acta tiene código QR único, número de serie y sello oficial. Son válidas con
+              o sin firmas, precisamente para evitar sabotaje. La oposición recolectó 84% de las actas el día de la
+              elección.</p>
+            <p data-i18n="actas_body_2">Cualquier persona puede contrastar las actas con los resultados publicados por
+              organizaciones ciudadanas independientes.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-primary" href="https://resultadosconvzla.com/" target="_blank"
+                rel="noopener noreferrer" data-i18n="actas_cta_primary">Ver actas ciudadanas</a>
+              <a class="btn btn-outline-primary" href="https://macedoniadelnorte.com/" target="_blank"
+                rel="noopener noreferrer" data-i18n="actas_cta_secondary">Ver MacedoniaDelNorte</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="story-card h-100">
+            <p class="story-kicker" data-i18n="actas_verify_title">Cómo verificar un acta</p>
+            <ul class="story-list">
+              <li data-i18n="actas_verify_step1">Código QR único con datos cifrados.</li>
+              <li data-i18n="actas_verify_step2">Número de serie de la máquina.</li>
+              <li data-i18n="actas_verify_step3">Sello oficial y resultados impresos.</li>
+              <li data-i18n="actas_verify_step4">Comparación con bases de datos ciudadanas.</li>
+            </ul>
+            <a class="story-link"
+              href="https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/"
+              target="_blank" rel="noopener noreferrer" data-i18n="actas_verify_link">Guía para verificar actas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section container my-5" data-aos="fade-up" id="analisis">
+      <div class="text-center mb-4">
+        <h3 class="text-uppercase fw-bold" data-i18n="analysis_title">Análisis estadísticos independientes</h3>
+        <p class="story-subtitle" data-i18n="analysis_subtitle">Cuatro expertos de UCLA, UC Berkeley, Columbia y
+          Michigan encontraron patrones incompatibles con una elección normal.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="story-card h-100">
+            <h4 class="story-title" data-i18n="analysis_tao_title">Dr. Terence Tao (UCLA)</h4>
+            <p data-i18n="analysis_tao_text">Encontró patrones matemáticamente imposibles en la distribución de votos.</p>
+            <a class="story-link"
+              href="https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/"
+              target="_blank" rel="noopener noreferrer" data-i18n="analysis_read_link">Leer análisis</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="story-card h-100">
+            <h4 class="story-title" data-i18n="analysis_kronick_title">Dorothy Kronick (UC Berkeley)</h4>
+            <p data-i18n="analysis_kronick_text">Detectó anomalías en la distribución y patrones históricos.</p>
+            <a class="story-link" href="https://dorothykronick.com/28J.pdf" target="_blank" rel="noopener noreferrer"
+              data-i18n="analysis_read_link">Leer análisis</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="story-card h-100">
+            <h4 class="story-title" data-i18n="analysis_gelman_title">Andrew Gelman (Columbia)</h4>
+            <p data-i18n="analysis_gelman_text">Señales estadísticas asociadas a manipulación de resultados.</p>
+            <a class="story-link"
+              href="https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/"
+              target="_blank" rel="noopener noreferrer" data-i18n="analysis_read_link">Leer análisis</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="story-card h-100">
+            <h4 class="story-title" data-i18n="analysis_mebane_title">Walter Mebane (U. Michigan)</h4>
+            <p data-i18n="analysis_mebane_text">Análisis forense electoral con irregularidades consistentes.</p>
+            <a class="story-link" href="https://websites.umich.edu/~wmebane/Venezuela2024.pdf" target="_blank"
+              rel="noopener noreferrer" data-i18n="analysis_read_link">Leer análisis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section class="evidence-band" data-aos="fade-up" id="verificacion">
         <div class="container faq-section">
           <div class="faq-header text-center">
-            <h3 class="text-uppercase fw-bold" data-i18n="faq_title">Preguntas Frecuentes</h3>
-            <p class="faq-subtitle" data-i18n="faq_subtitle">Respuestas breves, basadas en evidencia verificable y en el
-              marco legal vigente.</p>
+            <h3 class="text-uppercase fw-bold" data-i18n="faq_title">Contrapuntos y verificación</h3>
+            <p class="faq-subtitle" data-i18n="faq_subtitle">Respuestas basadas en evidencia verificable y en el marco
+              legal vigente.</p>
           </div>
           <div class="accordion faq-accordion" id="faqAccordion">
             <div class="accordion-item">
@@ -804,9 +1076,11 @@
       </section>
 
     <!-- International Validation Section -->
-    <section class="international-validation container my-5">
+    <section class="international-validation container my-5" id="internacional">
       <h3 class="text-center mb-4 text-uppercase fw-bold" data-i18n="international_title">La Comunidad Internacional
         Confirma el Fraude</h3>
+      <p class="story-subtitle text-center" data-i18n="international_intro">Organismos con metodologías independientes
+        coinciden: el proceso no cumplió estándares democráticos básicos.</p>
       <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-lg-3">
           <a class="card h-100 border-0 shadow-sm org-card"
@@ -873,7 +1147,22 @@
         </div>
       </div>
     </section>
-    <section class="share-container" data-aos="fade-up">
+
+    <section class="story-section container my-5" data-aos="fade-up" id="accion">
+      <div class="story-card text-center">
+        <h3 class="text-uppercase fw-bold" data-i18n="action_title">Qué puedes hacer</h3>
+        <p class="story-subtitle" data-i18n="action_text">Has revisado la evidencia. Ayuda a que más personas la
+          conozcan y la verifiquen.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a class="btn btn-primary" href="#compartir" data-i18n="action_share_btn">Compartir en redes</a>
+          <a class="btn btn-outline-primary" href="#actas" data-i18n="action_actas_btn">Ver actas ciudadanas</a>
+          <a class="btn btn-outline-primary" href="https://github.com/cortega26/retardo_cne" target="_blank"
+            rel="noopener noreferrer" data-i18n="action_github_btn">Código abierto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-container" data-aos="fade-up" id="compartir">
       <h4 data-i18n="share_title">Rompe la Censura: Difunde la Verdad</h4>
       <div class="social-icons">
         <a href="https://www.x.com/intent/tweet?url=https://cortega26.github.io/retardo_cne/&text=Monitoreo de Infracciones Legales del CNE - Elecciones Presidenciales 2024"

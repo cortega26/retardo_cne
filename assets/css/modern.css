@@ -274,6 +274,85 @@ header h2 {
   margin-bottom: 2rem;
 }
 
+.hero-suptitle {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin: 0 auto 1rem;
+  max-width: 70ch;
+}
+
+.hero-stats {
+  margin-top: 2rem;
+}
+
+.stat-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.story-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--navbar-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+}
+
+.story-kicker {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.story-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.story-status {
+  font-weight: 600;
+  color: var(--color-danger);
+  margin-bottom: 0.75rem;
+}
+
+.story-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.story-list li {
+  margin-bottom: 0.5rem;
+}
+
+.story-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.story-link:hover {
+  text-decoration: underline;
+}
+
+.story-subtitle {
+  color: var(--text-secondary);
+  max-width: 70ch;
+  margin: 0.5rem auto 0;
+  font-size: 0.95rem;
+}
+
 /* Country Tag */
 .hero-badges {
   display: flex;
@@ -1694,7 +1773,8 @@ body.dark-mode .timeline::after {
 .timeline-section,
 .international-validation,
 .share-container,
-.mission-statement {
+.mission-statement,
+.story-section {
   max-width: 70%;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -1708,6 +1788,7 @@ body.dark-mode .timeline::after {
   .international-validation,
   .share-container,
   .mission-statement,
+  .story-section,
   #main-content {
     max-width: 95%;
   }

@@ -258,6 +258,22 @@ const translations = {
   es: {
     // Nav
     nav_home: "INICIO",
+    nav_evidence: "LA EVIDENCIA",
+    nav_evidence_timeline: "Cronología completa",
+    nav_evidence_audits: "Auditorías post-electorales",
+    nav_evidence_analysis: "Análisis estadísticos",
+    nav_evidence_actas: "Actas ciudadanas verificables",
+    nav_evidence_results_header: "Resultados y actas",
+    nav_evidence_analysis_header: "Análisis estadísticos",
+    nav_context: "CONTEXTO",
+    nav_context_system: "Sistema Electoral Venezolano 101",
+    nav_context_deadlines: "Plazos legales incumplidos",
+    nav_context_background_header: "Antecedentes 2018-2024",
+    nav_context_cne_header: "Documentación CNE (Archive.org)",
+    nav_context_legal_header: "Recursos legales",
+    nav_international_section: "Comunidad internacional (sección)",
+    nav_verification_section: "Contrapuntos y verificación",
+    nav_action: "QUÉ PUEDES HACER",
     nav_analysis: "ANÁLISIS",
     nav_analysis_math: "Análisis Matemático",
     nav_analysis_irregularities: "Irregularidades del proceso",
@@ -277,7 +293,7 @@ const translations = {
     nav_audits_cne: "CNE: Auditorías del sistema",
     nav_audits_pc: "Prensa Comunitaria: auditorías no realizadas",
     nav_audits_cnn: "CNN: auditorías no realizadas",
-    nav_international: "INTERNACIONAL",
+    nav_international: "COMUNIDAD INTERNACIONAL",
     org_carter: "Centro Carter",
     org_oas_sec: "Sec. Gral. OEA",
     org_eu: "Unión Europea",
@@ -305,8 +321,12 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Elecciones Presidenciales 2024",
+    hero_suptitle: "160+ días. Cero resultados publicados. Confirmado por ONU, Centro Carter y UE",
     hero_title: "Dossier del Fraude Electoral en Venezuela",
-    hero_subtitle: "Evidencia verificable sobre totalización, actas y auditorías del CNE",
+    hero_subtitle: "La violación electoral más documentada de la historia de Venezuela",
+    hero_stat_1: "25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados",
+    hero_stat_2: "12+ organismos internacionales confirman irregularidades",
+    hero_stat_3: "2 plazos legales violados + 3 auditorías post-electorales no realizadas",
 
     // Mission
     mission_text: {
@@ -318,8 +338,28 @@ const translations = {
     mission_proof_label: "Fuente primaria:",
     mission_proof_link: "Sitio oficial del CNE (archivo)",
 
-    faq_title: "Preguntas Frecuentes",
-    faq_subtitle: "Respuestas breves, basadas en evidencia verificable y en el marco legal vigente.",
+    // Start Here
+    start_here_title: "Si solo tienes 3 minutos: ¿Qué pasó en Venezuela?",
+    start_here_block1_label: "Qué pasó",
+    start_here_block1_text:
+      "El 28 de julio de 2024, Venezuela celebró elecciones presidenciales. A las 10 PM, el CNE detuvo la transmisión de resultados cuando la oposición reportaba una ventaja irreversible. A medianoche, la web del CNE se apagó. Meses después, nunca publicaron los resultados desagregados mesa por mesa que la ley exige en 48 horas.",
+    start_here_block2_label: "Por qué importa",
+    start_here_block2_text:
+      "En una elección transparente, el CNE debe publicar en su web los resultados desagregados mesa por mesa y centro por centro en 48 horas. Cada mesa imprime un acta física con QR, número de serie y sello oficial, verificable de forma independiente.",
+    start_here_block2_link: "Ver actas ciudadanas",
+    start_here_block3_label: "La evidencia",
+    start_here_block3_text:
+      "Centro Carter, panel de expertos de la ONU, Unión Europea y más de una docena de organismos confirmaron irregularidades. Además, las tres auditorías post-electorales obligatorias fueron suspendidas.",
+    start_here_block3_link: "Ir a las auditorías post-electorales",
+    start_here_cta: "Ver toda la evidencia ↓",
+
+    // Deadlines
+    deadlines_title: "Plazos legales incumplidos",
+    deadlines_subtitle:
+      "La LOPRE exige publicar resultados desagregados en 48 horas y la Gaceta Electoral en 30 días. Ambos plazos están vencidos.",
+
+    faq_title: "Contrapuntos y verificación",
+    faq_subtitle: "Respuestas basadas en evidencia verificable y en el marco legal vigente.",
     faq_q1: "¿Son definitivos los resultados anunciados?",
     faq_q1_a: "Los resultados solo pueden considerarse definitivos cuando se cumplen los requisitos legales de publicación y verificación:",
     faq_q1_item1: "Publicación de resultados desagregados mesa por mesa en 48 horas (Art. 146 LOPRE).",
@@ -407,6 +447,8 @@ const translations = {
 
     // Timeline
     timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
+    timeline_intro:
+      "Cada hito está conectado con una obligación legal o técnica incumplida y con la evidencia pública disponible.",
     timeline_1_date: "28 de Julio - 10:00 PM",
     timeline_1_title: "Paralización de Transmisión",
     timeline_1_text: "El CNE detiene inexplicablemente la transmisión de datos cuando la oposición reportaba una ventaja irreversible.",
@@ -418,7 +460,8 @@ const translations = {
     timeline_3_text: "Debía comparar la configuración de transmisión con la auditada antes de la elección y revisar los registros. No se realizó; fue suspendida tras alegar un \"ataque informático\".",
     timeline_4_date: "30 de Julio",
     timeline_4_title: "Primer Plazo Violado",
-    timeline_4_text: "Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se publican actas.",
+    timeline_4_text:
+      "Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se publican resultados desagregados mesa por mesa.",
     timeline_5_date: "2 de Agosto",
     timeline_5_title: "Verificación Ciudadana Fase II",
     timeline_5_text: "Debía auditar una muestra aleatoria (1%) de máquinas para verificar que el software no fue alterado y que la transmisión fue correcta. No se realizó.",
@@ -432,8 +475,88 @@ const translations = {
     timeline_8_title: "Segundo Plazo Violado",
     timeline_8_text: "Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta Electoral. El incumplimiento se consuma definitivamente.",
 
+    // Sistema Electoral 101
+    system_title: "Sistema Electoral Venezolano 101",
+    system_subtitle: "Cómo debería funcionar según el propio CNE y qué se rompió en 2024.",
+    system_expected_label: "Cómo debería funcionar",
+    system_expected_step1: "El votante sufraga en la máquina.",
+    system_expected_step2: "La máquina imprime el comprobante y se deposita en la caja.",
+    system_expected_step3: "Al cierre, la máquina imprime el acta con resultados (QR, número de serie, sello oficial).",
+    system_expected_step4: "El acta física queda en la mesa para auditorías.",
+    system_expected_step5: "La máquina transmite los resultados al CNE.",
+    system_expected_step6: "El CNE publica resultados desagregados en 48 horas (Art. 146 LOPRE).",
+    system_expected_step7: "Se ejecutan las tres auditorías post-electorales obligatorias.",
+    system_expected_step8: "Se publica la Gaceta Electoral en 30 días (Art. 155 LOPRE).",
+    system_actual_label: "Qué pasó en 2024",
+    system_actual_step1: "La votación y las actas físicas se emitieron normalmente.",
+    system_actual_step2: "La transmisión se detuvo el 28/07 a las 10 PM.",
+    system_actual_step3: "La web del CNE se apagó y nunca publicó resultados desagregados.",
+    system_actual_step4: "Las tres auditorías post-electorales fueron suspendidas.",
+    system_actual_step5: "No hubo publicación en Gaceta Electoral dentro del plazo legal.",
+
+    // Auditorías
+    audits_title: "Las Auditorías Post-Electorales: La Triada de Verificación",
+    audits_subtitle: "Tres auditorías obligatorias definidas por el propio CNE. Ninguna se realizó.",
+    audit1_date: "29-31 de julio",
+    audit1_title: "Telecomunicaciones Fase II",
+    audit1_status: "Estado: NO realizada",
+    audit1_point1: "Verifica que la transmisión no fue alterada.",
+    audit1_point2: "Compara registros con la auditoría pre-electoral.",
+    audit1_point3: "Confirma que no hubo intervención externa.",
+    audit2_date: "2 de agosto",
+    audit2_title: "Verificación Ciudadana Fase II",
+    audit2_status: "Estado: NO realizada",
+    audit2_point1: "Compara actas físicas con transmisión digital.",
+    audit2_point2: "Revisa una muestra aleatoria de máquinas (1%).",
+    audit2_point3: "Es la verificación más directa de integridad.",
+    audit3_date: "5-8 de agosto",
+    audit3_title: "Datos Electorales Fase II",
+    audit3_status: "Estado: NO realizada",
+    audit3_point1: "Verifica la base de huellas y duplicidades.",
+    audit3_point2: "Comprueba integridad del registro electoral.",
+    audit3_point3: "Detecta votación múltiple o inconsistencias.",
+    audits_cne_link: "Protocolos CNE",
+    audits_note:
+      "El CNE alegó un \"ataque informático\", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados.",
+    audits_hack_link: "Análisis del supuesto hackeo",
+    audits_report_pc: "Prensa Comunitaria",
+    audits_report_cnn: "CNN: auditorías no realizadas",
+
+    // Actas ciudadanas
+    actas_title: "Actas ciudadanas verificables",
+    actas_subtitle:
+      "La evidencia física existe y es comprobable. El CNE no ha publicado resultados desagregados para contrastarla.",
+    actas_body_1:
+      "Cada acta tiene código QR único, número de serie y sello oficial. Son válidas con o sin firmas, precisamente para evitar sabotaje. La oposición recolectó 84% de las actas el día de la elección.",
+    actas_body_2:
+      "Cualquier persona puede contrastar las actas con los resultados publicados por organizaciones ciudadanas independientes.",
+    actas_cta_primary: "Ver actas ciudadanas",
+    actas_cta_secondary: "Ver MacedoniaDelNorte",
+    actas_verify_title: "Cómo verificar un acta",
+    actas_verify_step1: "Código QR único con datos cifrados.",
+    actas_verify_step2: "Número de serie de la máquina.",
+    actas_verify_step3: "Sello oficial y resultados impresos.",
+    actas_verify_step4: "Comparación con bases de datos ciudadanas.",
+    actas_verify_link: "Guía para verificar actas",
+
+    // Análisis estadísticos
+    analysis_title: "Análisis estadísticos independientes",
+    analysis_subtitle:
+      "Cuatro expertos de UCLA, UC Berkeley, Columbia y Michigan encontraron patrones incompatibles con una elección normal.",
+    analysis_tao_title: "Dr. Terence Tao (UCLA)",
+    analysis_tao_text: "Encontró patrones matemáticamente imposibles en la distribución de votos.",
+    analysis_kronick_title: "Dorothy Kronick (UC Berkeley)",
+    analysis_kronick_text: "Detectó anomalías en la distribución y patrones históricos.",
+    analysis_gelman_title: "Andrew Gelman (Columbia)",
+    analysis_gelman_text: "Señales estadísticas asociadas a manipulación de resultados.",
+    analysis_mebane_title: "Walter Mebane (U. Michigan)",
+    analysis_mebane_text: "Análisis forense electoral con irregularidades consistentes.",
+    analysis_read_link: "Leer análisis",
+
     // International
     international_title: "La Comunidad Internacional Confirma el Fraude",
+    international_intro:
+      "Organismos con metodologías independientes coinciden: el proceso no cumplió estándares democráticos básicos.",
     card_carter_title: "Centro Carter",
     card_carter_text: "\"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática.\"",
     btn_read_report: "Leer Informe",
@@ -447,6 +570,13 @@ const translations = {
     card_oas_text: "\"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria.\"",
     btn_view_communique: "Ver Comunicado",
 
+    // Action
+    action_title: "Qué puedes hacer",
+    action_text: "Has revisado la evidencia. Ayuda a que más personas la conozcan y la verifiquen.",
+    action_share_btn: "Compartir en redes",
+    action_actas_btn: "Ver actas ciudadanas",
+    action_github_btn: "Código abierto",
+
     // Share & Footer
     share_title: "Rompe la Censura: Difunde la Verdad",
     footer_rights: "Observatorio Electoral Ciudadano. Este sitio no está afiliado al CNE.",
@@ -455,6 +585,22 @@ const translations = {
   en: {
     // Nav
     nav_home: "HOME",
+    nav_evidence: "EVIDENCE",
+    nav_evidence_timeline: "Full timeline",
+    nav_evidence_audits: "Post-election audits",
+    nav_evidence_analysis: "Statistical analysis",
+    nav_evidence_actas: "Citizen actas",
+    nav_evidence_results_header: "Results and actas",
+    nav_evidence_analysis_header: "Statistical analysis",
+    nav_context: "CONTEXT",
+    nav_context_system: "Venezuelan Electoral System 101",
+    nav_context_deadlines: "Missed legal deadlines",
+    nav_context_background_header: "Background 2018-2024",
+    nav_context_cne_header: "CNE Documentation (Archive.org)",
+    nav_context_legal_header: "Legal resources",
+    nav_international_section: "International community (section)",
+    nav_verification_section: "Verification and counterpoints",
+    nav_action: "WHAT YOU CAN DO",
     nav_analysis: "ANALYSIS",
     nav_analysis_math: "Mathematical Analysis",
     nav_analysis_irregularities: "Process Irregularities",
@@ -474,7 +620,7 @@ const translations = {
     nav_audits_cne: "CNE: System audits",
     nav_audits_pc: "Prensa Comunitaria: audits not performed",
     nav_audits_cnn: "CNN: audits not performed",
-    nav_international: "INTERNATIONAL",
+    nav_international: "INTERNATIONAL COMMUNITY",
     org_carter: "The Carter Center",
     org_oas_sec: "OAS Gen. Sec.",
     org_eu: "European Union",
@@ -501,8 +647,12 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Presidential Election 2024",
+    hero_suptitle: "160+ days. Zero results published. Confirmed by the UN, Carter Center, and EU",
     hero_title: "Electoral Fraud Dossier in Venezuela",
-    hero_subtitle: "Verifiable evidence on CNE totals, actas, and audits",
+    hero_subtitle: "The most documented electoral violation in Venezuela's history",
+    hero_stat_1: "25,000+ citizen actas verified vs 0 official results published",
+    hero_stat_2: "12+ international organizations confirm irregularities",
+    hero_stat_3: "2 legal deadlines violated + 3 post-election audits not conducted",
 
     // Mission
     mission_text: {
@@ -514,8 +664,28 @@ const translations = {
     mission_proof_label: "Primary source:",
     mission_proof_link: "CNE official site (archive)",
 
-    faq_title: "Frequently Asked Questions",
-    faq_subtitle: "Concise answers grounded in verifiable evidence and the applicable legal framework.",
+    // Start Here
+    start_here_title: "If you only have 3 minutes: What happened in Venezuela?",
+    start_here_block1_label: "What happened",
+    start_here_block1_text:
+      "On July 28, 2024, Venezuela held a presidential election. At 10 PM, the CNE halted results transmission as the opposition reported an irreversible lead. By midnight, the CNE website went offline. Months later, it has never published precinct-level results required within 48 hours.",
+    start_here_block2_label: "Why it matters",
+    start_here_block2_text:
+      "In a transparent election, the CNE must publish precinct-by-precinct and center-by-center results within 48 hours. Each precinct prints a physical acta with a QR code, serial number, and official seal, independently verifiable.",
+    start_here_block2_link: "See citizen actas",
+    start_here_block3_label: "The evidence",
+    start_here_block3_text:
+      "The Carter Center, UN expert panel, European Union, and a dozen-plus organizations confirmed irregularities. The three mandatory post-election audits were also suspended.",
+    start_here_block3_link: "Go to post-election audits",
+    start_here_cta: "See all the evidence ↓",
+
+    // Deadlines
+    deadlines_title: "Missed legal deadlines",
+    deadlines_subtitle:
+      "LOPRE requires publishing precinct-level results within 48 hours and the Electoral Gazette within 30 days. Both deadlines were missed.",
+
+    faq_title: "Counterpoints and verification",
+    faq_subtitle: "Answers based on verifiable evidence and the applicable legal framework.",
     faq_q1: "Are the announced results definitive?",
     faq_q1_a: "Results can only be considered definitive once the legal publication and verification steps are fulfilled:",
     faq_q1_item1: "Publication of precinct-level results within 48 hours (Art. 146 LOPRE).",
@@ -603,6 +773,8 @@ const translations = {
 
     // Timeline
     timeline_title: "Chronology of the Constitutional Breakdown",
+    timeline_intro:
+      "Each milestone links to a legal or technical obligation that was not met, with public evidence.",
     timeline_1_date: "July 28 - 10:00 PM",
     timeline_1_title: "Transmission Halted",
     timeline_1_text: "The CNE inexplicably halts data transmission just as the opposition was reporting an irreversible lead.",
@@ -614,7 +786,8 @@ const translations = {
     timeline_3_text: "It should have compared transmission configuration with the pre-election audit and reviewed logs. It did not occur; it was suspended after alleging a \"cyberattack\".",
     timeline_4_date: "July 30",
     timeline_4_title: "First Deadline Violated",
-    timeline_4_text: "The 48-hour legal deadline (Art. 146 LOPRE) for totalization expires. No official minutes are published.",
+    timeline_4_text:
+      "The 48-hour legal deadline (Art. 146 LOPRE) for totalization expires. No precinct-level results are published.",
     timeline_5_date: "August 2",
     timeline_5_title: "Citizen Verification Phase II",
     timeline_5_text: "A random 1% sample of machines was due to verify that software was not altered and transmission was correct. It was not carried out.",
@@ -628,8 +801,88 @@ const translations = {
     timeline_8_title: "Second Deadline Violated",
     timeline_8_text: "The 30-day deadline (Art. 155 LOPRE) for publication in the Electoral Gazette expires. The breach is definitively consummated.",
 
+    // Electoral System 101
+    system_title: "Venezuelan Electoral System 101",
+    system_subtitle: "How it should work according to the CNE and what broke in 2024.",
+    system_expected_label: "How it should work",
+    system_expected_step1: "The voter casts a ballot on the machine.",
+    system_expected_step2: "The machine prints a receipt that is deposited.",
+    system_expected_step3: "At closing, the machine prints the acta with results (QR, serial number, official seal).",
+    system_expected_step4: "The physical acta remains at the precinct for audits.",
+    system_expected_step5: "The machine transmits results to the CNE.",
+    system_expected_step6: "The CNE publishes precinct-level results within 48 hours (Art. 146 LOPRE).",
+    system_expected_step7: "The three mandatory post-election audits are executed.",
+    system_expected_step8: "The Electoral Gazette is published within 30 days (Art. 155 LOPRE).",
+    system_actual_label: "What happened in 2024",
+    system_actual_step1: "Voting and physical actas were produced normally.",
+    system_actual_step2: "Transmission stopped on 07/28 at 10 PM.",
+    system_actual_step3: "The CNE website went offline and never published precinct-level results.",
+    system_actual_step4: "All three post-election audits were suspended.",
+    system_actual_step5: "No Electoral Gazette publication within the legal deadline.",
+
+    // Audits
+    audits_title: "Post-Election Audits: The Verification Triad",
+    audits_subtitle: "Three mandatory audits defined by the CNE itself. None were carried out.",
+    audit1_date: "July 29-31",
+    audit1_title: "Telecommunications Phase II",
+    audit1_status: "Status: NOT conducted",
+    audit1_point1: "Verifies transmission integrity.",
+    audit1_point2: "Compares logs with the pre-election audit.",
+    audit1_point3: "Confirms no external interference.",
+    audit2_date: "August 2",
+    audit2_title: "Citizen Verification Phase II",
+    audit2_status: "Status: NOT conducted",
+    audit2_point1: "Compares physical actas to digital transmission.",
+    audit2_point2: "Reviews a random 1% machine sample.",
+    audit2_point3: "Most direct integrity verification.",
+    audit3_date: "August 5-8",
+    audit3_title: "Electoral Data Phase II",
+    audit3_status: "Status: NOT conducted",
+    audit3_point1: "Checks fingerprint database and duplicates.",
+    audit3_point2: "Validates electoral registry integrity.",
+    audit3_point3: "Detects multiple voting or inconsistencies.",
+    audits_cne_link: "CNE protocols",
+    audits_note:
+      "The CNE cited a \"cyberattack\", but audits rely on physical evidence and are the legal mechanism to verify results.",
+    audits_hack_link: "Analysis of the alleged hack",
+    audits_report_pc: "Prensa Comunitaria",
+    audits_report_cnn: "CNN: audits not conducted",
+
+    // Citizen actas
+    actas_title: "Verifiable citizen actas",
+    actas_subtitle:
+      "The physical evidence exists and is checkable. The CNE has not published precinct-level results to contrast it.",
+    actas_body_1:
+      "Each acta has a unique QR code, serial number, and official seal. They are valid with or without signatures to prevent sabotage. The opposition collected 84% of actas on election day.",
+    actas_body_2:
+      "Anyone can compare actas with results published by independent citizen organizations.",
+    actas_cta_primary: "See citizen actas",
+    actas_cta_secondary: "See MacedoniaDelNorte",
+    actas_verify_title: "How to verify an acta",
+    actas_verify_step1: "Unique QR code with encrypted data.",
+    actas_verify_step2: "Machine serial number.",
+    actas_verify_step3: "Official seal and printed results.",
+    actas_verify_step4: "Comparison with citizen databases.",
+    actas_verify_link: "Guide to verify actas",
+
+    // Statistical analyses
+    analysis_title: "Independent statistical analyses",
+    analysis_subtitle:
+      "Four experts from UCLA, UC Berkeley, Columbia, and Michigan found patterns incompatible with a normal election.",
+    analysis_tao_title: "Dr. Terence Tao (UCLA)",
+    analysis_tao_text: "Found mathematically impossible patterns in vote distributions.",
+    analysis_kronick_title: "Dorothy Kronick (UC Berkeley)",
+    analysis_kronick_text: "Detected anomalies in distributions and historical patterns.",
+    analysis_gelman_title: "Andrew Gelman (Columbia)",
+    analysis_gelman_text: "Statistical red flags associated with result manipulation.",
+    analysis_mebane_title: "Walter Mebane (U. Michigan)",
+    analysis_mebane_text: "Forensic electoral analysis with consistent irregularities.",
+    analysis_read_link: "Read analysis",
+
     // International
     international_title: "The International Community Confirms the Fraud",
+    international_intro:
+      "Organizations with independent methodologies agree: the process failed basic democratic standards.",
     card_carter_title: "The Carter Center",
     card_carter_text: "\"Venezuela's election did not meet international standards and cannot be considered democratic.\"",
     btn_read_report: "Read Report",
@@ -642,6 +895,13 @@ const translations = {
     card_oas_title: "OAS",
     card_oas_text: "\"The complete manual for fraudulent handling of the electoral result was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner.\"",
     btn_view_communique: "View Communiqué",
+
+    // Action
+    action_title: "What you can do",
+    action_text: "You reviewed the evidence. Help more people see it and verify it.",
+    action_share_btn: "Share on social media",
+    action_actas_btn: "See citizen actas",
+    action_github_btn: "Open source",
 
     // Share & Footer
     share_title: "Break the Censorship: Spread the Truth",
