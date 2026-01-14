@@ -133,6 +133,10 @@ const CNEMonitor = (() => {
           }
         });
 
+        if (elementId === 'counter2') {
+          updateHeroSuptitle(days);
+        }
+
         // Pulse effect removed
       } catch (error) {
         console.error('Error updating counter:', error);
@@ -321,7 +325,7 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Elecciones Presidenciales 2024",
-    hero_suptitle: "160+ días. Cero resultados publicados. Confirmado por ONU, Centro Carter y UE",
+    hero_suptitle: "{{days}} días. Cero resultados publicados. Confirmado por ONU, Centro Carter y UE",
     hero_title: "Dossier del Fraude Electoral en Venezuela",
     hero_subtitle: "La violación electoral más documentada de la historia de Venezuela",
     hero_stat_1: "25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados",
@@ -647,7 +651,7 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Presidential Election 2024",
-    hero_suptitle: "160+ days. Zero results published. Confirmed by the UN, Carter Center, and EU",
+    hero_suptitle: "{{days}} days. Zero results published. Confirmed by the UN, Carter Center, and EU",
     hero_title: "Electoral Fraud Dossier in Venezuela",
     hero_subtitle: "The most documented electoral violation in Venezuela's history",
     hero_stat_1: "25,000+ citizen actas verified vs 0 official results published",
@@ -963,6 +967,29 @@ function observeHighlights(root = document) {
 
 const storedLang = localStorage.getItem('site_lang');
 let currentLang = getSafeLang(storedLang);
+const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
+let latestCounter2Days = null;
+
+function formatHeroSuptitle(lang, days) {
+  const safeLang = getSafeLang(lang);
+  const template = translations[safeLang].hero_suptitle || '';
+  const resolvedDays = Number.isFinite(days) ? Math.max(0, Math.floor(days)) : null;
+  const daysText = resolvedDays === null ? '0' : String(resolvedDays);
+  return template.replace(HERO_SUPTITLE_PLACEHOLDER, daysText);
+}
+
+function updateHeroSuptitle(days) {
+  if (Number.isFinite(days)) {
+    latestCounter2Days = Math.max(0, Math.floor(days));
+  }
+
+  const heroSuptitle = document.querySelector('[data-i18n="hero_suptitle"]');
+  if (!heroSuptitle) {
+    return;
+  }
+
+  heroSuptitle.textContent = formatHeroSuptitle(currentLang, latestCounter2Days);
+}
 
 function setMissionText(element, entry) {
   if (!element) {
@@ -996,7 +1023,9 @@ function updateLanguage(lang) {
       return;
     }
 
-    if (key === 'mission_text') {
+    if (key === 'hero_suptitle') {
+      el.textContent = formatHeroSuptitle(resolvedLang, latestCounter2Days);
+    } else if (key === 'mission_text') {
       setMissionText(el, langTranslations[key]);
     } else if (key.startsWith('org_')) {
       // For inline spans we just set textContent
