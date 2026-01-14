@@ -766,14 +766,35 @@ function initShareButtons() {
     return;
   }
 
+  const bypassNativeSharePlatforms = new Set(['instagram', 'tiktok']);
+
   shareButtons.forEach((button) => {
     button.addEventListener('click', async (event) => {
       const shareUrl = window.location.href;
+      const platform = button.dataset.sharePlatform || '';
+      const usesNativeShare = !bypassNativeSharePlatforms.has(platform);
       const shareData = {
         title: document.title,
         text: document.title,
         url: shareUrl,
       };
+
+      if (!usesNativeShare) {
+        event.preventDefault();
+        if (navigator.clipboard) {
+          try {
+            await navigator.clipboard.writeText(shareUrl);
+          } catch (error) {
+            console.warn('Unable to copy share URL:', error);
+          }
+        }
+
+        const fallbackUrl = button.getAttribute('href');
+        if (fallbackUrl) {
+          window.open(fallbackUrl, '_blank', 'noopener');
+        }
+        return;
+      }
 
       if (!navigator.share && !navigator.clipboard) {
         return;
