@@ -84,6 +84,13 @@ test.describe('regression coverage', () => {
     const logos = page.locator('.international-validation .org-logo');
     await expect(logos).toHaveCount(4);
 
+    await logos.first().scrollIntoViewIfNeeded();
+    await expect.poll(async () => {
+      return await logos.evaluateAll(
+        (elements) => elements.filter((el) => el.complete && el.naturalWidth > 0).length,
+      );
+    }).toBe(4);
+
     const sizes = await logos.evaluateAll((elements) =>
       elements.map((el) => ({ src: el.getAttribute('src'), width: el.naturalWidth })),
     );
