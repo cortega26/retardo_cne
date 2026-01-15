@@ -333,6 +333,12 @@ const translations = {
     hero_stat_1: "25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados",
     hero_stat_2: "12+ organismos internacionales confirman irregularidades",
     hero_stat_3: "2 plazos legales violados + 3 auditorías post-electorales no realizadas",
+    methodology_title: "Metodología de verificación",
+    methodology_text: "Cada afirmación enlaza norma legal, evidencia pública y fuente primaria.",
+    methodology_link: "Ver cómo verificamos",
+    source_label: "Fuente primaria:",
+    label_fact: "Hecho verificado",
+    label_inference: "Inferencia",
 
     // Mission
     mission_text: {
@@ -349,13 +355,16 @@ const translations = {
     start_here_block1_label: "Qué pasó",
     start_here_block1_text:
       "El 28 de julio de 2024 el CNE detuvo la transmisión y la web oficial quedó fuera de línea. Desde entonces no se publicaron resultados desagregados mesa por mesa dentro del plazo legal.",
+    start_here_block1_source: "Sitio oficial del CNE (archivo)",
     start_here_block2_label: "Por qué importa",
     start_here_block2_text:
       "La LOPRE exige resultados desagregados en 48 horas y publicación en Gaceta en 30 días. Sin esos datos, la verificación pública de la totalización queda incompleta.",
+    start_here_block2_source: "Ley Orgánica de Procesos Electorales (LOPRE)",
     start_here_block2_link: "Ver actas ciudadanas",
     start_here_block3_label: "Qué puedes verificar",
     start_here_block3_text:
       "Puedes contrastar actas físicas con bases ciudadanas, revisar protocolos de auditoría y comparar cronogramas oficiales.",
+    start_here_block3_source: "Protocolos de auditoría CNE (archivo)",
     start_here_block3_link: "Ir a auditorías post-electorales",
     start_here_cta: "Explorar toda la evidencia ↓",
 
@@ -709,6 +718,12 @@ const translations = {
     hero_stat_1: "25,000+ citizen actas verified vs 0 official results published",
     hero_stat_2: "12+ international organizations confirm irregularities",
     hero_stat_3: "2 legal deadlines violated + 3 post-election audits not conducted",
+    methodology_title: "Verification methodology",
+    methodology_text: "Each claim links legal basis, public evidence, and a primary source.",
+    methodology_link: "See how we verify",
+    source_label: "Primary source:",
+    label_fact: "Verified fact",
+    label_inference: "Inference",
 
     // Mission
     mission_text: {
@@ -725,13 +740,16 @@ const translations = {
     start_here_block1_label: "What happened",
     start_here_block1_text:
       "On July 28, 2024 the CNE halted transmission and the official website went offline. Since then, precinct-level results have not been published within the legal deadline.",
+    start_here_block1_source: "CNE official site (archive)",
     start_here_block2_label: "Why it matters",
     start_here_block2_text:
       "LOPRE requires precinct-level results within 48 hours and Gazette publication within 30 days. Without those, public verification of the totalization is incomplete.",
+    start_here_block2_source: "Organic Law of Electoral Processes (LOPRE)",
     start_here_block2_link: "See citizen actas",
     start_here_block3_label: "What you can verify",
     start_here_block3_text:
       "You can cross-check physical actas with citizen databases, review audit protocols, and compare official schedules.",
+    start_here_block3_source: "CNE audit protocols (archive)",
     start_here_block3_link: "Go to post-election audits",
     start_here_cta: "Explore all the evidence ↓",
 
