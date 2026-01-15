@@ -405,6 +405,12 @@ header h2 {
   letter-spacing: 0.02em;
 }
 
+.source-divider {
+  color: var(--text-primary);
+  font-weight: 700;
+  opacity: 0.9;
+}
+
 /* Country Tag */
 .hero-badges {
   display: flex;
