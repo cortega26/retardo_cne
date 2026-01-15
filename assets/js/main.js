@@ -334,28 +334,28 @@ const translations = {
 
     // Mission
     mission_text: {
-      prefix:
-        "Este observatorio reúne hechos verificables sobre incumplimientos de plazos y obligaciones del CNE según la ",
+      prefix: "Este observatorio documenta incumplimientos verificables del CNE según la ",
       highlight: "Ley Orgánica de Procesos Electorales (LOPRE)",
-      suffix: ". Cada punto enlaza norma y fuente primaria.",
+      suffix:
+        ", y enlaza cada afirmación con su fuente primaria. La verificación es replicable: cualquiera puede contrastar actas, plazos y auditorías.",
     },
     mission_proof_label: "Fuente primaria:",
     mission_proof_link: "Sitio oficial del CNE (archivo)",
 
     // Start Here
-    start_here_title: "Si solo tienes 3 minutos: ¿Qué pasó en Venezuela?",
+    start_here_title: "Si solo tienes 3 minutos: ¿Qué pasó y cómo verificarlo?",
     start_here_block1_label: "Qué pasó",
     start_here_block1_text:
-      "El 28 de julio de 2024, Venezuela celebró elecciones presidenciales. A las 10 PM, el CNE detuvo la transmisión de resultados cuando la oposición reportaba una ventaja irreversible. A medianoche, la web del CNE se apagó. Meses después, nunca publicaron los resultados desagregados mesa por mesa que la ley exige en 48 horas.",
+      "El 28 de julio de 2024 el CNE detuvo la transmisión y la web oficial quedó fuera de línea. Desde entonces no se publicaron resultados desagregados mesa por mesa dentro del plazo legal.",
     start_here_block2_label: "Por qué importa",
     start_here_block2_text:
-      "En una elección transparente, el CNE debe publicar en su web los resultados desagregados mesa por mesa y centro por centro en 48 horas. Cada mesa imprime un acta física con QR, número de serie y sello oficial, verificable de forma independiente.",
+      "La LOPRE exige resultados desagregados en 48 horas y publicación en Gaceta en 30 días. Sin esos datos, la verificación pública de la totalización queda incompleta.",
     start_here_block2_link: "Ver actas ciudadanas",
-    start_here_block3_label: "La evidencia",
+    start_here_block3_label: "Qué puedes verificar",
     start_here_block3_text:
-      "Centro Carter, panel de expertos de la ONU, Unión Europea y más de una docena de organismos confirmaron irregularidades. Además, las tres auditorías post-electorales obligatorias fueron suspendidas.",
-    start_here_block3_link: "Ir a las auditorías post-electorales",
-    start_here_cta: "Ver toda la evidencia ↓",
+      "Puedes contrastar actas físicas con bases ciudadanas, revisar protocolos de auditoría y comparar cronogramas oficiales.",
+    start_here_block3_link: "Ir a auditorías post-electorales",
+    start_here_cta: "Explorar toda la evidencia ↓",
 
     // Deadlines
     deadlines_title: "Plazos legales incumplidos",
@@ -660,28 +660,28 @@ const translations = {
 
     // Mission
     mission_text: {
-      prefix:
-        "This observatory compiles verifiable facts on missed deadlines and obligations under the ",
+      prefix: "This observatory documents verifiable CNE breaches under the ",
       highlight: "Organic Law of Electoral Processes (LOPRE)",
-      suffix: ". Each point links the legal basis and a primary source.",
+      suffix:
+        ", and links every claim to its primary source. Verification is replicable: anyone can cross-check actas, deadlines, and audits.",
     },
     mission_proof_label: "Primary source:",
     mission_proof_link: "CNE official site (archive)",
 
     // Start Here
-    start_here_title: "If you only have 3 minutes: What happened in Venezuela?",
+    start_here_title: "If you only have 3 minutes: What happened and how to verify it?",
     start_here_block1_label: "What happened",
     start_here_block1_text:
-      "On July 28, 2024, Venezuela held a presidential election. At 10 PM, the CNE halted results transmission as the opposition reported an irreversible lead. By midnight, the CNE website went offline. Months later, it has never published precinct-level results required within 48 hours.",
+      "On July 28, 2024 the CNE halted transmission and the official website went offline. Since then, precinct-level results have not been published within the legal deadline.",
     start_here_block2_label: "Why it matters",
     start_here_block2_text:
-      "In a transparent election, the CNE must publish precinct-by-precinct and center-by-center results within 48 hours. Each precinct prints a physical acta with a QR code, serial number, and official seal, independently verifiable.",
+      "LOPRE requires precinct-level results within 48 hours and Gazette publication within 30 days. Without those, public verification of the totalization is incomplete.",
     start_here_block2_link: "See citizen actas",
-    start_here_block3_label: "The evidence",
+    start_here_block3_label: "What you can verify",
     start_here_block3_text:
-      "The Carter Center, UN expert panel, European Union, and a dozen-plus organizations confirmed irregularities. The three mandatory post-election audits were also suspended.",
+      "You can cross-check physical actas with citizen databases, review audit protocols, and compare official schedules.",
     start_here_block3_link: "Go to post-election audits",
-    start_here_cta: "See all the evidence ↓",
+    start_here_cta: "Explore all the evidence ↓",
 
     // Deadlines
     deadlines_title: "Missed legal deadlines",
