@@ -483,13 +483,6 @@ const translations = {
     timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
     timeline_intro:
       "Cada hito incluye: hecho observado, obligación legal, fuente primaria, estado de evidencia y fecha de verificación.",
-    timeline_evidence_label: "Evidencia primaria",
-    evidence_doc_label: "Documento:",
-    evidence_statement_label: "Comunicado:",
-    status_confirmed: "Confirmado",
-    status_partial: "Parcialmente confirmado",
-    status_disputed: "En disputa",
-    status_pending: "Pendiente",
     status_evidence_available: "Evidencia disponible",
     status_evidence_pending: "Evidencia pendiente",
     status_evidence_missing: "Sin evidencia publicada",
@@ -497,60 +490,28 @@ const translations = {
     timeline_1_date: "28 de Julio - 10:00 PM",
     timeline_1_title: "Paralización de Transmisión",
     timeline_1_text: "El CNE detiene inexplicablemente la transmisión de datos cuando la oposición reportaba una ventaja irreversible.",
-    timeline_1_quote:
-      "\"En síntesis, el proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\"",
-    timeline_1_doc: "CNE: Totalización (archivo)",
-    timeline_1_statement: "Panel ONU (2024-09)",
     timeline_2_date: "29 de Julio - 12:00 AM",
     timeline_2_title: "Apagón Digital",
     timeline_2_text: "La página web oficial del CNE sale de línea. Hasta la fecha, no ha sido restablecida con los resultados mesa por mesa.",
-    timeline_2_quote:
-      "\"El Centro Carter no puede verificar ni corroborar los resultados declarados por el CNE, y la falta de publicación de resultados desagregados por mesa constituye una grave violación de los principios electorales.\"",
-    timeline_2_doc: "CNE (archivo)",
-    timeline_2_statement: "Centro Carter (2024-07-31)",
     timeline_3_date: "29-31 de Julio",
     timeline_3_title: "Auditoría de Telecomunicaciones Fase II",
     timeline_3_text: "Debía comparar la configuración de transmisión con la auditada antes de la elección y revisar los registros. No se realizó; fue suspendida tras alegar un \"ataque informático\".",
-    timeline_3_quote:
-      "\"En síntesis, el proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\"",
-    timeline_3_doc: "CNE: Auditorías (archivo)",
-    timeline_3_statement: "Panel ONU (2024-09)",
     timeline_4_date: "30 de Julio",
     timeline_4_title: "Primer Plazo Violado",
     timeline_4_text:
       "Vence el lapso legal de 48 horas (Art. 146 LOPRE) para la totalización. No se publican resultados desagregados mesa por mesa.",
-    timeline_4_quote:
-      "\"El Centro Carter no puede verificar ni corroborar los resultados declarados por el CNE, y la falta de publicación de resultados desagregados por mesa constituye una grave violación de los principios electorales.\"",
-    timeline_4_doc: "LOPRE (Art. 146)",
-    timeline_4_statement: "Centro Carter (2024-07-31)",
     timeline_5_date: "2 de Agosto",
     timeline_5_title: "Verificación Ciudadana Fase II",
     timeline_5_text: "Debía auditar una muestra aleatoria (1%) de máquinas para verificar que el software no fue alterado y que la transmisión fue correcta. No se realizó.",
-    timeline_5_quote:
-      "\"En síntesis, el proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\"",
-    timeline_5_doc: "CNE: Auditorías (archivo)",
-    timeline_5_statement: "Panel ONU (2024-09)",
     timeline_6_date: "2 de Agosto",
     timeline_6_title: "Boletín sin Sustento",
     timeline_6_text: "El CNE emite un segundo boletín adjudicando la victoria sin presentar una sola acta de escrutinio que lo valide.",
-    timeline_6_quote:
-      "\"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden.\"",
-    timeline_6_doc: "CNE (archivo)",
-    timeline_6_statement: "Unión Europea (2024-08-04)",
     timeline_7_date: "5-8 de Agosto",
     timeline_7_title: "Auditoría de Datos Electorales Fase II",
     timeline_7_text: "Debía verificar la base de huellas (calidad y duplicidades) y su consistencia con el registro electoral. No se realizó.",
-    timeline_7_quote:
-      "\"En síntesis, el proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\"",
-    timeline_7_doc: "CNE: Auditorías (archivo)",
-    timeline_7_statement: "Panel ONU (2024-09)",
     timeline_8_date: "29 de Agosto",
     timeline_8_title: "Segundo Plazo Violado",
     timeline_8_text: "Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta Electoral. El incumplimiento se consuma definitivamente.",
-    timeline_8_quote:
-      "\"El Centro Carter no puede verificar ni corroborar los resultados declarados por el CNE, y la falta de publicación de resultados desagregados por mesa constituye una grave violación de los principios electorales.\"",
-    timeline_8_doc: "LOPRE (Art. 155)",
-    timeline_8_statement: "Centro Carter (2024-07-31)",
 
     // Sistema Electoral 101
     system_title: "Sistema Electoral Venezolano 101",
@@ -912,13 +873,6 @@ const translations = {
     timeline_title: "Chronology of the Constitutional Breakdown",
     timeline_intro:
       "Each milestone includes an observed fact, legal obligation, primary source, evidence status, and verification date.",
-    timeline_evidence_label: "Primary evidence",
-    evidence_doc_label: "Document:",
-    evidence_statement_label: "Statement:",
-    status_confirmed: "Confirmed",
-    status_partial: "Partially confirmed",
-    status_disputed: "Disputed",
-    status_pending: "Pending",
     status_evidence_available: "Evidence available",
     status_evidence_pending: "Evidence pending",
     status_evidence_missing: "No public evidence",
@@ -926,60 +880,28 @@ const translations = {
     timeline_1_date: "July 28 - 10:00 PM",
     timeline_1_title: "Transmission Halted",
     timeline_1_text: "The CNE inexplicably halts data transmission just as the opposition was reporting an irreversible lead.",
-    timeline_1_quote:
-      "\"In sum, the CNE's results management process fell short of the basic transparency and integrity measures essential to holding credible elections.\"",
-    timeline_1_doc: "CNE: Totalization (archive)",
-    timeline_1_statement: "UN Panel (2024-09)",
     timeline_2_date: "July 29 - 12:00 AM",
     timeline_2_title: "Digital Blackout",
     timeline_2_text: "The official CNE website goes offline. To date, it has not been restored with precinct-level results.",
-    timeline_2_quote:
-      "\"The Carter Center cannot verify or corroborate the results of the election declared by the National Electoral Council (CNE), and the electoral authority’s failure to announce disaggregated results by polling station constitutes a serious breach of electoral principles.\"",
-    timeline_2_doc: "CNE (archive)",
-    timeline_2_statement: "Carter Center (2024-07-31)",
     timeline_3_date: "July 29-31",
     timeline_3_title: "Telecommunications Audit Phase II",
     timeline_3_text: "It should have compared transmission configuration with the pre-election audit and reviewed logs. It did not occur; it was suspended after alleging a \"cyberattack\".",
-    timeline_3_quote:
-      "\"In sum, the CNE's results management process fell short of the basic transparency and integrity measures essential to holding credible elections.\"",
-    timeline_3_doc: "CNE: Audits (archive)",
-    timeline_3_statement: "UN Panel (2024-09)",
     timeline_4_date: "July 30",
     timeline_4_title: "First Deadline Violated",
     timeline_4_text:
       "The 48-hour legal deadline (Art. 146 LOPRE) for totalization expires. No precinct-level results are published.",
-    timeline_4_quote:
-      "\"The Carter Center cannot verify or corroborate the results of the election declared by the National Electoral Council (CNE), and the electoral authority’s failure to announce disaggregated results by polling station constitutes a serious breach of electoral principles.\"",
-    timeline_4_doc: "LOPRE (Art. 146)",
-    timeline_4_statement: "Carter Center (2024-07-31)",
     timeline_5_date: "August 2",
     timeline_5_title: "Citizen Verification Phase II",
     timeline_5_text: "A random 1% sample of machines was due to verify that software was not altered and transmission was correct. It was not carried out.",
-    timeline_5_quote:
-      "\"In sum, the CNE's results management process fell short of the basic transparency and integrity measures essential to holding credible elections.\"",
-    timeline_5_doc: "CNE: Audits (archive)",
-    timeline_5_statement: "UN Panel (2024-09)",
     timeline_6_date: "August 2",
     timeline_6_title: "Baseless Bulletin",
     timeline_6_text: "The CNE issues a second bulletin awarding victory without presenting a single scrutiny minute.",
-    timeline_6_quote:
-      "\"The results made public by the CNE on August 2 cannot be recognized without evidence to support them.\"",
-    timeline_6_doc: "CNE (archive)",
-    timeline_6_statement: "European Union (2024-08-04)",
     timeline_7_date: "August 5-8",
     timeline_7_title: "Electoral Data Audit Phase II",
     timeline_7_text: "It should have verified the fingerprint database (quality and duplicates) and its consistency with the electoral register. It did not occur.",
-    timeline_7_quote:
-      "\"In sum, the CNE's results management process fell short of the basic transparency and integrity measures essential to holding credible elections.\"",
-    timeline_7_doc: "CNE: Audits (archive)",
-    timeline_7_statement: "UN Panel (2024-09)",
     timeline_8_date: "August 29",
     timeline_8_title: "Second Deadline Violated",
     timeline_8_text: "The 30-day deadline (Art. 155 LOPRE) for publication in the Electoral Gazette expires. The breach is definitively consummated.",
-    timeline_8_quote:
-      "\"The Carter Center cannot verify or corroborate the results of the election declared by the National Electoral Council (CNE), and the electoral authority’s failure to announce disaggregated results by polling station constitutes a serious breach of electoral principles.\"",
-    timeline_8_doc: "LOPRE (Art. 155)",
-    timeline_8_statement: "Carter Center (2024-07-31)",
 
     // Electoral System 101
     system_title: "Venezuelan Electoral System 101",
@@ -1122,8 +1044,8 @@ const translations = {
 
 const DEFAULT_LANG = 'es';
 const PAGE_TITLES = {
-  es: 'Retardo CNE: incumplimientos verificables y evidencia primaria (Elecciones 2024)',
-  en: 'Retardo CNE: verifiable breaches and primary evidence (2024 Election)',
+  es: 'Incumplimientos verificables del CNE — Elecciones 2024',
+  en: 'Verifiable CNE breaches — 2024 Election',
 };
 const HIGHLIGHT_OBSERVER_OPTIONS = { threshold: 1.0 };
 let highlightObserver = null;
