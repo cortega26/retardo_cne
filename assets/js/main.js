@@ -453,6 +453,10 @@ const translations = {
     timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
     timeline_intro:
       "Cada hito está conectado con una obligación legal o técnica incumplida y con la evidencia pública disponible.",
+    status_evidence_available: "Evidencia disponible",
+    status_evidence_pending: "Evidencia pendiente",
+    status_evidence_missing: "Sin evidencia publicada",
+    timeline_cta: "Ver evidencia relacionada",
     timeline_1_date: "28 de Julio - 10:00 PM",
     timeline_1_title: "Paralización de Transmisión",
     timeline_1_text: "El CNE detiene inexplicablemente la transmisión de datos cuando la oposición reportaba una ventaja irreversible.",
@@ -779,6 +783,10 @@ const translations = {
     timeline_title: "Chronology of the Constitutional Breakdown",
     timeline_intro:
       "Each milestone links to a legal or technical obligation that was not met, with public evidence.",
+    status_evidence_available: "Evidence available",
+    status_evidence_pending: "Evidence pending",
+    status_evidence_missing: "No public evidence",
+    timeline_cta: "See related evidence",
     timeline_1_date: "July 28 - 10:00 PM",
     timeline_1_title: "Transmission Halted",
     timeline_1_text: "The CNE inexplicably halts data transmission just as the opposition was reporting an irreversible lead.",
