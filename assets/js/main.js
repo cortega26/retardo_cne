@@ -329,8 +329,15 @@ const translations = {
     hero_country: "Elecciones Presidenciales 2024",
     hero_suptitle:
       "Última verificación: {{date}} · {{days}} días sin resultados desagregados publicados (CNE, archivo)",
-    hero_title: "Incumplimientos verificables del CNE — Elecciones 2024 (normas, plazos y evidencia primaria)",
+    hero_title: "Incumplimientos verificables del CNE — Elecciones 2024",
+    hero_claim:
+      "Al {{date}}, no hay resultados oficiales desagregados por mesa publicados dentro del plazo legal de 48 horas (Art. 146 LOPRE).",
+    hero_disclaimer:
+      "Metodología: cada afirmación enlaza norma aplicable, fuente primaria y archivo verificable; lo no confirmado se etiqueta como Pendiente o En disputa.",
     hero_subtitle: "Normas, plazos y evidencia primaria para auditar la transparencia electoral",
+    cred_docs: "Documentos oficiales/legales enlazados: {{count}}",
+    cred_update: "Última actualización de datos: {{date}}",
+    cred_corrections: "Correcciones: GitHub Issues",
     hero_stat_1: "25,000+ actas ciudadanas verificables / 0 resultados oficiales desagregados publicados",
     hero_stat_1_source_primary: "Resultados con Venezuela",
     hero_stat_1_source_archive: "CNE (archivo)",
@@ -712,8 +719,15 @@ const translations = {
     hero_country: "Presidential Election 2024",
     hero_suptitle:
       "Last verified: {{date}} · {{days}} days without published precinct-level results (CNE, archive)",
-    hero_title: "Verifiable CNE breaches — 2024 Election (rules, deadlines, primary evidence)",
+    hero_title: "Verifiable CNE breaches — 2024 Election",
+    hero_claim:
+      "As of {{date}}, no official precinct-level results have been published within the 48-hour legal deadline (Art. 146 LOPRE).",
+    hero_disclaimer:
+      "Methodology: each claim links the applicable rule, a primary source, and a verifiable archive; unconfirmed items are labeled Pending or Disputed.",
     hero_subtitle: "Rules, deadlines, and primary evidence to audit electoral transparency",
+    cred_docs: "Official/legal documents linked: {{count}}",
+    cred_update: "Last data update: {{date}}",
+    cred_corrections: "Corrections: GitHub Issues",
     hero_stat_1: "25,000+ citizen actas verified / 0 official precinct-level results published",
     hero_stat_1_source_primary: "Resultados con Venezuela",
     hero_stat_1_source_archive: "CNE archive",
@@ -1084,6 +1098,11 @@ let currentLang = getSafeLang(storedLang);
 const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
 const HERO_SUPTITLE_DATE_PLACEHOLDER = '{{date}}';
 const HERO_LAST_VERIFIED = '2026-01-15';
+const HERO_CLAIM_DATE_PLACEHOLDER = '{{date}}';
+const CREDIBILITY_DOCS_PLACEHOLDER = '{{count}}';
+const CREDIBILITY_DATE_PLACEHOLDER = '{{date}}';
+const CREDIBILITY_DOCS_COUNT = 7;
+const CREDIBILITY_LAST_DATA_UPDATE = '2025-05-27';
 let latestCounter2Days = null;
 
 function formatHeroSuptitle(lang, days) {
@@ -1095,6 +1114,26 @@ function formatHeroSuptitle(lang, days) {
   return template
     .replace(HERO_SUPTITLE_DATE_PLACEHOLDER, dateText)
     .replace(HERO_SUPTITLE_PLACEHOLDER, daysText);
+}
+
+function formatHeroClaim(lang) {
+  const safeLang = getSafeLang(lang);
+  const template = translations[safeLang].hero_claim || '';
+  const dateText = HERO_LAST_VERIFIED || '';
+  return template.replace(HERO_CLAIM_DATE_PLACEHOLDER, dateText);
+}
+
+function formatCredDocs(lang) {
+  const safeLang = getSafeLang(lang);
+  const template = translations[safeLang].cred_docs || '';
+  return template.replace(CREDIBILITY_DOCS_PLACEHOLDER, String(CREDIBILITY_DOCS_COUNT));
+}
+
+function formatCredUpdate(lang) {
+  const safeLang = getSafeLang(lang);
+  const template = translations[safeLang].cred_update || '';
+  const dateText = CREDIBILITY_LAST_DATA_UPDATE || '';
+  return template.replace(CREDIBILITY_DATE_PLACEHOLDER, dateText);
 }
 
 function updateHeroSuptitle(days) {
@@ -1144,6 +1183,12 @@ function updateLanguage(lang) {
 
     if (key === 'hero_suptitle') {
       el.textContent = formatHeroSuptitle(resolvedLang, latestCounter2Days);
+    } else if (key === 'hero_claim') {
+      el.textContent = formatHeroClaim(resolvedLang);
+    } else if (key === 'cred_docs') {
+      el.textContent = formatCredDocs(resolvedLang);
+    } else if (key === 'cred_update') {
+      el.textContent = formatCredUpdate(resolvedLang);
     } else if (key === 'mission_text') {
       setMissionText(el, langTranslations[key]);
     } else if (key.startsWith('org_')) {
