@@ -600,13 +600,13 @@ const translations = {
 
     // Action
     action_title: "Qué puedes hacer",
-    action_text: "Has revisado la evidencia. Ayuda a que más personas la conozcan y la verifiquen.",
-    action_share_btn: "Compartir en redes",
+    action_text: "Ayuda a compartir evidencia verificable y fuentes primarias.",
+    action_share_btn: "Compartir evidencia",
     action_actas_btn: "Ver actas ciudadanas",
     action_github_btn: "Código abierto",
 
     // Share & Footer
-    share_title: "Rompe la Censura: Difunde la Verdad",
+    share_title: "Comparte evidencia verificable",
     footer_rights: "Observatorio Electoral Ciudadano. Este sitio no está afiliado al CNE.",
     footer_opensource: "Código Abierto / Open Source"
   },
@@ -950,13 +950,13 @@ const translations = {
 
     // Action
     action_title: "What you can do",
-    action_text: "You reviewed the evidence. Help more people see it and verify it.",
-    action_share_btn: "Share on social media",
+    action_text: "Help share verifiable evidence and primary sources.",
+    action_share_btn: "Share evidence",
     action_actas_btn: "See citizen actas",
     action_github_btn: "Open source",
 
     // Share & Footer
-    share_title: "Break the Censorship: Spread the Truth",
+    share_title: "Share verifiable evidence",
     footer_rights: "Citizen Electoral Observatory. This site is not affiliated with the CNE.",
     footer_opensource: "Open Source"
   }
