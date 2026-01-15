@@ -330,10 +330,6 @@ const translations = {
     hero_suptitle:
       "Última verificación: {{date}} · {{days}} días sin resultados desagregados publicados (CNE, archivo)",
     hero_title: "Incumplimientos verificables del CNE — Elecciones 2024",
-    hero_claim:
-      "Al {{date}}, no hay resultados oficiales desagregados por mesa publicados dentro del plazo legal de 48 horas (Art. 146 LOPRE).",
-    hero_disclaimer:
-      "Metodología: cada afirmación enlaza norma aplicable, fuente primaria y archivo verificable; lo no confirmado se etiqueta como Pendiente o En disputa.",
     hero_subtitle: "Normas, plazos y evidencia primaria para auditar la transparencia electoral",
     cred_docs: "Documentos oficiales/legales enlazados: {{count}}",
     cred_update: "Última actualización de datos: {{date}}",
@@ -356,8 +352,6 @@ const translations = {
     source_label: "Fuente primaria:",
     source_archive_label: "Archivo:",
     sources_label: "Fuentes:",
-    label_fact: "Hecho verificado",
-    label_inference: "Inferencia",
 
     // Mission
     mission_text: {
@@ -483,9 +477,6 @@ const translations = {
     timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
     timeline_intro:
       "Cada hito incluye: hecho observado, obligación legal, fuente primaria, estado de evidencia y fecha de verificación.",
-    status_evidence_available: "Evidencia disponible",
-    status_evidence_pending: "Evidencia pendiente",
-    status_evidence_missing: "Sin evidencia publicada",
     timeline_cta: "Ver evidencia relacionada",
     timeline_1_date: "28 de Julio - 10:00 PM",
     timeline_1_title: "Paralización de Transmisión",
@@ -720,10 +711,6 @@ const translations = {
     hero_suptitle:
       "Last verified: {{date}} · {{days}} days without published precinct-level results (CNE, archive)",
     hero_title: "Verifiable CNE breaches — 2024 Election",
-    hero_claim:
-      "As of {{date}}, no official precinct-level results have been published within the 48-hour legal deadline (Art. 146 LOPRE).",
-    hero_disclaimer:
-      "Methodology: each claim links the applicable rule, a primary source, and a verifiable archive; unconfirmed items are labeled Pending or Disputed.",
     hero_subtitle: "Rules, deadlines, and primary evidence to audit electoral transparency",
     cred_docs: "Official/legal documents linked: {{count}}",
     cred_update: "Last data update: {{date}}",
@@ -746,8 +733,6 @@ const translations = {
     source_label: "Primary source:",
     source_archive_label: "Archive:",
     sources_label: "Sources:",
-    label_fact: "Verified fact",
-    label_inference: "Inference",
 
     // Mission
     mission_text: {
@@ -873,9 +858,6 @@ const translations = {
     timeline_title: "Chronology of the Constitutional Breakdown",
     timeline_intro:
       "Each milestone includes an observed fact, legal obligation, primary source, evidence status, and verification date.",
-    status_evidence_available: "Evidence available",
-    status_evidence_pending: "Evidence pending",
-    status_evidence_missing: "No public evidence",
     timeline_cta: "See related evidence",
     timeline_1_date: "July 28 - 10:00 PM",
     timeline_1_title: "Transmission Halted",
@@ -1098,7 +1080,6 @@ let currentLang = getSafeLang(storedLang);
 const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
 const HERO_SUPTITLE_DATE_PLACEHOLDER = '{{date}}';
 const HERO_LAST_VERIFIED = '2026-01-15';
-const HERO_CLAIM_DATE_PLACEHOLDER = '{{date}}';
 const CREDIBILITY_DOCS_PLACEHOLDER = '{{count}}';
 const CREDIBILITY_DATE_PLACEHOLDER = '{{date}}';
 const CREDIBILITY_DOCS_COUNT = 7;
@@ -1114,13 +1095,6 @@ function formatHeroSuptitle(lang, days) {
   return template
     .replace(HERO_SUPTITLE_DATE_PLACEHOLDER, dateText)
     .replace(HERO_SUPTITLE_PLACEHOLDER, daysText);
-}
-
-function formatHeroClaim(lang) {
-  const safeLang = getSafeLang(lang);
-  const template = translations[safeLang].hero_claim || '';
-  const dateText = HERO_LAST_VERIFIED || '';
-  return template.replace(HERO_CLAIM_DATE_PLACEHOLDER, dateText);
 }
 
 function formatCredDocs(lang) {
@@ -1183,8 +1157,6 @@ function updateLanguage(lang) {
 
     if (key === 'hero_suptitle') {
       el.textContent = formatHeroSuptitle(resolvedLang, latestCounter2Days);
-    } else if (key === 'hero_claim') {
-      el.textContent = formatHeroClaim(resolvedLang);
     } else if (key === 'cred_docs') {
       el.textContent = formatCredDocs(resolvedLang);
     } else if (key === 'cred_update') {
