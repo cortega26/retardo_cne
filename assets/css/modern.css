@@ -400,13 +400,17 @@ header h2 {
 [data-i18n='source_archive_label'],
 [data-i18n='sources_label'],
 .mission-proof-label {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
 .source-divider {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   font-weight: 700;
   opacity: 0.9;
 }
