@@ -277,6 +277,7 @@ const translations = {
     nav_context_legal_header: "Recursos legales",
     nav_international_section: "Comunidad internacional (sección)",
     nav_verification_section: "Contrapuntos y verificación",
+    nav_verification_how: "Cómo verificar",
     nav_action: "QUÉ PUEDES HACER",
     nav_analysis: "ANÁLISIS",
     nav_analysis_math: "Análisis Matemático",
@@ -547,6 +548,25 @@ const translations = {
     actas_verify_step4: "Comparación con bases de datos ciudadanas.",
     actas_verify_link: "Guía para verificar actas",
 
+    // Cómo verificar
+    verify_title: "Cómo verificar por ti mismo",
+    verify_subtitle:
+      "Tres pasos para contrastar actas, plazos y auditorías con fuentes primarias.",
+    verify_step1:
+      "Ubica el acta física (QR, número de serie, sello oficial) y su mesa.",
+    verify_step2:
+      "Cruza el acta con bases ciudadanas y resultados publicados.",
+    verify_step3:
+      "Revisa si se cumplieron plazos legales y auditorías post-electorales.",
+    verify_cta_actas: "Ver actas ciudadanas",
+    verify_cta_guide: "Guía para verificar actas",
+    verify_checklist_title: "Checklist de verificación",
+    verify_check1: "Resultados desagregados en 48 horas (Art. 146 LOPRE).",
+    verify_check2: "Publicación en Gaceta Electoral en 30 días (Art. 155 LOPRE).",
+    verify_check3: "Auditorías post-electorales obligatorias ejecutadas.",
+    verify_cta_schedule: "Ver cronograma oficial",
+    verify_cta_audits: "Ver protocolos de auditoría",
+
     // Análisis estadísticos
     analysis_title: "Análisis estadísticos independientes",
     analysis_subtitle:
@@ -608,6 +628,7 @@ const translations = {
     nav_context_legal_header: "Legal resources",
     nav_international_section: "International community (section)",
     nav_verification_section: "Verification and counterpoints",
+    nav_verification_how: "How to verify",
     nav_action: "WHAT YOU CAN DO",
     nav_analysis: "ANALYSIS",
     nav_analysis_math: "Mathematical Analysis",
@@ -876,6 +897,25 @@ const translations = {
     actas_verify_step3: "Official seal and printed results.",
     actas_verify_step4: "Comparison with citizen databases.",
     actas_verify_link: "Guide to verify actas",
+
+    // How to verify
+    verify_title: "How to verify it yourself",
+    verify_subtitle:
+      "Three steps to cross-check actas, deadlines, and audits with primary sources.",
+    verify_step1:
+      "Locate the physical acta (QR code, serial number, official seal) and its precinct.",
+    verify_step2:
+      "Cross-check the acta against citizen databases and published results.",
+    verify_step3:
+      "Confirm whether legal deadlines and post-election audits were fulfilled.",
+    verify_cta_actas: "See citizen actas",
+    verify_cta_guide: "Guide to verify actas",
+    verify_checklist_title: "Verification checklist",
+    verify_check1: "Precinct-level results within 48 hours (Art. 146 LOPRE).",
+    verify_check2: "Electoral Gazette publication within 30 days (Art. 155 LOPRE).",
+    verify_check3: "Mandatory post-election audits completed.",
+    verify_cta_schedule: "See official schedule",
+    verify_cta_audits: "See audit protocols",
 
     // Statistical analyses
     analysis_title: "Independent statistical analyses",
