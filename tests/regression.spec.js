@@ -37,9 +37,9 @@ test.describe('regression coverage', () => {
     await toggle.click();
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page).toHaveTitle('Legal Compliance Observatory - CNE Venezuela');
+    await expect(page).toHaveTitle('Verifiable CNE breaches - 2024 Election');
     await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Legal Compliance Observatory',
+      'Verifiable CNE breaches - 2024 Election',
     );
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
@@ -48,7 +48,7 @@ test.describe('regression coverage', () => {
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Legal Compliance Observatory',
+      'Verifiable CNE breaches - 2024 Election',
     );
   });
 

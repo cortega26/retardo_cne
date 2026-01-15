@@ -325,9 +325,9 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Elecciones Presidenciales 2024",
-    hero_suptitle: "{{days}} días. Cero resultados publicados. Confirmado por ONU, Centro Carter y UE",
-    hero_title: "Dossier del Fraude Electoral en Venezuela",
-    hero_subtitle: "La violación electoral más documentada de la historia de Venezuela",
+    hero_suptitle: "{{days}} días sin resultados desagregados publicados",
+    hero_title: "Incumplimientos verificables del CNE - Elecciones 2024",
+    hero_subtitle: "Datos, normas y evidencia pública para evaluar transparencia electoral",
     hero_stat_1: "25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados",
     hero_stat_2: "12+ organismos internacionales confirman irregularidades",
     hero_stat_3: "2 plazos legales violados + 3 auditorías post-electorales no realizadas",
@@ -651,9 +651,9 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Presidential Election 2024",
-    hero_suptitle: "{{days}} days. Zero results published. Confirmed by the UN, Carter Center, and EU",
-    hero_title: "Electoral Fraud Dossier in Venezuela",
-    hero_subtitle: "The most documented electoral violation in Venezuela's history",
+    hero_suptitle: "{{days}} days without published precinct-level results",
+    hero_title: "Verifiable CNE breaches - 2024 Election",
+    hero_subtitle: "Data, legal obligations, and public evidence to assess electoral transparency",
     hero_stat_1: "25,000+ citizen actas verified vs 0 official results published",
     hero_stat_2: "12+ international organizations confirm irregularities",
     hero_stat_3: "2 legal deadlines violated + 3 post-election audits not conducted",
@@ -916,8 +916,8 @@ const translations = {
 
 const DEFAULT_LANG = 'es';
 const PAGE_TITLES = {
-  es: 'Monitoreo de Infracciones Legales Electorales - CNE Venezuela',
-  en: 'Legal Compliance Observatory - CNE Venezuela',
+  es: 'Incumplimientos verificables del CNE - Elecciones 2024',
+  en: 'Verifiable CNE breaches - 2024 Election',
 };
 const HIGHLIGHT_OBSERVER_OPTIONS = { threshold: 1.0 };
 let highlightObserver = null;

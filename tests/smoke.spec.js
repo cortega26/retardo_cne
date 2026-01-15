@@ -15,7 +15,7 @@ test('homepage smoke', async ({ page }) => {
   await langToggle.click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-    'Legal Compliance Observatory',
+    'Verifiable CNE breaches - 2024 Election',
   );
 
   const highlight = page.locator('.highlight-text');
