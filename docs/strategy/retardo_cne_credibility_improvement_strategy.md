@@ -102,7 +102,7 @@ Maintain a short list of unresolved items (e.g., "transmision detenida: evidenci
 | T03 | Add source boxes to hero stats and timeline items | Makes claims auditable | High | en proceso |
 | T04 | Add evidence status legend + clarify "hecho observado vs evidencia pendiente" | Resolves ambiguity | High | pendiente |
 | T05 | Publish "Metodo y correcciones" page | Establishes editorial rigor | High | finalizada |
-| T06 | Build sources index with archived links and tier labels | Improves citability | Medium | pendiente |
+| T06 | Build sources index with archived links and tier labels | Improves citability | Medium | finalizada |
 | T07 | Add glossary for international audiences | Improves clarity | Medium | pendiente |
 | T08 | Split timeline filters (legal deadlines, audits, statements) | Improves auditability | Medium | pendiente |
 | T09 | SEO title/heading updates + internal linking map | Improves discoverability | Medium | pendiente |
