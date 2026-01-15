@@ -1,35 +1,41 @@
 
-# Metodología y correcciones
+# Metodología de verificación
 
-## Marco de verificación
-Este observatorio documenta incumplimientos verificables del CNE con un criterio minimo:
-cada afirmacion debe contar con una **fuente primaria** o un **archivo verificable**.
-Cuando la evidencia primaria no esta disponible, el hecho se marca como **pendiente**
-o **en disputa** y se explica la razon.
+## Objetivo
+Este observatorio documenta incumplimientos verificables del CNE en la elección presidencial 2024 y permite que cualquier persona reproduzca la verificación con fuentes primarias.
 
-## Estructura analitica
-Afirmacion → Norma → Evidencia → Estado → Como verificar.
+## Selección de eventos
+- Se incluyen hechos que implican una obligación legal explícita (LOPRE, reglamentos o cronograma CNE).
+- Se priorizan eventos con evidencia primaria disponible (documento oficial, archivo web, PDF o comunicado).
+- Los hechos sin evidencia primaria se registran como **Pendientes** hasta que aparezca documentación verificable.
 
-## Niveles de evidencia
-1) **Oficial**: CNE, TSJ, Gaceta, organismos internacionales.  
-2) **Observadores**: misiones o paneles con metodologia publicada.  
-3) **ONG**: informes con metodologia verificable.  
-4) **Prensa/experto**: cobertura con fuentes identificables.  
-5) **Ciudadana**: actas y bases de datos verificables.
+## Verificación de fuentes
+Cada afirmación debe enlazar:
+1) **Norma aplicable** (LOPRE o reglamentos).
+2) **Fuente primaria** (documento oficial o archivo verificable).
+3) **Evidencia pública** (observación internacional, datos ciudadanos o reportes técnicos).
+
+## Manejo de contradicciones o datos faltantes
+- **Pendiente:** no hay evidencia primaria publicada; existen reportes secundarios.
+- **En disputa:** fuentes relevantes ofrecen versiones incompatibles.
+- **Confirmado:** evidencia primaria + archivo reproducible.
 
 ## Estados de evidencia
-- **Verificado**: fuente primaria + archivo disponible.
-- **Pendiente**: no existe evidencia primaria publicada; hay reportes secundarios.
-- **En disputa**: fuentes relevantes presentan versiones incompatibles.
-
-## Transparencia de fuentes
-Se publica la matriz `data/sources.csv` y, cuando es posible, copias reproducibles o enlaces archivados.
+- **Confirmado**
+- **Parcialmente confirmado**
+- **Disputado**
+- **Pendiente**
 
 ## Registro de actualizaciones
-Se mantiene un registro publico con la fecha de verificacion, cambios de estado de evidencia y nuevas fuentes.
+Se registra cada actualización con fecha, motivo y fuente nueva.
+La matriz principal está en `data/sources.csv`.
 
 ## Correcciones
-Si detectas un error, envia la fuente corregida y una breve explicacion al canal oficial del proyecto.
-Las correcciones se registran con fecha, motivo y referencia.
+Las correcciones deben incluir:
+- Fuente primaria o documento archivado.
+- Descripción del error y fecha.
+- Enlace directo a la fuente.
 
-> Descargo: este repositorio compila informacion de buena fe con fines de **interes publico** y **documentacion**.
+Canal de correcciones sugerido: GitHub Issues del repositorio.
+
+> Descargo: este repositorio compila información de buena fe con fines de interés público y documentación.
