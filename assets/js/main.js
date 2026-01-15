@@ -327,16 +327,28 @@ const translations = {
     // Header
     status_live: "EN VIVO",
     hero_country: "Elecciones Presidenciales 2024",
-    hero_suptitle: "{{days}} días sin resultados desagregados publicados",
-    hero_title: "Incumplimientos verificables del CNE - Elecciones 2024",
-    hero_subtitle: "Datos, normas y evidencia pública para evaluar transparencia electoral",
-    hero_stat_1: "25,000+ actas ciudadanas verificables vs 0 resultados oficiales publicados",
-    hero_stat_2: "12+ organismos internacionales confirman irregularidades",
-    hero_stat_3: "2 plazos legales violados + 3 auditorías post-electorales no realizadas",
+    hero_suptitle:
+      "Última verificación: {{date}} · {{days}} días sin resultados desagregados publicados (CNE, archivo)",
+    hero_title: "Incumplimientos verificables del CNE — Elecciones 2024 (normas, plazos y evidencia primaria)",
+    hero_subtitle: "Normas, plazos y evidencia primaria para auditar la transparencia electoral",
+    hero_stat_1: "25,000+ actas ciudadanas verificables / 0 resultados oficiales desagregados publicados",
+    hero_stat_1_source_primary: "Resultados con Venezuela",
+    hero_stat_1_source_archive: "CNE (archivo)",
+    hero_stat_2: "Organismos internacionales reportan falta de transparencia e integridad",
+    hero_stat_2_source_carter: "Centro Carter",
+    hero_stat_2_source_un: "Panel ONU",
+    hero_stat_2_source_eu: "Unión Europea",
+    hero_stat_2_source_oas: "OEA",
+    hero_stat_3: "Plazos legales vencidos + auditorías post-electorales sin evidencia pública",
+    hero_stat_3_source_lopre: "LOPRE (Art. 146/155)",
+    hero_stat_3_source_audits: "Protocolos CNE (archivo)",
+    hero_stat_3_source_press: "Prensa Comunitaria",
     methodology_title: "Metodología de verificación",
     methodology_text: "Cada afirmación enlaza norma legal, evidencia pública y fuente primaria.",
     methodology_link: "Ver cómo verificamos",
     source_label: "Fuente primaria:",
+    source_archive_label: "Archivo:",
+    sources_label: "Fuentes:",
     label_fact: "Hecho verificado",
     label_inference: "Inferencia",
 
@@ -463,7 +475,7 @@ const translations = {
     // Timeline
     timeline_title: "Cronología de la Ruptura del Hilo Constitucional",
     timeline_intro:
-      "Cada hito está conectado con una obligación legal o técnica incumplida y con la evidencia pública disponible.",
+      "Cada hito incluye: hecho observado, obligación legal, fuente primaria, estado de evidencia y fecha de verificación.",
     status_evidence_available: "Evidencia disponible",
     status_evidence_pending: "Evidencia pendiente",
     status_evidence_missing: "Sin evidencia publicada",
@@ -544,7 +556,7 @@ const translations = {
     // Actas ciudadanas
     actas_title: "Actas ciudadanas verificables",
     actas_subtitle:
-      "La evidencia física existe y es comprobable. El CNE no ha publicado resultados desagregados para contrastarla.",
+      "Las actas físicas (QR, serial, sello) permiten verificación independiente. Sin resultados desagregados oficiales, la totalización no es auditable.",
     actas_body_1:
       "Cada acta tiene código QR único, número de serie y sello oficial. Son válidas con o sin firmas, precisamente para evitar sabotaje. La oposición recolectó 84% de las actas el día de la elección.",
     actas_body_2:
@@ -592,7 +604,7 @@ const translations = {
     analysis_read_link: "Leer análisis",
 
     // International
-    international_title: "La Comunidad Internacional Confirma el Fraude",
+    international_title: "Evaluaciones internacionales sobre transparencia e integridad del proceso",
     international_intro:
       "Organismos con metodologías independientes coinciden: el proceso no cumplió estándares democráticos básicos.",
     card_carter_title: "Centro Carter",
@@ -698,16 +710,28 @@ const translations = {
     // Header
     status_live: "LIVE",
     hero_country: "Presidential Election 2024",
-    hero_suptitle: "{{days}} days without published precinct-level results",
-    hero_title: "Verifiable CNE breaches - 2024 Election",
-    hero_subtitle: "Data, legal obligations, and public evidence to assess electoral transparency",
-    hero_stat_1: "25,000+ citizen actas verified vs 0 official results published",
-    hero_stat_2: "12+ international organizations confirm irregularities",
-    hero_stat_3: "2 legal deadlines violated + 3 post-election audits not conducted",
+    hero_suptitle:
+      "Last verified: {{date}} · {{days}} days without published precinct-level results (CNE, archive)",
+    hero_title: "Verifiable CNE breaches — 2024 Election (rules, deadlines, primary evidence)",
+    hero_subtitle: "Rules, deadlines, and primary evidence to audit electoral transparency",
+    hero_stat_1: "25,000+ citizen actas verified / 0 official precinct-level results published",
+    hero_stat_1_source_primary: "Resultados con Venezuela",
+    hero_stat_1_source_archive: "CNE archive",
+    hero_stat_2: "International bodies report transparency and integrity failures",
+    hero_stat_2_source_carter: "Carter Center",
+    hero_stat_2_source_un: "UN Panel",
+    hero_stat_2_source_eu: "European Union",
+    hero_stat_2_source_oas: "OAS",
+    hero_stat_3: "Legal deadlines expired + post-election audits without public evidence",
+    hero_stat_3_source_lopre: "LOPRE (Art. 146/155)",
+    hero_stat_3_source_audits: "CNE protocols (archive)",
+    hero_stat_3_source_press: "Prensa Comunitaria",
     methodology_title: "Verification methodology",
-    methodology_text: "Each claim links legal basis, public evidence, and a primary source.",
+    methodology_text: "Each claim links a legal basis, public evidence, and a primary source.",
     methodology_link: "See how we verify",
     source_label: "Primary source:",
+    source_archive_label: "Archive:",
+    sources_label: "Sources:",
     label_fact: "Verified fact",
     label_inference: "Inference",
 
@@ -834,7 +858,7 @@ const translations = {
     // Timeline
     timeline_title: "Chronology of the Constitutional Breakdown",
     timeline_intro:
-      "Each milestone links to a legal or technical obligation that was not met, with public evidence.",
+      "Each milestone includes an observed fact, legal obligation, primary source, evidence status, and verification date.",
     status_evidence_available: "Evidence available",
     status_evidence_pending: "Evidence pending",
     status_evidence_missing: "No public evidence",
@@ -915,7 +939,7 @@ const translations = {
     // Citizen actas
     actas_title: "Verifiable citizen actas",
     actas_subtitle:
-      "The physical evidence exists and is checkable. The CNE has not published precinct-level results to contrast it.",
+      "Physical actas (QR, serial, seal) allow independent verification. Without official precinct-level results, the totalization is not auditable.",
     actas_body_1:
       "Each acta has a unique QR code, serial number, and official seal. They are valid with or without signatures to prevent sabotage. The opposition collected 84% of actas on election day.",
     actas_body_2:
@@ -963,7 +987,7 @@ const translations = {
     analysis_read_link: "Read analysis",
 
     // International
-    international_title: "The International Community Confirms the Fraud",
+    international_title: "International assessments of transparency and process integrity",
     international_intro:
       "Organizations with independent methodologies agree: the process failed basic democratic standards.",
     card_carter_title: "The Carter Center",
@@ -1006,8 +1030,8 @@ const translations = {
 
 const DEFAULT_LANG = 'es';
 const PAGE_TITLES = {
-  es: 'Incumplimientos verificables del CNE - Elecciones 2024',
-  en: 'Verifiable CNE breaches - 2024 Election',
+  es: 'Incumplimientos verificables del CNE — Elecciones 2024',
+  en: 'Verifiable CNE breaches — 2024 Election',
 };
 const HIGHLIGHT_OBSERVER_OPTIONS = { threshold: 1.0 };
 let highlightObserver = null;
@@ -1058,6 +1082,8 @@ function observeHighlights(root = document) {
 const storedLang = localStorage.getItem('site_lang');
 let currentLang = getSafeLang(storedLang);
 const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
+const HERO_SUPTITLE_DATE_PLACEHOLDER = '{{date}}';
+const HERO_LAST_VERIFIED = '2026-01-15';
 let latestCounter2Days = null;
 
 function formatHeroSuptitle(lang, days) {
@@ -1065,7 +1091,10 @@ function formatHeroSuptitle(lang, days) {
   const template = translations[safeLang].hero_suptitle || '';
   const resolvedDays = Number.isFinite(days) ? Math.max(0, Math.floor(days)) : null;
   const daysText = resolvedDays === null ? '0' : String(resolvedDays);
-  return template.replace(HERO_SUPTITLE_PLACEHOLDER, daysText);
+  const dateText = HERO_LAST_VERIFIED || '';
+  return template
+    .replace(HERO_SUPTITLE_DATE_PLACEHOLDER, dateText)
+    .replace(HERO_SUPTITLE_PLACEHOLDER, daysText);
 }
 
 function updateHeroSuptitle(days) {
