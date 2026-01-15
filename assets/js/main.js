@@ -607,6 +607,17 @@ const translations = {
 
     // Share & Footer
     share_title: "Comparte evidencia verificable",
+    press_kit_title: "Kit para prensa",
+    press_kit_subtitle: "Resumen descargable con datos clave, fuentes y cronologia.",
+    press_kit_item1: "Resumen ejecutivo con narrativa verificable.",
+    press_kit_item2: "Plazos legales y auditorias post-electorales.",
+    press_kit_item3: "Fuentes primarias enlazadas y actas ciudadanas.",
+    press_kit_cta_download: "Descargar kit (MD)",
+    press_kit_cta_repo: "Repositorio",
+    press_kit_contents_title: "Incluye",
+    press_kit_content1: "Resumen ES/EN listo para citar.",
+    press_kit_content2: "Checklist de verificacion.",
+    press_kit_content3: "Referencias con enlaces directos.",
     footer_rights: "Observatorio Electoral Ciudadano. Este sitio no está afiliado al CNE.",
     footer_opensource: "Código Abierto / Open Source"
   },
@@ -957,6 +968,17 @@ const translations = {
 
     // Share & Footer
     share_title: "Share verifiable evidence",
+    press_kit_title: "Press kit",
+    press_kit_subtitle: "Downloadable summary with key facts, sources, and timeline.",
+    press_kit_item1: "Executive summary with verifiable framing.",
+    press_kit_item2: "Legal deadlines and post-election audits.",
+    press_kit_item3: "Primary sources and citizen actas.",
+    press_kit_cta_download: "Download kit (MD)",
+    press_kit_cta_repo: "Repository",
+    press_kit_contents_title: "Includes",
+    press_kit_content1: "ES/EN summary ready to cite.",
+    press_kit_content2: "Verification checklist.",
+    press_kit_content3: "References with direct links.",
     footer_rights: "Citizen Electoral Observatory. This site is not affiliated with the CNE.",
     footer_opensource: "Open Source"
   }
