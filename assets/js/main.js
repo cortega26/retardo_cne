@@ -511,7 +511,7 @@ const translations = {
     system_expected_step1: "El votante sufraga en la máquina.",
     system_expected_step2: "La máquina imprime el comprobante físico.",
     system_expected_step3: "Al cierre, la máquina imprime el acta con resultados (QR, número de serie, sello oficial).",
-    system_expected_step4: "Una acta física queda en la mesa para auditorías.",
+    system_expected_step4: "Un acta física queda en la mesa para auditorías.",
     system_expected_step5: "La máquina transmite los resultados al CNE.",
     system_expected_step6: "El CNE publica resultados desagregados en 48 horas (Art. 146 LOPRE).",
     system_expected_step7: "Se ejecutan las tres auditorías post-electorales obligatorias.",
