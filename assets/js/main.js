@@ -1082,6 +1082,45 @@ function observeHighlights(root = document) {
   });
 }
 
+const STATUS_LABEL_STYLES = {
+  cumplido: 'status-tag--met',
+  'no cumplido': 'status-tag--failed',
+  incumplido: 'status-tag--failed',
+  met: 'status-tag--met',
+  failed: 'status-tag--failed',
+};
+
+function decorateStatusSteps(root = document) {
+  const statusItems = root.querySelectorAll('.story-list--status li');
+  if (!statusItems.length) {
+    return;
+  }
+
+  statusItems.forEach((item) => {
+    const rawText = item.textContent.trim();
+    const match = rawText.match(/^([^:]+):\s*(.+)$/);
+    if (!match) {
+      return;
+    }
+
+    const label = match[1].trim();
+    const detail = match[2].trim();
+    const normalizedLabel = label.toLowerCase();
+    const variantClass = STATUS_LABEL_STYLES[normalizedLabel] || '';
+
+    const labelSpan = document.createElement('span');
+    labelSpan.className = variantClass ? `status-tag ${variantClass}` : 'status-tag';
+    labelSpan.textContent = label;
+
+    const detailSpan = document.createElement('span');
+    detailSpan.className = 'status-detail';
+    detailSpan.textContent = detail;
+
+    item.textContent = '';
+    item.append(labelSpan, detailSpan);
+  });
+}
+
 const storedLang = localStorage.getItem('site_lang');
 let currentLang = getSafeLang(storedLang);
 const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
@@ -1179,6 +1218,7 @@ function updateLanguage(lang) {
   });
 
   observeHighlights();
+  decorateStatusSteps();
 
   // Update Toggle Button
   const toggleBtn = document.getElementById('toggleLang');
