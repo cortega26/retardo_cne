@@ -1082,15 +1082,15 @@ function observeHighlights(root = document) {
 }
 
 const STATUS_LABEL_STYLES = {
-  cumplido: 'status-tag--met',
-  'no cumplido': 'status-tag--failed',
-  incumplido: 'status-tag--failed',
-  met: 'status-tag--met',
-  failed: 'status-tag--failed',
+  cumplido: 'status-tag-met',
+  'no cumplido': 'status-tag-failed',
+  incumplido: 'status-tag-failed',
+  met: 'status-tag-met',
+  failed: 'status-tag-failed',
 };
 
 function decorateStatusSteps(root = document) {
-  const statusItems = root.querySelectorAll('.story-list--status li');
+  const statusItems = root.querySelectorAll('.story-list-status li');
   if (!statusItems.length) {
     return;
   }

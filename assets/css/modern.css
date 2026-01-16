@@ -376,12 +376,12 @@ header h2 {
   margin-bottom: 0.5rem;
 }
 
-.story-list--status li {
+.story-list-status li {
   color: var(--text-primary);
   font-weight: 500;
 }
 
-.story-list--status li::marker {
+.story-list-status li::marker {
   color: var(--text-secondary);
   font-weight: 600;
 }
@@ -402,32 +402,32 @@ header h2 {
   transform: translateY(-1px);
 }
 
-.status-tag--met {
+.status-tag-met {
   color: #065f46;
   background: linear-gradient(130deg, rgba(5, 150, 105, 0.2), rgba(5, 150, 105, 0.05));
   border-color: rgba(5, 150, 105, 0.45);
   box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
 }
 
-.status-tag--failed {
+.status-tag-failed {
   color: #991b1b;
   background: linear-gradient(130deg, rgba(220, 38, 38, 0.18), rgba(220, 38, 38, 0.05));
   border-color: rgba(220, 38, 38, 0.45);
   box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
 }
 
-.story-list--status .status-detail {
+.story-list-status .status-detail {
   color: var(--text-secondary);
 }
 
-body.dark-mode .status-tag--met {
+body.dark-mode .status-tag-met {
   color: #d1fae5;
   background: rgba(16, 185, 129, 0.2);
   border-color: rgba(16, 185, 129, 0.6);
   box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
 }
 
-body.dark-mode .status-tag--failed {
+body.dark-mode .status-tag-failed {
   color: #fee2e2;
   background: rgba(239, 68, 68, 0.2);
   border-color: rgba(239, 68, 68, 0.6);
