@@ -45,7 +45,6 @@ const CNEMonitor = (() => {
   }
 
   function updateOdometer(numberSpan, valueText) {
-    const currentValue = numberSpan.dataset.value || '';
     const needsRebuild =
       !numberSpan.classList.contains('odometer') ||
       numberSpan.dataset.digits !== String(valueText.length);
