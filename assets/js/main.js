@@ -272,6 +272,8 @@ const translations = {
     nav_context: "CONTEXTO",
     nav_context_system: "Sistema Electoral Venezolano 101",
     nav_context_deadlines: "Plazos legales incumplidos",
+    nav_context_background_section: "Antecedentes clave (sección)",
+    nav_context_impact_section: "Impacto y DDHH (sección)",
     nav_context_background_header: "Antecedentes 2018-2024",
     nav_context_cne_header: "Documentación CNE (Archive.org)",
     nav_context_legal_header: "Recursos legales",
@@ -384,6 +386,20 @@ const translations = {
     deadlines_title: "Plazos legales incumplidos",
     deadlines_subtitle:
       "La LOPRE exige publicar resultados desagregados en 48 horas y la Gaceta Electoral en 30 días. Ambos plazos están vencidos.",
+    background_title: "Antecedentes clave 2018-2024",
+    background_subtitle: "Señales previas de cierre institucional y deterioro de garantías electorales.",
+    background_card1_label: "Alertas institucionales",
+    background_card1_item1: "2018: \"Nunca vamos a entregar el poder\".",
+    background_card1_item2: "04/02/2024: \"Por las buenas o por las malas\".",
+    background_card1_item3: "28/05/2024: revocatoria de observadores de la UE.",
+    background_card1_source_elnacional: "El Nacional",
+    background_card1_source_video: "Video 04/02/2024",
+    background_card1_source_ap: "AP News",
+    background_card2_label: "Condiciones preelectorales",
+    background_card2_item1: "Informe preelectoral de riesgos y garantías.",
+    background_card2_item2: "Señales de represión y restricciones a la participación.",
+    background_card2_source_transparencia: "Transparencia Electoral",
+    background_card2_source_amnesty: "Amnistía Internacional",
 
     faq_title: "Contrapuntos y verificación",
     faq_subtitle: "Respuestas basadas en evidencia verificable y en el marco legal vigente.",
@@ -424,6 +440,14 @@ const translations = {
     faq_q5_note: "La verificación es replicable: cualquiera puede contrastar actas y fuentes.",
     faq_q5_link1: "Ver actas ciudadanas",
     faq_q5_link2: "Cómo verificar un acta",
+    faq_q11: "¿Cómo identificar desinformación o encuestas sin sustento?",
+    faq_q11_a:
+      "Circularon sondeos y afirmaciones sin metodología verificable. La verificación exige contraste de fuentes y transparencia.",
+    faq_q11_item1: "Revisa metodología, muestra y financiamiento.",
+    faq_q11_item2: "Contrasta con actas y fuentes primarias.",
+    faq_q11_item3: "Consulta verificadores independientes.",
+    faq_q11_link1: "EFE Verifica",
+    faq_q11_link2: "Cotejo.info",
     faq_q6: "¿Qué significa el alegato de \"hackeo\" del CNE?",
     faq_q6_a: "El alegato de \"hackeo\" no sustituye la verificación técnica ni las auditorías obligatorias:",
     faq_q6_item1: "Según la documentación del CNE, el sistema no está conectado a internet durante la votación.",
@@ -502,6 +526,13 @@ const translations = {
     timeline_8_date: "29 de Agosto",
     timeline_8_title: "Segundo Plazo Violado",
     timeline_8_text: "Vence el lapso de 30 días (Art. 155 LOPRE) para la publicación en Gaceta Electoral. El incumplimiento se consuma definitivamente.",
+    timeline_1_source_elestimulo: "El Estímulo",
+    timeline_2_source_vesinfiltro: "VE Sin Filtro",
+    timeline_source_cne: "Protocolos CNE",
+    timeline_source_pc: "Prensa Comunitaria",
+    timeline_4_source_ntn24: "NTN24",
+    timeline_6_source_infobae: "Infobae",
+    timeline_8_source_eldiario: "El Diario",
 
     // Sistema Electoral 101
     system_title: "Sistema Electoral Venezolano 101",
@@ -621,6 +652,20 @@ const translations = {
     card_oas_text: "\"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria.\"",
     btn_view_communique: "Ver Comunicado",
 
+    impact_title: "Impacto y derechos humanos tras el 28J",
+    impact_subtitle:
+      "Organizaciones de DDHH documentaron represión, detenciones arbitrarias y el cierre del espacio cívico tras la elección.",
+    impact_card1_label: "Represión y detenciones",
+    impact_card1_text:
+      "Reportes de derechos humanos describen detenciones arbitrarias, uso excesivo de la fuerza y restricciones a la protesta.",
+    impact_card1_source_hrw: "Human Rights Watch",
+    impact_card1_source_ohchr: "OACDH ONU",
+    impact_card2_label: "Exigencia de garantías y rendición de cuentas",
+    impact_card2_text:
+      "Organismos regionales e internacionales exigen investigar abusos y restablecer garantías para la verificación electoral.",
+    impact_card2_source_amnesty: "Amnistía Internacional",
+    impact_card2_source_cidh: "CIDH",
+
     // Action
     action_title: "Qué puedes hacer",
     action_text: "Ayuda a compartir evidencia verificable y fuentes primarias.",
@@ -658,6 +703,8 @@ const translations = {
     nav_context: "CONTEXT",
     nav_context_system: "Venezuelan Electoral System 101",
     nav_context_deadlines: "Missed legal deadlines",
+    nav_context_background_section: "Background (section)",
+    nav_context_impact_section: "Impact and human rights (section)",
     nav_context_background_header: "Background 2018-2024",
     nav_context_cne_header: "CNE Documentation (Archive.org)",
     nav_context_legal_header: "Legal resources",
@@ -769,6 +816,20 @@ const translations = {
     deadlines_title: "Missed legal deadlines",
     deadlines_subtitle:
       "LOPRE requires publishing precinct-level results within 48 hours and the Electoral Gazette within 30 days. Both deadlines were missed.",
+    background_title: "Key background 2018-2024",
+    background_subtitle: "Early signals of institutional closure and erosion of electoral guarantees.",
+    background_card1_label: "Institutional warning signs",
+    background_card1_item1: "2018: \"We will never hand over power.\"",
+    background_card1_item2: "Feb 4, 2024: \"By good means or by bad means.\"",
+    background_card1_item3: "May 28, 2024: EU observers revoked.",
+    background_card1_source_elnacional: "El Nacional",
+    background_card1_source_video: "Video Feb 4, 2024",
+    background_card1_source_ap: "AP News",
+    background_card2_label: "Preelection conditions",
+    background_card2_item1: "Preelection report on risks and guarantees.",
+    background_card2_item2: "Signals of repression and restrictions on participation.",
+    background_card2_source_transparencia: "Transparencia Electoral",
+    background_card2_source_amnesty: "Amnesty International",
 
     faq_title: "Counterpoints and verification",
     faq_subtitle: "Answers based on verifiable evidence and the applicable legal framework.",
@@ -809,6 +870,14 @@ const translations = {
     faq_q5_note: "Verification is replicable: anyone can cross-check actas and sources.",
     faq_q5_link1: "See citizen actas",
     faq_q5_link2: "How to verify an acta",
+    faq_q11: "How to identify disinformation or unsupported polls?",
+    faq_q11_a:
+      "Unverified polls and claims circulated without transparent methodology. Verification requires source cross-checking and transparency.",
+    faq_q11_item1: "Review methodology, sample, and funding.",
+    faq_q11_item2: "Cross-check with actas and primary sources.",
+    faq_q11_item3: "Consult independent fact-checkers.",
+    faq_q11_link1: "EFE Verifica",
+    faq_q11_link2: "Cotejo.info",
     faq_q6: "What does the CNE's \"hack\" claim mean?",
     faq_q6_a: "The CNE's \"hack\" claim does not replace technical verification or mandatory audits:",
     faq_q6_item1: "CNE documentation states the system is not connected to the internet during voting.",
@@ -887,6 +956,13 @@ const translations = {
     timeline_8_date: "August 29",
     timeline_8_title: "Second Deadline Violated",
     timeline_8_text: "The 30-day deadline (Art. 155 LOPRE) for publication in the Electoral Gazette expires. The breach is definitively consummated.",
+    timeline_1_source_elestimulo: "El Estímulo",
+    timeline_2_source_vesinfiltro: "VE Sin Filtro",
+    timeline_source_cne: "CNE protocols",
+    timeline_source_pc: "Prensa Comunitaria",
+    timeline_4_source_ntn24: "NTN24",
+    timeline_6_source_infobae: "Infobae",
+    timeline_8_source_eldiario: "El Diario",
 
     // Electoral System 101
     system_title: "Venezuelan Electoral System 101",
@@ -1004,6 +1080,20 @@ const translations = {
     card_oas_title: "OAS",
     card_oas_text: "\"The complete manual for fraudulent handling of the electoral result was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner.\"",
     btn_view_communique: "View Communiqué",
+
+    impact_title: "Post-election human rights impact",
+    impact_subtitle:
+      "Human rights organizations documented repression, arbitrary detentions, and shrinking civic space after the election.",
+    impact_card1_label: "Repression and detentions",
+    impact_card1_text:
+      "Human rights reports describe arbitrary detentions, excessive use of force, and restrictions on protest.",
+    impact_card1_source_hrw: "Human Rights Watch",
+    impact_card1_source_ohchr: "UN OHCHR",
+    impact_card2_label: "Calls for guarantees and accountability",
+    impact_card2_text:
+      "Regional and international bodies call for investigations and for restoring guarantees to enable electoral verification.",
+    impact_card2_source_amnesty: "Amnesty International",
+    impact_card2_source_cidh: "IACHR",
 
     // Action
     action_title: "What you can do",
