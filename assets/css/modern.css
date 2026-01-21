@@ -39,7 +39,7 @@
   --navbar-border: rgba(15, 23, 42, 0.08);
   --font-heading: 'Sora', sans-serif;
   --font-body: 'Source Sans 3', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono',
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono',
     'Courier New', monospace;
 
   /* Spacing & Layout */
