@@ -60,7 +60,7 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --content-max: 72rem;
+  --content-max: 84rem;
   --section-gap: clamp(2.5rem, 6vw, 4.5rem);
 }
 
@@ -2011,6 +2011,18 @@ body.dark-mode .timeline::after {
   width: min(100%, 92vw);
 }
 
+@media (min-width: 1200px) {
+
+  .timeline-section,
+  .international-validation,
+  .share-container,
+  .mission-statement,
+  .story-section,
+  #main-content {
+    width: min(100%, 94vw);
+  }
+}
+
 /* On mobile, relax the constraint */
 @media (max-width: 900px) {
 
@@ -2027,7 +2039,7 @@ body.dark-mode .timeline::after {
 
 @media (min-width: 992px) {
   .timeline-section {
-    max-width: min(86rem, 96vw);
+    max-width: min(92rem, 96vw);
   }
 }
 
