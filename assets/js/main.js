@@ -1,5 +1,13 @@
 'use strict';
 
+function scheduleIdle(task, timeout = 1500) {
+  if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+    window.requestIdleCallback(task, { timeout });
+    return;
+  }
+  window.setTimeout(task, 0);
+}
+
 const CNEMonitor = (() => {
   console.log('CNEMonitor module initialized');
 
@@ -224,11 +232,11 @@ const CNEMonitor = (() => {
   }
 
   function runInitialization() {
-    initCounters();
     const toggleThemeBtn = initThemeToggle();
     applySavedTheme(toggleThemeBtn);
-    initAOS();
-    sendPageView();
+    scheduleIdle(initCounters);
+    scheduleIdle(initAOS);
+    scheduleIdle(sendPageView);
   }
 
   function initializePage() {
@@ -1401,8 +1409,15 @@ document.addEventListener('visibilitychange', function () {
 
 // Init Language Logic
 document.addEventListener('DOMContentLoaded', () => {
-  updateLanguage(currentLang);
-  initShareButtons();
+  if (currentLang !== DEFAULT_LANG) {
+    scheduleIdle(() => updateLanguage(currentLang));
+  } else {
+    scheduleIdle(() => {
+      observeHighlights();
+      decorateStatusSteps();
+    });
+  }
+  scheduleIdle(initShareButtons);
 
   const langBtn = document.getElementById('toggleLang');
   if (langBtn) {

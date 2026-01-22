@@ -2011,6 +2011,19 @@ body.dark-mode .timeline::after {
   width: min(100%, 92vw);
 }
 
+@supports (content-visibility: auto) {
+
+  .timeline-section,
+  .international-validation,
+  .share-container,
+  .mission-statement,
+  .story-section,
+  #main-content {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
+}
+
 @media (min-width: 1200px) {
 
   .timeline-section,
