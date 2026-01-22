@@ -8,6 +8,23 @@ function scheduleIdle(task, timeout = 1500) {
   window.setTimeout(task, 0);
 }
 
+function safeGetStorage(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    console.warn('Unable to read localStorage:', error);
+    return null;
+  }
+}
+
+function safeSetStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    console.warn('Unable to write localStorage:', error);
+  }
+}
+
 const CNEMonitor = (() => {
   console.log('CNEMonitor module initialized');
 
@@ -21,8 +38,13 @@ const CNEMonitor = (() => {
     if (!sunIcon || !moonIcon) {
       return;
     }
-    sunIcon.hidden = !isDarkMode;
-    moonIcon.hidden = isDarkMode;
+    const showSun = Boolean(isDarkMode);
+    sunIcon.hidden = !showSun;
+    moonIcon.hidden = showSun;
+    sunIcon.style.display = showSun ? 'inline-block' : 'none';
+    moonIcon.style.display = showSun ? 'none' : 'inline-block';
+    sunIcon.setAttribute('aria-hidden', String(!showSun));
+    moonIcon.setAttribute('aria-hidden', String(showSun));
   }
 
   function buildOdometer(numberSpan, valueText) {
@@ -162,7 +184,7 @@ const CNEMonitor = (() => {
     try {
       document.body.classList.toggle('dark-mode');
       const isDarkMode = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+      safeSetStorage('theme', isDarkMode ? 'dark' : 'light');
       const toggleThemeBtn = document.getElementById('toggleTheme');
       if (toggleThemeBtn) {
         toggleThemeBtn.setAttribute('aria-pressed', String(isDarkMode));
@@ -184,6 +206,7 @@ const CNEMonitor = (() => {
     if (toggleThemeBtn) {
       toggleThemeBtn.addEventListener('click', toggleTheme);
       toggleThemeBtn.setAttribute('aria-pressed', 'false');
+      setThemeIcon(document.body.classList.contains('dark-mode'));
       console.log('Theme toggle button listener added');
       return toggleThemeBtn;
     }
@@ -192,7 +215,7 @@ const CNEMonitor = (() => {
   }
 
   function applySavedTheme(toggleThemeBtn) {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = safeGetStorage('theme');
     if (savedTheme !== 'dark') {
       return;
     }
@@ -435,7 +458,7 @@ function decorateStatusSteps(root = document) {
   });
 }
 
-const storedLang = localStorage.getItem('site_lang');
+const storedLang = safeGetStorage('site_lang');
 let currentLang = getSafeLang(storedLang);
 const HERO_SUPTITLE_PLACEHOLDER = '{{days}}';
 const HERO_SUPTITLE_DATE_PLACEHOLDER = '{{date}}';
@@ -554,7 +577,7 @@ async function updateLanguage(lang) {
 
   document.title = getPageTitle(resolvedLang);
 
-  localStorage.setItem('site_lang', resolvedLang);
+  safeSetStorage('site_lang', resolvedLang);
   currentLang = resolvedLang;
 }
 
