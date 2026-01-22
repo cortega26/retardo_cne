@@ -949,6 +949,11 @@ body.dark-mode .legal-reference {
 }
 
 .social-icons .icon {
+  width: 2.4em;
+  height: 2.4em;
+}
+
+.social-icons .icon-facebook {
   width: 1.9em;
   height: 1.9em;
 }
