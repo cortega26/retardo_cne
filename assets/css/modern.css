@@ -134,6 +134,14 @@ a {
   transition: all 0.2s ease;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -0.125em;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--text-accent);
@@ -926,6 +934,11 @@ body.dark-mode .legal-reference {
   font-size: 1.2rem;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-icons .icon {
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .social-icons .btn:hover {
