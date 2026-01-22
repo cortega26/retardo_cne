@@ -142,6 +142,18 @@ a {
   vertical-align: -0.125em;
 }
 
+#toggleTheme .icon-sun {
+  display: none;
+}
+
+body.dark-mode #toggleTheme .icon-sun {
+  display: inline-block;
+}
+
+body.dark-mode #toggleTheme .icon-moon {
+  display: none;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--text-accent);

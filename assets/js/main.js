@@ -39,10 +39,6 @@ const CNEMonitor = (() => {
       return;
     }
     const showSun = Boolean(isDarkMode);
-    sunIcon.hidden = !showSun;
-    moonIcon.hidden = showSun;
-    sunIcon.style.display = showSun ? 'inline-block' : 'none';
-    moonIcon.style.display = showSun ? 'none' : 'inline-block';
     sunIcon.setAttribute('aria-hidden', String(!showSun));
     moonIcon.setAttribute('aria-hidden', String(showSun));
   }
