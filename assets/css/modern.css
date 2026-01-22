@@ -933,8 +933,8 @@ body.dark-mode .legal-reference {
 }
 
 .social-icons .btn {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -943,14 +943,14 @@ body.dark-mode .legal-reference {
 
   /* Light mode bg */
   color: var(--text-primary);
-  font-size: 1.45rem;
+  font-size: 2rem;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-icons .icon {
-  width: 1.35em;
-  height: 1.35em;
+  width: 1.9em;
+  height: 1.9em;
 }
 
 .social-icons .btn:hover {
@@ -2057,7 +2057,8 @@ body.dark-mode .timeline::after {
   .mission-statement,
   .story-section,
   #main-content {
-    width: min(100%, 94vw);
+    max-width: min(92rem, 96vw);
+    width: min(100%, 96vw);
   }
 }
 
@@ -2076,8 +2077,15 @@ body.dark-mode .timeline::after {
 }
 
 @media (min-width: 992px) {
-  .timeline-section {
+
+  .timeline-section,
+  .international-validation,
+  .share-container,
+  .mission-statement,
+  .story-section,
+  #main-content {
     max-width: min(92rem, 96vw);
+    width: min(100%, 96vw);
   }
 }
 
