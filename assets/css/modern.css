@@ -931,14 +931,14 @@ body.dark-mode .legal-reference {
 
   /* Light mode bg */
   color: var(--text-primary);
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-icons .icon {
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.35em;
+  height: 1.35em;
 }
 
 .social-icons .btn:hover {
