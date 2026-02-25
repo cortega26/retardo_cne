@@ -20,7 +20,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
-    "@lhci/cli": "^0.13.0",
+    "@lhci/cli": "^0.15.1",
     "lighthouse": "^12.8.1",
     "prettier": "^3.6.2",
     "stylelint": "^16.23.1",
