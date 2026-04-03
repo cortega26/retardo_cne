@@ -2,9 +2,7 @@
 name: Deploy MkDocs site
 
 on:
-  push:
-    branches: [ main, master ]
-  workflow_dispatch:
+  workflow_dispatch: # Disabled: MkDocs conflicts with Astro GitHub Pages deployment
 
 permissions:
   contents: write
