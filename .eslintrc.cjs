@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
-  ignorePatterns: ['assets/vendor/**/*.js', 'dist/**'],
+  ignorePatterns: ['assets/vendor/**/*.js', 'public/vendor/**', 'dist/**'],
   overrides: [
     {
       files: ['playwright.config.js', 'scripts/**/*.js', 'tests/**/*.js'],
