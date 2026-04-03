@@ -1,0 +1,93 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experts = [
+  {
+    name: 'Terence Tao',
+    affiliation: lang === 'es' ? 'UCLA — Medalla Fields 2006' : 'UCLA — Fields Medal 2006',
+    finding: lang === 'es'
+      ? 'Los dígitos finales de los datos oficiales del CNE muestran una distribución estadísticamente anómala: exceso de dígitos pares (0, 2, 4, 6, 8) incompatible con cualquier proceso de conteo legítimo.'
+      : 'The trailing digits of official CNE data show a statistically anomalous distribution — an excess of even digits (0, 2, 4, 6, 8) incompatible with any legitimate counting process.',
+    method: lang === 'es' ? 'Análisis de distribución de dígitos finales' : 'Trailing digit distribution analysis',
+    url: 'https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/',
+    date: lang === 'es' ? '02/08/2024' : '08/02/2024',
+  },
+  {
+    name: 'Dorothy Kronick',
+    affiliation: 'UC Berkeley',
+    finding: lang === 'es'
+      ? 'El patrón de publicación de boletines muestra sesgo sistemático: los resultados llegaron en un orden que favorece de forma estadísticamente improbable al candidato oficialista en cada actualización secuencial.'
+      : 'The bulletin release pattern shows systematic bias: results arrived in an order that statistically improbably favors the ruling-party candidate at each sequential update.',
+    method: lang === 'es' ? 'Análisis de sesgo en secuencia de publicación de boletines' : 'Bulletin release sequence bias analysis',
+    url: 'https://dorothykronick.com/28J.pdf',
+    date: lang === 'es' ? 'Agosto 2024' : 'August 2024',
+  },
+  {
+    name: 'Andrew Gelman',
+    affiliation: 'Columbia University',
+    finding: lang === 'es'
+      ? 'La curva de totalización muestra patrones no aleatorios: la proporción de votos entre candidatos permanece sospechosamente constante a medida que llegan los boletines, lo cual es estadísticamente inusual.'
+      : 'The totalization curve shows non-random patterns: the vote share ratio between candidates remains suspiciously constant as bulletins arrive — a statistically unusual feature.',
+    method: lang === 'es' ? 'Análisis de estabilidad de la curva de totalización' : 'Totalization curve stability analysis',
+    url: 'https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/',
+    date: lang === 'es' ? '31/07/2024' : '07/31/2024',
+  },
+  {
+    name: 'Walter Mebane',
+    affiliation: 'University of Michigan',
+    finding: lang === 'es'
+      ? 'Aplicando el método eForensics — diseñado específicamente para detectar fraude electoral — los datos del CNE presentan evidencia de manipulación en múltiples modelos, con probabilidades de fraude muy superiores al umbral de significancia estadística.'
+      : 'Applying the eForensics method — specifically designed to detect electoral fraud — CNE data shows evidence of manipulation across multiple models, with fraud probabilities well above the threshold of statistical significance.',
+    method: lang === 'es' ? 'eForensics (forensia electoral cuantitativa)' : 'eForensics (quantitative electoral forensics)',
+    url: 'https://websites.umich.edu/~wmebane/Venezuela2024.pdf',
+    date: lang === 'es' ? 'Agosto 2024' : 'August 2024',
+  },
+];
+---
+
+<section id="analisis-tecnico" class="story-section container-fluid my-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="country-tag mb-3 d-inline-block">{t('badge_analysis')}</span>
+      <h3 class="text-uppercase fw-bold mb-3">{t('analysis_title')}</h3>
+      <p class="story-subtitle">{t('analysis_subtitle')}</p>
+    </div>
+
+    <div class="row g-4">
+      {experts.map((expert, index) => (
+        <div class="col-lg-6">
+          <div class="story-card h-100 d-flex flex-column">
+            <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+              <div>
+                <p class="story-kicker mb-1">{expert.date}</p>
+                <h4 class="h6 fw-bold mb-0">{expert.name}</h4>
+                <p class="small text-muted mb-0">{expert.affiliation}</p>
+              </div>
+              <span class="status-tag status-tag-failed flex-shrink-0">
+                {lang === 'es' ? 'Hallazgo' : 'Finding'}
+              </span>
+            </div>
+
+            <p class="small mb-3 flex-grow-1" style="color: var(--text-secondary); line-height: 1.65; font-style: italic;">
+              "{expert.finding}"
+            </p>
+
+            <div class="mb-3">
+              <span class="story-kicker mb-0" style="display: inline;">{lang === 'es' ? 'Método:' : 'Method:'}</span>
+              <span class="small text-muted"> {expert.method}</span>
+            </div>
+
+            <div class="mt-auto pt-3" style="border-top: 1px solid var(--border-subtle);">
+              <a href={expert.url} target="_blank" rel="noopener noreferrer" class="story-link fw-bold">
+                {lang === 'es' ? 'Ver análisis completo' : 'Read full analysis'} →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

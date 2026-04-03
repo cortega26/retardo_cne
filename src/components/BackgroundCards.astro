@@ -1,0 +1,69 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const cards = [
+  { 
+    label: lang === 'es' ? 'Alertas institucionales' : 'Institutional alerts',
+    items: lang === 'es' ? [
+      '2021: TSJ designó 5 rectores del CNE sin participación de la AN (Art. 296 CRBV).',
+      '2017: La Asamblea Nacional fue despojada de funciones (Sentencias 155 y 156).',
+      '2022: El TSJ anuló la elección del estado Barinas.'
+    ] : [
+      '2021: TSJ appointed 5 CNE rectors without National Assembly participation (Art. 296 CRBV).',
+      '2017: The National Assembly was stripped of powers (TSJ Rulings 155/156).',
+      '2022: TSJ annulled the Barinas state election.'
+    ],
+    sources: [
+      { label: 'IDEA International', href: 'https://www.idea.int/news/venezuela-2024-elections-unfolding-crisis' },
+      { label: 'OHCHR Report', href: 'https://www.ohchr.org/en/statements-and-speeches/2024/09/venezuela-human-rights-council-receives-latest-updates-fact-finding' }
+    ]
+  },
+  { 
+    label: lang === 'es' ? 'Condiciones preelectorales' : 'Pre-electoral conditions',
+    items: lang === 'es' ? [
+      'Marzo 2024: candidatura de Corina Yoris bloqueada sin base legal.',
+      'Registro en el exterior restringido a 69 días con acceso limitado.',
+      'Inhabilitaciones sistemáticas de candidatos opositores.'
+    ] : [
+      'March 2024: candidacy of Corina Yoris blocked without legal basis.',
+      'Voter registration abroad restricted to 69 days with limited access.',
+      'Systematic opposition candidate bans.'
+    ],
+    sources: [
+      { label: lang === 'es' ? 'Transparencia Electoral' : 'Electoral Transparency', href: 'https://transparenciaelectoral.org/' },
+      { label: lang === 'es' ? 'Amnistía Internacional' : 'Amnesty International', href: 'https://www.amnesty.org/es/latest/news/2024/07/venezuela-periodo-electoral-marcado-represion/' }
+    ]
+  }
+];
+---
+
+<section class="story-section container my-5" id="antecedentes">
+  <div class="text-center mb-4">
+    <h3 class="text-uppercase fw-bold">{t('badge_background')}</h3>
+    <p class="story-subtitle">{t('background_subtitle')}</p>
+  </div>
+  <div class="row g-4">
+    {cards.map(card => (
+      <div class="col-lg-6">
+        <div class="story-card h-100">
+          <p class="story-kicker">{card.label}</p>
+          <ul class="story-list">
+            {card.items.map(item => (<li>{item}</li>))}
+          </ul>
+          <div class="small text-muted mt-3">
+            <span>{t('sources_label')}</span>
+            {card.sources.map((s, i) => (
+              <>
+                {i > 0 && <span class="source-divider" aria-hidden="true"> • </span>}
+                <a class="story-link" href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

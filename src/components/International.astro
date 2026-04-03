@@ -1,0 +1,85 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Source: direct quotes from official documents
+const orgs = [
+  {
+    id: 'carter',
+    logo: '/retardo_cne/img/logo-carter-center.png',
+    logoAlt: 'Carter Center',
+    name: lang === 'es' ? 'Centro Carter' : 'Carter Center',
+    quote: lang === 'es'
+      ? '"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática."'
+      : '"Venezuela\'s election did not meet international standards and cannot be considered democratic."',
+    date: lang === 'es' ? '30/07/2024' : '07/30/2024',
+    href: 'https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf',
+    label: lang === 'es' ? 'Ver informe' : 'View report',
+  },
+  {
+    id: 'un',
+    logo: '/retardo_cne/img/logo-un-emblem.svg',
+    logoAlt: lang === 'es' ? 'Naciones Unidas' : 'United Nations',
+    name: lang === 'es' ? 'Panel de Expertos ONU' : 'UN Expert Panel',
+    quote: lang === 'es'
+      ? '"El proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles."'
+      : '"The CNE\'s results management process did not meet the basic transparency and integrity measures necessary for credible elections."',
+    date: lang === 'es' ? '09/08/2024' : '08/09/2024',
+    href: 'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf',
+    label: lang === 'es' ? 'Ver informe' : 'View report',
+  },
+  {
+    id: 'eu',
+    logo: '/retardo_cne/img/logo-eu-flag.svg',
+    logoAlt: lang === 'es' ? 'Unión Europea' : 'European Union',
+    name: lang === 'es' ? 'Unión Europea' : 'European Union',
+    quote: lang === 'es'
+      ? '"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden."'
+      : '"The results published by the CNE on August 2 cannot be recognized without evidence to support them."',
+    date: lang === 'es' ? '04/08/2024' : '08/04/2024',
+    href: 'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/',
+    label: lang === 'es' ? 'Ver declaración' : 'View statement',
+  },
+  {
+    id: 'oas',
+    logo: '/retardo_cne/img/logo-oas-emblem.png',
+    logoAlt: lang === 'es' ? 'OEA' : 'OAS',
+    name: lang === 'es' ? 'OEA' : 'OAS',
+    quote: lang === 'es'
+      ? '"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria."'
+      : '"The complete manual of fraudulent electoral result management was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner."',
+    date: lang === 'es' ? '02/08/2024' : '08/02/2024',
+    href: 'https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24',
+    label: lang === 'es' ? 'Ver comunicado' : 'View statement',
+  },
+];
+---
+
+<section id="internacional" class="international-validation container my-5">
+  <h3 class="text-center mb-3 text-uppercase fw-bold">{t('international_title')}</h3>
+  <p class="story-subtitle text-center mb-5">{t('international_intro')}</p>
+
+  <div class="row g-4 justify-content-center">
+    {orgs.map((org, index) => (
+      <div class="col-md-6 col-lg-3">
+        <a class="card h-100 border-0 shadow-sm org-card text-decoration-none"
+           href={org.href} target="_blank" rel="noopener noreferrer"
+           aria-label={`${org.name}: ${org.label}`}>
+          <div class="card-body text-center d-flex flex-column p-4">
+            <div class="org-logo-wrap mb-3">
+              <img class="org-logo" src={org.logo} alt={org.logoAlt} loading="lazy" decoding="async" />
+            </div>
+            <h5 class="card-title fw-bold mb-1" style="font-size: 0.95rem; color: var(--text-primary);">{org.name}</h5>
+            <p class="story-kicker mb-3">{org.date}</p>
+            <p class="card-text small flex-grow-1 fst-italic" style="color: var(--text-secondary); line-height: 1.6;">{org.quote}</p>
+            <div class="mt-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
+              <span class="story-link small fw-bold">{org.label} →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

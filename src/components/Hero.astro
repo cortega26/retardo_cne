@@ -1,0 +1,89 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header id="inicio">
+  <!-- Hero Badges -->
+  <div class="hero-badges">
+    <div class="country-tag">
+      <span class="flag flag-venezuela" aria-hidden="true"></span>
+      <span>{t('badge_herosub')}</span>
+    </div>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>{t('status_violation')}</span>
+    </div>
+  </div>
+
+  <!-- Supra-title -->
+  <p class="hero-suptitle">{t('hero_subtitle')}</p>
+
+  <!-- Main Title -->
+  <h1>{t('hero_title')}</h1>
+
+  <!-- Credibility Bar -->
+  <div class="credibility-bar" role="note" aria-label="Indicadores de credibilidad">
+    <span>{t('cred_docs').replace('{{count}}', '7')}</span>
+    <span>{t('cred_update').replace('{{date}}', '2025-05-27')}</span>
+    <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
+      {t('cred_corrections')}
+    </a>
+  </div>
+
+  <!-- Hero Stats Cards -->
+  <div class="hero-stats container">
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-12 col-md-4">
+        <div class="story-card h-100 text-center">
+          <p class="stat-text">{t('hero_stat_1')}</p>
+          <div class="stat-sources small text-muted mt-2">
+            <span>{t('source_label')}</span>
+            <a class="story-link" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">
+              {t('hero_stat_1_source_primary')}
+            </a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <span>{t('sources_label')}</span>
+            <a class="story-link" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/" target="_blank" rel="noopener noreferrer">
+              {t('hero_stat_1_source_archive')}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="story-card h-100 text-center">
+          <p class="stat-text">{t('hero_stat_2')}</p>
+          <div class="stat-sources small text-muted mt-2">
+            <span>{t('sources_label')}</span>
+            <a class="story-link" href="https://www.cartercenter.org/news/venezuela-073024/" target="_blank" rel="noopener noreferrer">{t('hero_stat_2_source_carter')}</a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <a class="story-link" href="https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf" target="_blank" rel="noopener noreferrer">{t('hero_stat_2_source_un')}</a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <a class="story-link" href="https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'Unión Europea' : 'European Union'}</a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <a class="story-link" href="https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'OEA' : 'OAS'}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="story-card h-100 text-center">
+          <p class="stat-text">{t('hero_stat_3')}</p>
+          <div class="stat-sources small text-muted mt-2">
+            <span>{t('sources_label')}</span>
+            <a class="story-link" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank" rel="noopener noreferrer">{t('hero_stat_3_source_lopre')}</a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <a class="story-link" href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php" target="_blank" rel="noopener noreferrer">{t('hero_stat_3_source_audits')}</a>
+            <span class="source-divider" aria-hidden="true"> • </span>
+            <a class="story-link" href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'Prensa Comunitaria' : 'Community Press'}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

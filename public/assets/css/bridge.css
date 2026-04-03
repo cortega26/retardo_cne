@@ -1,0 +1,163 @@
+/* bridge.css — Maps Astro component class names to modern.css equivalents.
+   Loaded after modern.css. Keeps modern.css as the source of truth. */
+
+/* ─── Section Layout ─────────────────────────────────────────── */
+.section-padding {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+.container-tight {
+  max-width: 1024px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+/* ─── Card ───────────────────────────────────────────────────── */
+.premium-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+
+/* ─── Badges ─────────────────────────────────────────────────── */
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn-indigo {
+  background: var(--color-primary-brand);
+  color: #fff !important;
+  border-color: transparent;
+}
+.btn-indigo:hover {
+  opacity: 0.9;
+  color: #fff !important;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.tracking-tight   { letter-spacing: -0.02em; }
+.tracking-tighter { letter-spacing: -0.03em; }
+.tracking-widest  { letter-spacing: 0.12em; }
+
+/* ─── Icon box ───────────────────────────────────────────────── */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Controlled dark section styles ────────────────────────── */
+/* These classes are used INTENTIONALLY as dark sections (PostElection, VerifiedActas, Action).
+   We style them as rich dark cards matching modern.css dark mode tokens. */
+
+/* Sections that use bg-slate-950 / bg-slate-900 as intentional dark sections */
+.intentional-dark {
+  background-color: #0b1020;
+  color: #f8fafc;
+}
+.intentional-dark h2,
+.intentional-dark h3,
+.intentional-dark h4 { color: #f8fafc !important; }
+.intentional-dark p   { color: #cbd5e1 !important; }
+.intentional-dark .text-muted { color: #94a3b8 !important; }
+
+/* Dark card inside dark section */
+.intentional-dark .premium-card,
+.intentional-dark .story-card {
+  background-color: #111827 !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+/* ─── Section-specific bg overrides ─────────────────────────── */
+/* Use modern.css vars for bg-secondary/bg-surface (NOT dark) */
+.bg-secondary { background-color: var(--bg-body) !important; }
+.bg-surface   { background-color: var(--bg-card) !important; }
+
+/* These should stay themed (not forced to dark) */
+.text-slate-600 { color: var(--text-secondary) !important; }
+.text-slate-500 { color: var(--text-secondary) !important; }
+
+/* ─── Inline color token helpers ─────────────────────────────── */
+.text-accent  { color: var(--text-accent)  !important; }
+.text-danger  { color: var(--color-danger) !important; }
+.text-success { color: var(--color-success) !important; }
+
+/* ─── Extended status-tag variants (complement modern.css) ───── */
+/* modern.css provides status-tag-met (green) and status-tag-failed (red) */
+/* We add amber for PARTIAL and muted for OMITTED */
+.status-tag-partial {
+  color: #92400e;
+  background: linear-gradient(130deg, rgba(217, 119, 6, 0.18), rgba(217, 119, 6, 0.05));
+  border: 1px solid rgba(217, 119, 6, 0.45);
+  box-shadow: 0 10px 20px rgba(217, 119, 6, 0.15);
+  display: inline-flex; align-items: center;
+  padding: 0.15rem 0.6rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.status-tag-omitted {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  display: inline-flex; align-items: center;
+  padding: 0.15rem 0.6rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+body.dark-mode .status-tag-partial {
+  color: #fde68a;
+  background: rgba(217, 119, 6, 0.2);
+  border-color: rgba(217, 119, 6, 0.5);
+}
+body.dark-mode .status-tag-omitted {
+  color: var(--text-secondary);
+  background: rgba(148, 163, 184, 0.08);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+/* Timeline dot helpers */
+.bg-warning       { background-color: var(--color-warning, #d97706) !important; }
+.bg-secondary-dot { background-color: var(--text-secondary) !important; opacity: 0.5; }
+.bg-illegal       { background-color: #7c1d3d !important; }
+.shadow-illegal   { box-shadow: 0 0 10px rgba(124, 29, 61, 0.5); }
+
+/* ILEGAL — dark crimson, distinct from plain INCUMPLIDO red */
+.status-tag-illegal {
+  color: #fff;
+  background: linear-gradient(130deg, rgba(124, 29, 61, 0.9), rgba(124, 29, 61, 0.7));
+  border: 1px solid rgba(124, 29, 61, 0.8);
+  box-shadow: 0 4px 12px rgba(124, 29, 61, 0.3);
+  display: inline-flex; align-items: center;
+  padding: 0.15rem 0.6rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+body.dark-mode .status-tag-illegal {
+  background: rgba(190, 18, 60, 0.25);
+  border-color: rgba(190, 18, 60, 0.5);
+  color: #fecdd3;
+}
+
+
+
+/* AOS removed — data-aos attributes stripped from all components */
+
+/* ─── Hover utilities ────────────────────────────────────────── */
+.hover-translate:hover { transform: translateX(5px); }

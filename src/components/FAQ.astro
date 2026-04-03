@@ -1,0 +1,104 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const faqs = [
+  { id: 'faqOne',   q: t('faq_1_question'), a: t('faq_1_answer'),
+    sources: [{ label: 'Art. 146 y 155 LOPRE', url: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf' }] },
+  { id: 'faqTwo',   q: t('faq_2_question'), a: t('faq_2_answer'),
+    sources: [{ label: lang === 'es' ? 'Protocolos CNE (archivo)' : 'CNE Protocols (archive)', url: 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php' }] },
+  { id: 'faqThree', q: t('faq_3_question'), a: t('faq_3_answer'),
+    sources: [
+      { label: lang === 'es' ? 'Resultados con Venezuela' : 'Results with Venezuela', url: 'https://resultadosconvzla.com/' },
+      { label: lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: audits not performed', url: 'https://cnnespanol.cnn.com/2024/08/22/auditorias-cne-no-hizo-elecciones-presidenciales-venezuela-orix' },
+    ] },
+  { id: 'faqFour',  q: t('faq_4_question'), a: t('faq_4_answer'),
+    sources: [{ label: lang === 'es' ? 'Centro Carter' : 'Carter Center', url: 'https://www.cartercenter.org/news/venezuela-073024/' },
+              { label: lang === 'es' ? 'Panel ONU' : 'UN Panel', url: 'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf' }] },
+  { id: 'faqFive',  q: t('faq_5_question'), a: t('faq_5_answer'),
+    sources: [{ label: lang === 'es' ? 'Actas ciudadanas' : 'Citizen actas', url: 'https://resultadosconvzla.com/' },
+              { label: lang === 'es' ? 'Cómo verificar un acta' : 'How to verify an acta', url: 'https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/' }] },
+  { id: 'faqSix',   q: t('faq_6_question'), a: t('faq_6_answer'),
+    sources: [{ label: 'Art. 146 LOPRE', url: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf' },
+              { label: lang === 'es' ? 'Prensa Comunitaria' : 'Community Press', url: 'https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/' }] },
+  { id: 'faqSeven', q: t('faq_7_question'), a: t('faq_7_answer'),
+    sources: [{ label: 'Dr. Terence Tao (UCLA)', url: 'https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/' },
+              { label: 'Walter Mebane (U. Michigan)', url: 'https://websites.umich.edu/~wmebane/Venezuela2024.pdf' }] },
+  { id: 'faqEight', q: t('faq_8_question'), a: t('faq_8_answer'),
+    sources: [{ label: 'HRW Venezuela 2025', url: 'https://www.hrw.org/world-report/2025/country-chapters/venezuela' },
+              { label: 'IACHR Res. 2/2024', url: 'https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF' }] },
+  { id: 'faqNine',  q: t('faq_9_question'), a: t('faq_9_answer'),
+    sources: [{ label: lang === 'es' ? 'Acuerdo de Barbados' : 'Barbados Agreement', url: 'https://www.state.gov/partial-agreement-between-the-unitary-platform-of-venezuela-and-the-government-of-venezuela/' },
+              { label: lang === 'es' ? 'Transparencia Electoral' : 'Electoral Transparency', url: 'https://transparenciaelectoral.org/' }] },
+  { id: 'faqTen',   q: t('faq_10_question'), a: t('faq_10_answer'),
+    sources: [{ label: lang === 'es' ? 'Cómo verificar un acta' : 'How to verify an acta', url: 'https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/' },
+              { label: 'Macedonia Del Norte', url: 'https://macedoniadelnorte.com/' }] },
+];
+---
+
+<section id="verificacion" class="story-section container my-5">
+  <div class="text-center mb-5">
+    <span class="country-tag mb-3 d-inline-block">{t('badge_faq')}</span>
+    <h3 class="text-uppercase fw-bold mb-3">{t('nav_verification_section')}</h3>
+    <p class="story-subtitle">{t('faq_subtitle')}</p>
+  </div>
+
+  <div class="accordion faq-accordion" id="faqMainAccordion">
+    {faqs.map((faq, index) => (
+      <div class="accordion-item">
+        <h2 class="accordion-header" id={`heading-${faq.id}`}>
+          <button class="accordion-button faq-btn collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target={`#${faq.id}`}
+            aria-expanded="false" aria-controls={faq.id}>
+            <span class="me-3 fw-bold" style="color: var(--text-accent);">0{index + 1}.</span>
+            {faq.q}
+            <span class="faq-chevron" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+        </h2>
+        <div id={faq.id} class="accordion-collapse collapse"
+          aria-labelledby={`heading-${faq.id}`} data-bs-parent="#faqMainAccordion">
+          <div class="accordion-body">
+            <p class="mb-3" style="color: var(--text-secondary); line-height: 1.7;">{faq.a}</p>
+            <div class="small mt-3" style="color: var(--text-secondary);">
+              <span class="fw-bold me-1" style="color: var(--text-accent);">{t('sources_label')}</span>
+              {faq.sources.map((s, i) => (
+                <>
+                  {i > 0 && <span class="mx-1" aria-hidden="true">•</span>}
+                  <a class="story-link" href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Hide Bootstrap's built-in accordion icon */
+  .faq-btn::after {
+    display: none !important;
+  }
+
+  /* Custom chevron container */
+  .faq-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding-left: 1rem;
+    flex-shrink: 0;
+    color: var(--text-accent);
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate when expanded */
+  .faq-btn[aria-expanded="true"] .faq-chevron {
+    transform: rotate(180deg);
+  }
+</style>

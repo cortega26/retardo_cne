@@ -1,0 +1,178 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const shareUrl = "https://cortega26.github.io/retardo_cne/";
+const shareText = "Incumplimientos verificables del CNE - Transparencia Electoral 2024";
+---
+
+<section id="compartir" class="section-padding border-top border-subtle">
+  <div class="container container-tight">
+    <div class="share-card text-center">
+      <span class="country-tag d-inline-block mb-3">{t('badge_share')}</span>
+      <h2 class="share-heading">{t('social_share_text')}</h2>
+      <p class="share-sub">{lang === 'es' ? 'Comparte la evidencia verificable con tu red.' : 'Share the verifiable evidence with your network.'}</p>
+
+      <div class="share-buttons">
+        <!-- X / Twitter -->
+        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="share-btn share-btn-x"
+           style="background:#000;color:#fff;"
+           aria-label={lang === 'es' ? 'Compartir en X (Twitter)' : 'Share on X (Twitter)'}>
+          <i class="fab fa-x-twitter"></i>
+          <span>{lang === 'es' ? 'Compartir en X' : 'Share on X'}</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href={`https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="share-btn share-btn-wa"
+           style="background:#25d366;color:#fff;"
+           aria-label={lang === 'es' ? 'Compartir en WhatsApp' : 'Share on WhatsApp'}>
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Telegram -->
+        <a href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="share-btn share-btn-tg"
+           style="background:#0088cc;color:#fff;"
+           aria-label={lang === 'es' ? 'Compartir en Telegram' : 'Share on Telegram'}>
+          <i class="fab fa-telegram"></i>
+          <span>Telegram</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="share-btn share-btn-li"
+           style="background:#0a66c2;color:#fff;"
+           aria-label={lang === 'es' ? 'Compartir en LinkedIn' : 'Share on LinkedIn'}>
+          <i class="fab fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- Copy link -->
+        <button id="copyLinkBtn" class="share-btn share-btn-copy"
+                aria-label={lang === 'es' ? 'Copiar enlace' : 'Copy link'}>
+          <i class="fas fa-link"></i>
+          <span id="copyBtnLabel">{lang === 'es' ? 'Copiar enlace' : 'Copy link'}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('copyLinkBtn');
+  const label = document.getElementById('copyBtnLabel');
+  const url = 'https://cortega26.github.io/retardo_cne/';
+  const isEn = document.documentElement.lang === 'en';
+
+  if (btn && label) {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        label.textContent = isEn ? '✓ Copied!' : '✓ ¡Copiado!';
+        setTimeout(() => {
+          label.textContent = isEn ? 'Copy link' : 'Copiar enlace';
+        }, 2500);
+      } catch {
+        label.textContent = url;
+      }
+    });
+  }
+</script>
+
+<style>
+  .border-subtle { border-color: var(--border-subtle); }
+
+  .share-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: var(--shadow-card);
+    padding: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .share-heading {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .share-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 55ch;
+    margin-inline: auto;
+    line-height: 1.6;
+  }
+
+  .share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+
+  .share-btn i { font-size: 1rem; }
+
+  /* X / Twitter */
+  .share-btn-x {
+    background: #000;
+    color: #fff;
+  }
+
+  /* WhatsApp */
+  .share-btn-wa {
+    background: #25d366;
+    color: #fff;
+  }
+
+  /* Telegram */
+  .share-btn-tg {
+    background: #0088cc;
+    color: #fff;
+  }
+
+  /* LinkedIn */
+  .share-btn-li {
+    background: #0a66c2;
+    color: #fff;
+  }
+
+  /* Copy link — ghost style */
+  .share-btn-copy {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-subtle);
+  }
+
+  body.dark-mode .share-btn-copy {
+    border-color: var(--border-subtle);
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!-- Methodology callout (matches live site structure) -->
+<section class="container my-4">
+  <div class="story-card text-center">
+    <p class="story-kicker">{lang === 'es' ? 'Metodología de verificación' : 'Verification Methodology'}</p>
+    <p class="mb-2">{t('methodology_text')}</p>
+    <a class="story-link" href="#auditorias">{t('methodology_link')} →</a>
+  </div>
+</section>
+
+<!-- Mission statement (matches live site structure) -->
+<section class="mission-statement container text-center my-5">
+  <p class="lead">
+    {t('mission_text')}
+  </p>
+  <div class="mission-proof">
+    <span class="mission-proof-label">{t('mission_proof_label')}</span>
+    <a class="mission-proof-link" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/"
+      target="_blank" rel="noopener noreferrer">{t('mission_proof_link')}</a>
+  </div>
+</section>

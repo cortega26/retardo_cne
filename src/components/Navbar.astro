@@ -1,0 +1,103 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const langToggleUrl = lang === 'es' ? '/retardo_cne/en/' : '/retardo_cne/';
+const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
+---
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#inicio" aria-current="page">RETARDO <span style="color: var(--text-accent);">CNE</span></a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- EVIDENCIA dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="evidenceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {t('nav_evidence')}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="evidenceDropdown">
+            <li><a class="dropdown-item" href="#cronologia">{t('nav_evidence_timeline')}</a></li>
+            <li><a class="dropdown-item" href="#auditorias">{t('nav_evidence_audits')}</a></li>
+            <li><a class="dropdown-item" href="#analisis-tecnico">{t('nav_evidence_analysis')}</a></li>
+            <li><a class="dropdown-item" href="#actas">{t('nav_evidence_actas')}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">{t('nav_evidence_results_header')}</h6></li>
+            <li><a class="dropdown-item" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">{t('nav_results_actas')}</a></li>
+            <li><a class="dropdown-item" href="https://macedoniadelnorte.com/" target="_blank" rel="noopener noreferrer">{t('nav_results_macedonia')}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">{t('nav_evidence_analysis')}</h6></li>
+            <li><a class="dropdown-item" href="https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/" target="_blank" rel="noopener noreferrer">Dr. Terence Tao (UCLA)</a></li>
+            <li><a class="dropdown-item" href="https://dorothykronick.com/28J.pdf" target="_blank" rel="noopener noreferrer">Dorothy Kronick (UC Berkeley)</a></li>
+            <li><a class="dropdown-item" href="https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/" target="_blank" rel="noopener noreferrer">Andrew Gelman (Columbia U.)</a></li>
+            <li><a class="dropdown-item" href="https://websites.umich.edu/~wmebane/Venezuela2024.pdf" target="_blank" rel="noopener noreferrer">Walter Mebane (U. of Michigan)</a></li>
+          </ul>
+        </li>
+
+        <!-- CONTEXTO dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contextDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {t('nav_context')}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="contextDropdown">
+            <li><a class="dropdown-item" href="#sistema">{t('nav_context_system')}</a></li>
+            <li><a class="dropdown-item" href="#plazos">{t('nav_context_deadlines')}</a></li>
+            <li><a class="dropdown-item" href="#antecedentes">{t('nav_context_background_section')}</a></li>
+            <li><a class="dropdown-item" href="#impacto">{t('nav_context_impact_section')}</a></li>
+          </ul>
+        </li>
+
+        <!-- VERIFICACIÓN dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="verificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {t('nav_verification')}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="verificationDropdown">
+            <li><a class="dropdown-item" href="#actas">{t('nav_verification_how')}</a></li>
+            <li><a class="dropdown-item" href="#verificacion">{t('nav_verification_section')}</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <!-- Language Toggle -->
+        <a href={langToggleUrl} class="btn btn-outline-primary btn-sm fw-bold px-3">{langToggleLabel}</a>
+
+        <!-- Theme Toggle -->
+        <button id="toggleTheme" class="btn btn-outline-primary btn-sm px-3" aria-label={t('nav_toggle_theme')} title={t('nav_toggle_theme')}>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Action CTA -->
+        <a href="#accion" class="btn btn-primary btn-sm fw-bold px-4">{t('nav_action')}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('toggleTheme');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+</script>

@@ -1,0 +1,99 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const cneProtocolUrl = 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php';
+
+const audits = [
+  {
+    date:   lang === 'es' ? '29–31 de julio' : 'July 29–31',
+    title:  t('audit_tele_title'),
+    status: lang === 'es' ? 'NO realizada' : 'NOT performed',
+    points: lang === 'es' ? [
+      'Verifica que la transmisión no fue alterada.',
+      'Compara registros con la auditoría pre-electoral.',
+      'Confirma que no hubo intervención externa.',
+    ] : [
+      'Verifies the transmission was not altered.',
+      'Compares records with the pre-election audit.',
+      'Confirms no external interference occurred.',
+    ],
+  },
+  {
+    date:   lang === 'es' ? '2 de agosto' : 'August 2',
+    title:  lang === 'es' ? 'Verificación Ciudadana Fase II' : 'Citizen Verification Phase II',
+    status: lang === 'es' ? 'NO realizada' : 'NOT performed',
+    points: lang === 'es' ? [
+      'Compara actas físicas con transmisión digital.',
+      'Revisa una muestra aleatoria de máquinas (1%).',
+      'Es la verificación más directa de integridad.',
+    ] : [
+      'Compares physical minutes with digital transmission.',
+      'Reviews a random sample of machines (1%).',
+      'The most direct integrity verification available.',
+    ],
+  },
+  {
+    date:   lang === 'es' ? '5–8 de agosto' : 'August 5–8',
+    title:  lang === 'es' ? 'Datos Electorales Fase II' : 'Electoral Data Phase II',
+    status: lang === 'es' ? 'NO realizada' : 'NOT performed',
+    points: lang === 'es' ? [
+      'Verifica la base de huellas y duplicidades.',
+      'Comprueba integridad del registro electoral.',
+      'Detecta votación múltiple o inconsistencias.',
+    ] : [
+      'Verifies fingerprint database for duplicates.',
+      'Checks electoral registry integrity.',
+      'Detects multiple voting or inconsistencies.',
+    ],
+  },
+];
+
+const auditNote   = lang === 'es'
+  ? 'El CNE alegó un "ataque informático", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados.'
+  : 'The CNE claimed a "cyberattack," but post-election audits work with physical evidence and are the legal mechanism to verify results.';
+const cneLabel    = lang === 'es' ? 'Protocolos CNE (archivo)'  : 'CNE Protocols (archive)';
+const hackLink    = lang === 'es' ? 'Análisis del supuesto hackeo' : 'Analysis of the alleged hack';
+const pcLabel     = lang === 'es' ? 'Prensa Comunitaria'        : 'Prensa Comunitaria';
+const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: audits not performed';
+---
+
+<section id="auditorias" class="story-section container my-5">
+  <div class="text-center mb-4">
+    <span class="country-tag mb-3 d-inline-block">{t('badge_audits')}</span>
+    <h3 class="text-uppercase fw-bold mb-2">
+      {lang === 'es' ? 'Las Auditorías Post-Electorales: La Tríada de Verificación' : 'Post-Election Audits: The Verification Triad'}
+    </h3>
+    <p class="story-subtitle">
+      {lang === 'es' ? 'Tres auditorías obligatorias definidas por el propio CNE. Ninguna se realizó.' : 'Three mandatory audits defined by the CNE itself. None were performed.'}
+    </p>
+  </div>
+
+  <div class="row g-4">
+    {audits.map((audit, i) => (
+      <div class="col-lg-4">
+        <div class="story-card h-100">
+          <p class="story-kicker">{audit.date}</p>
+          <h4 class="story-title">{audit.title}</h4>
+          <p class="story-status">{lang === 'es' ? 'Estado: ' : 'Status: '}{audit.status}</p>
+          <ul class="story-list">
+            {audit.points.map(p => <li>{p}</li>)}
+          </ul>
+          <a class="story-link" href={cneProtocolUrl} target="_blank" rel="noopener noreferrer">{cneLabel} →</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Note + additional sources -->
+  <div class="text-center mt-4">
+    <p class="story-subtitle mb-3">{auditNote}</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a class="btn btn-outline-primary btn-sm" href="https://x.com/phenobarbital/status/1818990019761091059" target="_blank" rel="noopener noreferrer">{hackLink}</a>
+      <a class="btn btn-outline-primary btn-sm" href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/" target="_blank" rel="noopener noreferrer">{pcLabel}</a>
+      <a class="btn btn-outline-primary btn-sm" href="https://cnnespanol.cnn.com/2024/08/22/auditorias-cne-no-hizo-elecciones-presidenciales-venezuela-orix" target="_blank" rel="noopener noreferrer">{cnnLabel}</a>
+    </div>
+  </div>
+</section>

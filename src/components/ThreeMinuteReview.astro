@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const steps = [
+  { icon: 'fa-print',            title: t('review_step_1_title'), text: t('review_step_1_text') },
+  { icon: 'fa-qrcode',           title: t('review_step_2_title'), text: t('review_step_2_text') },
+  { icon: 'fa-cloud-upload-alt', title: t('review_step_3_title'), text: t('review_step_3_text') },
+];
+---
+
+<section id="guia" class="story-section container my-5">
+  <div class="text-center mb-5">
+    <span class="country-tag mb-3 d-inline-block">{t('badge_quick_guide')}</span>
+    <h3 class="text-uppercase fw-bold mb-3">{t('nav_verification_how')}</h3>
+    <p class="story-subtitle">{t('review_subtitle')}</p>
+  </div>
+
+  <div class="row g-4">
+    {steps.map((step, i) => (
+      <div class="col-md-4">
+        <div class="story-card h-100 text-center d-flex flex-column align-items-center">
+          <div class="d-flex align-items-center justify-content-center mb-4"
+               style="width: 56px; height: 56px; border-radius: 50%; background: rgba(15, 94, 168, 0.10); color: var(--text-accent);">
+            <i class={`fas ${step.icon} fa-lg`}></i>
+          </div>
+          <h4 class="h6 fw-bold text-uppercase mb-3" style="letter-spacing: 0.06em;">{step.title}</h4>
+          <p class="small mb-0 flex-grow-1" style="color: var(--text-secondary); line-height: 1.6;">{step.text}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

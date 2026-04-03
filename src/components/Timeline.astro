@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const milestones = [
+  { date: `28 ${t('month_jul')} 2024`,  event: t('timeline_event_1'), status: t('status_normal'),    type: 'met'    },
+  { date: `28 ${t('month_jul')} @ 22h`, event: t('timeline_event_2'), status: t('status_violation'), type: 'failed' },
+  { date: `29 ${t('month_jul')} @ 00h`, event: t('timeline_event_3'), status: t('status_violation'), type: 'failed' },
+  { date: `29-31 ${t('month_jul')}`,    event: t('timeline_event_4'), status: t('status_violation'), type: 'failed' },
+  { date: `30 ${t('month_jul')} 2024`,  event: t('timeline_event_5'), status: t('status_overdue'),   type: 'failed' },
+  { date: `02 ${t('month_aug')} 2024`,  event: t('timeline_event_6'), status: t('status_violation'), type: 'failed' },
+  // Art. 155 LOPRE: 30 days from July 28 = August 27
+  { date: `27 ${t('month_aug')} 2024`,  event: t('timeline_event_7'), status: t('status_overdue'),   type: 'failed' },
+  { date: `10 ${t('month_jan')} 2025`,  event: t('timeline_event_8'), status: t('status_overdue'),   type: 'failed' }
+];
+---
+
+<section class="timeline-section container-fluid my-5" id="cronologia">
+  <div class="text-center mb-5">
+    <span class="country-tag mb-3 d-inline-block">{t('badge_timeline')}</span>
+    <h3 class="text-uppercase fw-bold mb-3">{t('nav_evidence_timeline')}</h3>
+    <p class="story-subtitle">{t('timeline_subtitle')}</p>
+  </div>
+
+  <div class="timeline">
+    {milestones.map((m, i) => (
+      <div class={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
+        <div class="content shadow-sm">
+          <span class="date">{m.date}</span>
+          <h4>{m.event}</h4>
+          <p>
+            <span class={`status-tag ${m.type === 'met' ? 'status-tag-met' : 'status-tag-failed'}`}>
+              {m.status}
+            </span>
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

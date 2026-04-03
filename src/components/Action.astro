@@ -1,0 +1,32 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="accion" class="story-section container my-5">
+  <div class="story-card text-center" style="background: linear-gradient(135deg, rgba(15, 94, 168, 0.07) 0%, rgba(15, 94, 168, 0.02) 100%); border-color: rgba(15, 94, 168, 0.2);">
+    <div class="mb-4">
+      <span class="country-tag d-inline-block mb-3">{t('badge_share')}</span>
+    </div>
+    <h2 class="fw-bold mb-4" style="font-family: var(--font-heading); color: var(--text-primary);">{t('action_title')}</h2>
+    <p class="mb-5 mx-auto" style="max-width: 600px; line-height: 1.7; color: var(--text-secondary);">
+      {t('action_text')}
+    </p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="#compartir" class="btn btn-primary fw-bold px-5 py-3">
+        <i class="fas fa-share-alt me-2"></i>{t('action_share_btn')}
+      </a>
+      <a href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer"
+         class="btn btn-outline-primary fw-bold px-5 py-3">
+        <i class="fas fa-clipboard-check me-2"></i>{t('action_actas_btn')}
+      </a>
+      <a href="https://github.com/cortega26/retardo_cne" target="_blank" rel="noopener noreferrer"
+         class="btn btn-outline-primary fw-bold px-5 py-3">
+        <i class="fab fa-github me-2"></i>{t('action_github_btn')}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const allIrregularidades = (await getCollection('irregularidades'))
+  .filter(item => item.id.startsWith(`${lang}/`))
+  .sort((a, b) => a.data.id - b.data.id);
+---
+
+<section id="analisis" class="story-section container my-5">
+  <div class="text-center mb-5">
+    <span class="country-tag mb-3 d-inline-block">{t('badge_analysis')}</span>
+    <h3 class="text-uppercase fw-bold mb-3">{t('nav_analysis_irregularities')}</h3>
+    <p class="story-subtitle">{t('analysis_subtitle')}</p>
+  </div>
+
+  <div class="row g-4">
+    {allIrregularidades.map((item) => (
+      <div class="col-12 col-lg-6">
+        <div class="story-card h-100 d-flex flex-column">
+
+          <!-- Card header -->
+          <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+            <span class="story-kicker mb-0">
+              {t('badge_case')}{item.data.id}
+            </span>
+            <span class={`status-tag ${item.data.replica ? 'status-tag-met' : 'status-tag-failed'}`}>
+              {item.data.replica ? t('badge_official_response') : t('badge_observation')}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="h5 fw-bold mb-4" style="color: var(--text-primary);">{item.data.title}</h3>
+
+          <!-- Content rows -->
+          <div class="flex-grow-1">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="label-heading mb-2">{t('irreg_afirmacion')}</div>
+                <p class="small mb-0" style="line-height: 1.6; color: var(--text-secondary);">{item.data.afirmacion}</p>
+              </div>
+              <div class="col-md-6">
+                <div class="label-heading mb-2">{t('irreg_norma')}</div>
+                <p class="small mb-0 fst-italic" style="line-height: 1.6; color: var(--text-secondary);">{item.data.norma}</p>
+              </div>
+              <div class="col-12" style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: 0.5rem;">
+                <div class="label-heading mb-2">{t('irreg_evidencia')}</div>
+                <p class="small mb-0" style="line-height: 1.6; color: var(--text-secondary);">{item.data.evidencia}</p>
+              </div>
+              <div class="col-12">
+                <div class="label-heading mb-2" style="color: var(--color-danger);">{t('irreg_impacto')}</div>
+                <p class="small fw-medium mb-0" style="line-height: 1.6; color: var(--color-danger); opacity: 0.85;">{item.data.impacto}</p>
+              </div>
+            </div>
+          </div>
+
+          {item.data.replica && (
+            <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-subtle);">
+              <div class="label-heading mb-2" style="color: var(--text-accent);">{t('irreg_replica')}</div>
+              <p class="small mb-0" style="line-height: 1.6; color: var(--text-secondary);">{item.data.replica}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .label-heading {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-accent);
+  }
+</style>

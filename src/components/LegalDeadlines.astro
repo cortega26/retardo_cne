@@ -1,0 +1,47 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Counter from './Counter.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Election: 28 July 2024 at 06:00 AM VET (UTC-4)
+// Art. 146 LOPRE: 48 hours → 30 July 2024 06:00 AM VET
+// Art. 155 LOPRE: 30 days  → 27 August 2024 06:00 AM VET
+const ELECTION_DATE = '2024-07-28T10:00:00Z'; // 06:00 VET = 10:00 UTC
+const DEADLINE_48H  = '2024-07-30T10:00:00Z'; // 48h after election
+const DEADLINE_30D  = '2024-08-27T10:00:00Z'; // 30 days after election
+
+const deadline48hLabel = lang === 'es' ? '48 horas desde el 28J' : '48 hours from July 28';
+const deadline30dLabel = lang === 'es' ? '30 días desde el 28J'  : '30 days from July 28';
+---
+
+<section class="story-section container my-5" id="plazos">
+  <div class="text-center mb-4">
+    <h3 class="text-uppercase fw-bold">{t('badge_deadlines')}</h3>
+    <p class="story-subtitle">{t('status_subtitle')}</p>
+  </div>
+</section>
+
+<section id="main-content">
+  <Counter
+    id="counter1"
+    targetDate={DEADLINE_48H}
+    electionDate={ELECTION_DATE}
+    deadlineLabel={deadline48hLabel}
+    title={t('status_card_1_title')}
+    violationText={t('status_violation_overdue')}
+    legalRef={t('status_card_1_rule')}
+    progressLegal={2}
+  />
+  <Counter
+    id="counter2"
+    targetDate={DEADLINE_30D}
+    electionDate={ELECTION_DATE}
+    deadlineLabel={deadline30dLabel}
+    title={t('status_card_2_title')}
+    violationText={t('status_violation_failed')}
+    legalRef={t('status_card_2_rule')}
+    progressLegal={5}
+  />
+</section>

@@ -1,0 +1,142 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Expected steps: the legal protocol the CNE must follow
+const expectedSteps = [
+  t('system_expected_step1'), t('system_expected_step2'), t('system_expected_step3'),
+  t('system_expected_step4'), t('system_expected_step5'), t('system_expected_step6'),
+  t('system_expected_step7'), t('system_expected_step8')
+];
+
+// 3-state status for actual steps:
+//  'partial'  = partially done / with obstacles  → amber
+//  'omitted'  = simply not done                  → dark / muted
+//  'violated' = explicit legal breach             → red
+const actualSteps = [
+  { text: t('system_actual_step1'), status: 'partial'  },
+  { text: t('system_actual_step2'), status: 'violated' },
+  { text: t('system_actual_step3'), status: 'violated' },
+  { text: t('system_actual_step4'), status: 'violated' }, // suspender auditorías = incumplimiento activo
+  { text: t('system_actual_step5'), status: 'violated' },
+  { text: t('system_actual_step6'), status: 'violated' },
+  { text: t('system_actual_step7'), status: 'violated' },
+  { text: t('system_actual_step8'), status: 'illegal'  }, // judicializar sin actas = ilegal
+];
+
+// Labels for each state
+const labels: Record<string, string> = {
+  partial:  lang === 'es' ? 'PARCIAL'    : 'PARTIAL',
+  violated: lang === 'es' ? 'INCUMPLIDO' : 'VIOLATED',
+  illegal:  lang === 'es' ? 'ILEGAL'     : 'ILLEGAL',
+};
+---
+
+<section id="sistema" class="section-padding bg-surface border-top border-subtle">
+  <div class="container container-tight">
+    <div class="text-center mb-5 pb-4">
+     <span class="country-tag mb-2 d-inline-block">{t('badge_context')}</span>
+       <h2 class="display-6 fw-bold tracking-tight mb-3" style="color: var(--text-primary);">{t('system_title')}</h2>
+       <p class="mx-auto" style="color: var(--text-secondary); max-width: 700px;">{t('system_subtitle')}</p>
+    </div>
+
+    <div class="row g-4 d-flex align-items-stretch">
+      <!-- Expected / Proceso Legal Side -->
+      <div class="col-lg-6">
+        <div class="story-card h-100 p-4 p-md-5" style="background: rgba(5, 150, 105, 0.03); border-color: rgba(5, 150, 105, 0.18);">
+          <div class="d-flex align-items-center gap-3 mb-5">
+             <div class="icon-box rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: rgba(5, 150, 105, 0.15); color: var(--color-success); flex-shrink:0;">
+                <i class="fas fa-check-circle"></i>
+             </div>
+             <div>
+                <h3 class="h6 fw-bold mb-0 text-uppercase" style="letter-spacing: 0.08em; color: var(--color-success);">{t('system_expected_label')}</h3>
+                <span class="small" style="color: var(--text-secondary);">{t('system_procedure_label')}</span>
+             </div>
+          </div>
+          <div class="step-timeline ps-3">
+             {expectedSteps.map((step) => (
+                <div class="system-step mb-4 position-relative">
+                   <div class="step-marker-line"></div>
+                   <div class="step-marker-dot"></div>
+                   <p class="small fw-medium mb-0 ps-4" style="color: var(--text-primary);">{step}</p>
+                </div>
+             ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Reality / Ejecución 2024 Side -->
+      <div class="col-lg-6">
+        <div class="story-card h-100 p-4 p-md-5" style="background: rgba(220, 38, 38, 0.04); border-color: rgba(220, 38, 38, 0.2);">
+          <div class="d-flex align-items-center gap-3 mb-5">
+             <div class="icon-box rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: rgba(220, 38, 38, 0.12); color: var(--color-danger); flex-shrink:0;">
+                <i class="fas fa-exclamation-triangle"></i>
+             </div>
+             <div>
+                <h3 class="h6 fw-bold mb-0 text-uppercase" style="letter-spacing: 0.08em; color: var(--color-danger);">{t('system_actual_label')}</h3>
+                <span class="small" style="color: var(--text-secondary);">{t('system_observed_label')}</span>
+             </div>
+          </div>
+
+          <div class="step-timeline ps-3">
+             {actualSteps.map((step) => (
+                <div class="system-step mb-4 position-relative">
+                   <div class="step-marker-line opacity-20"></div>
+                   <div class={`step-marker-dot ${
+                     step.status === 'partial'  ? 'bg-warning' :
+                     step.status === 'illegal'  ? 'bg-illegal shadow-illegal' :
+                                                  'bg-danger shadow-danger'
+                   }`}></div>
+                   <div class="ps-4">
+                      <p class="small fw-medium mb-1" style="color: var(--text-primary);">{step.text}</p>
+                      <span class={`status-tag ${
+                        step.status === 'partial'  ? 'status-tag-partial'  :
+                        step.status === 'illegal'  ? 'status-tag-illegal'  :
+                                                     'status-tag-failed'
+                      }`}>
+                        {labels[step.status]}
+                      </span>
+                   </div>
+                </div>
+             ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-surface { background-color: var(--bg-surface); }
+  .bg-secondary { background-color: var(--bg-secondary); }
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-muted { color: var(--text-muted); }
+  .border-subtle { border-color: var(--border-subtle); }
+
+  .step-timeline { position: relative; }
+  .system-step { min-height: 40px; }
+  .step-marker-line {
+     position: absolute;
+     left: 0; top: 0; bottom: -1rem;
+     width: 1px;
+     background-color: var(--slate-300);
+  }
+  .system-step:last-child .step-marker-line { display: none; }
+  .step-marker-dot {
+     position: absolute;
+     left: -4px; top: 6px;
+     width: 9px; height: 9px;
+     border-radius: 50%;
+     background-color: var(--indigo-600);
+     z-index: 10;
+  }
+  .shadow-danger { box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+  
+  .bg-success-subtle { background-color: rgba(16, 185, 129, 0.1) !important; }
+  .bg-danger-subtle { background-color: rgba(239, 68, 68, 0.1) !important; }
+
+  :global(body.dark-mode) .bg-slate-200 { background-color: var(--slate-800); color: var(--slate-400); }
+</style>

@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Summary from '../components/Summary.astro';
+import ThreeMinuteReview from '../components/ThreeMinuteReview.astro';
+import BackgroundCards from '../components/BackgroundCards.astro';
+import LegalDeadlines from '../components/LegalDeadlines.astro';
+import Timeline from '../components/Timeline.astro';
+import Context from '../components/Context.astro';
+import Irregularidades from '../components/Irregularidades.astro';
+import PostElectionAudits from '../components/PostElectionAudits.astro';
+import VerifiedActas from '../components/VerifiedActas.astro';
+import International from '../components/International.astro';
+import Analysis from '../components/Analysis.astro';
+import FAQ from '../components/FAQ.astro';
+import Impact from '../components/Impact.astro';
+import Action from '../components/Action.astro';
+import Share from '../components/Share.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t('hero_title')}>
+	<Navbar />
+	<main>
+		<Hero />
+		<Summary />
+		<ThreeMinuteReview />
+		<BackgroundCards />
+		<LegalDeadlines />
+		<Timeline />
+		<Context />
+		<Irregularidades />
+		<PostElectionAudits />
+		<VerifiedActas />
+		<International />
+		<Analysis />
+		<FAQ />
+		<Impact />
+		<Action />
+		<Share />
+	</main>
+
+	<Footer />
+</Layout>
+
+

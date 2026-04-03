@@ -4,6 +4,9 @@
   "description": "Este proyecto es una página web que monitorea y visualiza los retrasos en el proceso electoral de las Elecciones Presidenciales de Venezuela 2024, específicamente enfocándose en las infracciones legales cometidas por el Consejo Nacional Electoral (CNE).",
   "main": "assets/js/main.js",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
@@ -16,15 +19,26 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@lhci/cli": "^0.13.0",
     "@playwright/test": "^1.55.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
-    "@lhci/cli": "^0.13.0",
     "lighthouse": "^12.8.1",
     "prettier": "^3.6.2",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.0",
     "stylelint-order": "^7.0.0"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/sitemap": "^3.7.2",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
+    "astro": "^6.1.2",
+    "bootstrap": "^5.3.8",
+    "font-awesome": "^4.7.0",
+    "typescript": "^5.9.3"
   }
 }

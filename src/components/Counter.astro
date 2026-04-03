@@ -1,0 +1,218 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  id: string;
+  targetDate: string;
+  electionDate: string;
+  deadlineLabel: string;
+  title: string;
+  violationText: string;
+  legalRef: string;
+  progressLegal: number;
+}
+
+const { id, targetDate, electionDate, deadlineLabel, title, violationText, legalRef, progressLegal } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const deadlineDateObj = new Date(targetDate);
+const locale = lang === 'es' ? 'es-VE' : 'en-US';
+const fmtShort: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'America/Caracas' };
+const formattedDeadline = deadlineDateObj.toLocaleDateString(locale, fmtShort);
+
+const expiredSince = lang === 'es' ? 'Vencido desde' : 'Expired since';
+const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in violation';
+---
+
+<section class="counter-card">
+  <!-- Top row: title + violation badge -->
+  <div class="counter-header">
+    <h2 class="counter-title">{title}</h2>
+    <span class="violation-badge">{violationText}</span>
+  </div>
+
+  <!-- Deadline date chip -->
+  <div class="deadline-chip">
+    <span class="deadline-chip__label">{expiredSince}</span>
+    <span class="deadline-chip__date">{formattedDeadline}</span>
+    <span class="deadline-chip__ref">— {legalRef} ({deadlineLabel})</span>
+  </div>
+
+  <!-- Elapsed label -->
+  <p class="elapsed-label">{elapsedLabel}</p>
+
+  <!-- Counter -->
+  <div id={id} class="counter" aria-live="polite" data-target={targetDate}>
+    <!-- Hydrated by JS -->
+  </div>
+
+  <!-- Progress bar (minimal) -->
+  <div class="progress-track" title={lang === 'es' ? 'Proporción del retraso frente al plazo legal' : 'Delay proportion vs. legal deadline'}>
+    <div class="progress-track__legal" style={`width: ${progressLegal}%`}></div>
+    <div class="progress-track__violation" style={`width: ${100 - progressLegal}%`}></div>
+  </div>
+</section>
+
+<style>
+  .counter-card {
+    background: var(--card-bg, rgba(255 255 255 / 0.04));
+    border: 1px solid rgba(255 255 255 / 0.08);
+    border-radius: 16px;
+    padding: 2rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* Header row */
+  .counter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .counter-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .violation-badge {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c0392b;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Deadline chip */
+  .deadline-chip {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .deadline-chip__label {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+
+  .deadline-chip__date {
+    font-weight: 700;
+    color: #e05252;
+  }
+
+  .deadline-chip__ref {
+    font-size: 0.74rem;
+    opacity: 0.55;
+    font-style: italic;
+  }
+
+  /* Elapsed label */
+  .elapsed-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    margin: 0.6rem 0 0;
+  }
+
+  /* Progress bar */
+  .progress-track {
+    display: flex;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    gap: 2px;
+  }
+
+  .progress-track__legal {
+    background: rgba(39, 174, 96, 0.5);
+    border-radius: 2px 0 0 2px;
+    min-width: 2px;
+  }
+
+  .progress-track__violation {
+    background: #c0392b;
+    border-radius: 0 2px 2px 0;
+    flex: 1;
+    background: repeating-linear-gradient(
+      -45deg,
+      #c0392b,
+      #c0392b 4px,
+      #a93226 4px,
+      #a93226 8px
+    );
+  }
+</style>
+
+<script>
+  function updateCounter(elementId: string, targetDateStr: string) {
+    const counter = document.getElementById(elementId);
+    if (!counter) return;
+
+    const targetTime = new Date(targetDateStr).getTime();
+    const isEn = document.documentElement.lang === 'en';
+
+    function update() {
+      if (!counter) return;
+      const diff = Math.max(0, Date.now() - targetTime);
+      const days    = Math.floor(diff / 86400000);
+      const hours   = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      const units = [
+        { v: days,    label: isEn ? (days    === 1 ? 'Day'  : 'Days')  : (days    === 1 ? 'Día'  : 'Días')  },
+        { v: hours,   label: isEn ? (hours   === 1 ? 'Hour' : 'Hours') : (hours   === 1 ? 'Hora' : 'Horas') },
+        { v: minutes, label: isEn ? 'Min' : 'Min' },
+        { v: seconds, label: isEn ? 'Sec' : 'Seg' },
+      ];
+
+      if (!counter.children.length) {
+        counter.innerHTML = units.map(({ v, label }, i) =>
+          `<span data-unit="${i}"><span class="number">${i >= 1 ? String(v).padStart(2,'0') : v}</span>${label}</span>`
+        ).join('');
+        return;
+      }
+
+      units.forEach(({ v }, i) => {
+        const wrapper = counter.querySelector(`[data-unit="${i}"]`) as HTMLElement | null;
+        if (!wrapper) return;
+        const numEl = wrapper.querySelector('.number') as HTMLElement | null;
+        if (!numEl) return;
+        const formatted = i >= 1 ? String(v).padStart(2,'0') : String(v);
+        if (numEl.textContent !== formatted) {
+          numEl.textContent = formatted;
+          numEl.classList.remove('digit-flash');
+          void numEl.offsetWidth;
+          numEl.classList.add('digit-flash');
+        }
+      });
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  document.querySelectorAll('.counter[data-target]').forEach(el => {
+    const id = el.id;
+    const target = (el as HTMLElement).dataset.target;
+    if (id && target) updateCounter(id, target);
+  });
+</script>

@@ -1,0 +1,98 @@
+---
+id: 2
+title: "No publicación de resultados por mesa"
+afirmacion: "No se publicaron resultados desagregados por mesa ni en la web del CNE ni en la Gaceta Electoral dentro del plazo legal de 48 horas y 30 días, respectivamente."
+norma: "El artículo 155 de la LOPRE obliga la publicación oficial por mesa en un plazo definido."
+evidencia: "Informes de observación (ONU, Centro Carter) documentan la omisión y el retraso persistente en la publicación oficial."
+impacto: "Sin datos por mesa, es imposible una verificación ciudadana y técnica completa del proceso de totalización."
+replica: "El CNE alegó un 'ataque al sitio'; sin embargo, existen vías alternativas de difusión y las auditorías físicas existen."
+sources: ["Art. 155 LOPRE", "Informe Centro Carter", "Panel ONU"]
+---
+
+No se publicaron resultados desagregados por mesa.
+El artículo 155 de la LOPRE obliga la publicación oficial por mesa.
+Informes de observación documentan la omisión.
+Sin datos por mesa, es imposible una verificación ciudadana.
+Réplica: “Ataque al sitio”.
+<!-- slide -->
+---
+id: 3
+title: "Intervención del TSJ y 'peritaje' sin transparencia"
+afirmacion: "El TSJ realizó un supuesto peritaje y validó los resultados anunciados por el CNE sin una metodología técnica transparente ni base legal clara."
+norma: "Sólo el CNE certifica resultados; el TSJ no puede suplantar funciones sustantivas del órgano electoral según el marco legal venezolano."
+evidencia: "Carencia de informes técnicos detallados sobre el peritaje y ausencia de cadena de custodia verificable de las actas."
+impacto: "Se debilita la cadena institucional y se aumenta la opacidad del proceso de certificación de resultados."
+replica: "El TSJ declaró que el peritaje fue 'concluyente', pero no publicó los datos crudos que lo sustentan."
+sources: ["Constitución de Venezuela", "LOPRE", "Análisis Expertos"]
+---
+
+El TSJ realizó un peritaje público y validó resultados.
+Sólo el CNE certifica resultados; el TSJ no puede suplantar funciones.
+Carencia de base legal y ausencia de cadena de custodia.
+Se rompe la cadena institucional.
+Réplica: Peritaje 'concluyente' sin datos públicos.
+<!-- slide -->
+---
+id: 4
+title: "Denuncias de falta de transparencia (Rector Delpino)"
+afirmacion: "El exrector Juan Carlos Delpino denunció irregularidades graves, falta de transparencia y presiones para avalar resultados sin ver datos."
+norma: "Los rectores del CNE son funcionarios protegidos por la Constitución; el fraude electoral y el cohecho son delitos penados por ley."
+evidencia: "Comunicados oficiales y entrevistas del rector registrando la cronología de las denuncias y su posterior destitución por la AN."
+impacto: "Indica una politización extrema del órgano y represalias contra la disidencia técnica interna."
+replica: "La Asamblea Nacional designó un nuevo rector tras la ausencia del denunciante."
+sources: ["Comunicado Rector Delpino", "El Nacional", "Gaceta Oficial"]
+---
+
+Denunció falta de transparencia y presiones.
+Funcionarios del CNE están protegidos por la Constitución.
+Comunicados y entrevistas registran cronología de denuncias.
+Señales de politización del órgano.
+Réplica: Nueva designación de rector.
+<!-- slide -->
+---
+id: 5
+title: "Uso indebido de recursos públicos en campaña"
+afirmacion: "Se documentó un abuso sistemático de recursos administrativos y medios públicos en favor de la candidatura del oficialismo."
+norma: "La Constitución y acuerdos internacionales (p.e. Barbados) prohíben el uso partidista de bienes del Estado."
+evidencia: "Informes de observación nacional e internacional detallando el uso de infraestructura estatal para actos de campaña."
+impacto: "Genera una competencia desigual y sesga la información disponible para el electorado."
+replica: "El CNE no emitió sanciones ni medidas correctivas ante estas denuncias documentadas."
+sources: ["Acuerdo de Barbados", "Transparencia Electoral", "Amnistía Internacional"]
+---
+
+Abuso de recursos administrativos y mediáticos.
+Constitución y acuerdos internacionales prohíben uso partidista.
+Observación en varias regiones; ausencia de sanciones del CNE.
+Competencia desigual y sesgo informativo.
+<!-- slide -->
+---
+id: 6
+title: "Restricciones a observadores y testigos"
+afirmacion: "Se impusieron cupos y trabas arbitrarias a observadores técnicos y testigos de mesa para acceder al escrutinio y obtener actas."
+norma: "El marco electoral venezolano garantiza el derecho a la observación y el derecho de los testigos a obtener copias de actas."
+evidencia: "Denuncias de testigos y partidos políticos; revocatoria de la invitación a la Misión de Observación de la Unión Europea."
+impacto: "Dificulta la rendición de cuentas y la verificación independiente de los resultados en cada mesa de votación."
+replica: "El CNE revocó la invitación a la UE alegando 'soberanía' tras sanciones individuales a rectores."
+sources: ["Reglamento LOPRE", "Informes Partidos Políticos", "Declaración UE"]
+---
+
+Cupos y trabas a observadores; dificultades para copias de actas.
+Marco electoral garantiza observación y acceso a información.
+Informes de misiones y medios.
+Menor rendición de cuentas y opacidad.
+<!-- slide -->
+---
+id: 7
+title: "Exclusión masiva del voto en el exterior"
+afirmacion: "Requisitos burocráticos excesivos y cierres consulares excluyeron al 99% de los venezolanos habilitados para votar en el extranjero."
+norma: "El artículo 63 de la Constitución reconoce el sufragio universal; la LOPRE exige residencia legal, pero los trámites fueron arbitarios."
+evidencia: "Sólo 508 nuevos votantes inscritos en el exterior frente a un potencial de más de 5 millones de electores en edad de votar."
+impacto: "Violación del principio de universalidad del sufragio y afectación a la legitimidad democrática del proceso."
+replica: "Los consulados alegaron 'trámites administrativos normales' y cumplimiento de la normativa de residencia."
+sources: ["Constitución Art. 63", "Datos Registro Electoral", "Informes Ciudadanos"]
+---
+
+Requisitos y prácticas consulares excluyeron a migrantes.
+Constitución y LOPRE reconocen el derecho.
+Diferencia abismal entre potencial y registro real.
+Afectación a la universalidad del sufragio.
