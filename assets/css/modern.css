@@ -465,6 +465,18 @@ header h2 {
   border-color: var(--border-strong);
 }
 
+/* Dark mode: replace semi-transparent rgba border with box-shadow inset to eliminate
+   the subpixel rendering inconsistency on the right edge (single compositor pass). */
+body.dark-mode .story-card {
+  border-color: transparent;
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(148, 163, 184, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.dark-mode .story-card:hover {
+  box-shadow: var(--shadow-raised), 0 0 0 1px rgba(148, 163, 184, 0.42);
+}
+
 .story-kicker {
   font-family: var(--font-mono);
   text-transform: uppercase;

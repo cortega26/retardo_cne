@@ -57,7 +57,9 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
 <style>
   .counter-card {
     background: var(--card-bg, rgba(255 255 255 / 0.04));
-    border: 1px solid rgba(255 255 255 / 0.08);
+    /* Use box-shadow ring instead of rgba border to prevent subpixel flicker in dark mode */
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
     border-radius: 16px;
     padding: 2rem 2rem 1.5rem;
     display: flex;

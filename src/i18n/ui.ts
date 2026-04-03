@@ -50,7 +50,7 @@ export const ui = {
     'verified_cta_title': 'Consulta la base de datos de actas',
     'verified_cta_text': 'Puedes revisar acta por acta, mesa por mesa, con su respaldo fotográfico y QR.',
     'verified_cta_btn': 'Ir a ResultadosConVzla',
-    'verified_minutes_sub': '25.000+',
+    'verified_minutes_sub': '25.575 de 30.026 mesas · 3 ene 2025',
     'verified_volunteers_sub': 'Verificadores',
     'verified_macedonia_sub': 'Digitalización',
 
@@ -293,7 +293,7 @@ export const ui = {
     'verified_cta_title': 'Check the Actas Database',
     'verified_cta_text': 'You can review acta by acta, table by table, with its photographic backup and QR.',
     'verified_cta_btn': 'Go to ResultadosConVzla',
-    'verified_minutes_sub': '25,000+',
+    'verified_minutes_sub': '25,575 of 30,026 polling stations · Jan 3 2025',
     'verified_volunteers_sub': 'Verifiers',
     'verified_macedonia_sub': 'Digitalization',
 
