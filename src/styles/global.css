@@ -11,13 +11,12 @@
   --slate-800: #1e293b;
   --slate-900: #0f172a;
   --slate-950: #020617;
-  
   --indigo-50: #eef2ff;
   --indigo-100: #e0e7ff;
   --indigo-600: #4f46e5;
   --indigo-700: #4338ca;
   --indigo-800: #3730a3;
-  
+
   /* Semantic Tokens - Light Mode */
   --bg-primary: #ffffff;
   --bg-secondary: var(--slate-50);
@@ -26,20 +25,20 @@
   --text-secondary: var(--slate-600);
   --text-muted: var(--slate-400);
   --border-subtle: var(--slate-100);
-  
+
   /* Navbar Tokens */
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-text: var(--slate-900);
   --nav-border: var(--slate-100);
-  
+
   /* Primary Actions */
   --color-primary: var(--indigo-600);
   --color-primary-hover: var(--indigo-700);
   --color-danger: #ef4444;
   --color-success: #10b981;
   --color-warning: #f59e0b;
-  
-  /* Typography Scale (Inter-optimized) */
+
+  /* Typography Scale */
   --font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -51,15 +50,13 @@
   --fs-4xl: 2.25rem;
   --fs-5xl: 3rem;
   --fs-6xl: 3.75rem;
-  
   --lh-tight: 1.25;
   --lh-base: 1.625;
-  
+
   /* Elevation & Surfaces */
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --card-border: var(--slate-200);
   --card-radius: 0.75rem;
-  
   --nav-height: 72px;
 }
 
@@ -71,12 +68,11 @@ body.dark-mode {
   --text-primary: var(--slate-100);
   --text-secondary: var(--slate-400);
   --border-subtle: var(--slate-800);
-  
+
   /* Navbar Tokens - Dark */
   --nav-bg: rgba(15, 23, 42, 0.95);
   --nav-text: var(--slate-100);
   --nav-border: var(--slate-800);
-  
   --card-border: var(--slate-800);
   --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   --color-primary: var(--indigo-600); /* Keep consistent Indigo-600 */
@@ -99,15 +95,33 @@ body {
 }
 
 /* Premium Typography Rules */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   font-weight: 700;
   line-height: var(--lh-tight);
 }
 
-h1 { font-size: var(--fs-4xl); font-weight: 800; letter-spacing: -0.025em; }
-h2 { font-size: var(--fs-3xl); font-weight: 800; letter-spacing: -0.025em; }
-h3 { font-size: var(--fs-2xl); letter-spacing: -0.0125em; }
+h1 {
+  font-size: var(--fs-4xl);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.0125em;
+}
 
 /* Premium Components Base */
 .premium-card {
@@ -134,7 +148,8 @@ h3 { font-size: var(--fs-2xl); letter-spacing: -0.0125em; }
 }
 
 /* Universal Button Standard */
-.btn-indigo, .btn-primary {
+.btn-indigo,
+.btn-primary {
   background-color: var(--indigo-600) !important;
   border-color: var(--indigo-600) !important;
   color: white !important;
@@ -142,7 +157,8 @@ h3 { font-size: var(--fs-2xl); letter-spacing: -0.0125em; }
   transition: all 0.2s;
 }
 
-.btn-indigo:hover, .btn-primary:hover {
+.btn-indigo:hover,
+.btn-primary:hover {
   background-color: var(--indigo-700) !important;
 }
 
