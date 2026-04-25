@@ -248,6 +248,7 @@ export const ui = {
     // BL-001: Missing keys — footer
     'footer_rights': 'Observatorio Electoral Ciudadano. Contenido bajo licencia Creative Commons.',
     'footer_opensource': 'Código Abierto',
+    'footer_built_by': 'Desarrollado por',
   },
   en: {
     'nav_home': 'HOME',
@@ -493,6 +494,7 @@ export const ui = {
     // BL-001: Missing keys — footer
     'footer_rights': 'Citizen Electoral Observatory. Content under Creative Commons license.',
     'footer_opensource': 'Open Source',
+    'footer_built_by': 'Engineered by',
 
     // BL-001: Missing keys — irregularidades section
     'analysis_subtitle': 'Documentation of verified technical and legal breaches through primary evidence.',
