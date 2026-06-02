@@ -279,9 +279,47 @@ const CNEMonitor = (() => {
     window.addEventListener('load', loadAnalyticsWhenIdle, { once: true });
   }
 
+  function initNavbarNavigation() {
+    const navbar = document.querySelector('.navbar');
+    const collapse = document.getElementById('navbarNav');
+    if (!navbar || !collapse) {
+      return;
+    }
+
+    navbar.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link || !navbar.contains(link)) {
+        return;
+      }
+
+      if (link.matches('[data-bs-toggle="dropdown"]')) {
+        return;
+      }
+
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#' || !document.querySelector(hash)) {
+        return;
+      }
+
+      const openDropdown = link.closest('.dropdown');
+      if (openDropdown && typeof bootstrap !== 'undefined') {
+        const toggle = openDropdown.querySelector('[data-bs-toggle="dropdown"]');
+        const dropdown = toggle ? bootstrap.Dropdown.getInstance(toggle) : null;
+        dropdown?.hide();
+      }
+
+      if (collapse.classList.contains('show') && typeof bootstrap !== 'undefined') {
+        window.setTimeout(() => {
+          bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
+        }, 50);
+      }
+    });
+  }
+
   function runInitialization() {
     const toggleThemeBtn = initThemeToggle();
     applySavedTheme(toggleThemeBtn);
+    initNavbarNavigation();
     scheduleIdle(initCounters);
     scheduleIdle(initAOS);
     initAnalytics();

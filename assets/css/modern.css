@@ -307,6 +307,9 @@ body.dark-mode .toggler-icon {
   border-radius: var(--radius-md);
   padding: 0.5rem;
   margin-top: 0.5rem !important;
+  max-height: calc(100vh - var(--nav-height) - 1rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 
   /* Spacing from nav */
   animation: fade-in 0.2s ease-out;
@@ -1204,6 +1207,38 @@ body.dark-mode .social-icons .btn {
     transform: rotate(-1deg);
 
     /* Reduce rotation to save horizontal space */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    align-items: flex-start;
+  }
+
+  .navbar .container-fluid {
+    align-items: flex-start;
+  }
+
+  .navbar-collapse {
+    flex-basis: 100%;
+    max-height: calc(100vh - var(--nav-height) - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.25rem 0 1rem;
+  }
+
+  .navbar-nav {
+    gap: 0.25rem;
+  }
+
+  .navbar .dropdown-menu {
+    max-height: none;
+    overflow: visible;
+    margin: 0.25rem 0 0.75rem !important;
+  }
+
+  .navbar .dropdown-header {
+    white-space: normal;
   }
 }
 

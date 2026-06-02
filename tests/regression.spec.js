@@ -114,4 +114,58 @@ test.describe('regression coverage', () => {
       expect(width).toBeGreaterThan(0);
     });
   });
+
+  test('desktop navbar dropdowns open within the viewport', async ({ page }) => {
+    await page.goto('/');
+
+    for (const id of [
+      'evidenceDropdown',
+      'contextDropdown',
+      'internacionalDropdown',
+      'verificacionDropdown',
+    ]) {
+      const toggle = page.locator(`#${id}`);
+      await toggle.click();
+
+      await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+      const menu = toggle.locator('+ .dropdown-menu');
+      await expect(menu).toBeVisible();
+
+      const menuBox = await menu.boundingBox();
+      const viewport = page.viewportSize();
+      expect(menuBox).toBeTruthy();
+      expect(viewport).toBeTruthy();
+      expect(menuBox.y).toBeGreaterThanOrEqual(0);
+      expect(menuBox.height).toBeLessThanOrEqual(viewport.height);
+
+      await page.keyboard.press('Escape');
+      await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    }
+  });
+
+  test('mobile navbar can open a dropdown and navigate to an in-page section', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/');
+
+    await page.locator('.navbar-toggler').click();
+    await expect(page.locator('#navbarNav')).toHaveClass(/show/);
+
+    const evidenceToggle = page.locator('#evidenceDropdown');
+    await evidenceToggle.click();
+    await expect(evidenceToggle).toHaveAttribute('aria-expanded', 'true');
+
+    const evidenceMenu = evidenceToggle.locator('+ .dropdown-menu');
+    await expect(evidenceMenu).toBeVisible();
+
+    const navPanel = page.locator('#navbarNav');
+    const navBox = await navPanel.boundingBox();
+    const viewport = page.viewportSize();
+    expect(navBox).toBeTruthy();
+    expect(viewport).toBeTruthy();
+    expect(navBox.height).toBeLessThanOrEqual(viewport.height);
+
+    await evidenceMenu.locator('a[href="#cronologia"]').click();
+    await expect(page).toHaveURL(/#cronologia$/);
+    await expect(navPanel).not.toHaveClass(/show/);
+  });
 });
