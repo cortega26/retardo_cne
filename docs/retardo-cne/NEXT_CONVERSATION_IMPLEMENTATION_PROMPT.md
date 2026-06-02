@@ -15,7 +15,7 @@ As of **2026-04-01**:
 - Phases 0–5 are all **not started**
 - Dev server is running at `localhost:4321/retardo_cne/`
 - Live site is at `https://cortega26.github.io/retardo_cne/`
-- Original site is preserved in `index.html` at repo root as reference
+- Original site is archived at `docs/retardo-cne/archive/legacy-site/original-index.html` as reference
 
 **Before using this prompt, update the "Current Status" section and any "Start from Phase X" instruction below to reflect what has actually been completed.**
 
@@ -54,7 +54,7 @@ A comprehensive audit and planning session was completed. The following document
 
 2. **The primary cause of all blank sections:** ~25 i18n translation keys are referenced in components but not defined in `src/i18n/ui.ts`. The `useTranslations` fallback silently returns the raw key string, causing sections to appear empty.
 
-3. **The original site** (`index.html` at repo root, 107KB) is the production reference. Do not delete or deploy it until Phase 5 explicitly confirms the Astro version is live.
+3. **The original site** is archived at `docs/retardo-cne/archive/legacy-site/original-index.html` as reference. The operative site is the Astro build deployed from `dist/`.
 
 4. **Content collections** are already set up for irregularidades (`src/content/irregularidades/{es,en}/`) and work correctly. The `Irregularidades.astro` component filters by `lang` using `item.id.startsWith()`.
 
@@ -126,7 +126,7 @@ You must follow these rules during implementation:
 
 5. **Do not remove Bootstrap** until Phase 2 (BL-020) — doing it earlier will break the layout.
 
-6. **Cross-reference the original `index.html`** when you need to know what copy or content the live site had. It is at `/home/carlos/VS_Code_Projects/retardo_cne/index.html`.
+6. **Cross-reference the archived original HTML** when you need to know what copy or content the previous live site had. It is at `/home/carlos/VS_Code_Projects/retardo_cne/docs/retardo-cne/archive/legacy-site/original-index.html`.
 
 7. **When adding i18n keys** (BL-001), add to BOTH the `es` and `en` blocks. Never add a key to only one language.
 
@@ -169,7 +169,8 @@ retardo_cne/
 ├── public/                  ← Static assets served at /retardo_cne/
 ├── docs/
 │   └── retardo-cne/         ← Migration documentation (4 files)
-├── index.html               ← Original live site (DO NOT DELETE UNTIL PHASE 5)
+├── docs/retardo-cne/archive/legacy-site/original-index.html
+│                              ← Archived original live site
 └── astro.config.mjs         ← base: '/retardo_cne', i18n config, sitemap
 ```
 

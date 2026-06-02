@@ -1093,12 +1093,12 @@ Set minimum scores in `lighthouserc.json`:
 | **Status** | done |
 
 **Problem Statement:**  
-The original monolithic `index.html` at the repo root may still be served by GitHub Pages if the Actions deploy script is not correctly configured to deploy from `dist/`, not from root.
+The original monolithic `index.html` needed to be removed from the repo root after confirming GitHub Pages deploys the Astro `dist/` artifact.
 
 **Proposed Action:**  
 1. Inspect `.github/workflows/` deploy workflow
 2. Confirm it builds with `astro build` and deploys from `dist/` to GitHub Pages
-3. After confirming, move `index.html` to `docs/retardo-cne/archive/original-index.html`
+3. After confirming, move `index.html` to `docs/retardo-cne/archive/legacy-site/original-index.html`
 4. Trigger a deployment and verify `cortega26.github.io/retardo_cne/` serves the Astro version
 
 **Acceptance Criteria:**  
@@ -1106,7 +1106,7 @@ The original monolithic `index.html` at the repo root may still be served by Git
 - GitHub Actions pipeline is green
 
 **Dependencies:** All Phase 0 through Phase 4 items  
-**Risk/Regression Notes:** HIGH — confirm backup of original `index.html` before any deployment.
+**Risk/Regression Notes:** Original HTML is archived at `docs/retardo-cne/archive/legacy-site/original-index.html`.
 
 ---
 

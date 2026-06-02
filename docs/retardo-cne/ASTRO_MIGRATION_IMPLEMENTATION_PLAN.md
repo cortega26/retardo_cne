@@ -113,7 +113,7 @@ None — P0 is self-contained.
 
 ### Risk Controls
 - Do NOT touch the live site or trigger a GitHub Actions deploy until all P0 tasks pass local dev validation
-- Keep `index.html` (original live site) in the repo root as a reference and a production fallback
+- Keep the archived original live site in `docs/retardo-cne/archive/legacy-site/original-index.html` as reference material only
 
 ### Definition of Done — Phase 0
 - [ ] Local dev at `localhost:4321/retardo_cne/` visually matches live site at `cortega26.github.io/retardo_cne/`
@@ -601,13 +601,13 @@ Add Playwright tests for:
 5. Counter displays a number > 0
 
 #### P5-T5: Remove original index.html from deployment
-**File:** `index.html` (root)
+**File:** `docs/retardo-cne/archive/legacy-site/original-index.html`
 
-The original monolithic `index.html` at the repo root is currently served by GitHub Pages at the same URL as the Astro-built output. Before removing it, confirm GitHub Actions is correctly deploying from `dist/` not from root. Once confirmed, move `index.html` to `docs/retardo-cne/archive/original-index.html` for reference.
+The original monolithic site has been moved out of the repo root and archived for reference. GitHub Actions deploys the Astro build artifact from `dist/`, not the repository root.
 
 **Acceptance criteria:**
 - `https://cortega26.github.io/retardo_cne/` serves the Astro-built version
-- `index.html` at root is not deployed to Pages
+- No root `index.html` is present or deployed to Pages
 
 ### Definition of Done — Phase 5
 - [ ] `npm run lint` passes 0 errors
@@ -660,7 +660,7 @@ Before opening a new implementation conversation, ensure the following are ready
 2. The ASTRO_MIGRATION_BACKLOG.md is committed to the repo
 3. The NEXT_CONVERSATION_IMPLEMENTATION_PROMPT.md is available
 4. The dev server is confirmed running at `localhost:4321`
-5. The live site is still serving the original at `cortega26.github.io/retardo_cne/`
-6. The original `index.html` is intact as reference material
+5. The live site is deployed from the Astro `dist/` artifact
+6. The original site is archived at `docs/retardo-cne/archive/legacy-site/original-index.html`
 
 The execution agent should **start with Phase 0** and verify completion against the Definition of Done checklist before proceeding to Phase 1.

@@ -5,22 +5,23 @@ Este repositorio contiene un sitio web estático que documenta, de manera técni
 
 > Enfoque: hechos → norma aplicable → evidencia → impacto → réplica (si procede).
 
-## Sitio web (estático)
-- Entrada principal: `index.html`.
-- Estilos, scripts e imágenes: `assets/`.
+## Sitio web (Astro)
+- Entrada principal: `src/pages/index.astro`.
+- Componentes: `src/components/`.
+- Estilos e imágenes públicas: `public/assets/` y `public/img/`.
 - Ver localmente:
-  - Abrir `index.html` en el navegador, o
-  - Ejecutar `node scripts/serve.js` (por defecto en `http://127.0.0.1:4173`, configurable con `PORT`).
+  - `npm run dev` para desarrollo con Astro.
+  - `npm run build && node scripts/serve.js dist` para revisar el sitio estático generado.
 
 ## Datos y generación de contenido
-- `content/` contiene fuentes en `.docx`.
-- `build_irregularidades.py` procesa uno o varios `.docx` y actualiza:
+- `docs/retardo-cne/archive/legacy-content/` conserva fuentes antiguas en `.docx`.
+- `scripts/build_irregularidades.py` procesa uno o varios `.docx` y actualiza:
   - `docs/irregularidades.md`
   - `data/sources.csv`
 - Requiere: `python-docx` y `pandas`.
 - Ejemplo:
   ```
-  python build_irregularidades.py --docx "content/Auditorías post-electorales no realizadas.docx" --create-if-missing
+  python scripts/build_irregularidades.py --docx "docs/retardo-cne/archive/legacy-content/Auditorías post-electorales no realizadas.docx" --create-if-missing
   ```
 - `docs/` y `mkdocs.yml` mantienen el sitio alterno en MkDocs (opcional).
 
@@ -33,14 +34,13 @@ Este repositorio contiene un sitio web estático que documenta, de manera técni
 ## Estructura (resumen)
 ```
 .
-├── index.html                # Sitio web principal (estático)
-├── assets/                   # CSS, JS e imágenes
-├── content/                  # Fuentes .docx
-├── data/                     # CSV con matriz de evidencia
+├── src/                      # Páginas, componentes, i18n y contenido Astro
+├── public/                   # Assets publicados por Astro
+├── assets/data/              # Traducciones compartidas
 ├── docs/                     # Contenido opcional para MkDocs
-├── scripts/                  # Servidor estático local
+├── scripts/                  # Utilidades y servidor estático local
 ├── tests/                    # Tests E2E con Playwright
-└── .github/workflows/        # CI (lint + LHCI) y despliegue opcional MkDocs
+└── .github/workflows/        # CI, Lighthouse y despliegue de Astro a GitHub Pages
 ```
 
 ## Contribuir

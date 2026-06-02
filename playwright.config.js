@@ -11,7 +11,7 @@ module.exports = defineConfig({
     viewport: { width: 1280, height: 720 },
   },
   webServer: {
-    command: 'node scripts/serve.js',
+    command: 'npm run build && node scripts/serve.js dist',
     port: 4173,
     reuseExistingServer: true,
   },
