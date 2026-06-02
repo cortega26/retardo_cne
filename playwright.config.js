@@ -7,13 +7,13 @@ module.exports = defineConfig({
     timeout: 10_000,
   },
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    baseURL: 'http://127.0.0.1:4327',
     viewport: { width: 1280, height: 720 },
   },
   webServer: {
-    command: 'npm run build && node scripts/serve.js dist',
-    port: 4173,
-    reuseExistingServer: true,
+    command: 'npm run build && PORT=4327 node scripts/serve.js dist',
+    port: 4327,
+    reuseExistingServer: false,
   },
   projects: [
     {
