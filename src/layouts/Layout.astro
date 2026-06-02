@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 interface Props {
 	title: string;
@@ -7,7 +7,9 @@ interface Props {
 
 const { title } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const basePath = '/retardo_cne';
+const canonicalUrl = new URL(Astro.url.pathname, 'https://cortega26.github.io').href;
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ const basePath = '/retardo_cne';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="description" content="Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias." />
+		<meta name="description" content={t('meta_description')} />
 		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
 		<link rel="icon" href={`${basePath}/favicon.ico`} type="image/x-icon" />
 		<meta name="generator" content={Astro.generator} />
@@ -24,9 +26,9 @@ const basePath = '/retardo_cne';
 
 		<!-- Open Graph / Social -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://cortega26.github.io/retardo_cne/" />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content="Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias." />
+		<meta property="og:description" content={t('meta_description')} />
 		<meta property="og:image" content={`${basePath}/assets/img/social-preview.jpg`} />
 		<meta property="og:image:width" content="1024" />
 		<meta property="og:image:height" content="1024" />
@@ -35,7 +37,7 @@ const basePath = '/retardo_cne';
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content="Evidencia verificable de incumplimientos del CNE en las Elecciones 2024." />
+		<meta name="twitter:description" content={t('meta_description_twitter')} />
 		<meta name="twitter:image" content={`${basePath}/assets/img/social-preview.jpg`} />
 
 		<!-- Premium Typography: Sora + Source Sans 3 (matching live site) -->

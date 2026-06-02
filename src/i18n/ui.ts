@@ -249,6 +249,10 @@ export const ui = {
     'footer_rights': 'Observatorio Electoral Ciudadano. Contenido bajo licencia Creative Commons.',
     'footer_opensource': 'Código Abierto',
     'footer_built_by': 'Desarrollado por',
+
+    // SEO — meta description
+    'meta_description': 'Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias.',
+    'meta_description_twitter': 'Evidencia verificable de incumplimientos del CNE en las Elecciones 2024.',
   },
   en: {
     'nav_home': 'HOME',
@@ -498,5 +502,9 @@ export const ui = {
 
     // BL-001: Missing keys — irregularidades section
     'analysis_subtitle': 'Documentation of verified technical and legal breaches through primary evidence.',
+
+    // SEO — meta description
+    'meta_description': 'Verifiable evidence of CNE breaches in the 2024 Elections: legal deadlines, audits, citizen actas, and primary sources.',
+    'meta_description_twitter': 'Verifiable evidence of CNE breaches in Venezuela\'s 2024 Elections.',
   },
 } as const;

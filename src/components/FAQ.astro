@@ -52,7 +52,7 @@ const faqs = [
           <button class="accordion-button faq-btn collapsed" type="button"
             data-bs-toggle="collapse" data-bs-target={`#${faq.id}`}
             aria-expanded="false" aria-controls={faq.id}>
-            <span class="me-3 fw-bold" style="color: var(--text-accent);">0{index + 1}.</span>
+            <span class="me-3 fw-bold" style="color: var(--text-accent);">{String(index + 1).padStart(2, '0')}.</span>
             {faq.q}
             <span class="faq-chevron" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
