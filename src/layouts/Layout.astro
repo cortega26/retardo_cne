@@ -59,6 +59,7 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 
 		<!-- Bridge — Astro component class names → modern.css equivalents -->
 		<link rel="stylesheet" href={`${basePath}/assets/css/bridge.css`} />
+		<script is:inline src="/retardo_cne/assets/js/theme-init.js"></script>
 
 		<!-- Counter digit-flash animation (only changed digits animate) -->
 		<style>
@@ -73,48 +74,9 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 
 	</head>
 	<body class="app-shell">
-		<script is:inline>
-			(function() {
-				function applyThemeClass(isDark) {
-					if (!document.body) {
-						return;
-					}
-					document.body.classList.toggle('dark-mode', isDark);
-					document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-				}
-
-				function resolvePreferredTheme() {
-					const theme = localStorage.getItem('theme');
-					if (theme === 'dark') {
-						return true;
-					}
-					if (theme === 'light') {
-						return false;
-					}
-					return window.matchMedia('(prefers-color-scheme: dark)').matches;
-				}
-
-				const syncPreferredTheme = () => applyThemeClass(resolvePreferredTheme());
-
-				if (document.body) {
-					syncPreferredTheme();
-				} else {
-					document.addEventListener('DOMContentLoaded', syncPreferredTheme, { once: true });
-				}
-
-				window.__setPreferredTheme = function(nextTheme) {
-					localStorage.setItem('theme', nextTheme);
-					applyThemeClass(nextTheme === 'dark');
-				};
-			})();
-		</script>
 		<slot />
-
-		<!-- Bootstrap JS (Bundled locally by Vite) -->
-		<script>
-			import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-		</script>
-
+		<script is:inline src="/retardo_cne/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+		<script is:inline src="/retardo_cne/assets/js/navbar-behavior.js" defer></script>
 	</body>
 
 </html>

@@ -173,8 +173,13 @@ body.dark-mode .navbar {
   width: min(var(--hero-shell), 100%);
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1.75rem, 4.4vw, 3.25rem);
   align-items: stretch;
+}
+
+.hero-copy,
+.hero-evidence {
+  min-width: 0;
 }
 
 .hero-copy {
@@ -229,12 +234,13 @@ body.dark-mode .navbar {
 }
 
 .hero-shell h1 {
-  max-width: 11ch;
+  max-width: 10.6ch;
   margin-bottom: 1.25rem;
-  font-size: clamp(3rem, 7vw, 5.6rem);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.85rem, 6.1vw, 5.25rem);
+  line-height: 0.97;
+  letter-spacing: -0.042em;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .credibility-bar {
@@ -319,6 +325,22 @@ body.dark-mode .credibility-bar {
   border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
+@media (max-width: 1180px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-shell h1 {
+    max-width: 100%;
+    font-size: clamp(2.45rem, 10.8vw, 4.6rem);
+    text-wrap: pretty;
+  }
+
+  .hero-copy {
+    padding-bottom: 0;
+  }
+}
+
 @media (max-width: 991.98px) {
   .navbar .container-fluid {
     width: 100%;
@@ -343,21 +365,9 @@ body.dark-mode .credibility-bar {
     justify-content: flex-start;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    padding-bottom: 0;
-  }
-
   .hero-copy::before {
     left: 0;
     width: 4rem;
-  }
-
-  .hero-shell h1 {
-    max-width: 100%;
   }
 }
 
