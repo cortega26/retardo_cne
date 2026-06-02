@@ -325,7 +325,13 @@ const CNEMonitor = (() => {
         const navHeight = isMobileNav ? 72 : navbar.getBoundingClientRect().height;
         const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
         history.pushState(null, '', hash);
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        const root = document.documentElement;
+        const previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+        window.requestAnimationFrame(() => {
+          root.style.scrollBehavior = previousScrollBehavior;
+        });
       };
 
       const collapseIsOpen =
