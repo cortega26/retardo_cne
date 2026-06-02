@@ -437,7 +437,7 @@ header h2 {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   padding: clamp(1.5rem, 2.5vw, 2rem);
-
+}
 
 .story-kicker {
   font-family: var(--font-mono);
@@ -696,8 +696,11 @@ body.dark-mode .flag {
 }
 
 
-
 /* Red line removed per user request */
+
+body.dark-mode .counter-container {
+  border: 1px solid var(--border-subtle);
+}
 
 .counter-container h2 {
   font-size: 1rem;

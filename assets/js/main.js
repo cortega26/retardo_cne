@@ -72,29 +72,8 @@ const CNEMonitor = (() => {
   }
 
   function updateOdometer(numberSpan, valueText) {
-    const needsRebuild =
-      !numberSpan.classList.contains('odometer') ||
-      numberSpan.dataset.digits !== String(valueText.length);
-
-    if (needsRebuild) {
-      buildOdometer(numberSpan, valueText);
-      return;
-    }
-
-    const digits = numberSpan.querySelectorAll('.odometer-digit');
-    valueText.split('').forEach((digitChar, index) => {
-      const digit = digits[index];
-      if (!digit) {
-        return;
-      }
-      const roller = digit.querySelector('.odometer-roller');
-      if (!roller) {
-        return;
-      }
-      const digitValue = Number(digitChar) || 0;
-      roller.style.transform = `translateY(-${digitValue}em)`;
-    });
-
+    numberSpan.classList.remove('odometer');
+    numberSpan.textContent = valueText;
     numberSpan.dataset.value = valueText;
   }
 
@@ -229,10 +208,7 @@ const CNEMonitor = (() => {
         duration: 1000,
         once: true,
       });
-      console.log('AOS initialized');
-      return;
     }
-    console.warn('AOS library not found');
   }
 
   const ANALYTICS_ID = 'G-6VHH01PXKS';
@@ -290,6 +266,11 @@ const CNEMonitor = (() => {
   }
 
   function initAnalytics() {
+    const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    if (isLocalPreview) {
+      return;
+    }
+
     const loadAnalyticsWhenIdle = () => scheduleIdle(loadAnalytics);
     if (document.readyState === 'complete') {
       loadAnalyticsWhenIdle();
@@ -568,7 +549,12 @@ async function updateLanguage(lang) {
   // Update Toggle Button
   const toggleBtn = document.getElementById('toggleLang');
   if (toggleBtn) {
-    toggleBtn.textContent = resolvedLang === 'es' ? 'ES' : 'EN';
+    const langCode = toggleBtn.querySelector('.lang-code');
+    if (langCode) {
+      langCode.textContent = resolvedLang === 'es' ? 'ES' : 'EN';
+    } else {
+      toggleBtn.textContent = resolvedLang === 'es' ? 'ES' : 'EN';
+    }
   }
 
   document.title = getPageTitle(resolvedLang);
@@ -579,9 +565,7 @@ async function updateLanguage(lang) {
 
 function initShareButtons() {
   const shareButtons = document.querySelectorAll('[data-share-platform]');
-  if (!shareButtons.length) {
-    return;
-  }
+  const copyButton = document.getElementById('copyLinkBtn');
 
   const bypassNativeSharePlatforms = new Set(['instagram', 'tiktok']);
 
@@ -643,6 +627,35 @@ function initShareButtons() {
         window.open(fallbackUrl, '_blank', 'noopener');
       }
     });
+  });
+
+  if (!copyButton) {
+    return;
+  }
+
+  copyButton.addEventListener('click', async () => {
+    const label = copyButton.querySelector('[data-i18n="share_copy"]');
+    const translations = translationsCache?.[currentLang] || {};
+    const defaultLabel = translations.share_copy || (currentLang === 'en' ? 'Copy link' : 'Copiar enlace');
+    const copiedLabel =
+      translations.share_copied || (currentLang === 'en' ? 'Link copied' : 'Enlace copiado');
+    const shareUrl = window.location.href;
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      if (label) {
+        label.textContent = copiedLabel;
+      }
+      window.setTimeout(() => {
+        if (label) {
+          label.textContent = defaultLabel;
+        }
+      }, 2200);
+    } catch (error) {
+      if (label) {
+        label.textContent = shareUrl;
+      }
+    }
   });
 }
 

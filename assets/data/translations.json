@@ -52,6 +52,7 @@
     "org_oacdh": "OACDH ONU",
     "org_eu_parl": "Parlamento Europeo",
     "nav_verification": "VERIFICACIÓN",
+    "nav_toggle_language": "Cambiar idioma",
     "nav_verify_lewis": "Desmintiendo a Lewis & Thompson",
     "nav_verify_hack": "Análisis del supuesto \"Hackeo\"",
     "nav_legal_resources": "RECURSOS LEGALES",
@@ -351,6 +352,8 @@
     "action_actas_btn": "Ver actas ciudadanas",
     "action_github_btn": "Código abierto",
     "share_title": "Comparte evidencia verificable",
+    "share_copy": "Copiar enlace",
+    "share_copied": "Enlace copiado",
     "footer_rights": "Observatorio Electoral Ciudadano. Este sitio no está afiliado al CNE.",
     "footer_opensource": "Código Abierto / Open Source"
   },
@@ -407,6 +410,7 @@
     "org_oacdh": "UN OHCHR",
     "org_eu_parl": "European Parliament",
     "nav_verification": "VERIFICATION",
+    "nav_toggle_language": "Change language",
     "nav_verify_lewis": "Debunking Lewis & Thompson",
     "nav_verify_hack": "Analysis of the alleged \"Hack\"",
     "nav_legal_resources": "LEGAL RESOURCES",
@@ -706,6 +710,8 @@
     "action_actas_btn": "See citizen actas",
     "action_github_btn": "Open source",
     "share_title": "Share verifiable evidence",
+    "share_copy": "Copy link",
+    "share_copied": "Link copied",
     "footer_rights": "Citizen Electoral Observatory. This site is not affiliated with the CNE.",
     "footer_opensource": "Open Source"
   }

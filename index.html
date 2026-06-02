@@ -8,7 +8,7 @@
   <meta name="description"
     content="Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias." />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com;" />
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com https://www.google.com https://www.google.cl; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net;" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <title>Incumplimientos verificables del CNE - Elecciones 2024</title>
@@ -33,15 +33,6 @@
   <meta name="twitter:image" content="https://cortega26.github.io/retardo_cne/assets/img/social-preview.jpg" />
   <meta name="twitter:image:alt" content="Incumplimientos verificables del CNE - Elecciones 2024" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" />
-  </noscript>
   <style>
     :root {
       --bg-body: #f6f3ee;
@@ -124,12 +115,6 @@
   </style>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/modern.min.css" />
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <link rel="preload" href="assets/vendor/aos/aos.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet" href="assets/vendor/aos/aos.css" />
-  </noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -297,7 +282,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="evidenceDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#cronologia" id="evidenceDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false" data-i18n="nav_evidence">
               LA EVIDENCIA
             </a>
@@ -358,7 +343,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="contextDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#sistema" id="contextDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false" data-i18n="nav_context">
               CONTEXTO
             </a>
@@ -441,7 +426,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="internacionalDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="#internacional" id="internacionalDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_international">
               INTERNACIONAL
             </a>
@@ -513,7 +498,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="verificacionDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="#verificacion" id="verificacionDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_verification">
               VERIFICACIÓN
             </a>
@@ -541,8 +526,9 @@
       </div>
       <div class="d-flex align-items-center">
         <!-- Language Toggle -->
-        <button id="toggleLang" class="btn btn-outline-light ms-2 fw-bold" aria-label="Cambiar idioma">
-          ES
+        <button id="toggleLang" class="btn btn-outline-light ms-2 fw-bold" type="button">
+          <span class="lang-code">ES</span>
+          <span class="visually-hidden" data-i18n="nav_toggle_language">Cambiar idioma</span>
         </button>
         <!-- Theme Toggle -->
         <button id="toggleTheme" class="btn btn-outline-light ms-2" aria-label="Cambiar tema" aria-pressed="false">
@@ -798,10 +784,12 @@
           </div>
           <div class="progress" style="height: 10px; overflow: visible;">
             <div class="progress-bar bg-success" role="progressbar" style="width: 2%; opacity: 0.7;" aria-valuenow="2"
-              aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" title="El tiempo que debió durar (48hs)">
+              aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" title="El tiempo que debió durar (48hs)"
+              aria-label="Plazo legal de totalización cumplido: 2%">
             </div>
             <div class="progress-bar bg-danger progress-bar-striped" role="progressbar"
-              style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+              style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Retraso de totalización: 98% de la línea visual"></div>
           </div>
         </div>
         <p class="legal-reference mt-2" data-i18n="legal_ref_1">
@@ -824,9 +812,11 @@
           <div class="progress" style="height: 10px; overflow: visible;">
             <div class="progress-bar bg-success" role="progressbar" style="width: 5%; opacity: 0.7;" aria-valuenow="5"
               aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip"
+              aria-label="Plazo legal de Gaceta Electoral cumplido: 5%"
               title="El tiempo que debió durar (30 días)"></div>
             <div class="progress-bar bg-danger progress-bar-striped" role="progressbar"
-              style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+              aria-label="Retraso de Gaceta Electoral: 95% de la línea visual"></div>
           </div>
         </div>
         <p class="legal-reference mt-2" data-i18n="legal_ref_2">
@@ -1519,13 +1509,13 @@
         <div class="col-md-6 col-lg-3">
           <a class="card h-100 border-0 shadow-sm org-card"
             href="https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf" target="_blank"
-            rel="noopener noreferrer" aria-label="Centro Carter: leer informe">
+            rel="noopener noreferrer">
             <div class="card-body text-center d-flex flex-column">
               <div class="org-logo-wrap mb-3">
                 <img class="org-logo" src="assets/img/logo-carter-center.png" alt="Centro Carter" loading="lazy"
                   decoding="async" />
               </div>
-              <h5 class="card-title" data-i18n="card_carter_title">Centro Carter</h5>
+              <h4 class="card-title" data-i18n="card_carter_title">Centro Carter</h4>
               <p class="card-text small" data-i18n="card_carter_text">"La elección de Venezuela no se adecuó a
                 parámetros internacionales y no puede
                 ser considerada democrática."</p>
@@ -1535,13 +1525,13 @@
         <div class="col-md-6 col-lg-3">
             <a class="card h-100 border-0 shadow-sm org-card"
               href="https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf"
-              target="_blank" rel="noopener noreferrer" aria-label="Naciones Unidas: leer informe del Panel de Expertos">
+              target="_blank" rel="noopener noreferrer">
             <div class="card-body text-center d-flex flex-column">
               <div class="org-logo-wrap mb-3">
                 <img class="org-logo" src="assets/img/logo-un-emblem.svg" alt="Naciones Unidas" loading="lazy"
                   decoding="async" />
               </div>
-                <h5 class="card-title" data-i18n="card_un_title">Panel de Expertos ONU</h5>
+                <h4 class="card-title" data-i18n="card_un_title">Panel de Expertos ONU</h4>
                 <p class="card-text small" data-i18n="card_un_text">"En síntesis, el proceso de gestión de resultados del
                   CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones
                   creíbles."</p>
@@ -1551,13 +1541,13 @@
         <div class="col-md-6 col-lg-3">
           <a class="card h-100 border-0 shadow-sm org-card"
             href="https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/"
-            target="_blank" rel="noopener noreferrer" aria-label="Unión Europea: ver declaración">
+            target="_blank" rel="noopener noreferrer">
             <div class="card-body text-center d-flex flex-column">
               <div class="org-logo-wrap mb-3">
                 <img class="org-logo" src="assets/img/logo-eu-flag.svg" alt="Unión Europea" loading="lazy"
                   decoding="async" />
               </div>
-              <h5 class="card-title" data-i18n="card_eu_title">Unión Europea</h5>
+              <h4 class="card-title" data-i18n="card_eu_title">Unión Europea</h4>
               <p class="card-text small" data-i18n="card_eu_text">"Los resultados hechos públicos el 2 de agosto por la
                 CNE no pueden reconocerse sin pruebas que los respalden."</p>
             </div>
@@ -1566,13 +1556,13 @@
         <div class="col-md-6 col-lg-3">
           <a class="card h-100 border-0 shadow-sm org-card"
             href="https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24" target="_blank"
-            rel="noopener noreferrer" aria-label="OEA: ver comunicado">
+            rel="noopener noreferrer">
             <div class="card-body text-center d-flex flex-column">
               <div class="org-logo-wrap mb-3">
                 <img class="org-logo org-logo-oas" src="assets/img/logo-oas-emblem.png" alt="OEA" loading="lazy"
                   decoding="async" />
               </div>
-              <h5 class="card-title" data-i18n="card_oas_title">OEA</h5>
+              <h4 class="card-title" data-i18n="card_oas_title">OEA</h4>
               <p class="card-text small" data-i18n="card_oas_text">"El manual completo del manejo doloso del resultado
                 electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy
                 rudimentaria."</p>
@@ -1692,6 +1682,13 @@
               d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
           </svg>
         </a>
+        <button id="copyLinkBtn" type="button" class="btn btn-copy" aria-live="polite">
+          <svg class="icon icon-link" aria-hidden="true" viewBox="0 0 640 512">
+            <path
+              d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 113.9L422.3 335.8c-31.5 31.5-82.5 31.5-113.9 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6c-41.2 57.5-34.6 136.3 15.4 186.3c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6c-31.5-31.5-31.5-82.5 0-113.9L217.7 177.1c31.5-31.5 82.5-31.5 113.9 0c27.9 27.9 31.5 71.8 8.6 103.8l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6c41.2-57.5 34.6-136.3-15.4-186.3c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z" />
+          </svg>
+          <span data-i18n="share_copy">Copiar enlace</span>
+        </button>
       </div>
     </section>
   </main>

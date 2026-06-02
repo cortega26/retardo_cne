@@ -12,10 +12,11 @@ test('homepage smoke', async ({ page }) => {
   await expect(themeToggle).toHaveAttribute('aria-pressed', 'true');
 
   const langToggle = page.locator('#toggleLang');
+  await expect(langToggle.locator('.lang-code')).toHaveText('ES');
   await langToggle.click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-    'Verifiable CNE breaches - 2024 Election',
+    'Verifiable CNE breaches — 2024 Election',
   );
 
   const highlight = page.locator('.highlight-text');

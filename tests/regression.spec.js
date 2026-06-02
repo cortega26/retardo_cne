@@ -27,7 +27,7 @@ test.describe('regression coverage', () => {
     await page.reload();
     const toggleAfterReload = page.locator('#toggleTheme');
     await expect(page.locator('body')).toHaveClass(/dark-mode/);
-    await expect(toggleAfterReload.locator('i')).toHaveClass(/fa-sun/);
+    await expect(toggleAfterReload.locator('.icon-sun')).toBeVisible();
   });
 
   test('language toggle persists and updates title', async ({ page }) => {
@@ -37,9 +37,9 @@ test.describe('regression coverage', () => {
     await toggle.click();
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page).toHaveTitle('Verifiable CNE breaches - 2024 Election');
+    await expect(page).toHaveTitle('Verifiable CNE breaches — 2024 Election');
     await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Verifiable CNE breaches - 2024 Election',
+      'Verifiable CNE breaches — 2024 Election',
     );
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
@@ -48,7 +48,22 @@ test.describe('regression coverage', () => {
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Verifiable CNE breaches - 2024 Election',
+      'Verifiable CNE breaches — 2024 Election',
+    );
+  });
+
+  test('copy link control is available in share section', async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto('/');
+
+    const copyButton = page.locator('#copyLinkBtn');
+    await copyButton.scrollIntoViewIfNeeded();
+    await expect(copyButton).toContainText('Copiar enlace');
+    await copyButton.click();
+
+    await expect(copyButton).toContainText('Enlace copiado');
+    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toContain(
+      'http://127.0.0.1:4173/',
     );
   });
 
