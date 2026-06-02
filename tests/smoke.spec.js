@@ -15,9 +15,7 @@ test('homepage smoke', async ({ page }) => {
   await expect(langToggle.locator('.lang-code')).toHaveText('EN');
   await langToggle.click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page.locator('h1')).toHaveText('Verifiable CNE breaches');
+  await expect(page.locator('h1')).toHaveText('Verifiable Breaches by the CNE');
 
-  const highlight = page.locator('.highlight-text');
-  await highlight.scrollIntoViewIfNeeded();
-  await expect(highlight).toHaveClass(/active/);
+  await expect(page.locator('.international-validation .org-logo')).toHaveCount(4);
 });

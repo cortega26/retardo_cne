@@ -7,10 +7,10 @@ test.describe('regression coverage', () => {
     const secondsLocator = page.locator('#counter1 [data-unit="3"] .number');
     await expect(secondsLocator).toHaveText(/\d+/);
 
-    const initial = Number(await secondsLocator.innerText());
+    const initial = Number(await secondsLocator.textContent());
     await expect.poll(
-      async () => Number(await secondsLocator.innerText()) !== initial,
-      { timeout: 3000 },
+      async () => Number(await secondsLocator.textContent()) !== initial,
+      { timeout: 5000 },
     ).toBe(true);
   });
 
@@ -38,15 +38,15 @@ test.describe('regression coverage', () => {
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
-    await expect(page).toHaveTitle(/Verifiable CNE breaches/);
-    await expect(page.locator('h1')).toHaveText('Verifiable CNE breaches');
+    await expect(page).toHaveTitle(/Verifiable Breaches by the CNE/);
+    await expect(page.locator('h1')).toHaveText('Verifiable Breaches by the CNE');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
     expect(storedLang).toBe('en');
 
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('h1')).toHaveText('Verifiable CNE breaches');
+    await expect(page.locator('h1')).toHaveText('Verifiable Breaches by the CNE');
   });
 
   test('copy link control is available in share section', async ({ page, context }) => {

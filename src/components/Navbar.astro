@@ -126,6 +126,9 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
 
   document.querySelectorAll('#navbarNav a[href^="#"]').forEach((link) => {
     link.addEventListener('click', () => {
+      if (link.matches('[data-bs-toggle="dropdown"]')) {
+        return;
+      }
       const navPanel = document.getElementById('navbarNav');
       const toggler = document.querySelector('[data-bs-target="#navbarNav"]');
       if (!navPanel || !window.matchMedia('(max-width: 991.98px)').matches) {
