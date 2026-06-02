@@ -297,9 +297,12 @@ const CNEMonitor = (() => {
       }
 
       const hash = link.getAttribute('href');
-      if (!hash || hash === '#' || !document.querySelector(hash)) {
+      const target = hash && hash !== '#' ? document.querySelector(hash) : null;
+      if (!hash || !target) {
         return;
       }
+
+      event.preventDefault();
 
       const openDropdown = link.closest('.dropdown');
       if (openDropdown && typeof bootstrap !== 'undefined') {
@@ -308,11 +311,31 @@ const CNEMonitor = (() => {
         dropdown?.hide();
       }
 
+      const scrollToTarget = () => {
+        const isMobileNav = window.matchMedia('(max-width: 991.98px)').matches;
+        const navHeight = isMobileNav ? 72 : navbar.getBoundingClientRect().height;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+        history.pushState(null, '', hash);
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      };
+
       if (collapse.classList.contains('show') && typeof bootstrap !== 'undefined') {
-        window.setTimeout(() => {
-          bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
-        }, 50);
+        let didScroll = false;
+        const scrollAfterCollapse = () => {
+          if (didScroll) {
+            return;
+          }
+          didScroll = true;
+          scrollToTarget();
+        };
+
+        collapse.addEventListener('hidden.bs.collapse', scrollAfterCollapse, { once: true });
+        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
+        window.setTimeout(scrollAfterCollapse, 500);
+        return;
       }
+
+      scrollToTarget();
     });
   }
 

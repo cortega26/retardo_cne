@@ -167,5 +167,21 @@ test.describe('regression coverage', () => {
     await evidenceMenu.locator('a[href="#cronologia"]').click();
     await expect(page).toHaveURL(/#cronologia$/);
     await expect(navPanel).not.toHaveClass(/show/);
+    await expect
+      .poll(() =>
+        page.locator('#cronologia').evaluate((el) => Math.round(el.getBoundingClientRect().top)),
+      )
+      .toBeLessThan(180);
+
+    await page.locator('.navbar-toggler').click();
+    await page.locator('#contextDropdown').click();
+    await page.locator('#contextDropdown + .dropdown-menu a[href="#sistema"]').click();
+    await expect(page).toHaveURL(/#sistema$/);
+    await expect(navPanel).not.toHaveClass(/show/);
+    await expect
+      .poll(() =>
+        page.locator('#sistema').evaluate((el) => Math.round(el.getBoundingClientRect().top)),
+      )
+      .toBeLessThan(180);
   });
 });
