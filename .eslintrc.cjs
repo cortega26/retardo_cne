@@ -6,13 +6,14 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:import/recommended', 'prettier'],
   globals: {
     AOS: 'readonly',
+    bootstrap: 'readonly',
     gtag: 'readonly',
   },
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
-  ignorePatterns: ['assets/vendor/**/*.js', 'public/vendor/**', 'dist/**'],
+  ignorePatterns: ['assets/vendor/**/*.js', 'assets/js/**/*.min.js', 'public/vendor/**', 'dist/**'],
   overrides: [
     {
       files: ['playwright.config.js', 'scripts/**/*.js', 'tests/**/*.js'],

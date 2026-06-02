@@ -469,11 +469,6 @@ header h2 {
   line-height: 1.35;
 }
 
-.stat-sources .story-link {
-  min-height: 44px;
-  align-items: center;
-}
-
 .story-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -596,6 +591,11 @@ body.dark-mode .status-tag-failed {
   color: var(--text-accent);
   font-weight: 600;
   text-decoration: none;
+}
+
+.stat-sources .story-link {
+  min-height: 44px;
+  align-items: center;
 }
 
 .story-link:hover {

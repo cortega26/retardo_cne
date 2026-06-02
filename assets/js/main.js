@@ -43,34 +43,6 @@ const CNEMonitor = (() => {
     moonIcon.setAttribute('aria-hidden', String(showSun));
   }
 
-  function buildOdometer(numberSpan, valueText) {
-    numberSpan.textContent = '';
-    numberSpan.classList.add('odometer');
-    numberSpan.dataset.value = valueText;
-    numberSpan.dataset.digits = String(valueText.length);
-    numberSpan.dataset.ready = 'false';
-
-    valueText.split('').forEach((digitChar) => {
-      const digit = document.createElement('span');
-      digit.className = 'odometer-digit';
-      const roller = document.createElement('span');
-      roller.className = 'odometer-roller';
-      for (let i = 0; i < 10; i += 1) {
-        const num = document.createElement('span');
-        num.className = 'odometer-number';
-        num.textContent = String(i);
-        roller.appendChild(num);
-      }
-      roller.style.transform = `translateY(-${Number(digitChar) || 0}em)`;
-      digit.appendChild(roller);
-      numberSpan.appendChild(digit);
-    });
-
-    window.requestAnimationFrame(() => {
-      numberSpan.dataset.ready = 'true';
-    });
-  }
-
   function updateOdometer(numberSpan, valueText) {
     numberSpan.classList.remove('odometer');
     numberSpan.textContent = valueText;
