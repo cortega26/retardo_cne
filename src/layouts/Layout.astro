@@ -1,5 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import '@fontsource/sora/400.css';
+import '@fontsource/sora/600.css';
+import '@fontsource/sora/700.css';
+import '@fontsource/sora/800.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/500.css';
+import '@fontsource/source-sans-3/600.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 interface Props {
 	title: string;
@@ -40,16 +48,6 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://cortega26.github.io').
 		<meta name="twitter:description" content={t('meta_description_twitter')} />
 		<meta name="twitter:image" content={`${basePath}/assets/img/social-preview.jpg`} />
 
-		<!-- Premium Typography: Sora + Source Sans 3 (matching live site) -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-
-		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-
-
 		<!-- Bootstrap CSS (local, matching live site) -->
 		<link rel="stylesheet" href={`${basePath}/assets/css/bootstrap.min.css`} />
 
@@ -82,9 +80,10 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://cortega26.github.io').
 		</script>
 		<slot />
 
-		<!-- Bootstrap JS -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+		<!-- Bootstrap JS (Bundled locally by Vite) -->
+		<script>
+			import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+		</script>
 
 	</body>
 

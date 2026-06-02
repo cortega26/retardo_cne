@@ -1,6 +1,3 @@
-# Page snapshot
-
-```yaml
 - generic [active] [ref=e1]:
   - navigation [ref=e2]:
     - generic [ref=e3]:
@@ -148,13 +145,13 @@
             - generic [ref=e132]: "672"
             - text: Days
           - generic [ref=e133]:
-            - generic [ref=e134]: "06"
+            - generic [ref=e134]: "07"
             - text: Hours
           - generic [ref=e135]:
-            - generic [ref=e136]: "15"
+            - generic [ref=e136]: "31"
             - text: Min
           - generic [ref=e137]:
-            - generic [ref=e138]: "52"
+            - generic [ref=e138]: "08"
             - text: Sec
         - generic "Delay proportion vs. legal deadline" [ref=e139]
       - generic [ref=e142]:
@@ -171,13 +168,13 @@
             - generic [ref=e153]: "644"
             - text: Days
           - generic [ref=e154]:
-            - generic [ref=e155]: "06"
+            - generic [ref=e155]: "07"
             - text: Hours
           - generic [ref=e156]:
-            - generic [ref=e157]: "15"
+            - generic [ref=e157]: "31"
             - text: Min
           - generic [ref=e158]:
-            - generic [ref=e159]: "52"
+            - generic [ref=e159]: "08"
             - text: Sec
         - generic "Delay proportion vs. legal deadline" [ref=e160]
     - generic [ref=e163]:
@@ -639,9 +636,9 @@
             - generic [ref=e720]: "09."
             - text: What happened to witnesses and volunteers after July 28?
             - img [ref=e722]
-        - heading "010. What is the North Macedonia case study?" [level=2] [ref=e725]:
-          - button "010. What is the North Macedonia case study?" [ref=e726] [cursor=pointer]:
-            - generic [ref=e727]: "010."
+        - heading "10. What is the North Macedonia case study?" [level=2] [ref=e725]:
+          - button "10. What is the North Macedonia case study?" [ref=e726] [cursor=pointer]:
+            - generic [ref=e727]: "10."
             - text: What is the North Macedonia case study?
             - img [ref=e729]
     - generic [ref=e731]:
@@ -728,4 +725,16 @@
           - /url: "#cronologia"
         - link "CONTEXT" [ref=e807] [cursor=pointer]:
           - /url: "#sistema"
-```
+  - generic [ref=e810]:
+    - button "Menu" [ref=e811]:
+      - img [ref=e813]
+      - generic: Menu
+    - button "Inspect" [ref=e817]:
+      - img [ref=e819]
+      - generic: Inspect
+    - button "Audit" [ref=e821]:
+      - img [ref=e823]
+      - generic: Audit
+    - button "Settings" [ref=e826]:
+      - img [ref=e828]
+      - generic: Settings

@@ -1,7 +1,4 @@
-# Page snapshot
-
-```yaml
-- generic [active] [ref=e1]:
+- generic [ref=e1]:
   - navigation [ref=e2]:
     - generic [ref=e3]:
       - link "RETARDO CNE" [ref=e4] [cursor=pointer]:
@@ -17,8 +14,8 @@
         - generic [ref=e13]:
           - link "EN" [ref=e14] [cursor=pointer]:
             - /url: /retardo_cne/en/
-          - button "Cambiar tema" [ref=e15] [cursor=pointer]:
-            - img [ref=e16]
+          - button "Cambiar tema" [pressed] [ref=e15] [cursor=pointer]:
+            - img [ref=e874]
           - link "CÓMO AYUDAR" [ref=e18] [cursor=pointer]:
             - /url: "#accion"
   - main [ref=e19]:
@@ -148,13 +145,13 @@
             - generic [ref=e132]: "672"
             - text: Días
           - generic [ref=e133]:
-            - generic [ref=e134]: "06"
+            - generic [ref=e134]: "07"
             - text: Horas
           - generic [ref=e135]:
-            - generic [ref=e136]: "15"
+            - generic [ref=e136]: "32"
             - text: Min
           - generic [ref=e137]:
-            - generic [ref=e138]: "40"
+            - generic [ref=e138]: "48"
             - text: Seg
         - generic "Proporción del retraso frente al plazo legal" [ref=e139]
       - generic [ref=e142]:
@@ -171,13 +168,13 @@
             - generic [ref=e153]: "644"
             - text: Días
           - generic [ref=e154]:
-            - generic [ref=e155]: "06"
+            - generic [ref=e155]: "07"
             - text: Horas
           - generic [ref=e156]:
-            - generic [ref=e157]: "15"
+            - generic [ref=e157]: "32"
             - text: Min
           - generic [ref=e158]:
-            - generic [ref=e159]: "40"
+            - generic [ref=e159]: "48"
             - text: Seg
         - generic "Proporción del retraso frente al plazo legal" [ref=e160]
     - generic [ref=e163]:
@@ -594,11 +591,19 @@
         - heading "Contrapuntos y FAQ" [level=3] [ref=e658]
         - paragraph [ref=e659]: Preguntas frecuentes sobre la legalidad y los procesos técnicos del 28 de Julio.
       - generic [ref=e660]:
-        - heading "01. ¿Qué dice la LOPRE sobre los resultados?" [level=2] [ref=e662]:
-          - button "01. ¿Qué dice la LOPRE sobre los resultados?" [ref=e663] [cursor=pointer]:
-            - generic [ref=e664]: "01."
-            - text: ¿Qué dice la LOPRE sobre los resultados?
-            - img [ref=e666]
+        - generic [ref=e661]:
+          - heading "01. ¿Qué dice la LOPRE sobre los resultados?" [level=2] [ref=e662]:
+            - button "01. ¿Qué dice la LOPRE sobre los resultados?" [expanded] [ref=e663] [cursor=pointer]:
+              - generic [ref=e664]: "01."
+              - text: ¿Qué dice la LOPRE sobre los resultados?
+              - img [ref=e666]
+          - generic "01. ¿Qué dice la LOPRE sobre los resultados?" [ref=e865]:
+            - generic [ref=e866]:
+              - paragraph [ref=e867]: El artículo 146 obliga a publicar resultados desagregados en un máximo de 48 horas tras la elección. El artículo 155 ordena publicar la Gaceta Electoral en 30 días. Ambos plazos fueron incumplidos.
+              - generic [ref=e868]:
+                - text: "Fuente:"
+                - link "Art. 146 y 155 LOPRE" [ref=e869] [cursor=pointer]:
+                  - /url: https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf
         - heading "02. ¿Hubo realmente un hackeo?" [level=2] [ref=e669]:
           - button "02. ¿Hubo realmente un hackeo?" [ref=e670] [cursor=pointer]:
             - generic [ref=e671]: "02."
@@ -639,9 +644,9 @@
             - generic [ref=e720]: "09."
             - text: ¿Qué ocurrió con los testigos y voluntarios después del 28J?
             - img [ref=e722]
-        - heading "010. ¿Qué es el caso de estudio de Macedonia del Norte?" [level=2] [ref=e725]:
-          - button "010. ¿Qué es el caso de estudio de Macedonia del Norte?" [ref=e726] [cursor=pointer]:
-            - generic [ref=e727]: "010."
+        - heading "10. ¿Qué es el caso de estudio de Macedonia del Norte?" [level=2] [ref=e725]:
+          - button "10. ¿Qué es el caso de estudio de Macedonia del Norte?" [ref=e726] [cursor=pointer]:
+            - generic [ref=e727]: "10."
             - text: ¿Qué es el caso de estudio de Macedonia del Norte?
             - img [ref=e729]
     - generic [ref=e731]:
@@ -704,9 +709,9 @@
           - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcortega26.github.io%2Fretardo_cne%2F
           - generic [ref=e787]: 
           - generic [ref=e788]: LinkedIn
-        - button "Copiar enlace" [ref=e789] [cursor=pointer]:
+        - button "Copiar enlace" [active] [ref=e789] [cursor=pointer]:
           - generic [ref=e790]: 
-          - generic [ref=e791]: Copiar enlace
+          - generic [ref=e791]: ✓ ¡Copiado!
   - contentinfo [ref=e792]:
     - generic [ref=e793]:
       - generic [ref=e794]:
@@ -728,4 +733,18 @@
           - /url: "#cronologia"
         - link "CONTEXTO" [ref=e807] [cursor=pointer]:
           - /url: "#sistema"
-```
+  - generic [ref=e810]:
+    - button "Menu" [ref=e811]:
+      - img [ref=e813]
+      - generic: Menu
+    - button "Inspect" [ref=e817]:
+      - img [ref=e819]
+      - generic: Inspect
+    - button "Audit" [ref=e821]:
+      - generic [ref=e822]:
+        - img [ref=e823]
+        - img [ref=e884]
+      - generic: Audit
+    - button "Settings" [ref=e826]:
+      - img [ref=e828]
+      - generic: Settings
