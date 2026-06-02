@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cortega26.github.io',
+  site: 'https://tooltician.com',
   base: '/retardo_cne',
   integrations: [sitemap()],
   i18n: {

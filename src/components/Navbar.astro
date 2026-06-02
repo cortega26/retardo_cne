@@ -6,6 +6,21 @@ const t = useTranslations(lang);
 const langToggleUrl = lang === 'es' ? '/retardo_cne/en/' : '/retardo_cne/';
 const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
 const langToggleTarget = lang === 'es' ? 'en' : 'es';
+
+const navGroups = {
+  evidence: {
+    href: '#cronologia',
+    label: t('nav_evidence'),
+  },
+  context: {
+    href: '#sistema',
+    label: t('nav_context'),
+  },
+  verification: {
+    href: '#verificacion',
+    label: t('nav_verification'),
+  },
+};
 ---
 
 <nav class="navbar navbar-expand-lg">
@@ -21,10 +36,13 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <!-- EVIDENCIA dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="evidenceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {t('nav_evidence')}
+        <li class="nav-item dropdown nav-item-split">
+          <a class="nav-link nav-link-primary" href={navGroups.evidence.href}>
+            {navGroups.evidence.label}
           </a>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="evidenceDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.evidence.label} menu`}>
+            <span class="visually-hidden">{navGroups.evidence.label}</span>
+          </button>
           <ul class="dropdown-menu" aria-labelledby="evidenceDropdown">
             <li><a class="dropdown-item" href="#cronologia">{t('nav_evidence_timeline')}</a></li>
             <li><a class="dropdown-item" href="#auditorias">{t('nav_evidence_audits')}</a></li>
@@ -44,10 +62,13 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
         </li>
 
         <!-- CONTEXTO dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="contextDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {t('nav_context')}
+        <li class="nav-item dropdown nav-item-split">
+          <a class="nav-link nav-link-primary" href={navGroups.context.href}>
+            {navGroups.context.label}
           </a>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="contextDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.context.label} menu`}>
+            <span class="visually-hidden">{navGroups.context.label}</span>
+          </button>
           <ul class="dropdown-menu" aria-labelledby="contextDropdown">
             <li><a class="dropdown-item" href="#sistema">{t('nav_context_system')}</a></li>
             <li><a class="dropdown-item" href="#plazos">{t('nav_context_deadlines')}</a></li>
@@ -57,10 +78,13 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
         </li>
 
         <!-- VERIFICACIÓN dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="verificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {t('nav_verification')}
+        <li class="nav-item dropdown nav-item-split">
+          <a class="nav-link nav-link-primary" href={navGroups.verification.href}>
+            {navGroups.verification.label}
           </a>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="verificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.verification.label} menu`}>
+            <span class="visually-hidden">{navGroups.verification.label}</span>
+          </button>
           <ul class="dropdown-menu" aria-labelledby="verificationDropdown">
             <li><a class="dropdown-item" href="#actas">{t('nav_verification_how')}</a></li>
             <li><a class="dropdown-item" href="#verificacion">{t('nav_verification_section')}</a></li>
@@ -140,3 +164,39 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
     });
   });
 </script>
+
+<style>
+  .nav-item-split {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .nav-item-split .nav-link-primary {
+    padding-right: 0.35rem;
+  }
+
+  .nav-item-split .nav-link-toggle {
+    padding-left: 0.35rem;
+    min-width: auto;
+    border: 0;
+    background: transparent;
+  }
+
+  .nav-item-split .dropdown-toggle::after {
+    margin-left: 0;
+  }
+
+  @media (max-width: 991.98px) {
+    .nav-item-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+
+    .nav-item-split .nav-link-primary,
+    .nav-item-split .nav-link-toggle {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+</style>

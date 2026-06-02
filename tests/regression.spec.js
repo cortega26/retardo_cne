@@ -60,7 +60,7 @@ test.describe('regression coverage', () => {
 
     await expect(copyButton).toContainText('✓ ¡Copiado!');
     await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toContain(
-      'https://cortega26.github.io/retardo_cne/',
+      '/retardo_cne/',
     );
   });
 
@@ -83,11 +83,11 @@ test.describe('regression coverage', () => {
       .locator('meta[name="twitter:image"]')
       .getAttribute('content');
 
-    expect(ogImage).toContain('/assets/img/social-preview.jpg');
+    expect(ogImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview.jpg');
     expect(ogWidth).toBe('1024');
     expect(ogHeight).toBe('1024');
     expect(ogType).toBe('image/jpeg');
-    expect(twitterImage).toContain('/assets/img/social-preview.jpg');
+    expect(twitterImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview.jpg');
   });
 
   test('organization logos load', async ({ page }) => {
@@ -179,5 +179,25 @@ test.describe('regression coverage', () => {
         page.locator('#sistema').evaluate((el) => Math.round(el.getBoundingClientRect().top)),
       )
       .toBeLessThan(180);
+  });
+
+  test('top-level navbar links navigate directly to their sections', async ({ page }) => {
+    await page.goto('/');
+
+    const expectations = [
+      ['.nav-link-primary[href="#cronologia"]', '#cronologia'],
+      ['.nav-link-primary[href="#sistema"]', '#sistema'],
+      ['.nav-link-primary[href="#verificacion"]', '#verificacion'],
+    ];
+
+    for (const [selector, target] of expectations) {
+      await page.locator(selector).click();
+      await expect(page).toHaveURL(new RegExp(`${target}$`));
+      await expect
+        .poll(() =>
+          page.locator(target).evaluate((el) => Math.round(el.getBoundingClientRect().top)),
+        )
+        .toBeLessThan(180);
+    }
   });
 });

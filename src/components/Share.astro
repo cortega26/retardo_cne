@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const shareUrl = "https://cortega26.github.io/retardo_cne/";
+const shareUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 const shareText = "Incumplimientos verificables del CNE - Transparencia Electoral 2024";
 ---
 
@@ -70,7 +70,7 @@ const shareText = "Incumplimientos verificables del CNE - Transparencia Electora
 <script>
   const btn = document.getElementById('copyLinkBtn');
   const label = document.getElementById('copyBtnLabel');
-  const url = 'https://cortega26.github.io/retardo_cne/';
+  const url = window.location.href;
   const isEn = document.documentElement.lang === 'en';
 
   if (btn && label) {
