@@ -282,9 +282,18 @@ const CNEMonitor = (() => {
   function initNavbarNavigation() {
     const navbar = document.querySelector('.navbar');
     const collapse = document.getElementById('navbarNav');
+    const toggler = navbar?.querySelector('[data-bs-target="#navbarNav"]');
     if (!navbar || !collapse) {
       return;
     }
+
+    toggler?.addEventListener('click', (event) => {
+      event.preventDefault();
+      const isOpen = collapse.classList.toggle('show');
+      collapse.classList.remove('collapsing');
+      collapse.style.height = '';
+      toggler.setAttribute('aria-expanded', String(isOpen));
+    });
 
     navbar.addEventListener('click', (event) => {
       const link = event.target.closest('a[href^="#"]');
@@ -319,19 +328,19 @@ const CNEMonitor = (() => {
         window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       };
 
-      if (collapse.classList.contains('show') && typeof bootstrap !== 'undefined') {
-        let didScroll = false;
-        const scrollAfterCollapse = () => {
-          if (didScroll) {
-            return;
-          }
-          didScroll = true;
-          scrollToTarget();
-        };
+      const collapseIsOpen =
+        collapse.classList.contains('show') ||
+        collapse.classList.contains('collapsing') ||
+        toggler?.getAttribute('aria-expanded') === 'true';
 
-        collapse.addEventListener('hidden.bs.collapse', scrollAfterCollapse, { once: true });
-        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
-        window.setTimeout(scrollAfterCollapse, 500);
+      if (collapseIsOpen) {
+        const forceCollapseClosed = () => {
+          collapse.classList.remove('show', 'collapsing');
+          collapse.style.height = '';
+          toggler?.setAttribute('aria-expanded', 'false');
+        };
+        forceCollapseClosed();
+        window.setTimeout(scrollToTarget, 80);
         return;
       }
 
