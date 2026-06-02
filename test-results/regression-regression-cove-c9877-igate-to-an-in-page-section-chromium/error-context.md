@@ -1,0 +1,717 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "RETARDO CNE" [ref=e4] [cursor=pointer]:
+        - /url: "#inicio"
+      - button "Toggle navigation" [ref=e5] [cursor=pointer]
+  - main [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e14]: VERIFICACIÓN ELECTORAL 2024
+        - generic [ref=e17]: Incumplido
+      - paragraph [ref=e18]: Normas, plazos y evidencia primaria para auditar la transparencia electoral en Venezuela.
+      - heading "Incumplimientos verificables del CNE" [level=1] [ref=e19]
+      - note "Indicadores de credibilidad" [ref=e20]:
+        - generic [ref=e21]: "Documentos oficiales/legales enlazados: 7"
+        - generic [ref=e22]: "Última actualización: 2025-05-27"
+        - 'link "Correcciones: GitHub Issues" [ref=e23] [cursor=pointer]':
+          - /url: https://github.com/cortega26/retardo_cne/issues/new
+      - generic [ref=e25]:
+        - generic [ref=e27]:
+          - paragraph [ref=e28]: Más de 25.000 actas ciudadanas verificadas frente a 0 resultados oficiales publicados por mesa.
+          - generic [ref=e29]:
+            - text: "Fuente primaria:"
+            - link "ResultadosConVzla" [ref=e30] [cursor=pointer]:
+              - /url: https://resultadosconvzla.com/
+            - text: "• Fuente:"
+            - link "Archivo CNE (Wayback Machine)" [ref=e31] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: Organismos internacionales reportaron fallas de transparencia e integridad en el proceso.
+          - generic [ref=e35]:
+            - text: "Fuente:"
+            - link "Centro Carter" [ref=e36] [cursor=pointer]:
+              - /url: https://www.cartercenter.org/news/venezuela-073024/
+            - text: •
+            - link "Panel ONU" [ref=e37] [cursor=pointer]:
+              - /url: https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf
+            - text: •
+            - link "Unión Europea" [ref=e38] [cursor=pointer]:
+              - /url: https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/
+            - text: •
+            - link "OEA" [ref=e39] [cursor=pointer]:
+              - /url: https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24
+        - generic [ref=e41]:
+          - paragraph [ref=e42]: Plazos legales vencidos y auditorías post-electorales sin evidencia pública.
+          - generic [ref=e43]:
+            - text: "Fuente:"
+            - link "LOPRE" [ref=e44] [cursor=pointer]:
+              - /url: https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf
+            - text: •
+            - link "Protocolos CNE (archivo)" [ref=e45] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php
+            - text: •
+            - link "Prensa Comunitaria" [ref=e46] [cursor=pointer]:
+              - /url: https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/
+    - generic [ref=e48]:
+      - paragraph [ref=e49]: Metodología de verificación
+      - paragraph [ref=e50]: Cada afirmación está respaldada por normas legales (LOPRE), actas ciudadanas o declaraciones oficiales de organismos internacionales verificables.
+      - link "Ver metodología →" [ref=e51] [cursor=pointer]:
+        - /url: "#auditorias"
+    - generic [ref=e52]:
+      - paragraph [ref=e53]: Documentación rigurosa de los hechos electorales basada en evidencia técnica.
+      - generic [ref=e54]:
+        - generic [ref=e55]: "Fuente oficial (CNE):"
+        - link "Ver archivo CNE" [ref=e56] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]: GUÍA RÁPIDA
+        - heading "Cómo verificar" [level=3] [ref=e60]
+        - paragraph [ref=e61]: Cómo se verifica un acta y por qué el sistema permite la auditoría ciudadana independiente.
+      - generic [ref=e62]:
+        - generic [ref=e64]:
+          - generic [ref=e66]: 
+          - heading "Impresión Local" [level=4] [ref=e67]
+          - paragraph [ref=e68]: Cada máquina imprime un acta física con códigos QR y hashes únicos antes de transmitir.
+        - generic [ref=e70]:
+          - generic [ref=e72]: 
+          - heading "Verificación QR" [level=4] [ref=e73]
+          - paragraph [ref=e74]: Los testigos escanean el QR que contiene la totalización exacta de esa mesa.
+        - generic [ref=e76]:
+          - generic [ref=e78]: 
+          - heading "Carga en Red" [level=4] [ref=e79]
+          - paragraph [ref=e80]: Las actas se centralizan en bases de datos abiertas para contrastar con resultados oficiales.
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - heading "ANTECEDENTES" [level=3] [ref=e83]
+        - paragraph [ref=e84]: Contexto institucional previo al proceso electoral de 2024.
+      - generic [ref=e85]:
+        - generic [ref=e87]:
+          - paragraph [ref=e88]: Alertas institucionales
+          - list [ref=e89]:
+            - listitem [ref=e90]: "2021: TSJ designó 5 rectores del CNE sin participación de la AN (Art. 296 CRBV)."
+            - listitem [ref=e91]: "2017: La Asamblea Nacional fue despojada de funciones (Sentencias 155 y 156)."
+            - listitem [ref=e92]: "2022: El TSJ anuló la elección del estado Barinas."
+          - generic [ref=e93]:
+            - text: "Fuente:"
+            - link "IDEA International" [ref=e94] [cursor=pointer]:
+              - /url: https://www.idea.int/news/venezuela-2024-elections-unfolding-crisis
+            - text: •
+            - link "OHCHR Report" [ref=e95] [cursor=pointer]:
+              - /url: https://www.ohchr.org/en/statements-and-speeches/2024/09/venezuela-human-rights-council-receives-latest-updates-fact-finding
+        - generic [ref=e97]:
+          - paragraph [ref=e98]: Condiciones preelectorales
+          - list [ref=e99]:
+            - listitem [ref=e100]: "Marzo 2024: candidatura de Corina Yoris bloqueada sin base legal."
+            - listitem [ref=e101]: Registro en el exterior restringido a 69 días con acceso limitado.
+            - listitem [ref=e102]: Inhabilitaciones sistemáticas de candidatos opositores.
+          - generic [ref=e103]:
+            - text: "Fuente:"
+            - link "Transparencia Electoral" [ref=e104] [cursor=pointer]:
+              - /url: https://transparenciaelectoral.org/
+            - text: •
+            - link "Amnistía Internacional" [ref=e105] [cursor=pointer]:
+              - /url: https://www.amnesty.org/es/latest/news/2024/07/venezuela-periodo-electoral-marcado-represion/
+    - generic [ref=e107]:
+      - heading "PLAZOS LEGALES" [level=3] [ref=e108]
+      - paragraph [ref=e109]: Cronograma de plazos críticos establecidos en la LOPRE.
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - heading "Totalización 48h" [level=2] [ref=e113]
+          - generic [ref=e114]: INCUMPLIDO
+        - generic [ref=e115]:
+          - generic [ref=e116]: Vencido desde
+          - generic [ref=e117]: 30 jul. 2024
+          - generic [ref=e118]: — Art. 146 LOPRE (48 horas desde el 28J)
+        - paragraph [ref=e119]: Tiempo en incumplimiento
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: "672"
+            - text: Días
+          - generic [ref=e123]:
+            - generic [ref=e124]: "06"
+            - text: Horas
+          - generic [ref=e125]:
+            - generic [ref=e126]: "16"
+            - text: Min
+          - generic [ref=e127]:
+            - generic [ref=e128]: "05"
+            - text: Seg
+        - generic "Proporción del retraso frente al plazo legal" [ref=e129]
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - heading "Gaceta Electoral 30d" [level=2] [ref=e134]
+          - generic [ref=e135]: INCUMPLIDO
+        - generic [ref=e136]:
+          - generic [ref=e137]: Vencido desde
+          - generic [ref=e138]: 27 ago. 2024
+          - generic [ref=e139]: — Art. 155 LOPRE (30 días desde el 28J)
+        - paragraph [ref=e140]: Tiempo en incumplimiento
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]: "644"
+            - text: Días
+          - generic [ref=e144]:
+            - generic [ref=e145]: "06"
+            - text: Horas
+          - generic [ref=e146]:
+            - generic [ref=e147]: "16"
+            - text: Min
+          - generic [ref=e148]:
+            - generic [ref=e149]: "05"
+            - text: Seg
+        - generic "Proporción del retraso frente al plazo legal" [ref=e150]
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]: CRONOLOGÍA DE LA RUPTURA
+        - heading "Cronología completa" [level=3] [ref=e156]
+        - paragraph [ref=e157]: Sucesión de eventos que documentan el apartamiento de la norma legal y técnica.
+      - generic [ref=e158]:
+        - generic [ref=e160]:
+          - generic [ref=e161]: 28 JULIO 2024
+          - heading "Jornada electoral con alta participación." [level=4] [ref=e162]
+          - paragraph [ref=e163]:
+            - generic [ref=e164]: Programado
+        - generic [ref=e166]:
+          - generic [ref=e167]: 28 JULIO @ 22h
+          - heading "Interrupción masiva de la transmisión de datos." [level=4] [ref=e168]
+          - paragraph [ref=e169]:
+            - generic [ref=e170]: Incumplido
+        - generic [ref=e172]:
+          - generic [ref=e173]: 29 JULIO @ 00h
+          - heading "Anuncio de primer boletín sin respaldo de actas." [level=4] [ref=e174]
+          - paragraph [ref=e175]:
+            - generic [ref=e176]: Incumplido
+        - generic [ref=e178]:
+          - generic [ref=e179]: 29-31 JULIO
+          - heading "Suspensión de auditoría de telecomunicaciones." [level=4] [ref=e180]
+          - paragraph [ref=e181]:
+            - generic [ref=e182]: Incumplido
+        - generic [ref=e184]:
+          - generic [ref=e185]: 30 JULIO 2024
+          - heading "Vencimiento del plazo legal de 48 horas." [level=4] [ref=e186]
+          - paragraph [ref=e187]:
+            - generic [ref=e188]: Vencido
+        - generic [ref=e190]:
+          - generic [ref=e191]: 02 AGOSTO 2024
+          - heading "Proclamación sin auditorías de verificación." [level=4] [ref=e192]
+          - paragraph [ref=e193]:
+            - generic [ref=e194]: Incumplido
+        - generic [ref=e196]:
+          - generic [ref=e197]: 27 AGOSTO 2024
+          - heading "Vencimiento del plazo para Gaceta Electoral (30 días)." [level=4] [ref=e198]
+          - paragraph [ref=e199]:
+            - generic [ref=e200]: Vencido
+        - generic [ref=e202]:
+          - generic [ref=e203]: 10 ENERO 2025
+          - heading "Fecha institucional de toma de posesión sin transparencia." [level=4] [ref=e204]
+          - paragraph [ref=e205]:
+            - generic [ref=e206]: Vencido
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]: ARQUITECTURA ELECTORAL
+        - heading "¿Cómo funciona el sistema?" [level=2] [ref=e211]
+        - paragraph [ref=e212]: Comparativa entre el proceso legal diseñado y la ejecución observada.
+      - generic [ref=e213]:
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - generic [ref=e218]: 
+            - generic [ref=e219]:
+              - heading "PROCESO LEGAL" [level=3] [ref=e220]
+              - text: Según LOPRE
+          - generic [ref=e221]:
+            - paragraph [ref=e225]: Escrutinio automatizado por mesa.
+            - paragraph [ref=e229]: Transmisión inmediata al centro nacional.
+            - paragraph [ref=e233]: Publicación web de resultados mesa por mesa.
+            - paragraph [ref=e237]: Auditoría posterior de una muestra del 54%.
+            - paragraph [ref=e241]: Totalización con actas digitalizadas.
+            - paragraph [ref=e245]: Proclamación basada en actas verificadas.
+            - paragraph [ref=e249]: Publicación en Gaceta en 30 días.
+            - paragraph [ref=e252]: Atención a impugnaciones formales.
+        - generic [ref=e254]:
+          - generic [ref=e255]:
+            - generic [ref=e257]: 
+            - generic [ref=e258]:
+              - heading "EJECUCIÓN 2024" [level=3] [ref=e259]
+              - text: Hechos verificados
+          - generic [ref=e260]:
+            - generic [ref=e264]:
+              - paragraph [ref=e265]: Escrutinio se realizó pero con trabas.
+              - generic [ref=e266]: PARCIAL
+            - generic [ref=e270]:
+              - paragraph [ref=e271]: Transmisión interrumpida el 28J.
+              - generic [ref=e272]: INCUMPLIDO
+            - generic [ref=e276]:
+              - paragraph [ref=e277]: Web del CNE fuera de línea por meses.
+              - generic [ref=e278]: INCUMPLIDO
+            - generic [ref=e282]:
+              - paragraph [ref=e283]: Auditorías ciudadanas suspendidas.
+              - generic [ref=e284]: INCUMPLIDO
+            - generic [ref=e288]:
+              - paragraph [ref=e289]: Totalización sin respaldo desagregado.
+              - generic [ref=e290]: INCUMPLIDO
+            - generic [ref=e294]:
+              - paragraph [ref=e295]: Proclamación sin resultados mesa por mesa.
+              - generic [ref=e296]: INCUMPLIDO
+            - generic [ref=e300]:
+              - paragraph [ref=e301]: Sin Gaceta tras 30 días.
+              - generic [ref=e302]: INCUMPLIDO
+            - generic [ref=e305]:
+              - paragraph [ref=e306]: Judicialización del proceso sin actas.
+              - generic [ref=e307]: ILEGAL
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - generic [ref=e310]: ANÁLISIS FORENSE
+        - heading "Irregularidades Técnicas" [level=3] [ref=e311]
+        - paragraph [ref=e312]: Matemáticos y estadísticos de instituciones globales coinciden en la anomalía de los datos oficiales.
+      - generic [ref=e313]:
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - generic [ref=e317]: "CASO #1"
+            - generic [ref=e318]: RÉPLICA OFICIAL
+          - heading "Auditorías post-electorales no realizadas" [level=3] [ref=e319]
+          - generic [ref=e321]:
+            - generic [ref=e322]:
+              - generic [ref=e323]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e324]: "El CNE suspendió tres auditorías posteriores previstas en el cronograma: telecomunicaciones Fase II; verificación ciudadana Fase II; datos electorales Fase II."
+            - generic [ref=e325]:
+              - generic [ref=e326]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e327]: La LOPRE y reglamentos exigen auditorías sobre los componentes del sistema automatizado para garantizar integridad.
+            - generic [ref=e328]:
+              - generic [ref=e329]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e330]: Cronograma oficial y reportes técnicos de observación señalan que no se efectuaron en las fechas programadas.
+            - generic [ref=e331]:
+              - generic [ref=e332]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e333]: Sin estas auditorías, no hay verificación independiente sobre software, transmisión ni duplicidades.
+          - generic [ref=e334]:
+            - generic [ref=e335]: RÉPLICA OFICIAL
+            - paragraph [ref=e336]: El CNE alegó un 'ciberataque'; expertos señalan que pudo cumplirse usando canales alternos de publicación/logs.
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - generic [ref=e340]: "CASO #2"
+            - generic [ref=e341]: RÉPLICA OFICIAL
+          - heading "No publicación de resultados por mesa" [level=3] [ref=e342]
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - generic [ref=e346]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e347]: No se publicaron resultados desagregados por mesa ni en la web del CNE ni en la Gaceta Electoral dentro del plazo legal de 48 horas y 30 días, respectivamente.
+            - generic [ref=e348]:
+              - generic [ref=e349]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e350]: El artículo 155 de la LOPRE obliga la publicación oficial por mesa en un plazo definido.
+            - generic [ref=e351]:
+              - generic [ref=e352]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e353]: Informes de observación (ONU, Centro Carter) documentan la omisión y el retraso persistente en la publicación oficial.
+            - generic [ref=e354]:
+              - generic [ref=e355]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e356]: Sin datos por mesa, es imposible una verificación ciudadana y técnica completa del proceso de totalización.
+          - generic [ref=e357]:
+            - generic [ref=e358]: RÉPLICA OFICIAL
+            - paragraph [ref=e359]: El CNE alegó un 'ataque al sitio'; sin embargo, existen vías alternativas de difusión y las auditorías físicas existen.
+        - generic [ref=e361]:
+          - generic [ref=e362]:
+            - generic [ref=e363]: "CASO #3"
+            - generic [ref=e364]: RÉPLICA OFICIAL
+          - heading "Intervención del TSJ y 'peritaje' sin transparencia" [level=3] [ref=e365]
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e369]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e370]: El TSJ realizó un supuesto peritaje y validó los resultados anunciados por el CNE sin una metodología técnica transparente ni base legal clara.
+            - generic [ref=e371]:
+              - generic [ref=e372]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e373]: Sólo el CNE certifica resultados; el TSJ no puede suplantar funciones sustantivas del órgano electoral según el marco legal venezolano.
+            - generic [ref=e374]:
+              - generic [ref=e375]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e376]: Carencia de informes técnicos detallados sobre el peritaje y ausencia de cadena de custodia verificable de las actas.
+            - generic [ref=e377]:
+              - generic [ref=e378]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e379]: Se debilita la cadena institucional y se aumenta la opacidad del proceso de certificación de resultados.
+          - generic [ref=e380]:
+            - generic [ref=e381]: RÉPLICA OFICIAL
+            - paragraph [ref=e382]: El TSJ declaró que el peritaje fue 'concluyente', pero no publicó los datos crudos que lo sustentan.
+        - generic [ref=e384]:
+          - generic [ref=e385]:
+            - generic [ref=e386]: "CASO #4"
+            - generic [ref=e387]: RÉPLICA OFICIAL
+          - heading "Denuncias de falta de transparencia (Rector Delpino)" [level=3] [ref=e388]
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e392]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e393]: El exrector Juan Carlos Delpino denunció irregularidades graves, falta de transparencia y presiones para avalar resultados sin ver datos.
+            - generic [ref=e394]:
+              - generic [ref=e395]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e396]: Los rectores del CNE son funcionarios protegidos por la Constitución; el fraude electoral y el cohecho son delitos penados por ley.
+            - generic [ref=e397]:
+              - generic [ref=e398]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e399]: Comunicados oficiales y entrevistas del rector registrando la cronología de las denuncias y su posterior destitución por la AN.
+            - generic [ref=e400]:
+              - generic [ref=e401]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e402]: Indica una politización extrema del órgano y represalias contra la disidencia técnica interna.
+          - generic [ref=e403]:
+            - generic [ref=e404]: RÉPLICA OFICIAL
+            - paragraph [ref=e405]: La Asamblea Nacional designó un nuevo rector tras la ausencia del denunciante.
+        - generic [ref=e407]:
+          - generic [ref=e408]:
+            - generic [ref=e409]: "CASO #5"
+            - generic [ref=e410]: RÉPLICA OFICIAL
+          - heading "Uso indebido de recursos públicos en campaña" [level=3] [ref=e411]
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - generic [ref=e415]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e416]: Se documentó un abuso sistemático de recursos administrativos y medios públicos en favor de la candidatura del oficialismo.
+            - generic [ref=e417]:
+              - generic [ref=e418]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e419]: La Constitución y acuerdos internacionales (p.e. Barbados) prohíben el uso partidista de bienes del Estado.
+            - generic [ref=e420]:
+              - generic [ref=e421]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e422]: Informes de observación nacional e internacional detallando el uso de infraestructura estatal para actos de campaña.
+            - generic [ref=e423]:
+              - generic [ref=e424]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e425]: Genera una competencia desigual y sesga la información disponible para el electorado.
+          - generic [ref=e426]:
+            - generic [ref=e427]: RÉPLICA OFICIAL
+            - paragraph [ref=e428]: El CNE no emitió sanciones ni medidas correctivas ante estas denuncias documentadas.
+        - generic [ref=e430]:
+          - generic [ref=e431]:
+            - generic [ref=e432]: "CASO #6"
+            - generic [ref=e433]: RÉPLICA OFICIAL
+          - heading "Restricciones a observadores y testigos" [level=3] [ref=e434]
+          - generic [ref=e436]:
+            - generic [ref=e437]:
+              - generic [ref=e438]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e439]: Se impusieron cupos y trabas arbitrarias a observadores técnicos y testigos de mesa para acceder al escrutinio y obtener actas.
+            - generic [ref=e440]:
+              - generic [ref=e441]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e442]: El marco electoral venezolano garantiza el derecho a la observación y el derecho de los testigos a obtener copias de actas.
+            - generic [ref=e443]:
+              - generic [ref=e444]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e445]: Denuncias de testigos y partidos políticos; revocatoria de la invitación a la Misión de Observación de la Unión Europea.
+            - generic [ref=e446]:
+              - generic [ref=e447]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e448]: Dificulta la rendición de cuentas y la verificación independiente de los resultados en cada mesa de votación.
+          - generic [ref=e449]:
+            - generic [ref=e450]: RÉPLICA OFICIAL
+            - paragraph [ref=e451]: El CNE revocó la invitación a la UE alegando 'soberanía' tras sanciones individuales a rectores.
+        - generic [ref=e453]:
+          - generic [ref=e454]:
+            - generic [ref=e455]: "CASO #7"
+            - generic [ref=e456]: RÉPLICA OFICIAL
+          - heading "Exclusión masiva del voto en el exterior" [level=3] [ref=e457]
+          - generic [ref=e459]:
+            - generic [ref=e460]:
+              - generic [ref=e461]: AFIRMACIÓN TÉCNICA
+              - paragraph [ref=e462]: Requisitos burocráticos excesivos y cierres consulares excluyeron al 99% de los venezolanos habilitados para votar en el extranjero.
+            - generic [ref=e463]:
+              - generic [ref=e464]: BASE LEGAL (LOPRE)
+              - paragraph [ref=e465]: El artículo 63 de la Constitución reconoce el sufragio universal; la LOPRE exige residencia legal, pero los trámites fueron arbitarios.
+            - generic [ref=e466]:
+              - generic [ref=e467]: EVIDENCIA PRIMARIA
+              - paragraph [ref=e468]: Sólo 508 nuevos votantes inscritos en el exterior frente a un potencial de más de 5 millones de electores en edad de votar.
+            - generic [ref=e469]:
+              - generic [ref=e470]: IMPACTO EN TRANSPARENCIA
+              - paragraph [ref=e471]: Violación del principio de universalidad del sufragio y afectación a la legitimidad democrática del proceso.
+          - generic [ref=e472]:
+            - generic [ref=e473]: RÉPLICA OFICIAL
+            - paragraph [ref=e474]: Los consulados alegaron 'trámites administrativos normales' y cumplimiento de la normativa de residencia.
+    - generic [ref=e475]:
+      - generic [ref=e476]:
+        - generic [ref=e477]: ESTADO DE AUDITORÍAS
+        - 'heading "Las Auditorías Post-Electorales: La Tríada de Verificación" [level=3] [ref=e478]'
+        - paragraph [ref=e479]: Tres auditorías obligatorias definidas por el propio CNE. Ninguna se realizó.
+      - generic [ref=e480]:
+        - generic [ref=e482]:
+          - paragraph [ref=e483]: 29–31 de julio
+          - heading "Red de Transmisión II" [level=4] [ref=e484]
+          - paragraph [ref=e485]: "Estado: NO realizada"
+          - list [ref=e486]:
+            - listitem [ref=e487]: Verifica que la transmisión no fue alterada.
+            - listitem [ref=e488]: Compara registros con la auditoría pre-electoral.
+            - listitem [ref=e489]: Confirma que no hubo intervención externa.
+          - link "Protocolos CNE (archivo) →" [ref=e490] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php
+        - generic [ref=e492]:
+          - paragraph [ref=e493]: 2 de agosto
+          - heading "Verificación Ciudadana Fase II" [level=4] [ref=e494]
+          - paragraph [ref=e495]: "Estado: NO realizada"
+          - list [ref=e496]:
+            - listitem [ref=e497]: Compara actas físicas con transmisión digital.
+            - listitem [ref=e498]: Revisa una muestra aleatoria de máquinas (1%).
+            - listitem [ref=e499]: Es la verificación más directa de integridad.
+          - link "Protocolos CNE (archivo) →" [ref=e500] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php
+        - generic [ref=e502]:
+          - paragraph [ref=e503]: 5–8 de agosto
+          - heading "Datos Electorales Fase II" [level=4] [ref=e504]
+          - paragraph [ref=e505]: "Estado: NO realizada"
+          - list [ref=e506]:
+            - listitem [ref=e507]: Verifica la base de huellas y duplicidades.
+            - listitem [ref=e508]: Comprueba integridad del registro electoral.
+            - listitem [ref=e509]: Detecta votación múltiple o inconsistencias.
+          - link "Protocolos CNE (archivo) →" [ref=e510] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php
+      - generic [ref=e511]:
+        - paragraph [ref=e512]: El CNE alegó un "ataque informático", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados.
+        - generic [ref=e513]:
+          - link "Análisis del supuesto hackeo" [ref=e514] [cursor=pointer]:
+            - /url: https://x.com/phenobarbital/status/1818990019761091059
+          - link "Prensa Comunitaria" [ref=e515] [cursor=pointer]:
+            - /url: https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/
+          - 'link "CNN: auditorías no realizadas" [ref=e516] [cursor=pointer]':
+            - /url: https://cnnespanol.cnn.com/2024/08/22/auditorias-cne-no-hizo-elecciones-presidenciales-venezuela-orix
+    - generic [ref=e517]:
+      - generic [ref=e518]:
+        - generic [ref=e519]: EVIDENCIA CIUDADANA
+        - heading "Contrapuntos y FAQ" [level=3] [ref=e520]
+        - paragraph [ref=e521]: La red de testigos recolectó el respaldo físico que el CNE se niega a publicar de forma desagregada.
+      - generic [ref=e522]:
+        - generic [ref=e524]:
+          - heading "85,18%" [level=3] [ref=e525]
+          - paragraph [ref=e526]: ACTAS DIGITALIZADAS
+          - paragraph [ref=e527]: 25.575 de 30.026 mesas · 3 ene 2025
+        - generic [ref=e529]:
+          - heading "1M+" [level=3] [ref=e530]
+          - paragraph [ref=e531]: TESTIGOS Y VOLUNTARIOS
+          - paragraph [ref=e532]: Verificadores
+        - generic [ref=e534]:
+          - heading "100%" [level=3] [ref=e535]
+          - paragraph [ref=e536]: VERIFICACIÓN INDEPENDIENTE
+          - paragraph [ref=e537]: Digitalización
+      - generic [ref=e539]:
+        - generic [ref=e540]:
+          - heading "Consulta la base de datos de actas" [level=4] [ref=e541]
+          - paragraph [ref=e542]: Puedes revisar acta por acta, mesa por mesa, con su respaldo fotográfico y QR.
+        - link " Ir a ResultadosConVzla" [ref=e544] [cursor=pointer]:
+          - /url: https://resultadosconvzla.com/
+          - generic [ref=e545]: 
+          - text: Ir a ResultadosConVzla
+    - generic [ref=e546]:
+      - heading "Reacciones Internacionales" [level=3] [ref=e547]
+      - paragraph [ref=e548]: Principales organismos internacionales solicitaron resultados desagregados por mesa, los cuales nunca fueron provistos por el CNE.
+      - generic [ref=e549]:
+        - 'link "Centro Carter: Ver informe" [ref=e551] [cursor=pointer]':
+          - /url: https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf
+          - generic [ref=e552]:
+            - img "Carter Center" [ref=e554]
+            - heading "Centro Carter" [level=5] [ref=e555]
+            - paragraph [ref=e556]: 30/07/2024
+            - paragraph [ref=e557]: "\"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática.\""
+            - generic [ref=e559]: Ver informe →
+        - 'link "Panel de Expertos ONU: Ver informe" [ref=e561] [cursor=pointer]':
+          - /url: https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf
+          - generic [ref=e562]:
+            - img "Naciones Unidas" [ref=e564]
+            - heading "Panel de Expertos ONU" [level=5] [ref=e565]
+            - paragraph [ref=e566]: 09/08/2024
+            - paragraph [ref=e567]: "\"El proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles.\""
+            - generic [ref=e569]: Ver informe →
+        - 'link "Unión Europea: Ver declaración" [ref=e571] [cursor=pointer]':
+          - /url: https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/
+          - generic [ref=e572]:
+            - img "Unión Europea" [ref=e574]
+            - heading "Unión Europea" [level=5] [ref=e575]
+            - paragraph [ref=e576]: 04/08/2024
+            - paragraph [ref=e577]: "\"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden.\""
+            - generic [ref=e579]: Ver declaración →
+        - 'link "OEA: Ver comunicado" [ref=e581] [cursor=pointer]':
+          - /url: https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24
+          - generic [ref=e582]:
+            - img "OEA" [ref=e584]
+            - heading "OEA" [level=5] [ref=e585]
+            - paragraph [ref=e586]: 02/08/2024
+            - paragraph [ref=e587]: "\"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria.\""
+            - generic [ref=e589]: Ver comunicado →
+    - generic [ref=e591]:
+      - generic [ref=e592]:
+        - generic [ref=e593]: ANÁLISIS FORENSE
+        - heading "Análisis Estadístico Forense" [level=3] [ref=e594]
+        - paragraph [ref=e595]: Matemáticos y estadísticos de instituciones globales coinciden en la anomalía de los datos oficiales.
+      - generic [ref=e596]:
+        - generic [ref=e598]:
+          - generic [ref=e599]:
+            - generic [ref=e600]:
+              - paragraph [ref=e601]: 02/08/2024
+              - heading "Terence Tao" [level=4] [ref=e602]
+              - paragraph [ref=e603]: UCLA — Medalla Fields 2006
+            - generic [ref=e604]: Hallazgo
+          - paragraph [ref=e605]: "\"Los dígitos finales de los datos oficiales del CNE muestran una distribución estadísticamente anómala: exceso de dígitos pares (0, 2, 4, 6, 8) incompatible con cualquier proceso de conteo legítimo.\""
+          - generic [ref=e606]: "Método: Análisis de distribución de dígitos finales"
+          - link "Ver análisis completo →" [ref=e608] [cursor=pointer]:
+            - /url: https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/
+        - generic [ref=e610]:
+          - generic [ref=e611]:
+            - generic [ref=e612]:
+              - paragraph [ref=e613]: Agosto 2024
+              - heading "Dorothy Kronick" [level=4] [ref=e614]
+              - paragraph [ref=e615]: UC Berkeley
+            - generic [ref=e616]: Hallazgo
+          - paragraph [ref=e617]: "\"El patrón de publicación de boletines muestra sesgo sistemático: los resultados llegaron en un orden que favorece de forma estadísticamente improbable al candidato oficialista en cada actualización secuencial.\""
+          - generic [ref=e618]: "Método: Análisis de sesgo en secuencia de publicación de boletines"
+          - link "Ver análisis completo →" [ref=e620] [cursor=pointer]:
+            - /url: https://dorothykronick.com/28J.pdf
+        - generic [ref=e622]:
+          - generic [ref=e623]:
+            - generic [ref=e624]:
+              - paragraph [ref=e625]: 31/07/2024
+              - heading "Andrew Gelman" [level=4] [ref=e626]
+              - paragraph [ref=e627]: Columbia University
+            - generic [ref=e628]: Hallazgo
+          - paragraph [ref=e629]: "\"La curva de totalización muestra patrones no aleatorios: la proporción de votos entre candidatos permanece sospechosamente constante a medida que llegan los boletines, lo cual es estadísticamente inusual.\""
+          - generic [ref=e630]: "Método: Análisis de estabilidad de la curva de totalización"
+          - link "Ver análisis completo →" [ref=e632] [cursor=pointer]:
+            - /url: https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/
+        - generic [ref=e634]:
+          - generic [ref=e635]:
+            - generic [ref=e636]:
+              - paragraph [ref=e637]: Agosto 2024
+              - heading "Walter Mebane" [level=4] [ref=e638]
+              - paragraph [ref=e639]: University of Michigan
+            - generic [ref=e640]: Hallazgo
+          - paragraph [ref=e641]: "\"Aplicando el método eForensics — diseñado específicamente para detectar fraude electoral — los datos del CNE presentan evidencia de manipulación en múltiples modelos, con probabilidades de fraude muy superiores al umbral de significancia estadística.\""
+          - generic [ref=e642]: "Método: eForensics (forensia electoral cuantitativa)"
+          - link "Ver análisis completo →" [ref=e644] [cursor=pointer]:
+            - /url: https://websites.umich.edu/~wmebane/Venezuela2024.pdf
+    - generic [ref=e645]:
+      - generic [ref=e646]:
+        - generic [ref=e647]: CONTRAPUNTOS
+        - heading "Contrapuntos y FAQ" [level=3] [ref=e648]
+        - paragraph [ref=e649]: Preguntas frecuentes sobre la legalidad y los procesos técnicos del 28 de Julio.
+      - generic [ref=e650]:
+        - heading "01. ¿Qué dice la LOPRE sobre los resultados?" [level=2] [ref=e652]:
+          - button "01. ¿Qué dice la LOPRE sobre los resultados?" [ref=e653] [cursor=pointer]:
+            - generic [ref=e654]: "01."
+            - text: ¿Qué dice la LOPRE sobre los resultados?
+            - img [ref=e656]
+        - heading "02. ¿Hubo realmente un hackeo?" [level=2] [ref=e659]:
+          - button "02. ¿Hubo realmente un hackeo?" [ref=e660] [cursor=pointer]:
+            - generic [ref=e661]: "02."
+            - text: ¿Hubo realmente un hackeo?
+            - img [ref=e663]
+        - heading "03. ¿Por qué son importantes las auditorías?" [level=2] [ref=e666]:
+          - button "03. ¿Por qué son importantes las auditorías?" [ref=e667] [cursor=pointer]:
+            - generic [ref=e668]: "03."
+            - text: ¿Por qué son importantes las auditorías?
+            - img [ref=e670]
+        - heading "04. ¿Qué diferencia hay entre la totalización y la Gaceta Electoral?" [level=2] [ref=e673]:
+          - button "04. ¿Qué diferencia hay entre la totalización y la Gaceta Electoral?" [ref=e674] [cursor=pointer]:
+            - generic [ref=e675]: "04."
+            - text: ¿Qué diferencia hay entre la totalización y la Gaceta Electoral?
+            - img [ref=e677]
+        - heading "05. ¿Qué solicitó específicamente el Centro Carter?" [level=2] [ref=e680]:
+          - button "05. ¿Qué solicitó específicamente el Centro Carter?" [ref=e681] [cursor=pointer]:
+            - generic [ref=e682]: "05."
+            - text: ¿Qué solicitó específicamente el Centro Carter?
+            - img [ref=e684]
+        - heading "06. ¿Son las actas ciudadanas documentos legalmente válidos?" [level=2] [ref=e687]:
+          - button "06. ¿Son las actas ciudadanas documentos legalmente válidos?" [ref=e688] [cursor=pointer]:
+            - generic [ref=e689]: "06."
+            - text: ¿Son las actas ciudadanas documentos legalmente válidos?
+            - img [ref=e691]
+        - heading "07. ¿Qué significa técnicamente un resultado \"por mesa\"?" [level=2] [ref=e694]:
+          - button "07. ¿Qué significa técnicamente un resultado \"por mesa\"?" [ref=e695] [cursor=pointer]:
+            - generic [ref=e696]: "07."
+            - text: ¿Qué significa técnicamente un resultado "por mesa"?
+            - img [ref=e698]
+        - heading "08. ¿Algún tribunal venezolano se pronunció sobre las disputas electorales?" [level=2] [ref=e701]:
+          - button "08. ¿Algún tribunal venezolano se pronunció sobre las disputas electorales?" [ref=e702] [cursor=pointer]:
+            - generic [ref=e703]: "08."
+            - text: ¿Algún tribunal venezolano se pronunció sobre las disputas electorales?
+            - img [ref=e705]
+        - heading "09. ¿Qué ocurrió con los testigos y voluntarios después del 28J?" [level=2] [ref=e708]:
+          - button "09. ¿Qué ocurrió con los testigos y voluntarios después del 28J?" [ref=e709] [cursor=pointer]:
+            - generic [ref=e710]: "09."
+            - text: ¿Qué ocurrió con los testigos y voluntarios después del 28J?
+            - img [ref=e712]
+        - heading "010. ¿Qué es el caso de estudio de Macedonia del Norte?" [level=2] [ref=e715]:
+          - button "010. ¿Qué es el caso de estudio de Macedonia del Norte?" [ref=e716] [cursor=pointer]:
+            - generic [ref=e717]: "010."
+            - text: ¿Qué es el caso de estudio de Macedonia del Norte?
+            - img [ref=e719]
+    - generic [ref=e721]:
+      - generic [ref=e722]:
+        - generic [ref=e723]: IMPACTO Y DDHH
+        - heading "Impacto y DDHH" [level=3] [ref=e724]
+        - paragraph [ref=e725]: Consecuencias de la opacidad electoral en el tejido civil y democrático.
+      - generic [ref=e726]:
+        - generic [ref=e728]:
+          - heading "Cierre del Espacio Cívico" [level=4] [ref=e729]
+          - paragraph [ref=e730]: Persecución a testigos y voluntarios que custodiaron las actas.
+          - link "HRW Venezuela 2024 / OHCHR Sept. 2024 →" [ref=e732] [cursor=pointer]:
+            - /url: https://www.hrw.org/world-report/2025/country-chapters/venezuela
+        - generic [ref=e734]:
+          - heading "Legitimidad Institucional" [level=4] [ref=e735]
+          - paragraph [ref=e736]: Deterioro de la confianza en el sufragio como mecanismo de resolución.
+          - link "IACHR — Res. 2/2024 →" [ref=e738] [cursor=pointer]:
+            - /url: https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF
+        - generic [ref=e740]:
+          - heading "Aislamiento Global" [level=4] [ref=e741]
+          - paragraph [ref=e742]: No reconocimiento de resultados por falta de pruebas verificables.
+          - link "OAS / UN / EU / Carter Center →" [ref=e744] [cursor=pointer]:
+            - /url: https://www.cartercenter.org/news/venezuela-073024/
+      - paragraph [ref=e746]: La transparencia es la base de la paz social y el respeto a la soberanía popular.
+    - generic [ref=e748]:
+      - generic [ref=e750]: DIFUNDIR VERDAD
+      - heading "La transparencia es un derecho" [level=2] [ref=e751]
+      - paragraph [ref=e752]: Comparte este observatorio para que más personas accedan a la evidencia técnica e institucional.
+      - generic [ref=e753]:
+        - link " Compartir Observatorio" [ref=e754] [cursor=pointer]:
+          - /url: "#compartir"
+          - generic [ref=e755]: 
+          - text: Compartir Observatorio
+        - link " Revisar Actas" [ref=e756] [cursor=pointer]:
+          - /url: https://resultadosconvzla.com/
+          - generic [ref=e757]: 
+          - text: Revisar Actas
+        - link " Ver Repositorio" [ref=e758] [cursor=pointer]:
+          - /url: https://github.com/cortega26/retardo_cne
+          - generic [ref=e759]: 
+          - text: Ver Repositorio
+    - generic [ref=e762]:
+      - generic [ref=e763]: DIFUNDIR VERDAD
+      - 'heading "Observatorio de Incumplimientos del CNE: Evidencia técnica y legal sobre el 28J." [level=2] [ref=e764]'
+      - paragraph [ref=e765]: Comparte la evidencia verificable con tu red.
+      - generic [ref=e766]:
+        - link "Compartir en X (Twitter)" [ref=e767] [cursor=pointer]:
+          - /url: https://twitter.com/intent/tweet?text=Incumplimientos%20verificables%20del%20CNE%20-%20Transparencia%20Electoral%202024&url=https%3A%2F%2Fcortega26.github.io%2Fretardo_cne%2F
+          - generic [ref=e768]: 
+          - generic [ref=e769]: Compartir en X
+        - link "Compartir en WhatsApp" [ref=e770] [cursor=pointer]:
+          - /url: https://wa.me/?text=Incumplimientos%20verificables%20del%20CNE%20-%20Transparencia%20Electoral%202024%20https%3A%2F%2Fcortega26.github.io%2Fretardo_cne%2F
+          - generic [ref=e771]: 
+          - generic [ref=e772]: WhatsApp
+        - link "Compartir en Telegram" [ref=e773] [cursor=pointer]:
+          - /url: https://t.me/share/url?url=https%3A%2F%2Fcortega26.github.io%2Fretardo_cne%2F&text=Incumplimientos%20verificables%20del%20CNE%20-%20Transparencia%20Electoral%202024
+          - generic [ref=e774]: 
+          - generic [ref=e775]: Telegram
+        - link "Compartir en LinkedIn" [ref=e776] [cursor=pointer]:
+          - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcortega26.github.io%2Fretardo_cne%2F
+          - generic [ref=e777]: 
+          - generic [ref=e778]: LinkedIn
+        - button "Copiar enlace" [ref=e779] [cursor=pointer]:
+          - generic [ref=e780]: 
+          - generic [ref=e781]: Copiar enlace
+  - contentinfo [ref=e782]:
+    - generic [ref=e783]:
+      - generic [ref=e784]:
+        - generic [ref=e785]:
+          - heading "RETARDO CNE" [level=2] [ref=e786]
+          - paragraph [ref=e787]:
+            - text: © 2024–2026 Observatorio Electoral Ciudadano. Contenido bajo licencia Creative Commons.
+            - text: Desarrollado por
+            - link "Tooltician" [ref=e788] [cursor=pointer]:
+              - /url: https://tooltician.com/
+        - link " Código Abierto" [ref=e791] [cursor=pointer]:
+          - /url: https://github.com/cortega26/retardo_cne
+          - generic [ref=e792]: 
+          - text: Código Abierto
+      - generic [ref=e794]:
+        - link "INICIO" [ref=e795] [cursor=pointer]:
+          - /url: "#inicio"
+        - link "LA EVIDENCIA" [ref=e796] [cursor=pointer]:
+          - /url: "#cronologia"
+        - link "CONTEXTO" [ref=e797] [cursor=pointer]:
+          - /url: "#sistema"
+```

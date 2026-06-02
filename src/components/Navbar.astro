@@ -123,4 +123,17 @@ const langToggleTarget = lang === 'es' ? 'en' : 'es';
       }
     });
   }
+
+  document.querySelectorAll('#navbarNav a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const navPanel = document.getElementById('navbarNav');
+      const toggler = document.querySelector('[data-bs-target="#navbarNav"]');
+      if (!navPanel || !window.matchMedia('(max-width: 991.98px)').matches) {
+        return;
+      }
+      navPanel.classList.remove('show', 'collapsing');
+      navPanel.style.height = '';
+      toggler?.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>

@@ -26,7 +26,7 @@ function resolveFilePath(requestUrl) {
   if (decoded === basePath || decoded.startsWith(`${basePath}/`)) {
     decoded = decoded.slice(basePath.length) || '/';
   }
-  const relativePath = decoded === '/' ? '/index.html' : decoded;
+  const relativePath = decoded === '/' || decoded.endsWith('/') ? `${decoded}index.html` : decoded;
   const fullPath = path.join(rootDir, relativePath);
   const normalized = path.normalize(fullPath);
 

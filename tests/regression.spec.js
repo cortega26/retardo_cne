@@ -4,7 +4,7 @@ test.describe('regression coverage', () => {
   test('counter updates once per second', async ({ page }) => {
     await page.goto('/');
 
-    const secondsLocator = page.locator('#counter1 .seconds .number');
+    const secondsLocator = page.locator('#counter1 [data-unit="3"] .number');
     await expect(secondsLocator).toHaveText(/\d+/);
 
     const initial = Number(await secondsLocator.innerText());
@@ -37,19 +37,16 @@ test.describe('regression coverage', () => {
     await toggle.click();
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page).toHaveTitle('Verifiable CNE breaches — 2024 Election');
-    await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Verifiable CNE breaches — 2024 Election',
-    );
+    await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
+    await expect(page).toHaveTitle(/Verifiable CNE breaches/);
+    await expect(page.locator('h1')).toHaveText('Verifiable CNE breaches');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
     expect(storedLang).toBe('en');
 
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('[data-i18n="hero_title"]')).toHaveText(
-      'Verifiable CNE breaches — 2024 Election',
-    );
+    await expect(page.locator('h1')).toHaveText('Verifiable CNE breaches');
   });
 
   test('copy link control is available in share section', async ({ page, context }) => {
@@ -61,9 +58,9 @@ test.describe('regression coverage', () => {
     await expect(copyButton).toContainText('Copiar enlace');
     await copyButton.click();
 
-    await expect(copyButton).toContainText('Enlace copiado');
+    await expect(copyButton).toContainText('✓ ¡Copiado!');
     await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toContain(
-      'http://127.0.0.1:4173/',
+      'https://cortega26.github.io/retardo_cne/',
     );
   });
 
@@ -121,8 +118,7 @@ test.describe('regression coverage', () => {
     for (const id of [
       'evidenceDropdown',
       'contextDropdown',
-      'internacionalDropdown',
-      'verificacionDropdown',
+      'verificationDropdown',
     ]) {
       const toggle = page.locator(`#${id}`);
       await toggle.click();

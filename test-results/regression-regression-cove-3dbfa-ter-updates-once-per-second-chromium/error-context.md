@@ -151,10 +151,10 @@
             - generic [ref=e134]: "06"
             - text: Horas
           - generic [ref=e135]:
-            - generic [ref=e136]: "13"
+            - generic [ref=e136]: "15"
             - text: Min
           - generic [ref=e137]:
-            - generic [ref=e138]: "55"
+            - generic [ref=e138]: "40"
             - text: Seg
         - generic "Proporción del retraso frente al plazo legal" [ref=e139]
       - generic [ref=e142]:
@@ -174,10 +174,10 @@
             - generic [ref=e155]: "06"
             - text: Horas
           - generic [ref=e156]:
-            - generic [ref=e157]: "13"
+            - generic [ref=e157]: "15"
             - text: Min
           - generic [ref=e158]:
-            - generic [ref=e159]: "55"
+            - generic [ref=e159]: "40"
             - text: Seg
         - generic "Proporción del retraso frente al plazo legal" [ref=e160]
     - generic [ref=e163]:
