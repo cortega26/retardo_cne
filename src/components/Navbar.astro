@@ -6,6 +6,7 @@ const t = useTranslations(lang);
 const langToggleUrl = lang === 'es' ? '/retardo_cne/en/' : '/retardo_cne/';
 const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
 const langToggleTarget = lang === 'es' ? 'en' : 'es';
+const brandLabel = lang === 'es' ? 'Observatorio electoral ciudadano' : 'Citizen electoral observatory';
 
 const navGroups = {
   evidence: {
@@ -25,7 +26,10 @@ const navGroups = {
 
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#inicio" aria-current="page">RETARDO <span style="color: var(--text-accent);">CNE</span></a>
+    <a class="navbar-brand" href="#inicio" aria-current="page">
+      <span class="brand-mark">{brandLabel}</span>
+      <span class="brand-title">RETARDO <span class="brand-accent">CNE</span></span>
+    </a>
     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="toggler-icon"></span>
@@ -93,14 +97,14 @@ const navGroups = {
       </ul>
 
       <!-- Right-side controls -->
-      <div class="d-flex align-items-center gap-2 ms-auto">
+      <div class="nav-controls d-flex align-items-center gap-2 ms-auto">
         <!-- Language Toggle -->
         <a id="toggleLang" href={langToggleUrl} class="btn btn-outline-primary btn-sm fw-bold px-3" data-target-lang={langToggleTarget}>
           <span class="lang-code">{langToggleLabel}</span>
         </a>
 
         <!-- Theme Toggle -->
-        <button id="toggleTheme" class="btn btn-outline-primary btn-sm px-3" style="min-height: 44px;" aria-label={t('nav_toggle_theme')} title={t('nav_toggle_theme')} aria-pressed="false">
+        <button id="toggleTheme" class="btn btn-outline-primary btn-sm nav-theme-toggle px-3" type="button" aria-label={t('nav_toggle_theme')} title={t('nav_toggle_theme')} aria-pressed="false">
           <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
@@ -120,52 +124,93 @@ const navGroups = {
 </nav>
 
 <script>
-  const btn = document.getElementById('toggleTheme');
-  const langBtn = document.getElementById('toggleLang');
+  function initializeNavbar() {
+    const btn = document.getElementById('toggleTheme');
+    const langBtn = document.getElementById('toggleLang');
 
-  function syncThemeState() {
-    if (!btn) {
-      return;
+    function syncThemeState() {
+      if (!(btn instanceof HTMLButtonElement)) {
+        return;
+      }
+      btn.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
     }
-    btn.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
-  }
 
-  if (btn) {
-    syncThemeState();
-    btn.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    if (btn instanceof HTMLButtonElement && !btn.dataset.bound) {
+      btn.dataset.bound = 'true';
       syncThemeState();
+      btn.addEventListener('click', () => {
+        const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+        const setPreferredTheme = (window as typeof window & {
+          __setPreferredTheme?: (theme: string) => void;
+        }).__setPreferredTheme;
+        if (typeof setPreferredTheme === 'function') {
+          setPreferredTheme(nextTheme);
+        } else {
+          document.body.classList.toggle('dark-mode', nextTheme === 'dark');
+          localStorage.setItem('theme', nextTheme);
+        }
+        syncThemeState();
+      });
+    }
+
+    if (langBtn instanceof HTMLAnchorElement && !langBtn.dataset.bound) {
+      langBtn.dataset.bound = 'true';
+      langBtn.addEventListener('click', () => {
+        const targetLang = langBtn.dataset.targetLang;
+        if (targetLang) {
+          localStorage.setItem('site_lang', targetLang);
+        }
+      });
+    }
+
+    document.querySelectorAll('#navbarNav a[href^="#"]').forEach((link) => {
+      if (link instanceof HTMLAnchorElement && !link.dataset.bound) {
+        link.dataset.bound = 'true';
+        link.addEventListener('click', () => {
+          const navPanel = document.getElementById('navbarNav');
+          const toggler = document.querySelector('[data-bs-target="#navbarNav"]');
+          if (!navPanel || !window.matchMedia('(max-width: 991.98px)').matches) {
+            return;
+          }
+          navPanel.classList.remove('show', 'collapsing');
+          navPanel.style.height = '';
+          toggler?.setAttribute('aria-expanded', 'false');
+        });
+      }
     });
   }
 
-  if (langBtn instanceof HTMLAnchorElement) {
-    langBtn.addEventListener('click', () => {
-      const targetLang = langBtn.dataset.targetLang;
-      if (targetLang) {
-        localStorage.setItem('site_lang', targetLang);
-      }
-    });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeNavbar, { once: true });
+  } else {
+    initializeNavbar();
   }
 
-  document.querySelectorAll('#navbarNav a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (link.matches('[data-bs-toggle="dropdown"]')) {
-        return;
-      }
-      const navPanel = document.getElementById('navbarNav');
-      const toggler = document.querySelector('[data-bs-target="#navbarNav"]');
-      if (!navPanel || !window.matchMedia('(max-width: 991.98px)').matches) {
-        return;
-      }
-      navPanel.classList.remove('show', 'collapsing');
-      navPanel.style.height = '';
-      toggler?.setAttribute('aria-expanded', 'false');
-    });
-  });
+  document.addEventListener('astro:page-load', initializeNavbar);
 </script>
 
 <style>
+  .navbar-brand {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .brand-mark {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .brand-title {
+    line-height: 1;
+  }
+
+  .brand-accent {
+    color: var(--text-accent);
+  }
+
   .nav-item-split {
     display: flex;
     align-items: stretch;
@@ -186,11 +231,19 @@ const navGroups = {
     margin-left: 0;
   }
 
+  .nav-theme-toggle {
+    min-height: 44px;
+  }
+
   @media (max-width: 991.98px) {
     .nav-item-split {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
+    }
+
+    .navbar-brand {
+      max-width: min(14rem, calc(100vw - 10rem));
     }
 
     .nav-item-split .nav-link-primary,
