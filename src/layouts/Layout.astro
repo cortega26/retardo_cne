@@ -51,6 +51,26 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={t('meta_description_twitter')} />
 		<meta name="twitter:image" content={socialImageUrl} />
+		<meta property="og:site_name" content="Observatorio Electoral Ciudadano" />
+		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+		<meta property="og:image:alt" content={t('meta_description')} />
+
+		<!-- Structured data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Observatorio Electoral Ciudadano",
+			"url": "https://tooltician.com/retardo_cne/",
+			"description": t('meta_description'),
+			"inLanguage": ["es", "en"],
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Observatorio Electoral Ciudadano",
+			"url": "https://tooltician.com/retardo_cne/",
+			"logo": socialImageUrl,
+		})} />
 
 		<!-- Bootstrap CSS (local, matching live site) -->
 		<link rel="stylesheet" href={`${basePath}/assets/css/bootstrap.min.css`} />
@@ -106,8 +126,8 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 			}
 		</style>
 
-	</head>
 	<body class="app-shell">
+		<a href="#main-content" class="skip-link">{lang === 'es' ? 'Ir al contenido principal' : 'Skip to main content'}</a>
 		<slot />
 		<script is:inline src="/retardo_cne/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
 		<script is:inline src="/retardo_cne/assets/js/navbar-behavior.js" defer></script>
