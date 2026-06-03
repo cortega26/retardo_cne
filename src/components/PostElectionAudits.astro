@@ -52,12 +52,13 @@ const audits = [
 ];
 
 const auditNote   = lang === 'es'
-  ? 'El CNE alegó un "ataque informático", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados.'
-  : 'The CNE claimed a "cyberattack," but post-election audits work with physical evidence and are the legal mechanism to verify results.';
+  ? 'El CNE alegó un "ataque informático", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados. Observadores acreditados documentaron la interrupción deliberada del flujo de datos.'
+  : 'The CNE claimed a "cyberattack," but post-election audits work with physical evidence and are the legal mechanism to verify results. Accredited observers documented the deliberate interruption of the data flow.';
 const cneLabel    = lang === 'es' ? 'Protocolos CNE (archivo)'  : 'CNE Protocols (archive)';
 const hackLink    = lang === 'es' ? 'Análisis del supuesto hackeo' : 'Analysis of the alleged hack';
 const pcLabel     = lang === 'es' ? 'Prensa Comunitaria'        : 'Prensa Comunitaria';
 const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: audits not performed';
+const carterLabel = lang === 'es' ? 'Centro Carter (Informe Final)' : 'Carter Center (Final Report)';
 ---
 
 <section id="auditorias" class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12" aria-label={t('nav_evidence_audits')}>
@@ -93,6 +94,7 @@ const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: aud
       <a class="btn btn-outline-primary btn-sm" href="https://x.com/phenobarbital/status/1818990019761091059" target="_blank" rel="noopener noreferrer">{hackLink}</a>
       <a class="btn btn-outline-primary btn-sm" href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/" target="_blank" rel="noopener noreferrer">{pcLabel}</a>
       <a class="btn btn-outline-primary btn-sm" href="https://cnnespanol.cnn.com/2024/08/22/auditorias-cne-no-hizo-elecciones-presidenciales-venezuela-orix" target="_blank" rel="noopener noreferrer">{cnnLabel}</a>
+      <a class="btn btn-outline-primary btn-sm" href="https://www.cartercenter.org/resources/pdfs/news/peace_publications/election_reports/venezuela/venezuela-final-report-2025.pdf" target="_blank" rel="noopener noreferrer">{carterLabel}</a>
     </div>
   </div>
 </section>
