@@ -49,9 +49,71 @@ const indicators = [
     ))}
   </div>
 
+  <div class="impact-conclusion">
+    <span class="impact-conclusion-kicker">{lang === 'es' ? 'La conclusión' : 'The bottom line'}</span>
+    <h4 class="impact-conclusion-title">
+      {lang === 'es' ? 'Una proclamación sin resultados es írrita' : 'A proclamation without results is void'}
+    </h4>
+    <p class="impact-conclusion-text">
+      {lang === 'es'
+        ? 'El CNE proclamó un resultado sin publicar las actas desagregadas que exige el Art. 146 de la LOPRE, y el TSJ lo validó el 22 de agosto de 2024 sin revisar una sola acta ni convocar a las partes. Sin resultados verificables no hay proclamación válida posible: lo ocurrido es una ruptura del hilo constitucional, un autogolpe consumado con la anuencia de los poderes públicos.'
+        : 'The CNE proclaimed a result without publishing the per-table tally sheets required by Art. 146 of the LOPRE, and the TSJ validated it on 22 August 2024 without reviewing a single sheet or summoning the parties. Without verifiable results, no valid proclamation is possible: what happened is a breach of constitutional order — a self-coup carried out with the acquiescence of the public powers.'}
+    </p>
+    <div class="impact-conclusion-sources">
+      <a href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank" rel="noopener noreferrer">Art. 146 LOPRE</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'CIDH Res. 2/2024' : 'IACHR Res. 2/2024'}</a>
+    </div>
+  </div>
+
   <div class="story-card mt-4 text-center" style="background: rgba(15, 94, 168, 0.05); box-shadow: var(--shadow-card), 0 0 0 1px rgba(15, 94, 168, 0.28);">
     <p class="mb-0 fw-medium" style="color: var(--text-accent);">
       {t('impact_footer_text')}
     </p>
   </div>
 </section>
+
+<style>
+  .impact-conclusion {
+    margin-top: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: var(--radius-card);
+    background: var(--color-brand-950);
+    color: #eef2fb;
+    border-left: 5px solid var(--color-breach-500);
+  }
+  .impact-conclusion-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-breach-300);
+  }
+  .impact-conclusion-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0.6rem 0 0.9rem;
+    color: #fff;
+  }
+  .impact-conclusion-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #d4dbef;
+    max-width: 70ch;
+  }
+  .impact-conclusion-sources {
+    margin-top: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .impact-conclusion-sources a { color: var(--color-brand-200); text-decoration: none; font-weight: 600; }
+  .impact-conclusion-sources a:hover { text-decoration: underline; }
+</style>

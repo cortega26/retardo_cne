@@ -16,18 +16,23 @@ const lastVerified = '2025-05-27';
       <h1>Metodología y correcciones</h1>
       <p class="method-lead">
         Este observatorio documenta incumplimientos <strong>verificables</strong> del CNE. El criterio mínimo es simple:
-        cada afirmación debe tener una fuente primaria o un archivo verificable. Cuando no existe evidencia primaria,
-        el hecho se marca como <em>pendiente</em> o <em>en disputa</em> y se explica por qué.
+        cada afirmación debe tener una fuente primaria o un archivo verificable. Cuando un dato proviene solo de
+        fuentes secundarias, se marca como <em>Reportado</em>; los incumplimientos de la ley se etiquetan con su artículo.
       </p>
 
       <section class="method-block">
         <h2>Estados de evidencia</h2>
         <p>Cada afirmación fuerte lleva una de estas etiquetas:</p>
         <ul class="legend">
-          <li><span class="pill pill-verified">Verificado</span> Existe fuente primaria <em>y</em> un archivo público que cualquiera puede revisar.</li>
-          <li><span class="pill pill-pending">Pendiente</span> La evidencia primaria no se ha publicado; existen reportes secundarios fiables.</li>
-          <li><span class="pill pill-disputed">En disputa</span> Fuentes relevantes presentan versiones incompatibles.</li>
+          <li><span class="pill pill-verified">Verificado</span> Hecho con fuente primaria <em>y</em> archivo público que cualquiera puede revisar.</li>
+          <li><span class="pill pill-reported">Reportado</span> Dato proveniente de una fuente secundaria fiable (p. ej. cifras de detenciones de una ONG), no de una fuente primaria propia.</li>
+          <li><span class="pill pill-law">Violación de ley</span> Incumplimiento normativo establecido, citado con su artículo (p. ej. Art. 146 LOPRE).</li>
         </ul>
+        <p class="method-nodispute">
+          No usamos una etiqueta de «en disputa». Los hechos centrales aquí documentados —plazos legales vencidos,
+          ausencia de resultados por mesa y validación del TSJ sin revisar las actas— <strong>no están en disputa</strong>:
+          son verificables y están enlazados a su fuente.
+        </p>
       </section>
 
       <section class="method-block">
@@ -120,7 +125,14 @@ const lastVerified = '2025-05-27';
     white-space: nowrap;
   }
   .pill-verified { color: var(--color-lawful-700); background: var(--color-lawful-100); }
-  .pill-pending { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
-  .pill-disputed { color: var(--color-breach-700); background: var(--color-breach-100); }
+  .pill-reported { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
+  .pill-law { color: var(--color-breach-700); background: var(--color-breach-100); }
+  .method-nodispute {
+    margin-top: 1.25rem;
+    padding: 1rem 1.15rem;
+    border-radius: calc(var(--radius-card) - 0.25rem);
+    border-left: 3px solid var(--color-breach-500);
+    background: color-mix(in srgb, var(--color-breach-500) 6%, transparent);
+  }
   a { color: var(--color-brand-600); }
 </style>

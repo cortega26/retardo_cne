@@ -16,18 +16,23 @@ const lastVerified = '2025-05-27';
       <h1>Methodology &amp; corrections</h1>
       <p class="method-lead">
         This observatory documents <strong>verifiable</strong> breaches by the CNE. The minimum standard is simple:
-        every claim must have a primary source or a verifiable archive. When no primary evidence exists, the fact is
-        marked <em>pending</em> or <em>disputed</em>, and we explain why.
+        every claim must have a primary source or a verifiable archive. When a data point comes only from secondary
+        sources, it is marked <em>Reported</em>; breaches of the law are tagged with their article.
       </p>
 
       <section class="method-block">
         <h2>Evidence status</h2>
         <p>Each strong claim carries one of these tags:</p>
         <ul class="legend">
-          <li><span class="pill pill-verified">Verified</span> A primary source <em>and</em> a public archive exist that anyone can review.</li>
-          <li><span class="pill pill-pending">Pending</span> Primary evidence has not been published; reliable secondary reports exist.</li>
-          <li><span class="pill pill-disputed">Disputed</span> Relevant sources present incompatible versions.</li>
+          <li><span class="pill pill-verified">Verified</span> A fact with a primary source <em>and</em> a public archive anyone can review.</li>
+          <li><span class="pill pill-reported">Reported</span> A data point from a reliable secondary source (e.g. detention figures from an NGO), not from our own primary source.</li>
+          <li><span class="pill pill-law">Breach of law</span> An established legal breach, cited with its article (e.g. Art. 146 LOPRE).</li>
         </ul>
+        <p class="method-nodispute">
+          We do not use a «disputed» tag. The core facts documented here —expired legal deadlines, the absence of
+          per-table results, and the TSJ validating the result without reviewing the tally sheets— <strong>are not in
+          dispute</strong>: they are verifiable and linked to their source.
+        </p>
       </section>
 
       <section class="method-block">
@@ -98,7 +103,14 @@ const lastVerified = '2025-05-27';
     text-transform: uppercase; padding: 0.26rem 0.6rem; border-radius: var(--radius-pill); white-space: nowrap;
   }
   .pill-verified { color: var(--color-lawful-700); background: var(--color-lawful-100); }
-  .pill-pending { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
-  .pill-disputed { color: var(--color-breach-700); background: var(--color-breach-100); }
+  .pill-reported { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
+  .pill-law { color: var(--color-breach-700); background: var(--color-breach-100); }
+  .method-nodispute {
+    margin-top: 1.25rem;
+    padding: 1rem 1.15rem;
+    border-radius: calc(var(--radius-card) - 0.25rem);
+    border-left: 3px solid var(--color-breach-500);
+    background: color-mix(in srgb, var(--color-breach-500) 6%, transparent);
+  }
   a { color: var(--color-brand-600); }
 </style>

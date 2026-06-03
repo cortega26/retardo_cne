@@ -134,7 +134,7 @@ export const ui = {
     'timeline_event_5': 'Vencimiento del plazo legal de 48 horas.',
     'timeline_event_6': 'Proclamación sin auditorías de verificación.',
     'timeline_event_7': 'Vencimiento del plazo para Gaceta Electoral (30 días).',
-    'timeline_event_8': 'Fecha institucional de toma de posesión sin transparencia.',
+    'timeline_event_8': 'Toma de posesión sin resultados electorales verificables.',
 
     'status_normal': 'Programado',
     'status_violation': 'Incumplido',
@@ -381,7 +381,7 @@ export const ui = {
     'timeline_event_5': 'Expiration of the 48-hour legal deadline.',
     'timeline_event_6': 'Proclamation without verification audits.',
     'timeline_event_7': 'Expiration of the Electoral Gazette deadline (30 days).',
-    'timeline_event_8': 'Institutional inauguration date without transparency.',
+    'timeline_event_8': 'Inauguration without verifiable electoral results.',
 
     'status_normal': 'Scheduled',
     'status_violation': 'Failed',
