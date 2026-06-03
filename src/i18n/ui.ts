@@ -59,7 +59,7 @@ export const ui = {
     'audit_prep_title': 'Puesta Cero de Centros',
     'audit_tele_title': 'Red de Transmisión II',
     'audit_verif_title': 'Verificación Ciudadana II',
-    'audit_tele_note': 'Auditores reportan que el flujo de datos fue interrumpido de forma abrupta e inexplicada.',
+    'audit_tele_note': 'Auditores reportan que el flujo de datos fue interrumpido deliberadamente.',
 
     'badge_analysis': 'ANÁLISIS FORENSE',
     'analysis_title': 'Análisis Estadístico Forense',
@@ -307,7 +307,7 @@ export const ui = {
     'audit_prep_title': 'Zeroing Centers',
     'audit_tele_title': 'Transmission Network II',
     'audit_verif_title': 'Citizen Verification II',
-    'audit_tele_note': 'Auditors report that the data flow was abruptly and inexplicably interrupted.',
+    'audit_tele_note': 'Auditors report that the data flow was deliberately interrupted.',
 
     'badge_analysis': 'FORENSIC ANALYSIS',
     'analysis_title': 'Forensic Statistical Analysis',
