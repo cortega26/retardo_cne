@@ -1,7 +1,13 @@
 node_modules
 .lighthouseci
 
-
+.agents/
+.claude/
+.continue/
 
 #Ignore vscode AI rules
 .github/instructions/codacy.instructions.md
+
+# Claude Design artifacts
+retardo_cne.html
+retardo_cne_files/

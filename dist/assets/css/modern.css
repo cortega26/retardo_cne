@@ -19,10 +19,10 @@
   --text-secondary: #4b5563;
 
   /* Muted Slate */
-  --text-accent: #0f5ea8;
-  --color-primary-brand: #0f5ea8;
+  --text-accent: #2742cc;
+  --color-primary-brand: #2742cc;
 
-  /* Sky Blue */
+  /* Indigo (from theme.css design system) */
 
   --color-danger: #dc2626;
 
@@ -82,9 +82,9 @@ body.dark-mode {
   --text-secondary: #cbd5e1;
 
   /* Muted slate text */
-  --text-accent: #7dd3fc;
+  --text-accent: #8ea8fb;
 
-  /* Bright Sky Blue */
+  /* Brand-300 from theme.css */
 
   --color-danger: #ef4444;
 
@@ -212,9 +212,9 @@ button:focus-visible {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #0f5ea8, #0a4b85);
-  border-color: transparent;
-  box-shadow: 0 12px 22px -16px rgba(15, 94, 168, 0.7);
+  background: var(--color-primary-brand);
+  border-color: var(--color-primary-brand);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .btn-primary:hover,
@@ -237,8 +237,9 @@ button:focus-visible {
 }
 
 body.dark-mode .btn-primary {
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  background: var(--text-accent);
   color: #0b1020;
+  border-color: var(--text-accent);
 }
 
 body.dark-mode .btn-outline-primary {
@@ -253,30 +254,25 @@ body.dark-mode .btn-outline-primary:focus-visible {
 
 /* Custom Toggler Styling */
 .custom-toggler {
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card-hover);
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-
-  /* Slightly rounded */
   transition: background 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
-
-  /* Spacing between bars */
 }
 
 .custom-toggler:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--border-subtle);
 }
 
 .custom-toggler:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px var(--color-primary-brand);
 }
 
 .toggler-icon {
@@ -351,9 +347,7 @@ header h1 {
 }
 
 body.dark-mode header h1 {
-  background: linear-gradient(to right, #ffffff, #94a3b8);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
 }
 
 header h2 {
@@ -1542,36 +1536,11 @@ body.dark-mode .international-validation .btn-outline-dark:hover {
 
 
 
-/* Ensure the striped animation is smooth */
+/* Progress bar animations */
 .progress-bar-animated {
   animation-duration: 3s;
 }
 
-/* "Acta" Watermark (Ruled Paper Texture) */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-
-  /* Subtle ruled paper lines */
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 100% 2rem;
-
-  /* Line height */
-  opacity: 0.65;
-}
-
-body.dark-mode::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  opacity: 0.35;
-}
 
 
 

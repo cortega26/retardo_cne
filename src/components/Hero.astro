@@ -4,8 +4,6 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const heroPrimaryCta = lang === 'es' ? 'Ver cronologia' : 'View timeline';
-const heroSecondaryCta = lang === 'es' ? 'Como verificar' : 'How to verify';
 const heroCards = [
   {
     metric: lang === 'es' ? '25.575' : '25,575',
@@ -63,8 +61,8 @@ const heroCards = [
       </div>
 
       <div class="hero-actions">
-        <a class="btn btn-primary hero-cta" href="#cronologia">{heroPrimaryCta}</a>
-        <a class="btn btn-outline-primary hero-cta hero-cta-secondary" href="#verificacion">{heroSecondaryCta}</a>
+        <a class="btn btn-primary hero-cta" href="#cronologia">{t('hero_cta_primary')}</a>
+        <a class="btn btn-outline-primary hero-cta hero-cta-secondary" href="#verificacion">{t('hero_cta_secondary')}</a>
       </div>
     </div>
 

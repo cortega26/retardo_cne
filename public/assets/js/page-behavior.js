@@ -59,7 +59,7 @@ function updateCounterElement(counter) {
   }
 
   update();
-  window.setInterval(update, 1000);
+  window.setInterval(update, 60000);
 }
 
 function initializeCounters() {

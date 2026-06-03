@@ -5,6 +5,7 @@
     "assets/vendor/**/*.css",
     "public/**/*.css",
     "dist/**/*.css",
+    "retardo_cne_files/**/*.css",
     "node_modules/**/*.css"
   ],
   "rules": {

@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
-  ignorePatterns: ['assets/vendor/**/*.js', 'assets/js/**/*.min.js', 'public/vendor/**', 'dist/**'],
+  ignorePatterns: ['assets/vendor/**/*.js', 'assets/js/**/*.min.js', 'public/vendor/**', 'dist/**', 'retardo_cne_files/**', 'retardo_cne.html'],
   overrides: [
     {
       files: ['playwright.config.js', 'scripts/**/*.js', 'tests/**/*.js'],
