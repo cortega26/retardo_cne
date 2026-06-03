@@ -1,0 +1,91 @@
+/*
+ * Design tokens — Retardo_CNE
+ * Tailwind v4 imported WITHOUT preflight so it coexists with the legacy
+ * modern.css/Bootstrap during the incremental revamp. Preflight (base reset)
+ * is intentionally omitted; re-add `@import "tailwindcss/preflight.css"
+ * layer(base);` once the legacy CSS is removed (Sprint 3).
+ *
+ * @theme tokens are emitted as :root CSS variables, so they are usable both as
+ * Tailwind utilities (bg-brand-600) and as raw CSS (var(--color-brand-600)).
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  /* ---- Brand: institutional deep blue (trust / authority) ---- */
+  --color-brand-50:  #eef3ff;
+  --color-brand-100: #dbe5ff;
+  --color-brand-200: #b8caff;
+  --color-brand-300: #8ea8fb;
+  --color-brand-400: #5e7ef3;
+  --color-brand-500: #3a59e6;
+  --color-brand-600: #2742cc;   /* primary */
+  --color-brand-700: #1e33a3;
+  --color-brand-800: #1a2b80;
+  --color-brand-900: #131f57;   /* ink navy for dark sections */
+  --color-brand-950: #0c1338;
+
+  /* ---- Breach: controlled crimson (incumplimiento / negative) ---- */
+  --color-breach-50:  #fdf2f1;
+  --color-breach-100: #fbe0de;
+  --color-breach-200: #f6c0bc;
+  --color-breach-300: #ec938c;
+  --color-breach-400: #df5f56;
+  --color-breach-500: #cd3a30;
+  --color-breach-600: #b22b22;   /* primary breach */
+  --color-breach-700: #91221c;
+  --color-breach-800: #78201b;
+  --color-breach-900: #65201c;
+
+  /* ---- Lawful: teal-green (proceso legal / cumplido / positive) ---- */
+  --color-lawful-50:  #ecfbf4;
+  --color-lawful-100: #d2f4e4;
+  --color-lawful-200: #a8e8cd;
+  --color-lawful-300: #6fd5af;
+  --color-lawful-400: #38ba8d;
+  --color-lawful-500: #169f72;   /* primary lawful */
+  --color-lawful-600: #0c805d;
+  --color-lawful-700: #0a664c;
+  --color-lawful-800: #0a513e;
+  --color-lawful-900: #084334;
+
+  /* ---- Highlight: Venezuela yellow (use sparingly) ---- */
+  --color-flag-yellow: #f3c34b;
+  --color-flag-blue:   #1c3fa0;
+  --color-flag-red:    #cf2b2b;
+
+  /* ---- Warm neutrals (paper/ink) — avoids the generic cool-gray look ---- */
+  --color-paper:     #f6f5f1;   /* page background */
+  --color-paper-200: #efeee8;
+  --color-surface:   #ffffff;   /* cards */
+  --color-ink-50:  #f4f5f7;
+  --color-ink-100: #e7e8ec;
+  --color-ink-200: #d2d5dd;
+  --color-ink-300: #b3b8c4;
+  --color-ink-400: #8b91a1;
+  --color-ink-500: #6a7180;   /* muted text */
+  --color-ink-600: #515868;
+  --color-ink-700: #3c4250;
+  --color-ink-800: #262b36;
+  --color-ink-900: #14171f;   /* body text */
+
+  /* ---- Typography ---- */
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+
+  --tracking-tightest: -0.04em;
+  --tracking-label: 0.14em;
+
+  /* ---- Radii ---- */
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+
+  /* ---- Shadows (soft, layered — document feel) ---- */
+  --shadow-card: 0 1px 2px rgb(20 23 31 / 0.04), 0 8px 24px -12px rgb(20 23 31 / 0.18);
+  --shadow-pop: 0 12px 40px -16px rgb(19 31 87 / 0.35);
+
+  /* ---- Section rhythm ---- */
+  --spacing-section: 4.5rem;
+}
