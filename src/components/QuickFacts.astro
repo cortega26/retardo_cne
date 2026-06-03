@@ -1,0 +1,230 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const es = lang === 'es';
+
+const kicker = es ? 'En 30 segundos' : 'In 30 seconds';
+const title = es ? 'Lo esencial, con fuente' : 'The essentials, with sources';
+const intro = es
+  ? 'Cuatro hechos verificables sobre las elecciones de 2024. Cada uno enlaza su fuente primaria.'
+  : 'Four verifiable facts about the 2024 election. Each one links to its primary source.';
+
+type Status = 'verified' | 'breach' | 'suspended';
+const statusLabel: Record<Status, string> = es
+  ? { verified: 'Verificado', breach: 'Incumplido', suspended: 'Suspendido' }
+  : { verified: 'Verified', breach: 'Breached', suspended: 'Suspended' };
+
+const facts: { metric: string; unit?: string; text: string; status: Status; source: string; href: string }[] = [
+  {
+    metric: '25.575',
+    unit: es ? 'de 30.026 mesas' : 'of 30,026 tables',
+    text: es
+      ? 'Actas ciudadanas publicadas (85%). El CNE publicó 0 resultados oficiales por mesa.'
+      : 'Citizen tally sheets published (85%). The CNE published 0 official per-table results.',
+    status: 'verified',
+    source: 'ResultadosConVzla',
+    href: 'https://resultadosconvzla.com/',
+  },
+  {
+    metric: '2 / 2',
+    unit: es ? 'plazos legales' : 'legal deadlines',
+    text: es
+      ? 'Plazos incumplidos: totalización en 48h (Art. 146) y Gaceta en 30 días (Art. 155).'
+      : 'Deadlines missed: 48h totalization (Art. 146) and 30-day Gazette (Art. 155).',
+    status: 'breach',
+    source: 'LOPRE',
+    href: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf',
+  },
+  {
+    metric: '4',
+    unit: es ? 'organismos' : 'bodies',
+    text: es
+      ? 'Centro Carter, ONU, UE y OEA reportaron falta de transparencia e integridad.'
+      : 'Carter Center, UN, EU and OAS reported a lack of transparency and integrity.',
+    status: 'verified',
+    source: es ? 'Centro Carter' : 'Carter Center',
+    href: 'https://www.cartercenter.org/news/venezuela-073024/',
+  },
+  {
+    metric: '0',
+    unit: es ? 'auditorías' : 'audits',
+    text: es
+      ? 'Auditorías post-electorales completadas con observación independiente.'
+      : 'Post-election audits completed with independent observation.',
+    status: 'suspended',
+    source: es ? 'Protocolos CNE (archivo)' : 'CNE protocols (archive)',
+    href: 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php',
+  },
+];
+
+const sourceLabel = es ? 'Fuente:' : 'Source:';
+const vizTitle = es ? 'Lo que existe vs. lo que el CNE publicó' : 'What exists vs. what the CNE published';
+const vizCitizen = es ? 'Actas ciudadanas publicadas' : 'Citizen tally sheets published';
+const vizOfficial = es ? 'Resultados oficiales por mesa' : 'Official per-table results';
+const vizNote = es ? 'Mesas: 30.026 · Actas digitalizadas: 25.575 (3 ene 2025)' : 'Tables: 30,026 · Digitized sheets: 25,575 (Jan 3 2025)';
+---
+
+<section id="resumen" class="quick-facts" aria-labelledby="quick-facts-title">
+  <div class="qf-inner">
+    <header class="qf-head">
+      <span class="qf-kicker">{kicker}</span>
+      <h2 id="quick-facts-title">{title}</h2>
+      <p class="qf-intro">{intro}</p>
+    </header>
+
+    <ul class="qf-grid" role="list">
+      {facts.map((f) => (
+        <li class={`qf-card qf-${f.status}`}>
+          <p class="qf-metric">{f.metric}{f.unit ? <span class="qf-unit">{f.unit}</span> : null}</p>
+          <p class="qf-text">{f.text}</p>
+          <div class="qf-foot">
+            <a class="qf-source" href={f.href} target="_blank" rel="noopener noreferrer">
+              <span class="qf-source-label">{sourceLabel}</span> {f.source}
+            </a>
+            <span class={`qf-pill qf-pill-${f.status}`}>{statusLabel[f.status]}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <figure class="qf-viz">
+      <figcaption class="qf-viz-title">{vizTitle}</figcaption>
+      <div class="qf-bar-row">
+        <span class="qf-bar-label">{vizCitizen}</span>
+        <div class="qf-bar-track"><div class="qf-bar-fill qf-bar-citizen" style="inline-size: 85%;"><span>85%</span></div></div>
+      </div>
+      <div class="qf-bar-row">
+        <span class="qf-bar-label">{vizOfficial}</span>
+        <div class="qf-bar-track"><div class="qf-bar-fill qf-bar-official" style="inline-size: 1.5%;"></div><span class="qf-bar-zero">0%</span></div>
+      </div>
+      <p class="qf-viz-note">{vizNote}</p>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .quick-facts {
+    width: min(var(--page-shell), 100%);
+    margin-inline: auto;
+    margin-top: var(--section-space);
+  }
+  .qf-inner {
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+  }
+  .qf-head { text-align: center; max-width: 60ch; margin-inline: auto; }
+  .qf-kicker {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+    background: color-mix(in srgb, var(--color-brand-600) 9%, transparent);
+    border: 1px solid var(--border-ornament);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-pill);
+  }
+  .qf-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+    letter-spacing: var(--tracking-tightest);
+    line-height: 1.1;
+    margin: 0.9rem 0 0.5rem;
+    color: var(--text-primary);
+  }
+  .qf-intro { color: var(--text-secondary); margin: 0; }
+
+  .qf-grid {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .qf-card {
+    position: relative;
+    padding: 1.35rem 1.25rem 1.1rem;
+    border-radius: calc(var(--radius-card) - 0.25rem);
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    border-top: 3px solid var(--color-ink-300);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .qf-verified { border-top-color: var(--color-lawful-500); }
+  .qf-breach { border-top-color: var(--color-breach-500); }
+  .qf-suspended { border-top-color: var(--color-flag-yellow); }
+
+  .qf-metric {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  .qf-unit {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+  .qf-text { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin: 0; flex: 1; }
+  .qf-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+  .qf-source { font-size: 0.82rem; color: var(--color-brand-600); text-decoration: none; font-weight: 600; }
+  .qf-source:hover { text-decoration: underline; }
+  .qf-source-label { color: var(--text-secondary); font-weight: 400; }
+  .qf-pill {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.6rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+  }
+  .qf-pill-verified { color: var(--color-lawful-700); background: var(--color-lawful-100); }
+  .qf-pill-breach { color: var(--color-breach-700); background: var(--color-breach-100); }
+  .qf-pill-suspended { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
+
+  .qf-viz {
+    margin: 2rem 0 0;
+    padding: 1.5rem;
+    border-radius: calc(var(--radius-card) - 0.25rem);
+    background: var(--color-brand-950);
+    color: #eef2fb;
+  }
+  .qf-viz-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin: 0 0 1.1rem; color: #fff; }
+  .qf-bar-row { display: grid; grid-template-columns: minmax(160px, 0.4fr) 1fr; align-items: center; gap: 1rem; margin-bottom: 0.85rem; }
+  .qf-bar-label { font-size: 0.88rem; color: #c3cbe2; }
+  .qf-bar-track { position: relative; height: 1.6rem; background: color-mix(in srgb, #fff 8%, transparent); border-radius: var(--radius-pill); overflow: hidden; display: flex; align-items: center; }
+  .qf-bar-fill { height: 100%; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: flex-end; padding-inline: 0.6rem; font-size: 0.78rem; font-weight: 700; color: #fff; min-inline-size: 2.2rem; }
+  .qf-bar-citizen { background: linear-gradient(90deg, var(--color-lawful-600), var(--color-lawful-400)); }
+  .qf-bar-official { background: var(--color-breach-500); }
+  .qf-bar-zero { margin-inline-start: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--color-breach-300); }
+  .qf-viz-note { margin: 1rem 0 0; font-size: 0.78rem; color: #95a0bd; font-family: var(--font-mono); }
+
+  @media (max-width: 520px) {
+    .qf-bar-row { grid-template-columns: 1fr; gap: 0.35rem; }
+  }
+</style>

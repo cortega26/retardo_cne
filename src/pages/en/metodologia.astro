@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const lastVerified = '2025-05-27';
+---
+
+<Layout title="Methodology & corrections">
+  <Navbar />
+  <main class="method-page">
+    <article class="method-shell">
+      <a class="method-back" href={`${base}/en/`}>← Back to the observatory</a>
+      <span class="method-kicker">How we work</span>
+      <h1>Methodology &amp; corrections</h1>
+      <p class="method-lead">
+        This observatory documents <strong>verifiable</strong> breaches by the CNE. The minimum standard is simple:
+        every claim must have a primary source or a verifiable archive. When no primary evidence exists, the fact is
+        marked <em>pending</em> or <em>disputed</em>, and we explain why.
+      </p>
+
+      <section class="method-block">
+        <h2>Evidence status</h2>
+        <p>Each strong claim carries one of these tags:</p>
+        <ul class="legend">
+          <li><span class="pill pill-verified">Verified</span> A primary source <em>and</em> a public archive exist that anyone can review.</li>
+          <li><span class="pill pill-pending">Pending</span> Primary evidence has not been published; reliable secondary reports exist.</li>
+          <li><span class="pill pill-disputed">Disputed</span> Relevant sources present incompatible versions.</li>
+        </ul>
+      </section>
+
+      <section class="method-block">
+        <h2>Source tiers</h2>
+        <p>Not all sources carry equal weight. We label each one by type:</p>
+        <ul class="tiers">
+          <li><strong>Official</strong> — CNE, TSJ, Electoral Gazette, international bodies.</li>
+          <li><strong>Observer</strong> — missions and panels with published methodology (Carter Center, UN Panel, EU, OAS).</li>
+          <li><strong>NGO</strong> — reports with verifiable methodology (HRW, OHCHR, Amnesty).</li>
+          <li><strong>Academic</strong> — independent analysis with a citable method (Tao, Kronick, Gelman, Mebane).</li>
+          <li><strong>Citizen</strong> — verifiable tally sheets and databases (ResultadosConVzla).</li>
+        </ul>
+      </section>
+
+      <section class="method-block">
+        <h2>How to verify it yourself</h2>
+        <ol class="steps">
+          <li>Open <a href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">ResultadosConVzla</a> and find your polling table.</li>
+          <li>Cross-check the <strong>QR code and serial</strong> on the tally sheet against the published image.</li>
+          <li>Compare the sum of tables with the official result. The CNE never published the per-table breakdown, so it cannot be cross-checked — that is the point.</li>
+        </ol>
+      </section>
+
+      <section class="method-block">
+        <h2>Corrections</h2>
+        <p>
+          If you find an error, send the corrected source and a short explanation via
+          <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
+          Corrections are logged with date, reason and reference. Content is under a Creative Commons license and the code is open source.
+        </p>
+      </section>
+
+      <section class="method-block">
+        <h2>Update log</h2>
+        <p class="method-updated">Last general verification: <strong>{lastVerified}</strong>.</p>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .method-page { padding: clamp(2rem, 6vw, 4rem) 0 4rem; }
+  .method-shell { width: min(50rem, calc(100vw - 2rem)); margin-inline: auto; }
+  .method-back { font-size: 0.85rem; color: var(--color-brand-600); text-decoration: none; font-weight: 600; }
+  .method-back:hover { text-decoration: underline; }
+  .method-kicker {
+    display: block; margin-top: 1.5rem;
+    font-family: var(--font-mono); font-size: 0.72rem;
+    letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-brand-700);
+  }
+  .method-shell h1 {
+    font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: var(--tracking-tightest); line-height: 1.05; margin: 0.4rem 0 1.25rem; color: var(--text-primary);
+  }
+  .method-lead { font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); }
+  .method-block { margin-top: 2.5rem; }
+  .method-block h2 {
+    font-family: var(--font-display); font-size: 1.4rem; letter-spacing: -0.02em; color: var(--text-primary); margin: 0 0 0.75rem;
+  }
+  .method-block p, .method-block li { color: var(--text-secondary); line-height: 1.65; }
+  .legend, .tiers, .steps { margin: 0.5rem 0 0; padding-left: 0; list-style: none; }
+  .legend li { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
+  .tiers li, .steps li { margin-bottom: 0.6rem; }
+  .steps li { list-style: decimal; margin-left: 1.25rem; padding-left: 0.35rem; }
+  .pill {
+    font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 0.26rem 0.6rem; border-radius: var(--radius-pill); white-space: nowrap;
+  }
+  .pill-verified { color: var(--color-lawful-700); background: var(--color-lawful-100); }
+  .pill-pending { color: #7a5b09; background: color-mix(in srgb, var(--color-flag-yellow) 30%, white); }
+  .pill-disputed { color: var(--color-breach-700); background: var(--color-breach-100); }
+  a { color: var(--color-brand-600); }
+</style>

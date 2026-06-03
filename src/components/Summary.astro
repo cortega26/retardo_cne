@@ -3,6 +3,8 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/metodologia`;
 ---
 
 <!-- Methodology callout (matches live site structure) -->
@@ -10,7 +12,7 @@ const t = useTranslations(lang);
   <div class="story-card text-center">
     <p class="story-kicker">{lang === 'es' ? 'Metodología de verificación' : 'Verification Methodology'}</p>
     <p class="mb-2">{t('methodology_text')}</p>
-    <a class="story-link" href="#auditorias">{t('methodology_link')} →</a>
+    <a class="story-link" href={methodologyHref}>{t('methodology_link')} →</a>
   </div>
 </section>
 

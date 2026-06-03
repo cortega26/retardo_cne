@@ -337,8 +337,32 @@ body.dark-mode .credibility-bar {
 }
 
 .timeline .content {
-  border-radius: 24px !important;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-card) !important;
+  border: 1px solid var(--border-subtle);
+}
+
+/*
+ * Section rhythm — tint the "legal process vs reality" comparison so it reads
+ * as a distinct zone and breaks the monotony of stacked white cards.
+ */
+#sistema {
+  background: color-mix(in srgb, var(--color-brand-600) 6%, var(--bg-body)) !important;
+}
+
+body.dark-mode #sistema {
+  background: color-mix(in srgb, var(--color-brand-400) 8%, var(--bg-body)) !important;
+}
+
+/* Accessible, consistent keyboard focus ring across the site. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-brand-500) 60%, transparent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @media (max-width: 1180px) {

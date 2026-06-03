@@ -63,8 +63,8 @@ export const ui = {
 
     'badge_analysis': 'ANÁLISIS FORENSE',
     'analysis_title': 'Análisis Estadístico Forense',
-    'analysis_subtitle': 'Matemáticos y estadísticos de instituciones globales coinciden en la anomalía de los datos oficiales.',
-    'analysis_expert_subtitle': 'Matemáticos y estadísticos de instituciones globales coinciden en la anomalía de los datos oficiales.',
+    'analysis_subtitle': 'Matemáticos y estadísticos de instituciones reconocidas señalan anomalías en los datos oficiales del CNE, con distintos grados de certeza.',
+    'analysis_expert_subtitle': 'Matemáticos y estadísticos de instituciones reconocidas señalan anomalías en los datos oficiales del CNE, con distintos grados de certeza.',
     'analysis_tao_name': 'Terence Tao',
     'analysis_role_tao': 'Medalla Fields / UCLA',
     'analysis_tao_summary': 'Analizó la imposibilidad estadística de la distribución de decimales en los boletines oficiales.',
@@ -78,7 +78,7 @@ export const ui = {
     'analysis_role_mebane': 'University of Michigan',
     'analysis_mebane_summary': 'Aplicación del test de Benford para detectar manipulación humana en cifras electorales.',
 
-    'badge_share': 'DIFUNDIR VERDAD',
+    'badge_share': 'COMPARTE LA EVIDENCIA',
     'action_title': 'La transparencia es un derecho',
     'action_text': 'Comparte este observatorio para que más personas accedan a la evidencia técnica e institucional.',
     'action_share_btn': 'Compartir Observatorio',
@@ -311,7 +311,7 @@ export const ui = {
 
     'badge_analysis': 'FORENSIC ANALYSIS',
     'analysis_title': 'Forensic Statistical Analysis',
-    'analysis_expert_subtitle': 'Mathematicians and statisticians from global institutions agree on official data anomalies.',
+    'analysis_expert_subtitle': 'Mathematicians and statisticians from recognized institutions flag anomalies in the official CNE data, with varying degrees of certainty.',
     'analysis_tao_name': 'Terence Tao',
     'analysis_role_tao': 'Fields Medal / UCLA',
     'analysis_tao_summary': 'Analyzed the mathematical impossibility of the decimal distribution in official bulletins.',
@@ -325,7 +325,7 @@ export const ui = {
     'analysis_role_mebane': 'University of Michigan',
     'analysis_mebane_summary': 'Application of the Benford test to detect human manipulation in electoral figures.',
 
-    'badge_share': 'SPREAD TRUTH',
+    'badge_share': 'SHARE THE EVIDENCE',
     'action_title': 'Transparency is a Right',
     'action_text': 'Share this observatory so more people can access technical and institutional evidence.',
     'action_share_btn': 'Share Observatory',

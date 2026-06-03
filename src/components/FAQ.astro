@@ -36,7 +36,20 @@ const faqs = [
     sources: [{ label: lang === 'es' ? 'Cómo verificar un acta' : 'How to verify an acta', url: 'https://cnnespanol.cnn.com/2024/08/05/como-saber-acta-de-escrutinio-venezuela-autentica-orix/' },
               { label: 'Macedonia Del Norte', url: 'https://macedoniadelnorte.com/' }] },
 ];
+
+// Structured data for rich results / machine citability (audit C6).
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section id="verificacion" class="story-section container my-5">
   <div class="text-center mb-5">

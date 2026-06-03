@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Hero from '../../components/Hero.astro';
+import QuickFacts from '../../components/QuickFacts.astro';
 import Summary from '../../components/Summary.astro';
 import ThreeMinuteReview from '../../components/ThreeMinuteReview.astro';
 import BackgroundCards from '../../components/BackgroundCards.astro';
@@ -28,9 +29,9 @@ const t = useTranslations(lang);
 	<Navbar />
 	<main>
 		<Hero />
+		<QuickFacts />
 		<Summary />
 		<ThreeMinuteReview />
-		<BackgroundCards />
 		<LegalDeadlines />
 		<Timeline />
 		<Context />
@@ -40,6 +41,7 @@ const t = useTranslations(lang);
 		<International />
 		<Analysis />
 		<FAQ />
+		<BackgroundCards />
 		<Impact />
 		<Action />
 		<Share />
