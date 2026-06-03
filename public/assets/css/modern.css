@@ -1930,18 +1930,12 @@ body.dark-mode .timeline::after {
   width: min(100%, 92vw);
 }
 
-@supports (content-visibility: auto) {
-
-  .timeline-section,
-  .international-validation,
-  .share-container,
-  .mission-statement,
-  .story-section,
-  #main-content {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 1000px;
-  }
-}
+/*
+ * content-visibility:auto was removed: the fixed contain-intrinsic-size of
+ * 1000px rarely matched real section heights (2400-2600px), causing scroll
+ * jank and inaccurate anchor jumps (#cronologia, #verificacion). The page is
+ * small enough that the rendering optimization is not needed.
+ */
 
 @media (min-width: 1200px) {
 

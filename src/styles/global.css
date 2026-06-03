@@ -234,13 +234,16 @@ body.dark-mode .navbar {
 }
 
 .hero-shell h1 {
-  max-width: 10.6ch;
+  max-width: 20ch;
   margin-bottom: 1.25rem;
-  font-size: clamp(2.85rem, 6.1vw, 5.25rem);
-  line-height: 0.97;
-  letter-spacing: -0.042em;
+  font-size: clamp(2.6rem, 5.6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
   text-wrap: balance;
-  overflow-wrap: anywhere;
+  /* Keep whole words intact; only break truly unbreakable strings. */
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .credibility-bar {
