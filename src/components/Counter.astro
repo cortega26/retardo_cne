@@ -90,7 +90,7 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
-    background: #c0392b;
+    background: var(--color-ink-600);
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
     flex-shrink: 0;
@@ -150,15 +150,8 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
   }
 
   .progress-track__violation {
-    background: #c0392b;
+    background: var(--color-ink-300);
     border-radius: 0 2px 2px 0;
     flex: 1;
-    background: repeating-linear-gradient(
-      -45deg,
-      #c0392b,
-      #c0392b 4px,
-      #a93226 4px,
-      #a93226 8px
-    );
   }
 </style>

@@ -28,7 +28,7 @@ export const ui = {
     'nav_action': 'CÓMO AYUDAR',
     
     'badge_herosub': 'VERIFICACIÓN ELECTORAL 2024',
-    'hero_title': 'Incumplimientos verificables del CNE',
+    'hero_title': 'Hechos verificables del proceso electoral',
     'hero_subtitle': 'Normas, plazos y evidencia primaria para auditar la transparencia electoral en Venezuela.',
     'hero_cta_primary': 'Explorar Cronología',
     'hero_cta_secondary': 'Ver Auditorías',
@@ -43,7 +43,7 @@ export const ui = {
     'review_step_3_text': 'Las actas se centralizan en bases de datos abiertas para contrastar con resultados oficiales.',
 
     'badge_actas': 'EVIDENCIA CIUDADANA',
-    'verified_actas_subtitle': 'La red de testigos recolectó el respaldo físico que el CNE se niega a publicar de forma desagregada.',
+    'verified_actas_subtitle': 'La red de testigos recolectó el respaldo físico que el CNE no ha publicado de forma desagregada.',
     'verified_minutes_label': 'ACTAS DIGITALIZADAS',
     'verified_volunteers_label': 'TESTIGOS Y VOLUNTARIOS',
     'verified_macedonia_label': 'VERIFICACIÓN INDEPENDIENTE',
@@ -122,7 +122,7 @@ export const ui = {
     'sources_label': 'Fuente:',
     'impact_source_label': 'Documentación:',
 
-    'badge_timeline': 'CRONOLOGÍA DE LA RUPTURA',
+    'badge_timeline': 'CRONOLOGÍA DE EVENTOS',
     'timeline_subtitle': 'Sucesión de eventos que documentan el apartamiento de la norma legal y técnica.',
     'month_jul': 'JULIO',
     'month_aug': 'AGOSTO',
@@ -166,7 +166,7 @@ export const ui = {
 
     'badge_impact': 'IMPACTO Y DDHH',
     'badge_international_section': 'PERSPECTIVA GLOBAL',
-    'impact_subtitle': 'Consecuencias de la opacidad electoral en el tejido civil y democrático.',
+    'impact_subtitle': 'Consecuencias de la falta de publicación de resultados en el tejido civil y democrático.',
     'impact_indicator_1_label': 'Cierre del Espacio Cívico',
     'impact_indicator_1_text': 'Persecución a testigos y voluntarios que custodiaron las actas.',
     'impact_indicator_2_label': 'Legitimidad Institucional',
@@ -224,7 +224,7 @@ export const ui = {
     'hero_stat_1': 'Más de 25.000 actas ciudadanas verificadas frente a 0 resultados oficiales publicados por mesa.',
     'hero_stat_1_source_primary': 'ResultadosConVzla',
     'hero_stat_1_source_archive': 'Archivo CNE (Wayback Machine)',
-    'hero_stat_2': 'Organismos internacionales reportaron fallas de transparencia e integridad en el proceso.',
+    'hero_stat_2': 'Organismos internacionales formularon señalamientos sobre transparencia e integridad en el proceso.',
     'hero_stat_2_source_carter': 'Centro Carter',
     'hero_stat_2_source_un': 'Panel ONU',
     'hero_stat_3': 'Plazos legales vencidos y auditorías post-electorales sin evidencia pública.',
@@ -241,9 +241,9 @@ export const ui = {
     'international_title': 'Reacciones Internacionales',
     'international_intro': 'Principales organismos internacionales solicitaron resultados desagregados por mesa, los cuales nunca fueron provistos por el CNE.',
     'card_carter_text': 'El Centro Carter solicitó el desglose de resultados por mesa de votación. Dicha información nunca fue proporcionada por el CNE, lo que impidió la verificación independiente.',
-    'card_un_text': 'El Panel de Expertos de la ONU identificó irregularidades en el proceso de transmisión de datos y señaló la ausencia de transparencia en la publicación de resultados.',
+    'card_un_text': 'El Panel de Expertos de la ONU identificó irregularidades en el proceso de transmisión de datos y señaló la falta de publicación de datos desagregados en los resultados.',
     'card_eu_text': 'La Unión Europea llamó a la transparencia inmediata y a la publicación de actas desagregadas como condición mínima para el reconocimiento del proceso.',
-    'card_oas_text': 'La OEA condenó la opacidad del proceso y exigió una auditoría independiente de los resultados ante la falta de evidencia verificable.',
+    'card_oas_text': 'La OEA se pronunció sobre la falta de transparencia del proceso y exigió una auditoría independiente de los resultados ante la falta de evidencia verificable.',
 
     // BL-001: Missing keys — footer
     'footer_rights': 'Observatorio Electoral Ciudadano. Contenido bajo licencia Creative Commons.',
@@ -276,7 +276,7 @@ export const ui = {
     'nav_action': 'HOW TO HELP',
     
     'badge_herosub': '2024 ELECTORAL VERIFICATION',
-    'hero_title': 'Verifiable Breaches by the CNE',
+    'hero_title': 'Verifiable facts about the electoral process',
     'hero_subtitle': 'Rules, deadlines, and primary evidence to audit electoral transparency in Venezuela.',
     'hero_cta_primary': 'Explore Timeline',
     'hero_cta_secondary': 'View Audits',
@@ -291,7 +291,7 @@ export const ui = {
     'review_step_3_text': 'Minutes are centralized in open databases to contrast with official results.',
 
     'badge_actas': 'CITIZEN EVIDENCE',
-    'verified_actas_subtitle': 'The witness network collected the physical backup that the CNE refuses to publish at the precinct level.',
+    'verified_actas_subtitle': 'The witness network collected the physical backup that the CNE has not published at the precinct level.',
     'verified_minutes_label': 'DIGITIZED ACTAS',
     'verified_volunteers_label': 'WITNESSES & VOLUNTEERS',
     'verified_macedonia_label': 'INDEPENDENT VERIFICATION',
@@ -369,7 +369,7 @@ export const ui = {
     'sources_label': 'Source:',
     'impact_source_label': 'Documentation:',
 
-    'badge_timeline': 'TIMELINE OF THE BREACH',
+    'badge_timeline': 'TIMELINE OF EVENTS',
     'timeline_subtitle': 'Succession of events documenting the departure from legal and technical norms.',
     'month_jul': 'JULY',
     'month_aug': 'AUGUST',
@@ -413,7 +413,7 @@ export const ui = {
 
     'badge_impact': 'IMPACT & HR',
     'badge_international_section': 'GLOBAL PERSPECTIVE',
-    'impact_subtitle': 'Consequences of electoral opacity on civic and democratic tissue.',
+    'impact_subtitle': 'Consequences of the lack of published results on civic and democratic tissue.',
     'impact_indicator_1_label': 'Civic Space Closure',
     'impact_indicator_1_text': 'Persecution of witnesses and volunteers who guarded the ballots.',
     'impact_indicator_2_label': 'Institutional Legitimacy',
@@ -474,7 +474,7 @@ export const ui = {
     'hero_stat_1': 'Over 25,000 citizen actas verified versus 0 official precinct-level results published.',
     'hero_stat_1_source_primary': 'ResultadosConVzla',
     'hero_stat_1_source_archive': 'CNE Archive (Wayback Machine)',
-    'hero_stat_2': 'International bodies reported transparency and integrity failures in the process.',
+    'hero_stat_2': 'International bodies raised transparency and integrity concerns in the process.',
     'hero_stat_2_source_carter': 'Carter Center',
     'hero_stat_2_source_un': 'UN Panel',
     'hero_stat_3': 'Legal deadlines expired and post-election audits without public evidence.',
@@ -491,9 +491,9 @@ export const ui = {
     'international_title': 'International Reactions',
     'international_intro': 'Major international bodies requested precinct-level disaggregated results, which were never provided by the CNE.',
     'card_carter_text': 'The Carter Center requested a breakdown of results by polling station. This information was never provided by the CNE, preventing independent verification.',
-    'card_un_text': 'The UN Expert Panel identified irregularities in the data transmission process and noted the absence of transparency in the publication of results.',
+    'card_un_text': 'The UN Expert Panel identified irregularities in the data transmission process and noted the lack of disaggregated data publication in the results.',
     'card_eu_text': 'The European Union called for immediate transparency and the publication of disaggregated actas as a minimum condition for recognition of the process.',
-    'card_oas_text': 'The OAS condemned the opacity of the process and demanded an independent audit of the results given the lack of verifiable evidence.',
+    'card_oas_text': 'The OAS expressed concern over the lack of transparency in the process and demanded an independent audit of the results given the lack of verifiable evidence.',
 
     // BL-001: Missing keys — footer
     'footer_rights': 'Citizen Electoral Observatory. Content under Creative Commons license.',

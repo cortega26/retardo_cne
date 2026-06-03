@@ -219,7 +219,6 @@ button:focus-visible {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  transform: translateY(-1px);
   box-shadow: 0 18px 28px -18px rgba(15, 94, 168, 0.8);
 }
 
@@ -491,16 +490,16 @@ header h2 {
 
 .status-tag-met {
   color: #065f46;
-  background: linear-gradient(130deg, rgba(5, 150, 105, 0.2), rgba(5, 150, 105, 0.05));
+  background: rgba(5, 150, 105, 0.1);
   border-color: rgba(5, 150, 105, 0.45);
-  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+  box-shadow: none;
 }
 
 .status-tag-failed {
   color: #991b1b;
-  background: linear-gradient(130deg, rgba(220, 38, 38, 0.18), rgba(220, 38, 38, 0.05));
+  background: rgba(220, 38, 38, 0.1);
   border-color: rgba(220, 38, 38, 0.45);
-  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+  box-shadow: none;
 }
 
 .story-list-status .status-detail {
@@ -511,14 +510,14 @@ body.dark-mode .status-tag-met {
   color: #d1fae5;
   background: rgba(16, 185, 129, 0.2);
   border-color: rgba(16, 185, 129, 0.6);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+  box-shadow: none;
 }
 
 body.dark-mode .status-tag-failed {
   color: #fee2e2;
   background: rgba(239, 68, 68, 0.2);
   border-color: rgba(239, 68, 68, 0.6);
-  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.25);
+  box-shadow: none;
 }
 
 .story-link {
@@ -763,9 +762,7 @@ body.dark-mode .counter-container {
 
 /* Target the number inside the span */
 .counter .number {
-  font-size: 2.5rem;
-
-  /* Adjusted for better fit */
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
@@ -833,7 +830,7 @@ body.dark-mode .counter .number.odometer .odometer-digit {
   }
 
   .counter .number {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -907,7 +904,7 @@ body.dark-mode .legal-reference {
 }
 
 .social-icons .btn:hover {
-  transform: translateY(-3px) scale(1.1);
+  opacity: 0.85;
   background: var(--color-primary-brand, #ffffff);
 
   /* Fallback */
@@ -1036,7 +1033,7 @@ body.dark-mode .social-icons .btn {
   }
 
   .counter .number {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   .share-container {
@@ -1285,7 +1282,6 @@ body.dark-mode footer {
 }
 
 .counter-claim-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-raised);
   border-color: var(--border-strong);
 }
@@ -1397,7 +1393,6 @@ body.dark-mode footer {
 }
 
 .international-validation .card:hover {
-  transform: translateY(-5px);
   box-shadow: var(--shadow-raised);
   border-color: var(--border-strong);
 }
@@ -1465,7 +1460,6 @@ body.dark-mode .international-validation .org-logo-wrap {
 }
 
 .international-validation .card:hover .org-logo-wrap {
-  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
 }
 
@@ -1667,7 +1661,6 @@ body.dark-mode .timeline::after {
 }
 
 .timeline-item .content:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-raised);
   border-color: var(--border-strong);
 }

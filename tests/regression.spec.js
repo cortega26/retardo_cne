@@ -35,15 +35,15 @@ test.describe('regression coverage', () => {
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
-    await expect(page).toHaveTitle(/Verifiable Breaches by the CNE/);
-    await expect(page.locator('h1')).toHaveText('Verifiable Breaches by the CNE');
+    await expect(page).toHaveTitle(/Verifiable facts about the electoral process/);
+    await expect(page.locator('h1')).toHaveText('Verifiable facts about the electoral process');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
     expect(storedLang).toBe('en');
 
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('h1')).toHaveText('Verifiable Breaches by the CNE');
+    await expect(page.locator('h1')).toHaveText('Verifiable facts about the electoral process');
   });
 
   test('copy link control is available in share section', async ({ page, context }) => {

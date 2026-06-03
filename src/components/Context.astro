@@ -29,7 +29,7 @@ const actualSteps = [
 // Labels for each state
 const labels: Record<string, string> = {
   partial:  lang === 'es' ? 'PARCIAL'    : 'PARTIAL',
-  violated: lang === 'es' ? 'INCUMPLIDO' : 'VIOLATED',
+  violated: t('status_violation').toUpperCase(),
   illegal:  lang === 'es' ? 'ILEGAL'     : 'ILLEGAL',
 };
 ---
