@@ -57,25 +57,25 @@ const orgs = [
 ];
 ---
 
-<section id="internacional" class="international-validation container my-5">
-  <h3 class="text-center mb-3 text-uppercase fw-bold">{t('international_title')}</h3>
-  <p class="story-subtitle text-center mb-5">{t('international_intro')}</p>
+<section id="internacional" class="international-validation max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12" aria-label={t('international_title')}>
+  <h3 class="text-center mb-6 uppercase font-bold">{t('international_title')}</h3>
+  <p class="story-subtitle text-center mb-12">{t('international_intro')}</p>
 
-  <div class="row g-4 justify-content-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
     {orgs.map((org, index) => (
-      <div class="col-md-6 col-lg-3">
-        <a class="card h-100 border-0 shadow-sm org-card text-decoration-none"
+      <div>
+        <a class="h-full org-card flex flex-col"
            href={org.href} target="_blank" rel="noopener noreferrer"
            aria-label={`${org.name}: ${org.label}`}>
-          <div class="card-body text-center d-flex flex-column p-4">
-            <div class="org-logo-wrap mb-3">
+          <div class="text-center flex flex-col p-4 flex-1">
+            <div class="org-logo-wrap mb-6">
               <img class="org-logo" src={org.logo} alt={org.logoAlt} loading="lazy" decoding="async" />
             </div>
-            <h5 class="card-title fw-bold mb-1" style="font-size: 0.95rem; color: var(--text-primary);">{org.name}</h5>
-            <p class="story-kicker mb-3">{org.date}</p>
-            <p class="card-text small flex-grow-1 fst-italic" style="color: var(--text-secondary); line-height: 1.6;">{org.quote}</p>
-            <div class="mt-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
-              <span class="story-link small fw-bold">{org.label} →</span>
+            <h5 class="font-semibold mb-2" style="font-size: 0.95rem; color: var(--text-primary);">{org.name}</h5>
+            <p class="story-kicker mb-6">{org.date}</p>
+            <p class="text-sm flex-1 italic" style="color: var(--text-secondary); line-height: 1.6;">{org.quote}</p>
+            <div class="mt-6 pt-3" style="border-top: 1px solid var(--border-subtle);">
+              <span class="story-link text-sm font-bold">{org.label} →</span>
             </div>
           </div>
         </a>

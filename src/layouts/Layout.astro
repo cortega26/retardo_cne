@@ -22,6 +22,7 @@ const basePath = '/retardo_cne';
 const siteOrigin = Astro.site ?? Astro.url;
 const canonicalUrl = new URL(Astro.url.pathname, siteOrigin).href;
 const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, siteOrigin).href;
+	const isMainPage = !Astro.url.pathname.includes('metodologia');
 ---
 
 <!doctype html>
@@ -71,9 +72,29 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 			"url": "https://tooltician.com/retardo_cne/",
 			"logo": socialImageUrl,
 		})} />
+			{isMainPage && <script type="application/ld+json" set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "ClaimReview",
+				"claimReviewed": lang === 'es' ? 'El CNE incumplió los procedimientos electorales legales durante las elecciones presidenciales de 2024' : 'The CNE failed to comply with legal electoral procedures during the 2024 presidential election',
+				"url": canonicalUrl,
+				"reviewRating": {
+					"@type": "Rating",
+					"worstRating": 1,
+					"bestRating": 5,
+					"ratingValue": 1,
+					"alternateName": lang === 'es' ? 'Incumplimiento verificado' : 'Verified non-compliance'
+				},
+				"itemReviewed": {
+					"@type": "Organization",
+					"name": "Consejo Nacional Electoral (CNE)",
+					"sameAs": "https://www.cne.gob.ve/"
+				},
+				"author": {
+					"@type": "Organization",
+					"name": "Observatorio Electoral Ciudadano"
+				}
+			})} />}
 
-		<!-- Bootstrap CSS (local, matching live site) -->
-		<link rel="stylesheet" href={`${basePath}/assets/css/bootstrap.min.css`} />
 
 		<!-- Modern.css — Live site design system -->
 		<link rel="stylesheet" href={`${basePath}/vendor/css/modern.min.css`} />
@@ -129,7 +150,6 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 	<body class="app-shell">
 		<a href="#main-content" class="skip-link">{lang === 'es' ? 'Ir al contenido principal' : 'Skip to main content'}</a>
 		<slot />
-		<script is:inline src="/retardo_cne/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
 		<script is:inline src="/retardo_cne/assets/js/navbar-behavior.js" defer></script>
 		<script is:inline src="/retardo_cne/assets/js/page-behavior.js" defer></script>
 	</body>

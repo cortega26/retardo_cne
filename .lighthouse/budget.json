@@ -1,0 +1,22 @@
+[
+  {
+    "resource-budgets": [
+      {
+        "resourceType": "total",
+        "budget": 500000
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 100000
+      },
+      {
+        "resourceType": "script",
+        "budget": 100000
+      },
+      {
+        "resourceType": "font",
+        "budget": 50000
+      }
+    ]
+  }
+]

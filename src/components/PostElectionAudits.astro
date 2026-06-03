@@ -60,10 +60,10 @@ const pcLabel     = lang === 'es' ? 'Prensa Comunitaria'        : 'Prensa Comuni
 const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: audits not performed';
 ---
 
-<section id="auditorias" class="story-section container my-5">
-  <div class="text-center mb-4">
-    <span class="country-tag mb-3 d-inline-block">{t('badge_audits')}</span>
-    <h3 class="text-uppercase fw-bold mb-2">
+<section id="auditorias" class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12" aria-label={t('nav_evidence_audits')}>
+  <div class="text-center mb-6">
+    <span class="country-tag mb-4 inline-block">{t('badge_audits')}</span>
+    <h3 class="uppercase font-bold mb-2">
       {lang === 'es' ? 'Las Auditorías Post-Electorales: La Tríada de Verificación' : 'Post-Election Audits: The Verification Triad'}
     </h3>
     <p class="story-subtitle">
@@ -71,10 +71,9 @@ const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: aud
     </p>
   </div>
 
-  <div class="row g-4">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {audits.map((audit, i) => (
-      <div class="col-lg-4">
-        <div class="story-card h-100">
+      <div class="story-card h-full">
           <p class="story-kicker">{audit.date}</p>
           <h4 class="story-title">{audit.title}</h4>
           <p class="story-status">{lang === 'es' ? 'Estado: ' : 'Status: '}{audit.status}</p>
@@ -88,9 +87,9 @@ const cnnLabel    = lang === 'es' ? 'CNN: auditorías no realizadas' : 'CNN: aud
   </div>
 
   <!-- Note + additional sources -->
-  <div class="text-center mt-4">
+  <div class="text-center mt-6">
     <p class="story-subtitle mb-3">{auditNote}</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3">
+    <div class="flex flex-wrap justify-center gap-3">
       <a class="btn btn-outline-primary btn-sm" href="https://x.com/phenobarbital/status/1818990019761091059" target="_blank" rel="noopener noreferrer">{hackLink}</a>
       <a class="btn btn-outline-primary btn-sm" href="https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/" target="_blank" rel="noopener noreferrer">{pcLabel}</a>
       <a class="btn btn-outline-primary btn-sm" href="https://cnnespanol.cnn.com/2024/08/22/auditorias-cne-no-hizo-elecciones-presidenciales-venezuela-orix" target="_blank" rel="noopener noreferrer">{cnnLabel}</a>

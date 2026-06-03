@@ -36,7 +36,7 @@ const heroCards = [
 ---
 
 <header id="inicio" class="hero-shell">
-  <div class="hero-grid container-fluid">
+  <div class="hero-grid w-full">
     <div class="hero-copy">
       <div class="hero-badges">
         <div class="country-tag">
@@ -71,7 +71,7 @@ const heroCards = [
         <article class="hero-note story-card">
           <p class="hero-note-metric">{card.metric}</p>
           <h2 class="hero-note-title">{card.title}</h2>
-          <div class="hero-note-sources text-muted">
+          <div class="hero-note-sources text-gray-500">
             {card.sources.map((source, index) => (
               <span>
                 {source.label ? <strong>{source.label} </strong> : null}

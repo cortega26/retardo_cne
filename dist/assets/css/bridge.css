@@ -101,3 +101,11 @@ body.dark-mode .status-tag-illegal {
 
 /* AOS removed — data-aos attributes stripped from all components */
 
+/* ─── Dropdown menu display control (replaces Bootstrap) ───────── */
+.dropdown-menu {
+  display: none;
+}
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+

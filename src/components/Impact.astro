@@ -26,21 +26,21 @@ const indicators = [
 ];
 ---
 
-<section id="impacto" class="story-section container my-5">
-  <div class="text-center mb-5">
-    <span class="country-tag mb-3 d-inline-block">{t('badge_impact')}</span>
-    <h3 class="text-uppercase fw-bold mb-3">{t('nav_context_impact_section')}</h3>
+<section id="impacto" class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12" aria-label={t('nav_context_impact_section')}>
+  <div class="text-center mb-12">
+    <span class="country-tag mb-4 inline-block">{t('badge_impact')}</span>
+    <h3 class="uppercase font-bold mb-6">{t('nav_context_impact_section')}</h3>
     <p class="story-subtitle">{t('impact_subtitle')}</p>
   </div>
 
-  <div class="row g-4">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {indicators.map((item, index) => (
-      <div class="col-lg-4">
-        <div class="story-card h-100 text-center d-flex flex-column">
-          <h4 class="h6 fw-bold text-uppercase mb-3" style="letter-spacing: 0.06em;">{item.label}</h4>
-          <p class="small mb-4 flex-grow-1" style="color: var(--text-secondary); line-height: 1.6;">{item.text}</p>
+      <div>
+        <div class="story-card h-full text-center flex flex-col">
+          <h4 class="text-base font-semibold uppercase mb-6" style="letter-spacing: 0.06em;">{item.label}</h4>
+          <p class="text-sm mb-6 flex-1" style="color: var(--text-secondary); line-height: 1.6;">{item.text}</p>
           <div class="mt-auto pt-3" style="border-top: 1px solid var(--border-subtle);">
-            <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" class="story-link small">
+            <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" class="story-link text-sm">
               {item.sourceLabel} →
             </a>
           </div>
@@ -66,8 +66,8 @@ const indicators = [
     </div>
   </div>
 
-  <div class="story-card mt-4 text-center" style="background: rgba(15, 94, 168, 0.05); box-shadow: var(--shadow-card), 0 0 0 1px rgba(15, 94, 168, 0.28);">
-    <p class="mb-0 fw-medium" style="color: var(--text-accent);">
+  <div class="story-card mt-6 text-center" style="background: rgba(15, 94, 168, 0.05); box-shadow: var(--shadow-card), 0 0 0 1px rgba(15, 94, 168, 0.28);">
+    <p class="mb-0 font-medium" style="color: var(--text-accent);">
       {t('impact_footer_text')}
     </p>
   </div>

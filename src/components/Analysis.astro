@@ -48,40 +48,40 @@ const experts = [
 ];
 ---
 
-<section id="analisis-tecnico" class="story-section container-fluid my-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="country-tag mb-3 d-inline-block">{t('badge_analysis')}</span>
-      <h3 class="text-uppercase fw-bold mb-3">{t('analysis_title')}</h3>
+<section id="analisis-tecnico" class="story-section w-full my-12" aria-label={t('nav_evidence_analysis')}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="country-tag mb-4 inline-block">{t('badge_analysis')}</span>
+      <h3 class="uppercase font-bold mb-6">{t('analysis_title')}</h3>
       <p class="story-subtitle">{t('analysis_subtitle')}</p>
     </div>
 
-    <div class="row g-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {experts.map((expert, index) => (
-        <div class="col-lg-6">
-          <div class="story-card h-100 d-flex flex-column">
-            <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+        <div>
+          <div class="story-card h-full flex flex-col">
+            <div class="flex items-start justify-between gap-3 mb-6">
               <div>
                 <p class="story-kicker mb-1">{expert.date}</p>
-                <h4 class="h6 fw-bold mb-0">{expert.name}</h4>
-                <p class="small text-muted mb-0">{expert.affiliation}</p>
+                <h4 class="text-base font-semibold mb-0">{expert.name}</h4>
+                <p class="text-sm text-gray-500 mb-0">{expert.affiliation}</p>
               </div>
-              <span class="status-tag status-tag-failed flex-shrink-0">
+              <span class="status-tag status-tag-failed shrink-0">
                 {lang === 'es' ? 'Hallazgo' : 'Finding'}
               </span>
             </div>
 
-            <p class="small mb-3 flex-grow-1" style="color: var(--text-secondary); line-height: 1.65; font-style: italic;">
+            <p class="text-sm mb-6 flex-1" style="color: var(--text-secondary); line-height: 1.65; font-style: italic;">
               "{expert.finding}"
             </p>
 
-            <div class="mb-3">
+            <div class="mb-6">
               <span class="story-kicker mb-0" style="display: inline;">{lang === 'es' ? 'Método:' : 'Method:'}</span>
-              <span class="small text-muted"> {expert.method}</span>
+              <span class="text-sm text-gray-500"> {expert.method}</span>
             </div>
 
             <div class="mt-auto pt-3" style="border-top: 1px solid var(--border-subtle);">
-              <a href={expert.url} target="_blank" rel="noopener noreferrer" class="story-link fw-bold">
+              <a href={expert.url} target="_blank" rel="noopener noreferrer" class="story-link font-bold">
                 {lang === 'es' ? 'Ver análisis completo' : 'Read full analysis'} →
               </a>
             </div>

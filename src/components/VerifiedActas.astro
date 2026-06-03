@@ -11,21 +11,21 @@ const stats = [
 ];
 ---
 
-<section id="actas" class="story-section container my-5">
-  <div class="text-center mb-5">
-    <span class="country-tag mb-3 d-inline-block">{t('badge_actas')}</span>
-    <h3 class="text-uppercase fw-bold mb-3">{t('nav_verification_section')}</h3>
+<section id="actas" class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+  <div class="text-center mb-12">
+    <span class="country-tag mb-4 inline-block">{t('badge_actas')}</span>
+    <h3 class="uppercase font-bold mb-6">{t('nav_verification_section')}</h3>
     <p class="story-subtitle">{t('verified_actas_subtitle')}</p>
   </div>
 
   <!-- Stats -->
-  <div class="row g-4 mb-5">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
     {stats.map(stat => (
-      <div class="col-md-4">
-        <div class="story-card h-100 text-center">
-          <h3 class="fw-bold mb-2" style="font-size: 3rem; font-family: var(--font-mono); color: var(--text-accent);">{stat.value}</h3>
-          <p class="small mb-1 text-uppercase" style="letter-spacing: 0.1em; color: var(--text-secondary);">{stat.label}</p>
-          <p class="small fw-bold mb-0" style="color: var(--text-primary);">{stat.sub}</p>
+      <div>
+        <div class="story-card h-full text-center">
+          <h3 class="font-bold mb-2" style="font-size: 3rem; font-family: var(--font-mono); color: var(--text-accent);">{stat.value}</h3>
+          <p class="text-sm mb-1 uppercase" style="letter-spacing: 0.1em; color: var(--text-secondary);">{stat.label}</p>
+          <p class="text-sm font-bold mb-0" style="color: var(--text-primary);">{stat.sub}</p>
         </div>
       </div>
     ))}
@@ -33,13 +33,13 @@ const stats = [
 
   <!-- CTA Card -->
   <div class="story-card" style="background: rgba(15, 94, 168, 0.04); box-shadow: var(--shadow-card), 0 0 0 1px rgba(15, 94, 168, 0.28);">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <h4 class="fw-bold mb-3" style="color: var(--text-primary);">{t('verified_cta_title')}</h4>
+    <div class="flex items-center flex-col lg:flex-row">
+      <div class="lg:w-2/3 mb-6 lg:mb-0 lg:pr-8">
+        <h4 class="font-bold mb-3" style="color: var(--text-primary);">{t('verified_cta_title')}</h4>
         <p style="color: var(--text-secondary); margin-bottom: 0;">{t('verified_cta_text')}</p>
       </div>
-      <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
-        <a href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary fw-bold px-5 py-3">
+      <div class="lg:w-1/3 lg:text-right">
+        <a href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary font-bold px-5 py-3">
           <svg class="icon me-2" viewBox="0 0 512 512" aria-hidden="true" width="1em" height="1em"><path d="M432 288v96c0 17.7-14.3 32-32 32H112c-17.7 0-32-14.3-32-32V112c0-17.7 14.3-32 32-32h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H112c-35.3 0-64 28.7-64 64v272c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V288c0-8.8-7.2-16-16-16s-16 7.2-16 16zM488 56L312 232c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L488 78.6V128c0 8.8 7.2 16 16 16s16-7.2 16-16V56c0-13.3-10.7-24-24-24h-72c-8.8 0-16 7.2-16 16s7.2 16 16 16h49.4L345.4 265.4c-6.2 6.2-6.2 16.4 0 22.6 6.2 6.2 16.4 6.2 22.6 0L544 78.6V56c0-13.3-10.7-24-24-24h-72c-8.8 0-16 7.2-16 16z"/></svg>{t('verified_cta_btn')}
         </a>
       </div>

@@ -8,10 +8,10 @@ const shareUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 const shareText = "Incumplimientos verificables del CNE - Transparencia Electoral 2024";
 ---
 
-<section id="compartir" class="section-padding border-top border-subtle">
-  <div class="container container-tight">
+<section id="compartir" class="section-padding border-t border-subtle" aria-label={t('badge_share')}>
+  <div class="w-full container-tight">
     <div class="share-card text-center">
-      <span class="country-tag d-inline-block mb-3">{t('badge_share')}</span>
+      <span class="country-tag inline-block mb-4">{t('badge_share')}</span>
       <h2 class="share-heading">{t('social_share_text')}</h2>
       <p class="share-sub">{lang === 'es' ? 'Comparte la evidencia verificable con tu red.' : 'Share the verifiable evidence with your network.'}</p>
 

@@ -8,7 +8,7 @@ const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/meto
 ---
 
 <!-- Methodology callout (matches live site structure) -->
-<section class="container my-4">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8" aria-label={lang === 'es' ? 'Metodología de verificación' : 'Verification Methodology'}>
   <div class="story-card text-center">
     <p class="story-kicker">{lang === 'es' ? 'Metodología de verificación' : 'Verification Methodology'}</p>
     <p class="mb-2">{t('methodology_text')}</p>
@@ -17,7 +17,7 @@ const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/meto
 </section>
 
 <!-- Mission statement (matches live site structure) -->
-<section class="mission-statement container text-center my-5">
+<section class="mission-statement max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-12" aria-label={lang === 'es' ? 'Declaración de la misión' : 'Mission statement'}>
   <p class="lead">
     {t('mission_text')}
   </p>

@@ -2,8 +2,14 @@
   "ci": {
     "collect": {
       "staticDistDir": "dist",
-      "url": ["./index.html"],
-      "settings": { "chromeFlags": "--no-sandbox" }
+      "url": [
+        "./index.html",
+        "./en/index.html",
+        "./metodologia/index.html",
+        "./en/metodologia/index.html"
+      ],
+      "settings": { "chromeFlags": "--no-sandbox" },
+      "budgetPath": ".lighthouse/budget.json"
     },
     "assert": {
       "assertions": {
@@ -11,7 +17,8 @@
         "categories:accessibility": ["warn", { "minScore": 0.9 }],
         "categories:best-practices": ["warn", { "minScore": 0.9 }],
         "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
-        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }]
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
+        "interaction-to-next-paint": ["warn", { "minScore": 0.9 }]
       }
     }
   }

@@ -67,6 +67,12 @@ main > *:not(header) {
   position: relative;
 }
 
+/* Override Tailwind's .collapse utility (visibility: collapse) — we use this
+   class name for the navbar expand/collapse panel, not CSS visibility. */
+.collapse {
+  visibility: visible;
+}
+
 .container,
 .container-fluid,
 .container-tight,
@@ -352,19 +358,6 @@ body.dark-mode .credibility-bar {
 body.dark-mode #sistema {
   background: color-mix(in srgb, var(--color-brand-400) 8%, var(--bg-body)) !important;
 }
-
-/*
- * Tailwind v4 emits a `.collapse { visibility: collapse }` utility that collides
- * with Bootstrap's `.collapse` component class (used by the navbar menu and the
- * FAQ accordion). Bootstrap hides via `display`, not `visibility`, so Tailwind's
- * rule leaks through and hides the navbar links/dropdowns/toggles and expanded
- * FAQ answers. This unlayered rule beats Tailwind's `@layer utilities` and
- * restores normal visibility (Bootstrap still hides closed panels via display).
- */
-.collapse {
-  visibility: visible;
-}
-
 /* Accessible, consistent keyboard focus ring across the site. */
 a:focus-visible,
 button:focus-visible,
@@ -405,6 +398,8 @@ summary:focus-visible,
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 20px 40px -32px rgba(15, 23, 42, 0.4);
+    max-height: calc(100dvh - var(--nav-height) - 2rem);
+    overflow-y: auto;
   }
 
   body.dark-mode .navbar-collapse {
