@@ -67,27 +67,6 @@ const shareText = "Incumplimientos verificables del CNE - Transparencia Electora
   </div>
 </section>
 
-<script>
-  const btn = document.getElementById('copyLinkBtn');
-  const label = document.getElementById('copyBtnLabel');
-  const url = window.location.href;
-  const isEn = document.documentElement.lang === 'en';
-
-  if (btn && label) {
-    btn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(url);
-        label.textContent = isEn ? '✓ Copied!' : '✓ ¡Copiado!';
-        setTimeout(() => {
-          label.textContent = isEn ? 'Copy link' : 'Copiar enlace';
-        }, 2500);
-      } catch {
-        label.textContent = url;
-      }
-    });
-  }
-</script>
-
 <style>
   .border-subtle { border-color: var(--border-subtle); }
 
