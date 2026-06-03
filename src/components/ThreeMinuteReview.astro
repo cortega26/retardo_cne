@@ -4,10 +4,19 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const printIcon =
+  <svg viewBox="0 0 512 512" aria-hidden="true" width="1.25em" height="1.25em" fill="currentColor"><path d="M128 0v128h256V0H128zm288 128h48c35.3 0 64 28.7 64 64v96c0 17.7-14.3 32-32 32h-32v128c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V320H32c-17.7 0-32-14.3-32-32v-96c0-35.3 28.7-64 64-64h48V0c0-17.7 14.3-32 32-32h256c17.7 0 32 14.3 32 32v128zM128 192c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm256 192H160v-96h192v96z"/></svg>;
+
+const qrIcon =
+  <svg viewBox="0 0 448 512" aria-hidden="true" width="1.25em" height="1.25em" fill="currentColor"><path d="M0 0h192v192H0V0zm64 64v64h64V64H64zM0 288h192v192H0V288zm64 64v64h64v-64H64zm288-64h64v64h-64v-64zm-64 192h64v-64h-64v64zm64-288h64V64h-64v64zM288 0v192h192V0H288zm64 128h-64V64h64v64z"/></svg>;
+
+const cloudIcon =
+  <svg viewBox="0 0 640 512" aria-hidden="true" width="1.25em" height="1.25em" fill="currentColor"><path d="M544 248c0-82.7-67.3-150-150-150-31.3 0-60.3 9.7-84.5 26.2C292.2 85.7 254.4 64 212 64c-71.6 0-130 53.8-140.5 124C26.9 207 0 243.2 0 286c0 39.5 32.1 72 71.5 72h401c43.5 0 71.5-32.5 71.5-72 0-23.8-10.6-45.4-27.4-60.5-4.4-3.4-8.5-6.5-13.1-9.2-2.1-4.5-3.5-9.4-3.5-14.6zm-159.6 88.5L299.7 421c-4.7 4.7-12.4 4.7-17.1 0L197.6 336.5c-7.1-7.1-2.1-19.1 8.5-19.1H256V168c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v149.4h49.9c10.6 0 15.6 12 8.5 19.1z"/></svg>;
+
 const steps = [
-  { icon: 'fa-print',            title: t('review_step_1_title'), text: t('review_step_1_text') },
-  { icon: 'fa-qrcode',           title: t('review_step_2_title'), text: t('review_step_2_text') },
-  { icon: 'fa-cloud-upload-alt', title: t('review_step_3_title'), text: t('review_step_3_text') },
+  { icon: printIcon, title: t('review_step_1_title'), text: t('review_step_1_text') },
+  { icon: qrIcon,    title: t('review_step_2_title'), text: t('review_step_2_text') },
+  { icon: cloudIcon, title: t('review_step_3_title'), text: t('review_step_3_text') },
 ];
 ---
 
@@ -24,7 +33,7 @@ const steps = [
         <div class="story-card h-100 text-center d-flex flex-column align-items-center">
           <div class="d-flex align-items-center justify-content-center mb-4"
                style="width: 56px; height: 56px; border-radius: 50%; background: rgba(15, 94, 168, 0.10); color: var(--text-accent);">
-            <i class={`fas ${step.icon} fa-lg`}></i>
+            {step.icon}
           </div>
           <h4 class="h6 fw-bold text-uppercase mb-3" style="letter-spacing: 0.06em;">{step.title}</h4>
           <p class="small mb-0 flex-grow-1" style="color: var(--text-secondary); line-height: 1.6;">{step.text}</p>

@@ -62,6 +62,39 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 		<link rel="stylesheet" href={`${basePath}/assets/css/bridge.css`} />
 		<script is:inline src="/retardo_cne/assets/js/theme-init.js"></script>
 
+		<!-- Skip-to-content link -->
+		<style>
+			.skip-link {
+				position: absolute;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				width: 1px;
+				height: 1px;
+				margin: -1px;
+				padding: 0;
+				border: 0;
+			}
+			.skip-link:focus {
+				position: fixed;
+				overflow: visible;
+				clip: auto;
+				width: auto;
+				height: auto;
+				margin: 0;
+				padding: 0.75rem 1.5rem;
+				top: 0;
+				left: 0;
+				z-index: 9999;
+				background: var(--color-brand-600, #2742cc);
+				color: #fff;
+				font-size: 1rem;
+				font-weight: 700;
+				text-decoration: none;
+				border-radius: 0 0 8px 0;
+				outline: 3px solid var(--color-brand-300, #8ea8fb);
+			}
+		</style>
+
 		<!-- Counter digit-flash animation (only changed digits animate) -->
 		<style>
 			@keyframes digit-flip {
