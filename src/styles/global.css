@@ -353,6 +353,18 @@ body.dark-mode #sistema {
   background: color-mix(in srgb, var(--color-brand-400) 8%, var(--bg-body)) !important;
 }
 
+/*
+ * Tailwind v4 emits a `.collapse { visibility: collapse }` utility that collides
+ * with Bootstrap's `.collapse` component class (used by the navbar menu and the
+ * FAQ accordion). Bootstrap hides via `display`, not `visibility`, so Tailwind's
+ * rule leaks through and hides the navbar links/dropdowns/toggles and expanded
+ * FAQ answers. This unlayered rule beats Tailwind's `@layer utilities` and
+ * restores normal visibility (Bootstrap still hides closed panels via display).
+ */
+.collapse {
+  visibility: visible;
+}
+
 /* Accessible, consistent keyboard focus ring across the site. */
 a:focus-visible,
 button:focus-visible,
