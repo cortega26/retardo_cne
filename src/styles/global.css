@@ -328,6 +328,81 @@ body.dark-mode .credibility-bar {
   font-weight: 600;
 }
 
+/* ---- Hero §0 — thesis layout ---- */
+
+.hero-thesis {
+  max-width: none !important;
+}
+
+.hero-days-line {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 0.65rem;
+  max-width: 52ch;
+  color: var(--text-secondary);
+}
+
+.hero-days-number {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-breach-600);
+}
+
+body.dark-mode .hero-days-number {
+  color: var(--color-breach-400);
+}
+
+.hero-note-dual {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.hero-note-dual-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-note-vs {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+}
+
+.hero-note-label {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--color-ink-500);
+  margin: 0.2rem 0 0;
+}
+
+body.dark-mode .hero-note-label {
+  color: var(--color-ink-400);
+}
+
+.hero-metric--zero {
+  color: var(--color-breach-600) !important;
+}
+
+body.dark-mode .hero-metric--zero {
+  color: var(--color-breach-400) !important;
+}
+
+.hero-metric--breach {
+  color: var(--color-breach-600) !important;
+}
+
+body.dark-mode .hero-metric--breach {
+  color: var(--color-breach-400) !important;
+}
+
 .mission-statement .lead,
 .story-subtitle,
 .share-sub,

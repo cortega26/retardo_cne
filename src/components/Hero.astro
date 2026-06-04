@@ -4,32 +4,41 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Art. 155 LOPRE: 30-day deadline expired August 29, 2024
+const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
+
 const heroCards = [
   {
-    metric: lang === 'es' ? '25.575' : '25,575',
-    title: t('hero_stat_1'),
+    dual: true,
+    metricA: '0',
+    metricB: lang === 'es' ? '25.575' : '25,575',
+    labelA: t('hero_card1_cne_label'),
+    labelB: t('hero_card1_citizen_label'),
+    metric: '',
+    label: '',
     sources: [
-      { label: t('source_label'), text: t('hero_stat_1_source_primary'), href: 'https://resultadosconvzla.com/' },
-      { label: t('sources_label'), text: t('hero_stat_1_source_archive'), href: 'https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/' },
+      { text: 'ResultadosConVzla', href: 'https://resultadosconvzla.com/' },
+      { text: lang === 'es' ? 'Archivo CNE' : 'CNE archive', href: 'https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/' },
     ],
   },
   {
-    metric: '4',
-    title: t('hero_stat_2'),
+    dual: false,
+    metricA: '', metricB: '', labelA: '', labelB: '',
+    metric: String(daysElapsed),
+    label: t('hero_card2_label'),
     sources: [
-      { label: t('sources_label'), text: t('hero_stat_2_source_carter'), href: 'https://www.cartercenter.org/news/venezuela-073024/' },
-      { label: '', text: t('hero_stat_2_source_un'), href: 'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf' },
-      { label: '', text: lang === 'es' ? 'Union Europea' : 'European Union', href: 'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/' },
-      { label: '', text: lang === 'es' ? 'OEA' : 'OAS', href: 'https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24' },
+      { text: 'Art. 155 LOPRE', href: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf' },
+      { text: lang === 'es' ? 'NTN24' : 'NTN24', href: 'https://www.ntn24.com/noticias-politica/vencio-el-plazo-de-totalizacion-de-actas-y-el-cne-venezolano-sigue-sin-publicar-resultados-electorales-505494' },
     ],
   },
   {
-    metric: '48h',
-    title: t('hero_stat_3'),
+    dual: false,
+    metricA: '', metricB: '', labelA: '', labelB: '',
+    metric: t('hero_card3_metric'),
+    label: t('hero_card3_label'),
     sources: [
-      { label: t('sources_label'), text: t('hero_stat_3_source_lopre'), href: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf' },
-      { label: '', text: t('hero_stat_3_source_audits'), href: 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php' },
-      { label: '', text: lang === 'es' ? 'Prensa Comunitaria' : 'Community Press', href: 'https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/' },
+      { text: lang === 'es' ? 'Protocolos CNE (archivo)' : 'CNE protocols (archive)', href: 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php' },
+      { text: 'Prensa Comunitaria', href: 'https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/' },
     ],
   },
 ];
@@ -41,7 +50,7 @@ const heroCards = [
       <div class="hero-badges">
         <div class="country-tag">
           <span class="flag flag-venezuela" aria-hidden="true"></span>
-          <span>{t('badge_herosub')}</span>
+          <span>{lang === 'es' ? 'Venezuela · 28J 2024' : 'Venezuela · July 28, 2024'}</span>
         </div>
         <div class="status-badge">
           <span class="status-dot"></span>
@@ -49,10 +58,15 @@ const heroCards = [
         </div>
       </div>
 
-      <p class="hero-suptitle">{t('hero_subtitle')}</p>
-      <h1>{t('hero_title')}</h1>
+      <h1 class="hero-thesis">{t('hero_title')}</h1>
 
-      <div class="credibility-bar" role="note" aria-label="Indicadores de credibilidad">
+      <p class="hero-days-line">
+        <strong class="hero-days-number">{daysElapsed}</strong>{' '}{t('hero_days_context')}
+      </p>
+
+      <p class="hero-suptitle">{t('hero_subtitle')}</p>
+
+      <div class="credibility-bar" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
         <span>{t('cred_docs').replace('{{count}}', '7')}</span>
         <span>{t('cred_update').replace('{{date}}', '2025-05-27')}</span>
         <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
@@ -61,22 +75,37 @@ const heroCards = [
       </div>
 
       <div class="hero-actions">
-        <a class="btn btn-primary hero-cta" href="#cronologia">{t('hero_cta_primary')}</a>
-        <a class="btn btn-outline-primary hero-cta hero-cta-secondary" href="#verificacion">{t('hero_cta_secondary')}</a>
+        <a class="btn btn-primary hero-cta" href="#obligacion">{t('hero_cta_primary')}</a>
+        <a class="btn btn-outline-primary hero-cta hero-cta-secondary" href="#actas">{t('hero_cta_secondary')}</a>
       </div>
     </div>
 
     <div class="hero-evidence" aria-label={lang === 'es' ? 'Panel de evidencia destacada' : 'Featured evidence panel'}>
       {heroCards.map((card) => (
         <article class="hero-note story-card">
-          <p class="hero-note-metric">{card.metric}</p>
-          <h2 class="hero-note-title">{card.title}</h2>
+          {card.dual ? (
+            <div class="hero-note-dual">
+              <div class="hero-note-dual-col">
+                <p class="hero-note-metric hero-metric--zero">{card.metricA}</p>
+                <p class="hero-note-label">{card.labelA}</p>
+              </div>
+              <span class="hero-note-vs" aria-hidden="true">vs</span>
+              <div class="hero-note-dual-col">
+                <p class="hero-note-metric">{card.metricB}</p>
+                <p class="hero-note-label">{card.labelB}</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <p class="hero-note-metric hero-metric--breach">{card.metric}</p>
+              <p class="hero-note-title">{card.label}</p>
+            </>
+          )}
           <div class="hero-note-sources text-gray-500">
             {card.sources.map((source, index) => (
               <span>
-                {source.label ? <strong>{source.label} </strong> : null}
                 <a class="story-link" href={source.href} target="_blank" rel="noopener noreferrer">{source.text}</a>
-                {index < card.sources.length - 1 ? <span class="source-divider" aria-hidden="true"> • </span> : null}
+                {index < card.sources.length - 1 && <span class="source-divider" aria-hidden="true"> · </span>}
               </span>
             ))}
           </div>
