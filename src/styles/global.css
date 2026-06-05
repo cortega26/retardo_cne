@@ -43,6 +43,13 @@ html {
   scroll-padding-top: 6.5rem;
 }
 
+/* Bootstrap's reboot provided this; without it width:100% + padding overflows. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   background:
