@@ -403,6 +403,139 @@ body.dark-mode .hero-metric--breach {
   color: var(--color-breach-400) !important;
 }
 
+/* ---- §1 Obligation ---- */
+
+.obligation-header {
+  margin-bottom: 1.75rem;
+}
+
+.obligation-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.obligation-opening {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  max-width: 66ch;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--color-brand-500);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.obligation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .obligation-grid { grid-template-columns: 1fr; }
+}
+
+.obligation-audits {
+  background: var(--card-bg, rgba(255 255 255 / 0.04));
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.obligation-audits__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.obligation-audits__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.obligation-audits__badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-breach-600);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.obligation-audits__sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.15rem 0 0.5rem;
+}
+
+.obligation-audits__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.obligation-audit {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 0.4rem;
+  align-items: baseline;
+  font-size: 0.82rem;
+}
+
+.obligation-audit__date {
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+}
+
+.obligation-audit__name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.obligation-audit__status {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-breach-600);
+}
+
+body.dark-mode .obligation-audit__status {
+  color: var(--color-breach-400);
+}
+
+.obligation-detail-link {
+  display: block;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.obligation-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .mission-statement .lead,
 .story-subtitle,
 .share-sub,

@@ -1,0 +1,97 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Counter from './Counter.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const ELECTION_DATE = '2024-07-28T10:00:00Z';
+const DEADLINE_48H  = '2024-07-30T10:00:00Z';
+const DEADLINE_30D  = '2024-08-27T10:00:00Z';
+
+const deadline48hLabel = lang === 'es' ? '48 horas desde el 28J' : '48 hours from July 28';
+const deadline30dLabel = lang === 'es' ? '30 días desde el 28J'  : '30 days from July 28';
+
+const es = lang === 'es';
+
+const copy = {
+  badge:      es ? 'ACTO I — LO QUE LA LEY ORDENA'                                   : 'ACT I — WHAT THE LAW REQUIRES',
+  title:      es ? 'La Obligación'                                                    : 'The Legal Obligation',
+  opening:    es ? 'No hace falta creerle a nadie. Esto es lo que el propio CNE estaba obligado a hacer y no hizo.'
+                 : "No need to take anyone's word for it. This is what the CNE itself was required to do and did not.",
+  audTitle:   es ? 'Auditorías Post-Electorales'                                      : 'Post-Election Audits',
+  audBadge:   es ? '0 DE 3 REALIZADAS'                                               : '0 OF 3 PERFORMED',
+  audSub:     es ? 'Obligatorias según el propio cronograma del CNE.'                : "Required by the CNE's own official schedule.",
+  notPerf:    es ? 'NO realizada'                                                    : 'NOT performed',
+  detailLink: es ? 'Ver en detalle →'                                                : 'View in detail →',
+  lopre:      'LOPRE (Georgetown)',
+  archive:    es ? 'Archivo CNE'                                                     : 'CNE archive',
+  protocols:  es ? 'Protocolos CNE (archivo)'                                        : 'CNE protocols (archive)',
+};
+
+const audits = [
+  { date: es ? '29–31 jul' : 'Jul 29–31', name: es ? 'Telecomunicaciones Fase II'    : 'Telecommunications Phase II'   },
+  { date: es ? '2 ago'     : 'Aug 2',     name: es ? 'Verificación Ciudadana Fase II' : 'Citizen Verification Phase II'  },
+  { date: es ? '5–8 ago'   : 'Aug 5–8',   name: es ? 'Datos Electorales Fase II'      : 'Electoral Data Phase II'        },
+];
+---
+
+<section id="obligacion" class="obligation-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
+
+  <div class="obligation-header">
+    <span class="country-tag mb-3 inline-block">{copy.badge}</span>
+    <h2 class="obligation-title">{copy.title}</h2>
+    <p class="obligation-opening">{copy.opening}</p>
+  </div>
+
+  <div class="obligation-grid">
+
+    <Counter
+      id="counter1"
+      targetDate={DEADLINE_48H}
+      electionDate={ELECTION_DATE}
+      deadlineLabel={deadline48hLabel}
+      title={t('status_card_1_title')}
+      violationText={t('status_violation_overdue')}
+      legalRef={t('status_card_1_rule')}
+      progressLegal={2}
+    />
+
+    <Counter
+      id="counter2"
+      targetDate={DEADLINE_30D}
+      electionDate={ELECTION_DATE}
+      deadlineLabel={deadline30dLabel}
+      title={t('status_card_2_title')}
+      violationText={t('status_violation_failed')}
+      legalRef={t('status_card_2_rule')}
+      progressLegal={5}
+    />
+
+    <div class="obligation-audits">
+      <div class="obligation-audits__header">
+        <h3 class="obligation-audits__title">{copy.audTitle}</h3>
+        <span class="obligation-audits__badge">{copy.audBadge}</span>
+      </div>
+      <p class="obligation-audits__sub">{copy.audSub}</p>
+      <ul class="obligation-audits__list">
+        {audits.map(a => (
+          <li class="obligation-audit">
+            <span class="obligation-audit__date">{a.date}</span>
+            <span class="obligation-audit__name">{a.name}</span>
+            <span class="obligation-audit__status">{copy.notPerf}</span>
+          </li>
+        ))}
+      </ul>
+      <a class="story-link obligation-detail-link" href="#auditorias">{copy.detailLink}</a>
+    </div>
+
+  </div>
+
+  <div class="obligation-sources">
+    <a class="btn btn-outline-primary btn-sm" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank" rel="noopener noreferrer">{copy.lopre}</a>
+    <a class="btn btn-outline-primary btn-sm" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/" target="_blank" rel="noopener noreferrer">{copy.archive}</a>
+    <a class="btn btn-outline-primary btn-sm" href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php" target="_blank" rel="noopener noreferrer">{copy.protocols}</a>
+  </div>
+
+</section>
