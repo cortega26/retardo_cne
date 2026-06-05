@@ -24,7 +24,7 @@ const navGroups = {
 };
 ---
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
   <div class="container-fluid">
     <a class="navbar-brand" href="#inicio" aria-current="page">
       <span class="brand-mark">{brandLabel}</span>
@@ -53,11 +53,11 @@ const navGroups = {
             <li><a class="dropdown-item" href="#analisis-tecnico">{t('nav_evidence_analysis')}</a></li>
             <li><a class="dropdown-item" href="#actas">{t('nav_evidence_actas')}</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><div class="dropdown-header">{t('nav_evidence_results_header')}</h6></li>
+            <li><span class="dropdown-header">{t('nav_evidence_results_header')}</span></li>
             <li><a class="dropdown-item" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">{t('nav_results_actas')}</a></li>
             <li><a class="dropdown-item" href="https://macedoniadelnorte.com/" target="_blank" rel="noopener noreferrer">{t('nav_results_macedonia')}</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><div class="dropdown-header">{t('nav_evidence_analysis')}</h6></li>
+            <li><span class="dropdown-header">{t('nav_evidence_analysis')}</span></li>
             <li><a class="dropdown-item" href="https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/" target="_blank" rel="noopener noreferrer">Dr. Terence Tao (UCLA)</a></li>
             <li><a class="dropdown-item" href="https://dorothykronick.com/28J.pdf" target="_blank" rel="noopener noreferrer">Dorothy Kronick (UC Berkeley)</a></li>
             <li><a class="dropdown-item" href="https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/" target="_blank" rel="noopener noreferrer">Andrew Gelman (Columbia U.)</a></li>

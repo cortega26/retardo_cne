@@ -76,6 +76,15 @@ body.dark-mode {
   background-attachment: fixed;
 }
 
+/* background-attachment: fixed causes expensive repaints and silently breaks
+   on iOS Safari (treated as scroll). Use scroll on touch devices. */
+@media (max-width: 991.98px) {
+  body,
+  body.dark-mode {
+    background-attachment: scroll;
+  }
+}
+
 main {
   width: 100%;
   padding-bottom: 5rem;
@@ -85,10 +94,37 @@ main > *:not(header) {
   position: relative;
 }
 
-/* Override Tailwind's .collapse utility (visibility: collapse) — we use this
-   class name for the navbar expand/collapse panel, not CSS visibility. */
+/* Override Tailwind's .collapse utility (visibility: collapse) — scoped to
+   prevent only the visibility change, not the display-based hide/show. */
 .collapse {
   visibility: visible;
+}
+
+/* ── navbar-expand-lg (Bootstrap replacement) ────────────────────────────── */
+/* Hide nav panel on mobile by default; show toggler. */
+@media (max-width: 991.98px) {
+  .collapse.navbar-collapse {
+    display: none;
+  }
+  .collapse.navbar-collapse.show {
+    display: block;
+  }
+}
+
+/* On lg+ screens: show nav inline as flex row; hide the hamburger toggler. */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+  .navbar .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .navbar-collapse {
+    display: flex !important;
+    flex-grow: 1;
+    align-items: center;
+    flex-basis: auto;
+  }
 }
 
 .container,
@@ -166,6 +202,10 @@ body.dark-mode .navbar {
 .navbar .container-fluid {
   width: min(var(--page-shell), 100%);
   padding-block: 0.8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .navbar-brand {
@@ -174,6 +214,12 @@ body.dark-mode .navbar {
 }
 
 .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 0.25rem;
 }
 
@@ -1149,9 +1195,14 @@ summary:focus-visible,
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   .navbar .container-fluid {
     width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .navbar-collapse {

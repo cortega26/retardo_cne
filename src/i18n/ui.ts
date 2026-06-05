@@ -255,6 +255,8 @@ export const ui = {
     'footer_rights': 'Observatorio Electoral Ciudadano. Contenido bajo licencia Creative Commons.',
     'footer_opensource': 'Código Abierto',
     'footer_built_by': 'Desarrollado por',
+    'footer_disclaimer': 'Observatorio independiente y sin fines de lucro. El contenido de este sitio tiene fines educativos e informativos y no constituye asesoría legal. Cada afirmación incluye fuentes primarias verificables.',
+    'footer_report_correction': 'Reportar corrección',
 
     // SEO — meta description
     'meta_description': 'Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias.',
@@ -511,6 +513,8 @@ export const ui = {
     'footer_rights': 'Citizen Electoral Observatory. Content under Creative Commons license.',
     'footer_opensource': 'Open Source',
     'footer_built_by': 'Engineered by',
+    'footer_disclaimer': 'Independent, non-profit observatory. Content is for educational and informational purposes only and does not constitute legal advice. Every claim includes verifiable primary sources.',
+    'footer_report_correction': 'Report a correction',
 
     // BL-001: Missing keys — irregularidades section
     'analysis_subtitle': 'Documentation of verified technical and legal breaches through primary evidence.',
