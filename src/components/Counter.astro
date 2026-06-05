@@ -28,7 +28,7 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
 <section class="counter-card">
   <!-- Top row: title + violation badge -->
   <div class="counter-header">
-    <h2 class="counter-title">{title}</h2>
+    <h3 class="counter-title">{title}</h3>
     <span class="violation-badge">{violationText}</span>
   </div>
 
@@ -61,7 +61,7 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
     border: 1px solid transparent;
     box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
     border-radius: 16px;
-    padding: 2rem 2rem 1.5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -76,16 +76,16 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
   }
 
   .counter-title {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-secondary);
     margin: 0;
   }
 
   .violation-badge {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -118,14 +118,14 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
   }
 
   .deadline-chip__ref {
-    font-size: 0.74rem;
+    font-size: 0.75rem;
     opacity: 0.55;
     font-style: italic;
   }
 
   /* Elapsed label */
   .elapsed-label {
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.09em;
     color: var(--text-secondary);

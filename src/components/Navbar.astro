@@ -131,8 +131,8 @@ const navGroups = {
 
   .brand-mark {
     font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-secondary);
   }
@@ -157,9 +157,13 @@ const navGroups = {
 
   .nav-item-split .nav-link-toggle {
     padding-left: 0.35rem;
-    min-width: auto;
+    min-width: 44px;
+    min-height: 44px;
     border: 0;
     background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-item-split .dropdown-toggle::after {

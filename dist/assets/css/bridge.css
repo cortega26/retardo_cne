@@ -50,18 +50,18 @@
   border: 1px solid rgba(217, 119, 6, 0.45);
   box-shadow: 0 10px 20px rgba(217, 119, 6, 0.15);
   display: inline-flex; align-items: center;
-  padding: 0.15rem 0.6rem; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.2rem 0.65rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
 .status-tag-omitted {
   color: var(--text-secondary);
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   display: inline-flex; align-items: center;
-  padding: 0.15rem 0.6rem; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.2rem 0.65rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
 body.dark-mode .status-tag-partial {
   color: #fde68a;
@@ -87,9 +87,9 @@ body.dark-mode .status-tag-omitted {
   border: 1px solid rgba(124, 29, 61, 0.8);
   box-shadow: 0 4px 12px rgba(124, 29, 61, 0.3);
   display: inline-flex; align-items: center;
-  padding: 0.15rem 0.6rem; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.2rem 0.65rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
 body.dark-mode .status-tag-illegal {
   background: rgba(190, 18, 60, 0.25);

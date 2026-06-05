@@ -23,6 +23,15 @@
   --color-danger-glow: color-mix(in srgb, var(--color-breach-500) 22%, transparent);
   --navbar-bg: color-mix(in srgb, var(--color-paper) 88%, transparent);
   --border-subtle: var(--color-ink-100);
+
+  /* Accent — amber/gold for authority+trust (UX Pro Max recommendation) */
+  --color-accent: #b45309;
+  --color-accent-glow: color-mix(in srgb, #b45309 18%, transparent);
+
+  /* Elevation scale — flat → card → raised → pop */
+  --shadow-flat: 0 1px 2px rgb(20 23 31 / 0.04);
+  --shadow-raised: 0 4px 8px rgb(20 23 31 / 0.06), 0 16px 32px -16px rgb(20 23 31 / 0.28);
+  /* --shadow-card and --shadow-pop are defined in theme.css */
 }
 
 body.dark-mode {
@@ -36,6 +45,8 @@ body.dark-mode {
   --color-danger: var(--color-breach-400);
   --navbar-bg: color-mix(in srgb, var(--color-brand-950) 86%, transparent);
   --border-subtle: color-mix(in srgb, var(--color-brand-300) 16%, transparent);
+  --color-accent: #f59e0b;
+  --shadow-raised: 0 4px 8px rgb(0 0 0 / 0.2), 0 16px 32px -16px rgb(0 0 0 / 0.5);
 }
 
 html {
@@ -121,8 +132,8 @@ body.dark-mode .org-card {
 .country-tag,
 .badge-premium,
 .story-kicker {
-  font-size: 0.68rem !important;
-  letter-spacing: 0.14em !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em !important;
 }
 
 .country-tag,
@@ -167,8 +178,8 @@ body.dark-mode .navbar {
 }
 
 .nav-link {
-  font-size: 0.76rem !important;
-  letter-spacing: 0.13em !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.08em !important;
   color: var(--text-primary) !important;
   opacity: 0.78;
 }
@@ -190,12 +201,12 @@ body.dark-mode .navbar {
 }
 
 .hero-shell {
-  padding: clamp(2.75rem, 7vw, 6rem) 0 1rem;
+  padding: clamp(2.75rem, 7vw, 6rem) clamp(1rem, 3vw, 2rem) 1rem;
   background: transparent;
 }
 
 .hero-grid {
-  width: min(var(--hero-shell), 100%);
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: clamp(1.75rem, 4.4vw, 3.25rem);
@@ -239,8 +250,8 @@ body.dark-mode .navbar {
   border: 1px solid rgba(220, 38, 38, 0.18);
   background: rgba(220, 38, 38, 0.08);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-danger);
 }
@@ -307,7 +318,8 @@ body.dark-mode .credibility-bar {
 
 .hero-note {
   text-align: left;
-  padding: 1.4rem 1.4rem 1.3rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-raised) !important;
 }
 
 .hero-note-metric {
@@ -374,9 +386,9 @@ body.dark-mode .hero-days-number {
 }
 
 .hero-note-vs {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink-400);
   flex-shrink: 0;
@@ -669,9 +681,9 @@ body.dark-mode .missinglink-close__days {
 }
 
 .anomaly-group-label {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-secondary);
   margin: 1.5rem 0 0.75rem;
@@ -718,9 +730,9 @@ body.dark-mode .missinglink-close__days {
 }
 
 .anomaly-tag {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
   background: var(--color-ink-600);
@@ -817,12 +829,12 @@ body.dark-mode .anomaly-rigor {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.04em;
-  color: var(--text-accent);
+  color: var(--color-accent);
   margin: 0 0 0.35rem;
 }
 
 .existence-stat-label {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -841,7 +853,7 @@ body.dark-mode .anomaly-rigor {
   background: color-mix(in srgb, var(--color-lawful-500) 5%, var(--color-surface));
   border: 1px solid color-mix(in srgb, var(--color-lawful-500) 20%, transparent);
   border-radius: var(--radius-card);
-  padding: 1.75rem 2rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -850,7 +862,7 @@ body.dark-mode .existence-validation {
 }
 
 .existence-validation__label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -883,7 +895,7 @@ body.dark-mode .existence-validation__label {
 }
 
 .existence-expert-tag {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -978,15 +990,15 @@ body.dark-mode .existence-validation__label {
   margin-bottom: 1.25rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .obligation-grid { grid-template-columns: 1fr; }
 }
 
 .obligation-audits {
   background: var(--card-bg, rgba(255 255 255 / 0.04));
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
-  border-radius: 16px;
-  padding: 2rem 2rem 1.5rem;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -1000,7 +1012,7 @@ body.dark-mode .existence-validation__label {
 }
 
 .obligation-audits__title {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1009,7 +1021,7 @@ body.dark-mode .existence-validation__label {
 }
 
 .obligation-audits__badge {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1056,7 +1068,7 @@ body.dark-mode .existence-validation__label {
 }
 
 .obligation-audit__status {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -1121,7 +1133,7 @@ summary:focus-visible,
   border-radius: 4px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -1137,7 +1149,7 @@ summary:focus-visible,
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 768px) {
   .navbar .container-fluid {
     width: 100%;
   }
@@ -1169,7 +1181,7 @@ summary:focus-visible,
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   body::before {
     opacity: 0.3;
   }
@@ -1198,5 +1210,20 @@ summary:focus-visible,
 
   .credibility-bar {
     gap: 0.5rem 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
