@@ -403,6 +403,124 @@ body.dark-mode .hero-metric--breach {
   color: var(--color-breach-400) !important;
 }
 
+/* ---- §4 MissingLink ---- */
+
+.missinglink-header { margin-bottom: 1.75rem; }
+
+.missinglink-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.missinglink-opening {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  max-width: 66ch;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--color-breach-500);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.missinglink-quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .missinglink-quotes { grid-template-columns: 1fr; }
+}
+
+.missinglink-quote {
+  background: var(--card-bg, rgba(255 255 255 / 0.04));
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.missinglink-quote__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.missinglink-quote__org {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.missinglink-quote__date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.missinglink-quote__text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--text-secondary);
+  flex: 1;
+  margin: 0;
+}
+
+.missinglink-close {
+  background: color-mix(in srgb, var(--color-breach-600) 6%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-breach-500) 25%, transparent);
+  border-radius: var(--radius-card);
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+body.dark-mode .missinglink-close {
+  background: color-mix(in srgb, var(--color-breach-700) 10%, var(--bg-body));
+}
+
+.missinglink-close__prefix {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.missinglink-close__counter {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.missinglink-close__days {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-breach-600);
+  line-height: 1;
+}
+
+body.dark-mode .missinglink-close__days {
+  color: var(--color-breach-400);
+}
+
+.missinglink-close__suffix {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* ---- §3 Anomaly ---- */
 
 .anomaly-header { margin-bottom: 1.75rem; }

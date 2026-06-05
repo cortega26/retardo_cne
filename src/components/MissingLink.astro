@@ -1,0 +1,97 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const es = lang === 'es';
+
+// Carter Center formal letter requesting precinct-level results: August 17, 2024
+const carterLetterDate = new Date('2024-08-17');
+const daysSinceCarter = Math.floor((Date.now() - carterLetterDate.getTime()) / 86_400_000);
+
+const copy = {
+  badge:    es ? 'ACTO IV — LO QUE FALTA'  : 'ACT IV — WHAT IS MISSING',
+  title:    es ? 'La Única Prueba'          : 'The Only Evidence',
+  opening:  es
+    ? 'La única forma de resolver las más que fundadas dudas es el desglose de resultados mesa por mesa. Los mismos organismos que han observado decenas de elecciones en todo el mundo lo solicitaron. El CNE nunca lo entregó.'
+    : 'The only way to resolve the more than well-founded doubts is the precinct-level vote breakdown. The same organizations that have observed dozens of elections worldwide requested it. The CNE never provided it.',
+  closePrefix:   es ? 'El Centro Carter solicitó formalmente ese desglose el 17 de agosto de 2024.' : 'The Carter Center formally requested that breakdown on August 17, 2024.',
+  closeDaysSufx: es ? 'días sin respuesta del CNE.' : 'days without a response from the CNE.',
+  closeSource:   es ? 'Centro Carter, carta 17/08/2024' : 'Carter Center, letter 08/17/2024',
+  source:        es ? 'Fuente →' : 'Source →',
+};
+
+const orgs = [
+  {
+    name:  es ? 'Centro Carter'          : 'Carter Center',
+    date:  es ? '30 jul 2024'            : 'Jul 30, 2024',
+    quote: es
+      ? '"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática."'
+      : '"Venezuela\'s election did not meet international standards and cannot be considered democratic."',
+    href:  'https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf',
+  },
+  {
+    name:  es ? 'Panel de Expertos ONU' : 'UN Expert Panel',
+    date:  es ? '9 ago 2024'            : 'Aug 9, 2024',
+    quote: es
+      ? '"El proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles."'
+      : '"The CNE\'s results management process did not meet the basic transparency and integrity measures necessary for credible elections."',
+    href:  'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf',
+  },
+  {
+    name:  es ? 'Unión Europea'         : 'European Union',
+    date:  es ? '4 ago 2024'            : 'Aug 4, 2024',
+    quote: es
+      ? '"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden."'
+      : '"The results published by the CNE on August 2 cannot be recognized without evidence to support them."',
+    href:  'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/',
+  },
+  {
+    name:  es ? 'OEA'                   : 'OAS',
+    date:  es ? '2 ago 2024'            : 'Aug 2, 2024',
+    quote: es
+      ? '"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria."'
+      : '"The complete manual of fraudulent electoral result management was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner."',
+    href:  'https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24',
+  },
+];
+---
+
+<section id="internacional" class="missinglink-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
+
+  <div class="missinglink-header">
+    <span class="country-tag mb-3 inline-block">{copy.badge}</span>
+    <h2 class="missinglink-title">{copy.title}</h2>
+    <p class="missinglink-opening">{copy.opening}</p>
+  </div>
+
+  <!-- 4 org quotes — 2×2 grid -->
+  <div class="missinglink-quotes">
+    {orgs.map(org => (
+      <div class="missinglink-quote">
+        <div class="missinglink-quote__head">
+          <strong class="missinglink-quote__org">{org.name}</strong>
+          <span class="missinglink-quote__date">{org.date}</span>
+        </div>
+        <p class="missinglink-quote__text">{org.quote}</p>
+        <a class="story-link text-sm" href={org.href} target="_blank" rel="noopener noreferrer">
+          {copy.source}
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <!-- Closing callout -->
+  <div class="missinglink-close" role="note">
+    <p class="missinglink-close__prefix">{copy.closePrefix}</p>
+    <div class="missinglink-close__counter">
+      <span class="missinglink-close__days">{daysSinceCarter}</span>
+      <span class="missinglink-close__suffix">{copy.closeDaysSufx}</span>
+    </div>
+    <a class="story-link text-sm" href="https://www.cartercenter.org/news/venezuela-073024/" target="_blank" rel="noopener noreferrer">
+      {copy.closeSource} →
+    </a>
+  </div>
+
+</section>
