@@ -35,15 +35,15 @@ test.describe('regression coverage', () => {
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
-    await expect(page).toHaveTitle(/Verifiable facts about the electoral process/);
-    await expect(page.locator('h1')).toHaveText('Verifiable facts about the electoral process');
+    await expect(page).toHaveTitle(/The CNE published zero actas/);
+    await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
     expect(storedLang).toBe('en');
 
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('h1')).toHaveText('Verifiable facts about the electoral process');
+    await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
   });
 
   test('copy link control is available in share section', async ({ page, context }) => {
@@ -87,26 +87,17 @@ test.describe('regression coverage', () => {
     expect(twitterImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview.jpg');
   });
 
-  test('organization logos load', async ({ page }) => {
+  test('existence stats cards render', async ({ page }) => {
     await page.goto('/');
 
-    const logos = page.locator('.international-validation .org-logo');
-    await expect(logos).toHaveCount(4);
+    const cards = page.locator('.existence-stats .story-card');
+    await expect(cards).toHaveCount(3);
 
-    await logos.first().scrollIntoViewIfNeeded();
-    await expect.poll(async () => {
-      return await logos.evaluateAll(
-        (elements) => elements.filter((el) => el.complete && el.naturalWidth > 0).length,
-      );
-    }).toBe(4);
-
-    const sizes = await logos.evaluateAll((elements) =>
-      elements.map((el) => ({ src: el.getAttribute('src'), width: el.naturalWidth })),
-    );
-    sizes.forEach(({ src, width }) => {
-      expect(src).toBeTruthy();
-      expect(width).toBeGreaterThan(0);
-    });
+    await cards.first().scrollIntoViewIfNeeded();
+    // Verify stat values are visible
+    await expect(cards.nth(0).locator('.existence-stat-value')).toHaveText('85,18%');
+    await expect(cards.nth(1).locator('.existence-stat-value')).toHaveText('1M+');
+    await expect(cards.nth(2).locator('.existence-stat-value')).toHaveText('100%');
   });
 
   test('desktop navbar dropdowns open within the viewport', async ({ page }) => {

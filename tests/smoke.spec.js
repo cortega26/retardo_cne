@@ -15,7 +15,7 @@ test('homepage smoke', async ({ page }) => {
   await expect(langToggle.locator('.lang-code')).toHaveText('EN');
   await langToggle.click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page.locator('h1')).toHaveText('Verifiable facts about the electoral process');
+  await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
 
-  await expect(page.locator('.international-validation .org-logo')).toHaveCount(4);
+  await expect(page.locator('.existence-stats .story-card')).toHaveCount(3);
 });
