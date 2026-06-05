@@ -403,6 +403,137 @@ body.dark-mode .hero-metric--breach {
   color: var(--color-breach-400) !important;
 }
 
+/* ---- §3 Anomaly ---- */
+
+.anomaly-header { margin-bottom: 1.75rem; }
+
+.anomaly-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.anomaly-opening {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  max-width: 72ch;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--color-flag-yellow);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.anomaly-group-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.anomaly-primary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.anomaly-supp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .anomaly-primary-grid,
+  .anomaly-supp-grid { grid-template-columns: 1fr; }
+}
+
+.anomaly-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.anomaly-expert-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+  line-height: 1.2;
+}
+
+.anomaly-expert-affil {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.anomaly-tag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-ink-600);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.anomaly-card--primary .anomaly-finding {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0;
+  margin: 0 0 0.85rem;
+}
+
+.anomaly-finding-sm {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+
+.anomaly-method {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.anomaly-card__footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+.anomaly-rigor {
+  background: color-mix(in srgb, var(--color-flag-yellow) 8%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-flag-yellow) 35%, transparent);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+body.dark-mode .anomaly-rigor {
+  background: color-mix(in srgb, var(--color-flag-yellow) 6%, var(--bg-body));
+}
+
+.anomaly-rigor__title {
+  color: var(--text-primary);
+}
+
 /* ---- §2 Existence ---- */
 
 .existence-header {

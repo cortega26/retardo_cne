@@ -1,0 +1,139 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const es = lang === 'es';
+
+const copy = {
+  badge:   es ? 'ACTO III — LOS NÚMEROS DEL CNE'   : 'ACT III — THE CNE\'S NUMBERS',
+  title:   es ? 'La Anomalía'                       : 'The Anomaly',
+  opening: es
+    ? 'Frente a las 25.575 actas ciudadanas verificables, los números que el CNE anunció esa noche tienen una rareza estadística que cuatro académicos de instituciones reconocidas identificaron de forma independiente. Ninguno afirmó que esto probara el fraude por sí solo. Los cuatro apuntan a lo mismo.'
+    : 'Alongside the 25,575 verifiable citizen actas, the numbers the CNE announced that night have a statistical anomaly that four scholars from recognized institutions identified independently. None claimed this alone proved fraud. All four point to the same thing.',
+  primaryLabel: es ? 'Hallazgos principales' : 'Primary findings',
+  suppLabel:    es ? 'Análisis adicionales'   : 'Additional analyses',
+  rigorTitle:   es ? 'Nota metodológica'      : 'Methodological note',
+  rigor: es
+    ? 'Estos análisis identifican anomalías estadísticas en los datos oficiales del CNE. Ninguno de ellos constituye, por sí solo, prueba de fraude. La única evidencia que podría confirmar o descartar estas anomalías es el desglose oficial de votos mesa por mesa — exactamente lo que el CNE no ha publicado.'
+    : 'These analyses identify statistical anomalies in the CNE\'s official data. None of them alone constitutes proof of fraud. The only evidence that could confirm or rule out these anomalies is the official vote breakdown by polling station — exactly what the CNE has not published.',
+  method:    es ? 'Método:'               : 'Method:',
+  readFull:  es ? 'Ver análisis →'        : 'Read analysis →',
+  finding:   es ? 'Hallazgo'              : 'Finding',
+};
+
+const primary = [
+  {
+    name: 'Terence Tao',
+    affil: es ? 'UCLA — Medalla Fields 2006' : 'UCLA — Fields Medal 2006',
+    date:  es ? '02/08/2024' : '08/02/2024',
+    finding: es
+      ? 'Los dígitos finales de los datos oficiales del CNE muestran una distribución estadísticamente anómala: exceso de dígitos pares (0, 2, 4, 6, 8) incompatible con cualquier proceso de conteo legítimo.'
+      : 'The trailing digits of official CNE data show a statistically anomalous distribution — an excess of even digits (0, 2, 4, 6, 8) incompatible with any legitimate counting process.',
+    method: es ? 'Análisis de distribución de dígitos finales' : 'Trailing digit distribution analysis',
+    url: 'https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/',
+  },
+  {
+    name: 'Andrew Gelman',
+    affil: 'Columbia University',
+    date:  es ? '31/07/2024' : '07/31/2024',
+    finding: es
+      ? 'La curva de totalización muestra patrones no aleatorios: la proporción de votos entre candidatos permanece sospechosamente constante a medida que llegan los boletines, lo cual es estadísticamente inusual.'
+      : 'The totalization curve shows non-random patterns: the vote share ratio between candidates remains suspiciously constant as bulletins arrive — a statistically unusual feature.',
+    method: es ? 'Análisis de estabilidad de la curva de totalización' : 'Totalization curve stability analysis',
+    url: 'https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/',
+  },
+];
+
+const supplemental = [
+  {
+    name: 'Dorothy Kronick',
+    affil: 'UC Berkeley',
+    date:  es ? 'Agosto 2024' : 'August 2024',
+    finding: es
+      ? 'El patrón de publicación de boletines muestra sesgo sistemático: los resultados llegaron en un orden que favorece de forma estadísticamente improbable al candidato oficialista en cada actualización secuencial.'
+      : 'The bulletin release pattern shows systematic bias: results arrived in an order that statistically improbably favors the ruling-party candidate at each sequential update.',
+    method: es ? 'Análisis de sesgo en secuencia de publicación' : 'Bulletin release sequence bias analysis',
+    url: 'https://dorothykronick.com/28J.pdf',
+  },
+  {
+    name: 'Walter Mebane',
+    affil: 'University of Michigan',
+    date:  es ? 'Agosto 2024' : 'August 2024',
+    finding: es
+      ? 'Aplicando el método eForensics — diseñado específicamente para detectar fraude electoral — los datos del CNE presentan evidencia de manipulación en múltiples modelos, con probabilidades de fraude superiores al umbral de significancia estadística.'
+      : 'Applying the eForensics method — specifically designed to detect electoral fraud — CNE data shows evidence of manipulation across multiple models, with fraud probabilities above the threshold of statistical significance.',
+    method: es ? 'eForensics (forensia electoral cuantitativa)' : 'eForensics (quantitative electoral forensics)',
+    url: 'https://websites.umich.edu/~wmebane/Venezuela2024.pdf',
+  },
+];
+---
+
+<section id="analisis-tecnico" class="anomaly-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
+
+  <div class="anomaly-header">
+    <span class="country-tag mb-3 inline-block">{copy.badge}</span>
+    <h2 class="anomaly-title">{copy.title}</h2>
+    <p class="anomaly-opening">{copy.opening}</p>
+  </div>
+
+  <!-- Primary findings: Tao + Gelman -->
+  <p class="anomaly-group-label">{copy.primaryLabel}</p>
+  <div class="anomaly-primary-grid">
+    {primary.map(expert => (
+      <div class="story-card anomaly-card anomaly-card--primary flex flex-col">
+        <div class="anomaly-card__header">
+          <div>
+            <p class="story-kicker mb-1">{expert.date}</p>
+            <h3 class="anomaly-expert-name">{expert.name}</h3>
+            <p class="anomaly-expert-affil">{expert.affil}</p>
+          </div>
+          <span class="anomaly-tag">{copy.finding}</span>
+        </div>
+        <blockquote class="anomaly-finding flex-1">"{expert.finding}"</blockquote>
+        <div class="anomaly-method">
+          <strong>{copy.method}</strong> {expert.method}
+        </div>
+        <div class="anomaly-card__footer">
+          <a class="story-link font-bold" href={expert.url} target="_blank" rel="noopener noreferrer">
+            {copy.readFull}
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Supplemental findings: Kronick + Mebane -->
+  <p class="anomaly-group-label">{copy.suppLabel}</p>
+  <div class="anomaly-supp-grid">
+    {supplemental.map(expert => (
+      <div class="story-card anomaly-card anomaly-card--supp flex flex-col">
+        <div class="anomaly-card__header">
+          <div>
+            <p class="story-kicker mb-1">{expert.date}</p>
+            <h4 class="anomaly-expert-name">{expert.name}</h4>
+            <p class="anomaly-expert-affil">{expert.affil}</p>
+          </div>
+          <span class="anomaly-tag">{copy.finding}</span>
+        </div>
+        <p class="anomaly-finding-sm flex-1">"{expert.finding}"</p>
+        <div class="anomaly-method">
+          <strong>{copy.method}</strong> {expert.method}
+        </div>
+        <div class="anomaly-card__footer">
+          <a class="story-link" href={expert.url} target="_blank" rel="noopener noreferrer">
+            {copy.readFull}
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Rigor note -->
+  <aside class="anomaly-rigor" role="note">
+    <strong class="anomaly-rigor__title">{copy.rigorTitle}.</strong>
+    {' '}{copy.rigor}
+  </aside>
+
+</section>
