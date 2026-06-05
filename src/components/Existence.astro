@@ -1,0 +1,103 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const es = lang === 'es';
+
+const copy = {
+  badge:       es ? 'ACTO II — LO QUE SÍ EXISTE'   : 'ACT II — WHAT DOES EXIST',
+  title:       es ? 'Lo que Existe'                 : 'What Exists',
+  opening:     es
+    ? 'Mientras el CNE no mostraba nada, la ciudadanía recolectó y publicó las actas del 85% de las mesas. Son documentos físicos con código QR verificable por cualquiera.'
+    : 'While the CNE showed nothing, citizens collected and published actas covering 85% of polling stations. These are physical documents with QR codes anyone can verify.',
+  statLabel1:  es ? 'ACTAS DIGITALIZADAS'           : 'DIGITIZED ACTAS',
+  statSub1:    t('verified_minutes_sub'),
+  statLabel2:  es ? 'TESTIGOS Y VOLUNTARIOS'        : 'WITNESSES & VOLUNTEERS',
+  statSub2:    es ? 'En toda Venezuela'             : 'Across Venezuela',
+  statLabel3:  es ? 'ACTAS CON QR VERIFICABLE'      : 'ACTAS WITH VERIFIABLE QR',
+  statSub3:    es ? 'Código QR, hash y sello oficial' : 'QR code, hash and official seal',
+  valTitle:    es ? 'Validación académica independiente' : 'Independent academic validation',
+  valSub:      es ? 'Esta validación se basa en la arquitectura del sistema, no en la credibilidad de quien recolectó las actas.'
+                  : 'This validation rests on system architecture, not on the credibility of whoever collected the actas.',
+  finding:     es
+    ? 'El sistema venezolano genera un doble rastro de papel: un comprobante por votante y un acta por máquina. Falsificar ese registro a escala es prácticamente imposible sin dejar trazas detectables. Las actas ciudadanas reflejan los votos realmente emitidos.'
+    : "Venezuela's system generates a double paper trail: one receipt per voter and one minute per machine. Falsifying that record at scale is practically impossible without leaving detectable traces. The citizen actas reflect the votes actually cast.",
+  method:      es ? 'Análisis de integridad del doble rastro de papel' : 'Double paper trail integrity analysis',
+  readPaper:   es ? 'Ver paper completo →'          : 'Read full paper →',
+  ctaTitle:    es ? 'Consulta las actas'            : 'Check the actas',
+  ctaText:     es
+    ? 'Puedes revisar acta por acta, mesa por mesa, con su respaldo fotográfico y código QR.'
+    : 'You can review each acta, polling station by polling station, with photographic backup and QR code.',
+  ctaBtn:      es ? 'Ir a ResultadosConVzla'        : 'Go to ResultadosConVzla',
+  ctaBtn2:     es ? 'Ver MacedoniaDelNorte'         : 'View MacedoniaDelNorte',
+};
+---
+
+<section id="actas" class="existence-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
+
+  <div class="existence-header">
+    <span class="country-tag mb-3 inline-block">{copy.badge}</span>
+    <h2 class="existence-title">{copy.title}</h2>
+    <p class="existence-opening">{copy.opening}</p>
+  </div>
+
+  <!-- Stats row -->
+  <div class="existence-stats">
+    <div class="story-card text-center">
+      <p class="existence-stat-value">85,18%</p>
+      <p class="existence-stat-label">{copy.statLabel1}</p>
+      <p class="existence-stat-sub">{copy.statSub1}</p>
+    </div>
+    <div class="story-card text-center">
+      <p class="existence-stat-value">1M+</p>
+      <p class="existence-stat-label">{copy.statLabel2}</p>
+      <p class="existence-stat-sub">{copy.statSub2}</p>
+    </div>
+    <div class="story-card text-center">
+      <p class="existence-stat-value">100%</p>
+      <p class="existence-stat-label">{copy.statLabel3}</p>
+      <p class="existence-stat-sub">{copy.statSub3}</p>
+    </div>
+  </div>
+
+  <!-- Academic validation card -->
+  <div class="existence-validation">
+    <div class="existence-validation__body">
+      <p class="existence-validation__label">{copy.valTitle}</p>
+      <div class="existence-validation__expert">
+        <div>
+          <p class="existence-expert-name">Dorothy Kronick</p>
+          <p class="existence-expert-affil">UC Berkeley — Goldman School of Public Policy</p>
+        </div>
+        <span class="existence-expert-tag">{es ? 'Hallazgo' : 'Finding'}</span>
+      </div>
+      <blockquote class="existence-finding">"{copy.finding}"</blockquote>
+      <p class="existence-method">
+        <strong>{es ? 'Método:' : 'Method:'}</strong> {copy.method}
+      </p>
+      <a class="story-link" href="https://dorothykronick.com/28J.pdf" target="_blank" rel="noopener noreferrer">
+        {copy.readPaper}
+      </a>
+    </div>
+    <p class="existence-validation__note">{copy.valSub}</p>
+  </div>
+
+  <!-- CTA row -->
+  <div class="existence-cta story-card">
+    <div class="existence-cta__copy">
+      <h3 class="existence-cta__title">{copy.ctaTitle}</h3>
+      <p class="existence-cta__text">{copy.ctaText}</p>
+    </div>
+    <div class="existence-cta__actions">
+      <a class="btn btn-primary" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">
+        {copy.ctaBtn}
+      </a>
+      <a class="btn btn-outline-primary" href="https://macedoniadelnorte.com/" target="_blank" rel="noopener noreferrer">
+        {copy.ctaBtn2}
+      </a>
+    </div>
+  </div>
+
+</section>

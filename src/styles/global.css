@@ -403,6 +403,175 @@ body.dark-mode .hero-metric--breach {
   color: var(--color-breach-400) !important;
 }
 
+/* ---- §2 Existence ---- */
+
+.existence-header {
+  margin-bottom: 1.75rem;
+}
+
+.existence-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.existence-opening {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  max-width: 66ch;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--color-lawful-500);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.existence-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .existence-stats { grid-template-columns: 1fr; }
+}
+
+.existence-stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-accent);
+  margin: 0 0 0.35rem;
+}
+
+.existence-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0 0 0.25rem;
+}
+
+.existence-stat-sub {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.existence-validation {
+  background: color-mix(in srgb, var(--color-lawful-500) 5%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-lawful-500) 20%, transparent);
+  border-radius: var(--radius-card);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+body.dark-mode .existence-validation {
+  background: color-mix(in srgb, var(--color-lawful-600) 8%, var(--bg-body));
+}
+
+.existence-validation__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-lawful-600);
+  margin: 0 0 1rem;
+}
+
+body.dark-mode .existence-validation__label {
+  color: var(--color-lawful-400);
+}
+
+.existence-validation__expert {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.existence-expert-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+}
+
+.existence-expert-affil {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.existence-expert-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-lawful-600);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.existence-finding {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--text-secondary);
+  border: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+
+.existence-method {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+
+.existence-validation__note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid color-mix(in srgb, var(--color-lawful-500) 25%, transparent);
+  padding-top: 0.85rem;
+  margin: 1rem 0 0;
+}
+
+.existence-cta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.existence-cta__copy { flex: 1; min-width: 0; }
+
+.existence-cta__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.existence-cta__text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.existence-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
 /* ---- §1 Obligation ---- */
 
 .obligation-header {
