@@ -1,0 +1,100 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const es = lang === 'es';
+
+// Art. 155 LOPRE deadline: August 29, 2024 (same as Hero card 2)
+const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
+
+const copy = {
+  statCitizens:   es ? 'actas ciudadanas publicadas con código QR verificable'  : 'citizen actas published with verifiable QR codes',
+  statCNE:        es ? 'actas oficiales publicadas por el CNE'                  : 'official actas published by the CNE',
+  statement:      es
+    ? 'Esa asimetría no es un detalle administrativo. Es lo que ocurre cuando un gobierno tiene los resultados y no puede mostrarlos.'
+    : 'That asymmetry is not an administrative detail. It is what happens when a government has the results and cannot show them.',
+  verdict:        es
+    ? 'Un gobierno que gana una elección publica las actas el lunes siguiente.'
+    : 'A government that wins an election publishes the actas the following Monday.',
+  daysPrefix:     es ? 'El CNE lleva'     : 'The CNE has gone',
+  daysSuffix:     es ? 'días sin hacerlo.' : 'days without doing so.',
+  epigraph:       es
+    ? 'El que gana, muestra. El que esconde, perdió.'
+    : 'Those who win, show. Those who hide, lost.',
+  cta1:           es ? 'Verificar las actas'  : 'Verify the actas',
+  cta2:           es ? 'Compartir'            : 'Share',
+  cta3:           es ? 'Ver metodología'      : 'View methodology',
+  copied:         es ? '¡Enlace copiado!'     : 'Link copied!',
+};
+
+const metodologiaUrl = lang === 'es' ? '/retardo_cne/metodologia' : '/retardo_cne/en/metodologia';
+---
+
+<section id="conclusion" class="conclusion-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
+
+  <!-- The asymmetry -->
+  <div class="conclusion-asymmetry">
+    <div class="conclusion-stat">
+      <span class="conclusion-num conclusion-num--citizens" aria-label="25575">
+        {es ? '25.575' : '25,575'}
+      </span>
+      <span class="conclusion-stat-label">{copy.statCitizens}</span>
+    </div>
+    <div class="conclusion-stat">
+      <span class="conclusion-num conclusion-num--zero">0</span>
+      <span class="conclusion-stat-label">{copy.statCNE}</span>
+    </div>
+  </div>
+
+  <!-- The argument -->
+  <p class="conclusion-statement">{copy.statement}</p>
+
+  <!-- The verdict -->
+  <blockquote class="conclusion-verdict">
+    <p>{copy.verdict}</p>
+  </blockquote>
+
+  <!-- Days without doing so -->
+  <p class="conclusion-days">
+    {copy.daysPrefix}{' '}
+    <strong class="conclusion-days__n">{daysElapsed}</strong>{' '}
+    {copy.daysSuffix}
+  </p>
+
+  <!-- Final epigraph -->
+  <p class="conclusion-epigraph">{copy.epigraph}</p>
+
+  <!-- CTAs -->
+  <div class="conclusion-ctas">
+    <a class="btn btn-primary conclusion-btn" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">
+      {copy.cta1}
+    </a>
+    <button class="btn btn-outline-primary conclusion-btn" id="conclusion-share-btn" type="button">
+      {copy.cta2}
+    </button>
+    <a class="btn btn-outline-primary conclusion-btn" href={metodologiaUrl}>
+      {copy.cta3}
+    </a>
+  </div>
+
+</section>
+
+<script define:vars={{ copiedMsg: copy.copied }}>
+  const btn = document.getElementById('conclusion-share-btn');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: document.title, url: location.href });
+        } else {
+          await navigator.clipboard.writeText(location.href);
+          const orig = btn.textContent;
+          btn.textContent = copiedMsg;
+          setTimeout(() => { btn.textContent = orig; }, 2000);
+        }
+      } catch (_) {}
+    });
+  }
+</script>

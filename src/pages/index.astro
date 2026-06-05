@@ -2,19 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import QuickFacts from '../components/QuickFacts.astro';
-import Summary from '../components/Summary.astro';
-import ThreeMinuteReview from '../components/ThreeMinuteReview.astro';
-import BackgroundCards from '../components/BackgroundCards.astro';
 import Obligation from '../components/Obligation.astro';
+import Existence from '../components/Existence.astro';
+import Anomaly from '../components/Anomaly.astro';
+import MissingLink from '../components/MissingLink.astro';
+import Conclusion from '../components/Conclusion.astro';
 import Timeline from '../components/Timeline.astro';
+import PostElectionAudits from '../components/PostElectionAudits.astro';
 import Context from '../components/Context.astro';
 import Irregularidades from '../components/Irregularidades.astro';
-import PostElectionAudits from '../components/PostElectionAudits.astro';
-import Existence from '../components/Existence.astro';
-import MissingLink from '../components/MissingLink.astro';
-import Anomaly from '../components/Anomaly.astro';
+import Summary from '../components/Summary.astro';
+import ThreeMinuteReview from '../components/ThreeMinuteReview.astro';
 import FAQ from '../components/FAQ.astro';
+import BackgroundCards from '../components/BackgroundCards.astro';
 import Impact from '../components/Impact.astro';
 import Action from '../components/Action.astro';
 import Share from '../components/Share.astro';
@@ -28,18 +28,25 @@ const t = useTranslations(lang);
 <Layout title={t('hero_title')}>
 	<Navbar />
 	<main>
+		<!-- §0 Thesis -->
 		<Hero />
-		<QuickFacts />
-		<Summary />
-		<ThreeMinuteReview />
+
+		<!-- 5-act argument -->
 		<Obligation />
+		<Existence />
+		<Anomaly />
+		<MissingLink />
+		<Conclusion />
+
+		<!-- Evidence detail (secondary) -->
 		<Timeline />
+		<PostElectionAudits />
 		<Context />
 		<Irregularidades />
-		<PostElectionAudits />
-		<Existence />
-		<MissingLink />
-		<Anomaly />
+
+		<!-- Support sections -->
+		<Summary />
+		<ThreeMinuteReview />
 		<FAQ />
 		<BackgroundCards />
 		<Impact />
@@ -49,5 +56,3 @@ const t = useTranslations(lang);
 
 	<Footer />
 </Layout>
-
-
