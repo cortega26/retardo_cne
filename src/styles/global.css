@@ -7,11 +7,7 @@
   --surface-strong: rgba(255, 255, 255, 0.92);
   --border-ornament: color-mix(in srgb, var(--color-brand-600) 22%, transparent);
 
-  /*
-   * Token bridge — remap the legacy modern.css palette to the new design
-   * tokens (theme.css). global.css is bundled and loads AFTER modern.css, so
-   * these win. This re-skins the whole site in one place during the revamp.
-   */
+  /* Semantic aliases — consumed by every component */
   --bg-body: var(--color-paper);
   --bg-card: var(--color-surface);
   --bg-card-hover: var(--color-paper-200);
@@ -34,7 +30,7 @@
   /* --shadow-card and --shadow-pop are defined in theme.css */
 }
 
-body.dark-mode {
+[data-theme="dark"] {
   --bg-body: var(--color-brand-950);
   --bg-card: var(--color-brand-900);
   --bg-card-hover: var(--color-brand-800);
@@ -69,7 +65,7 @@ body {
   background-attachment: fixed;
 }
 
-body.dark-mode {
+[data-theme="dark"] body {
   background:
     radial-gradient(120% 60% at 50% -10%, color-mix(in srgb, var(--color-brand-400) 14%, transparent), transparent 60%),
     var(--bg-body);
@@ -80,7 +76,7 @@ body.dark-mode {
    on iOS Safari (treated as scroll). Use scroll on touch devices. */
 @media (max-width: 991.98px) {
   body,
-  body.dark-mode {
+  [data-theme="dark"] body {
     background-attachment: scroll;
   }
 }
@@ -156,10 +152,10 @@ main > *:not(header) {
   box-shadow: var(--shadow-card) !important;
 }
 
-body.dark-mode .story-card,
-body.dark-mode .premium-card,
-body.dark-mode .share-card,
-body.dark-mode .org-card {
+[data-theme="dark"] .story-card,
+[data-theme="dark"] .premium-card,
+[data-theme="dark"] .share-card,
+[data-theme="dark"] .org-card {
   border-color: var(--border-subtle) !important;
   background: var(--bg-card) !important;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.6) !important;
@@ -180,8 +176,8 @@ body.dark-mode .org-card {
   color: var(--color-brand-700) !important;
 }
 
-body.dark-mode .country-tag,
-body.dark-mode .badge-premium {
+[data-theme="dark"] .country-tag,
+[data-theme="dark"] .badge-premium {
   background: color-mix(in srgb, var(--color-brand-300) 12%, transparent) !important;
   color: var(--color-brand-200) !important;
 }
@@ -194,7 +190,7 @@ body.dark-mode .badge-premium {
   box-shadow: 0 10px 40px -36px rgba(15, 23, 42, 0.45);
 }
 
-body.dark-mode .navbar {
+[data-theme="dark"] .navbar {
   background: color-mix(in srgb, var(--navbar-bg) 82%, black 18%);
   border-bottom-color: rgba(148, 163, 184, 0.12);
 }
@@ -338,7 +334,7 @@ body.dark-mode .navbar {
   backdrop-filter: blur(12px);
 }
 
-body.dark-mode .credibility-bar {
+[data-theme="dark"] .credibility-bar {
   background: color-mix(in srgb, var(--color-brand-900) 70%, transparent);
 }
 
@@ -415,7 +411,7 @@ body.dark-mode .credibility-bar {
   color: var(--color-breach-600);
 }
 
-body.dark-mode .hero-days-number {
+[data-theme="dark"] .hero-days-number {
   color: var(--color-breach-400);
 }
 
@@ -448,7 +444,7 @@ body.dark-mode .hero-days-number {
   margin: 0.2rem 0 0;
 }
 
-body.dark-mode .hero-note-label {
+[data-theme="dark"] .hero-note-label {
   color: var(--color-ink-400);
 }
 
@@ -456,7 +452,7 @@ body.dark-mode .hero-note-label {
   color: var(--color-breach-600) !important;
 }
 
-body.dark-mode .hero-metric--zero {
+[data-theme="dark"] .hero-metric--zero {
   color: var(--color-breach-400) !important;
 }
 
@@ -464,7 +460,7 @@ body.dark-mode .hero-metric--zero {
   color: var(--color-breach-600) !important;
 }
 
-body.dark-mode .hero-metric--breach {
+[data-theme="dark"] .hero-metric--breach {
   color: var(--color-breach-400) !important;
 }
 
@@ -502,7 +498,7 @@ body.dark-mode .hero-metric--breach {
   color: var(--color-breach-600) !important;
 }
 
-body.dark-mode .conclusion-num--zero {
+[data-theme="dark"] .conclusion-num--zero {
   color: var(--color-breach-400) !important;
 }
 
@@ -549,7 +545,7 @@ body.dark-mode .conclusion-num--zero {
   letter-spacing: -0.03em;
 }
 
-body.dark-mode .conclusion-days__n {
+[data-theme="dark"] .conclusion-days__n {
   color: var(--color-breach-400);
 }
 
@@ -566,7 +562,7 @@ body.dark-mode .conclusion-days__n {
   max-width: 48ch;
 }
 
-body.dark-mode .conclusion-epigraph {
+[data-theme="dark"] .conclusion-epigraph {
   background: color-mix(in srgb, var(--color-brand-900) 40%, transparent);
   border-left-color: var(--color-ink-500);
 }
@@ -668,7 +664,7 @@ body.dark-mode .conclusion-epigraph {
   gap: 0.5rem;
 }
 
-body.dark-mode .missinglink-close {
+[data-theme="dark"] .missinglink-close {
   background: color-mix(in srgb, var(--color-breach-700) 10%, var(--bg-body));
 }
 
@@ -694,7 +690,7 @@ body.dark-mode .missinglink-close {
   line-height: 1;
 }
 
-body.dark-mode .missinglink-close__days {
+[data-theme="dark"] .missinglink-close__days {
   color: var(--color-breach-400);
 }
 
@@ -827,7 +823,7 @@ body.dark-mode .missinglink-close__days {
   color: var(--text-secondary);
 }
 
-body.dark-mode .anomaly-rigor {
+[data-theme="dark"] .anomaly-rigor {
   background: color-mix(in srgb, var(--color-flag-yellow) 6%, var(--bg-body));
 }
 
@@ -903,7 +899,7 @@ body.dark-mode .anomaly-rigor {
   margin-bottom: 1.5rem;
 }
 
-body.dark-mode .existence-validation {
+[data-theme="dark"] .existence-validation {
   background: color-mix(in srgb, var(--color-lawful-600) 8%, var(--bg-body));
 }
 
@@ -916,7 +912,7 @@ body.dark-mode .existence-validation {
   margin: 0 0 1rem;
 }
 
-body.dark-mode .existence-validation__label {
+[data-theme="dark"] .existence-validation__label {
   color: var(--color-lawful-400);
 }
 
@@ -1121,7 +1117,7 @@ body.dark-mode .existence-validation__label {
   color: var(--color-breach-600);
 }
 
-body.dark-mode .obligation-audit__status {
+[data-theme="dark"] .obligation-audit__status {
   color: var(--color-breach-400);
 }
 
@@ -1164,7 +1160,7 @@ body.dark-mode .obligation-audit__status {
   background: color-mix(in srgb, var(--color-brand-600) 6%, var(--bg-body)) !important;
 }
 
-body.dark-mode #sistema {
+[data-theme="dark"] #sistema {
   background: color-mix(in srgb, var(--color-brand-400) 8%, var(--bg-body)) !important;
 }
 /* Accessible, consistent keyboard focus ring across the site. */
@@ -1216,7 +1212,7 @@ summary:focus-visible,
     overflow-y: auto;
   }
 
-  body.dark-mode .navbar-collapse {
+  [data-theme="dark"] .navbar-collapse {
     background: rgba(17, 24, 39, 0.94);
   }
 

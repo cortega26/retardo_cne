@@ -9,6 +9,7 @@ import '@fontsource/source-sans-3/latin-400.css';
 import '@fontsource/source-sans-3/latin-500.css';
 import '@fontsource/source-sans-3/latin-600.css';
 import '../styles/theme.css';
+import '../styles/base.css';
 import '../styles/global.css';
 
 interface Props {
@@ -96,11 +97,6 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 			})} />}
 
 
-		<!-- Modern.css — Live site design system -->
-		<link rel="stylesheet" href={`${basePath}/vendor/css/modern.min.css`} />
-
-		<!-- Bridge — Astro component class names → modern.css equivalents -->
-		<link rel="stylesheet" href={`${basePath}/assets/css/bridge.css`} />
 		<script is:inline src="/retardo_cne/assets/js/theme-init.js"></script>
 
 		<!-- Skip-to-content link -->
