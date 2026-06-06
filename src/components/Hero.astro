@@ -3,6 +3,8 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/metodologia`;
 
 // Art. 155 LOPRE: 30-day deadline expired August 29, 2024
 const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
@@ -38,6 +40,20 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
 
     <h1 class="hero-headline">{t('hero_title')}</h1>
 
+    <div class="hero-verdict" role="note" aria-label={lang === 'es' ? 'Conclusión: el nombre de lo ocurrido' : 'Conclusion: what happened'}>
+      <div class="hero-verdict-phase">
+        <span class="hero-verdict-date">28J 2024</span>
+        <strong class="hero-verdict-name">{t('hero_verdict_fraud')}</strong>
+        <span class="hero-verdict-note">{t('hero_verdict_fraud_note')}</span>
+      </div>
+      <span class="hero-verdict-arrow" aria-hidden="true">→</span>
+      <div class="hero-verdict-phase">
+        <span class="hero-verdict-date">{lang === 'es' ? '10 ene 2025' : '10 Jan 2025'}</span>
+        <strong class="hero-verdict-name">{t('hero_verdict_rupture')}</strong>
+        <span class="hero-verdict-note">{t('hero_verdict_rupture_note')}</span>
+      </div>
+    </div>
+
     <p class="hero-days-strip">
       <strong class="hero-days-count">{daysElapsed}</strong>{' '}{t('hero_days_context')}
     </p>
@@ -57,7 +73,7 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
       <span aria-hidden="true">·</span>
       <span>{t('cred_update').replace('{{date}}', '2026-06-06')}</span>
       <span aria-hidden="true">·</span>
-      <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
+      <a href={methodologyHref}>
         {t('cred_corrections')}
       </a>
     </div>
@@ -66,6 +82,70 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
 </header>
 
 <style>
+  /* Verdict block */
+  .hero-verdict {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 1.1rem 0;
+    padding: 1.1rem 1.35rem;
+    border-radius: var(--radius-card);
+    background: color-mix(in srgb, var(--color-breach-500) 6%, var(--bg-card, #fff));
+    border: 1px solid color-mix(in srgb, var(--color-breach-500) 22%, transparent);
+  }
+
+  .hero-verdict-phase {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+    min-width: 10rem;
+  }
+
+  .hero-verdict-date {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-breach-600);
+  }
+
+  .hero-verdict-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+
+  .hero-verdict-note {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-top: 0.1rem;
+  }
+
+  .hero-verdict-arrow {
+    font-size: 1.5rem;
+    color: var(--color-breach-400);
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  :global([data-theme="dark"]) .hero-verdict {
+    background: color-mix(in srgb, var(--color-breach-500) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-breach-400) 28%, transparent);
+  }
+
+  :global([data-theme="dark"]) .hero-verdict-date { color: var(--color-breach-300); }
+  :global([data-theme="dark"]) .hero-verdict-name { color: #fff; }
+  :global([data-theme="dark"]) .hero-verdict-note { color: #95a0bd; }
+  :global([data-theme="dark"]) .hero-verdict-arrow { color: var(--color-breach-500); }
+
+  /* Inauguration note */
   .hero-inauguration-note {
     display: flex;
     align-items: baseline;

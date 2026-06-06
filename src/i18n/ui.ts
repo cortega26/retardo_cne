@@ -30,6 +30,10 @@ export const ui = {
     'badge_herosub': 'VERIFICACIÓN ELECTORAL 2024',
     'hero_title': 'El CNE publicó cero actas. La ciudadanía publicó 25.575. Esa diferencia tiene un nombre.',
     'hero_subtitle': 'Lo que la ley ordena, lo que existe y lo que el CNE ha ocultado.',
+    'hero_verdict_fraud': 'Fraude electoral',
+    'hero_verdict_fraud_note': 'OEA · Centro Carter · ACNUDH',
+    'hero_verdict_rupture': 'Ruptura constitucional',
+    'hero_verdict_rupture_note': 'Investidura del 10 ene 2025 sin actas verificables',
     'hero_cta_primary': 'Ver el argumento ↓',
     'hero_cta_secondary': 'Ir a las actas',
     'hero_days_context': 'días de impunidad desde el vencimiento del plazo del Art. 155 LOPRE',
@@ -90,7 +94,7 @@ export const ui = {
     'action_text': 'Comparte este observatorio para que más personas accedan a la evidencia técnica e institucional.',
     'action_share_btn': 'Compartir Observatorio',
     'action_actas_btn': 'Revisar Actas',
-    'action_github_btn': 'Ver Repositorio',
+    'action_support_btn': 'Foro Penal: Presos Políticos',
 
     'social_share_text': 'Observatorio de Incumplimientos del CNE: Evidencia técnica y legal sobre el 28J.',
     'social_share_x': 'Compartir en X',
@@ -246,7 +250,7 @@ export const ui = {
 
     'cred_docs': 'Documentos oficiales/legales enlazados: {{count}}',
     'cred_update': 'Última actualización: {{date}}',
-    'cred_corrections': 'Correcciones: GitHub Issues',
+    'cred_corrections': 'Metodología y fuentes',
     'source_label': 'Fuente primaria:',
     'hero_stat_1': 'Más de 25.000 actas ciudadanas verificadas frente a 0 resultados oficiales publicados por mesa.',
     'hero_stat_1_source_primary': 'ResultadosConVzla',
@@ -307,6 +311,10 @@ export const ui = {
     'badge_herosub': '2024 ELECTORAL VERIFICATION',
     'hero_title': 'The CNE published zero actas. Citizens published 25,575. That difference has a name.',
     'hero_subtitle': 'What the law requires, what exists, and what the CNE has hidden.',
+    'hero_verdict_fraud': 'Electoral fraud',
+    'hero_verdict_fraud_note': 'OAS · Carter Center · OHCHR',
+    'hero_verdict_rupture': 'Constitutional rupture',
+    'hero_verdict_rupture_note': 'Jan. 10, 2025 inauguration without verifiable actas',
     'hero_cta_primary': 'Read the case ↓',
     'hero_cta_secondary': 'Go to the actas',
     'hero_days_context': 'days of impunity since the Art. 155 LOPRE deadline expired',
@@ -366,7 +374,7 @@ export const ui = {
     'action_text': 'Share this observatory so more people can access technical and institutional evidence.',
     'action_share_btn': 'Share Observatory',
     'action_actas_btn': 'Review Actas',
-    'action_github_btn': 'View Repository',
+    'action_support_btn': 'Foro Penal: Political Prisoners',
 
     'social_share_text': 'CNE Breach Observatory: Technical and legal evidence on July 28.',
     'social_share_x': 'Share on X',
@@ -523,7 +531,7 @@ export const ui = {
     // BL-001: Missing keys — credibility strip
     'cred_docs': 'Official/legal documents linked: {{count}}',
     'cred_update': 'Last updated: {{date}}',
-    'cred_corrections': 'Corrections: GitHub Issues',
+    'cred_corrections': 'Methodology & sources',
 
     // BL-001: Missing keys — hero stats cards
     'source_label': 'Primary source:',
