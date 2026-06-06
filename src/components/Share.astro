@@ -5,7 +5,22 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const shareUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
-const shareText = "Incumplimientos verificables del CNE - Transparencia Electoral 2024";
+const es = lang === 'es';
+
+const shareTexts = {
+  x: es
+    ? `Venezuela 28J: 0 actas oficiales vs 25.575 ciudadanas. Fraude electoral y ruptura constitucional documentados con fuentes primarias.`
+    : `Venezuela Jul 28: 0 official actas vs 25,575 citizen ones. Electoral fraud and constitutional rupture documented with primary sources.`,
+  wa: es
+    ? `El CNE publicó 0 actas. La ciudadanía publicó 25.575. Dos años de impunidad documentada con fuentes verificables:`
+    : `The CNE published 0 actas. Citizens published 25,575. Two years of documented impunity with verifiable sources:`,
+  tg: es
+    ? `Venezuela 28J: fraude electoral verificable. 0 actas del CNE vs 25.575 ciudadanas. Evidencia con fuentes primarias:`
+    : `Venezuela Jul 28: verifiable electoral fraud. 0 CNE actas vs 25,575 citizen ones. Evidence with primary sources:`,
+  li: es
+    ? `Análisis técnico y legal de los incumplimientos del CNE en las elecciones venezolanas del 28J 2024. Evidencia verificable con fuentes primarias — plazos legales, auditorías y actas.`
+    : `Technical and legal analysis of CNE breaches in Venezuela's July 28, 2024 election. Verifiable evidence with primary sources — legal deadlines, audits, and actas.`,
+};
 ---
 
 <section id="compartir" class="section-padding border-t border-subtle" aria-label={t('badge_share')}>
@@ -17,7 +32,7 @@ const shareText = "Incumplimientos verificables del CNE - Transparencia Electora
 
       <div class="share-buttons">
         <!-- X / Twitter -->
-        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}
+        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTexts.x)}&url=${encodeURIComponent(shareUrl)}`}
            target="_blank" rel="noopener noreferrer"
            class="share-btn share-btn-x"
            style="background:#000;color:#fff;"
@@ -27,7 +42,7 @@ const shareText = "Incumplimientos verificables del CNE - Transparencia Electora
         </a>
 
         <!-- WhatsApp -->
-        <a href={`https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`}
+        <a href={`https://wa.me/?text=${encodeURIComponent(shareTexts.wa + " " + shareUrl)}`}
            target="_blank" rel="noopener noreferrer"
            class="share-btn share-btn-wa"
            style="background:#25d366;color:#fff;"
@@ -37,7 +52,7 @@ const shareText = "Incumplimientos verificables del CNE - Transparencia Electora
         </a>
 
         <!-- Telegram -->
-        <a href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
+        <a href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTexts.tg)}`}
            target="_blank" rel="noopener noreferrer"
            class="share-btn share-btn-tg"
            style="background:#0088cc;color:#fff;"
