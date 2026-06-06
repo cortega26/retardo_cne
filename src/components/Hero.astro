@@ -33,7 +33,7 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
       </div>
       <span class="hero-vs-divider" aria-hidden="true">vs</span>
       <div class="hero-num-block">
-        <span class="hero-big-num">{lang === 'es' ? '25.575' : '25,575'}</span>
+        <span id="hero-num-citizen" class="hero-big-num" data-final="25575" data-sep={lang === 'es' ? '.' : ','}>{lang === 'es' ? '25.575' : '25,575'}</span>
         <span class="hero-num-label">{t('hero_card1_citizen_label')}</span>
       </div>
     </div>
@@ -75,6 +75,35 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
 
   </div>
 </header>
+
+<script>
+  (function () {
+    const el = document.getElementById('hero-num-citizen');
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const final = 25575;
+    const sep = (el as HTMLElement).dataset.sep ?? '.';
+    const duration = 1800;
+
+    function fmt(n: number): string {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+    }
+
+    el.textContent = fmt(0);
+    const start = performance.now();
+
+    function tick(now: number): void {
+      if (!el) return;
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = fmt(Math.round(eased * final));
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  })();
+</script>
 
 <style>
   /* Verdict block */

@@ -7,6 +7,7 @@ const langToggleUrl = lang === 'es' ? '/retardo_cne/en/' : '/retardo_cne/';
 const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
 const langToggleTarget = lang === 'es' ? 'en' : 'es';
 const brandLabel = lang === 'es' ? 'Observatorio electoral ciudadano' : 'Citizen electoral observatory';
+const homeHref = lang === 'es' ? '/retardo_cne/' : '/retardo_cne/en/';
 
 const navGroups = {
   evidence: {
@@ -26,7 +27,7 @@ const navGroups = {
 
 <nav class="navbar navbar-expand-lg" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#inicio" aria-current="page">
+    <a class="navbar-brand" href={homeHref}>
       <span class="brand-mark">{brandLabel}</span>
       <span class="brand-title">RETARDO <span class="brand-accent">CNE</span></span>
     </a>
@@ -78,6 +79,7 @@ const navGroups = {
             <li><a class="dropdown-item" href="#plazos">{t('nav_context_deadlines')}</a></li>
             <li><a class="dropdown-item" href="#antecedentes">{t('nav_context_background_section')}</a></li>
             <li><a class="dropdown-item" href="#impacto">{t('nav_context_impact_section')}</a></li>
+            <li><a class="dropdown-item" href="#estado-actual">{t('nav_context_post')}</a></li>
           </ul>
         </li>
 

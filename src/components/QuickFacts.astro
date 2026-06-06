@@ -116,6 +116,15 @@ const vizNote = es ? 'Mesas: 30.026 · Actas digitalizadas: 25.575 (3 ene 2025)'
             if (!entries[0].isIntersecting) return;
             observer.disconnect();
 
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              viz.querySelectorAll<HTMLElement>('.qf-bar-fill[data-target]').forEach(bar => {
+                bar.style.inlineSize = bar.dataset.target ?? '0%';
+              });
+              const zl = viz.querySelector<HTMLElement>('.qf-bar-zero');
+              if (zl) zl.style.opacity = '1';
+              return;
+            }
+
             viz.querySelectorAll<HTMLElement>('.qf-bar-fill[data-target]').forEach((bar, i) => {
               const target = bar.dataset.target ?? '0%';
               setTimeout(() => {
