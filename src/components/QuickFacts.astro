@@ -211,18 +211,30 @@ const vizNote = es ? 'Mesas: 30.026 · Actas digitalizadas: 25.575 (3 ene 2025)'
     margin: 2rem 0 0;
     padding: 1.5rem;
     border-radius: calc(var(--radius-card) - 0.25rem);
-    background: var(--color-brand-950);
-    color: #eef2fb;
+    background: var(--color-ink-50);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
   }
-  .qf-viz-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin: 0 0 1.1rem; color: #fff; }
+  .qf-viz-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin: 0 0 1.1rem; color: var(--text-primary); }
   .qf-bar-row { display: grid; grid-template-columns: minmax(160px, 0.4fr) 1fr; align-items: center; gap: 1rem; margin-bottom: 0.85rem; }
-  .qf-bar-label { font-size: 0.88rem; color: #c3cbe2; }
-  .qf-bar-track { position: relative; height: 1.6rem; background: color-mix(in srgb, #fff 8%, transparent); border-radius: var(--radius-pill); overflow: hidden; display: flex; align-items: center; }
+  .qf-bar-label { font-size: 0.88rem; color: var(--text-secondary); }
+  .qf-bar-track { position: relative; height: 1.6rem; background: var(--color-ink-100); border-radius: var(--radius-pill); overflow: hidden; display: flex; align-items: center; }
   .qf-bar-fill { height: 100%; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: flex-end; padding-inline: 0.6rem; font-size: 0.78rem; font-weight: 700; color: #fff; min-inline-size: 2.2rem; }
   .qf-bar-citizen { background: linear-gradient(90deg, var(--color-lawful-600), var(--color-lawful-400)); }
   .qf-bar-official { background: var(--color-breach-500); }
-  .qf-bar-zero { margin-inline-start: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--color-breach-300); }
-  .qf-viz-note { margin: 1rem 0 0; font-size: 0.78rem; color: #95a0bd; font-family: var(--font-mono); }
+  .qf-bar-zero { margin-inline-start: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--color-breach-600); }
+  .qf-viz-note { margin: 1rem 0 0; font-size: 0.78rem; color: var(--text-secondary); font-family: var(--font-mono); }
+
+  :global([data-theme="dark"]) .qf-viz {
+    background: var(--color-brand-950);
+    border-color: transparent;
+    color: #eef2fb;
+  }
+  :global([data-theme="dark"]) .qf-viz-title { color: #fff; }
+  :global([data-theme="dark"]) .qf-bar-label { color: #c3cbe2; }
+  :global([data-theme="dark"]) .qf-bar-track { background: color-mix(in srgb, #fff 8%, transparent); }
+  :global([data-theme="dark"]) .qf-bar-zero { color: var(--color-breach-300); }
+  :global([data-theme="dark"]) .qf-viz-note { color: #95a0bd; }
 
   @media (max-width: 520px) {
     .qf-bar-row { grid-template-columns: 1fr; gap: 0.35rem; }

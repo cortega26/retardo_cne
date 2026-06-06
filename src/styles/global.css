@@ -616,8 +616,8 @@ main > *:not(header) {
 }
 
 .missinglink-quote {
-  background: var(--card-bg, rgba(255 255 255 / 0.04));
-  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card);
   padding: 1.5rem;
   display: flex;
@@ -1039,8 +1039,8 @@ main > *:not(header) {
 }
 
 .obligation-audits {
-  background: var(--card-bg, rgba(255 255 255 / 0.04));
-  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card);
   padding: 1.5rem;
   display: flex;

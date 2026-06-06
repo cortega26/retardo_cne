@@ -78,8 +78,8 @@ const indicators = [
     margin-top: 1.5rem;
     padding: clamp(1.5rem, 4vw, 2.5rem);
     border-radius: var(--radius-card);
-    background: var(--color-brand-950);
-    color: #eef2fb;
+    background: color-mix(in srgb, var(--color-brand-600) 7%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--color-brand-500) 20%, transparent);
     border-left: 5px solid var(--color-breach-500);
   }
   .impact-conclusion-kicker {
@@ -89,7 +89,7 @@ const indicators = [
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-breach-300);
+    color: var(--color-breach-600);
     border-top: 2px solid currentcolor;
     padding-top: 0.55rem;
     margin-bottom: 0.9rem;
@@ -102,13 +102,13 @@ const indicators = [
     letter-spacing: -0.02em;
     line-height: 1.15;
     margin: 0.6rem 0 0.9rem;
-    color: #fff;
+    color: var(--text-primary);
   }
   .impact-conclusion-text {
     font-size: 1.05rem;
     line-height: 1.7;
     margin: 0;
-    color: #d4dbef;
+    color: var(--text-secondary);
     max-width: 70ch;
   }
   .impact-conclusion-sources {
@@ -120,6 +120,16 @@ const indicators = [
     gap: 0.6rem;
     align-items: center;
   }
-  .impact-conclusion-sources a { color: var(--color-brand-200); text-decoration: none; font-weight: 600; }
+  .impact-conclusion-sources a { color: var(--color-brand-600); text-decoration: none; font-weight: 600; }
   .impact-conclusion-sources a:hover { text-decoration: underline; }
+
+  :global([data-theme="dark"]) .impact-conclusion {
+    background: var(--color-brand-950);
+    border-color: transparent;
+    color: #eef2fb;
+  }
+  :global([data-theme="dark"]) .impact-conclusion-kicker { color: var(--color-breach-300); }
+  :global([data-theme="dark"]) .impact-conclusion-title { color: #fff; }
+  :global([data-theme="dark"]) .impact-conclusion-text { color: #d4dbef; }
+  :global([data-theme="dark"]) .impact-conclusion-sources a { color: var(--color-brand-200); }
 </style>
