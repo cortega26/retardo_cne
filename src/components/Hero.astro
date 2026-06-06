@@ -6,111 +6,56 @@ const t = useTranslations(lang);
 
 // Art. 155 LOPRE: 30-day deadline expired August 29, 2024
 const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
-
-const heroCards = [
-  {
-    dual: true,
-    metricA: '0',
-    metricB: lang === 'es' ? '25.575' : '25,575',
-    labelA: t('hero_card1_cne_label'),
-    labelB: t('hero_card1_citizen_label'),
-    metric: '',
-    label: '',
-    sources: [
-      { text: 'ResultadosConVzla', href: 'https://resultadosconvzla.com/' },
-      { text: lang === 'es' ? 'Archivo CNE' : 'CNE archive', href: 'https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/' },
-    ],
-  },
-  {
-    dual: false,
-    metricA: '', metricB: '', labelA: '', labelB: '',
-    metric: String(daysElapsed),
-    label: t('hero_card2_label'),
-    sources: [
-      { text: 'Art. 155 LOPRE', href: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf' },
-      { text: lang === 'es' ? 'NTN24' : 'NTN24', href: 'https://www.ntn24.com/noticias-politica/vencio-el-plazo-de-totalizacion-de-actas-y-el-cne-venezolano-sigue-sin-publicar-resultados-electorales-505494' },
-    ],
-  },
-  {
-    dual: false,
-    metricA: '', metricB: '', labelA: '', labelB: '',
-    metric: t('hero_card3_metric'),
-    label: t('hero_card3_label'),
-    sources: [
-      { text: lang === 'es' ? 'Protocolos CNE (archivo)' : 'CNE protocols (archive)', href: 'https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php' },
-      { text: 'Prensa Comunitaria', href: 'https://prensacomunitaria.org/2024/08/venezuela-las-auditorias-para-verificar-resultados-electorales-que-no-ha-hecho-el-cne/' },
-    ],
-  },
-];
 ---
 
 <header id="inicio" class="hero-shell">
-  <div class="hero-grid w-full">
-    <div class="hero-copy">
-      <div class="hero-badges">
-        <div class="country-tag">
-          <span class="flag flag-venezuela" aria-hidden="true"></span>
-          <span>{lang === 'es' ? 'Venezuela · 28J 2024' : 'Venezuela · July 28, 2024'}</span>
-        </div>
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          <span>{t('status_violation')}</span>
-        </div>
+  <div class="hero-inner">
+
+    <div class="hero-eyebrow">
+      <div class="country-tag">
+        <span class="flag flag-venezuela" aria-hidden="true"></span>
+        <span>{lang === 'es' ? 'Venezuela · 28J 2024' : 'Venezuela · July 28, 2024'}</span>
       </div>
-
-      <h1 class="hero-thesis">{t('hero_title')}</h1>
-
-      <p class="hero-days-line">
-        <strong class="hero-days-number">{daysElapsed}</strong>{' '}{t('hero_days_context')}
-      </p>
-
-      <p class="hero-suptitle">{t('hero_subtitle')}</p>
-
-      <div class="credibility-bar" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
-        <span>{t('cred_docs').replace('{{count}}', '7')}</span>
-        <span>{t('cred_update').replace('{{date}}', '2025-05-27')}</span>
-        <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
-          {t('cred_corrections')}
-        </a>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary hero-cta" href="#obligacion">{t('hero_cta_primary')}</a>
-        <a class="btn btn-outline-primary hero-cta hero-cta-secondary" href="#actas">{t('hero_cta_secondary')}</a>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>{t('status_violation')}</span>
       </div>
     </div>
 
-    <div class="hero-evidence" aria-label={lang === 'es' ? 'Panel de evidencia destacada' : 'Featured evidence panel'}>
-      {heroCards.map((card) => (
-        <article class="hero-note story-card">
-          {card.dual ? (
-            <div class="hero-note-dual">
-              <div class="hero-note-dual-col">
-                <p class="hero-note-metric hero-metric--zero">{card.metricA}</p>
-                <p class="hero-note-label">{card.labelA}</p>
-              </div>
-              <span class="hero-note-vs" aria-hidden="true">vs</span>
-              <div class="hero-note-dual-col">
-                <p class="hero-note-metric">{card.metricB}</p>
-                <p class="hero-note-label">{card.labelB}</p>
-              </div>
-            </div>
-          ) : (
-            <>
-              <p class="hero-note-metric hero-metric--breach">{card.metric}</p>
-              <p class="hero-note-title">{card.label}</p>
-            </>
-          )}
-          <div class="hero-note-sources text-gray-500">
-            {card.sources.map((source, index) => (
-              <span>
-                <a class="story-link" href={source.href} target="_blank" rel="noopener noreferrer">{source.text}</a>
-                {index < card.sources.length - 1 && <span class="source-divider" aria-hidden="true"> · </span>}
-              </span>
-            ))}
-          </div>
-        </article>
-      ))}
+    <div class="hero-contrast" aria-label={lang === 'es'
+      ? 'CNE publicó 0 actas oficiales; ciudadanía publicó 25.575'
+      : 'CNE published 0 official actas; citizens published 25,575'}>
+      <div class="hero-num-block hero-num--zero">
+        <span class="hero-big-num">0</span>
+        <span class="hero-num-label">{t('hero_card1_cne_label')}</span>
+      </div>
+      <span class="hero-vs-divider" aria-hidden="true">vs</span>
+      <div class="hero-num-block">
+        <span class="hero-big-num">{lang === 'es' ? '25.575' : '25,575'}</span>
+        <span class="hero-num-label">{t('hero_card1_citizen_label')}</span>
+      </div>
     </div>
+
+    <h1 class="hero-headline">{t('hero_title')}</h1>
+
+    <p class="hero-days-strip">
+      <strong class="hero-days-count">{daysElapsed}</strong>{' '}{t('hero_days_context')}
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#obligacion">{t('hero_cta_primary')}</a>
+      <a class="btn btn-ghost" href="#actas">{t('hero_cta_secondary')}</a>
+    </div>
+
+    <div class="hero-meta" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
+      <span>{t('cred_docs').replace('{{count}}', '7')}</span>
+      <span aria-hidden="true">·</span>
+      <span>{t('cred_update').replace('{{date}}', '2025-05-27')}</span>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
+        {t('cred_corrections')}
+      </a>
+    </div>
+
   </div>
 </header>
