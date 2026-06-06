@@ -88,18 +88,56 @@ const vizNote = es ? 'Mesas: 30.026 · Actas digitalizadas: 25.575 (3 ene 2025)'
       ))}
     </ul>
 
-    <figure class="qf-viz">
+    <figure class="qf-viz" id="qf-viz">
       <figcaption class="qf-viz-title">{vizTitle}</figcaption>
       <div class="qf-bar-row">
         <span class="qf-bar-label">{vizCitizen}</span>
-        <div class="qf-bar-track"><div class="qf-bar-fill qf-bar-citizen" style="inline-size: 85%;"><span>85%</span></div></div>
+        <div class="qf-bar-track">
+          <div class="qf-bar-fill qf-bar-citizen" style="inline-size: 0%" data-target="85%"><span>85%</span></div>
+        </div>
       </div>
       <div class="qf-bar-row">
         <span class="qf-bar-label">{vizOfficial}</span>
-        <div class="qf-bar-track"><div class="qf-bar-fill qf-bar-official" style="inline-size: 1.5%;"></div><span class="qf-bar-zero">0%</span></div>
+        <div class="qf-bar-track">
+          <div class="qf-bar-fill qf-bar-official" style="inline-size: 0%" data-target="1.5%"></div>
+          <span class="qf-bar-zero" style="opacity:0">0%</span>
+        </div>
       </div>
       <p class="qf-viz-note">{vizNote}</p>
     </figure>
+
+    <script>
+      (function () {
+        const viz = document.getElementById('qf-viz');
+        if (!viz) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (!entries[0].isIntersecting) return;
+            observer.disconnect();
+
+            viz.querySelectorAll<HTMLElement>('.qf-bar-fill[data-target]').forEach((bar, i) => {
+              const target = bar.dataset.target ?? '0%';
+              setTimeout(() => {
+                bar.style.transition = 'inline-size 1s cubic-bezier(0.4,0,0.2,1)';
+                bar.style.inlineSize = target;
+              }, i * 300);
+            });
+
+            const zeroLabel = viz.querySelector<HTMLElement>('.qf-bar-zero');
+            if (zeroLabel) {
+              setTimeout(() => {
+                zeroLabel.style.transition = 'opacity 0.4s ease';
+                zeroLabel.style.opacity = '1';
+              }, 900);
+            }
+          },
+          { threshold: 0.4 }
+        );
+
+        observer.observe(viz);
+      })();
+    </script>
   </div>
 </section>
 

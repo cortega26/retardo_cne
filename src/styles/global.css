@@ -90,6 +90,7 @@ main > *:not(header) {
   position: relative;
 }
 
+
 /* Override Tailwind's .collapse utility (visibility: collapse) — scoped to
    prevent only the visibility change, not the display-based hide/show. */
 .collapse {

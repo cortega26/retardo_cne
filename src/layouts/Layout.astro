@@ -49,7 +49,7 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 		<meta property="og:image:type" content="image/jpeg" />
 
 		<!-- Twitter -->
-		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={t('meta_description_twitter')} />
 		<meta name="twitter:image" content={socialImageUrl} />
@@ -99,6 +99,24 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 
 		<script is:inline src="/retardo_cne/assets/js/theme-init.js"></script>
 
+		<!-- Reading progress bar -->
+		<style>
+			#read-progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 0%;
+				height: 3px;
+				background: var(--color-brand-500, #3b5bdb);
+				z-index: 9999;
+				transition: width 0.1s linear;
+				pointer-events: none;
+			}
+			@media (prefers-reduced-motion: reduce) {
+				#read-progress { transition: none; }
+			}
+		</style>
+
 		<!-- Skip-to-content link -->
 		<style>
 			.skip-link {
@@ -145,10 +163,25 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 	</head>
 
 	<body class="app-shell">
+		<div id="read-progress" role="progressbar" aria-hidden="true"></div>
 		<a href="#main-content" class="skip-link">{lang === 'es' ? 'Ir al contenido principal' : 'Skip to main content'}</a>
 		<slot />
 		<script is:inline src="/retardo_cne/assets/js/navbar-behavior.js" defer></script>
 		<script is:inline src="/retardo_cne/assets/js/page-behavior.js" defer></script>
+		<script>
+			(function () {
+				const bar = document.getElementById('read-progress');
+				if (!bar) return;
+				function update() {
+					if (!bar) return;
+					const scrolled = window.scrollY;
+					const total = document.documentElement.scrollHeight - window.innerHeight;
+					bar.style.width = total > 0 ? (scrolled / total * 100).toFixed(1) + '%' : '0%';
+				}
+				window.addEventListener('scroll', update, { passive: true });
+				update();
+			})();
+		</script>
 	</body>
 
 </html>
