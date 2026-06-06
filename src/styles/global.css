@@ -198,27 +198,6 @@ main > *:not(header) {
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.6) !important;
 }
 
-.country-tag,
-.badge-premium,
-.story-kicker {
-  font-size: 0.75rem !important;
-  letter-spacing: 0.12em !important;
-}
-
-.country-tag,
-.badge-premium {
-  padding: 0.5rem 0.9rem !important;
-  border-color: var(--border-ornament) !important;
-  background: color-mix(in srgb, var(--color-brand-600) 8%, transparent) !important;
-  color: var(--color-brand-700) !important;
-}
-
-[data-theme="dark"] .country-tag,
-[data-theme="dark"] .badge-premium {
-  background: color-mix(in srgb, var(--color-brand-300) 12%, transparent) !important;
-  color: var(--color-brand-200) !important;
-}
-
 .navbar {
   min-height: var(--nav-height);
   height: auto;

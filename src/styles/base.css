@@ -588,7 +588,7 @@
     border-color: color-mix(in srgb, oklch(55% 0.18 12) 50%, transparent);
   }
 
-/* ── 8. Country tag ───────────────────────────────────────────────────────── */
+/* ── 8. Country tag (hero / metadata badge) ──────────────────────────────── */
 
   .country-tag {
     display: inline-flex;
@@ -614,6 +614,26 @@
     background: color-mix(in srgb, var(--color-brand-300) 12%, transparent);
     color: var(--color-brand-200);
     border-color: color-mix(in srgb, var(--color-brand-300) 30%, transparent);
+  }
+
+/* ── 8b. Section label — editorial overline ──────────────────────────────── */
+
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-brand-600);
+    border-top: 2px solid currentcolor;
+    padding-top: 0.55rem;
+    margin-bottom: 0.9rem;
+    line-height: 1;
+  }
+
+  [data-theme="dark"] .section-label {
+    color: var(--color-brand-400);
   }
 
 /* ── 9. Share / Social container ──────────────────────────────────────────── */

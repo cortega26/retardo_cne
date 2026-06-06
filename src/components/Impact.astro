@@ -28,7 +28,7 @@ const indicators = [
 
 <section id="impacto" class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12" aria-label={t('nav_context_impact_section')}>
   <div class="text-center mb-12">
-    <span class="country-tag mb-4 inline-block">{t('badge_impact')}</span>
+    <span class="section-label">{t('badge_impact')}</span>
     <h3 class="uppercase font-bold mb-6">{t('nav_context_impact_section')}</h3>
     <p class="story-subtitle">{t('impact_subtitle')}</p>
   </div>
@@ -83,11 +83,17 @@ const indicators = [
     border-left: 5px solid var(--color-breach-500);
   }
   .impact-conclusion-kicker {
+    display: inline-block;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: var(--tracking-label);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-breach-300);
+    border-top: 2px solid currentcolor;
+    padding-top: 0.55rem;
+    margin-bottom: 0.9rem;
+    line-height: 1;
   }
   .impact-conclusion-title {
     font-family: var(--font-display);
