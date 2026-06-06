@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl } from '../i18n/utils';
+import { FACTS } from '../data/facts';
 
 const lang = getLangFromUrl(Astro.url);
 const es = lang === 'es';
@@ -17,8 +18,8 @@ const statusLabel: Record<Status, string> = es
 
 const facts: { metric: string; unit?: string; text: string; status: Status; source: string; href: string }[] = [
   {
-    metric: '25.575',
-    unit: es ? 'de 30.026 mesas' : 'of 30,026 tables',
+    metric: es ? FACTS.citizenActasEs : FACTS.citizenActasEn,
+    unit: es ? `de ${FACTS.totalMesasEs} mesas` : `of ${FACTS.totalMesasEn} tables`,
     text: es
       ? 'Actas ciudadanas publicadas (85%). El CNE publicó 0 resultados oficiales por mesa.'
       : 'Citizen tally sheets published (85%). The CNE published 0 official per-table results.',
@@ -62,7 +63,9 @@ const sourceLabel = es ? 'Fuente:' : 'Source:';
 const vizTitle = es ? 'Lo que existe vs. lo que el CNE publicó' : 'What exists vs. what the CNE published';
 const vizCitizen = es ? 'Actas ciudadanas publicadas' : 'Citizen tally sheets published';
 const vizOfficial = es ? 'Resultados oficiales por mesa' : 'Official per-table results';
-const vizNote = es ? 'Mesas: 30.026 · Actas digitalizadas: 25.575 (3 ene 2025)' : 'Tables: 30,026 · Digitized sheets: 25,575 (Jan 3 2025)';
+const vizNote = es
+  ? `Mesas: ${FACTS.totalMesasEs} · Actas digitalizadas: ${FACTS.citizenActasEs} (3 ene 2025)`
+  : `Tables: ${FACTS.totalMesasEn} · Digitized sheets: ${FACTS.citizenActasEn} (Jan 3 2025)`;
 ---
 
 <section id="resumen" class="quick-facts" aria-labelledby="quick-facts-title">

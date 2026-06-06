@@ -1,13 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { FACTS } from '../data/facts';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/metodologia`;
 
-// Art. 155 LOPRE: 30-day deadline expired August 29, 2024
-const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
+const daysElapsed = Math.floor((Date.now() - new Date(FACTS.gazetaDeadline).getTime()) / 86_400_000);
 ---
 
 <header id="inicio" class="hero-shell">
@@ -33,7 +33,7 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
       </div>
       <span class="hero-vs-divider" aria-hidden="true">vs</span>
       <div class="hero-num-block">
-        <span id="hero-num-citizen" class="hero-big-num" data-final="25575" data-sep={lang === 'es' ? '.' : ','}>{lang === 'es' ? '25.575' : '25,575'}</span>
+        <span id="hero-num-citizen" class="hero-big-num" data-final={FACTS.citizenActas} data-sep={lang === 'es' ? '.' : ','}>{lang === 'es' ? FACTS.citizenActasEs : FACTS.citizenActasEn}</span>
         <span class="hero-num-label">{t('hero_card1_citizen_label')}</span>
       </div>
     </div>
@@ -64,9 +64,9 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
     </div>
 
     <div class="hero-meta" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
-      <span>{t('cred_docs').replace('{{count}}', '7')}</span>
+      <span>{t('cred_docs').replace('{{count}}', String(FACTS.primaryDocsCount))}</span>
       <span aria-hidden="true">·</span>
-      <span>{t('cred_update').replace('{{date}}', '2026-06-06')}</span>
+      <span>{t('cred_update').replace('{{date}}', FACTS.lastVerified)}</span>
       <span aria-hidden="true">·</span>
       <a href={methodologyHref}>
         {t('cred_corrections')}
@@ -168,5 +168,10 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
   :global([data-theme="dark"]) .hero-verdict-name { color: #fff; }
   :global([data-theme="dark"]) .hero-verdict-note { color: #95a0bd; }
   :global([data-theme="dark"]) .hero-verdict-arrow { color: var(--color-breach-500); }
+
+  @media (max-width: 480px) {
+    .hero-verdict { flex-direction: column; align-items: flex-start; }
+    .hero-verdict-arrow { transform: rotate(90deg); align-self: center; }
+  }
 
 </style>

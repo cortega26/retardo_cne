@@ -1,0 +1,266 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+type Entry = CollectionEntry<'irregularidades'>;
+
+interface Props {
+  item: Entry;
+  prev: Entry | null;
+  next: Entry | null;
+}
+
+export async function getStaticPaths() {
+  const all = await getCollection('irregularidades');
+  const items = all
+    .filter(i => i.id.startsWith('en/'))
+    .sort((a, b) => a.data.id - b.data.id);
+
+  return items.map((item, idx) => ({
+    params: { slug: item.id.slice(3) },
+    props: { item, prev: items[idx - 1] ?? null, next: items[idx + 1] ?? null },
+  }));
+}
+
+const { item, prev, next } = Astro.props;
+const { id: caseNum, title, afirmacion, norma, evidencia, impacto, replica, sources } = item.data;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title={`Case #${caseNum}: ${title}`}>
+  <Navbar />
+  <main class="irreg-page">
+    <article class="irreg-shell">
+
+      <a class="irreg-back" href={`${base}/en/#analisis`}>← Back to the observatory</a>
+
+      <div class="irreg-header">
+        <span class="irreg-kicker">{t('badge_case')}{caseNum} — Documented irregularity</span>
+        <h1 class="irreg-title">{title}</h1>
+        <span class={`status-tag irreg-status ${replica ? 'status-tag-met' : 'status-tag-failed'}`}>
+          {replica ? t('badge_official_response') : t('badge_observation')}
+        </span>
+      </div>
+
+      <section class="irreg-block irreg-block--claim">
+        <div class="irreg-label">{t('irreg_afirmacion')}</div>
+        <p>{afirmacion}</p>
+      </section>
+
+      <div class="irreg-two-col">
+        <section class="irreg-block">
+          <div class="irreg-label">{t('irreg_norma')}</div>
+          <p class="italic">{norma}</p>
+        </section>
+        <section class="irreg-block">
+          <div class="irreg-label">{t('irreg_evidencia')}</div>
+          <p>{evidencia}</p>
+        </section>
+      </div>
+
+      <section class="irreg-block irreg-block--impact">
+        <div class="irreg-label impact-label">{t('irreg_impacto')}</div>
+        <p class="font-medium">{impacto}</p>
+      </section>
+
+      {replica && (
+        <section class="irreg-block irreg-block--replica">
+          <div class="irreg-label replica-label">{t('irreg_replica')}</div>
+          <p>{replica}</p>
+        </section>
+      )}
+
+      {sources && sources.length > 0 && (
+        <section class="irreg-block">
+          <div class="irreg-label">Sources</div>
+          <ul class="irreg-sources">
+            {sources.map(s => <li>{s}</li>)}
+          </ul>
+        </section>
+      )}
+
+      <nav class="irreg-nav" aria-label="Case navigation">
+        {prev
+          ? <a class="irreg-nav-link" href={`${base}/en/irregularidades/${prev.id.slice(3)}/`}>
+              ← {t('badge_case')}{prev.data.id}: {prev.data.title}
+            </a>
+          : <span />
+        }
+        {next
+          ? <a class="irreg-nav-link irreg-nav-link--next" href={`${base}/en/irregularidades/${next.id.slice(3)}/`}>
+              {t('badge_case')}{next.data.id}: {next.data.title} →
+            </a>
+          : <span />
+        }
+      </nav>
+
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .irreg-page { padding: clamp(2rem, 6vw, 4rem) 0 4rem; }
+
+  .irreg-shell {
+    width: min(65rem, calc(100vw - 2rem));
+    margin-inline: auto;
+  }
+
+  .irreg-back {
+    font-size: 0.85rem;
+    color: var(--color-brand-600);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .irreg-back:hover { text-decoration: underline; }
+
+  .irreg-header { margin: 1.75rem 0 2rem; }
+
+  .irreg-kicker {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+    margin-bottom: 0.75rem;
+  }
+
+  .irreg-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+  }
+
+  .irreg-status { margin-top: 0.5rem; }
+
+  .irreg-block {
+    margin-top: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-card);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .irreg-block--claim {
+    border-left: 4px solid var(--color-brand-500);
+    background: color-mix(in srgb, var(--color-brand-500) 4%, var(--bg-card));
+  }
+
+  .irreg-block--impact {
+    border-left: 4px solid var(--color-breach-500);
+    background: color-mix(in srgb, var(--color-breach-500) 4%, var(--bg-card));
+  }
+
+  .irreg-block--replica {
+    border-left: 4px solid var(--color-lawful-500);
+    background: color-mix(in srgb, var(--color-lawful-500) 4%, var(--bg-card));
+  }
+
+  .irreg-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .irreg-two-col { grid-template-columns: 1fr; }
+  }
+
+  .irreg-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-accent);
+    margin-bottom: 0.65rem;
+  }
+
+  .impact-label { color: var(--color-breach-600); }
+  .replica-label { color: var(--color-lawful-700); }
+
+  .irreg-block p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .irreg-sources {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .irreg-sources li {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink-100);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .irreg-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+
+  .irreg-nav-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-brand-600);
+    text-decoration: none;
+    max-width: 44ch;
+    line-height: 1.45;
+  }
+
+  .irreg-nav-link:hover { text-decoration: underline; }
+  .irreg-nav-link--next { text-align: right; margin-left: auto; }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .irreg-block--claim {
+    background: color-mix(in srgb, var(--color-brand-500) 8%, transparent);
+    border-left-color: var(--color-brand-400);
+  }
+  :global([data-theme="dark"]) .irreg-block--impact {
+    background: color-mix(in srgb, var(--color-breach-500) 8%, transparent);
+    border-left-color: var(--color-breach-400);
+  }
+  :global([data-theme="dark"]) .irreg-block--replica {
+    background: color-mix(in srgb, var(--color-lawful-500) 8%, transparent);
+    border-left-color: var(--color-lawful-400);
+  }
+  :global([data-theme="dark"]) .irreg-sources li {
+    background: var(--color-brand-900);
+    border-color: var(--border-subtle);
+    color: #c3cbe2;
+  }
+  :global([data-theme="dark"]) .impact-label { color: var(--color-breach-300); }
+  :global([data-theme="dark"]) .replica-label { color: var(--color-lawful-300); }
+  :global([data-theme="dark"]) .irreg-kicker { color: var(--color-brand-300); }
+</style>

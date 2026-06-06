@@ -78,6 +78,20 @@ const shareTexts = {
           <span id="copyBtnLabel">{lang === 'es' ? 'Copiar enlace' : 'Copy link'}</span>
         </button>
       </div>
+
+      <!-- Secondary CTAs -->
+      <div class="share-secondary-actions">
+        <a href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer"
+           class="btn btn-outline-primary font-bold px-5 py-3">
+          <svg class="icon me-2" viewBox="0 0 384 512" aria-hidden="true" width="1em" height="1em" fill="currentColor"><path d="M192 0c-16.6 0-30.3 11-34.6 26H48C21.5 26 0 47.5 0 74v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V74c0-26.5-21.5-48-48-48h-109.4c-4.3-15-18-26-34.6-26zm0 28c6.6 0 12 5.4 12 12s-5.4 12-12 12-12-5.4-12-12 5.4-12 12-12zm-86.2 328.5l-48-52.5c-4.1-4.5-3.8-11.6.6-15.7 4.5-4.1 11.5-3.8 15.7.6l39.8 43.6 95.2-100c4.3-4.5 11.3-4.7 15.8-.4 4.5 4.3 4.7 11.3.4 15.8l-103 108.1c-4.5 5-11.8 5.1-16.5.1z"/></svg>
+          {t('action_actas_btn')}
+        </a>
+        <a href="https://foropenal.com/" target="_blank" rel="noopener noreferrer"
+           class="btn btn-outline-primary font-bold px-5 py-3">
+          <svg class="icon me-2" viewBox="0 0 448 512" aria-hidden="true" width="1em" height="1em" fill="currentColor"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+          {t('action_support_btn')}
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -166,7 +180,17 @@ const shareTexts = {
     border-color: var(--border-subtle);
   }
 
-  body.dark-mode .share-btn-copy {
+  [data-theme="dark"] .share-btn-copy {
     border-color: var(--border-subtle);
+  }
+
+  .share-secondary-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
   }
 </style>

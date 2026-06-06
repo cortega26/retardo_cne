@@ -1213,6 +1213,7 @@ summary:focus-visible,
     margin-top: 1rem;
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
 }
@@ -1267,4 +1268,91 @@ summary:focus-visible,
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ── Mobile: verdict arrow rotates when phases stack vertically ──────────── */
+@media (max-width: 480px) {
+  .hero-verdict {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-verdict-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
+
+/* ── Print / PDF export ───────────────────────────────────────────────────── */
+@media print {
+  /* Hide UI chrome */
+  .navbar,
+  #back-to-top,
+  #read-progress,
+  .hero-actions,
+  .hero-eyebrow,
+  .status-dot,
+  .share-buttons,
+  .share-secondary-actions,
+  #compartir,
+  button {
+    display: none !important;
+  }
+
+  /* Force white canvas — override radial-gradient on body */
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11pt;
+  }
+
+  /* Hero and Conclusion: keep dark for visual structure, tell printer to honour it */
+  .hero-shell,
+  .conclusion-shell {
+    background: #1a1f2e !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Cards: drop shadows, keep borders */
+  .story-card,
+  .premium-card,
+  .share-card,
+  .org-card,
+  .qf-inner {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+  }
+
+  /* Bar chart colours: tell printer to honour */
+  .qf-bar-fill,
+  .qf-bar-citizen,
+  .qf-bar-official {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Show source URLs inline after external links in evidence cards */
+  .story-card a[href^="http"]::after,
+  .story-card a[href^="https"]::after,
+  .irreg-block a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.7em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  /* Prevent orphaned section headers */
+  h1, h2, h3, h4 { break-after: avoid; }
+  section.story-section { break-inside: avoid; }
+  .hero-shell { break-after: page; }
+
+  /* Scale typography for print */
+  h1 { font-size: 22pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 13pt; }
+
+  /* Ensure links are legible */
+  a { color: #1a5ca8 !important; }
 }
