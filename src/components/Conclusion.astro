@@ -32,7 +32,8 @@ const copy = {
 const metodologiaUrl = lang === 'es' ? '/retardo_cne/metodologia' : '/retardo_cne/en/metodologia';
 ---
 
-<section id="conclusion" class="conclusion-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
+<div class="conclusion-shell">
+<section id="conclusion" class="conclusion-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
   <!-- The asymmetry -->
   <div class="conclusion-asymmetry">
@@ -80,6 +81,7 @@ const metodologiaUrl = lang === 'es' ? '/retardo_cne/metodologia' : '/retardo_cn
   </div>
 
 </section>
+</div>
 
 <script define:vars={{ copiedMsg: copy.copied }}>
   const btn = document.getElementById('conclusion-share-btn');

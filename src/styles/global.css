@@ -96,6 +96,43 @@ main > *:not(header) {
   visibility: visible;
 }
 
+/* ── Counter — elapsed-time digit display ────────────────────────────────── */
+.counter {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.counter [data-unit] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.85rem;
+  border-right: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+.counter [data-unit]:first-child { padding-left: 0; }
+.counter [data-unit]:last-child { border-right: none; padding-right: 0; }
+
+.counter .number {
+  display: block;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-breach-600);
+  line-height: 1;
+}
+
+[data-theme="dark"] .counter .number { color: var(--color-breach-400); }
+
 /* ── navbar-expand-lg (Bootstrap replacement) ────────────────────────────── */
 /* Hide nav panel on mobile by default; show toggler. */
 @media (max-width: 991.98px) {
@@ -243,8 +280,59 @@ main > *:not(header) {
 }
 
 .hero-shell {
-  padding: clamp(2.75rem, 7vw, 6rem) clamp(1rem, 3vw, 2rem) 1rem;
-  background: transparent;
+  padding: clamp(2.75rem, 7vw, 6rem) clamp(1rem, 3vw, 2rem) 4rem;
+  background:
+    radial-gradient(130% 55% at 50% -5%, color-mix(in srgb, var(--color-brand-500) 28%, transparent), transparent 70%),
+    var(--color-brand-950);
+}
+
+/* Hero is always dark — all child text adapts to the dark context */
+.hero-shell .hero-thesis { color: #fff; }
+.hero-shell .hero-suptitle,
+.hero-shell .hero-days-line { color: #aeb7cd; }
+.hero-shell .hero-days-number { color: var(--color-breach-300); }
+
+.hero-shell .credibility-bar {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #7a8bb0;
+}
+.hero-shell .credibility-bar a { color: var(--color-brand-300); }
+
+/* Evidence cards as glass panels on dark */
+.hero-shell .hero-note {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 12px 32px -12px rgba(0, 0, 0, 0.55) !important;
+}
+.hero-shell .hero-note-title { color: #eef2fb; }
+.hero-shell .hero-note-label { color: #8e9ab5 !important; }
+.hero-shell .hero-note-vs { color: #6b7a9a; }
+.hero-shell .hero-note-sources { color: #6b7a9a; }
+.hero-shell .hero-note-sources .story-link { color: var(--color-brand-300) !important; }
+
+/* "0" — the central argument — displayed large on dark */
+.hero-shell .hero-metric--zero {
+  font-size: clamp(3.75rem, 8vw, 5.5rem) !important;
+  color: var(--color-breach-300) !important;
+}
+.hero-shell .hero-metric--breach { color: var(--color-breach-300) !important; }
+.hero-shell .hero-note-metric { color: var(--color-brand-300); }
+
+/* Left glow accent — brighter on dark bg */
+.hero-shell .hero-copy::before {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-400) 35%, transparent), transparent 85%);
+  opacity: 1;
+}
+
+/* Outline CTA button on dark */
+.hero-shell .hero-cta-secondary {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #eef2fb !important;
+}
+.hero-shell .hero-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .hero-grid {
@@ -466,9 +554,40 @@ main > *:not(header) {
 
 /* ---- §5 Conclusion ---- */
 
+.conclusion-shell {
+  width: 100%;
+  padding: 5rem 0 6rem;
+  margin-top: 3rem;
+  background:
+    radial-gradient(130% 55% at 50% 110%, color-mix(in srgb, var(--color-brand-500) 20%, transparent), transparent 70%),
+    var(--color-brand-950);
+}
+
 .conclusion-section {
-  border-top: 2px solid var(--border-subtle);
-  padding-top: 4rem;
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Dark shell — all child text adapts */
+.conclusion-shell .conclusion-num { color: var(--color-brand-300); }
+.conclusion-shell .conclusion-num--zero { color: var(--color-breach-300) !important; }
+.conclusion-shell .conclusion-stat-label,
+.conclusion-shell .conclusion-statement,
+.conclusion-shell .conclusion-days { color: #aeb7cd; }
+.conclusion-shell .conclusion-verdict p { color: #eef2fb; }
+.conclusion-shell .conclusion-days__n { color: var(--color-breach-300); }
+.conclusion-shell .conclusion-epigraph {
+  color: #eef2fb;
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: var(--color-brand-400);
+}
+.conclusion-shell .btn-outline-primary {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #eef2fb !important;
+}
+.conclusion-shell .btn-outline-primary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .conclusion-asymmetry {
@@ -871,9 +990,11 @@ main > *:not(header) {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.04em;
-  color: var(--color-accent);
+  color: var(--color-brand-600);
   margin: 0 0 0.35rem;
 }
+
+[data-theme="dark"] .existence-stat-value { color: var(--color-brand-300); }
 
 .existence-stat-label {
   font-size: 0.75rem;
