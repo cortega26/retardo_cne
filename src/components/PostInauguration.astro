@@ -1,0 +1,188 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const es = lang === 'es';
+
+const events = [
+  {
+    date: t('post_event_1_date'),
+    title: t('post_event_1_title'),
+    text: t('post_event_1_text'),
+    sourceLabel: t('post_event_1_source'),
+    sourceUrl: 'https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF',
+    highlight: false,
+  },
+  {
+    date: t('post_event_2_date'),
+    title: t('post_event_2_title'),
+    text: t('post_event_2_text'),
+    sourceLabel: t('post_event_2_source'),
+    sourceUrl: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf',
+    highlight: true,
+  },
+  {
+    date: t('post_event_3_date'),
+    title: t('post_event_3_title'),
+    text: t('post_event_3_text'),
+    sourceLabel: t('post_event_3_source'),
+    sourceUrl: 'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/',
+    highlight: false,
+  },
+];
+
+const unchanged = [
+  t('post_unchanged_1'),
+  t('post_unchanged_2'),
+  t('post_unchanged_3'),
+];
+---
+
+<section
+  id="estado-actual"
+  class="story-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12"
+  aria-labelledby="post-title"
+>
+  <div class="text-center mb-12">
+    <span class="section-label">{t('badge_post_election')}</span>
+    <h2 id="post-title" class="post-heading">{t('post_title')}</h2>
+    <p class="story-subtitle">{t('post_subtitle')}</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    {events.map((ev) => (
+      <div>
+        <div class:list={['story-card', 'h-full', 'flex', 'flex-col', ev.highlight && 'post-card--highlight']}>
+          <p class="story-kicker mb-2">{ev.date}</p>
+          <h3 class="post-event-title">{ev.title}</h3>
+          <p class="post-event-text flex-1">{ev.text}</p>
+          <div class="mt-auto pt-3" style="border-top: 1px solid var(--border-subtle);">
+            <a href={ev.sourceUrl} target="_blank" rel="noopener noreferrer" class="story-link text-sm font-bold">
+              {ev.sourceLabel} →
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="post-unchanged" role="note" aria-label={es ? 'Estado sin resolver' : 'Unresolved status'}>
+    <h3 class="post-unchanged-title">{t('post_unchanged_title')}</h3>
+    <ul class="post-unchanged-list" role="list">
+      {unchanged.map((item) => (
+        <li class="post-unchanged-item">
+          <span class="post-unchanged-dot" aria-hidden="true"></span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="post-unchanged-note">
+      {t('post_updated_note')} <time datetime="2026-06-06">2026-06-06</time>
+    </p>
+  </div>
+</section>
+
+<style>
+  .post-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: var(--tracking-tightest);
+    line-height: 1.1;
+    margin: 0.9rem 0 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .post-card--highlight {
+    border-top: 3px solid var(--color-breach-500);
+    background: color-mix(in srgb, var(--color-breach-500) 4%, var(--bg-card));
+  }
+
+  .post-event-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .post-event-text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0 0 1rem;
+  }
+
+  /* Unchanged status banner */
+  .post-unchanged {
+    margin-top: 1.5rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: var(--radius-card);
+    background: color-mix(in srgb, var(--color-breach-500) 6%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--color-breach-500) 20%, transparent);
+    border-left: 4px solid var(--color-breach-500);
+  }
+
+  .post-unchanged-title {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 1rem;
+  }
+
+  .post-unchanged-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .post-unchanged-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .post-unchanged-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--color-breach-500);
+    flex-shrink: 0;
+    margin-top: 0.3em;
+  }
+
+  .post-unchanged-note {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  /* Dark mode */
+  :global([data-theme="dark"]) .post-card--highlight {
+    background: color-mix(in srgb, var(--color-breach-500) 8%, var(--bg-card));
+    border-top-color: var(--color-breach-400);
+  }
+
+  :global([data-theme="dark"]) .post-unchanged {
+    background: color-mix(in srgb, var(--color-breach-500) 10%, transparent);
+    border-left-color: var(--color-breach-400);
+  }
+
+  :global([data-theme="dark"]) .post-unchanged-title { color: #fff; }
+
+  :global([data-theme="dark"]) .post-unchanged-item { color: #c3cbe2; }
+
+  :global([data-theme="dark"]) .post-unchanged-dot { background: var(--color-breach-400); }
+</style>

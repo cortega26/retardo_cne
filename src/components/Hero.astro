@@ -42,6 +42,11 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
       <strong class="hero-days-count">{daysElapsed}</strong>{' '}{t('hero_days_context')}
     </p>
 
+    <div class="hero-inauguration-note" role="note" aria-label={lang === 'es' ? 'Nota sobre la inauguración' : 'Inauguration note'}>
+      <span class="hero-inau-pill" aria-hidden="true">{lang === 'es' ? '10 ENE 2025' : '10 JAN 2025'}</span>
+      <span class="hero-inau-text">{t('hero_inauguration_note')}</span>
+    </div>
+
     <div class="hero-actions">
       <a class="btn btn-primary" href="#obligacion">{t('hero_cta_primary')}</a>
       <a class="btn btn-ghost" href="#actas">{t('hero_cta_secondary')}</a>
@@ -50,7 +55,7 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
     <div class="hero-meta" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
       <span>{t('cred_docs').replace('{{count}}', '7')}</span>
       <span aria-hidden="true">·</span>
-      <span>{t('cred_update').replace('{{date}}', '2025-05-27')}</span>
+      <span>{t('cred_update').replace('{{date}}', '2026-06-06')}</span>
       <span aria-hidden="true">·</span>
       <a href="https://github.com/cortega26/retardo_cne/issues/new" target="_blank" rel="noopener noreferrer">
         {t('cred_corrections')}
@@ -59,3 +64,50 @@ const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) /
 
   </div>
 </header>
+
+<style>
+  .hero-inauguration-note {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1.1rem;
+    border-radius: 0.5rem;
+    background: color-mix(in srgb, var(--color-breach-500) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-breach-500) 25%, transparent);
+    border-left: 3px solid var(--color-breach-500);
+    max-width: 62ch;
+  }
+
+  .hero-inau-pill {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-breach-700);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .hero-inau-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  :global([data-theme="dark"]) .hero-inauguration-note {
+    background: color-mix(in srgb, var(--color-breach-500) 12%, transparent);
+    border-color: color-mix(in srgb, var(--color-breach-400) 30%, transparent);
+    border-left-color: var(--color-breach-400);
+  }
+
+  :global([data-theme="dark"]) .hero-inau-pill {
+    color: var(--color-breach-300);
+  }
+
+  :global([data-theme="dark"]) .hero-inau-text {
+    color: #c3cbe2;
+  }
+</style>
