@@ -13,9 +13,10 @@
  */
 
 @layer theme, base, components, utilities;
-@import "tailwindcss/theme.css"    layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+
+@import url("tailwindcss/theme.css")    layer(theme);
+@import url("tailwindcss/preflight.css") layer(base);
+@import url("tailwindcss/utilities.css") layer(utilities);
 
 /* ── Dark mode variant — selector on <html> (matches theme-init.js) ───────── */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
@@ -24,22 +25,25 @@
 @property --color-bg-body {
   syntax: "<color>";
   inherits: true;
-  initial-value: oklch(98% 0.004 80);        /* ≈ #f6f5f1 paper */
+  initial-value: oklch(98% 0.004 80deg);        /* ≈ #f6f5f1 paper */
 }
+
 @property --color-bg-card {
   syntax: "<color>";
   inherits: true;
-  initial-value: oklch(100% 0 0);             /* white */
+  initial-value: oklch(100% 0 0deg);             /* white */
 }
+
 @property --color-text-primary {
   syntax: "<color>";
   inherits: true;
-  initial-value: oklch(14% 0.01 248);         /* ≈ #14171f ink-900 */
+  initial-value: oklch(14% 0.01 248deg);         /* ≈ #14171f ink-900 */
 }
+
 @property --color-text-secondary {
   syntax: "<color>";
   inherits: true;
-  initial-value: oklch(40% 0.016 248);        /* ≈ #515868 ink-600 */
+  initial-value: oklch(40% 0.016 248deg);        /* ≈ #515868 ink-600 */
 }
 
 @theme {
@@ -104,7 +108,6 @@
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-sans:    "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-mono:    ui-monospace, "SFMono-Regular", "Menlo", monospace;
-
   --tracking-tightest: -0.04em;
   --tracking-label:     0.14em;
 
@@ -113,9 +116,9 @@
   --radius-pill: 999px;
 
   /* ── Shadows (border-first Cactus approach — lighter than before) ────── */
-  --shadow-card: 0 1px 2px oklch(14% 0.01 248 / 0.04),
-                 0 4px 16px -8px oklch(14% 0.01 248 / 0.14);
-  --shadow-pop:  0 12px 40px -16px oklch(13% 0.05 248 / 0.35);
+  --shadow-card: 0 1px 2px oklch(14% 0.01 248deg / 0.04),
+                 0 4px 16px -8px oklch(14% 0.01 248deg / 0.14);
+  --shadow-pop:  0 12px 40px -16px oklch(13% 0.05 248deg / 0.35);
 
   /* ── Section rhythm ──────────────────────────────────────────────────── */
   --spacing-section: 4.5rem;
