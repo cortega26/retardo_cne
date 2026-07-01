@@ -13,6 +13,7 @@
  */
 
 /* ── 0. Font & legacy variable aliases ────────────────────────────────────── */
+
 /*
  * Components reference --font-heading and --font-body (modern.min.css names).
  * Map them to the canonical tokens from theme.css.
@@ -27,10 +28,10 @@
   --radius-lg: 1.375rem;
 
   /* Elevation — lighter than modern.min.css (Cactus: border-first) */
-  --shadow-sm:     0 1px 3px 0 oklch(14% 0.02 248 / 0.08);
-  --shadow-card:   0 1px 2px oklch(14% 0.02 248 / 0.04), 0 4px 16px -8px oklch(14% 0.02 248 / 0.14);
-  --shadow-raised: 0 4px 8px oklch(14% 0.02 248 / 0.06), 0 16px 32px -16px oklch(14% 0.02 248 / 0.24);
-  --shadow-pop:    0 12px 40px -16px oklch(13% 0.05 248 / 0.35);
+  --shadow-sm:     0 1px 3px 0 oklch(14% 0.02 248deg / 0.08);
+  --shadow-card:   0 1px 2px oklch(14% 0.02 248deg / 0.04), 0 4px 16px -8px oklch(14% 0.02 248deg / 0.14);
+  --shadow-raised: 0 4px 8px oklch(14% 0.02 248deg / 0.06), 0 16px 32px -16px oklch(14% 0.02 248deg / 0.24);
+  --shadow-pop:    0 12px 40px -16px oklch(13% 0.05 248deg / 0.35);
 
   /* Navigation */
   --nav-height: 68px;
@@ -49,7 +50,7 @@
   --color-primary-brand: var(--color-brand-600);
   --color-danger:  var(--color-breach-600);
   --color-danger-glow: color-mix(in srgb, var(--color-breach-500) 22%, transparent);
-  --color-warning: oklch(71% 0.16 60);
+  --color-warning: oklch(71% 0.16 60deg);
   --color-success: var(--color-lawful-500);
   --navbar-bg:     color-mix(in srgb, var(--color-paper) 88%, transparent);
   --navbar-border: var(--color-ink-100);
@@ -62,8 +63,8 @@
   --bg-body:       var(--color-brand-950);
   --bg-card:       var(--color-brand-900);
   --bg-card-hover: var(--color-brand-800);
-  --text-primary:  oklch(92% 0.01 248);
-  --text-secondary: oklch(72% 0.025 248);
+  --text-primary:  oklch(92% 0.01 248deg);
+  --text-secondary: oklch(72% 0.025 248deg);
   --text-accent:   var(--color-brand-300);
   --color-primary-brand: var(--color-brand-400);
   --color-danger:  var(--color-breach-400);
@@ -72,8 +73,8 @@
   --navbar-border: color-mix(in srgb, var(--color-brand-300) 18%, transparent);
   --border-subtle: color-mix(in srgb, var(--color-brand-300) 16%, transparent);
   --border-strong: color-mix(in srgb, var(--color-brand-300) 28%, transparent);
-  --shadow-card:   0 1px 2px oklch(4% 0 0 / 0.3), 0 4px 16px -8px oklch(4% 0 0 / 0.5);
-  --shadow-raised: 0 4px 8px oklch(4% 0 0 / 0.2), 0 16px 32px -16px oklch(4% 0 0 / 0.55);
+  --shadow-card:   0 1px 2px oklch(4% 0 0deg / 0.3), 0 4px 16px -8px oklch(4% 0 0deg / 0.5);
+  --shadow-raised: 0 4px 8px oklch(4% 0 0deg / 0.2), 0 16px 32px -16px oklch(4% 0 0deg / 0.55);
 }
 
 /* ── 1. Base typography & resets ──────────────────────────────────────────── */
@@ -100,7 +101,7 @@
     padding: 0;
     min-height: 100svh;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizelegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -162,7 +163,7 @@
 
   .btn-primary {
     background-color: var(--color-brand-600);
-    color: #fff;
+    color: #ffffff;
     border-color: var(--color-brand-600);
   }
 
@@ -172,7 +173,7 @@
     border-color: var(--color-brand-700);
     box-shadow: 0 4px 14px -4px color-mix(in srgb, var(--color-brand-600) 55%, transparent);
     transform: translateY(-1px);
-    color: #fff;
+    color: #ffffff;
   }
 
   [data-theme="dark"] .btn-primary {
@@ -197,7 +198,7 @@
   .btn-outline-primary:focus-visible {
     background-color: var(--color-brand-600);
     border-color: var(--color-brand-600);
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 4px 12px -4px color-mix(in srgb, var(--color-brand-600) 45%, transparent);
     transform: translateY(-1px);
   }
@@ -220,18 +221,18 @@
   }
 
   /* Social share buttons */
-  .btn-x:hover     { background-color: #000          !important; color: #fff !important; }
-  .btn-wa:hover    { background-color: #25d366        !important; color: #fff !important; }
-  .btn-tg:hover    { background-color: #0088cc        !important; color: #fff !important; }
-  .btn-li:hover    { background-color: #0a66c2        !important; color: #fff !important; }
-  .btn-copy:hover  { background-color: var(--color-brand-600) !important; color: #fff !important; }
+  .btn-x:hover     { background-color: #000000          !important; color: #ffffff !important; }
+  .btn-wa:hover    { background-color: #25d366        !important; color: #ffffff !important; }
+  .btn-tg:hover    { background-color: #0088cc        !important; color: #ffffff !important; }
+  .btn-li:hover    { background-color: #0a66c2        !important; color: #ffffff !important; }
+  .btn-copy:hover  { background-color: var(--color-brand-600) !important; color: #ffffff !important; }
 
   /* Legacy social button names from modern.min.css */
-  .btn-twitter:hover   { background-color: #000    !important; color: #fff !important; }
-  .btn-whatsapp:hover  { background-color: #25d366 !important; color: #fff !important; }
-  .btn-telegram:hover  { background-color: #0088cc !important; color: #fff !important; }
-  .btn-linkedin:hover  { background-color: #0a66c2 !important; color: #fff !important; }
-  .btn-facebook:hover  { background-color: #1877f2 !important; color: #fff !important; }
+  .btn-twitter:hover   { background-color: #000000    !important; color: #ffffff !important; }
+  .btn-whatsapp:hover  { background-color: #25d366 !important; color: #ffffff !important; }
+  .btn-telegram:hover  { background-color: #0088cc !important; color: #ffffff !important; }
+  .btn-linkedin:hover  { background-color: #0a66c2 !important; color: #ffffff !important; }
+  .btn-facebook:hover  { background-color: #1877f2 !important; color: #ffffff !important; }
 
 /* ── 3. Navigation ────────────────────────────────────────────────────────── */
 
@@ -559,15 +560,15 @@
   }
 
   .status-tag-partial {
-    color: oklch(35% 0.12 60);
-    background: color-mix(in srgb, oklch(71% 0.16 60) 12%, transparent);
-    border-color: color-mix(in srgb, oklch(71% 0.16 60) 38%, transparent);
+    color: oklch(35% 0.12 60deg);
+    background: color-mix(in srgb, oklch(71% 0.16 60deg) 12%, transparent);
+    border-color: color-mix(in srgb, oklch(71% 0.16 60deg) 38%, transparent);
   }
 
   [data-theme="dark"] .status-tag-partial {
-    color: oklch(88% 0.12 65);
-    background: color-mix(in srgb, oklch(71% 0.16 60) 18%, transparent);
-    border-color: color-mix(in srgb, oklch(71% 0.16 60) 45%, transparent);
+    color: oklch(88% 0.12 65deg);
+    background: color-mix(in srgb, oklch(71% 0.16 60deg) 18%, transparent);
+    border-color: color-mix(in srgb, oklch(71% 0.16 60deg) 45%, transparent);
   }
 
   .status-tag-omitted {
@@ -577,15 +578,15 @@
   }
 
   .status-tag-illegal {
-    color: #fff;
-    background: color-mix(in srgb, oklch(28% 0.12 12) 88%, transparent);
-    border-color: oklch(28% 0.12 12 / 0.75);
+    color: #ffffff;
+    background: color-mix(in srgb, oklch(28% 0.12 12deg) 88%, transparent);
+    border-color: oklch(28% 0.12 12deg / 0.75);
   }
 
   [data-theme="dark"] .status-tag-illegal {
-    color: oklch(91% 0.04 12);
-    background: color-mix(in srgb, oklch(42% 0.15 12) 22%, transparent);
-    border-color: color-mix(in srgb, oklch(55% 0.18 12) 50%, transparent);
+    color: oklch(91% 0.04 12deg);
+    background: color-mix(in srgb, oklch(42% 0.15 12deg) 22%, transparent);
+    border-color: color-mix(in srgb, oklch(55% 0.18 12deg) 50%, transparent);
   }
 
 /* ── 8. Country tag (hero / metadata badge) ──────────────────────────────── */
@@ -674,7 +675,7 @@
   .social-icons .btn:hover {
     transform: translateY(-3px) scale(1.08);
     border-color: transparent;
-    color: #fff;
+    color: #ffffff;
   }
 
 /* ── 10. Timeline ─────────────────────────────────────────────────────────── */
@@ -706,8 +707,8 @@
   /* Timeline dot and line markers */
   .bg-warning        { background-color: var(--color-warning) !important; }
   .bg-secondary-dot  { background-color: var(--text-secondary) !important; opacity: 0.5; }
-  .bg-illegal        { background-color: oklch(28% 0.12 12) !important; }
-  .shadow-illegal    { box-shadow: 0 0 10px oklch(28% 0.12 12 / 0.45); }
+  .bg-illegal        { background-color: oklch(28% 0.12 12deg) !important; }
+  .shadow-illegal    { box-shadow: 0 0 10px oklch(28% 0.12 12deg / 0.45); }
 
 /* ── 11. FAQ ──────────────────────────────────────────────────────────────── */
 
@@ -912,7 +913,7 @@
 
   /* Shadows */
   .shadow-sm {
-    box-shadow: 0 1px 3px 0 oklch(14% 0.02 248 / 0.08) !important;
+    box-shadow: 0 1px 3px 0 oklch(14% 0.02 248deg / 0.08) !important;
   }
 
   /* Typography */

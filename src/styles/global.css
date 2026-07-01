@@ -27,6 +27,7 @@
   /* Elevation scale — flat → card → raised → pop */
   --shadow-flat: 0 1px 2px rgb(20 23 31 / 0.04);
   --shadow-raised: 0 4px 8px rgb(20 23 31 / 0.06), 0 16px 32px -16px rgb(20 23 31 / 0.28);
+
   /* --shadow-card and --shadow-pop are defined in theme.css */
 }
 
@@ -135,6 +136,7 @@ main > *:not(header) {
 [data-theme="dark"] .counter .number { color: var(--color-breach-400); }
 
 /* ── navbar-expand-lg (Bootstrap replacement) ────────────────────────────── */
+
 /* Hide nav panel on mobile by default; show toggler. */
 @media (max-width: 991.98px) {
   .collapse.navbar-collapse {
@@ -777,7 +779,7 @@ main > *:not(header) {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   background: var(--color-ink-600);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -944,7 +946,7 @@ main > *:not(header) {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   background: var(--color-lawful-600);
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
@@ -1070,7 +1072,7 @@ main > *:not(header) {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   background: var(--color-breach-600);
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
@@ -1166,6 +1168,7 @@ main > *:not(header) {
 [data-theme="dark"] #sistema {
   background: color-mix(in srgb, var(--color-brand-400) 8%, var(--bg-body)) !important;
 }
+
 /* Accessible, consistent keyboard focus ring across the site. */
 a:focus-visible,
 button:focus-visible,
@@ -1301,8 +1304,8 @@ summary:focus-visible,
   /* Force white canvas — override radial-gradient on body */
   html,
   body {
-    background: #fff !important;
-    color: #111 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
     font-size: 11pt;
   }
 
@@ -1321,8 +1324,8 @@ summary:focus-visible,
   .org-card,
   .qf-inner {
     box-shadow: none !important;
-    border: 1px solid #ccc !important;
-    background: #fff !important;
+    border: 1px solid #cccccc !important;
+    background: #ffffff !important;
   }
 
   /* Bar chart colours: tell printer to honour */
@@ -1339,7 +1342,7 @@ summary:focus-visible,
   .irreg-block a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.7em;
-    color: #555;
+    color: #555555;
     word-break: break-all;
   }
 
