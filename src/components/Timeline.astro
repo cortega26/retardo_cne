@@ -29,7 +29,7 @@ const milestones = [
       <div class={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
         <div class="content shadow-sm">
           <span class="date">{m.date}</span>
-          <h4>{m.event}</h4>
+          <h3>{m.event}</h3>
           <p>
             <span class={`status-tag ${m.type === 'met' ? 'status-tag-met' : 'status-tag-failed'}`}>
               {m.status}

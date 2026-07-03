@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 const { item, prev, next } = Astro.props;
-const { id: caseNum, title, afirmacion, norma, evidencia, impacto, replica, sources } = item.data;
+const { id: caseNum, title, afirmacion, norma, evidencia, impacto, replica, sources, publishedDate, reviewedDate } = item.data;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -47,6 +47,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="irreg-header">
         <span class="irreg-kicker">{t('badge_case')}{caseNum} — Irregularidad documentada</span>
         <h1 class="irreg-title">{title}</h1>
+        {publishedDate && (
+          <div class="irreg-meta">
+            <span class="meta-published">Publicado / Published: {publishedDate}</span>
+            {reviewedDate && <span class="meta-reviewed"> • Actualizado / Last updated: {reviewedDate}</span>}
+          </div>
+        )}
         <span class={`status-tag irreg-status ${replica ? 'status-tag-met' : 'status-tag-failed'}`}>
           {replica ? t('badge_official_response') : t('badge_observation')}
         </span>
@@ -82,7 +88,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       {sources && sources.length > 0 && (
         <section class="irreg-block">
-          <div class="irreg-label">Fuentes</div>
+          <div class="irreg-label">Fuentes / Sources</div>
           <ul class="irreg-sources">
             {sources.map(s => <li>{s}</li>)}
           </ul>
@@ -146,6 +152,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     line-height: 1.1;
     margin: 0 0 1rem;
     color: var(--text-primary);
+  }
+
+  .irreg-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
+    display: flex;
+    gap: 0.25rem;
   }
 
   .irreg-status { margin-top: 0.5rem; }

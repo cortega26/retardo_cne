@@ -76,7 +76,7 @@ const carterLabel = lang === 'es' ? 'Centro Carter (Informe Final)' : 'Carter Ce
     {audits.map((audit, i) => (
       <div class="story-card h-full">
           <p class="story-kicker">{audit.date}</p>
-          <h4 class="story-title">{audit.title}</h4>
+          <h3 class="story-title">{audit.title}</h3>
           <p class="story-status">{lang === 'es' ? 'Estado: ' : 'Status: '}{audit.status}</p>
           <ul class="story-list">
             {audit.points.map(p => <li>{p}</li>)}

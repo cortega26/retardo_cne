@@ -29,6 +29,12 @@
         "type": "string"
       }
     },
+    "publishedDate": {
+      "type": "string"
+    },
+    "reviewedDate": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

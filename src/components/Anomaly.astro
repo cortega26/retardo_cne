@@ -7,7 +7,7 @@ const t = useTranslations(lang);
 const es = lang === 'es';
 
 const copy = {
-  badge:   es ? 'ACTO III — LOS NÚMEROS DEL CNE'   : 'ACT III — THE CNE\'S NUMBERS',
+  badge:   es ? 'Acto III — Los números del CNE'   : 'Act III — The CNE\'s numbers',
   title:   es ? 'La Anomalía'                       : 'The Anomaly',
   opening: es
     ? 'Frente a las 25.575 actas ciudadanas verificables, los números que el CNE anunció esa noche tienen una rareza estadística que cuatro académicos de instituciones reconocidas identificaron de forma independiente. Ninguno afirmó que esto probara el fraude por sí solo. Los cuatro apuntan a lo mismo.'
@@ -112,7 +112,7 @@ const supplemental = [
         <div class="anomaly-card__header">
           <div>
             <p class="story-kicker mb-1">{expert.date}</p>
-            <h4 class="anomaly-expert-name">{expert.name}</h4>
+            <h3 class="anomaly-expert-name">{expert.name}</h3>
             <p class="anomaly-expert-affil">{expert.affil}</p>
           </div>
           <span class="anomaly-tag">{copy.finding}</span>

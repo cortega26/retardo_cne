@@ -35,7 +35,7 @@ test.describe('regression coverage', () => {
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
-    await expect(page).toHaveTitle(/The CNE published zero actas/);
+    await expect(page).toHaveTitle(/CNE Actas Observatory/);
     await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
@@ -80,11 +80,11 @@ test.describe('regression coverage', () => {
       .locator('meta[name="twitter:image"]')
       .getAttribute('content');
 
-    expect(ogImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview.jpg');
-    expect(ogWidth).toBe('1024');
-    expect(ogHeight).toBe('1024');
-    expect(ogType).toBe('image/jpeg');
-    expect(twitterImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview.jpg');
+    expect(ogImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview-1200x630.png');
+    expect(ogWidth).toBe('1200');
+    expect(ogHeight).toBe('630');
+    expect(ogType).toBe('image/png');
+    expect(twitterImage).toContain('https://tooltician.com/retardo_cne/assets/img/social-preview-1200x630.png');
   });
 
   test('existence stats cards render', async ({ page }) => {

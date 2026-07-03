@@ -37,7 +37,7 @@ const indicators = [
     {indicators.map((item) => (
       <div>
         <div class="story-card h-full text-center flex flex-col">
-          <h4 class="text-base font-semibold uppercase mb-6" style="letter-spacing: 0.06em;">{item.label}</h4>
+          <h3 class="text-base font-semibold uppercase mb-6" style="letter-spacing: 0.06em;">{item.label}</h3>
           <p class="text-sm mb-6 flex-1" style="color: var(--text-secondary); line-height: 1.6;">{item.text}</p>
           <div class="mt-auto pt-3" style="border-top: 1px solid var(--border-subtle);">
             <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" class="story-link text-sm">
@@ -51,9 +51,9 @@ const indicators = [
 
   <div class="impact-conclusion">
     <span class="impact-conclusion-kicker">{lang === 'es' ? 'La conclusión' : 'The bottom line'}</span>
-    <h4 class="impact-conclusion-title">
+    <h3 class="impact-conclusion-title">
       {lang === 'es' ? 'Una proclamación sin resultados es írrita' : 'A proclamation without results is void'}
-    </h4>
+    </h3>
     <p class="impact-conclusion-text">
       {lang === 'es'
         ? 'El CNE proclamó un resultado sin publicar las actas desagregadas que exige el Art. 146 de la LOPRE, y el TSJ lo validó el 22 de agosto de 2024 sin revisar una sola acta ni convocar a las partes. La OEA calificó lo ocurrido el 28J como la aplicación del "manual completo del manejo doloso del resultado electoral". Sin actas verificables no hay proclamación válida posible: lo ocurrido es fraude electoral que derivó en ruptura constitucional el 10 de enero de 2025, cuando Maduro tomó posesión sin presentar las actas que la ley exige.'

@@ -12,6 +12,8 @@ const irregularidades = defineCollection({
     impacto: z.string(),
     replica: z.string().optional(),
     sources: z.array(z.string()).optional(),
+    publishedDate: z.string().optional(),
+    reviewedDate: z.string().optional(),
   }),
 });
 
