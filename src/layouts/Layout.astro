@@ -14,16 +14,40 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const basePath = '/retardo_cne';
 const siteOrigin = Astro.site ?? Astro.url;
 const canonicalUrl = new URL(Astro.url.pathname, siteOrigin).href;
-const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, siteOrigin).href;
-	const isMainPage = !Astro.url.pathname.includes('metodologia');
+const socialImageUrl = new URL(`${basePath}/assets/img/social-preview-1200x630.png`, siteOrigin).href;
+const isMainPage = !Astro.url.pathname.includes('metodologia');
+
+// Hreflang: compute ES ↔ EN alternate URLs
+const pathname = Astro.url.pathname;
+const enPrefix = `${basePath}/en`;
+let esPath: string;
+let enPath: string;
+if (pathname.startsWith(enPrefix)) {
+	enPath = pathname;
+	esPath = pathname.replace(enPrefix, basePath) || `${basePath}/`;
+} else {
+	esPath = pathname;
+	const relPath = pathname.slice(basePath.length) || '/';
+	enPath = `${enPrefix}${relPath}`;
+}
+const esUrl = new URL(esPath, siteOrigin).href;
+const enUrl = new URL(enPath, siteOrigin).href;
+
+// Per-page meta description
+const metaDescription = description ?? t('meta_description');
+const metaDescriptionTwitter = description ?? t('meta_description_twitter');
+const ogImageAlt = lang === 'es'
+	? 'Observatorio Electoral Ciudadano — CNE publicó 0 actas, ciudadanía publicó 25.575'
+	: 'Citizen Electoral Observatory — CNE published 0 actas, citizens published 25,575';
 ---
 
 <!doctype html>
@@ -32,30 +56,35 @@ const socialImageUrl = new URL(`${basePath}/assets/img/social-preview.jpg`, site
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="description" content={t('meta_description')} />
+		<meta name="description" content={metaDescription} />
 		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
 		<link rel="icon" href={`${basePath}/favicon.ico`} type="image/x-icon" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} — Observatorio Electoral Ciudadano</title>
+		<title>{title}</title>
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="alternate" hreflang="es" href={esUrl} />
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		<link rel="alternate" hreflang="x-default" href={esUrl} />
 
 		<!-- Open Graph / Social -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={t('meta_description')} />
+		<meta property="og:description" content={metaDescription} />
 		<meta property="og:image" content={socialImageUrl} />
-		<meta property="og:image:width" content="1024" />
-		<meta property="og:image:height" content="1024" />
-		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1080" />
+		<meta property="og:image:height" content="1080" />
+		<meta property="og:image:type" content="image/png" />
 
 		<!-- Twitter -->
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={t('meta_description_twitter')} />
+		<meta name="twitter:description" content={metaDescriptionTwitter} />
 		<meta name="twitter:image" content={socialImageUrl} />
 		<meta property="og:site_name" content="Observatorio Electoral Ciudadano" />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-		<meta property="og:image:alt" content={t('meta_description')} />
+		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+		<meta property="og:image:alt" content={ogImageAlt} />
 
 		<!-- Structured data -->
 		<script type="application/ld+json" set:html={JSON.stringify({

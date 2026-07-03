@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tooltician.com/retardo_cne/sitemap-index.xml

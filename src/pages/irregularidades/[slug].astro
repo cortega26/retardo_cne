@@ -34,7 +34,10 @@ const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<Layout title={`Caso #${caseNum}: ${title}`}>
+<Layout
+  title={`Caso #${caseNum}: ${title.length > 40 ? title.slice(0, 40) + '…' : title} | Observatorio`}
+  description={`${afirmacion.slice(0, 155)}`}
+>
   <Navbar />
   <main class="irreg-page">
     <article class="irreg-shell">

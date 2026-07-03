@@ -284,6 +284,11 @@ export const ui = {
     'footer_disclaimer': 'Observatorio independiente y sin fines de lucro. El contenido de este sitio tiene fines educativos e informativos y no constituye asesoría legal. Cada afirmación incluye fuentes primarias verificables.',
     'footer_report_correction': 'Reportar corrección',
 
+    // SEO — dedicated page titles (≤60 chars) and per-page descriptions
+    'page_title_home': 'CNE y las actas del 28J | Observatorio Electoral',
+    'page_title_metodologia': 'Metodología y fuentes | Observatorio Electoral',
+    'page_description_metodologia': 'Criterios de evidencia, niveles de fuente y proceso de correcciones del Observatorio Electoral Ciudadano.',
+
     // SEO — meta description
     'meta_description': 'Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias.',
     'meta_description_twitter': 'Evidencia verificable de incumplimientos del CNE en las Elecciones 2024.',
@@ -570,6 +575,11 @@ export const ui = {
 
     // BL-001: Missing keys — irregularidades section
     'analysis_subtitle': 'Documentation of verified technical and legal breaches through primary evidence.',
+
+    // SEO — dedicated page titles (≤60 chars) and per-page descriptions
+    'page_title_home': 'Venezuela 2024 Election Evidence | CNE Actas Observatory',
+    'page_title_metodologia': 'Methodology & Sources | Electoral Observatory',
+    'page_description_metodologia': 'Evidence standards, source tiers, and correction process for the Citizen Electoral Observatory.',
 
     // SEO — meta description
     'meta_description': 'Verifiable evidence of CNE breaches in the 2024 Elections: legal deadlines, audits, citizen actas, and primary sources.',
