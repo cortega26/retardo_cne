@@ -1,0 +1,75 @@
+# Observatorio Electoral Ciudadano
+
+> Monitoreo de infracciones legales del CNE y verificación de actas del 28J 2024
+
+## Dist/en
+
+- [The CNE published zero actas. Citizens published 25,575. That difference has a name.](https://tooltician.com/retardo_cne/en/): Verifiable evidence of CNE breaches in the 2024 Elections: legal deadlines, audits, citizen actas, and primary sources.
+
+## Dist/en/irregularidades/auditorias
+
+- [Post-election audits not performed](https://tooltician.com/retardo_cne/en/irregularidades/auditorias/): The National Electoral Council (CNE) suspended three mandatory post-election audits: Telecommunications Phase II; Citizen Verification Phase II; El...
+
+## Dist/en/irregularidades/delpino
+
+- [Technical lack of integrity reports from Rector Delpino](https://tooltician.com/retardo_cne/en/irregularidades/delpino/): Rector Juan Carlos Delpino publicly reported the absence of a technical bulletin based on complete transmission data.
+
+## Dist/en/irregularidades/exteriores
+
+- [Blocking of voter registration abroad](https://tooltician.com/retardo_cne/en/irregularidades/exteriores/): The National Electoral Council (CNE) imposed arbitrary and technical hurdles that prevented millions of Venezuelans abroad from registering to vote.
+
+## Dist/en/irregularidades/observadores
+
+- [Restrictions on Observers and Witnesses](https://tooltician.com/retardo_cne/en/irregularidades/observadores/): Arbitrary quotas and obstacles were imposed on technical observers and polling station witnesses to prevent access to the count and to obtaining co...
+
+## Dist/en/irregularidades/recursos
+
+- [Misuse of public resources during the campaign](https://tooltician.com/retardo_cne/en/irregularidades/recursos/): Systematic abuse of administrative resources and public media in favor of the ruling party's candidacy was documented.
+
+## Dist/en/irregularidades/resultados
+
+- [Failure to publish precinct-level results](https://tooltician.com/retardo_cne/en/irregularidades/resultados/): The National Electoral Council (CNE) failed to publish precinct-level (mesa-por-mesa) results within the 48-hour legal deadline.
+
+## Dist/en/irregularidades/tsj
+
+- [Supreme Tribunal of Justice (TSJ) intervention and 'forensic auditing' without transparency](https://tooltician.com/retardo_cne/en/irregularidades/tsj/): The TSJ carried out an alleged forensic audit and validated results announced by the National Electoral Council (CNE) without transparent technical...
+
+## Dist/en/metodologia
+
+- [Methodology & corrections](https://tooltician.com/retardo_cne/en/metodologia/): Evidence standards, source tiers, and correction process for the Citizen Electoral Observatory.
+
+## Dist
+
+- [El CNE publicó cero actas. La ciudadanía publicó 25.575. Esa diferencia tiene un nombre.](https://tooltician.com/retardo_cne/./): Evidencia verificable de incumplimientos del CNE en las Elecciones 2024: plazos legales, auditorías, actas y fuentes primarias.
+
+## Dist/irregularidades/auditorias
+
+- [Auditorías post-electorales no realizadas](https://tooltician.com/retardo_cne/irregularidades/auditorias/): El Consejo Nacional Electoral (CNE) suspendió tres auditorías posteriores previstas en el cronograma: telecomunicaciones Fase II; verificación ciud...
+
+## Dist/irregularidades/delpino
+
+- [Denuncias de falta de transparencia (Rector Delpino)](https://tooltician.com/retardo_cne/irregularidades/delpino/): El rector Juan Carlos Delpino denunció irregularidades graves, falta de transparencia y presiones para avalar resultados sin ver datos.
+
+## Dist/irregularidades/exteriores
+
+- [Exclusión masiva del voto en el exterior](https://tooltician.com/retardo_cne/irregularidades/exteriores/): Requisitos burocráticos excesivos y cierres consulares impidieron efectivamente a la inmensa mayoría de venezolanos en el exterior registrarse y vo...
+
+## Dist/irregularidades/observadores
+
+- [Restricciones a observadores y testigos](https://tooltician.com/retardo_cne/irregularidades/observadores/): Se impusieron cupos y trabas arbitrarias a observadores técnicos y testigos de mesa para acceder al escrutinio y obtener actas.
+
+## Dist/irregularidades/recursos
+
+- [Uso indebido de recursos públicos en campaña](https://tooltician.com/retardo_cne/irregularidades/recursos/): Se documentó un abuso sistemático de recursos administrativos y medios públicos en favor de la candidatura del oficialismo.
+
+## Dist/irregularidades/resultados
+
+- [No publicación de resultados por mesa](https://tooltician.com/retardo_cne/irregularidades/resultados/): No se publicaron resultados desagregados por mesa ni en la web del Consejo Nacional Electoral (CNE) ni en la Gaceta Electoral dentro del plazo lega...
+
+## Dist/irregularidades/tsj
+
+- [Intervención del Tribunal Supremo de Justicia (TSJ) y 'peritaje' sin transparencia](https://tooltician.com/retardo_cne/irregularidades/tsj/): El TSJ realizó un supuesto peritaje y validó los resultados anunciados por el Consejo Nacional Electoral (CNE) sin una metodología técnica transpar...
+
+## Dist/metodologia
+
+- [Metodología y correcciones](https://tooltician.com/retardo_cne/metodologia/): Criterios de evidencia, niveles de fuente y proceso de correcciones del Observatorio Electoral Ciudadano.

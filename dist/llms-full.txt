@@ -1,0 +1,1576 @@
+# Observatorio Electoral Ciudadano — Full Content
+
+> This file contains the complete content of all pages listed in llms.txt.
+
+---
+
+## [The CNE published zero actas. Citizens published 25,575. That difference has a name.](https://tooltician.com/retardo_cne/en/)
+
+# The CNE published zero actas. Citizens published 25,575. That difference has a name.
+
+
+673 days of impunity since the Art. 155 LOPRE deadline expired
+
+
+## The Legal Obligation
+
+
+No need to take anyone's word for it. This is what the CNE itself was required to do and did not.
+
+
+### 48h Totalization
+
+
+Time in violation
+
+
+### 30d Electoral Gazette
+
+
+Time in violation
+
+
+### Post-Election Audits
+
+
+Required by the CNE's own official schedule.
+
+Jul 29–31 Telecommunications Phase II Not performed Aug 2 Citizen Verification Phase II Not performed Aug 5–8 Electoral Data Phase II Not performed
+
+- Jul 29–31 Telecommunications Phase II Not performed
+
+- Aug 2 Citizen Verification Phase II Not performed
+
+- Aug 5–8 Electoral Data Phase II Not performed
+
+
+## What Exists
+
+
+While the CNE showed nothing, citizens collected and published actas covering 85% of polling stations. These are physical documents with QR codes anyone can verify.
+
+85,18%
+
+Digitized actas
+
+25,575 of 30,026 polling stations · Jan 3 2025
+
+1M+
+
+Witnesses & volunteers
+
+Across Venezuela
+
+100%
+
+Actas with verifiable QR
+
+QR code, hash and official seal
+
+Independent academic validation
+
+Dorothy Kronick
+
+UC Berkeley — Goldman School of Public Policy
+
+> "Venezuela's system generates a double paper trail: one receipt per voter and one minute per machine. Falsifying that record at scale is practically impossible without leaving detectable traces. The citizen actas reflect the votes actually cast."
+
+Method: Double paper trail integrity analysis
+
+This validation rests on system architecture, not on the credibility of whoever collected the actas.
+
+
+### Check the actas
+
+
+You can review each acta, polling station by polling station, with photographic backup and QR code.
+
+
+## The Anomaly
+
+
+Alongside the 25,575 verifiable citizen actas, the numbers the CNE announced that night have a statistical anomaly that four scholars from recognized institutions identified independently. None claimed this alone proved fraud. All four point to the same thing.
+
+Primary findings
+
+08/02/2024
+
+
+### Terence Tao
+
+
+UCLA — Fields Medal 2006
+
+> "The trailing digits of official CNE data show a statistically anomalous distribution — an excess of even digits (0, 2, 4, 6, 8) incompatible with any legitimate counting process."
+
+07/31/2024
+
+
+### Andrew Gelman
+
+
+Columbia University
+
+> "The totalization curve shows non-random patterns: the vote share ratio between candidates remains suspiciously constant as bulletins arrive — a statistically unusual feature."
+
+Additional analyses
+
+August 2024
+
+
+### Dorothy Kronick
+
+
+UC Berkeley
+
+"The bulletin release pattern shows systematic bias: results arrived in an order that statistically improbably favors the ruling-party candidate at each sequential update."
+
+August 2024
+
+
+### Walter Mebane
+
+
+University of Michigan
+
+"Applying the eForensics method — specifically designed to detect electoral fraud — CNE data shows evidence of manipulation across multiple models, with fraud probabilities above the threshold of statistical significance."
+
+
+## The Only Evidence
+
+
+The only way to resolve the more than well-founded doubts is the precinct-level vote breakdown. The same organizations that have observed dozens of elections worldwide requested it. The CNE never provided it.
+
+"Venezuela's election did not meet international standards and cannot be considered democratic."
+
+"The CNE's results management process did not meet the basic transparency and integrity measures necessary for credible elections."
+
+"The results published by the CNE on August 2 cannot be recognized without evidence to support them."
+
+"The complete manual of fraudulent electoral result management was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner."
+
+The Carter Center formally requested that breakdown on August 17, 2024.
+
+That asymmetry is not an administrative detail. It is what happens when a government has the results and cannot show them.
+
+> A government that wins an election publishes the actas the following Monday.
+
+A government that wins an election publishes the actas the following Monday.
+
+The CNE has gone 673 days without doing so.
+
+Those who win, show. Those who hide, lost.
+
+
+## Full timeline
+
+
+Succession of events documenting the departure from legal and technical norms.
+
+
+### Election day with high turnout.
+
+
+Scheduled
+
+
+### Massive data transmission interruption.
+
+
+Failed
+
+
+### First bulletin announcement without minute backup.
+
+
+Failed
+
+
+### Telecommunications audit suspension.
+
+
+Failed
+
+
+### Expiration of the 48-hour legal deadline.
+
+
+Overdue
+
+
+### Proclamation without verification audits.
+
+
+Failed
+
+
+### Expiration of the Electoral Gazette deadline (30 days).
+
+
+Overdue
+
+
+### Inauguration without verifiable electoral results.
+
+
+Overdue
+
+
+## Post-Election Audits: The Verification Triad
+
+
+Three mandatory audits defined by the CNE itself. None were performed.
+
+July 29–31
+
+
+### Transmission Network II
+
+
+Status: NOT performed
+
+Verifies the transmission was not altered.Compares records with the pre-election audit.Confirms no external interference occurred.
+
+- Verifies the transmission was not altered.
+
+- Compares records with the pre-election audit.
+
+- Confirms no external interference occurred.
+
+August 2
+
+
+### Citizen Verification Phase II
+
+
+Status: NOT performed
+
+Compares physical minutes with digital transmission.Reviews a random sample of machines (1%).The most direct integrity verification available.
+
+- Compares physical minutes with digital transmission.
+
+- Reviews a random sample of machines (1%).
+
+- The most direct integrity verification available.
+
+August 5–8
+
+
+### Electoral Data Phase II
+
+
+Status: NOT performed
+
+Verifies fingerprint database for duplicates.Checks electoral registry integrity.Detects multiple voting or inconsistencies.
+
+- Verifies fingerprint database for duplicates.
+
+- Checks electoral registry integrity.
+
+- Detects multiple voting or inconsistencies.
+
+The CNE claimed a "cyberattack," but post-election audits work with physical evidence and are the legal mechanism to verify results. Accredited observers documented the deliberate interruption of the data flow.
+
+
+## How does the system work?
+
+
+Comparison between the designed legal process and observed execution.
+
+
+### Legal process
+
+
+Automated precinct-level counting.
+
+Immediate transmission to the national center.
+
+Web publication of precinct-level results.
+
+Post-audit of a 54% sample.
+
+Totalization with digitized minutes.
+
+Proclamation based on verified minutes.
+
+Gazette publication in 30 days.
+
+Handling of formal challenges.
+
+
+### 2024 execution
+
+
+Counting took place but with obstacles.
+
+Transmission interrupted on July 28.
+
+CNE website offline for months.
+
+Citizen audits suspended.
+
+Totalization without precinct backup.
+
+Proclamation without precinct-level results.
+
+No Gazette after 30 days.
+
+Judicialization of process without minutes.
+
+
+## Technical Irregularities
+
+
+Documentation of verified technical and legal breaches through primary evidence.
+
+
+### Post-election audits not performed
+
+
+The National Electoral Council (CNE) suspended three mandatory post-election audits: Telecommunications Phase II; Citizen Verification Phase II; Electoral Data Phase II.
+
+The Organic Law of Electoral Processes (LOPRE) and regulations require audits of automated system components to ensure technical integrity.
+
+Official schedule and technical observation reports indicate they were not carried out on scheduled dates.
+
+Without these audits, there is no independent verification of software, data transmission, or fingerprint duplicates.
+
+The CNE alleged a 'cyberattack'; experts point out audits could have been fulfilled using alternative publication/log channels.
+
+
+### Failure to publish precinct-level results
+
+
+The National Electoral Council (CNE) failed to publish precinct-level (mesa-por-mesa) results within the 48-hour legal deadline.
+
+Art. 146 Organic Law of Electoral Processes (LOPRE): Results must be published on the web and available for verification within 48 hours.
+
+Official CNE website remained offline; 30 days passed without publication in the Electoral Gazette (Art. 155).
+
+Prevents independent verification of the totalization through physical minutes (actas) comparison.
+
+The CNE claimed the 'hacking' prevented data transmission/publication, but announced a result without the backing data.
+
+
+### Supreme Tribunal of Justice (TSJ) intervention and 'forensic auditing' without transparency
+
+
+The TSJ carried out an alleged forensic audit and validated results announced by the National Electoral Council (CNE) without transparent technical methodology or clear legal basis.
+
+Only the CNE certifies results; the TSJ cannot supplant the substantive functions of the electoral body under Venezuelan law.
+
+Lack of detailed technical reports on the forensic audit and absence of a verifiable chain of custody for the minutes (actas).
+
+The institutional chain is weakened, and the results certification process becomes more opaque.
+
+The TSJ declared the audit 'conclusive,' but never published the raw supporting data.
+
+
+### Technical lack of integrity reports from Rector Delpino
+
+
+Rector Juan Carlos Delpino publicly reported the absence of a technical bulletin based on complete transmission data.
+
+Results must be issued once they represent the totalization of transmitted minutes (actas).
+
+Official public statement and testimony by the Rector after the first National Electoral Council (CNE) bulletin.
+
+Doubt is cast on the technical validity of the first announcement, indicating it was issued without complete backing data.
+
+The CNE dismissed the claims and declared the results were official and verified.
+
+
+### Misuse of public resources during the campaign
+
+
+Systematic abuse of administrative resources and public media in favor of the ruling party's candidacy was documented.
+
+The Constitution and international agreements (e.g., the Barbados Agreement) prohibit the partisan use of state assets.
+
+National and international observation reports detail the use of state infrastructure for campaign events.
+
+Creates an uneven playing field and biases the information available to voters.
+
+The National Electoral Council (CNE) issued no sanctions or corrective measures in response to these documented reports.
+
+
+### Restrictions on Observers and Witnesses
+
+
+Arbitrary quotas and obstacles were imposed on technical observers and polling station witnesses to prevent access to the count and to obtaining copies of the actas.
+
+The Venezuelan electoral framework guarantees the right to observation and the right of witnesses to obtain copies of the actas.
+
+Reports from witnesses and political parties; revocation of the invitation to the European Union (EU) Election Observation Mission.
+
+The technical integrity of the process faces lower international scrutiny, and the Barbados Agreement is breached.
+
+The National Electoral Council (CNE) cited 'EU sanctions' as the reason, claiming it was an act of sovereignty.
+
+
+### Blocking of voter registration abroad
+
+
+The National Electoral Council (CNE) imposed arbitrary and technical hurdles that prevented millions of Venezuelans abroad from registering to vote.
+
+Organic Law: All Venezuelans over 18 have the right to register and vote, regardless of their residence.
+
+Official CNE requirement lists for residence status, short registration windows, and lack of consular capacity.
+
+More than 4 million Venezuelans of voting age in the diaspora (per international estimates) were effectively unable to register or vote, affecting the universality and legitimacy of the process.
+
+The CNE cited 'logistical constraints' and existing laws for residency requirements.
+
+
+## Counterpoints & FAQ
+
+
+Frequently asked questions about legality and technical processes of July 28.
+
+Article 146 establishes that the totalization process must conclude within 48 hours. Article 155 requires the Electoral Gazette—with precinct-level results—within 30 days. Both deadlines were missed by the CNE.
+
+The transmission system is a closed network. Experts point out that an external attack does not prevent publication of data already received. The CNE never provided forensic evidence of the alleged attack.
+
+They allow certifying that what the machine printed is exactly what reached the counting center. Phase II of the telecommunications audit was suspended on July 30, 2024.
+
+Totalization is the process of tallying actas and proclaiming results (up to 48h post-election, Art. 146 LOPRE). The Electoral Gazette is the official certification document (up to 30 days, Art. 155 LOPRE). The CNE published neither within the legal deadlines.
+
+On August 17, 2024, the Carter Center published a letter requesting the CNE provide a precinct-level breakdown of results. The CNE never delivered this information, leading the Carter Center to declare the election could not be verified.
+
+Yes. Article 127 of the LOPRE Regulations establishes witnesses’ right to receive a copy of the acta. Over 25,000 actas were published by ResultadosConVzla with verifiable QR codes and hashes.
+
+Venezuela has 30,026 polling stations. A precinct-level result is the vote breakdown per voting machine, which allows auditing the sum and detecting anomalies. Without this breakdown, the totalization is not independently verifiable.
+
+The Supreme Court (TSJ) validated the results on August 22, 2024, without reviewing the actas or summoning the parties. The Inter-American Commission on Human Rights (IACHR) condemned the process as lacking procedural guarantees.
+
+Human Rights Watch documented dozens of detentions of election witnesses and civic activists in the following weeks. The UN Human Rights Office reported at least 25 deaths in post-election protests and over 2,400 arbitrary detentions.
+
+In the 2020 parliamentary elections, North Macedonia implemented a real-time digitized acta publication system that enabled independent verification. It is used as a comparative reference for what Venezuela could have implemented under LOPRE standards.
+
+
+## Background
+
+
+Institutional context prior to the 2024 electoral process.
+
+Institutional alerts
+
+2021: TSJ appointed 5 CNE rectors without National Assembly participation (Art. 296 CRBV).2017: The National Assembly was stripped of powers (TSJ Rulings 155/156).2022: TSJ annulled the Barinas state election.
+
+- 2021: TSJ appointed 5 CNE rectors without National Assembly participation (Art. 296 CRBV).
+
+- 2017: The National Assembly was stripped of powers (TSJ Rulings 155/156).
+
+- 2022: TSJ annulled the Barinas state election.
+
+Pre-electoral conditions
+
+March 2024: candidacy of Corina Yoris blocked without legal basis.Voter registration abroad with very short inscription windows and extra requirements not provided for in electoral regulations.Systematic opposition candidate bans.
+
+- March 2024: candidacy of Corina Yoris blocked without legal basis.
+
+- Voter registration abroad with very short inscription windows and extra requirements not provided for in electoral regulations.
+
+- Systematic opposition candidate bans.
+
+
+## What happened next — and what has stayed the same
+
+
+The January 10, 2025 inauguration did not resolve the core problem: the precinct-level actas were never published by the CNE.
+
+22 Aug 2024
+
+
+### TSJ validates without reviewing actas
+
+
+The Supreme Court confirmed the results without examining a single acta or summoning the parties. The Inter-American Commission on Human Rights condemned the process as lacking minimum due process guarantees.
+
+10 Jan 2025
+
+
+### Inauguration without verifiable actas
+
+
+Nicolás Maduro began a third presidential term. The CNE had not published the precinct-level results (Art. 146 LOPRE) or the Electoral Gazette (Art. 155 LOPRE). The legal deadline had been expired for 134 days.
+
+Aug 2024 – Today
+
+
+### International non-recognition
+
+
+The European Union, the United States, and numerous Latin American countries did not recognize the CNE's proclamation. International observers stated that without verifiable actas, the result cannot be validated.
+
+
+### Two years later, these issues remain unresolved
+
+
+Precinct-level actas (Art. 146 LOPRE): not published Electoral Gazette for July 28 (Art. 155 LOPRE): not published Post-election audits with independent observation: not conducted
+
+- Precinct-level actas (Art. 146 LOPRE): not published
+
+- Electoral Gazette for July 28 (Art. 155 LOPRE): not published
+
+- Post-election audits with independent observation: not conducted
+
+Last verification of this section: 2026-06-06
+
+
+## Impact & HR
+
+
+Documented consequences of the failure to publish results on civil rights and democratic order.
+
+
+### Post-Election Repression
+
+
+The UN Human Rights Office (OHCHR) reported at least 25 deaths in post-election protests and over 2,400 arbitrary detentions. Human Rights Watch documented dozens of arrests of election witnesses who safeguarded and digitized the actas.
+
+
+### Institutional Collapse
+
+
+The TSJ validated the results on August 22, 2024, without reviewing a single acta or summoning the parties — condemned by the IACHR. On January 10, 2025, Maduro took office for a third term without publishing the legally required actas.
+
+
+### International Non-Recognition
+
+
+The European Union, the United States, and numerous Latin American countries did not recognize the CNE's proclamation due to the absence of verifiable actas. International observation bodies stated the result could not be validated.
+
+
+### A proclamation without results is void
+
+
+The CNE proclaimed a result without publishing the per-table tally sheets required by Art. 146 of the LOPRE, and the TSJ validated it on 22 August 2024 without reviewing a single acta or summoning the parties. The OAS described what happened on July 28 as the application of "the complete manual of fraudulent electoral result management." Without verifiable actas, no valid proclamation is possible: what occurred is electoral fraud that led to a constitutional rupture on January 10, 2025, when Maduro took office without presenting the legally required actas.
+
+Transparency is the foundation of social peace and respect for popular sovereignty.
+
+
+## CNE Breach Observatory: Technical and legal evidence on July 28.
+
+
+Share the verifiable evidence with your network.
+---
+
+## [Post-election audits not performed](https://tooltician.com/retardo_cne/en/irregularidades/auditorias/)
+
+# Post-election audits not performed
+
+
+The National Electoral Council (CNE) suspended three mandatory post-election audits: Telecommunications Phase II; Citizen Verification Phase II; Electoral Data Phase II.
+
+The Organic Law of Electoral Processes (LOPRE) and regulations require audits of automated system components to ensure technical integrity.
+
+Official schedule and technical observation reports indicate they were not carried out on scheduled dates.
+
+Without these audits, there is no independent verification of software, data transmission, or fingerprint duplicates.
+
+The CNE alleged a 'cyberattack'; experts point out audits could have been fulfilled using alternative publication/log channels.
+
+CNE ProtocolsPrensa ComunitariaCNN
+
+- CNE Protocols
+
+- Prensa Comunitaria
+
+- CNN
+---
+
+## [Technical lack of integrity reports from Rector Delpino](https://tooltician.com/retardo_cne/en/irregularidades/delpino/)
+
+# Technical lack of integrity reports from Rector Delpino
+
+
+Rector Juan Carlos Delpino publicly reported the absence of a technical bulletin based on complete transmission data.
+
+Results must be issued once they represent the totalization of transmitted minutes (actas).
+
+Official public statement and testimony by the Rector after the first National Electoral Council (CNE) bulletin.
+
+Doubt is cast on the technical validity of the first announcement, indicating it was issued without complete backing data.
+
+The CNE dismissed the claims and declared the results were official and verified.
+
+Rector Delpino StatementEl PaísWall Street Journal
+
+- Rector Delpino Statement
+
+- El País
+
+- Wall Street Journal
+---
+
+## [Blocking of voter registration abroad](https://tooltician.com/retardo_cne/en/irregularidades/exteriores/)
+
+# Blocking of voter registration abroad
+
+
+The National Electoral Council (CNE) imposed arbitrary and technical hurdles that prevented millions of Venezuelans abroad from registering to vote.
+
+Organic Law: All Venezuelans over 18 have the right to register and vote, regardless of their residence.
+
+Official CNE requirement lists for residence status, short registration windows, and lack of consular capacity.
+
+More than 4 million Venezuelans of voting age in the diaspora (per international estimates) were effectively unable to register or vote, affecting the universality and legitimacy of the process.
+
+The CNE cited 'logistical constraints' and existing laws for residency requirements.
+
+OEA ReportTransparencia ElectoralMonitor Legislativo
+
+- OEA Report
+
+- Transparencia Electoral
+
+- Monitor Legislativo
+---
+
+## [Restrictions on Observers and Witnesses](https://tooltician.com/retardo_cne/en/irregularidades/observadores/)
+
+# Restrictions on Observers and Witnesses
+
+
+Arbitrary quotas and obstacles were imposed on technical observers and polling station witnesses to prevent access to the count and to obtaining copies of the actas.
+
+The Venezuelan electoral framework guarantees the right to observation and the right of witnesses to obtain copies of the actas.
+
+Reports from witnesses and political parties; revocation of the invitation to the European Union (EU) Election Observation Mission.
+
+The technical integrity of the process faces lower international scrutiny, and the Barbados Agreement is breached.
+
+The National Electoral Council (CNE) cited 'EU sanctions' as the reason, claiming it was an act of sovereignty.
+
+LOPRE RegulationsPolitical Party ReportsEU Council StatementBarbados Agreement
+
+- LOPRE Regulations
+
+- Political Party Reports
+
+- EU Council Statement
+
+- Barbados Agreement
+---
+
+## [Misuse of public resources during the campaign](https://tooltician.com/retardo_cne/en/irregularidades/recursos/)
+
+# Misuse of public resources during the campaign
+
+
+Systematic abuse of administrative resources and public media in favor of the ruling party's candidacy was documented.
+
+The Constitution and international agreements (e.g., the Barbados Agreement) prohibit the partisan use of state assets.
+
+National and international observation reports detail the use of state infrastructure for campaign events.
+
+Creates an uneven playing field and biases the information available to voters.
+
+The National Electoral Council (CNE) issued no sanctions or corrective measures in response to these documented reports.
+
+Barbados AgreementTransparencia ElectoralAmnesty International
+
+- Barbados Agreement
+
+- Transparencia Electoral
+
+- Amnesty International
+---
+
+## [Failure to publish precinct-level results](https://tooltician.com/retardo_cne/en/irregularidades/resultados/)
+
+# Failure to publish precinct-level results
+
+
+The National Electoral Council (CNE) failed to publish precinct-level (mesa-por-mesa) results within the 48-hour legal deadline.
+
+Art. 146 Organic Law of Electoral Processes (LOPRE): Results must be published on the web and available for verification within 48 hours.
+
+Official CNE website remained offline; 30 days passed without publication in the Electoral Gazette (Art. 155).
+
+Prevents independent verification of the totalization through physical minutes (actas) comparison.
+
+The CNE claimed the 'hacking' prevented data transmission/publication, but announced a result without the backing data.
+
+Art. 146 LOPREArt. 155 LOPRECarter Center ReportUN Panel
+
+- Art. 146 LOPRE
+
+- Art. 155 LOPRE
+
+- Carter Center Report
+
+- UN Panel
+---
+
+## [Supreme Tribunal of Justice (TSJ) intervention and 'forensic auditing' without transparency](https://tooltician.com/retardo_cne/en/irregularidades/tsj/)
+
+# Supreme Tribunal of Justice (TSJ) intervention and 'forensic auditing' without transparency
+
+
+The TSJ carried out an alleged forensic audit and validated results announced by the National Electoral Council (CNE) without transparent technical methodology or clear legal basis.
+
+Only the CNE certifies results; the TSJ cannot supplant the substantive functions of the electoral body under Venezuelan law.
+
+Lack of detailed technical reports on the forensic audit and absence of a verifiable chain of custody for the minutes (actas).
+
+The institutional chain is weakened, and the results certification process becomes more opaque.
+
+The TSJ declared the audit 'conclusive,' but never published the raw supporting data.
+
+Venezuelan ConstitutionLOPREExpert Analysis
+
+- Venezuelan Constitution
+
+- LOPRE
+
+- Expert Analysis
+---
+
+## [Methodology & corrections](https://tooltician.com/retardo_cne/en/metodologia/)
+
+# Methodology & corrections
+
+
+This observatory documents verifiable breaches by the CNE. The minimum standard is simple: every claim must have a primary source or a verifiable archive. When a data point comes only from secondary sources, it is marked Reported; breaches of the law are tagged with their article.
+
+
+## Evidence status
+
+
+Each strong claim carries one of these tags:
+
+Verified A fact with a primary source and a public archive anyone can review. Reported A data point from a reliable secondary source (e.g. detention figures from an NGO), not from our own primary source. Breach of law An established legal breach, cited with its article (e.g. Art. 146 LOPRE).
+
+- Verified A fact with a primary source and a public archive anyone can review.
+
+- Reported A data point from a reliable secondary source (e.g. detention figures from an NGO), not from our own primary source.
+
+- Breach of law An established legal breach, cited with its article (e.g. Art. 146 LOPRE).
+
+
+## Source tiers
+
+
+Not all sources carry equal weight. We label each one by type:
+
+Official — CNE, TSJ, Electoral Gazette, international bodies. Observer — missions and panels with published methodology (Carter Center, UN Panel, EU, OAS). NGO — reports with verifiable methodology (HRW, OHCHR, Amnesty). Academic — independent analysis with a citable method (Tao, Kronick, Gelman, Mebane). Citizen — verifiable tally sheets and databases (ResultadosConVzla).
+
+- Official — CNE, TSJ, Electoral Gazette, international bodies.
+
+- Observer — missions and panels with published methodology (Carter Center, UN Panel, EU, OAS).
+
+- NGO — reports with verifiable methodology (HRW, OHCHR, Amnesty).
+
+- Academic — independent analysis with a citable method (Tao, Kronick, Gelman, Mebane).
+
+- Citizen — verifiable tally sheets and databases (ResultadosConVzla).
+
+
+## How to verify it yourself
+
+
+Open ResultadosConVzla and find your polling table. Cross-check the QR code and serial on the tally sheet against the published image. Compare the sum of tables with the official result. The CNE never published the per-table breakdown, so it cannot be cross-checked — that is the point.
+
+- Open ResultadosConVzla and find your polling table.
+
+- Cross-check the QR code and serial on the tally sheet against the published image.
+
+- Compare the sum of tables with the official result. The CNE never published the per-table breakdown, so it cannot be cross-checked — that is the point.
+
+
+## Corrections
+
+
+If you find an error, send the corrected source and a short explanation via GitHub Issues. Corrections are logged with date, reason and reference. Content is under a Creative Commons license and the code is open source.
+
+
+## Update log
+
+
+Last general verification: 2026-06-06.
+---
+
+## [El CNE publicó cero actas. La ciudadanía publicó 25.575. Esa diferencia tiene un nombre.](https://tooltician.com/retardo_cne/./)
+
+# El CNE publicó cero actas. La ciudadanía publicó 25.575. Esa diferencia tiene un nombre.
+
+
+673 días de impunidad desde el vencimiento del plazo del Art. 155 LOPRE
+
+
+## La Obligación
+
+
+No hace falta creerle a nadie. Esto es lo que el propio CNE estaba obligado a hacer y no hizo.
+
+
+### Totalización 48h
+
+
+Tiempo en incumplimiento
+
+
+### Gaceta Electoral 30d
+
+
+Tiempo en incumplimiento
+
+
+### Auditorías Post-Electorales
+
+
+Obligatorias según el propio cronograma del CNE.
+
+29–31 jul Telecomunicaciones Fase II No realizada 2 ago Verificación Ciudadana Fase II No realizada 5–8 ago Datos Electorales Fase II No realizada
+
+- 29–31 jul Telecomunicaciones Fase II No realizada
+
+- 2 ago Verificación Ciudadana Fase II No realizada
+
+- 5–8 ago Datos Electorales Fase II No realizada
+
+
+## Lo que Existe
+
+
+Mientras el CNE no mostraba nada, la ciudadanía recolectó y publicó las actas del 85% de las mesas. Son documentos físicos con código QR verificable por cualquiera.
+
+85,18%
+
+Actas digitalizadas
+
+25.575 de 30.026 mesas · 3 ene 2025
+
+1M+
+
+Testigos y voluntarios
+
+En toda Venezuela
+
+100%
+
+Actas con QR verificable
+
+Código QR, hash y sello oficial
+
+Validación académica independiente
+
+Dorothy Kronick
+
+UC Berkeley — Goldman School of Public Policy
+
+> "El sistema venezolano genera un doble rastro de papel: un comprobante por votante y un acta por máquina. Falsificar ese registro a escala es prácticamente imposible sin dejar trazas detectables. Las actas ciudadanas reflejan los votos realmente emitidos."
+
+Método: Análisis de integridad del doble rastro de papel
+
+Esta validación se basa en la arquitectura del sistema, no en la credibilidad de quien recolectó las actas.
+
+
+### Consulta las actas
+
+
+Puedes revisar acta por acta, mesa por mesa, con su respaldo fotográfico y código QR.
+
+
+## La Anomalía
+
+
+Frente a las 25.575 actas ciudadanas verificables, los números que el CNE anunció esa noche tienen una rareza estadística que cuatro académicos de instituciones reconocidas identificaron de forma independiente. Ninguno afirmó que esto probara el fraude por sí solo. Los cuatro apuntan a lo mismo.
+
+Hallazgos principales
+
+02/08/2024
+
+
+### Terence Tao
+
+
+UCLA — Medalla Fields 2006
+
+> "Los dígitos finales de los datos oficiales del CNE muestran una distribución estadísticamente anómala: exceso de dígitos pares (0, 2, 4, 6, 8) incompatible con cualquier proceso de conteo legítimo."
+
+31/07/2024
+
+
+### Andrew Gelman
+
+
+Columbia University
+
+> "La curva de totalización muestra patrones no aleatorios: la proporción de votos entre candidatos permanece sospechosamente constante a medida que llegan los boletines, lo cual es estadísticamente inusual."
+
+Análisis adicionales
+
+Agosto 2024
+
+
+### Dorothy Kronick
+
+
+UC Berkeley
+
+"El patrón de publicación de boletines muestra sesgo sistemático: los resultados llegaron en un orden que favorece de forma estadísticamente improbable al candidato oficialista en cada actualización secuencial."
+
+Agosto 2024
+
+
+### Walter Mebane
+
+
+University of Michigan
+
+"Aplicando el método eForensics — diseñado específicamente para detectar fraude electoral — los datos del CNE presentan evidencia de manipulación en múltiples modelos, con probabilidades de fraude superiores al umbral de significancia estadística."
+
+
+## La Única Prueba
+
+
+La única forma de resolver las más que fundadas dudas es el desglose de resultados mesa por mesa. Los mismos organismos que han observado decenas de elecciones en todo el mundo lo solicitaron. El CNE nunca lo entregó.
+
+"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática."
+
+"El proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles."
+
+"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden."
+
+"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria."
+
+El Centro Carter solicitó formalmente ese desglose el 17 de agosto de 2024.
+
+Esa asimetría no es un detalle administrativo. Es lo que ocurre cuando un gobierno tiene los resultados y no puede mostrarlos.
+
+> Un gobierno que gana una elección publica las actas el lunes siguiente.
+
+Un gobierno que gana una elección publica las actas el lunes siguiente.
+
+El CNE lleva 673 días sin hacerlo.
+
+El que gana, muestra. El que esconde, perdió.
+
+
+## Cronología completa
+
+
+Sucesión de eventos que documentan el apartamiento de la norma legal y técnica.
+
+
+### Jornada electoral con alta participación.
+
+
+Programado
+
+
+### Interrupción masiva de la transmisión de datos.
+
+
+Incumplido
+
+
+### Anuncio de primer boletín sin respaldo de actas.
+
+
+Incumplido
+
+
+### Suspensión de auditoría de telecomunicaciones.
+
+
+Incumplido
+
+
+### Vencimiento del plazo legal de 48 horas.
+
+
+Vencido
+
+
+### Proclamación sin auditorías de verificación.
+
+
+Incumplido
+
+
+### Vencimiento del plazo para Gaceta Electoral (30 días).
+
+
+Vencido
+
+
+### Toma de posesión sin resultados electorales verificables.
+
+
+Vencido
+
+
+## Las Auditorías Post-Electorales: La Tríada de Verificación
+
+
+Tres auditorías obligatorias definidas por el propio CNE. Ninguna se realizó.
+
+29–31 de julio
+
+
+### Red de Transmisión II
+
+
+Estado: NO realizada
+
+Verifica que la transmisión no fue alterada.Compara registros con la auditoría pre-electoral.Confirma que no hubo intervención externa.
+
+- Verifica que la transmisión no fue alterada.
+
+- Compara registros con la auditoría pre-electoral.
+
+- Confirma que no hubo intervención externa.
+
+2 de agosto
+
+
+### Verificación Ciudadana Fase II
+
+
+Estado: NO realizada
+
+Compara actas físicas con transmisión digital.Revisa una muestra aleatoria de máquinas (1%).Es la verificación más directa de integridad.
+
+- Compara actas físicas con transmisión digital.
+
+- Revisa una muestra aleatoria de máquinas (1%).
+
+- Es la verificación más directa de integridad.
+
+5–8 de agosto
+
+
+### Datos Electorales Fase II
+
+
+Estado: NO realizada
+
+Verifica la base de huellas y duplicidades.Comprueba integridad del registro electoral.Detecta votación múltiple o inconsistencias.
+
+- Verifica la base de huellas y duplicidades.
+
+- Comprueba integridad del registro electoral.
+
+- Detecta votación múltiple o inconsistencias.
+
+El CNE alegó un "ataque informático", pero las auditorías trabajan con evidencia física y son el mecanismo legal para verificar resultados. Observadores acreditados documentaron la interrupción deliberada del flujo de datos.
+
+
+## ¿Cómo funciona el sistema?
+
+
+Comparativa entre el proceso legal diseñado y la ejecución observada.
+
+
+### Proceso legal
+
+
+Escrutinio automatizado por mesa.
+
+Transmisión inmediata al centro nacional.
+
+Publicación web de resultados mesa por mesa.
+
+Auditoría posterior de una muestra del 54%.
+
+Totalización con actas digitalizadas.
+
+Proclamación basada en actas verificadas.
+
+Publicación en Gaceta en 30 días.
+
+Atención a impugnaciones formales.
+
+
+### Ejecución 2024
+
+
+Escrutinio se realizó pero con trabas.
+
+Transmisión interrumpida el 28J.
+
+Web del CNE fuera de línea por meses.
+
+Auditorías ciudadanas suspendidas.
+
+Totalización sin respaldo desagregado.
+
+Proclamación sin resultados mesa por mesa.
+
+Sin Gaceta tras 30 días.
+
+Judicialización del proceso sin actas.
+
+
+## Irregularidades Técnicas
+
+
+Matemáticos y estadísticos de instituciones reconocidas señalan anomalías en los datos oficiales del CNE, con distintos grados de certeza.
+
+
+### Auditorías post-electorales no realizadas
+
+
+El Consejo Nacional Electoral (CNE) suspendió tres auditorías posteriores previstas en el cronograma: telecomunicaciones Fase II; verificación ciudadana Fase II; datos electorales Fase II.
+
+La Ley Orgánica de Procesos Electorales (LOPRE) y reglamentos exigen auditorías sobre los componentes del sistema automatizado para garantizar integridad.
+
+Cronograma oficial y reportes técnicos de observación señalan que no se efectuaron en las fechas programadas.
+
+Sin estas auditorías, no hay verificación independiente sobre software, transmisión ni duplicidades.
+
+El CNE alegó un 'ciberataque'; expertos señalan que pudo cumplirse usando canales alternos de publicación/logs.
+
+
+### No publicación de resultados por mesa
+
+
+No se publicaron resultados desagregados por mesa ni en la web del Consejo Nacional Electoral (CNE) ni en la Gaceta Electoral dentro del plazo legal de 48 horas y 30 días, respectivamente.
+
+El artículo 155 de la Ley Orgánica de Procesos Electorales (LOPRE) obliga la publicación oficial por mesa en un plazo definido.
+
+Informes de observación (Organización de las Naciones Unidas [ONU], Centro Carter) documentan la omisión y el retraso persistente en la publicación oficial.
+
+Sin datos por mesa, es imposible una verificación ciudadana y técnica completa del proceso de totalización.
+
+El CNE alegó un 'ataque al sitio'; sin embargo, existen vías alternativas de difusión y las auditorías físicas existen.
+
+
+### Intervención del Tribunal Supremo de Justicia (TSJ) y 'peritaje' sin transparencia
+
+
+El TSJ realizó un supuesto peritaje y validó los resultados anunciados por el Consejo Nacional Electoral (CNE) sin una metodología técnica transparente ni base legal clara.
+
+Sólo el CNE certifica resultados; el TSJ no puede suplantar funciones sustantivas del órgano electoral según el marco legal venezolano.
+
+Carencia de informes técnicos detallados sobre el peritaje y ausencia de cadena de custodia verificable de las actas.
+
+Se debilita la cadena institucional y se aumenta la opacidad del proceso de certificación de resultados.
+
+El TSJ declaró que el peritaje fue 'concluyente', pero no publicó los datos crudos que lo sustentan.
+
+
+### Denuncias de falta de transparencia (Rector Delpino)
+
+
+El rector Juan Carlos Delpino denunció irregularidades graves, falta de transparencia y presiones para avalar resultados sin ver datos.
+
+Los rectores del Consejo Nacional Electoral (CNE) son funcionarios protegidos por la Constitución; el fraude electoral y el cohecho son delitos penados por ley.
+
+Comunicados oficiales y entrevistas del rector registrando la cronología de las denuncias y su posterior destitución por la Asamblea Nacional (AN).
+
+Indica una politización extrema del órgano y represalias contra la disidencia técnica interna.
+
+La Asamblea Nacional designó un nuevo rector tras la ausencia del denunciante.
+
+
+### Uso indebido de recursos públicos en campaña
+
+
+Se documentó un abuso sistemático de recursos administrativos y medios públicos en favor de la candidatura del oficialismo.
+
+La Constitución y acuerdos internacionales (p.e. Barbados) prohíben el uso partidista de bienes del Estado.
+
+Informes de observación nacional e internacional detallando el uso de infraestructura estatal para actos de campaña.
+
+Genera una competencia desigual y sesga la información disponible para el electorado.
+
+El Consejo Nacional Electoral (CNE) no emitió sanciones ni medidas correctivas ante estas denuncias documentadas.
+
+
+### Restricciones a observadores y testigos
+
+
+Se impusieron cupos y trabas arbitrarias a observadores técnicos y testigos de mesa para acceder al escrutinio y obtener actas.
+
+El marco electoral venezolano garantiza el derecho a la observación y el derecho de los testigos a obtener copias de actas.
+
+Denuncias de testigos y partidos políticos; revocatoria de la invitación a la Misión de Observación de la Unión Europea (UE).
+
+Dificulta la rendición de cuentas y la verificación independiente de los resultados en cada mesa de votación.
+
+El Consejo Nacional Electoral (CNE) revocó la invitación a la UE alegando 'soberanía' tras sanciones individuales a rectores.
+
+
+### Exclusión masiva del voto en el exterior
+
+
+Requisitos burocráticos excesivos y cierres consulares impidieron efectivamente a la inmensa mayoría de venezolanos en el exterior registrarse y votar.
+
+El artículo 63 de la Constitución reconoce el sufragio universal; la Ley Orgánica de Procesos Electorales (LOPRE) exige residencia legal, pero los trámites fueron arbitarios.
+
+Sólo 508 nuevos votantes inscritos en el exterior frente a un potencial de más de 4 millones de venezolanos en edad de votar en la diáspora (estimación de organismos internacionales).
+
+Violación del principio de universalidad del sufragio y afectación a la legitimidad democrática del proceso.
+
+Los consulados alegaron 'trámites administrativos normales' y cumplimiento de la normativa de residencia.
+
+
+## Contrapuntos y FAQ
+
+
+Preguntas frecuentes sobre la legalidad y los procesos técnicos del 28 de Julio.
+
+El artículo 146 establece que el proceso de totalización debe concluir en un máximo de 48 horas. El artículo 155 ordena publicar la Gaceta Electoral —con resultados desagregados por mesa— en 30 días. Ambos plazos fueron incumplidos.
+
+El sistema de transmisión es una red cerrada. Los expertos señalan que un ataque externo no impide la publicación de datos ya recibidos. El CNE nunca presentó evidencia forense del supuesto ataque.
+
+Permiten certificar que lo que la máquina imprimió es exactamente lo que llegó al centro de cómputo. La Fase II de la auditoría de telecomunicaciones fue suspendida el 30 de julio de 2024.
+
+La totalización es el proceso de sumar actas y proclamar resultados (hasta 48h post-elección, Art. 146 LOPRE). La Gaceta Electoral es el documento oficial que los certifica (hasta 30 días, Art. 155 LOPRE). El CNE no publicó ninguna de las dos en los plazos legales.
+
+El 17 de agosto de 2024, el Centro Carter publicó una carta solicitando al CNE el desglose de resultados por mesa de votación (actas desagregadas). El CNE nunca entregó esta información, lo que motivó al Centro Carter a declarar que la elección no pudo ser verificada.
+
+Sí. El artículo 127 del Reglamento LOPRE establece el derecho de los testigos a recibir copia del acta. Las actas son instrumentos públicos. La red ResultadosConVzla publicó más de 25.000 actas con su código QR y hash verificables.
+
+Venezuela cuenta con 30.026 mesas de votación. Un resultado "por mesa" es el desglose de votos de cada máquina, lo que permite auditar la suma y detectar anomalías. Sin ese desglose, la totalización no es verificable.
+
+El Tribunal Supremo de Justicia (TSJ) validó los resultados el 22 de agosto de 2024, sin revisar las actas ni convocar a las partes. El proceso fue condenado por la Comisión Interamericana de Derechos Humanos (CIDH) como carente de garantías procesales.
+
+Human Rights Watch documentó decenas de detenciones de testigos y activistas cívicos en las semanas siguientes. El ACNUDH informó de al menos 25 fallecidos en protestas postelectorales y más de 2.400 detenciones arbitrarias.
+
+En las elecciones parlamentarias de 2020, Macedonia del Norte implementó un sistema de publicación de actas digitalizadas en tiempo real que permitió la verificación independiente. Se usa como referencia comparativa de lo que Venezuela podría haber implementado bajo los estándares LOPRE.
+
+
+## Antecedentes
+
+
+Contexto institucional previo al proceso electoral de 2024.
+
+Alertas institucionales
+
+2021: TSJ designó 5 rectores del CNE sin participación de la AN (Art. 296 CRBV).2017: La Asamblea Nacional fue despojada de funciones (Sentencias 155 y 156).2022: El TSJ anuló la elección del estado Barinas.
+
+- 2021: TSJ designó 5 rectores del CNE sin participación de la AN (Art. 296 CRBV).
+
+- 2017: La Asamblea Nacional fue despojada de funciones (Sentencias 155 y 156).
+
+- 2022: El TSJ anuló la elección del estado Barinas.
+
+Condiciones preelectorales
+
+Marzo 2024: candidatura de Corina Yoris bloqueada sin base legal.Registro en el exterior con ventanas de inscripción muy reducidas y requisitos adicionales no previstos en la normativa.Inhabilitaciones sistemáticas de candidatos opositores.
+
+- Marzo 2024: candidatura de Corina Yoris bloqueada sin base legal.
+
+- Registro en el exterior con ventanas de inscripción muy reducidas y requisitos adicionales no previstos en la normativa.
+
+- Inhabilitaciones sistemáticas de candidatos opositores.
+
+
+## Lo que ocurrió después — y lo que sigue igual
+
+
+La inauguración del 10 de enero de 2025 no resolvió el problema de fondo: las actas por mesa nunca fueron publicadas por el CNE.
+
+22 Ago 2024
+
+
+### TSJ valida sin revisar las actas
+
+
+El Tribunal Supremo de Justicia confirmó los resultados sin examinar una sola acta ni convocar a las partes. La Comisión Interamericana de Derechos Humanos condenó el proceso como carente de garantías procesales mínimas.
+
+10 Ene 2025
+
+
+### Inauguración sin actas verificables
+
+
+Nicolás Maduro inició un tercer mandato presidencial. El CNE no había publicado los resultados por mesa (Art. 146 LOPRE) ni la Gaceta Electoral (Art. 155 LOPRE). El plazo legal llevaba 134 días vencido.
+
+Ago 2024 – Hoy
+
+
+### No reconocimiento internacional
+
+
+La Unión Europea, Estados Unidos y numerosos países de América Latina no reconocieron la proclamación del CNE. Los observadores internacionales señalaron que sin actas verificables, el resultado no puede ser validado.
+
+
+### Dos años después, esto sigue sin resolución
+
+
+Actas desagregadas por mesa (Art. 146 LOPRE): no publicadas Gaceta Electoral del 28J (Art. 155 LOPRE): no publicada Auditorías post-electorales con observación independiente: no realizadas
+
+- Actas desagregadas por mesa (Art. 146 LOPRE): no publicadas
+
+- Gaceta Electoral del 28J (Art. 155 LOPRE): no publicada
+
+- Auditorías post-electorales con observación independiente: no realizadas
+
+Última verificación de esta sección: 2026-06-06
+
+
+## Impacto y DDHH
+
+
+Consecuencias documentadas de la falta de publicación de resultados sobre los derechos civiles y el orden democrático.
+
+
+### Represión Post-Electoral
+
+
+La ACNUDH reportó al menos 25 fallecidos en protestas post-electorales y más de 2.400 detenciones arbitrarias. Human Rights Watch documentó decenas de arrestos de testigos electorales que custodiaron y digitalizaron las actas.
+
+
+### Colapso Institucional
+
+
+El TSJ validó los resultados el 22 de agosto de 2024 sin revisar una sola acta ni convocar a las partes, proceso condenado por la CIDH. El 10 de enero de 2025, Maduro tomó posesión para un tercer mandato sin publicar las actas exigidas por ley.
+
+
+### No Reconocimiento Internacional
+
+
+La Unión Europea, Estados Unidos y numerosos países de América Latina no reconocieron la proclamación del CNE por ausencia de actas verificables. Los organismos de observación señalaron la imposibilidad de validar el resultado.
+
+
+### Una proclamación sin resultados es írrita
+
+
+El CNE proclamó un resultado sin publicar las actas desagregadas que exige el Art. 146 de la LOPRE, y el TSJ lo validó el 22 de agosto de 2024 sin revisar una sola acta ni convocar a las partes. La OEA calificó lo ocurrido el 28J como la aplicación del "manual completo del manejo doloso del resultado electoral". Sin actas verificables no hay proclamación válida posible: lo ocurrido es fraude electoral que derivó en ruptura constitucional el 10 de enero de 2025, cuando Maduro tomó posesión sin presentar las actas que la ley exige.
+
+La transparencia es la base de la paz social y el respeto a la soberanía popular.
+
+
+## Observatorio de Incumplimientos del CNE: Evidencia técnica y legal sobre el 28J.
+
+
+Comparte la evidencia verificable con tu red.
+---
+
+## [Auditorías post-electorales no realizadas](https://tooltician.com/retardo_cne/irregularidades/auditorias/)
+
+# Auditorías post-electorales no realizadas
+
+
+El Consejo Nacional Electoral (CNE) suspendió tres auditorías posteriores previstas en el cronograma: telecomunicaciones Fase II; verificación ciudadana Fase II; datos electorales Fase II.
+
+La Ley Orgánica de Procesos Electorales (LOPRE) y reglamentos exigen auditorías sobre los componentes del sistema automatizado para garantizar integridad.
+
+Cronograma oficial y reportes técnicos de observación señalan que no se efectuaron en las fechas programadas.
+
+Sin estas auditorías, no hay verificación independiente sobre software, transmisión ni duplicidades.
+
+El CNE alegó un 'ciberataque'; expertos señalan que pudo cumplirse usando canales alternos de publicación/logs.
+
+Protocolos CNEPrensa ComunitariaCNN
+
+- Protocolos CNE
+
+- Prensa Comunitaria
+
+- CNN
+---
+
+## [Denuncias de falta de transparencia (Rector Delpino)](https://tooltician.com/retardo_cne/irregularidades/delpino/)
+
+# Denuncias de falta de transparencia (Rector Delpino)
+
+
+El rector Juan Carlos Delpino denunció irregularidades graves, falta de transparencia y presiones para avalar resultados sin ver datos.
+
+Los rectores del Consejo Nacional Electoral (CNE) son funcionarios protegidos por la Constitución; el fraude electoral y el cohecho son delitos penados por ley.
+
+Comunicados oficiales y entrevistas del rector registrando la cronología de las denuncias y su posterior destitución por la Asamblea Nacional (AN).
+
+Indica una politización extrema del órgano y represalias contra la disidencia técnica interna.
+
+La Asamblea Nacional designó un nuevo rector tras la ausencia del denunciante.
+
+Comunicado Rector DelpinoEl NacionalGaceta Oficial
+
+- Comunicado Rector Delpino
+
+- El Nacional
+
+- Gaceta Oficial
+---
+
+## [Exclusión masiva del voto en el exterior](https://tooltician.com/retardo_cne/irregularidades/exteriores/)
+
+# Exclusión masiva del voto en el exterior
+
+
+Requisitos burocráticos excesivos y cierres consulares impidieron efectivamente a la inmensa mayoría de venezolanos en el exterior registrarse y votar.
+
+El artículo 63 de la Constitución reconoce el sufragio universal; la Ley Orgánica de Procesos Electorales (LOPRE) exige residencia legal, pero los trámites fueron arbitarios.
+
+Sólo 508 nuevos votantes inscritos en el exterior frente a un potencial de más de 4 millones de venezolanos en edad de votar en la diáspora (estimación de organismos internacionales).
+
+Violación del principio de universalidad del sufragio y afectación a la legitimidad democrática del proceso.
+
+Los consulados alegaron 'trámites administrativos normales' y cumplimiento de la normativa de residencia.
+
+Constitución Art. 63El Nacional (may 2024)Transparencia Electoral
+
+- Constitución Art. 63
+
+- El Nacional (may 2024)
+
+- Transparencia Electoral
+---
+
+## [Restricciones a observadores y testigos](https://tooltician.com/retardo_cne/irregularidades/observadores/)
+
+# Restricciones a observadores y testigos
+
+
+Se impusieron cupos y trabas arbitrarias a observadores técnicos y testigos de mesa para acceder al escrutinio y obtener actas.
+
+El marco electoral venezolano garantiza el derecho a la observación y el derecho de los testigos a obtener copias de actas.
+
+Denuncias de testigos y partidos políticos; revocatoria de la invitación a la Misión de Observación de la Unión Europea (UE).
+
+Dificulta la rendición de cuentas y la verificación independiente de los resultados en cada mesa de votación.
+
+El Consejo Nacional Electoral (CNE) revocó la invitación a la UE alegando 'soberanía' tras sanciones individuales a rectores.
+
+Reglamento LOPREInformes Partidos PolíticosDeclaración UE
+
+- Reglamento LOPRE
+
+- Informes Partidos Políticos
+
+- Declaración UE
+---
+
+## [Uso indebido de recursos públicos en campaña](https://tooltician.com/retardo_cne/irregularidades/recursos/)
+
+# Uso indebido de recursos públicos en campaña
+
+
+Se documentó un abuso sistemático de recursos administrativos y medios públicos en favor de la candidatura del oficialismo.
+
+La Constitución y acuerdos internacionales (p.e. Barbados) prohíben el uso partidista de bienes del Estado.
+
+Informes de observación nacional e internacional detallando el uso de infraestructura estatal para actos de campaña.
+
+Genera una competencia desigual y sesga la información disponible para el electorado.
+
+El Consejo Nacional Electoral (CNE) no emitió sanciones ni medidas correctivas ante estas denuncias documentadas.
+
+Acuerdo de BarbadosTransparencia ElectoralAmnistía Internacional
+
+- Acuerdo de Barbados
+
+- Transparencia Electoral
+
+- Amnistía Internacional
+---
+
+## [No publicación de resultados por mesa](https://tooltician.com/retardo_cne/irregularidades/resultados/)
+
+# No publicación de resultados por mesa
+
+
+No se publicaron resultados desagregados por mesa ni en la web del Consejo Nacional Electoral (CNE) ni en la Gaceta Electoral dentro del plazo legal de 48 horas y 30 días, respectivamente.
+
+El artículo 155 de la Ley Orgánica de Procesos Electorales (LOPRE) obliga la publicación oficial por mesa en un plazo definido.
+
+Informes de observación (Organización de las Naciones Unidas [ONU], Centro Carter) documentan la omisión y el retraso persistente en la publicación oficial.
+
+Sin datos por mesa, es imposible una verificación ciudadana y técnica completa del proceso de totalización.
+
+El CNE alegó un 'ataque al sitio'; sin embargo, existen vías alternativas de difusión y las auditorías físicas existen.
+
+Art. 155 LOPREInforme Centro CarterPanel ONU
+
+- Art. 155 LOPRE
+
+- Informe Centro Carter
+
+- Panel ONU
+---
+
+## [Intervención del Tribunal Supremo de Justicia (TSJ) y 'peritaje' sin transparencia](https://tooltician.com/retardo_cne/irregularidades/tsj/)
+
+# Intervención del Tribunal Supremo de Justicia (TSJ) y 'peritaje' sin transparencia
+
+
+El TSJ realizó un supuesto peritaje y validó los resultados anunciados por el Consejo Nacional Electoral (CNE) sin una metodología técnica transparente ni base legal clara.
+
+Sólo el CNE certifica resultados; el TSJ no puede suplantar funciones sustantivas del órgano electoral según el marco legal venezolano.
+
+Carencia de informes técnicos detallados sobre el peritaje y ausencia de cadena de custodia verificable de las actas.
+
+Se debilita la cadena institucional y se aumenta la opacidad del proceso de certificación de resultados.
+
+El TSJ declaró que el peritaje fue 'concluyente', pero no publicó los datos crudos que lo sustentan.
+
+Constitución de VenezuelaLOPREAnálisis Expertos
+
+- Constitución de Venezuela
+
+- LOPRE
+
+- Análisis Expertos
+---
+
+## [Metodología y correcciones](https://tooltician.com/retardo_cne/metodologia/)
+
+# Metodología y correcciones
+
+
+Este observatorio documenta incumplimientos verificables del CNE. El criterio mínimo es simple: cada afirmación debe tener una fuente primaria o un archivo verificable. Cuando un dato proviene solo de fuentes secundarias, se marca como Reportado; los incumplimientos de la ley se etiquetan con su artículo.
+
+
+## Estados de evidencia
+
+
+Cada afirmación fuerte lleva una de estas etiquetas:
+
+Verificado Hecho con fuente primaria y archivo público que cualquiera puede revisar. Reportado Dato proveniente de una fuente secundaria fiable (p. ej. cifras de detenciones de una ONG), no de una fuente primaria propia. Violación de ley Incumplimiento normativo establecido, citado con su artículo (p. ej. Art. 146 LOPRE).
+
+- Verificado Hecho con fuente primaria y archivo público que cualquiera puede revisar.
+
+- Reportado Dato proveniente de una fuente secundaria fiable (p. ej. cifras de detenciones de una ONG), no de una fuente primaria propia.
+
+- Violación de ley Incumplimiento normativo establecido, citado con su artículo (p. ej. Art. 146 LOPRE).
+
+
+## Niveles de fuente
+
+
+No todas las fuentes pesan igual. Etiquetamos cada una por su tipo:
+
+Oficial — CNE, TSJ, Gaceta Electoral, organismos internacionales. Observador — misiones y paneles con metodología publicada (Centro Carter, Panel ONU, UE, OEA). ONG — informes con metodología verificable (HRW, ACNUDH, Amnistía). Académica — análisis independiente con método citable (Tao, Kronick, Gelman, Mebane). Ciudadana — actas y bases de datos verificables (ResultadosConVzla).
+
+- Oficial — CNE, TSJ, Gaceta Electoral, organismos internacionales.
+
+- Observador — misiones y paneles con metodología publicada (Centro Carter, Panel ONU, UE, OEA).
+
+- ONG — informes con metodología verificable (HRW, ACNUDH, Amnistía).
+
+- Académica — análisis independiente con método citable (Tao, Kronick, Gelman, Mebane).
+
+- Ciudadana — actas y bases de datos verificables (ResultadosConVzla).
+
+
+## Cómo verificarlo tú mismo
+
+
+Abre ResultadosConVzla y busca tu mesa. Contrasta el código QR y el serial del acta con la imagen publicada. Compara la suma de mesas con el resultado oficial. El CNE no publicó el desglose por mesa, así que no puede contrastarse: ese es el punto.
+
+- Abre ResultadosConVzla y busca tu mesa.
+
+- Contrasta el código QR y el serial del acta con la imagen publicada.
+
+- Compara la suma de mesas con el resultado oficial. El CNE no publicó el desglose por mesa, así que no puede contrastarse: ese es el punto.
+
+
+## Correcciones
+
+
+Si detectas un error, envía la fuente corregida y una breve explicación por GitHub Issues. Las correcciones se registran con fecha, motivo y referencia. El contenido está bajo licencia Creative Commons y el código es abierto.
+
+
+## Registro de actualizaciones
+
+
+Última verificación general: 2026-06-06.
