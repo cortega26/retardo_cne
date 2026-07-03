@@ -1,0 +1,50 @@
+{
+  "author": {
+    "name": "Your Name",
+    "jobTitle": "Your Job Title",
+    "sameAs": "https://www.linkedin.com/in/yourprofile/"
+  },
+  "publisher": {
+    "name": "Your Organization",
+    "url": "https://www.example.com",
+    "logo": "https://www.example.com/logo.png"
+  },
+  "acronyms": {
+    "AWS": "Amazon Web Services",
+    "GDPR": "General Data Protection Regulation",
+    "ROI": "Return on Investment",
+    "CNE": "Consejo Nacional Electoral",
+    "UCLA": "University of California, Los Angeles",
+    "FAQ": "Frequently Asked Questions",
+    "OAS": "Organization of American States",
+    "OHCHR": "Office of the United Nations High Commissioner for Human Rights",
+    "CNN": "Cable News Network",
+    "TSJ": "Tribunal Supremo de Justicia",
+    "IACHR": "Inter-American Commission on Human Rights",
+    "HRW": "Human Rights Watch",
+    "PDF": "Portable Document Format",
+    "CRBV": "Constitución de la República Bolivariana de Venezuela",
+    "IDEA": "International Institute for Democracy and Electoral Assistance",
+    "DDHH": "Derechos Humanos",
+    "ONG": "Organización No Gubernamental",
+    "LOPRE": "Ley Orgánica de Procesos Electorales",
+    "ONU": "Organización de las Naciones Unidas",
+    "OEA": "Organización de los Estados Americanos",
+    "ACNUDH": "Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos"
+  },
+  "product": {
+    "offer": {
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  "limits": {
+    "max_pronoun_density": 0.02
+  },
+  "allowedExtensions": [
+    ".md",
+    ".html",
+    ".htm"
+  ]
+}
