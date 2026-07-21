@@ -37,7 +37,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource/sora": "^5.2.8",
     "@fontsource/source-sans-3": "^5.2.9",
-    "astro": "^6.1.10",
+    "astro": "^7.1.0",
     "bootstrap": "^5.3.8",
     "typescript": "^5.9.3"
   },
