@@ -1,0 +1,275 @@
+---
+/*
+ * SectionRail — riel de navegación lateral con seguimiento de sección activa.
+ *
+ * La portada mide unos 15.000 px de alto y agrupa 15 secciones. El riel da
+ * orientación permanente (dónde estoy / cuánto falta) y acceso directo a
+ * cualquier acto sin abrir el menú. Solo se muestra en pantallas anchas:
+ * en móvil la barra de progreso superior cumple esa función.
+ */
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const es = lang === 'es';
+
+const groups = [
+  {
+    name: es ? 'El argumento' : 'The argument',
+    items: [
+      { id: 'obligacion',       label: es ? 'La obligación'   : 'The obligation' },
+      { id: 'actas',            label: es ? 'Lo que existe'   : 'What exists' },
+      { id: 'analisis-tecnico', label: es ? 'La anomalía'     : 'The anomaly' },
+      { id: 'internacional',    label: es ? 'La única prueba' : 'The only proof' },
+      { id: 'conclusion',       label: es ? 'Conclusión'      : 'Conclusion' },
+    ],
+  },
+  {
+    name: es ? 'La evidencia' : 'The evidence',
+    items: [
+      { id: 'cronologia', label: es ? 'Cronología'     : 'Timeline' },
+      { id: 'auditorias', label: es ? 'Auditorías'     : 'Audits' },
+      { id: 'sistema',    label: es ? 'El sistema'     : 'The system' },
+      { id: 'analisis',   label: es ? 'Irregularidades' : 'Irregularities' },
+    ],
+  },
+  {
+    name: es ? 'Contexto y acción' : 'Context and action',
+    items: [
+      { id: 'verificacion',  label: es ? 'Preguntas'     : 'Questions' },
+      { id: 'antecedentes',  label: es ? 'Antecedentes'  : 'Background' },
+      { id: 'estado-actual', label: es ? 'Estado actual' : 'Current status' },
+      { id: 'impacto',       label: es ? 'Impacto'       : 'Impact' },
+      { id: 'compartir',     label: es ? 'Compartir'     : 'Share' },
+      { id: 'accion',        label: es ? 'Actuar'        : 'Take action' },
+    ],
+  },
+];
+---
+
+<nav class="section-rail" aria-label={es ? 'Índice de secciones' : 'Section index'} data-section-rail>
+  {groups.map(group => (
+    <div class="section-rail__group">
+      <p class="section-rail__group-name" aria-hidden="true">{group.name}</p>
+      <ul class="section-rail__list">
+        {group.items.map(item => (
+          <li>
+            <a class="section-rail__link" href={`#${item.id}`} data-rail-target={item.id}>
+              <span class="section-rail__dot" aria-hidden="true"></span>
+              <span class="section-rail__label">{item.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</nav>
+
+<style>
+  .section-rail {
+    position: fixed;
+    top: 50%;
+    right: clamp(0.75rem, 1.6vw, 1.5rem);
+    z-index: 40;
+    display: none;
+    transform: translateY(-50%);
+    padding: 0.75rem 0.3rem;
+    border-radius: var(--radius-card, 1rem);
+  }
+
+  /* El contenido ocupa como máximo --page-shell (1200px). El riel solo aparece
+     cuando queda margen lateral suficiente para desplegarse sin taparlo. */
+  @media (min-width: 1440px) {
+    .section-rail { display: block; }
+  }
+
+  .section-rail__group + .section-rail__group {
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* El riel es de ancho ajustado al contenido (position: fixed), así que el
+     rótulo del grupo también debe colapsar para no ensancharlo. */
+  .section-rail__group-name {
+    max-width: 0;
+    margin: 0 0 0.4rem;
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-align: right;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.2s ease, max-width 0.2s ease;
+  }
+
+  .section-rail__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* row-reverse: el punto queda pegado al borde derecho y la etiqueta crece
+     hacia la izquierda, hacia el margen libre. */
+  .section-rail__link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    /* Sin gap: colapsado sumaría ancho aunque la etiqueta mida 0. */
+    gap: 0;
+    padding: 0.2rem 0.15rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+  }
+
+  .section-rail__dot {
+    flex: none;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--text-secondary);
+    opacity: 0.75;
+    transition: width 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  }
+
+  /* Colapsada la etiqueta no debe ocupar ancho, o el riel taparía el contenido
+     aunque el texto sea invisible. */
+  .section-rail__label {
+    max-width: 0;
+    overflow: hidden;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: right;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease, max-width 0.2s ease;
+  }
+
+  /* Estado activo: la marca se alarga y toma el color de marca. */
+  .section-rail__link[aria-current="true"] .section-rail__dot {
+    width: 28px;
+    opacity: 1;
+    background: var(--color-brand-600);
+  }
+
+  .section-rail__link[aria-current="true"] .section-rail__label {
+    color: var(--text-primary);
+  }
+
+  /* Al pasar el ratón o enfocar con teclado se revela el índice completo. */
+  .section-rail:hover .section-rail__label,
+  .section-rail:focus-within .section-rail__label {
+    max-width: 11rem;
+    margin-right: 0.5rem;
+    opacity: 1;
+  }
+
+  .section-rail:hover .section-rail__group-name,
+  .section-rail:focus-within .section-rail__group-name {
+    max-width: 11rem;
+    opacity: 1;
+  }
+
+  .section-rail:hover,
+  .section-rail:focus-within {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-card);
+  }
+
+  .section-rail__link:hover .section-rail__dot,
+  .section-rail__link:focus-visible .section-rail__dot {
+    opacity: 1;
+    background: var(--color-brand-600);
+  }
+
+  .section-rail__link:hover .section-rail__label {
+    color: var(--text-primary);
+  }
+
+  .section-rail__link:focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  :global([data-theme="dark"]) .section-rail__link[aria-current="true"] .section-rail__dot,
+  :global([data-theme="dark"]) .section-rail__link:hover .section-rail__dot {
+    background: var(--color-brand-400);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-rail__dot,
+    .section-rail__label,
+    .section-rail__group-name {
+      transition: none;
+    }
+  }
+
+  @media print {
+    .section-rail { display: none !important; }
+  }
+</style>
+
+<script>
+  function initSectionRail() {
+    const rail = document.querySelector('[data-section-rail]');
+    if (!rail) return;
+
+    const links = Array.from(
+      rail.querySelectorAll<HTMLAnchorElement>('[data-rail-target]'),
+    );
+    const sections = links
+      .map(link => document.getElementById(link.dataset.railTarget ?? ''))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!sections.length) return;
+
+    function setActive(id: string) {
+      links.forEach(link => {
+        // aria-current marca la sección visible para lectores de pantalla.
+        if (link.dataset.railTarget === id) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+    }
+
+    function update() {
+      // La sección activa es la última cuyo inicio ya pasó la línea de lectura
+      // (un tercio del alto de la ventana, bajo la barra de navegación).
+      const line = window.innerHeight / 3;
+      let current = sections[0];
+      for (const section of sections) {
+        // getBoundingClientRect no depende del elemento contenedor posicionado,
+        // a diferencia de offsetTop.
+        if (section.getBoundingClientRect().top <= line) current = section;
+      }
+      setActive(current.id);
+    }
+
+    let ticking = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSectionRail, { once: true });
+  } else {
+    initSectionRail();
+  }
+</script>

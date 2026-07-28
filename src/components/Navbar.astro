@@ -76,7 +76,7 @@ const navGroups = {
           </button>
           <ul class="dropdown-menu" aria-labelledby="contextDropdown">
             <li><a class="dropdown-item" href="#sistema">{t('nav_context_system')}</a></li>
-            <li><a class="dropdown-item" href="#plazos">{t('nav_context_deadlines')}</a></li>
+            <li><a class="dropdown-item" href="#obligacion">{t('nav_context_deadlines')}</a></li>
             <li><a class="dropdown-item" href="#antecedentes">{t('nav_context_background_section')}</a></li>
             <li><a class="dropdown-item" href="#impacto">{t('nav_context_impact_section')}</a></li>
             <li><a class="dropdown-item" href="#estado-actual">{t('nav_context_post')}</a></li>
@@ -176,24 +176,30 @@ const navGroups = {
     min-height: 44px;
   }
 
-  /* Only show the icon that matches the current theme */
-  body:not(.dark-mode) .icon-moon,
-  body.dark-mode .icon-sun {
+  /* Se muestra el icono de la acción disponible: en modo claro la luna
+     ("cambiar a oscuro") y en modo oscuro el sol ("cambiar a claro"). */
+  body:not(.dark-mode) .icon-sun,
+  body.dark-mode .icon-moon {
     display: none;
   }
 
-  /* Center nav items on desktop, keep controls on the right edge */
+  /* Escritorio: rejilla de dos columnas. Antes los controles iban en posición
+     absoluta y quedaban encima del último desplegable, que dejaba de ser
+     clicable; con la rejilla ocupan espacio propio y no se solapan. */
   @media (min-width: 992px) {
     .navbar-collapse {
-      justify-content: center;
-      position: relative;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 1rem;
+    }
+
+    .navbar-nav {
+      justify-self: center;
     }
 
     .nav-controls {
-      position: absolute;
-      right: var(--bs-gutter-x, 0.75rem);
-      top: 50%;
-      transform: translateY(-50%);
+      grid-column: 2;
     }
   }
 

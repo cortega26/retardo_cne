@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import SectionRail from '../../components/SectionRail.astro';
 import Hero from '../../components/Hero.astro';
 import Obligation from '../../components/Obligation.astro';
 import Existence from '../../components/Existence.astro';
@@ -26,6 +27,7 @@ const t = useTranslations(lang);
 
 <Layout title={t('page_title_home')}>
 	<Navbar />
+	<SectionRail />
 	<main id="main-content">
 		<!-- §0 Thesis -->
 		<Hero />
