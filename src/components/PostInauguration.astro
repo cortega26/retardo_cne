@@ -1,5 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { FACTS } from '../data/facts';
+import { EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,7 +13,7 @@ const events = [
     title: t('post_event_1_title'),
     text: t('post_event_1_text'),
     sourceLabel: t('post_event_1_source'),
-    sourceUrl: 'https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF',
+    sourceUrl: EXTERNAL_LINKS.iacHrResolution,
     highlight: false,
   },
   {
@@ -19,7 +21,7 @@ const events = [
     title: t('post_event_2_title'),
     text: t('post_event_2_text'),
     sourceLabel: t('post_event_2_source'),
-    sourceUrl: 'https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf',
+    sourceUrl: EXTERNAL_LINKS.lopre,
     highlight: true,
   },
   {
@@ -27,7 +29,7 @@ const events = [
     title: t('post_event_3_title'),
     text: t('post_event_3_text'),
     sourceLabel: lang === 'es' ? 'Declaración UE' : 'EU Statement',
-    sourceUrl: 'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/',
+    sourceUrl: EXTERNAL_LINKS.euStatement,
     highlight: false,
   },
 ];
@@ -78,7 +80,7 @@ const unchanged = [
       ))}
     </ul>
     <p class="post-unchanged-note">
-      {t('post_updated_note')} <time datetime="2026-06-06">2026-06-06</time>
+      {t('post_updated_note')} <time datetime={FACTS.lastVerified}>{FACTS.lastVerified}</time>
     </p>
   </div>
 </section>

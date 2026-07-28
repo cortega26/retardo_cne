@@ -3,9 +3,7 @@ import translations from '../../assets/data/translations.json';
 
 export function getLangFromUrl(url: URL) {
   const segments = url.pathname.split('/').filter(Boolean);
-  // If the first segment is the base path, skip it
-  const langIndex = segments[0] === 'retardo_cne' ? 1 : 0;
-  const lang = segments[langIndex];
+  const lang = segments.find((segment) => segment in ui);
   
   if (lang in ui) return lang as keyof typeof ui;
   return defaultLang;

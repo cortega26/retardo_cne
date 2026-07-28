@@ -1,5 +1,8 @@
 node_modules
 .lighthouseci
+.env
+.env.*
+!.env.example
 
 .agents/
 .claude/

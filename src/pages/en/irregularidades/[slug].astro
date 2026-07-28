@@ -5,6 +5,7 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import Footer from '../../../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { CONTENT_LIMITS } from '../../../data/site';
 
 type Entry = CollectionEntry<'irregularidades'>;
 
@@ -36,7 +37,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <Layout
   title={`Case #${caseNum}: ${title.length > 40 ? title.slice(0, 40) + '…' : title} | Observatory`}
-  description={`${afirmacion.slice(0, 155)}`}
+  description={`${afirmacion.slice(0, CONTENT_LIMITS.metaDescriptionCharacters)}`}
 >
   <Navbar />
   <main class="irreg-page">

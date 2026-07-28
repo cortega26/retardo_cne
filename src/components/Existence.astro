@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -91,7 +92,7 @@ const copy = {
       <p class="existence-cta__text">{copy.ctaText}</p>
     </div>
     <div class="existence-cta__actions">
-      <a class="btn btn-primary" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">
+      <a class="btn btn-primary" href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">
         {copy.ctaBtn}
       </a>
       <a class="btn btn-outline-primary" href="https://macedoniadelnorte.com/" target="_blank" rel="noopener noreferrer">

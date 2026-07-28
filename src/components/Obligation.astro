@@ -1,13 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import Counter from './Counter.astro';
+import { ELECTION_TIMELINE, EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const ELECTION_DATE = '2024-07-28T10:00:00Z';
-const DEADLINE_48H  = '2024-07-30T10:00:00Z';
-const DEADLINE_30D  = '2024-08-27T10:00:00Z';
 
 const deadline48hLabel = lang === 'es' ? '48 horas desde el 28J' : '48 hours from July 28';
 const deadline30dLabel = lang === 'es' ? '30 días desde el 28J'  : '30 days from July 28';
@@ -48,24 +46,24 @@ const audits = [
 
     <Counter
       id="counter1"
-      targetDate={DEADLINE_48H}
-      electionDate={ELECTION_DATE}
+      targetDate={ELECTION_TIMELINE.totalizationDeadlineAt}
+      electionDate={ELECTION_TIMELINE.electionAt}
       deadlineLabel={deadline48hLabel}
       title={t('status_card_1_title')}
       violationText={t('status_violation_overdue')}
       legalRef={t('status_card_1_rule')}
-      progressLegal={2}
+      progressLegal={ELECTION_TIMELINE.totalizationProgressPercent}
     />
 
     <Counter
       id="counter2"
-      targetDate={DEADLINE_30D}
-      electionDate={ELECTION_DATE}
+      targetDate={ELECTION_TIMELINE.gazetteDeadlineAt}
+      electionDate={ELECTION_TIMELINE.electionAt}
       deadlineLabel={deadline30dLabel}
       title={t('status_card_2_title')}
       violationText={t('status_violation_failed')}
       legalRef={t('status_card_2_rule')}
-      progressLegal={5}
+      progressLegal={ELECTION_TIMELINE.gazetteProgressPercent}
     />
 
     <div class="obligation-audits">
@@ -89,9 +87,9 @@ const audits = [
   </div>
 
   <div class="obligation-sources">
-    <a class="btn btn-outline-primary btn-sm" href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank" rel="noopener noreferrer">{copy.lopre}</a>
-    <a class="btn btn-outline-primary btn-sm" href="https://web.archive.org/web/20240726002936/http://www.cne.gob.ve/" target="_blank" rel="noopener noreferrer">{copy.archive}</a>
-    <a class="btn btn-outline-primary btn-sm" href="https://web.archive.org/web/20240417122253/http://www.cne.gob.ve/web/sistema_electoral/tecnologia_electoral_auditorias.php" target="_blank" rel="noopener noreferrer">{copy.protocols}</a>
+    <a class="btn btn-outline-primary btn-sm" href={EXTERNAL_LINKS.lopre} target="_blank" rel="noopener noreferrer">{copy.lopre}</a>
+    <a class="btn btn-outline-primary btn-sm" href={EXTERNAL_LINKS.cneArchive} target="_blank" rel="noopener noreferrer">{copy.archive}</a>
+    <a class="btn btn-outline-primary btn-sm" href={EXTERNAL_LINKS.cneAuditProtocols} target="_blank" rel="noopener noreferrer">{copy.protocols}</a>
   </div>
 
 </section>

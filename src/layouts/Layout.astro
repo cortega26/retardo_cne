@@ -20,8 +20,9 @@ interface Props {
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const basePath = '/retardo_cne';
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteOrigin = Astro.site ?? Astro.url;
+const siteUrl = new URL(`${basePath}/`, siteOrigin).href;
 const canonicalUrl = new URL(Astro.url.pathname, siteOrigin).href;
 const socialImageUrl = new URL(`${basePath}/assets/img/social-preview-1200x630.png`, siteOrigin).href;
 const isMainPage = !Astro.url.pathname.includes('metodologia');
@@ -91,7 +92,7 @@ const ogImageAlt = lang === 'es'
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "Observatorio Electoral Ciudadano",
-			"url": "https://tooltician.com/retardo_cne/",
+			"url": siteUrl,
 			"description": t('meta_description'),
 			"inLanguage": ["es", "en"],
 		})} />
@@ -99,7 +100,7 @@ const ogImageAlt = lang === 'es'
 			"@context": "https://schema.org",
 			"@type": "Organization",
 			"name": "Observatorio Electoral Ciudadano",
-			"url": "https://tooltician.com/retardo_cne/",
+			"url": siteUrl,
 			"logo": socialImageUrl,
 		})} />
 			{isMainPage && <script type="application/ld+json" set:html={JSON.stringify({
@@ -126,7 +127,7 @@ const ogImageAlt = lang === 'es'
 			})} />}
 
 
-		<script is:inline src="/retardo_cne/assets/js/theme-init.js"></script>
+		<script is:inline src={`${basePath}/assets/js/theme-init.js`}></script>
 
 		<!-- Reading progress bar -->
 		<style>
@@ -195,8 +196,8 @@ const ogImageAlt = lang === 'es'
 		<div id="read-progress" role="progressbar" aria-hidden="true"></div>
 		<a href="#main-content" class="skip-link">{lang === 'es' ? 'Ir al contenido principal' : 'Skip to main content'}</a>
 		<slot />
-		<script is:inline src="/retardo_cne/assets/js/navbar-behavior.js" defer></script>
-		<script is:inline src="/retardo_cne/assets/js/page-behavior.js" defer></script>
+		<script is:inline src={`${basePath}/assets/js/navbar-behavior.js`} defer></script>
+		<script is:inline src={`${basePath}/assets/js/page-behavior.js`} defer></script>
 		<script>
 			(function () {
 				const bar = document.getElementById('read-progress');

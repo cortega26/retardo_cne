@@ -1,13 +1,14 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { ELECTION_TIMELINE, EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const es = lang === 'es';
 
-// Art. 155 LOPRE deadline: August 29, 2024 (same as Hero card 2)
-const daysElapsed = Math.floor((Date.now() - new Date('2024-08-29').getTime()) / 86_400_000);
+const millisecondsPerDay = 86_400_000;
+const daysElapsed = Math.floor((Date.now() - new Date(ELECTION_TIMELINE.gazetteDeadlineAt).getTime()) / millisecondsPerDay);
 
 const copy = {
   statCitizens:   es ? 'actas ciudadanas publicadas con código QR verificable'  : 'citizen actas published with verifiable QR codes',
@@ -29,7 +30,8 @@ const copy = {
   copied:         es ? '¡Enlace copiado!'     : 'Link copied!',
 };
 
-const metodologiaUrl = lang === 'es' ? '/retardo_cne/metodologia' : '/retardo_cne/en/metodologia';
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const metodologiaUrl = lang === 'es' ? `${basePath}/metodologia` : `${basePath}/en/metodologia`;
 ---
 
 <div class="conclusion-shell">
@@ -69,7 +71,7 @@ const metodologiaUrl = lang === 'es' ? '/retardo_cne/metodologia' : '/retardo_cn
 
   <!-- CTAs -->
   <div class="conclusion-ctas">
-    <a class="btn btn-primary conclusion-btn" href="https://resultadosconvzla.com/" target="_blank" rel="noopener noreferrer">
+    <a class="btn btn-primary conclusion-btn" href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">
       {copy.cta1}
     </a>
     <button class="btn btn-outline-primary conclusion-btn" id="conclusion-share-btn" type="button">

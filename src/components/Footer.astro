@@ -3,12 +3,13 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const siteUrl = new URL('/', Astro.site ?? Astro.url).href;
 ---
 
 <footer class="site-footer">
   <p class="footer-copy">&copy; 2024–2026 {t('footer_rights')}</p>
   <p class="footer-built">
-    {t('footer_built_by')} <a href="https://tooltician.com/" target="_blank" rel="noopener noreferrer">Tooltician</a>
+    {t('footer_built_by')} <a href={siteUrl} target="_blank" rel="noopener noreferrer">Tooltician</a>
   </p>
 </footer>
 

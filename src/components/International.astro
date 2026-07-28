@@ -3,12 +3,13 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Source: direct quotes from official documents
 const orgs = [
   {
     id: 'carter',
-    logo: '/retardo_cne/img/logo-carter-center.png',
+    logo: `${basePath}/img/logo-carter-center.png`,
     logoAlt: 'Carter Center',
     name: lang === 'es' ? 'Centro Carter' : 'Carter Center',
     quote: lang === 'es'
@@ -20,7 +21,7 @@ const orgs = [
   },
   {
     id: 'un',
-    logo: '/retardo_cne/img/logo-un-emblem.svg',
+    logo: `${basePath}/img/logo-un-emblem.svg`,
     logoAlt: lang === 'es' ? 'Naciones Unidas' : 'United Nations',
     name: lang === 'es' ? 'Panel de Expertos ONU' : 'UN Expert Panel',
     quote: lang === 'es'
@@ -32,7 +33,7 @@ const orgs = [
   },
   {
     id: 'eu',
-    logo: '/retardo_cne/img/logo-eu-flag.svg',
+    logo: `${basePath}/img/logo-eu-flag.svg`,
     logoAlt: lang === 'es' ? 'Unión Europea' : 'European Union',
     name: lang === 'es' ? 'Unión Europea' : 'European Union',
     quote: lang === 'es'
@@ -44,7 +45,7 @@ const orgs = [
   },
   {
     id: 'oas',
-    logo: '/retardo_cne/img/logo-oas-emblem.png',
+    logo: `${basePath}/img/logo-oas-emblem.png`,
     logoAlt: lang === 'es' ? 'OEA' : 'OAS',
     name: lang === 'es' ? 'OEA' : 'OAS',
     quote: lang === 'es'

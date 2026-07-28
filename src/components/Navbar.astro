@@ -3,11 +3,12 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const langToggleUrl = lang === 'es' ? '/retardo_cne/en/' : '/retardo_cne/';
+const basePath = import.meta.env.BASE_URL;
+const langToggleUrl = lang === 'es' ? `${basePath}en/` : basePath;
 const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
 const langToggleTarget = lang === 'es' ? 'en' : 'es';
 const brandLabel = lang === 'es' ? 'Observatorio electoral ciudadano' : 'Citizen electoral observatory';
-const homeHref = lang === 'es' ? '/retardo_cne/' : '/retardo_cne/en/';
+const homeHref = lang === 'es' ? basePath : `${basePath}en/`;
 
 const navGroups = {
   evidence: {

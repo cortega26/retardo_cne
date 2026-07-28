@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -15,7 +16,7 @@ const indicators = [
     label: t('impact_indicator_2_label'),
     text: t('impact_indicator_2_text'),
     sourceLabel: lang === 'es' ? 'CIDH Res. 2/2024 · Art. 146 LOPRE' : 'IACHR Res. 2/2024 · Art. 146 LOPRE',
-    sourceUrl: 'https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF'
+    sourceUrl: EXTERNAL_LINKS.iacHrResolution
   },
   {
     label: t('impact_indicator_3_label'),
@@ -60,11 +61,11 @@ const indicators = [
         : 'The CNE proclaimed a result without publishing the per-table tally sheets required by Art. 146 of the LOPRE, and the TSJ validated it on 22 August 2024 without reviewing a single acta or summoning the parties. The OAS described what happened on July 28 as the application of "the complete manual of fraudulent electoral result management." Without verifiable actas, no valid proclamation is possible: what occurred is electoral fraud that led to a constitutional rupture on January 10, 2025, when Maduro took office without presenting the legally required actas.'}
     </p>
     <div class="impact-conclusion-sources">
-      <a href="https://pdba.georgetown.edu/Electoral/Venezuela/LOPE2009.pdf" target="_blank" rel="noopener noreferrer">Art. 146 LOPRE</a>
+      <a href={EXTERNAL_LINKS.lopre} target="_blank" rel="noopener noreferrer">Art. 146 LOPRE</a>
       <span aria-hidden="true">·</span>
       <a href="https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'OEA C-046/24' : 'OAS C-046/24'}</a>
       <span aria-hidden="true">·</span>
-      <a href="https://www.oas.org/en/iachr/decisions/2024/VERE2401EN.PDF" target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'CIDH Res. 2/2024' : 'IACHR Res. 2/2024'}</a>
+      <a href={EXTERNAL_LINKS.iacHrResolution} target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'CIDH Res. 2/2024' : 'IACHR Res. 2/2024'}</a>
     </div>
   </div>
 

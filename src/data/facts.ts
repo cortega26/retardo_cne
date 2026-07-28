@@ -20,7 +20,7 @@ export const FACTS = {
   lastVerified: '2026-06-06',
 
   /** Art. 155 LOPRE 30-day Gazette deadline (election Jul 28 + 30 days) */
-  gazetaDeadline: '2024-08-29',
+  gazetaDeadline: '2024-08-27',
 
   /** Carter Center formal letter requesting per-table breakdown */
   carterLetterDate: '2024-08-17',

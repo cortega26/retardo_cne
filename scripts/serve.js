@@ -5,7 +5,7 @@ const path = require('path');
 const workspaceDir = path.resolve(__dirname, '..');
 const rootDir = path.resolve(workspaceDir, process.argv[2] || 'dist');
 const port = Number(process.env.PORT) || 4173;
-const basePath = process.env.BASE_PATH || '/retardo_cne';
+const basePath = process.env.BASE_PATH || process.env.PUBLIC_BASE_PATH || '/retardo_cne';
 
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',

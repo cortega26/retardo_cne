@@ -2,10 +2,14 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+const site = process.env.PUBLIC_SITE_URL ?? 'https://tooltician.com';
+const base = process.env.PUBLIC_BASE_PATH ?? '/retardo_cne';
+const siteUrl = new URL(base, site).href;
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tooltician.com',
-  base: '/retardo_cne',
+  site,
+  base,
   integrations: [
     sitemap({
       changefreq: 'weekly',
@@ -14,8 +18,8 @@ export default defineConfig({
       serialize(item) {
         // Homepage (both languages) — highest priority, crawled daily
         if (
-          item.url === 'https://tooltician.com/retardo_cne/' ||
-          item.url === 'https://tooltician.com/retardo_cne/en/'
+          item.url === siteUrl ||
+          item.url === new URL('en/', siteUrl).href
         ) {
           return { ...item, priority: 1.0, changefreq: 'daily' };
         }
