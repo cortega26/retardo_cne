@@ -869,11 +869,14 @@ main > *:not(header) {
   .existence-stats { grid-template-columns: 1fr; }
 }
 
+/* Fuente display (no mono): en monoespaciada la coma decimal ocupa una celda
+   completa y "85,18%" se lee como "85 , 18%". */
 .existence-stat-value {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
   color: var(--color-brand-600);
   margin: 0 0 0.35rem;
 }
@@ -1051,11 +1054,14 @@ main > *:not(header) {
   gap: 0.6rem;
 }
 
+/* El título puede ocupar dos líneas en tarjetas estrechas: se permite que la
+   insignia baje a una fila propia en vez de comprimir el texto. */
 .obligation-audits__header {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.4rem 1rem;
 }
 
 .obligation-audits__title {
