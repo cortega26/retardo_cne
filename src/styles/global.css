@@ -192,10 +192,6 @@ main > *:not(header) {
   box-shadow: var(--shadow-flat) !important;
 }
 
-.story-card:hover {
-  transform: translateY(-2px);
-}
-
 [data-theme="dark"] .story-card,
 [data-theme="dark"] .premium-card,
 [data-theme="dark"] .share-card,
@@ -250,13 +246,6 @@ main > *:not(header) {
   --card-accent: var(--color-breach-600);
 }
 
-#obligacion .obligation-audits:hover,
-#analisis-tecnico .anomaly-card:hover,
-#analisis .story-card:hover,
-#auditorias .story-card:hover {
-  transform: none;
-}
-
 /* Stat tiles: the numeral is the interface. No box, just a rule. */
 #actas .existence-stats .story-card {
   border: none !important;
@@ -267,10 +256,6 @@ main > *:not(header) {
   padding-top: 1.5rem;
 }
 
-#actas .existence-stats .story-card:hover {
-  transform: none;
-}
-
 /* Reference cards: impact summary. Quieter than a case file — no verdict to
    render, just a citation. */
 #impacto .story-card {
@@ -279,10 +264,6 @@ main > *:not(header) {
   border-radius: 0 !important;
   box-shadow: none !important;
   background: transparent !important;
-}
-
-#impacto .story-card:hover {
-  transform: none;
 }
 
 /* Comparison panels keep their tinted fill; only the icon shape changes,
