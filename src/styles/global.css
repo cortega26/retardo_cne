@@ -186,10 +186,14 @@ main > *:not(header) {
 .premium-card,
 .share-card,
 .org-card {
-  border-radius: var(--radius-card) !important;
+  border-radius: 6px !important;
   border: 1px solid var(--border-subtle) !important;
   background: var(--bg-card) !important;
-  box-shadow: var(--shadow-card) !important;
+  box-shadow: var(--shadow-flat) !important;
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
 }
 
 [data-theme="dark"] .story-card,
@@ -199,6 +203,93 @@ main > *:not(header) {
   border-color: var(--border-subtle) !important;
   background: var(--bg-card) !important;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.6) !important;
+}
+
+/* ── Card taxonomy — dossier system ────────────────────────────────────────
+   .story-card was the only card shape on the page, so a statistic, a case
+   file and a reference note all looked identical. Three treatments now sit
+   on top of the shared base:
+     · case file  — a heavy left rule in the act's own accent colour (the
+       same hue already used on that act's opening-paragraph blockquote —
+       see --card-accent below), tight radius, no hover lift.
+     · stat       — no border at all, a single rule under the numeral.
+     · reference  — quiet: no border, a hairline on top only.
+   Colour continues to carry meaning, not decoration: a case card's rule
+   matches the act it belongs to, so the reader can tell which argument a
+   card supports without reading its heading. */
+
+#obligacion       { --card-accent: var(--color-brand-500); }
+#actas            { --card-accent: var(--color-lawful-500); }
+#analisis-tecnico { --card-accent: var(--color-flag-yellow); }
+#internacional    { --card-accent: var(--color-breach-500); }
+
+#obligacion .counter-card,
+#obligacion .obligation-audits,
+#analisis-tecnico .anomaly-card,
+#analisis .story-card,
+#auditorias .story-card {
+  border-radius: 4px !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-left: 3px solid var(--card-accent, var(--color-ink-400)) !important;
+  box-shadow: none !important;
+}
+
+#analisis-tecnico .anomaly-card {
+  --card-accent: var(--color-ink-500);
+}
+
+#auditorias .story-card {
+  --card-accent: var(--color-breach-600);
+}
+
+#analisis .story-card:has(.status-tag-met) {
+  --card-accent: var(--color-lawful-600);
+}
+
+#analisis .story-card:has(.status-tag-failed) {
+  --card-accent: var(--color-breach-600);
+}
+
+#obligacion .obligation-audits:hover,
+#analisis-tecnico .anomaly-card:hover,
+#analisis .story-card:hover,
+#auditorias .story-card:hover {
+  transform: none;
+}
+
+/* Stat tiles: the numeral is the interface. No box, just a rule. */
+#actas .existence-stats .story-card {
+  border: none !important;
+  border-top: 3px solid var(--color-brand-600) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding-top: 1.5rem;
+}
+
+#actas .existence-stats .story-card:hover {
+  transform: none;
+}
+
+/* Reference cards: impact summary. Quieter than a case file — no verdict to
+   render, just a citation. */
+#impacto .story-card {
+  border: none !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+#impacto .story-card:hover {
+  transform: none;
+}
+
+/* Comparison panels keep their tinted fill; only the icon shape changes,
+   from a generic circular badge to a squared mark consistent with the
+   stamp/rule language used elsewhere. */
+#sistema .icon-box.rounded-circle {
+  border-radius: 6px !important;
 }
 
 .navbar {
@@ -782,7 +873,7 @@ main > *:not(header) {
   color: #ffffff;
   background: var(--color-ink-600);
   padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  border-radius: 3px;
   flex-shrink: 0;
 }
 
@@ -952,7 +1043,7 @@ main > *:not(header) {
   color: #ffffff;
   background: var(--color-lawful-600);
   padding: 0.2rem 0.55rem;
-  border-radius: 4px;
+  border-radius: 3px;
   flex-shrink: 0;
 }
 
@@ -1081,7 +1172,7 @@ main > *:not(header) {
   color: #ffffff;
   background: var(--color-breach-600);
   padding: 0.2rem 0.55rem;
-  border-radius: 4px;
+  border-radius: 3px;
   flex-shrink: 0;
 }
 
