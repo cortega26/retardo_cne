@@ -576,14 +576,14 @@
 
   .status-tag-partial {
     color: #ffffff;
-    background: oklch(58% 0.15 60deg);
-    border-color: oklch(48% 0.15 60deg);
+    background: #9a4f00;
+    border-color: #783d00;
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
   }
 
   [data-theme="dark"] .status-tag-partial {
-    background: oklch(58% 0.15 60deg);
-    border-color: oklch(70% 0.15 60deg / 0.6);
+    background: #9a4f00;
+    border-color: #d38a3d;
   }
 
   .status-tag-omitted {

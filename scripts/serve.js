@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const workspaceDir = path.resolve(__dirname, '..');
 const rootDir = path.resolve(workspaceDir, process.argv[2] || 'dist');
@@ -61,12 +62,23 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = contentTypes[ext] || 'application/octet-stream';
 
-    res.writeHead(200, {
+    const acceptsGzip = /\bgzip\b/.test(req.headers['accept-encoding'] || '');
+    const headers = {
       'Content-Type': contentType,
       'Cache-Control': 'no-store',
-    });
+      Vary: 'Accept-Encoding',
+    };
+    if (acceptsGzip) {
+      headers['Content-Encoding'] = 'gzip';
+    }
+    res.writeHead(200, headers);
 
-    fs.createReadStream(filePath).pipe(res);
+    const stream = fs.createReadStream(filePath);
+    if (acceptsGzip) {
+      stream.pipe(zlib.createGzip()).pipe(res);
+    } else {
+      stream.pipe(res);
+    }
   });
 });
 

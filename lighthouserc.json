@@ -1,12 +1,13 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "dist",
+      "startServerCommand": "PORT=4327 node scripts/serve.js dist",
+      "startServerReadyPattern": "Static server running",
       "url": [
-        "./index.html",
-        "./en/index.html",
-        "./metodologia/index.html",
-        "./en/metodologia/index.html"
+        "http://127.0.0.1:4327/retardo_cne/",
+        "http://127.0.0.1:4327/retardo_cne/en/",
+        "http://127.0.0.1:4327/retardo_cne/metodologia/",
+        "http://127.0.0.1:4327/retardo_cne/en/metodologia/"
       ],
       "settings": { "chromeFlags": "--no-sandbox" },
       "budgetPath": ".lighthouse/budget.json"

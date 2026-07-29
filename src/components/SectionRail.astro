@@ -121,7 +121,8 @@ const groups = [
     justify-content: flex-start;
     /* Sin gap: colapsado sumaría ancho aunque la etiqueta mida 0. */
     gap: 0;
-    padding: 0.2rem 0.15rem;
+    min-height: 28px;
+    padding: 0.25rem 0.15rem;
     text-decoration: none;
     color: var(--text-secondary);
   }
@@ -215,61 +216,3 @@ const groups = [
     .section-rail { display: none !important; }
   }
 </style>
-
-<script>
-  function initSectionRail() {
-    const rail = document.querySelector('[data-section-rail]');
-    if (!rail) return;
-
-    const links = Array.from(
-      rail.querySelectorAll<HTMLAnchorElement>('[data-rail-target]'),
-    );
-    const sections = links
-      .map(link => document.getElementById(link.dataset.railTarget ?? ''))
-      .filter((el): el is HTMLElement => el !== null);
-    if (!sections.length) return;
-
-    function setActive(id: string) {
-      links.forEach(link => {
-        // aria-current marca la sección visible para lectores de pantalla.
-        if (link.dataset.railTarget === id) link.setAttribute('aria-current', 'true');
-        else link.removeAttribute('aria-current');
-      });
-    }
-
-    function update() {
-      // La sección activa es la última cuyo inicio ya pasó la línea de lectura
-      // (un tercio del alto de la ventana, bajo la barra de navegación).
-      const line = window.innerHeight / 3;
-      let current = sections[0];
-      for (const section of sections) {
-        // getBoundingClientRect no depende del elemento contenedor posicionado,
-        // a diferencia de offsetTop.
-        if (section.getBoundingClientRect().top <= line) current = section;
-      }
-      setActive(current.id);
-    }
-
-    let ticking = false;
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(() => {
-          update();
-          ticking = false;
-        });
-      },
-      { passive: true },
-    );
-    window.addEventListener('resize', update, { passive: true });
-    update();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSectionRail, { once: true });
-  } else {
-    initSectionRail();
-  }
-</script>
