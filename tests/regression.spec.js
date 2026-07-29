@@ -100,6 +100,26 @@ test.describe('regression coverage', () => {
     await expect(cards.nth(2).locator('.existence-stat-value')).toHaveText('100%');
   });
 
+  test('expert analyses preserve their distinct datasets and primary-source links', async ({ page }) => {
+    await page.goto('/');
+
+    const analysis = page.locator('#analisis-tecnico');
+    await analysis.scrollIntoViewIfNeeded();
+    await expect(analysis).toContainText('no evalúan el mismo objeto');
+    await expect(analysis).toContainText('Primer boletín nacional anunciado por el CNE');
+    await expect(analysis).toContainText('Actas publicadas por la campaña opositora');
+    await expect(analysis).toContainText('no validan el boletín nacional del CNE');
+
+    for (const href of [
+      'https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/',
+      'https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/',
+      'https://dorothykronick.com/28J.pdf',
+      'https://websites.umich.edu/~wmebane/Venezuela2024.pdf',
+    ]) {
+      await expect(analysis.locator(`a[href="${href}"]`)).toHaveCount(1);
+    }
+  });
+
   test('desktop navbar dropdowns open within the viewport', async ({ page }) => {
     await page.goto('/');
 

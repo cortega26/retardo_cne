@@ -10,6 +10,7 @@
     "lint:css": "stylelint \"**/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
     "test:e2e": "playwright test",
+    "verify:claims": "node scripts/check-expert-claims.mjs",
     "format": "prettier --write \"**/*.{js,css,html,md,json}\"",
     "lighthouse": "lhci autorun"
   },
