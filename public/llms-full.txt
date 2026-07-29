@@ -73,9 +73,11 @@ Dorothy Kronick
 
 UC Berkeley — Goldman School of Public Policy
 
-> "Venezuela's system generates a double paper trail: one receipt per voter and one minute per machine. Falsifying that record at scale is practically impossible without leaving detectable traces. The citizen actas reflect the votes actually cast."
+> "Kronick concludes that the system's double paper trail makes fabrication of the campaign-published data highly unlikely and that those data almost certainly reflect votes cast."
 
-Method: Double paper trail integrity analysis
+Method: Assessment of the paper trail and campaign-published tally sheets
+
+The study evaluates tally sheets published by the opposition campaign; it is not a statistical analysis of the CNE's first national bulletin.
 
 This validation rests on system architecture, not on the credibility of whoever collected the actas.
 
@@ -89,9 +91,9 @@ You can review each acta, polling station by polling station, with photographic 
 ## The Anomaly
 
 
-Alongside the 25,575 verifiable citizen actas, the numbers the CNE announced that night have a statistical anomaly that four scholars from recognized institutions identified independently. None claimed this alone proved fraud. All four point to the same thing.
+The four linked works do not evaluate the same object. Tao and Gelman examine the arithmetic pattern in the CNE’s first announced national bulletin; Kronick and Mebane study tally sheets published by the opposition campaign. Their conclusions must be read within those distinct scopes.
 
-Primary findings
+First national bulletin announced by the CNE
 
 08/02/2024
 
@@ -101,7 +103,7 @@ Primary findings
 
 UCLA — Fields Medal 2006
 
-> "The trailing digits of official CNE data show a statistically anomalous distribution — an excess of even digits (0, 2, 4, 6, 8) incompatible with any legitimate counting process."
+> "The first national bulletin announced by the CNE contains an arithmetic coincidence: its three totals result from applying 51.2%, 44.2%, and 4.6% to the announced total and rounding to the nearest integer."
 
 07/31/2024
 
@@ -111,9 +113,9 @@ UCLA — Fields Medal 2006
 
 Columbia University
 
-> "The totalization curve shows non-random patterns: the vote share ratio between candidates remains suspiciously constant as bulletins arrive — a statistically unusual feature."
+> "Under his simulation model, Gelman estimated the probability that the three CNE first-bulletin totals would display this rounding pattern by chance at roughly 1 in 100 million."
 
-Additional analyses
+Tally sheets published by the opposition campaign
 
 August 2024
 
@@ -121,9 +123,9 @@ August 2024
 ### Dorothy Kronick
 
 
-UC Berkeley
+UC Berkeley — Goldman School of Public Policy
 
-"The bulletin release pattern shows systematic bias: results arrived in an order that statistically improbably favors the ruling-party candidate at each sequential update."
+"Kronick concludes that the system's double paper trail makes fabrication of the campaign-published data highly unlikely and that those data almost certainly reflect votes cast."
 
 August 2024
 
@@ -133,7 +135,7 @@ August 2024
 
 University of Michigan
 
-"Applying the eForensics method — specifically designed to detect electoral fraud — CNE data shows evidence of manipulation across multiple models, with fraud probabilities above the threshold of statistical significance."
+"Across 24,532 mesas in opposition-published tally-sheet data, the eforensics model estimated two mesas with model-defined fraud and a posterior mean of 57.9 fraudulent votes; the 99.5% credible interval included zero."
 
 
 ## The Only Evidence
@@ -861,9 +863,11 @@ Dorothy Kronick
 
 UC Berkeley — Goldman School of Public Policy
 
-> "El sistema venezolano genera un doble rastro de papel: un comprobante por votante y un acta por máquina. Falsificar ese registro a escala es prácticamente imposible sin dejar trazas detectables. Las actas ciudadanas reflejan los votos realmente emitidos."
+> "Kronick concluye que el doble rastro en papel del sistema hace que la fabricación de los datos publicados por la campaña sea muy improbable y que esos datos casi con certeza reflejan los votos emitidos."
 
-Método: Análisis de integridad del doble rastro de papel
+Método: Evaluación del rastro de papel y de las actas publicadas por la campaña
+
+El estudio evalúa las actas publicadas por la campaña opositora; no es un análisis estadístico del primer boletín nacional del CNE.
 
 Esta validación se basa en la arquitectura del sistema, no en la credibilidad de quien recolectó las actas.
 
@@ -877,9 +881,9 @@ Puedes revisar acta por acta, mesa por mesa, con su respaldo fotográfico y cód
 ## La Anomalía
 
 
-Frente a las 25.575 actas ciudadanas verificables, los números que el CNE anunció esa noche tienen una rareza estadística que cuatro académicos de instituciones reconocidas identificaron de forma independiente. Ninguno afirmó que esto probara el fraude por sí solo. Los cuatro apuntan a lo mismo.
+Los cuatro trabajos enlazados no evalúan el mismo objeto. Tao y Gelman examinan el patrón aritmético del primer boletín nacional anunciado por el CNE; Kronick y Mebane estudian las actas publicadas por la campaña opositora. Sus conclusiones deben leerse dentro de esos alcances distintos.
 
-Hallazgos principales
+Primer boletín nacional anunciado por el CNE
 
 02/08/2024
 
@@ -889,7 +893,7 @@ Hallazgos principales
 
 UCLA — Medalla Fields 2006
 
-> "Los dígitos finales de los datos oficiales del CNE muestran una distribución estadísticamente anómala: exceso de dígitos pares (0, 2, 4, 6, 8) incompatible con cualquier proceso de conteo legítimo."
+> "El primer boletín nacional anunciado por el CNE contiene una coincidencia aritmética: sus tres totales se obtienen al aplicar 51,2 %, 44,2 % y 4,6 % al total anunciado y redondear al entero más cercano."
 
 31/07/2024
 
@@ -899,9 +903,9 @@ UCLA — Medalla Fields 2006
 
 Columbia University
 
-> "La curva de totalización muestra patrones no aleatorios: la proporción de votos entre candidatos permanece sospechosamente constante a medida que llegan los boletines, lo cual es estadísticamente inusual."
+> "Bajo su modelo de simulación, Gelman estimó en aproximadamente 1 entre 100 millones la probabilidad de que apareciera por azar el patrón de redondeo de los tres totales del primer boletín del CNE."
 
-Análisis adicionales
+Actas publicadas por la campaña opositora
 
 Agosto 2024
 
@@ -909,9 +913,9 @@ Agosto 2024
 ### Dorothy Kronick
 
 
-UC Berkeley
+UC Berkeley — Goldman School of Public Policy
 
-"El patrón de publicación de boletines muestra sesgo sistemático: los resultados llegaron en un orden que favorece de forma estadísticamente improbable al candidato oficialista en cada actualización secuencial."
+"Kronick concluye que el doble rastro en papel del sistema hace que la fabricación de los datos publicados por la campaña sea muy improbable y que esos datos casi con certeza reflejan los votos emitidos."
 
 Agosto 2024
 
@@ -921,7 +925,7 @@ Agosto 2024
 
 University of Michigan
 
-"Aplicando el método eForensics — diseñado específicamente para detectar fraude electoral — los datos del CNE presentan evidencia de manipulación en múltiples modelos, con probabilidades de fraude superiores al umbral de significancia estadística."
+"En 24.532 mesas de los datos de actas publicados por la oposición, el modelo eforensics estimó dos mesas con fraude según el modelo y una media posterior de 57,9 votos fraudulentos; el intervalo creíble al 99,5 % incluyó cero."
 
 
 ## La Única Prueba

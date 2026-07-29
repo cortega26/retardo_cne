@@ -1,0 +1,97 @@
+{
+  "reviewedAt": "2026-07-29",
+  "claims": [
+    {
+      "id": "tao-cne-first-bulletin",
+      "group": "cne-bulletin",
+      "name": "Terence Tao",
+      "affiliation": { "es": "UCLA — Medalla Fields 2006", "en": "UCLA — Fields Medal 2006" },
+      "date": { "es": "02/08/2024", "en": "08/02/2024" },
+      "finding": {
+        "es": "El primer boletín nacional anunciado por el CNE contiene una coincidencia aritmética: sus tres totales se obtienen al aplicar 51,2 %, 44,2 % y 4,6 % al total anunciado y redondear al entero más cercano.",
+        "en": "The first national bulletin announced by the CNE contains an arithmetic coincidence: its three totals result from applying 51.2%, 44.2%, and 4.6% to the announced total and rounding to the nearest integer."
+      },
+      "method": { "es": "Análisis bayesiano condicionado en hipótesis explícitas", "en": "Bayesian analysis conditional on explicit hypotheses" },
+      "caveat": {
+        "es": "Tao advierte que la conclusión depende de hipótesis y probabilidades previas; también contempla explicaciones alternativas, como un error de procesamiento.",
+        "en": "Tao cautions that the conclusion depends on assumptions and prior probabilities; he also considers alternative explanations, such as a processing error."
+      },
+      "source": {
+        "title": "What are the odds, II: the Venezuelan presidential election",
+        "url": "https://terrytao.wordpress.com/2024/08/02/what-are-the-odds-ii-the-venezuelan-presidential-election/",
+        "locator": "Párrafos 38–84",
+        "supports": "Los totales, la coincidencia con porcentajes de una decimal y los límites del razonamiento bayesiano.",
+        "retrievedAt": "2026-07-29"
+      }
+    },
+    {
+      "id": "gelman-cne-first-bulletin",
+      "group": "cne-bulletin",
+      "name": "Andrew Gelman",
+      "affiliation": { "es": "Columbia University", "en": "Columbia University" },
+      "date": { "es": "31/07/2024", "en": "07/31/2024" },
+      "finding": {
+        "es": "Bajo su modelo de simulación, Gelman estimó en aproximadamente 1 entre 100 millones la probabilidad de que apareciera por azar el patrón de redondeo de los tres totales del primer boletín del CNE.",
+        "en": "Under his simulation model, Gelman estimated the probability that the three CNE first-bulletin totals would display this rounding pattern by chance at roughly 1 in 100 million."
+      },
+      "method": { "es": "Simulación del patrón de porcentajes redondeados", "en": "Simulation of the rounded-percentage pattern" },
+      "caveat": {
+        "es": "El autor no verificó por sí mismo las cifras de las capturas que analizó y señaló un posible error de posprocesamiento como explicación alternativa.",
+        "en": "The author did not independently verify the figures in the screenshots he analyzed and identified a possible post-processing error as an alternative explanation."
+      },
+      "source": {
+        "title": "Suspicious data pattern in recent Venezuelan election",
+        "url": "https://statmodeling.stat.columbia.edu/2024/07/31/suspicious-data-pattern-in-recent-venezuelan-election/",
+        "locator": "Publicación, párrafos 47–76",
+        "supports": "La simulación, la estimación aproximada y las dos salvedades explícitas del autor.",
+        "retrievedAt": "2026-07-29"
+      }
+    },
+    {
+      "id": "kronick-opposition-actas",
+      "group": "opposition-actas",
+      "name": "Dorothy Kronick",
+      "affiliation": { "es": "UC Berkeley — Goldman School of Public Policy", "en": "UC Berkeley — Goldman School of Public Policy" },
+      "date": { "es": "22/08/2024", "en": "08/22/2024" },
+      "finding": {
+        "es": "Kronick concluye que el doble rastro en papel del sistema hace que la fabricación de los datos publicados por la campaña sea muy improbable y que esos datos casi con certeza reflejan los votos emitidos.",
+        "en": "Kronick concludes that the system's double paper trail makes fabrication of the campaign-published data highly unlikely and that those data almost certainly reflect votes cast."
+      },
+      "method": { "es": "Evaluación del rastro de papel y de las actas publicadas por la campaña", "en": "Assessment of the paper trail and campaign-published tally sheets" },
+      "caveat": {
+        "es": "El estudio evalúa las actas publicadas por la campaña opositora; no es un análisis estadístico del primer boletín nacional del CNE.",
+        "en": "The study evaluates tally sheets published by the opposition campaign; it is not a statistical analysis of the CNE's first national bulletin."
+      },
+      "source": {
+        "title": "On the validity of vote counts published by the Venezuelan opposition",
+        "url": "https://dorothykronick.com/28J.pdf",
+        "locator": "Resumen y conclusión, pp. 1 y 15",
+        "supports": "El alcance del estudio, la conclusión sobre los datos de campaña y la base del doble rastro en papel.",
+        "retrievedAt": "2026-07-29"
+      }
+    },
+    {
+      "id": "mebane-opposition-actas",
+      "group": "opposition-actas",
+      "name": "Walter Mebane",
+      "affiliation": { "es": "University of Michigan", "en": "University of Michigan" },
+      "date": { "es": "11/08/2024", "en": "08/11/2024" },
+      "finding": {
+        "es": "En 24.532 mesas de los datos de actas publicados por la oposición, el modelo eforensics estimó dos mesas con fraude según el modelo y una media posterior de 57,9 votos fraudulentos; el intervalo creíble al 99,5 % incluyó cero.",
+        "en": "Across 24,532 mesas in opposition-published tally-sheet data, the eforensics model estimated two mesas with model-defined fraud and a posterior mean of 57.9 fraudulent votes; the 99.5% credible interval included zero."
+      },
+      "method": { "es": "Modelo eforensics aplicado a datos de mesa", "en": "eforensics model applied to mesa-level data" },
+      "caveat": {
+        "es": "El resultado se limita a los datos de actas publicados por la oposición y a la definición de fraude del modelo; no evalúa los totales nacionales anunciados por el CNE.",
+        "en": "The result is limited to opposition-published tally-sheet data and the model's definition of fraud; it does not evaluate the national totals announced by the CNE."
+      },
+      "source": {
+        "title": "eforensics Analysis of the Venezuela 2024 Presidential Election",
+        "url": "https://websites.umich.edu/~wmebane/Venezuela2024.pdf",
+        "locator": "Versión del 11 de agosto de 2024, resumen",
+        "supports": "La cobertura de 24.532 mesas, las estimaciones del modelo y sus límites de alcance.",
+        "retrievedAt": "2026-07-29"
+      }
+    }
+  ]
+}

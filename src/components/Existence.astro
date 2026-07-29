@@ -1,11 +1,14 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { EXTERNAL_LINKS } from '../data/site';
+import expertClaimManifest from '../data/expert-claims.json';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const es = lang === 'es';
+const locale = es ? 'es' : 'en';
+const kronick = expertClaimManifest.claims.find((claim) => claim.id === 'kronick-opposition-actas');
 
 const copy = {
   badge:       es ? 'Acto II — Lo que sí existe'   : 'Act II — What does exist',
@@ -22,10 +25,6 @@ const copy = {
   valTitle:    es ? 'Validación académica independiente' : 'Independent academic validation',
   valSub:      es ? 'Esta validación se basa en la arquitectura del sistema, no en la credibilidad de quien recolectó las actas.'
                   : 'This validation rests on system architecture, not on the credibility of whoever collected the actas.',
-  finding:     es
-    ? 'El sistema venezolano genera un doble rastro de papel: un comprobante por votante y un acta por máquina. Falsificar ese registro a escala es prácticamente imposible sin dejar trazas detectables. Las actas ciudadanas reflejan los votos realmente emitidos.'
-    : "Venezuela's system generates a double paper trail: one receipt per voter and one minute per machine. Falsifying that record at scale is practically impossible without leaving detectable traces. The citizen actas reflect the votes actually cast.",
-  method:      es ? 'Análisis de integridad del doble rastro de papel' : 'Double paper trail integrity analysis',
   readPaper:   es ? 'Ver paper completo →'          : 'Read full paper →',
   ctaTitle:    es ? 'Consulta las actas'            : 'Check the actas',
   ctaText:     es
@@ -69,16 +68,17 @@ const copy = {
       <p class="existence-validation__label">{copy.valTitle}</p>
       <div class="existence-validation__expert">
         <div>
-          <p class="existence-expert-name">Dorothy Kronick</p>
-          <p class="existence-expert-affil">UC Berkeley — Goldman School of Public Policy</p>
+          <p class="existence-expert-name">{kronick?.name}</p>
+          <p class="existence-expert-affil">{kronick?.affiliation[locale]}</p>
         </div>
         <span class="existence-expert-tag">{es ? 'Hallazgo' : 'Finding'}</span>
       </div>
-      <blockquote class="existence-finding">"{copy.finding}"</blockquote>
+      <blockquote class="existence-finding">"{kronick?.finding[locale]}"</blockquote>
       <p class="existence-method">
-        <strong>{es ? 'Método:' : 'Method:'}</strong> {copy.method}
+        <strong>{es ? 'Método:' : 'Method:'}</strong> {kronick?.method[locale]}
       </p>
-      <a class="story-link" href="https://dorothykronick.com/28J.pdf" target="_blank" rel="noopener noreferrer">
+      <p class="existence-validation__note">{kronick?.caveat[locale]}</p>
+      <a class="story-link" href={kronick?.source.url} target="_blank" rel="noopener noreferrer">
         {copy.readPaper}
       </a>
     </div>
