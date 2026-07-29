@@ -96,9 +96,169 @@ function initializeShareCopy() {
   });
 }
 
+function initializeReadingProgress() {
+  var bar = document.getElementById('read-progress');
+  if (!(bar instanceof HTMLElement) || bar.dataset.bound === 'true') {
+    return;
+  }
+  bar.dataset.bound = 'true';
+
+  function update() {
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = total > 0
+      ? (window.scrollY / total * 100).toFixed(1) + '%'
+      : '0%';
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+function initializeHeroCounter() {
+  var el = document.getElementById('hero-num-citizen');
+  if (!(el instanceof HTMLElement) || el.dataset.counterBound === 'true') {
+    return;
+  }
+  el.dataset.counterBound = 'true';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  var final = Number(el.dataset.final);
+  if (!Number.isFinite(final)) {
+    return;
+  }
+  var sep = el.dataset.sep || '.';
+  var duration = 1800;
+
+  function format(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+  }
+
+  el.textContent = format(0);
+  var start = performance.now();
+
+  function tick(now) {
+    var progress = Math.min((now - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = format(Math.round(eased * final));
+    if (progress < 1) {
+      window.requestAnimationFrame(tick);
+    }
+  }
+
+  window.requestAnimationFrame(tick);
+}
+
+function initializeBackToTop() {
+  var btn = document.getElementById('back-to-top');
+  if (!(btn instanceof HTMLAnchorElement) || btn.dataset.bound === 'true') {
+    return;
+  }
+  btn.dataset.bound = 'true';
+
+  function update() {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  btn.addEventListener('click', function (event) {
+    event.preventDefault();
+    var start = document.getElementById('inicio');
+    if (start) {
+      start.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+  update();
+}
+
+function initializeConclusionShare() {
+  var btn = document.getElementById('conclusion-share-btn');
+  if (!(btn instanceof HTMLButtonElement) || btn.dataset.bound === 'true') {
+    return;
+  }
+  btn.dataset.bound = 'true';
+
+  btn.addEventListener('click', async function () {
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: document.title, url: window.location.href });
+        return;
+      }
+      await navigator.clipboard.writeText(window.location.href);
+      var original = btn.textContent;
+      btn.textContent = btn.dataset.copiedLabel || original;
+      window.setTimeout(function () {
+        btn.textContent = original;
+      }, 2000);
+    } catch (_) {
+      // Dismissed shares and unavailable clipboard access require no UI error.
+    }
+  });
+}
+
+function initializeSectionRail() {
+  var rail = document.querySelector('[data-section-rail]');
+  if (!(rail instanceof HTMLElement) || rail.dataset.bound === 'true') {
+    return;
+  }
+  rail.dataset.bound = 'true';
+
+  var links = Array.prototype.slice.call(rail.querySelectorAll('[data-rail-target]'));
+  var sections = links
+    .map(function (link) { return document.getElementById(link.dataset.railTarget || ''); })
+    .filter(Boolean);
+  if (!sections.length) {
+    return;
+  }
+
+  function update() {
+    var line = window.innerHeight / 3;
+    var current = sections[0];
+    sections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= line) {
+        current = section;
+      }
+    });
+    links.forEach(function (link) {
+      if (link.dataset.railTarget === current.id) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) {
+      return;
+    }
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      update();
+      ticking = false;
+    });
+  }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+}
+
 function initializePageBehavior() {
   initializeCounters();
   initializeShareCopy();
+  initializeReadingProgress();
+  initializeHeroCounter();
+  initializeBackToTop();
+  initializeConclusionShare();
+  initializeSectionRail();
+  if (document.readyState === 'complete') {
+    document.documentElement.dataset.pageReady = 'true';
+  } else {
+    window.addEventListener('load', function () {
+      document.documentElement.dataset.pageReady = 'true';
+    }, { once: true });
+  }
 }
 
 if (document.readyState === 'loading') {

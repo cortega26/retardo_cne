@@ -7,6 +7,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const langToggleUrl = lang === 'es' ? `${basePath}/en/` : `${basePath}/`;
 const langToggleLabel = lang === 'es' ? 'EN' : 'ES';
 const langToggleTarget = lang === 'es' ? 'en' : 'es';
+const langToggleAccessibleLabel = lang === 'es' ? 'Cambiar el idioma a inglés' : 'Change language to Spanish';
 const brandLabel = lang === 'es' ? 'Observatorio electoral ciudadano' : 'Citizen electoral observatory';
 const homeHref = lang === 'es' ? `${basePath}/` : `${basePath}/en/`;
 
@@ -33,7 +34,7 @@ const navGroups = {
       <span class="brand-title">Retardo <span class="brand-accent">CNE</span></span>
     </a>
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="navbar-collapse"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarNav" aria-expanded="false" aria-label={lang === 'es' ? 'Abrir navegación' : 'Open navigation'}>
       <span class="toggler-icon"></span>
       <span class="toggler-icon"></span>
       <span class="toggler-icon"></span>
@@ -46,10 +47,10 @@ const navGroups = {
           <a class="nav-link nav-link-primary" href={navGroups.evidence.href}>
             {navGroups.evidence.label}
           </a>
-          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="evidenceDropdown" data-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.evidence.label} menu`}>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="evidenceDropdown" data-toggle="dropdown" aria-controls="evidenceMenu" aria-haspopup="true" aria-expanded="false" aria-label={`${navGroups.evidence.label} menu`}>
             <span class="visually-hidden">{navGroups.evidence.label}</span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="evidenceDropdown">
+          <ul class="dropdown-menu" id="evidenceMenu" aria-labelledby="evidenceDropdown">
             <li><a class="dropdown-item" href="#cronologia">{t('nav_evidence_timeline')}</a></li>
             <li><a class="dropdown-item" href="#auditorias">{t('nav_evidence_audits')}</a></li>
             <li><a class="dropdown-item" href="#analisis-tecnico">{t('nav_evidence_analysis')}</a></li>
@@ -72,10 +73,10 @@ const navGroups = {
           <a class="nav-link nav-link-primary" href={navGroups.context.href}>
             {navGroups.context.label}
           </a>
-          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="contextDropdown" data-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.context.label} menu`}>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="contextDropdown" data-toggle="dropdown" aria-controls="contextMenu" aria-haspopup="true" aria-expanded="false" aria-label={`${navGroups.context.label} menu`}>
             <span class="visually-hidden">{navGroups.context.label}</span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="contextDropdown">
+          <ul class="dropdown-menu" id="contextMenu" aria-labelledby="contextDropdown">
             <li><a class="dropdown-item" href="#sistema">{t('nav_context_system')}</a></li>
             <li><a class="dropdown-item" href="#obligacion">{t('nav_context_deadlines')}</a></li>
             <li><a class="dropdown-item" href="#antecedentes">{t('nav_context_background_section')}</a></li>
@@ -89,10 +90,10 @@ const navGroups = {
           <a class="nav-link nav-link-primary" href={navGroups.verification.href}>
             {navGroups.verification.label}
           </a>
-          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="verificationDropdown" data-toggle="dropdown" aria-expanded="false" aria-label={`${navGroups.verification.label} menu`}>
+          <button class="nav-link dropdown-toggle dropdown-toggle-split nav-link-toggle" type="button" id="verificationDropdown" data-toggle="dropdown" aria-controls="verificationMenu" aria-haspopup="true" aria-expanded="false" aria-label={`${navGroups.verification.label} menu`}>
             <span class="visually-hidden">{navGroups.verification.label}</span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="verificationDropdown">
+          <ul class="dropdown-menu" id="verificationMenu" aria-labelledby="verificationDropdown">
             <li><a class="dropdown-item" href="#actas">{t('nav_verification_how')}</a></li>
             <li><a class="dropdown-item" href="#verificacion">{t('nav_verification_section')}</a></li>
           </ul>
@@ -102,7 +103,7 @@ const navGroups = {
       <!-- Right-side controls -->
       <div class="nav-controls flex items-center gap-2 ms-auto">
         <!-- Language Toggle -->
-        <a id="toggleLang" href={langToggleUrl} class="btn btn-outline-primary btn-sm font-bold px-3" data-target-lang={langToggleTarget}>
+        <a id="toggleLang" href={langToggleUrl} class="btn btn-outline-primary btn-sm font-bold px-3" data-target-lang={langToggleTarget} aria-label={langToggleAccessibleLabel}>
           <span class="lang-code">{langToggleLabel}</span>
         </a>
 

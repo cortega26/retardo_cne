@@ -74,7 +74,7 @@ const metodologiaUrl = lang === 'es' ? `${basePath}/metodologia` : `${basePath}/
     <a class="btn btn-primary conclusion-btn" href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">
       {copy.cta1}
     </a>
-    <button class="btn btn-outline-primary conclusion-btn" id="conclusion-share-btn" type="button">
+    <button class="btn btn-outline-primary conclusion-btn" id="conclusion-share-btn" type="button" data-copied-label={copy.copied}>
       {copy.cta2}
     </button>
     <a class="btn btn-outline-primary conclusion-btn" href={metodologiaUrl}>
@@ -84,21 +84,3 @@ const metodologiaUrl = lang === 'es' ? `${basePath}/metodologia` : `${basePath}/
 
 </section>
 </div>
-
-<script define:vars={{ copiedMsg: copy.copied }}>
-  const btn = document.getElementById('conclusion-share-btn');
-  if (btn) {
-    btn.addEventListener('click', async () => {
-      try {
-        if (navigator.share) {
-          await navigator.share({ title: document.title, url: location.href });
-        } else {
-          await navigator.clipboard.writeText(location.href);
-          const orig = btn.textContent;
-          btn.textContent = copiedMsg;
-          setTimeout(() => { btn.textContent = orig; }, 2000);
-        }
-      } catch (_) {}
-    });
-  }
-</script>

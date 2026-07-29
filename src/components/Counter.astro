@@ -107,17 +107,26 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
 
   .deadline-chip__label {
     color: var(--text-secondary);
-    opacity: 0.7;
   }
 
   .deadline-chip__date {
     font-weight: 700;
-    color: #e05252;
+    color: var(--color-breach-600);
+  }
+
+  :global([data-theme="dark"]) .deadline-chip__date {
+    color: var(--color-breach-200);
+  }
+
+  :global([data-theme="dark"]) .deadline-chip__label,
+  :global([data-theme="dark"]) .deadline-chip__ref,
+  :global([data-theme="dark"]) .elapsed-label {
+    color: var(--color-brand-100);
   }
 
   .deadline-chip__ref {
     font-size: 0.75rem;
-    opacity: 0.55;
+    color: var(--text-secondary);
     font-style: italic;
   }
 
@@ -127,7 +136,6 @@ const elapsedLabel = lang === 'es' ? 'Tiempo en incumplimiento' : 'Time in viola
     text-transform: uppercase;
     letter-spacing: 0.09em;
     color: var(--text-secondary);
-    opacity: 0.5;
     margin: 0.6rem 0 0;
   }
 

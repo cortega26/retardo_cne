@@ -9,7 +9,24 @@ function initializeNavbarBehavior() {
     if (!(btn instanceof HTMLButtonElement)) {
       return;
     }
-    btn.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
+    var isDark = document.body.classList.contains('dark-mode');
+    var isEn = document.documentElement.lang === 'en';
+    var label = isEn
+      ? (isDark ? 'Switch to light theme' : 'Switch to dark theme')
+      : (isDark ? 'Cambiar al tema claro' : 'Cambiar al tema oscuro');
+    btn.setAttribute('aria-pressed', String(isDark));
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label);
+  }
+
+  function closeDropdown(toggle, returnFocus) {
+    var dropdown = toggle.closest('.dropdown');
+    if (!dropdown) return;
+    dropdown.classList.remove('show');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus && toggle instanceof HTMLElement) {
+      toggle.focus();
+    }
   }
 
   if (btn instanceof HTMLButtonElement && !btn.dataset.bound) {
@@ -57,8 +74,7 @@ function initializeNavbarBehavior() {
       dropdownToggles.forEach(function (other) {
         var otherDropdown = other.closest('.dropdown');
         if (otherDropdown && otherDropdown !== dropdown) {
-          otherDropdown.classList.remove('show');
-          other.setAttribute('aria-expanded', 'false');
+          closeDropdown(other, false);
         }
       });
 
@@ -71,10 +87,9 @@ function initializeNavbarBehavior() {
   document.addEventListener('click', function (e) {
     // Close dropdowns
     dropdownToggles.forEach(function (toggle) {
-      var dropdown = toggle.closest('.dropdown');
-      if (dropdown && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
+        var dropdown = toggle.closest('.dropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+          closeDropdown(toggle, false);
       }
     });
 
@@ -90,9 +105,8 @@ function initializeNavbarBehavior() {
     if (e.key === 'Escape') {
       dropdownToggles.forEach(function (toggle) {
         var dropdown = toggle.closest('.dropdown');
-        if (dropdown) {
-          dropdown.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
+        if (dropdown && dropdown.classList.contains('show')) {
+          closeDropdown(toggle, true);
         }
       });
       if (navPanel && navbarToggler) {

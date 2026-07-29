@@ -8,6 +8,9 @@ import '@fontsource/sora/latin-800.css';
 import '@fontsource/source-sans-3/latin-400.css';
 import '@fontsource/source-sans-3/latin-500.css';
 import '@fontsource/source-sans-3/latin-600.css';
+import sora700Url from '@fontsource/sora/files/sora-latin-700-normal.woff2?url';
+import sora800Url from '@fontsource/sora/files/sora-latin-800-normal.woff2?url';
+import sourceSans400Url from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url';
 import '../styles/theme.css';
 import '../styles/base.css';
 import '../styles/global.css';
@@ -57,6 +60,13 @@ const ogImageAlt = lang === 'es'
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="color-scheme" content="light dark" />
+		<style>
+			html:not([data-page-ready]) body { visibility: hidden; }
+		</style>
+		<noscript><style>html:not([data-page-ready]) body { visibility: visible; }</style></noscript>
+		<link rel="preload" href={sourceSans400Url} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={sora700Url} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={sora800Url} as="font" type="font/woff2" crossorigin />
 		<meta name="description" content={metaDescription} />
 		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
 		<link rel="icon" href={`${basePath}/favicon.ico`} type="image/x-icon" />
@@ -193,25 +203,11 @@ const ogImageAlt = lang === 'es'
 	</head>
 
 	<body class="app-shell">
-		<div id="read-progress" role="progressbar" aria-hidden="true"></div>
+		<div id="read-progress" aria-hidden="true"></div>
 		<a href="#main-content" class="skip-link">{lang === 'es' ? 'Ir al contenido principal' : 'Skip to main content'}</a>
 		<slot />
 		<script is:inline src={`${basePath}/assets/js/navbar-behavior.js`} defer></script>
 		<script is:inline src={`${basePath}/assets/js/page-behavior.js`} defer></script>
-		<script>
-			(function () {
-				const bar = document.getElementById('read-progress');
-				if (!bar) return;
-				function update() {
-					if (!bar) return;
-					const scrolled = window.scrollY;
-					const total = document.documentElement.scrollHeight - window.innerHeight;
-					bar.style.width = total > 0 ? (scrolled / total * 100).toFixed(1) + '%' : '0%';
-				}
-				window.addEventListener('scroll', update, { passive: true });
-				update();
-			})();
-		</script>
 	</body>
 
 </html>
