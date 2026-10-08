@@ -286,3 +286,81 @@ test('document-provenance exhibit avoids narrow screen overflow in both themes',
   await expect(page.locator('#procedencia h2')).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+
+test('editorial navbar is uncluttered, keyboard-accessible and functionally linked', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  const nav = page.locator('.site-navbar');
+  await expect(nav.locator('.site-navbar__identity')).toContainText('Retardo CNE');
+  await expect(nav.locator('.site-navbar__links .nav-link-primary')).toHaveCount(3);
+  await expect(nav.locator('.site-navbar__source')).toHaveAttribute('href', 'https://resultadosconvzla.com/');
+  await expect(nav.locator('#toggleTheme')).toBeVisible();
+  await expect(nav.locator('#toggleLang')).toBeVisible();
+
+  const evidence = nav.locator('#evidenceDropdown');
+  await evidence.click();
+  await expect(evidence).toHaveAttribute('aria-expanded', 'true');
+  await expect(nav.locator('#evidenceMenu')).toBeVisible();
+  await expect(nav.locator('#evidenceMenu a[href="#procedencia"]')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(evidence).toHaveAttribute('aria-expanded', 'false');
+  await expect(nav.locator('#evidenceMenu')).toBeHidden();
+  await expect(evidence).toBeFocused();
+});
+
+test('graphite dark mode uses neutral surfaces and readable text in key components', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#toggleTheme').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('.site-navbar')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
+  await expect(page.locator('#procedencia')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
+  await expect(page.locator('#procedencia .pv-videos')).toHaveCSS('background-color', 'rgb(34, 47, 54)');
+
+  const contrast = await page.locator('.site-navbar').evaluate((el) => {
+    const rgb = (value) => {
+      const channels = value.match(/[\d.]+/g).slice(0, 3).map(Number);
+      return channels.map((c) => {
+        const s = c / 255;
+        return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+      }).reduce((acc, c, i) => acc + c * [0.2126, 0.7152, 0.0722][i], 0);
+    };
+    const bg = rgb(getComputedStyle(el).backgroundColor);
+    const primary = rgb(getComputedStyle(el.querySelector('.site-navbar__primary')).color);
+    const label = rgb(getComputedStyle(el.querySelector('.site-navbar__wordmark small')).color);
+    const ratio = (a, b) => (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+    return { primary: ratio(bg, primary), label: ratio(bg, label) };
+  });
+  expect(contrast.primary).toBeGreaterThanOrEqual(4.5);
+  expect(contrast.label).toBeGreaterThanOrEqual(4.5);
+
+  await page.locator('#evidenceDropdown').click();
+  await expect(page.locator('#evidenceMenu')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
+});
+
+test('mobile editorial navbar keeps accessible theme and language outside the drawer', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/');
+  const panel = page.locator('#navbarNav');
+  await expect(panel).toBeHidden();
+  await expect(page.locator('.site-navbar #toggleTheme')).toBeVisible();
+  await expect(page.locator('.site-navbar #toggleLang')).toBeVisible();
+  await page.locator('#toggleTheme').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.locator('.site-navbar__toggler').click();
+  await expect(panel).toBeVisible();
+  await expect(page.locator('#evidenceDropdown')).toBeVisible();
+  await page.locator('#evidenceDropdown').click();
+  await expect(page.locator('#evidenceMenu')).toBeVisible();
+  await page.locator('#evidenceMenu a[href="#procedencia"]').click();
+  await expect(page).toHaveURL(/#procedencia$/);
+  await expect(panel).toBeHidden();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await expect(page.locator('#procedencia')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
+
+  await page.locator('#toggleLang').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('.site-navbar__identity')).toContainText('Retardo CNE');
+  await expect(page.locator('.site-navbar__source')).toHaveAttribute('href', 'https://resultadosconvzla.com/');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+});
