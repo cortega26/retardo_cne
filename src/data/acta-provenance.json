@@ -27,10 +27,10 @@
     "otherDifferences": 9,
     "unmatched": 23,
     "source": {
-      "title": "Cazadores de Fake News, research republished by Runrun.es on 18 Aug 2024",
-      "url": "https://runrunes.org/rr-es-plus/562888/la-coincidencia-entre-videos-y-fotos-tomados-el-28j-con-los-resultados-publicados-en-linea-por-la-oposicion/",
-      "locator": "Section: ¿Son reales los números de los ciudadanos? 50-video sample, 18 exact video-to-acta matches covering 40 stations; 9 videos with tally mismatches and 23 without identifiable matching acta.",
-      "supports": "A journalistic investigation compared 50 publicly shared videos to digitized tally sheets. 18 videos exactly matched records for 40 stations; other material contained reading/arithmetic inconsistencies or insufficient station identifiers.",
+      "title": "Cazadores de Fake News, investigación original del 18 de agosto de 2024",
+      "url": "https://www.cazadores.info/euforia-interrumpida-coinciden-videos-fotos-28j-con-resultados-publicados-en-linea/",
+      "locator": "Investigación original, sección '¿Son reales los números de los ciudadanos?', párrafos de los 50 videos, 18 coincidencias exactas para 40 mesas, discrepancias en videos y 23 clips sin centro identificable. La enumeración no permite deducir una partición exhaustiva y disjunta.",
+      "supports": "El estudio contrastó 50 videos: 18 coincidencias exactas correspondientes a 40 mesas; registró discrepancias de lectura/suma en otros clips y 23 sin acta identificable. No afirma que los 50 coincidan ni que todas las categorías sean una partición exhaustiva.",
       "retrievedAt": "2026-10-08"
     }
   },
@@ -82,7 +82,7 @@
       "reviewedLabel": "videos examinados",
       "exactLabel": "coincidencias exactas",
       "stationsLabel": "mesas documentadas en esas coincidencias",
-      "videoLimit": "Alcance real: otros 9 videos tuvieron diferencias de lectura o suma, y en 23 no pudo identificarse el acta correspondiente. No son 50 confirmaciones exactas ni una muestra representativa de todo el país.",
+      "videoLimit": "Alcance real: también se documentaron diferencias de lectura o suma en otras grabaciones y 23 videos sin acta identificable por falta de datos de la mesa. No son 50 confirmaciones exactas ni una muestra nacional representativa.",
       "videoSource": "Examinar investigación y videos",
       "limitTitle": "Límite de la prueba",
       "limit": "Esta evidencia respalda la autenticidad de los documentos examinados y la concordancia de casos identificables. No demuestra que las 25.575 imágenes hayan sido verificadas criptográficamente, ni sustituye la publicación de los datos por mesa del CNE, su software o las claves necesarias para una auditoría integral.",
@@ -136,7 +136,7 @@
       "reviewedLabel": "videos examined",
       "exactLabel": "exact matches",
       "stationsLabel": "stations represented by exact matches",
-      "videoLimit": "Actual scope: another 9 videos had reading or arithmetic differences, while 23 could not be matched to an identifiable station sheet. These are not 50 exact confirmations or a nationally representative sample.",
+      "videoLimit": "Actual scope: other recordings contained reading or arithmetic differences, while 23 could not be matched to an identifiable station sheet. These are not 50 exact confirmations or a nationally representative sample.",
       "videoSource": "Review the investigation and videos",
       "limitTitle": "Limits of the evidence",
       "limit": "This supports the authenticity of the documents examined and agreement in identifiable cases. It does not prove that all 25,575 images have been cryptographically verified or replace CNE publication of station-level data, software access and the keys required for a comprehensive audit.",
