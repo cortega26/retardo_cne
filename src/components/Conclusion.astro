@@ -1,86 +1,105 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { ELECTION_TIMELINE, EXTERNAL_LINKS } from '../data/site';
+import { getLangFromUrl } from '../i18n/utils';
+import { EXTERNAL_LINKS } from '../data/site';
+import { FACTS } from '../data/facts';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 const es = lang === 'es';
-
-const millisecondsPerDay = 86_400_000;
-const daysElapsed = Math.floor((Date.now() - new Date(ELECTION_TIMELINE.gazetteDeadlineAt).getTime()) / millisecondsPerDay);
-
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const methodologyUrl = es ? `${base}/metodologia` : `${base}/en/metodologia`;
 const copy = {
-  statCitizens:   es ? 'actas ciudadanas publicadas con código QR verificable'  : 'citizen actas published with verifiable QR codes',
-  statCNE:        es ? 'actas oficiales publicadas por el CNE'                  : 'official actas published by the CNE',
-  statement:      es
-    ? 'Esa asimetría no es un detalle administrativo. Es lo que ocurre cuando un gobierno tiene los resultados y no puede mostrarlos.'
-    : 'That asymmetry is not an administrative detail. It is what happens when a government has the results and cannot show them.',
-  verdict:        es
-    ? 'Un gobierno que gana una elección publica las actas el lunes siguiente.'
-    : 'A government that wins an election publishes the actas the following Monday.',
-  daysPrefix:     es ? 'El CNE lleva'     : 'The CNE has gone',
-  daysSuffix:     es ? 'días sin hacerlo.' : 'days without doing so.',
-  epigraph:       es
-    ? 'El que gana, muestra. El que esconde, perdió.'
-    : 'Those who win, show. Those who hide, lost.',
-  cta1:           es ? 'Verificar las actas'  : 'Verify the actas',
-  cta2:           es ? 'Compartir'            : 'Share',
-  cta3:           es ? 'Ver metodología'      : 'View methodology',
-  copied:         es ? '¡Enlace copiado!'     : 'Link copied!',
+  kicker: es ? 'CONCLUSIÓN / EL CRITERIO DE VERIFICACIÓN' : 'CONCLUSION / THE VERIFICATION STANDARD',
+  title: es ? 'La cuestión no es a quién creer. Es qué resultado puede comprobarse.' : 'The question is not whom to believe. It is which result can be checked.',
+  lede: es
+    ? 'Un boletín nacional no permite reconstruir la suma de los votos. Para verificar el resultado anunciado se necesitan los datos por mesa y las auditorías correspondientes. La falta de ese desglose fue documentada por el Centro Carter.'
+    : 'A national bulletin does not allow the public to reconstruct the vote totals. Verifying the announced result requires station-level data and the corresponding audits. The Carter Center documented the absence of that breakdown.',
+  present: es ? 'Lo que sí está disponible' : 'What is publicly available',
+  presentText: es
+    ? 'Una colección ciudadana de actas con registros individuales por mesa. Su autenticidad y alcance deben evaluarse con métodos explícitos.'
+    : 'A citizen-published collection of individual station-level tally sheets. Its authenticity and scope must be assessed using explicit methods.',
+  absent: es ? 'Lo que no publicó el CNE' : 'What the CNE did not publish',
+  absentText: es
+    ? 'El detalle oficial por mesa que permitiría contrastar el anuncio nacional con las actas y comprobar la totalización.'
+    : 'The official station-by-station breakdown needed to compare the national announcement with tally sheets and audit the tabulation.',
+  quote: es
+    ? 'El Centro Carter concluyó que no podía verificar ni corroborar los resultados anunciados por el CNE.'
+    : 'The Carter Center concluded that it could not verify or corroborate the results announced by the CNE.',
+  quoteSource: es ? 'Declaración del Centro Carter · 30 de julio de 2024' : 'Carter Center statement · July 30, 2024',
+  bottom: es
+    ? 'La conclusión documental es precisa: sin los datos oficiales por mesa, el resultado anunciado no cuenta con una ruta pública de verificación independiente.'
+    : 'The documentary conclusion is precise: without official station-level data, the announced result has no public path to independent verification.',
+  first: es ? 'Examinar la colección de actas' : 'Examine the tally-sheet collection',
+  second: es ? 'Compartir el análisis' : 'Share this analysis',
+  third: es ? 'Revisar metodología' : 'Review methodology',
+  copied: es ? 'Enlace copiado' : 'Link copied'
 };
-
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
-const metodologiaUrl = lang === 'es' ? `${basePath}/metodologia` : `${basePath}/en/metodologia`;
 ---
 
-<div class="conclusion-shell">
-<section id="conclusion" class="conclusion-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-  <!-- The asymmetry -->
-  <div class="conclusion-asymmetry">
-    <div class="conclusion-stat">
-      <span class="conclusion-num conclusion-num--citizens" aria-label="25575">
-        {es ? '25.575' : '25,575'}
-      </span>
-      <span class="conclusion-stat-label">{copy.statCitizens}</span>
+<section id="conclusion" class="evidence-conclusion">
+  <div class="evidence-conclusion__inner">
+    <div class="evidence-conclusion__heading">
+      <span class="evidence-conclusion__kicker">{copy.kicker}</span>
+      <h2>{copy.title}</h2>
+      <p>{copy.lede}</p>
     </div>
-    <div class="conclusion-stat">
-      <span class="conclusion-num conclusion-num--zero">0</span>
-      <span class="conclusion-stat-label">{copy.statCNE}</span>
+    <div class="evidence-conclusion__contrast">
+      <article class="evidence-conclusion__record">
+        <span class="evidence-conclusion__mark evidence-conclusion__mark--available">{es ? 'DOCUMENTOS CONSULTABLES' : 'REVIEWABLE RECORDS'}</span>
+        <strong>{es ? FACTS.citizenActasEs : FACTS.citizenActasEn}</strong>
+        <h3>{copy.present}</h3>
+        <p>{copy.presentText}</p>
+        <a href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">{es ? 'Abrir actas' : 'Open tally sheets'} ↗</a>
+      </article>
+      <article class="evidence-conclusion__record">
+        <span class="evidence-conclusion__mark evidence-conclusion__mark--missing">{es ? 'RESPALDO OFICIAL NO PUBLICADO' : 'OFFICIAL BACKUP NOT RELEASED'}</span>
+        <strong class="evidence-conclusion__missing">{es ? 'Sin desglose' : 'No breakdown'}</strong>
+        <h3>{copy.absent}</h3>
+        <p>{copy.absentText}</p>
+        <a href="https://www.cartercenter.org/publication/final-report-observation-of-the-2024-presidential-election-in-venezuela/" target="_blank" rel="noopener noreferrer">{es ? 'Consultar informe' : 'Read report'} ↗</a>
+      </article>
+    </div>
+
+    <blockquote class="evidence-conclusion__quote">
+      <p>{copy.quote}</p>
+      <footer>
+        <a href="https://www.cartercenter.org/news/venezuela-073024/" target="_blank" rel="noopener noreferrer">{copy.quoteSource} ↗</a>
+      </footer>
+    </blockquote>
+
+    <p class="evidence-conclusion__bottom">{copy.bottom}</p>
+    <div class="evidence-conclusion__actions">
+      <a class="evidence-conclusion__primary" href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">{copy.first} <span aria-hidden="true">↗</span></a>
+      <button id="conclusion-share-btn" data-copied-label={copy.copied} type="button">{copy.second}</button>
+      <a href={methodologyUrl}>{copy.third} ↗</a>
     </div>
   </div>
-
-  <!-- The argument -->
-  <p class="conclusion-statement">{copy.statement}</p>
-
-  <!-- The verdict -->
-  <blockquote class="conclusion-verdict">
-    <p>{copy.verdict}</p>
-  </blockquote>
-
-  <!-- Days without doing so -->
-  <p class="conclusion-days">
-    {copy.daysPrefix}{' '}
-    <strong class="conclusion-days__n">{daysElapsed}</strong>{' '}
-    {copy.daysSuffix}
-  </p>
-
-  <!-- Final epigraph -->
-  <p class="conclusion-epigraph">{copy.epigraph}</p>
-
-  <!-- CTAs -->
-  <div class="conclusion-ctas">
-    <a class="btn btn-primary conclusion-btn" href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">
-      {copy.cta1}
-    </a>
-    <button class="btn btn-outline-primary conclusion-btn" id="conclusion-share-btn" type="button" data-copied-label={copy.copied}>
-      {copy.cta2}
-    </button>
-    <a class="btn btn-outline-primary conclusion-btn" href={metodologiaUrl}>
-      {copy.cta3}
-    </a>
-  </div>
-
 </section>
-</div>
+
+<style>
+  .evidence-conclusion { background: #122338; color: #f3f6f7; padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 3vw, 2rem); margin: clamp(3rem, 6vw, 5rem) 0; }
+  .evidence-conclusion__inner { max-width: 1120px; margin: auto; }
+  .evidence-conclusion__heading { max-width: 830px; margin-bottom: 3rem; }
+  .evidence-conclusion__kicker { display: block; font: 700 .72rem / 1.5 var(--font-mono, monospace); letter-spacing: .14em; color: #e4ba69; margin-bottom: 1.3rem; }
+  .evidence-conclusion__heading h2 { color: #fff; font: 800 clamp(2.15rem, 4.5vw, 4rem) / 1.1 var(--font-display, sans-serif); letter-spacing: -.045em; text-wrap: balance; max-width: 23ch; margin: 0 0 1.4rem; }
+  .evidence-conclusion__heading > p { max-width: 69ch; font-size: 1.12rem; line-height: 1.7; color: #bac8d9; }
+  .evidence-conclusion__contrast { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid #496072; background: #496072; margin-bottom: 2.5rem; }
+  .evidence-conclusion__record { background: #192f46; padding: clamp(1.45rem, 3vw, 2.6rem); display: flex; flex-direction: column; gap: .9rem; }
+  .evidence-conclusion__mark { text-transform: uppercase; letter-spacing: .09em; font: 700 .7rem / 1.5 var(--font-mono, monospace); color: #a7d6ce; }
+  .evidence-conclusion__mark--missing { color: #f0b4ad; }
+  .evidence-conclusion__record > strong { display: block; font: 800 clamp(2.8rem, 5vw, 4.8rem) / 1.1 var(--font-display, sans-serif); letter-spacing: -.055em; color: #f5f7f7; overflow-wrap: normal; }
+  .evidence-conclusion__record > strong.evidence-conclusion__missing { font-size: clamp(1.8rem, 3vw, 3.2rem); color: #f0b4ad; }
+  .evidence-conclusion__record h3 { color: #fff; font-size: 1.12rem; font-weight: 750; margin: 0; }
+  .evidence-conclusion__record p { color: #b7c9d8; line-height: 1.65; font-size: .94rem; margin: 0; flex: 1; }
+  .evidence-conclusion__record a { color: #e4ba69; text-decoration: underline; text-underline-offset: .24em; font-size: .85rem; font-weight: 700; }
+  .evidence-conclusion__quote { padding: 1.4rem 0 1.4rem 1.6rem; margin: 0 0 2.5rem; border-left: 3px solid #e4ba69; }
+  .evidence-conclusion__quote p { margin: 0 0 .8rem; color: #ecf0f5; font: 650 clamp(1.1rem, 2.4vw, 1.55rem) / 1.45 var(--font-display, sans-serif); max-width: 42ch; }
+  .evidence-conclusion__quote a { font-size: .85rem; color: #b9cbd9; text-underline-offset: .22em; }
+  .evidence-conclusion__bottom { font-size: clamp(1.2rem, 2.5vw, 1.7rem); line-height: 1.5; letter-spacing: -.02em; max-width: 44ch; color: #fff; font-weight: 700; margin-bottom: 2rem; }
+  .evidence-conclusion__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .evidence-conclusion__primary { background: #e7be77; color: #172235 !important; padding: .95rem 1.3rem; border-radius: 4px; font-weight: 800; text-decoration: none !important; }
+  .evidence-conclusion__actions button { cursor: pointer; border: 1px solid #8194ac; background: transparent; color: #fff; border-radius: 4px; padding: .89rem 1.3rem; font: inherit; font-weight: 750; }
+  .evidence-conclusion__actions > a:not(.evidence-conclusion__primary) { color: #e7be77; text-decoration: underline; text-underline-offset: .2em; font-weight: 700; }
+  .evidence-conclusion a:focus-visible, .evidence-conclusion button:focus-visible { outline: 3px solid #f1d69e; outline-offset: 4px; }
+  @media (max-width: 680px) { .evidence-conclusion__contrast { grid-template-columns: 1fr; } }
+  @media print { .evidence-conclusion { background: white; color: black; } .evidence-conclusion__heading h2, .evidence-conclusion__heading > p, .evidence-conclusion__record h3, .evidence-conclusion__record p, .evidence-conclusion__quote p, .evidence-conclusion__bottom { color: black; } .evidence-conclusion__record { background: #f2f2f2; } }
+</style>

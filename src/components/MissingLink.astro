@@ -1,97 +1,104 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 const es = lang === 'es';
 
-// Carter Center formal letter requesting precinct-level results: August 17, 2024
-const carterLetterDate = new Date('2024-08-17');
-const daysSinceCarter = Math.floor((Date.now() - carterLetterDate.getTime()) / 86_400_000);
-
 const copy = {
-  badge:    es ? 'Acto IV — Lo que falta'  : 'Act Act IV — What is missing',
-  title:    es ? 'La Única Prueba'          : 'The Only Evidence',
-  opening:  es
-    ? 'La única forma de resolver las más que fundadas dudas es el desglose de resultados mesa por mesa. Los mismos organismos que han observado decenas de elecciones en todo el mundo lo solicitaron. El CNE nunca lo entregó.'
-    : 'The only way to resolve the more than well-founded doubts is the precinct-level vote breakdown. The same organizations that have observed dozens of elections worldwide requested it. The CNE never provided it.',
-  closePrefix:   es ? 'El Centro Carter solicitó formalmente ese desglose el 17 de agosto de 2024.' : 'The Carter Center formally requested that breakdown on August 17, 2024.',
-  closeDaysSufx: es ? 'días sin respuesta del CNE.' : 'days without a response from the CNE.',
-  closeSource:   es ? 'Centro Carter, carta 17/08/2024' : 'Carter Center, letter 08/17/2024',
-  source:        es ? 'Fuente →' : 'Source →',
+  kicker: es ? 'ACTO IV / CONTRASTE INDEPENDIENTE' : 'ACT IV / INDEPENDENT SCRUTINY',
+  title: es ? 'Qué pudieron verificar los observadores' : 'What independent observers could verify',
+  opening: es
+    ? 'El punto decisivo no depende de un eslogan. Distintos observadores examinaron el proceso y señalaron el mismo déficit documental: el CNE no publicó los resultados detallados por mesa que permitirían comprobar su anuncio.'
+    : 'The decisive issue is documentary, not rhetorical. Independent observers examined the process and identified the same evidence gap: the CNE did not publish the station-level results needed to check its announcement.',
+  carterTitle: es ? 'Centro Carter' : 'The Carter Center',
+  carterType: es ? 'Misión de observación · 30 jul 2024' : 'Observation mission · Jul 30, 2024',
+  carterFinding: es
+    ? 'Declaró que no podía verificar ni corroborar el resultado anunciado por el CNE debido a la ausencia de resultados desagregados por mesa.'
+    : 'Stated that it could not verify or corroborate the result announced by the CNE because polling-station results had not been released.',
+  unTitle: es ? 'Panel de Expertos de la ONU' : 'UN Panel of Experts',
+  unType: es ? 'Informe provisional · 9 ago 2024' : 'Interim report · Aug 9, 2024',
+  unFinding: es
+    ? 'Documentó que la gestión de resultados no satisfizo medidas básicas de transparencia e integridad ni los plazos del procedimiento.'
+    : 'Found that results management did not meet basic transparency and integrity measures or prescribed procedural deadlines.',
+  reviewTitle: es ? 'Centro Carter · informe final' : 'Carter Center · final report',
+  reviewType: es ? 'Evaluación de evidencia · 17 feb 2025' : 'Evidence assessment · Feb 17, 2025',
+  reviewFinding: es
+    ? 'Revisó las actas recopiladas y publicadas por la oposición. En una muestra aleatoria de 100 mesas no halló diferencias entre las cifras transcritas y las fotografías examinadas.'
+    : 'Reviewed opposition-published tally sheets. In a random sample of 100 stations, it found no discrepancies between transcribed data and the photographs examined.',
+  link: es ? 'Leer fuente primaria' : 'Read primary source',
+  context: es ? 'La explicación oficial y su límite' : 'The official explanation and its limit',
+  contextText: es
+    ? 'El CNE atribuyó la falta de publicación a un ciberataque. El informe final del Centro Carter señala que no se aportó evidencia de ese ataque ni se publicó el desglose por una vía alternativa. Esa ausencia puede comprobarse; las motivaciones no pueden deducirse solo de ella.'
+    : 'The CNE attributed non-publication to a cyberattack. The Carter Center final report says no supporting evidence for the attack was supplied and no alternative release of station-level results followed. That evidentiary gap is documented; motives cannot be inferred from it alone.',
+  contextLink: es ? 'Consultar informe final' : 'Read final report'
 };
-
-const orgs = [
+const sources = [
   {
-    name:  es ? 'Centro Carter'          : 'Carter Center',
-    date:  es ? '30 jul 2024'            : 'Jul 30, 2024',
-    quote: es
-      ? '"La elección de Venezuela no se adecuó a parámetros internacionales y no puede ser considerada democrática."'
-      : '"Venezuela\'s election did not meet international standards and cannot be considered democratic."',
-    href:  'https://www.cartercenter.org/news/pr/2024/venezuela-073024-spanish.pdf',
+    title: copy.carterTitle, type: copy.carterType, finding: copy.carterFinding,
+    href: 'https://www.cartercenter.org/news/venezuela-073024/',
+    index: '01'
   },
   {
-    name:  es ? 'Panel de Expertos ONU' : 'UN Expert Panel',
-    date:  es ? '9 ago 2024'            : 'Aug 9, 2024',
-    quote: es
-      ? '"El proceso de gestión de resultados del CNE no cumplió con las medidas básicas de transparencia e integridad necesarias para elecciones creíbles."'
-      : '"The CNE\'s results management process did not meet the basic transparency and integrity measures necessary for credible elections."',
-    href:  'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf',
+    title: copy.unTitle, type: copy.unType, finding: copy.unFinding,
+    href: 'https://news.un.org/en/sites/news.un.org.en/files/atoms/files/Interim_Report_PoE_Venezuela_090824.pdf',
+    index: '02'
   },
   {
-    name:  es ? 'Unión Europea'         : 'European Union',
-    date:  es ? '4 ago 2024'            : 'Aug 4, 2024',
-    quote: es
-      ? '"Los resultados hechos públicos el 2 de agosto por la CNE no pueden reconocerse sin pruebas que los respalden."'
-      : '"The results published by the CNE on August 2 cannot be recognized without evidence to support them."',
-    href:  'https://www.consilium.europa.eu/es/press/press-releases/2024/08/04/venezuela-statement-by-the-high-representative-on-behalf-of-the-eu/',
-  },
-  {
-    name:  es ? 'OEA'                   : 'OAS',
-    date:  es ? '2 ago 2024'            : 'Aug 2, 2024',
-    quote: es
-      ? '"El manual completo del manejo doloso del resultado electoral fue aplicado en Venezuela la noche del domingo, en muchos casos de manera muy rudimentaria."'
-      : '"The complete manual of fraudulent electoral result management was applied in Venezuela on Sunday night, in many cases in a very rudimentary manner."',
-    href:  'https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=C-046/24',
-  },
+    title: copy.reviewTitle, type: copy.reviewType, finding: copy.reviewFinding,
+    href: 'https://www.cartercenter.org/publication/final-report-observation-of-the-2024-presidential-election-in-venezuela/',
+    index: '03'
+  }
 ];
 ---
 
-<section id="internacional" class="missinglink-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
-
-  <div class="missinglink-header">
-    <span class="section-label">{copy.badge}</span>
-    <h2 class="missinglink-title">{copy.title}</h2>
-    <p class="missinglink-opening">{copy.opening}</p>
-  </div>
-
-  <!-- 4 org quotes — 2×2 grid -->
-  <div class="missinglink-quotes">
-    {orgs.map(org => (
-      <div class="missinglink-quote">
-        <div class="missinglink-quote__head">
-          <strong class="missinglink-quote__org">{org.name}</strong>
-          <span class="missinglink-quote__date">{org.date}</span>
-        </div>
-        <p class="missinglink-quote__text">{org.quote}</p>
-        <a class="story-link text-sm" href={org.href} target="_blank" rel="noopener noreferrer">
-          {copy.source}
-        </a>
-      </div>
-    ))}
-  </div>
-
-  <!-- Closing callout -->
-  <div class="missinglink-close" role="note">
-    <p class="missinglink-close__prefix">{copy.closePrefix}</p>
-    <div class="missinglink-close__counter">
-      <span class="missinglink-close__days">{daysSinceCarter}</span>
-      <span class="missinglink-close__suffix">{copy.closeDaysSufx}</span>
+<section id="internacional" class="observer-section">
+  <div class="observer-section__container">
+    <div class="observer-section__heading">
+      <span class="section-label">{copy.kicker}</span>
+      <h2>{copy.title}</h2>
+      <p>{copy.opening}</p>
     </div>
-    <a class="story-link text-sm" href="https://www.cartercenter.org/news/venezuela-073024/" target="_blank" rel="noopener noreferrer">
-      {copy.closeSource} →
-    </a>
+    <div class="observer-section__grid">
+      {sources.map(s => (
+        <article class="observer-section__finding">
+          <div class="observer-section__index">{s.index} <span>{es ? 'FUENTE' : 'SOURCE'}</span></div>
+          <p class="observer-section__kind">{s.type}</p>
+          <h3>{s.title}</h3>
+          <p class="observer-section__description">{s.finding}</p>
+          <a href={s.href} target="_blank" rel="noopener noreferrer">{copy.link} ↗</a>
+        </article>
+      ))}
+    </div>
+    <aside class="observer-section__limit">
+      <div>
+        <strong>{copy.context}</strong>
+        <p>{copy.contextText}</p>
+      </div>
+      <a href="https://www.cartercenter.org/publication/final-report-observation-of-the-2024-presidential-election-in-venezuela/" target="_blank" rel="noopener noreferrer">{copy.contextLink} ↗</a>
+    </aside>
   </div>
-
 </section>
+
+<style>
+  .observer-section { padding: clamp(3.5rem, 7vw, 6rem) clamp(1rem, 3vw, 2rem); background: color-mix(in srgb, var(--color-brand-600) 3%, var(--bg-body)); }
+  .observer-section__container { width: min(1120px, 100%); margin: auto; }
+  .observer-section__heading { max-width: 800px; margin-bottom: 2rem; }
+  .observer-section__heading h2 { font: 800 clamp(2rem, 3.5vw, 3.2rem) / 1.12 var(--font-display, sans-serif); letter-spacing: -.043em; color: var(--text-primary); margin: .8rem 0 1rem; text-wrap: balance; }
+  .observer-section__heading > p { font-size: clamp(1rem, 1.6vw, 1.16rem); line-height: 1.7; color: var(--text-secondary); max-width: 67ch; }
+  .observer-section__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .observer-section__finding { border: 1px solid var(--border-subtle); border-top: 3px solid #426e84; background: var(--bg-card); padding: 1.5rem; display: flex; flex-direction: column; min-height: 330px; }
+  .observer-section__index { font: 750 1.8rem / 1 var(--font-display, sans-serif); letter-spacing: -.04em; color: #628299; display: flex; align-items: center; gap: .7rem; }
+  .observer-section__index span { font: 750 .64rem / 1.4 var(--font-mono, monospace); letter-spacing: .14em; color: var(--text-secondary); }
+  .observer-section__kind { font: 650 .76rem / 1.55 var(--font-mono, monospace); color: var(--text-secondary); margin: 1.7rem 0 .45rem; }
+  .observer-section__finding h3 { font: 750 1.22rem / 1.3 var(--font-display, sans-serif); color: var(--text-primary); margin: 0 0 .9rem; }
+  .observer-section__description { flex: 1; font-size: .95rem; line-height: 1.65; color: var(--text-secondary); }
+  .observer-section__finding a { font-size: .85rem; font-weight: 700; color: var(--text-accent); text-underline-offset: .22em; }
+  .observer-section__limit { margin-top: 1.25rem; padding: 1.5rem 1.75rem; border-left: 4px solid #b87b3b; background: var(--bg-card); display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .observer-section__limit > div { flex: 1 1 30rem; }
+  .observer-section__limit strong { font-size: 1.03rem; color: var(--text-primary); }
+  .observer-section__limit p { color: var(--text-secondary); line-height: 1.65; margin: .55rem 0 0; font-size: .93rem; }
+  .observer-section__limit a { color: var(--text-accent); font-weight: 700; font-size: .85rem; text-underline-offset: .2em; }
+  .observer-section a:focus-visible { outline: 3px solid var(--text-accent); outline-offset: 4px; }
+  @media (max-width: 850px) { .observer-section__grid { grid-template-columns: 1fr; } .observer-section__finding { min-height: auto; } }
+  @media print { .observer-section { background: white; } .observer-section__finding, .observer-section__limit { border: 1px solid #aaa; } }
+</style>

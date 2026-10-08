@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import expertClaimManifest from '../data/expert-claims.json';
+import carterBound from '../data/carter-bound.json';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,13 +10,17 @@ const es = lang === 'es';
 const locale = es ? 'es' : 'en';
 const primary = expertClaimManifest.claims.filter((claim) => claim.group === 'cne-bulletin');
 const supplemental = expertClaimManifest.claims.filter((claim) => claim.group === 'opposition-actas');
+const boundCopy = carterBound.copy[locale];
+const boundNumbers = carterBound.inputs;
+const formatNumber = new Intl.NumberFormat(es ? 'es-VE' : 'en-US');
+const maxWidth = (boundNumbers.registeredElectorsAtMissingStations / boundNumbers.reportedMargin * 100).toFixed(2);
 
 const copy = {
-  badge:   es ? 'Acto III — Los números del CNE'   : 'Act III — The CNE\'s numbers',
-  title:   es ? 'La Anomalía'                       : 'The Anomaly',
+  badge:   es ? 'Acto III — La prueba cuantitativa'   : 'Act III — The quantitative evidence',
+  title:   es ? 'Lo que permiten demostrar los números' : 'What the numbers can demonstrate',
   opening: es
-    ? 'Los cuatro trabajos enlazados no evalúan el mismo objeto. Tao y Gelman examinan el patrón aritmético del primer boletín nacional anunciado por el CNE; Kronick y Mebane estudian las actas publicadas por la campaña opositora. Sus conclusiones deben leerse dentro de esos alcances distintos.'
-    : 'The four linked works do not evaluate the same object. Tao and Gelman examine the arithmetic pattern in the CNE’s first announced national bulletin; Kronick and Mebane study tally sheets published by the opposition campaign. Their conclusions must be read within those distinct scopes.',
+    ? 'Primero, un límite matemático basado en el informe final del Centro Carter. Después, cuatro trabajos académicos que no evalúan el mismo objeto: Tao y Gelman examinan el primer boletín nacional del CNE; Kronick y Mebane estudian las actas publicadas por la oposición. Cada conclusión tiene su propio alcance.'
+    : 'First, an arithmetic bound drawn from the Carter Center final report. Then four academic studies that do not assess the same object: Tao and Gelman examine the first CNE national bulletin; Kronick and Mebane study opposition-published tally sheets. Each conclusion has its own scope.',
   primaryLabel: es ? 'Primer boletín nacional anunciado por el CNE' : 'First national bulletin announced by the CNE',
   suppLabel:    es ? 'Actas publicadas por la campaña opositora'   : 'Tally sheets published by the opposition campaign',
   rigorTitle:   es ? 'Nota metodológica'      : 'Methodological note',
@@ -35,6 +40,57 @@ const copy = {
     <span class="section-label">{copy.badge}</span>
     <h2 class="anomaly-title">{copy.title}</h2>
     <p class="anomaly-opening">{copy.opening}</p>
+  </div>
+
+
+  <!-- The Carter Center's source-bound arithmetic proof, using its own 2024 snapshot. -->
+  <figure class="bound-case" aria-labelledby="bound-case-title">
+    <div class="bound-case__masthead">
+      <span class="bound-case__tag">{boundCopy.tag}</span>
+      <span class="bound-case__ref">CENTRO CARTER / 2025 / pp. 39–40</span>
+    </div>
+
+    <div class="bound-case__intro">
+      <p class="bound-case__folio">01 — 03</p>
+      <h3 id="bound-case-title">{boundCopy.title}</h3>
+      <p>{boundCopy.intro}</p>
+    </div>
+
+    <div class="bound-case__calculation">
+      <div class="bound-case__row bound-case__row--lead">
+        <div class="bound-case__value">
+          <strong>{formatNumber.format(boundNumbers.reportedMargin)}</strong>
+          <span>{boundCopy.leadLabel}</span>
+        </div>
+        <div class="bound-case__track" aria-hidden="true"><span style="width: 100%"></span></div>
+      </div>
+      <div class="bound-case__operator" aria-hidden="true">−</div>
+      <div class="bound-case__row bound-case__row--limit">
+        <div class="bound-case__value">
+          <strong>{formatNumber.format(boundNumbers.registeredElectorsAtMissingStations)}</strong>
+          <span>{boundCopy.upperLabel}</span>
+        </div>
+        <div class="bound-case__track" aria-hidden="true"><span style={`width: ${maxWidth}%`}></span></div>
+      </div>
+      <div class="bound-case__operator" aria-hidden="true">=</div>
+      <div class="bound-case__result">
+        <strong>{formatNumber.format(boundNumbers.minimumRemainingMargin)}</strong>
+        <span>{boundCopy.balanceLabel}</span>
+      </div>
+    </div>
+
+    <p class="bound-case__interpretation">{boundCopy.interpretation}</p>
+    <p class="bound-case__distinction">{boundCopy.distinction}</p>
+    <figcaption class="bound-case__foot">
+      <p><strong>{es ? 'Condición de la demostración:' : 'Condition of the demonstration:'}</strong> {boundCopy.caveat}</p>
+      <p>{boundCopy.footnote}</p>
+      <a href={carterBound.source.url} target="_blank" rel="noopener noreferrer">{boundCopy.sourceLabel} ↗</a>
+    </figcaption>
+  </figure>
+
+  <div class="anomaly-followup">
+    <p class="anomaly-followup__label">{es ? 'OTRAS EVALUACIONES ESTADÍSTICAS' : 'ADDITIONAL STATISTICAL ASSESSMENTS'}</p>
+    <p>{es ? 'Estos trabajos añaden contexto y pruebas complementarias, pero sus objetos y métodos son diferentes del cálculo anterior.' : 'These studies add context and complementary tests, but their datasets and methods differ from the calculation above.'}</p>
   </div>
 
   <!-- Primary findings: Tao + Gelman -->
@@ -98,3 +154,44 @@ const copy = {
   </aside>
 
 </section>
+
+<style>
+  .bound-case { margin: 2.5rem 0 3rem; padding: 0; background: #f8f4e9; border: 1px solid #d9d3c3; color: #172b3a; box-shadow: 0 22px 50px -45px #0d2738; }
+  .bound-case__masthead { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .65rem 1rem; border-bottom: 1px solid #d5d0c4; padding: 1rem clamp(1.25rem, 3vw, 2.5rem); background: #f0eadc; font: 700 .65rem / 1.6 var(--font-mono, monospace); letter-spacing: .11em; }
+  .bound-case__tag { color: #3e6870; }
+  .bound-case__ref { color: #5c6b6c; }
+  .bound-case__intro { padding: clamp(1.4rem, 3.5vw, 3rem) clamp(1.25rem, 3.5vw, 3rem) 1.5rem; }
+  .bound-case__folio { margin: 0 0 .7rem; color: #7b786b; font: 700 .68rem / 1.4 var(--font-mono, monospace); letter-spacing: .15em; }
+  .bound-case__intro h3 { font: 800 clamp(1.65rem, 3.3vw, 3.1rem) / 1.15 var(--font-display, sans-serif); letter-spacing: -.046em; max-width: 24ch; margin: 0 0 1rem; }
+  .bound-case__intro > p:not(.bound-case__folio) { color: #475a62; max-width: 70ch; line-height: 1.72; margin: 0; font-size: 1.02rem; }
+  .bound-case__calculation { display: grid; grid-template-columns: minmax(0, 1fr) 2.5rem minmax(0, 1fr) 2.5rem minmax(0, .72fr); gap: .8rem; align-items: end; padding: 1rem clamp(1.25rem, 3.5vw, 3rem) 1.75rem; }
+  .bound-case__row { min-width: 0; }
+  .bound-case__value { display: flex; flex-direction: column; gap: .45rem; min-height: 7rem; }
+  .bound-case__value strong, .bound-case__result strong { font: 800 clamp(1.6rem, 2.75vw, 2.75rem) / 1 var(--font-display, sans-serif); letter-spacing: -.055em; }
+  .bound-case__row--lead .bound-case__value strong { color: #176170; }
+  .bound-case__row--limit .bound-case__value strong { color: #9c563f; }
+  .bound-case__value span, .bound-case__result span { color: #52616a; font-size: .83rem; line-height: 1.45; font-weight: 600; }
+  .bound-case__track { height: .5rem; margin-top: .8rem; background: #d6dedb; border-radius: .1rem; overflow: hidden; }
+  .bound-case__track span { display: block; height: 100%; background: #176170; }
+  .bound-case__row--limit .bound-case__track span { background: #b9795b; }
+  .bound-case__operator { font: 500 2.2rem / 1 var(--font-display, sans-serif); align-self: center; text-align: center; color: #70818b; }
+  .bound-case__result { display: flex; flex-direction: column; justify-content: end; gap: .45rem; padding: 1rem 0; border-top: 2px solid #176170; }
+  .bound-case__result strong { color: #176170; }
+  .bound-case__interpretation { margin: .5rem clamp(1.25rem, 3.5vw, 3rem); padding: 1.25rem 1.5rem; background: #e4ece8; border-left: 4px solid #176170; color: #1c3f43; font-weight: 700; line-height: 1.6; font-size: clamp(1rem, 1.6vw, 1.22rem); }
+  .bound-case__distinction { color: #5b655e; margin: 1rem clamp(1.25rem, 3.5vw, 3rem) 2rem; font-size: .88rem; line-height: 1.6; }
+  .bound-case__foot { border-top: 1px solid #d5d0c4; padding: 1.3rem clamp(1.25rem, 3.5vw, 3rem); color: #4f605f; font-size: .8rem; line-height: 1.6; background: #f0eadc; }
+  .bound-case__foot p { margin: 0 0 .75rem; }
+  .bound-case__foot a { color: #17566d; font-weight: 750; text-underline-offset: .2em; }
+  .anomaly-followup { border-top: 1px solid var(--border-subtle); padding-top: 2rem; margin-bottom: 1.3rem; }
+  .anomaly-followup__label { font: 700 .73rem / 1.5 var(--font-mono, monospace); letter-spacing: .12em; color: var(--text-accent); }
+  .anomaly-followup > p:last-child { color: var(--text-secondary); font-size: .92rem; line-height: 1.65; max-width: 70ch; }
+  .bound-case a:focus-visible { outline: 3px solid #176170; outline-offset: 4px; }
+  @media (max-width: 980px) {
+    .bound-case__calculation { grid-template-columns: 1fr; align-items: stretch; gap: .4rem; }
+    .bound-case__value { min-height: auto; }
+    .bound-case__operator { text-align: left; align-self: start; }
+    .bound-case__result { margin-top: .2rem; padding: 1.4rem 0; }
+    .bound-case__track { max-width: 720px; }
+  }
+  @media print { .bound-case { background: #fff; box-shadow: none; } .bound-case__masthead, .bound-case__foot { background: #f5f5f5; } }
+</style>
