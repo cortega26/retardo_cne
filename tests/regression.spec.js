@@ -364,3 +364,14 @@ test('mobile editorial navbar keeps accessible theme and language outside the dr
   await expect(page.locator('.site-navbar__source')).toHaveAttribute('href', 'https://resultadosconvzla.com/');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
+
+
+test('Carter arithmetic remains readable on a dark document surface', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#toggleTheme').click();
+  const bound = page.locator('#analisis-tecnico .bound-case');
+  await expect(bound).toHaveCSS('background-color', 'rgb(32, 44, 51)');
+  await expect(bound.locator('.bound-case__masthead')).toHaveCSS('background-color', 'rgb(39, 54, 61)');
+  await expect(bound).toContainText('338.457');
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
