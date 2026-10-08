@@ -47,18 +47,18 @@
 }
 
 @theme {
-  /* ── Brand: institutional deep blue (trust / authority) ──────────────── */
-  --color-brand-50:  #eef3ff;
-  --color-brand-100: #dbe5ff;
-  --color-brand-200: #b8caff;
-  --color-brand-300: #8ea8fb;
-  --color-brand-400: #5e7ef3;
-  --color-brand-500: #3a59e6;
-  --color-brand-600: #2742cc;   /* primary — oklch(43% 0.19 264) */
-  --color-brand-700: #1e33a3;
-  --color-brand-800: #1a2b80;
-  --color-brand-900: #131f57;
-  --color-brand-950: #0c1338;
+  /* ── Brand: mineral slate-blue, restrained documentary palette ─────────── */
+  --color-brand-50:  #eef4f4;
+  --color-brand-100: #dce9ea;
+  --color-brand-200: #bbd4d7;
+  --color-brand-300: #a4c5cb;
+  --color-brand-400: #75a0ab;
+  --color-brand-500: #4c7a8a;
+  --color-brand-600: #2c586d;   /* desaturated documentary blue */
+  --color-brand-700: #25495b;
+  --color-brand-800: #1e3746;
+  --color-brand-900: #192c37;
+  --color-brand-950: #121e25;
 
   /* ── Breach: controlled crimson (incumplimiento / negative) ──────────── */
   --color-breach-50:  #fdf2f1;
