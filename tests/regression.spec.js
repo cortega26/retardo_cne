@@ -36,14 +36,14 @@ test.describe('regression coverage', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page).toHaveURL(/\/retardo_cne\/en\/$/);
     await expect(page).toHaveTitle(/CNE Actas Observatory/);
-    await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
+    await expect(page.locator('h1')).toHaveText('An announced result. The data to verify it, missing.');
 
     const storedLang = await page.evaluate(() => localStorage.getItem('site_lang'));
     expect(storedLang).toBe('en');
 
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('h1')).toHaveText('The CNE published zero actas. Citizens published 25,575. That difference has a name.');
+    await expect(page.locator('h1')).toHaveText('An announced result. The data to verify it, missing.');
   });
 
   test('copy link control is available in share section', async ({ page, context }) => {
@@ -96,8 +96,8 @@ test.describe('regression coverage', () => {
     await cards.first().scrollIntoViewIfNeeded();
     // Verify stat values are visible
     await expect(cards.nth(0).locator('.existence-stat-value')).toHaveText('85,18%');
-    await expect(cards.nth(1).locator('.existence-stat-value')).toHaveText('1M+');
-    await expect(cards.nth(2).locator('.existence-stat-value')).toHaveText('100%');
+    await expect(cards.nth(1).locator('.existence-stat-value')).toHaveText('25.575');
+    await expect(cards.nth(2).locator('.existence-stat-value')).toHaveText('30.026');
   });
 
   test('expert analyses preserve their distinct datasets and primary-source links', async ({ page }) => {
@@ -208,4 +208,30 @@ test.describe('regression coverage', () => {
         .toBeLessThan(180);
     }
   });
+});
+
+test('evidence-first narrative preserves sources, caveats and navigation in both languages', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('h1')).toHaveText('Un resultado anunciado. Los datos para comprobarlo, ausentes.');
+  await expect(page.locator('.evidence-hero__reading a')).toHaveCount(3);
+  await expect(page.locator('.evidence-hero__proof')).toContainText('Sin desglose por mesa');
+  await expect(page.locator('.evidence-hero__proof')).toContainText('no significa que no existan actas físicas');
+  await expect(page.locator('.evidence-hero__proof a[href*="cartercenter.org"]')).toHaveCount(1);
+  await expect(page.locator('.evidence-conclusion__record')).toHaveCount(2);
+  await expect(page.locator('#internacional .observer-section__finding')).toHaveCount(3);
+  await expect(page.locator('#internacional')).toContainText('las motivaciones no pueden deducirse');
+  await page.locator('.evidence-hero__reading a[href="#actas"]').click();
+  await expect(page).toHaveURL(/#actas$/);
+
+  await page.goto('/en/');
+  await expect(page.locator('h1')).toHaveText('An announced result. The data to verify it, missing.');
+  await expect(page.locator('.evidence-hero__proof')).toContainText('No station-level breakdown');
+  await expect(page.locator('.evidence-conclusion__record')).toHaveCount(2);
+});
+
+test('evidence hero remains readable without horizontal overflow on a narrow viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/');
+  await expect(page.locator('.evidence-hero__comparison')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
