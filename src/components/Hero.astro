@@ -1,148 +1,170 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl } from '../i18n/utils';
 import { FACTS } from '../data/facts';
+import { EXTERNAL_LINKS } from '../data/site';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const es = lang === 'es';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const methodologyHref = lang === 'es' ? `${base}/metodologia` : `${base}/en/metodologia`;
+const methodologyHref = es ? `${base}/metodologia` : `${base}/en/metodologia`;
+const percentage = (FACTS.citizenActas / FACTS.totalMesas * 100).toLocaleString(es ? 'es-VE' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const citizenCount = es ? FACTS.citizenActasEs : FACTS.citizenActasEn;
+const totalCount = es ? FACTS.totalMesasEs : FACTS.totalMesasEn;
 
-const daysElapsed = Math.floor((Date.now() - new Date(FACTS.gazetaDeadline).getTime()) / 86_400_000);
+const copy = {
+  kicker: es ? 'Venezuela · Elección presidencial del 28 de julio de 2024' : 'Venezuela · July 28, 2024 presidential election',
+  type: es ? 'DOSSIER / EVIDENCIA PÚBLICA' : 'DOSSIER / PUBLIC EVIDENCE',
+  title: es ? 'Un resultado anunciado. Los datos para comprobarlo, ausentes.' : 'An announced result. The data to verify it, missing.',
+  dek: es
+    ? 'El CNE anunció un ganador sin publicar el desglose de votos por mesa. Una colección ciudadana sí permitió examinar miles de actas. Estas son las fuentes, los límites y las preguntas que permiten contrastar ambas cosas.'
+    : 'The CNE announced a winner without publishing polling-station-level results. A citizen-collected dataset made thousands of tally sheets available for examination. Here are the sources, their limits, and how to compare the evidence.',
+  primary: es ? 'Seguir la evidencia' : 'Follow the evidence',
+  secondary: es ? 'Examinar las actas' : 'Examine the tally sheets',
+  sideKicker: es ? 'EL CONTRASTE DOCUMENTAL' : 'THE DOCUMENTARY CONTRAST',
+  cne: es ? 'Publicación del CNE' : 'CNE publication',
+  cneValue: es ? 'Sin desglose por mesa' : 'No station-level breakdown',
+  cneNote: es
+    ? 'El organismo anunció totales nacionales, pero no publicó los resultados de cada mesa para contrastarlos.'
+    : 'The authority announced national totals but did not release the results of each polling station for comparison.',
+  cneSource: es ? 'Centro Carter · Informe final, febrero de 2025' : 'Carter Center · Final report, February 2025',
+  citizen: es ? 'Colección publicada por la oposición' : 'Opposition-published collection',
+  citizenNote: es
+    ? 'Actas digitalizadas de 30.026 mesas, según el corte registrado el 3 de enero de 2025. No son una publicación del CNE.'
+    : 'Digitized tally sheets out of 30,026 polling stations, based on the January 3, 2025 recorded snapshot. They are not a CNE publication.',
+  coverage: es ? 'Cobertura documental publicada' : 'Published documentary coverage',
+  source1: es ? 'Informe del Centro Carter' : 'Carter Center report',
+  source2: es ? 'Consultar los documentos' : 'Browse the documents',
+  caveat: es
+    ? '«Sin desglose» no significa que no existan actas físicas: significa que el CNE no publicó los resultados por mesa para su verificación pública.'
+    : '“No breakdown” does not mean physical tally sheets do not exist. It means the CNE did not publish station-level results for public scrutiny.',
+  step1title: es ? '01 / Qué se anunció' : '01 / What was announced',
+  step1detail: es ? 'Boletines sin datos por mesa' : 'Bulletins without station-level data',
+  step2title: es ? '02 / Qué se puede examinar' : '02 / What can be examined',
+  step2detail: es ? 'Actas y trazabilidad' : 'Tally sheets and traceability',
+  step3title: es ? '03 / Qué se pudo verificar' : '03 / What could be verified',
+  step3detail: es ? 'Observación independiente' : 'Independent observation',
+  verification: es ? 'Última revisión editorial registrada' : 'Last recorded editorial review',
+  method: es ? 'Método y correcciones' : 'Methods and corrections'
+};
 ---
 
-<header id="inicio" class="hero-shell">
-  <div class="hero-inner">
-
-    <div class="hero-eyebrow">
-      <div class="country-tag">
-        <span class="flag flag-venezuela" aria-hidden="true"></span>
-        <span>{lang === 'es' ? 'Venezuela · 28J 2024' : 'Venezuela · July 28, 2024'}</span>
-      </div>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        <span>{t('status_violation')}</span>
-      </div>
+<header id="inicio" class="evidence-hero">
+  <div class="evidence-hero__container">
+    <div class="evidence-hero__topline">
+      <span class="evidence-hero__issue">{copy.type}</span>
+      <span class="evidence-hero__date">{copy.kicker}</span>
     </div>
 
-    <div class="hero-contrast" aria-label={lang === 'es'
-      ? 'CNE publicó 0 actas oficiales; ciudadanía publicó 25.575'
-      : 'CNE published 0 official actas; citizens published 25,575'}>
-      <div class="hero-num-block hero-num--zero">
-        <span class="hero-big-num">0</span>
-        <span class="hero-num-label">{t('hero_card1_cne_label')}</span>
+    <div class="evidence-hero__grid">
+      <div class="evidence-hero__intro">
+        <p class="evidence-hero__eyebrow">
+          <span class="evidence-hero__dot" aria-hidden="true"></span>
+          {es ? 'Investigación documental abierta' : 'Open documentary investigation'}
+        </p>
+        <h1>{copy.title}</h1>
+        <p class="evidence-hero__dek">{copy.dek}</p>
+        <div class="evidence-hero__actions">
+          <a class="evidence-hero__button" href="#obligacion">{copy.primary} <span aria-hidden="true">↗</span></a>
+          <a class="evidence-hero__textlink" href="#actas">{copy.secondary} <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
-      <span class="hero-vs-divider" aria-hidden="true">vs</span>
-      <div class="hero-num-block">
-        <span id="hero-num-citizen" class="hero-big-num" data-final={FACTS.citizenActas} data-sep={lang === 'es' ? '.' : ','}>{lang === 'es' ? FACTS.citizenActasEs : FACTS.citizenActasEn}</span>
-        <span class="hero-num-label">{t('hero_card1_citizen_label')}</span>
-      </div>
+
+      <aside class="evidence-hero__proof" aria-label={copy.sideKicker}>
+        <div class="evidence-hero__proof-head">
+          <span>{copy.sideKicker}</span>
+          <span class="evidence-hero__serial">28J / 2024</span>
+        </div>
+        <div class="evidence-hero__comparison">
+          <div class="evidence-hero__record evidence-hero__record--cne">
+            <span class="evidence-hero__record-kicker">{copy.cne}</span>
+            <strong class="evidence-hero__no-data">{copy.cneValue}</strong>
+            <p>{copy.cneNote}</p>
+            <a href="https://www.cartercenter.org/publication/final-report-observation-of-the-2024-presidential-election-in-venezuela/" target="_blank" rel="noopener noreferrer">{copy.cneSource} <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="evidence-hero__record evidence-hero__record--citizen">
+            <span class="evidence-hero__record-kicker">{copy.citizen}</span>
+            <div class="evidence-hero__figure"><strong>{citizenCount}</strong><span>/ {totalCount}</span></div>
+            <p>{copy.citizenNote}</p>
+            <div class="evidence-hero__track" role="img" aria-label={`${percentage}% — ${copy.coverage}`}>
+              <span style={`width: ${FACTS.citizenActas / FACTS.totalMesas * 100}%`}></span>
+            </div>
+            <div class="evidence-hero__coverage"><span>{copy.coverage}</span><strong>{percentage}%</strong></div>
+            <a href={EXTERNAL_LINKS.resultadosConVzla} target="_blank" rel="noopener noreferrer">{copy.source2} <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <p class="evidence-hero__qualification">{copy.caveat}</p>
+      </aside>
     </div>
 
-    <h1 class="hero-headline">{t('hero_title')}</h1>
+    <nav class="evidence-hero__reading" aria-label={es ? 'Ruta de lectura' : 'Reading path'}>
+      <a href="#obligacion"><strong>{copy.step1title}</strong><span>{copy.step1detail}</span></a>
+      <a href="#actas"><strong>{copy.step2title}</strong><span>{copy.step2detail}</span></a>
+      <a href="#internacional"><strong>{copy.step3title}</strong><span>{copy.step3detail}</span></a>
+    </nav>
 
-    <div class="hero-verdict" role="note" aria-label={lang === 'es' ? 'Conclusión: el nombre de lo ocurrido' : 'Conclusion: what happened'}>
-      <div class="hero-verdict-phase">
-        <span class="hero-verdict-date">28J 2024</span>
-        <strong class="hero-verdict-name">{t('hero_verdict_fraud')}</strong>
-        <span class="hero-verdict-note">{t('hero_verdict_fraud_note')}</span>
-      </div>
-      <span class="hero-verdict-arrow" aria-hidden="true">→</span>
-      <div class="hero-verdict-phase">
-        <span class="hero-verdict-date">{lang === 'es' ? '10 ene 2025' : '10 Jan 2025'}</span>
-        <strong class="hero-verdict-name">{t('hero_verdict_rupture')}</strong>
-        <span class="hero-verdict-note">{t('hero_verdict_rupture_note')}</span>
-      </div>
+    <div class="evidence-hero__footnote">
+      <span>{copy.verification}: <time datetime={FACTS.lastVerified}>{FACTS.lastVerified}</time></span>
+      <a href={methodologyHref}>{copy.method} ↗</a>
     </div>
-
-    <p class="hero-days-strip">
-      <strong class="hero-days-count">{daysElapsed}</strong>{' '}{t('hero_days_context')}
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#obligacion">{t('hero_cta_primary')}</a>
-      <a class="btn btn-ghost" href="#actas">{t('hero_cta_secondary')}</a>
-    </div>
-
-    <div class="hero-meta" role="note" aria-label={lang === 'es' ? 'Indicadores de credibilidad' : 'Credibility indicators'}>
-      <span>{t('cred_docs').replace('{{count}}', String(FACTS.primaryDocsCount))}</span>
-      <span aria-hidden="true">·</span>
-      <span>{t('cred_update').replace('{{date}}', FACTS.lastVerified)}</span>
-      <span aria-hidden="true">·</span>
-      <a href={methodologyHref}>
-        {t('cred_corrections')}
-      </a>
-    </div>
-
   </div>
 </header>
 
 <style>
-  /* Verdict block */
-  .hero-verdict {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-    margin: 1.1rem 0;
-    padding: 1.1rem 1.35rem;
-    border-radius: var(--radius-card);
-    background: color-mix(in srgb, var(--color-breach-500) 6%, var(--bg-card, #fff));
-    border: 1px solid color-mix(in srgb, var(--color-breach-500) 22%, transparent);
+  .evidence-hero { background: #101d31; color: #f7f8fb; padding: clamp(2.75rem, 5vw, 5.25rem) clamp(1rem, 3vw, 2rem) 0; position: relative; overflow: hidden; }
+  .evidence-hero::before { content: ''; position: absolute; inset: -25% -20% auto auto; width: 65%; aspect-ratio: 1; background: radial-gradient(circle, #2b557959 0, transparent 68%); pointer-events: none; }
+  .evidence-hero__container { width: min(1240px, 100%); margin: auto; position: relative; }
+  .evidence-hero__topline { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-bottom: 1.4rem; border-bottom: 1px solid #ffffff32; color: #c4d1e1; font: 600 .69rem / 1.5 var(--font-mono, monospace); letter-spacing: .12em; text-transform: uppercase; }
+  .evidence-hero__issue { color: #e4ba69; }
+  .evidence-hero__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); padding: clamp(3rem, 7vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); }
+  .evidence-hero__eyebrow { font: 600 .8rem / 1.5 var(--font-mono, monospace); letter-spacing: .045em; color: #c6d7ee; display: flex; gap: .7rem; align-items: center; margin: 0 0 1.65rem; }
+  .evidence-hero__dot { width: .55rem; height: .55rem; background: #e4ba69; border-radius: 100%; box-shadow: 0 0 0 5px #e4ba6922; flex: none; }
+  .evidence-hero__intro h1 { font-family: var(--font-display, sans-serif); font-size: clamp(2.85rem, 5.35vw, 5.5rem); line-height: 1.055; letter-spacing: -.057em; font-weight: 800; max-width: 16ch; color: #fff; text-wrap: balance; margin: 0 0 1.9rem; }
+  .evidence-hero__dek { font-size: clamp(1.06rem, 1.5vw, 1.25rem); color: #bdcbdc; line-height: 1.72; max-width: 54ch; margin: 0; }
+  .evidence-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; margin-top: 2.5rem; }
+  .evidence-hero__button { display: inline-flex; align-items: center; gap: 1.5rem; justify-content: space-between; padding: 1rem 1.2rem; min-height: 3.3rem; background: #e7be77; color: #172235; border: 1px solid #e7be77; font-weight: 800; text-decoration: none; border-radius: 4px; transition: background .15s, transform .15s; }
+  .evidence-hero__button:hover { background: #f9d798; transform: translateY(-2px); }
+  .evidence-hero__textlink { color: #e7eefa; border-bottom: 1px solid #8298b7; padding: .5rem 0; text-decoration: none; font-weight: 650; }
+  .evidence-hero__textlink:hover { color: #e7be77; }
+  .evidence-hero__proof { background: #f6f7f5; color: #1b2a40; border-radius: 6px; box-shadow: 0 25px 70px #00000035; overflow: hidden; }
+  .evidence-hero__proof-head { background: #e9edee; display: flex; gap: 1rem; justify-content: space-between; flex-wrap: wrap; padding: 1.1rem 1.5rem; color: #4e6376; font: 750 .65rem / 1.5 var(--font-mono, monospace); letter-spacing: .12em; }
+  .evidence-hero__serial { color: #627789; }
+  .evidence-hero__comparison { display: grid; grid-template-columns: 1fr 1fr; }
+  .evidence-hero__record { padding: 1.6rem 1.35rem 1.9rem; display: flex; flex-direction: column; min-width: 0; }
+  .evidence-hero__record--cne { border-right: 1px solid #d5dcd9; }
+  .evidence-hero__record-kicker { display: block; font: 700 .64rem / 1.55 var(--font-mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: #476174; min-height: 2.7rem; }
+  .evidence-hero__no-data { display: block; font-family: var(--font-display, sans-serif); color: #9c3a35; font-size: clamp(1.35rem, 2.2vw, 2.15rem); line-height: 1.2; letter-spacing: -.04em; min-height: 4.9rem; }
+  .evidence-hero__figure { display: flex; align-items: baseline; gap: .35rem; flex-wrap: wrap; min-height: 4.9rem; }
+  .evidence-hero__figure strong { font: 800 clamp(1.9rem, 3.2vw, 2.9rem) / 1.15 var(--font-display, sans-serif); letter-spacing: -.055em; color: #214c6a; }
+  .evidence-hero__figure span { color: #627184; font-size: .89rem; font-weight: 650; }
+  .evidence-hero__record p { font-size: .85rem; line-height: 1.6; color: #405063; margin: .5rem 0 1rem; }
+  .evidence-hero__record a { color: #205778; font-size: .79rem; line-height: 1.45; text-underline-offset: .17em; font-weight: 750; margin-top: auto; }
+  .evidence-hero__track { height: .55rem; border-radius: 1rem; background: #d5dfe1; overflow: hidden; }
+  .evidence-hero__track span { display: block; height: 100%; background: #356d75; }
+  .evidence-hero__coverage { display: flex; justify-content: space-between; gap: .3rem; flex-wrap: wrap; font-size: .65rem; font-weight: 650; color: #55707c; padding: .45rem 0 .85rem; }
+  .evidence-hero__qualification { padding: 1.15rem 1.5rem 1.3rem; margin: 0; font-size: .76rem; color: #49596a; line-height: 1.6; border-top: 1px solid #d5dcd9; background: #f0f3f1; }
+  .evidence-hero__reading { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #ffffff35; border-bottom: 1px solid #ffffff35; }
+  .evidence-hero__reading a { display: flex; flex-direction: column; gap: .4rem; text-decoration: none; padding: 1.5rem 1.25rem; transition: background .15s; }
+  .evidence-hero__reading a:first-child { padding-left: 0; }
+  .evidence-hero__reading a + a { border-left: 1px solid #ffffff35; }
+  .evidence-hero__reading a:hover { background: #ffffff12; }
+  .evidence-hero__reading strong { font: 750 .78rem / 1.4 var(--font-mono, monospace); letter-spacing: .045em; color: #e7be77; }
+  .evidence-hero__reading span { font-size: .9rem; color: #b6c7dc; }
+  .evidence-hero__footnote { display: flex; justify-content: space-between; gap: .5rem 1.5rem; flex-wrap: wrap; font-size: .74rem; color: #abbbd0; padding: 1rem 0 1.4rem; }
+  .evidence-hero__footnote a { color: #e7be77; text-decoration: underline; text-underline-offset: .2em; }
+  .evidence-hero a:focus-visible { outline: 3px solid #f3d69d; outline-offset: 5px; }
+  @media (max-width: 1050px) { .evidence-hero__grid { grid-template-columns: 1fr; } .evidence-hero__intro h1 { max-width: 18ch; } .evidence-hero__proof { max-width: 760px; } }
+  @media (max-width: 590px) {
+    .evidence-hero__topline { font-size: .6rem; }
+    .evidence-hero__intro h1 { font-size: clamp(2.7rem, 11vw, 3.6rem); letter-spacing: -.05em; }
+    .evidence-hero__comparison { grid-template-columns: 1fr; }
+    .evidence-hero__record { padding: 1.25rem 1.4rem; }
+    .evidence-hero__record--cne { border-right: none; border-bottom: 1px solid #d5dcd9; }
+    .evidence-hero__record-kicker, .evidence-hero__no-data, .evidence-hero__figure { min-height: auto; }
+    .evidence-hero__record p { margin: .6rem 0; }
+    .evidence-hero__reading { grid-template-columns: 1fr; }
+    .evidence-hero__reading a, .evidence-hero__reading a:first-child { padding: 1rem 0; }
+    .evidence-hero__reading a + a { border-left: none; border-top: 1px solid #ffffff35; }
   }
-
-  .hero-verdict-phase {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    flex: 1;
-    min-width: 10rem;
-  }
-
-  .hero-verdict-date {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-breach-600);
-  }
-
-  .hero-verdict-name {
-    font-family: var(--font-display);
-    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--text-primary);
-  }
-
-  .hero-verdict-note {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-    margin-top: 0.1rem;
-  }
-
-  .hero-verdict-arrow {
-    font-size: 1.5rem;
-    color: var(--color-breach-400);
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  :global([data-theme="dark"]) .hero-verdict {
-    background: color-mix(in srgb, var(--color-breach-500) 10%, transparent);
-    border-color: color-mix(in srgb, var(--color-breach-400) 28%, transparent);
-  }
-
-  :global([data-theme="dark"]) .hero-verdict-date { color: var(--color-breach-300); }
-  :global([data-theme="dark"]) .hero-verdict-name { color: #fff; }
-  :global([data-theme="dark"]) .hero-verdict-note { color: #95a0bd; }
-  :global([data-theme="dark"]) .hero-verdict-arrow { color: var(--color-breach-500); }
-
-  @media (max-width: 480px) {
-    .hero-verdict { flex-direction: column; align-items: flex-start; }
-    .hero-verdict-arrow { transform: rotate(90deg); align-self: center; }
-  }
-
+  @media (prefers-reduced-motion: reduce) { .evidence-hero__button { transition: none; } .evidence-hero__button:hover { transform: none; } }
+  @media print { .evidence-hero { background: white; color: black; } .evidence-hero__intro h1 { color: black; } .evidence-hero__dek, .evidence-hero__reading span { color: #333; } .evidence-hero__proof { border: 1px solid #aaa; box-shadow: none; } }
 </style>
