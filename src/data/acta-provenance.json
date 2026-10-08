@@ -1,0 +1,147 @@
+{
+  "id": "acta-provenance-2024",
+  "reviewedAt": "2026-10-08",
+  "process": {
+    "source": {
+      "title": "The Carter Center final report (2025)",
+      "url": "https://www.cartercenter.org/wp-content/uploads/2025/02/venezuela-final-report-2025.pdf",
+      "locator": "Printed pp. 27–28; PDF pp. 27–28, Electronic Voting Machines: printing and distributing the actas, machine hash, signature and QR data.",
+      "supports": "CNE machines generate tally sheets, with machine-specific hash, digital signature and QR-encoded results, and copies are given to poll workers and party agents.",
+      "retrievedAt": "2026-10-08"
+    }
+  },
+  "authenticity": {
+    "sampleStations": 100,
+    "source": {
+      "title": "The Carter Center final report (2025)",
+      "url": "https://www.cartercenter.org/wp-content/uploads/2025/02/venezuela-final-report-2025.pdf",
+      "locator": "Printed pp. 35–36; PDF p. 35, The Opposition’s Results Forms and Carter Center Analysis.",
+      "supports": "The Center reviewed physical originals bearing the required security features and found matching features in the online images; it found no photo/transcription discrepancies in a random sample of 100 stations, not an audit of all forms.",
+      "retrievedAt": "2026-10-08"
+    }
+  },
+  "video": {
+    "reviewed": 50,
+    "exact": 18,
+    "stations": 40,
+    "otherDifferences": 9,
+    "unmatched": 23,
+    "source": {
+      "title": "Cazadores de Fake News, research republished by Runrun.es on 18 Aug 2024",
+      "url": "https://runrunes.org/rr-es-plus/562888/la-coincidencia-entre-videos-y-fotos-tomados-el-28j-con-los-resultados-publicados-en-linea-por-la-oposicion/",
+      "locator": "Section: ¿Son reales los números de los ciudadanos? 50-video sample, 18 exact video-to-acta matches covering 40 stations; 9 videos with tally mismatches and 23 without identifiable matching acta.",
+      "supports": "A journalistic investigation compared 50 publicly shared videos to digitized tally sheets. 18 videos exactly matched records for 40 stations; other material contained reading/arithmetic inconsistencies or insufficient station identifiers.",
+      "retrievedAt": "2026-10-08"
+    }
+  },
+  "copy": {
+    "es": {
+      "eyebrow": "PIEZA 02-A / PROCEDENCIA DE LAS ACTAS",
+      "title": "No son «actas de la oposición».",
+      "accent": "Son actas de escrutinio.",
+      "intro": "La máquina electoral del CNE genera el resultado de cada mesa. Se imprimen copias para miembros de mesa y testigos de organizaciones políticas. Testigos opositores recopilaron y publicaron muchas de ellas; eso identifica a quien las difundió, no a una clase distinta de documento.",
+      "visualTag": "UNA MESA · UN ESCRUTINIO · VARIAS COPIAS",
+      "drawing": "ESQUEMA DE UN ACTA · NO ES UN DOCUMENTO REAL",
+      "steps": [
+        [
+          "01",
+          "Emisión por la máquina",
+          "La máquina del CNE registra y emite el acta con los resultados de la mesa."
+        ],
+        [
+          "02",
+          "Entrega de copias",
+          "Los testigos de las distintas organizaciones políticas reciben ejemplares del mismo escrutinio."
+        ],
+        [
+          "03",
+          "Difusión y contraste",
+          "Quien conserva una copia puede fotografiarla y publicarla para que otros la contrasten."
+        ]
+      ],
+      "sourceProcess": "Procedimiento electoral, Centro Carter",
+      "proofTitle": "La procedencia no depende del partido que las publique.",
+      "checks": [
+        [
+          "Identidad documental",
+          "El Centro Carter examinó originales impresos en papel de seguridad del CNE, con firmas y elementos digitales. Las fotografías divulgadas mostraban las mismas características."
+        ],
+        [
+          "Trazabilidad técnica",
+          "El acta incorpora un hash de la máquina, firma digital y un QR con los resultados en formato legible. Leer el QR no equivale, por sí solo, a verificar criptográficamente la firma."
+        ],
+        [
+          "Revisión externa",
+          "En una muestra aleatoria de 100 mesas, el Centro Carter no halló diferencias entre las cifras transcritas y las fotografías. La muestra no certifica todas las imágenes."
+        ]
+      ],
+      "sourceEvidence": "Consultar fuente y método",
+      "videoKicker": "OTRA EVIDENCIA / LA NOCHE DEL 28J",
+      "videoTitle": "El registro audiovisual también se puede cotejar.",
+      "videoIntro": "Cazadores de Fake News comparó anuncios de resultados filmados en los centros electorales con las actas publicadas en ResultadosConVzla. La correspondencia ofrece un contraste adicional entre materiales reunidos por distintas personas.",
+      "reviewedLabel": "videos examinados",
+      "exactLabel": "coincidencias exactas",
+      "stationsLabel": "mesas documentadas en esas coincidencias",
+      "videoLimit": "Alcance real: otros 9 videos tuvieron diferencias de lectura o suma, y en 23 no pudo identificarse el acta correspondiente. No son 50 confirmaciones exactas ni una muestra representativa de todo el país.",
+      "videoSource": "Examinar investigación y videos",
+      "limitTitle": "Límite de la prueba",
+      "limit": "Esta evidencia respalda la autenticidad de los documentos examinados y la concordancia de casos identificables. No demuestra que las 25.575 imágenes hayan sido verificadas criptográficamente, ni sustituye la publicación de los datos por mesa del CNE, su software o las claves necesarias para una auditoría integral.",
+      "view": "Consultar actas reales",
+      "next": "Seguir la demostración numérica"
+    },
+    "en": {
+      "eyebrow": "EVIDENCE FILE 02-A / ACTA PROVENANCE",
+      "title": "These are not “opposition tally sheets.”",
+      "accent": "They are election tally sheets.",
+      "intro": "CNE voting machines generate each polling station's result. Copies are printed for poll workers and political party agents. Opposition poll watchers gathered and published many of these copies; that identifies the publisher, not a separate class of document.",
+      "visualTag": "ONE STATION · ONE TALLY · MULTIPLE COPIES",
+      "drawing": "ILLUSTRATIVE SCHEMATIC · NOT A REAL DOCUMENT",
+      "steps": [
+        [
+          "01",
+          "Produced by the machine",
+          "The CNE voting machine records and prints the station-level result."
+        ],
+        [
+          "02",
+          "Copies distributed",
+          "Poll watchers from different political organizations receive copies of the same tally."
+        ],
+        [
+          "03",
+          "Publication and checks",
+          "Anyone holding a copy can photograph and publish it for others to compare."
+        ]
+      ],
+      "sourceProcess": "Electoral procedure, Carter Center",
+      "proofTitle": "A document's origin does not depend on who publishes it.",
+      "checks": [
+        [
+          "Document identity",
+          "The Carter Center inspected originals on CNE security paper, with signatures and digital security features. The published photographs showed those same characteristics."
+        ],
+        [
+          "Technical traceability",
+          "The form contains a machine-specific hash, a digital signature and a QR code encoding readable results. Reading the QR alone does not cryptographically validate the signature."
+        ],
+        [
+          "External cross-check",
+          "In a random 100-station sample, the Carter Center found no discrepancies between transcribed figures and photographs. That sample does not certify all images."
+        ]
+      ],
+      "sourceEvidence": "View original source and method",
+      "videoKicker": "ADDITIONAL EVIDENCE / ELECTION NIGHT",
+      "videoTitle": "Election night left a comparable video record.",
+      "videoIntro": "Cazadores de Fake News compared filmed station-level result announcements with the forms published on ResultadosConVzla. Where they match, videos provide an additional cross-check between material collected by different people.",
+      "reviewedLabel": "videos examined",
+      "exactLabel": "exact matches",
+      "stationsLabel": "stations represented by exact matches",
+      "videoLimit": "Actual scope: another 9 videos had reading or arithmetic differences, while 23 could not be matched to an identifiable station sheet. These are not 50 exact confirmations or a nationally representative sample.",
+      "videoSource": "Review the investigation and videos",
+      "limitTitle": "Limits of the evidence",
+      "limit": "This supports the authenticity of the documents examined and agreement in identifiable cases. It does not prove that all 25,575 images have been cryptographically verified or replace CNE publication of station-level data, software access and the keys required for a comprehensive audit.",
+      "view": "Browse real tally sheets",
+      "next": "Continue to the numerical test"
+    }
+  }
+}
