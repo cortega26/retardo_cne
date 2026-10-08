@@ -253,3 +253,36 @@ test('Carter arithmetic bound is sourced, conditional and bilingual', async ({ p
   await expect(boundEn).toContainText('338,457');
   await expect(boundEn).toContainText('Condition of the demonstration');
 });
+
+
+test('provenance explains why a witness copy is still an official tally sheet', async ({ page }) => {
+  await page.goto('/');
+  const exhibit = page.locator('#procedencia');
+  await expect(exhibit.locator('h2')).toContainText('No son «actas de la oposición».');
+  await expect(exhibit).toContainText('Son actas de escrutinio.');
+  await expect(exhibit).toContainText('50');
+  await expect(exhibit).toContainText('18');
+  await expect(exhibit).toContainText('40');
+  await expect(exhibit).toContainText('23 videos sin acta identificable');
+  await expect(exhibit).toContainText('No son 50 confirmaciones exactas');
+  await expect(exhibit.locator('a[href*="venezuela-final-report-2025.pdf"]')).toHaveCount(4);
+  await expect(exhibit.locator('a[href*="cazadores.info"]')).toHaveCount(1);
+  await expect(page.locator('.section-rail a[href="#procedencia"]')).toHaveCount(1);
+
+  await page.goto('/en/');
+  await expect(page.locator('#procedencia')).toContainText('They are election tally sheets.');
+  await expect(page.locator('#procedencia')).toContainText('not 50 exact confirmations');
+  await expect(page.locator('.section-rail a[href="#procedencia"]')).toHaveCount(1);
+});
+
+test('document-provenance exhibit avoids narrow screen overflow in both themes', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/');
+  await expect(page.locator('#procedencia .pv-diagram')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await page.evaluate(() => localStorage.setItem('theme', 'dark'));
+  await page.reload();
+  await expect(page.locator('body')).toHaveClass(/dark-mode/);
+  await expect(page.locator('#procedencia h2')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});

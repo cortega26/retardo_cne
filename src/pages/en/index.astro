@@ -5,6 +5,7 @@ import SectionRail from '../../components/SectionRail.astro';
 import Hero from '../../components/Hero.astro';
 import Obligation from '../../components/Obligation.astro';
 import Existence from '../../components/Existence.astro';
+import ActaProvenance from '../../components/ActaProvenance.astro';
 import Anomaly from '../../components/Anomaly.astro';
 import MissingLink from '../../components/MissingLink.astro';
 import Conclusion from '../../components/Conclusion.astro';
@@ -32,9 +33,10 @@ const t = useTranslations(lang);
 		<!-- §0 Thesis -->
 		<Hero />
 
-		<!-- 5-act argument -->
+		<!-- Five acts with a documentary provenance interlude -->
 		<Obligation />
 		<Existence />
+		<ActaProvenance />
 		<Anomaly />
 		<MissingLink />
 		<Conclusion />
