@@ -280,7 +280,8 @@ test('document-provenance exhibit avoids narrow screen overflow in both themes',
   await page.goto('/');
   await expect(page.locator('#procedencia .pv-diagram')).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-  await page.locator('#toggleTheme').click();
+  await page.evaluate(() => localStorage.setItem('theme', 'dark'));
+  await page.reload();
   await expect(page.locator('body')).toHaveClass(/dark-mode/);
   await expect(page.locator('#procedencia h2')).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
