@@ -235,3 +235,21 @@ test('evidence hero remains readable without horizontal overflow on a narrow vie
   await expect(page.locator('.evidence-hero__comparison')).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+test('Carter arithmetic bound is sourced, conditional and bilingual', async ({ page }) => {
+  await page.goto('/');
+  const bound = page.locator('#analisis-tecnico .bound-case');
+  await expect(bound).toContainText('3.915.001');
+  await expect(bound).toContainText('3.576.544');
+  await expect(bound).toContainText('338.457');
+  await expect(bound).toContainText('Condición de la demostración');
+  await expect(bound).toContainText('24.533 actas en el texto y 24.532 en la Tabla 1');
+  await expect(bound.locator('a[href*="venezuela-final-report-2025-spanish.pdf"]')).toHaveCount(1);
+
+  await page.goto('/en/');
+  const boundEn = page.locator('#analisis-tecnico .bound-case');
+  await expect(boundEn).toContainText('3,915,001');
+  await expect(boundEn).toContainText('3,576,544');
+  await expect(boundEn).toContainText('338,457');
+  await expect(boundEn).toContainText('Condition of the demonstration');
+});
