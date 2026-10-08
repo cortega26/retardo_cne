@@ -14,17 +14,17 @@ const copy = {
   badge:       es ? 'Acto II — Lo que sí existe'   : 'Act II — What does exist',
   title:       es ? 'Lo que Existe'                 : 'What Exists',
   opening:     es
-    ? 'Mientras el CNE no mostraba nada, la ciudadanía recolectó y publicó las actas del 85% de las mesas. Son documentos físicos con código QR verificable por cualquiera.'
-    : 'While the CNE showed nothing, citizens collected and published actas covering 85% of polling stations. These are physical documents with QR codes anyone can verify.',
+    ? 'La colección publicada por la oposición reúne 25.575 imágenes de actas para un universo de 30.026 mesas (corte del 3 de enero de 2025). Esta evidencia se puede examinar por mesa; no sustituye la publicación oficial del CNE.'
+    : 'The opposition-published collection contains 25,575 tally-sheet images for 30,026 polling stations (January 3, 2025 snapshot). This evidence can be checked by station; it does not replace official CNE publication.',
   statLabel1:  es ? 'Actas digitalizadas'           : 'Digitized actas',
   statSub1:    t('verified_minutes_sub'),
-  statLabel2:  es ? 'Testigos y voluntarios'        : 'Witnesses & volunteers',
-  statSub2:    es ? 'En toda Venezuela'             : 'Across Venezuela',
-  statLabel3:  es ? 'Actas con QR verificable'      : 'Actas with verifiable QR',
-  statSub3:    es ? 'Código QR, hash y sello oficial' : 'QR code, hash and official seal',
-  valTitle:    es ? 'Validación académica independiente' : 'Independent academic validation',
-  valSub:      es ? 'Esta validación se basa en la arquitectura del sistema, no en la credibilidad de quien recolectó las actas.'
-                  : 'This validation rests on system architecture, not on the credibility of whoever collected the actas.',
+  statLabel2:  es ? 'Actas de la colección'         : 'Tally sheets in the collection',
+  statSub2:    es ? 'Corte del 3 de enero de 2025'  : 'January 3, 2025 snapshot',
+  statLabel3:  es ? 'Mesas previstas'               : 'Total polling stations',
+  statSub3:    es ? 'Universo de comparación'       : 'Comparison denominator',
+  valTitle:    es ? 'Evaluación académica del material' : 'Academic assessment of the materials',
+  valSub:      es ? 'El Centro Carter también examinó una muestra de actas y sus elementos de seguridad. Ambas evaluaciones deben leerse según sus métodos y alcances.'
+                  : 'The Carter Center also reviewed a sample of tally sheets and their security features. Both assessments must be read within their methods and scope.',
   readPaper:   es ? 'Ver paper completo →'          : 'Read full paper →',
   ctaTitle:    es ? 'Consulta las actas'            : 'Check the actas',
   ctaText:     es
@@ -51,15 +51,19 @@ const copy = {
       <p class="existence-stat-sub">{copy.statSub1}</p>
     </div>
     <div class="story-card text-center">
-      <p class="existence-stat-value">1M+</p>
+      <p class="existence-stat-value">{es ? '25.575' : '25,575'}</p>
       <p class="existence-stat-label">{copy.statLabel2}</p>
       <p class="existence-stat-sub">{copy.statSub2}</p>
     </div>
     <div class="story-card text-center">
-      <p class="existence-stat-value">100%</p>
+      <p class="existence-stat-value">{es ? '30.026' : '30,026'}</p>
       <p class="existence-stat-label">{copy.statLabel3}</p>
       <p class="existence-stat-sub">{copy.statSub3}</p>
     </div>
+  </div>
+  <div class="existence-source-band" role="note">
+    <span>{es ? 'Origen de las cifras: ResultadosConVzla (corte de 2025). Revisión independiente de una muestra anterior: Centro Carter, informe de 2025.' : 'Figures: ResultadosConVzla (2025 snapshot). Independent review of an earlier sample: Carter Center, 2025 report.'}</span>
+    <a href="https://www.cartercenter.org/publication/final-report-observation-of-the-2024-presidential-election-in-venezuela/" target="_blank" rel="noopener noreferrer">{es ? 'Leer evaluación' : 'Read assessment'} ↗</a>
   </div>
 
   <!-- Academic validation card -->
@@ -102,3 +106,9 @@ const copy = {
   </div>
 
 </section>
+
+<style>
+  .existence-source-band { display: flex; gap: .85rem 1.4rem; flex-wrap: wrap; justify-content: space-between; align-items: baseline; padding: .9rem 1.2rem; border: 1px solid var(--border-subtle); border-top: none; background: var(--bg-card); font-size: .8rem; line-height: 1.6; color: var(--text-secondary); }
+  .existence-source-band span { flex: 1 1 24rem; }
+  .existence-source-band a { color: var(--text-accent); font-weight: 700; text-underline-offset: .16em; }
+</style>
