@@ -32,19 +32,24 @@
 }
 
 [data-theme="dark"] {
-  --bg-body: var(--color-brand-950);
-  --bg-card: var(--color-brand-900);
-  --bg-card-hover: var(--color-brand-800);
-  --text-primary: #eef2fb;
-  --text-secondary: #aeb7cd;
-  --text-accent: var(--color-brand-300);
-  --color-primary-brand: var(--color-brand-400);
-  --color-danger: var(--color-breach-300);
-  --color-success: var(--color-lawful-300);
-  --navbar-bg: color-mix(in srgb, var(--color-brand-950) 86%, transparent);
-  --border-subtle: color-mix(in srgb, var(--color-brand-300) 16%, transparent);
-  --color-accent: #f59e0b;
-  --shadow-raised: 0 4px 8px rgb(0 0 0 / 0.2), 0 16px 32px -16px rgb(0 0 0 / 0.5);
+  --bg-body: #151f25;
+  --bg-card: #222e35;
+  --bg-card-hover: #2d3c44;
+  --text-primary: #eef1ef;
+  --text-secondary: #b4c0c5;
+  --text-accent: #b0ced5;
+  --color-primary-brand: #a4c5cb;
+  --color-danger: #e6aaa1;
+  --color-success: #a2cdbb;
+  --navbar-bg: #1a252b;
+  --navbar-border: #3b4850;
+  --border-subtle: #3b4b53;
+  --border-strong: #566770;
+  --surface-soft: #222e35;
+  --surface-strong: #27343b;
+  --color-accent: #c8ac82;
+  --color-accent-glow: color-mix(in srgb, #c8ac82 10%, transparent);
+  --shadow-raised: 0 6px 25px -12px rgb(0 0 0 / .42);
 }
 
 html {
@@ -68,10 +73,8 @@ body {
 }
 
 [data-theme="dark"] body {
-  background:
-    radial-gradient(120% 60% at 50% -10%, color-mix(in srgb, var(--color-brand-400) 14%, transparent), transparent 60%),
-    var(--bg-body);
-  background-attachment: fixed;
+  background: var(--bg-body);
+  background-attachment: scroll;
 }
 
 /* background-attachment: fixed causes expensive repaints and silently breaks
@@ -274,17 +277,17 @@ main > *:not(header) {
   border-radius: 6px !important;
 }
 
-.navbar {
+.navbar:not(.site-navbar) {
   min-height: var(--nav-height);
   height: auto;
-  background: color-mix(in srgb, var(--navbar-bg) 78%, white 22%);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
-  box-shadow: 0 10px 40px -36px rgba(15, 23, 42, 0.45);
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  box-shadow: none;
 }
 
-[data-theme="dark"] .navbar {
-  background: color-mix(in srgb, var(--navbar-bg) 82%, black 18%);
-  border-bottom-color: rgba(148, 163, 184, 0.12);
+[data-theme="dark"] .navbar:not(.site-navbar) {
+  background: var(--navbar-bg);
+  border-bottom-color: var(--navbar-border);
 }
 
 .navbar .container-fluid {
