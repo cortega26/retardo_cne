@@ -72,5 +72,51 @@ for (const component of renderedComponents) {
   }
 }
 
+// The Carter Center's separate arithmetic-bound claim must remain traceable
+// and mathematically consistent. Structural checks do not replace source review.
+const boundPath = path.join(root, 'src/data/carter-bound.json');
+const bound = JSON.parse(fs.readFileSync(boundPath, 'utf8'));
+const evidenceSource = 'https://www.cartercenter.org/wp-content/uploads/2025/02/venezuela-final-report-2025-spanish.pdf';
+if (bound.id !== 'carter-center-2025-unreported-vote-bound' ||
+    bound.snapshotDate !== '2024-08-01' ||
+    bound.source?.url !== evidenceSource ||
+    !nonEmptyString(bound.source?.locator) ||
+    !nonEmptyString(bound.source?.supports) ||
+    !nonEmptyString(bound.source?.retrievedAt)) {
+  fail('Carter arithmetic bound: reviewed identity, snapshot, source and locator required.');
+}
+
+for (const locale of ['es', 'en']) {
+  const copy = bound.copy?.[locale];
+  for (const field of ['tag', 'title', 'intro', 'leadLabel', 'upperLabel', 'balanceLabel', 'interpretation', 'caveat', 'footnote', 'sourceLabel', 'distinction']) {
+    if (!nonEmptyString(copy?.[field])) fail(`Carter arithmetic bound: ${locale}.${field} required.`);
+  }
+}
+
+const reported = bound.inputs || {};
+const expected = {
+  reportedCoveragePercent: 81.7,
+  citizenActasInProse: 24533,
+  citizenActasInTable: 24532,
+  allStations: 30026,
+  reportedGonzalezVotes: 7156462,
+  reportedMaduroVotes: 3241461,
+  reportedMargin: 3915001,
+  registeredElectorsAtMissingStations: 3576544,
+  minimumRemainingMargin: 338457,
+};
+for (const [key, value] of Object.entries(expected)) {
+  if (reported[key] !== value) fail(`Carter arithmetic bound: unexpected ${key}.`);
+}
+if (reported.reportedGonzalezVotes - reported.reportedMaduroVotes !== reported.reportedMargin ||
+    reported.reportedMargin - reported.registeredElectorsAtMissingStations !== reported.minimumRemainingMargin ||
+    !(reported.minimumRemainingMargin > 0)) {
+  fail('Carter arithmetic bound: the votes/electorate calculations do not balance.');
+}
+const anomalyComponent = fs.readFileSync(path.join(root, 'src/components/Anomaly.astro'), 'utf8');
+if (!anomalyComponent.includes('carter-bound.json')) {
+  fail('Carter arithmetic bound: live Anomaly component must import reviewed manifest.');
+}
+
 if (process.exitCode) process.exit(process.exitCode);
-console.log('Expert-claim guardrail passed.');
+console.log('Expert and Carter-bound claim guardrails passed.');
