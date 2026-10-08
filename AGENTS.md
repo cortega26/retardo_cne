@@ -85,6 +85,8 @@ within the source's population, time period, method, and stated uncertainty.
 Do not infer conclusions that a source does not make, merge conclusions from
 different sources, or turn a statistical signal into proof of fraud.
 
+The acta-origin and audiovisual evidence has a separate reviewed bilingual manifest at `src/data/acta-provenance.json`, rendered by `ActaProvenance.astro`. It distinguishes CNE machine-produced tally sheets from the people who publish copies. The investigation compared 50 videos: 18 exact matches for 40 stations, 9 with reading/arithmetic differences, 23 without identifiable corresponding sheets; no claim that all 50 matched. Reading a QR by itself does not validate the cryptographic signature, and checking 100 random stations does not validate all 25,575 images. Keep source limitations adjacent to the claim.
+
 The four expert summaries are a protected high-risk area. Their single source
 of truth is `src/data/expert-claims.json`; rendered components must import that
 manifest rather than maintaining a second paraphrase. Each record is required
@@ -129,15 +131,15 @@ claim manifest and CI validator before it is rendered.
 
 `src/pages/index.astro` (and its EN mirror `src/pages/en/index.astro`)
 import components in order — they render as stacked in-page sections. This
-is a **5-act narrative**, not a generic marketing-page layout:
+is a **5-act narrative with a provenance evidence interlude**, not a generic marketing-page layout:
 
-Navbar → SectionRail → Hero → Obligation → Existence → Anomaly →
+Navbar → SectionRail → Hero → Obligation → Existence → ActaProvenance → Anomaly →
 MissingLink → Conclusion → Timeline → PostElectionAudits → Context →
 Irregularidades → FAQ → BackgroundCards → PostInauguration → Impact →
 Share → Action → Footer
 
 <!-- DRIFT-CHECK:section-order
-Navbar, SectionRail, Hero, Obligation, Existence, Anomaly, MissingLink, Conclusion, Timeline, PostElectionAudits, Context, Irregularidades, FAQ, BackgroundCards, PostInauguration, Impact, Share, Action, Footer
+Navbar, SectionRail, Hero, Obligation, Existence, ActaProvenance, Anomaly, MissingLink, Conclusion, Timeline, PostElectionAudits, Context, Irregularidades, FAQ, BackgroundCards, PostInauguration, Impact, Share, Action, Footer
 -->
 
 Each section is a component in `src/components/`. The layout
