@@ -118,5 +118,52 @@ if (!anomalyComponent.includes('carter-bound.json')) {
   fail('Carter arithmetic bound: live Anomaly component must import reviewed manifest.');
 }
 
+
+// Provenance is a separate, source-scoped, bilingual evidence manifest.
+const provenance = JSON.parse(fs.readFileSync(path.join(root, 'src/data/acta-provenance.json'), 'utf8'));
+const carterUrl = 'https://www.cartercenter.org/wp-content/uploads/2025/02/venezuela-final-report-2025.pdf';
+const originalVideoInvestigation = 'https://www.cazadores.info/euforia-interrumpida-coinciden-videos-fotos-28j-con-resultados-publicados-en-linea/';
+if (provenance.id !== 'acta-provenance-2024' ||
+    provenance.process?.source?.url !== carterUrl ||
+    provenance.authenticity?.source?.url !== carterUrl ||
+    provenance.video?.source?.url !== originalVideoInvestigation) {
+  fail('Acta-provenance: reviewed source or claim identity mismatch.');
+}
+for (const category of ['process', 'authenticity', 'video']) {
+  const source = provenance[category]?.source;
+  for (const field of ['title', 'url', 'locator', 'supports', 'retrievedAt']) {
+    if (!nonEmptyString(source?.[field])) fail('Acta-provenance: missing ' + category + '.' + field);
+  }
+}
+const videoEvidence = provenance.video || {};
+if (videoEvidence.reviewed !== 50 || videoEvidence.exact !== 18 ||
+    videoEvidence.stations !== 40 || videoEvidence.otherDifferences !== 9 ||
+    videoEvidence.unmatched !== 23 || provenance.authenticity?.sampleStations !== 100) {
+  fail('Acta-provenance: cited video and transcription figures changed.');
+}
+// Outcome categories in the original investigation are not asserted to be a disjoint partition.
+for (const locale of ['es', 'en']) {
+  const c = provenance.copy?.[locale];
+  for (const field of ['eyebrow','title','accent','intro','visualTag','drawing','sourceProcess',
+    'proofTitle','sourceEvidence','videoKicker','videoTitle','videoIntro','reviewedLabel',
+    'exactLabel','stationsLabel','videoLimit','videoSource','limitTitle','limit','view','next']) {
+    if (!nonEmptyString(c?.[field])) fail('Acta-provenance: missing ' + locale + '.' + field);
+  }
+  for (const [key, n] of [['steps', 3], ['checks', 3]]) {
+    if (!Array.isArray(c?.[key]) || c[key].length !== n ||
+        !c[key].every((row) => Array.isArray(row) && row.length === (key === 'steps' ? 3 : 2) && row.every(nonEmptyString))) {
+      fail('Acta-provenance: missing bilingual ' + locale + '.' + key);
+    }
+  }
+}
+const provenanceComponent = fs.readFileSync(path.join(root, 'src/components/ActaProvenance.astro'), 'utf8');
+if (!provenanceComponent.includes('acta-provenance.json') ||
+    !provenanceComponent.includes('id="procedencia"')) fail('Acta-provenance: live exhibit must import reviewed claims.');
+for (const page of ['src/pages/index.astro', 'src/pages/en/index.astro']) {
+  if (!fs.readFileSync(path.join(root, page), 'utf8').includes('<ActaProvenance />')) {
+    fail('Acta-provenance: section missing in ' + page);
+  }
+}
+
 if (process.exitCode) process.exit(process.exitCode);
 console.log('Expert and Carter-bound claim guardrails passed.');
