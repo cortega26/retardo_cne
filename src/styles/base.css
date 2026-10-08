@@ -34,7 +34,7 @@
   --shadow-pop:    0 12px 40px -16px oklch(13% 0.05 248deg / 0.35);
 
   /* Navigation */
-  --nav-height: 68px;
+  --nav-height: 76px;
 
   /* Layout containers (mirrors modern.min.css --content-max) */
   --content-max: min(1200px, calc(100vw - 2rem));
@@ -60,21 +60,24 @@
 }
 
 [data-theme="dark"] {
-  --bg-body:       var(--color-brand-950);
-  --bg-card:       var(--color-brand-900);
-  --bg-card-hover: var(--color-brand-800);
-  --text-primary:  oklch(92% 0.01 248deg);
-  --text-secondary: oklch(72% 0.025 248deg);
-  --text-accent:   var(--color-brand-300);
-  --color-primary-brand: var(--color-brand-400);
-  --color-danger:  var(--color-breach-400);
-  --color-danger-glow: color-mix(in srgb, var(--color-breach-400) 30%, transparent);
-  --navbar-bg:     color-mix(in srgb, var(--color-brand-950) 86%, transparent);
-  --navbar-border: color-mix(in srgb, var(--color-brand-300) 18%, transparent);
-  --border-subtle: color-mix(in srgb, var(--color-brand-300) 16%, transparent);
-  --border-strong: color-mix(in srgb, var(--color-brand-300) 28%, transparent);
-  --shadow-card:   0 1px 2px oklch(4% 0 0deg / 0.3), 0 4px 16px -8px oklch(4% 0 0deg / 0.5);
-  --shadow-raised: 0 4px 8px oklch(4% 0 0deg / 0.2), 0 16px 32px -16px oklch(4% 0 0deg / 0.55);
+  --bg-body:       #151f25;
+  --bg-card:       #222e35;
+  --bg-card-hover: #2d3c44;
+  --text-primary:  #eef1ef;
+  --text-secondary: #b4c0c5;
+  --text-accent:   #b0ced5;
+  --color-primary-brand: #a4c5cb;
+  --color-danger:  #e6aaa1;
+  --color-warning: #dec18b;
+  --color-success: #a2cdbb;
+  --color-danger-glow: color-mix(in srgb, #c87c73 15%, transparent);
+  --navbar-bg:     #1a252b;
+  --navbar-border: #3b4850;
+  --border-subtle: #3b4b53;
+  --border-strong: #566770;
+  --border-ornament: #647f89;
+  --shadow-card:   0 1px 2px rgb(0 0 0 / .17), 0 10px 30px -22px rgb(0 0 0 / .35);
+  --shadow-raised: 0 6px 25px -12px rgb(0 0 0 / .42);
 }
 
 /* ── 1. Base typography & resets ──────────────────────────────────────────── */
