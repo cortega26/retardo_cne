@@ -47,7 +47,7 @@ const groups = [
             </button>
             <ul class="dropdown-menu site-navbar__dropdown" id={group.id + 'Menu'} aria-labelledby={group.id + 'Dropdown'}>
               <li class="site-navbar__dropdown-heading" aria-hidden="true">{group.label}</li>
-              {group.items.map(item => <li><a class="dropdown-item site-navbar__dropdown-link" href={item[0]}>{item[1]}<span aria-hidden="true">↗</span></a></li>)}
+              {group.items.map(item => <li><a class="dropdown-item site-navbar__dropdown-link" href={item[0]}>{item[1]}</a></li>)}
             </ul>
           </li>
         ))}
@@ -96,7 +96,6 @@ const groups = [
 .site-navbar .site-navbar__dropdown{left:0;top:calc(100% + .8rem);width:min(19rem,calc(100vw - 2rem));min-width:min(18rem,calc(100vw - 2rem));border:1px solid var(--nav-line);border-radius:4px;padding:.75rem .5rem .5rem;background:var(--nav-surface);box-shadow:0 20px 45px -26px #101c2b48;animation:none;list-style:none;}
 .site-navbar .site-navbar__dropdown-heading{padding:.2rem .75rem .7rem;margin-bottom:.3rem;border-bottom:1px solid var(--nav-line);color:var(--nav-muted);text-transform:uppercase;font:700 .61rem/1.4 var(--font-mono,monospace);letter-spacing:.1em;}
 .site-navbar .site-navbar__dropdown-link{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem .75rem;white-space:normal;border-radius:2px;font-size:.87rem;font-weight:600;color:var(--nav-ink);line-height:1.4;}
-.site-navbar__dropdown-link span{color:var(--nav-muted);}
 .site-navbar .site-navbar__dropdown-link:hover,.site-navbar .site-navbar__dropdown-link:focus-visible{color:var(--nav-ink);background:var(--nav-hover);transform:none;}
 .site-navbar__controls{display:inline-flex;flex:0 0 auto;align-items:center;gap:.2rem;margin:0;}
 .site-navbar__utility{width:40px;height:44px;padding:0;display:inline-grid;place-items:center;border:0;border-radius:2px;color:var(--nav-muted);background:transparent;font:750 .72rem/1 var(--font-sans,sans-serif);letter-spacing:.04em;text-decoration:none;cursor:pointer;}
