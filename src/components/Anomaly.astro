@@ -194,4 +194,28 @@ const copy = {
     .bound-case__track { max-width: 720px; }
   }
   @media print { .bound-case { background: #fff; box-shadow: none; } .bound-case__masthead, .bound-case__foot { background: #f5f5f5; } }
+
+/* The Carter evidence calculation uses the same graphite visual language as the dossier. */
+:global([data-theme="dark"]) .bound-case {background:#202c33;border-color:#495961;color:#edf1ee;box-shadow:none;}
+:global([data-theme="dark"]) .bound-case__masthead,
+:global([data-theme="dark"]) .bound-case__foot {background:#27363d;border-color:#485960;color:#bfcaca;}
+:global([data-theme="dark"]) .bound-case__tag {color:#bdd6d7;}
+:global([data-theme="dark"]) .bound-case__ref,
+:global([data-theme="dark"]) .bound-case__folio {color:#bac7c9;}
+:global([data-theme="dark"]) .bound-case__intro h3 {color:#edf1ee;}
+:global([data-theme="dark"]) .bound-case__intro > p:not(.bound-case__folio) {color:#b9c6ca;}
+:global([data-theme="dark"]) .bound-case__row--lead .bound-case__value strong,
+:global([data-theme="dark"]) .bound-case__result strong {color:#a9cfd2;}
+:global([data-theme="dark"]) .bound-case__row--limit .bound-case__value strong {color:#dfafa0;}
+:global([data-theme="dark"]) .bound-case__value span,
+:global([data-theme="dark"]) .bound-case__result span,
+:global([data-theme="dark"]) .bound-case__distinction {color:#b9c6ca;}
+:global([data-theme="dark"]) .bound-case__track {background:#40515a;}
+:global([data-theme="dark"]) .bound-case__track span {background:#7caab1;}
+:global([data-theme="dark"]) .bound-case__row--limit .bound-case__track span {background:#ba8a7b;}
+:global([data-theme="dark"]) .bound-case__operator {color:#a2b2b9;}
+:global([data-theme="dark"]) .bound-case__result {border-top-color:#8eb8bd;}
+:global([data-theme="dark"]) .bound-case__interpretation {background:#2b4145;border-left-color:#9ac5c5;color:#e5eee9;}
+:global([data-theme="dark"]) .bound-case__foot a {color:#c4dbe0;}
+
 </style>
