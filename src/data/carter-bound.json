@@ -1,0 +1,50 @@
+{
+  "id": "carter-center-2025-unreported-vote-bound",
+  "snapshotDate": "2024-08-01",
+  "source": {
+    "title": "Centro Carter, Informe final de observación de las elecciones presidenciales en Venezuela, 2024",
+    "url": "https://www.cartercenter.org/wp-content/uploads/2025/02/venezuela-final-report-2025-spanish.pdf",
+    "locator": "Páginas impresas 39–40, 'Análisis del Centro Carter de las Actas de Escrutinio' y Tabla 1 (páginas PDF 41–42).",
+    "supports": "La ventaja de 3.915.001 votos según las actas del corte de agosto, 3.576.544 electores de mesas faltantes y la imposibilidad de revertir aquella ventaja aun con todos los votos faltantes a Maduro, condicionada a la integridad del corpus analizado.",
+    "retrievedAt": "2026-10-08"
+  },
+  "inputs": {
+    "reportedCoveragePercent": 81.7,
+    "citizenActasInProse": 24533,
+    "citizenActasInTable": 24532,
+    "allStations": 30026,
+    "reportedGonzalezVotes": 7156462,
+    "reportedMaduroVotes": 3241461,
+    "reportedMargin": 3915001,
+    "registeredElectorsAtMissingStations": 3576544,
+    "minimumRemainingMargin": 338457
+  },
+  "copy": {
+    "es": {
+      "tag": "UNA PRUEBA DE CONSISTENCIA",
+      "title": "Incluso en el escenario más extremo, la ventaja no se revierte.",
+      "intro": "El Centro Carter examinó las actas publicadas por la oposición en agosto de 2024 y contrastó los votos acumulados con el padrón de electores de las mesas que todavía no tenían actas disponibles.",
+      "leadLabel": "Ventaja de González en las actas examinadas",
+      "upperLabel": "Total de electores en mesas sin actas",
+      "balanceLabel": "Ventaja que aún quedaría",
+      "interpretation": "Aun suponiendo que el 100 % de los electores inscritos en las mesas faltantes votara por Maduro y ninguno por González, la ventaja ya registrada seguiría siendo mayor.",
+      "caveat": "Conclusión condicionada a que los resultados de las actas recopiladas y el padrón cotejado sean fieles. El Centro Carter evaluó la autenticidad del material, pero el cálculo no sustituye la publicación oficial del CNE.",
+      "footnote": "Corte del 1 de agosto de 2024 (81,7 % de las mesas), distinto de las 25.575 actas del corte de enero de 2025. El informe presenta 24.533 actas en el texto y 24.532 en la Tabla 1; aquí se usan los votos y el padrón reportados para el cálculo.",
+      "sourceLabel": "Informe final del Centro Carter, pp. 39–40",
+      "distinction": "Este es un límite aritmético sobre las actas publicadas; no es una medición de intención de voto ni una probabilidad estadística."
+    },
+    "en": {
+      "tag": "A CONSISTENCY CHECK",
+      "title": "Even under the most extreme scenario, the lead cannot be reversed.",
+      "intro": "The Carter Center analyzed opposition-published tally sheets from August 2024 and compared their accumulated votes against the electorate registered at stations without published tally sheets.",
+      "leadLabel": "González's lead in the tally sheets reviewed",
+      "upperLabel": "Registered electorate at stations without tally sheets",
+      "balanceLabel": "Lead still remaining",
+      "interpretation": "Even if 100% of registered voters at the remaining stations voted for Maduro and none for González, the observed lead would still be larger.",
+      "caveat": "This conclusion is conditional on the fidelity of the collected tally sheets and the voter registers compared. The Carter Center evaluated the material's authenticity, but this calculation does not replace the CNE's official publication.",
+      "footnote": "August 1, 2024 snapshot (81.7% of stations), distinct from the 25,575 tally sheets in the January 2025 snapshot. The report gives 24,533 tally sheets in its prose and 24,532 in Table 1; this calculation uses its reported votes and electorate.",
+      "sourceLabel": "Carter Center final report, pp. 39–40",
+      "distinction": "This is an arithmetic bound based on the published tally sheets, not an opinion poll or a statistical probability."
+    }
+  }
+}
