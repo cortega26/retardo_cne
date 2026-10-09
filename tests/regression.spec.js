@@ -338,6 +338,48 @@ test('graphite dark mode uses neutral surfaces and readable text in key componen
   await expect(page.locator('#evidenceMenu')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
 });
 
+test('mobile editorial navbar stays on one row at 320–991px in both languages and themes', async ({ page }) => {
+  for (const route of ['/', '/en/']) {
+    await page.goto(route);
+
+    for (const width of [320, 360, 390, 430, 768, 991]) {
+      await page.setViewportSize({ width, height: 800 });
+
+      for (const theme of ['light', 'dark']) {
+        if ((await page.locator('html').getAttribute('data-theme')) !== theme) {
+          await page.locator('#toggleTheme').click();
+        }
+        await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+
+        const navbar = page.locator('.site-navbar');
+        const identity = await navbar.locator('.site-navbar__identity').boundingBox();
+        const utilities = await navbar.locator('.site-navbar__controls').boundingBox();
+        const menuButton = await navbar.locator('.site-navbar__toggler').boundingBox();
+        const header = await navbar.boundingBox();
+
+        expect(identity).toBeTruthy();
+        expect(utilities).toBeTruthy();
+        expect(menuButton).toBeTruthy();
+        expect(header).toBeTruthy();
+        const centerY = (box) => box.y + box.height / 2;
+        expect(Math.abs(centerY(identity) - centerY(utilities))).toBeLessThan(2);
+        expect(Math.abs(centerY(identity) - centerY(menuButton))).toBeLessThan(2);
+        expect(identity.x + identity.width).toBeLessThanOrEqual(utilities.x + 1);
+        expect(utilities.x + utilities.width).toBeLessThanOrEqual(menuButton.x + 1);
+        expect(menuButton.x + menuButton.width).toBeLessThanOrEqual(width);
+        expect(header.height).toBeLessThanOrEqual(92);
+      }
+
+      const panel = page.locator('#navbarNav');
+      await expect(panel).toBeHidden();
+      await page.locator('.site-navbar__toggler').click();
+      await expect(panel).toBeVisible();
+      await page.locator('.site-navbar__toggler').click();
+      await expect(panel).toBeHidden();
+    }
+  }
+});
+
 test('mobile editorial navbar keeps accessible theme and language outside the drawer', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 780 });
   await page.goto('/');
