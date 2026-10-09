@@ -338,6 +338,35 @@ test('graphite dark mode uses neutral surfaces and readable text in key componen
   await expect(page.locator('#evidenceMenu')).toHaveCSS('background-color', 'rgb(26, 37, 43)');
 });
 
+test('light and dark have visibly different hero and navbar palettes on mobile and desktop', async ({ page }) => {
+  for (const route of ['/', '/en/']) {
+    for (const width of [390, 1280]) {
+      await page.setViewportSize({ width, height: 844 });
+      await page.goto(route);
+
+      for (const theme of ['light', 'dark']) {
+        if ((await page.locator('html').getAttribute('data-theme')) !== theme) {
+          await page.locator('#toggleTheme').click();
+        }
+
+        await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+        await expect(page.locator('#toggleTheme')).toHaveAttribute('aria-pressed', String(theme === 'dark'));
+        const isLight = theme === 'light';
+
+        await expect(page.locator('.site-navbar')).toHaveCSS('background-color', isLight ? 'rgb(250, 250, 247)' : 'rgb(26, 37, 43)');
+        await expect(page.locator('.evidence-hero')).toHaveCSS('background-color', isLight ? 'rgb(246, 245, 241)' : 'rgb(16, 29, 49)');
+        await expect(page.locator('.evidence-hero__intro h1')).toHaveCSS('color', isLight ? 'rgb(31, 48, 56)' : 'rgb(255, 255, 255)');
+        await expect(page.locator('.evidence-hero__dek')).toHaveCSS('color', isLight ? 'rgb(70, 89, 96)' : 'rgb(189, 203, 220)');
+        await expect(page.locator('.evidence-hero__button')).toHaveCSS('background-color', isLight ? 'rgb(36, 63, 75)' : 'rgb(231, 190, 119)');
+      }
+
+      await page.reload();
+      await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+      await expect(page.locator('.evidence-hero')).toHaveCSS('background-color', 'rgb(16, 29, 49)');
+    }
+  }
+});
+
 test('mobile editorial navbar stays on one row at 320–991px in both languages and themes', async ({ page }) => {
   for (const route of ['/', '/en/']) {
     await page.goto(route);
