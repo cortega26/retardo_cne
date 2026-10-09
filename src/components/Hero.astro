@@ -152,6 +152,54 @@ const copy = {
   .evidence-hero__footnote { display: flex; justify-content: space-between; gap: .5rem 1.5rem; flex-wrap: wrap; font-size: .74rem; color: #abbbd0; padding: 1rem 0 1.4rem; }
   .evidence-hero__footnote a { color: #e7be77; text-decoration: underline; text-underline-offset: .2em; }
   .evidence-hero a:focus-visible { outline: 3px solid #f3d69d; outline-offset: 5px; }
+  /*
+   * Most of the first mobile viewport is the hero. Keeping it permanently
+   * navy made the light and dark experiences look almost identical.
+   * Preserve the navy dossier in dark mode; use editorial paper in light.
+   */
+  :global([data-theme="light"]) .evidence-hero {
+    background: #f6f5f1;
+    color: #24343b;
+  }
+  :global([data-theme="light"]) .evidence-hero::before {
+    background: radial-gradient(circle, #b5c9c65c 0, transparent 68%);
+  }
+  :global([data-theme="light"]) .evidence-hero__topline {
+    border-color: #c9d2d0;
+    color: #4c6068;
+  }
+  :global([data-theme="light"]) .evidence-hero__issue { color: #855534; }
+  :global([data-theme="light"]) .evidence-hero__eyebrow { color: #465b62; }
+  :global([data-theme="light"]) .evidence-hero__dot {
+    background: #a67843;
+    box-shadow: 0 0 0 5px #a6784324;
+  }
+  :global([data-theme="light"]) .evidence-hero__intro h1 { color: #1f3038; }
+  :global([data-theme="light"]) .evidence-hero__dek { color: #465960; }
+  :global([data-theme="light"]) .evidence-hero__button {
+    background: #243f4b;
+    border-color: #243f4b;
+    color: #fff;
+  }
+  :global([data-theme="light"]) .evidence-hero__button:hover { background: #365b6a; }
+  :global([data-theme="light"]) .evidence-hero__textlink {
+    color: #24556a;
+    border-color: #6b919b;
+  }
+  :global([data-theme="light"]) .evidence-hero__textlink:hover { color: #855534; }
+  :global([data-theme="light"]) .evidence-hero__proof {
+    background: #fff;
+    box-shadow: 0 20px 55px #182f3021;
+  }
+  :global([data-theme="light"]) .evidence-hero__reading,
+  :global([data-theme="light"]) .evidence-hero__reading a + a { border-color: #c9d2d0; }
+  :global([data-theme="light"]) .evidence-hero__reading a:hover { background: #203e4510; }
+  :global([data-theme="light"]) .evidence-hero__reading strong { color: #855534; }
+  :global([data-theme="light"]) .evidence-hero__reading span { color: #465960; }
+  :global([data-theme="light"]) .evidence-hero__footnote { color: #596d72; }
+  :global([data-theme="light"]) .evidence-hero__footnote a { color: #855534; }
+  :global([data-theme="light"]) .evidence-hero a:focus-visible { outline-color: #2c586d; }
+
   @media (max-width: 1050px) { .evidence-hero__grid { grid-template-columns: 1fr; } .evidence-hero__intro h1 { max-width: 18ch; } .evidence-hero__proof { max-width: 760px; } }
   @media (max-width: 590px) {
     .evidence-hero__topline { font-size: .6rem; }
